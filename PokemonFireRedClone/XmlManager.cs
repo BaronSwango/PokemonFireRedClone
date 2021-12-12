@@ -15,7 +15,7 @@ namespace PokemonFireRedClone
         public T Load(string path)
         {
             T instance;
-            using (TextReader reader = new StreamReader(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\" + path))
+            using (TextReader reader = new StreamReader(path))
             {
                 XmlSerializer xml = new XmlSerializer(Type);
                 instance = (T)xml.Deserialize(reader);
@@ -27,7 +27,7 @@ namespace PokemonFireRedClone
         // using a text writer in order to write and save and object to an xml file 
         public void Save(string path, object obj)
         {
-            using (TextWriter writer = new StreamWriter(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\" + path))
+            using (TextWriter writer = new StreamWriter(path))
             {
                 XmlSerializer xml = new XmlSerializer(Type);
                 xml.Serialize(writer, obj);
