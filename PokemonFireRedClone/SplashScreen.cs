@@ -9,12 +9,11 @@ namespace PokemonFireRedClone
     public class SplashScreen : GameScreen
     {
         Texture2D image;
-        string path;
+        public string Path;
         public override void LoadContent()
         {
             base.LoadContent();
-            path = "SplashScreen/Image";
-            image = content.Load <Texture2D>(path);
+            image = content.Load <Texture2D>(Path);
         }
 
         public override void UnloadContent()

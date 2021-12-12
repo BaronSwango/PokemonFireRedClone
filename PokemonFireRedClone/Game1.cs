@@ -51,9 +51,7 @@ namespace PokemonFireRedClone
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
-
             ScreenManager.Instance.Draw(spriteBatch);
-
             spriteBatch.End();
 
             base.Draw(gameTime);

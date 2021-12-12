@@ -15,6 +15,7 @@ namespace PokemonFireRedClone
         private static ScreenManager instance;
         public Vector2 Dimensions { private set; get; }
         public ContentManager Content { private set; get; }
+        XmlManager<GameScreen> xmlGameScreenManager;
 
         GameScreen currentScreen;
         public static ScreenManager Instance
@@ -32,6 +33,9 @@ namespace PokemonFireRedClone
         {
             Dimensions = new Vector2(640, 480);
             currentScreen = new SplashScreen();
+            xmlGameScreenManager = new XmlManager<GameScreen>();
+            xmlGameScreenManager.Type = currentScreen.Type;
+            currentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
         }
 
         public void LoadContent(ContentManager Content)
