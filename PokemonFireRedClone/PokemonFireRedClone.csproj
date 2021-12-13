@@ -18,6 +18,8 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="Load\SplashScreen.xml" />
+    <None Remove="Content\ScreenManager\" />
+    <None Remove="Load\ScreenManager.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -37,8 +39,12 @@
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\ScreenManager.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
+    <Folder Include="Content\ScreenManager\" />
   </ItemGroup>
 </Project>

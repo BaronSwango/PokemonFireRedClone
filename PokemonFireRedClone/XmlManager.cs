@@ -11,6 +11,11 @@ namespace PokemonFireRedClone
     {
         public Type Type;
 
+        public XmlManager()
+        {
+            Type = typeof(T);
+        }
+
         // using a text reader in order to read from xml file and convert into object
         public T Load(string path)
         {
