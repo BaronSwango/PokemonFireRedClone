@@ -28,10 +28,9 @@ namespace PokemonFireRedClone
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
+            ScreenManager.Instance.SpriteBatch = spriteBatch;
             ScreenManager.Instance.LoadContent(Content);
-            // TODO: use this.Content to load your game content here
-
 
          }
 

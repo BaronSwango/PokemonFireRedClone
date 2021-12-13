@@ -18,6 +18,9 @@ namespace PokemonFireRedClone
         XmlManager<GameScreen> xmlGameScreenManager;
 
         GameScreen currentScreen;
+        public GraphicsDevice GraphicsDevice;
+        public SpriteBatch SpriteBatch;
+
         public static ScreenManager Instance
         {
             get
