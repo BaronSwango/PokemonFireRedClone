@@ -17,6 +17,8 @@
   <ItemGroup>
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
+    <None Remove="Load\Menus\TestMenu.xml" />
+    <None Remove="Load\Menus\TitleMenu.xml" />
     <None Remove="Load\SplashScreen.xml" />
     <None Remove="Content\ScreenManager\" />
     <None Remove="Load\ScreenManager.xml" />
@@ -36,6 +38,12 @@
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Load\Menus\TestMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Menus\TitleMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

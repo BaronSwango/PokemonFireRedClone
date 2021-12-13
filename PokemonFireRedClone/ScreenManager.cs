@@ -80,7 +80,7 @@ namespace PokemonFireRedClone
 
         public ScreenManager()
         {
-            Dimensions = new Vector2(640, 480);
+            Dimensions = new Vector2(900, 600);
             currentScreen = new SplashScreen();
             xmlGameScreenManager = new XmlManager<GameScreen>();
             xmlGameScreenManager.Type = currentScreen.Type;

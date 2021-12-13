@@ -32,7 +32,7 @@
 /processorParam:TextureFormat=Color
 /build:ScreenManager/FadeImage.png
 
-#begin SplashScreen/Image.png
+#begin SplashScreen/TitleScreen.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -42,5 +42,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:SplashScreen/Image.png
+/build:SplashScreen/TitleScreen.png
 

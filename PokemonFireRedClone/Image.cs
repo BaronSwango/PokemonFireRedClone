@@ -38,6 +38,7 @@ namespace PokemonFireRedClone
                 var obj = this;
                 effect.LoadContent(ref obj);
             }
+
             effectList.Add(effect.GetType().ToString().Replace("PokemonFireRedClone.", ""), effect);
         }
 
@@ -58,6 +59,27 @@ namespace PokemonFireRedClone
                 effectList[effect].IsActive = false;
                 effectList[effect].UnloadContent();
             }
+        }
+
+        public void StoreEffects()
+        {
+            Effects = string.Empty;
+            foreach(var effect in effectList)
+            {
+                if (effect.Value.IsActive)
+                    Effects += effect.Key + ":";
+            }
+            if (Effects != string.Empty)
+                Effects.TrimEnd(':');
+        }
+
+        public void RestoreEffects()
+        {
+            foreach(var effect in effectList)
+                DeactivateEffect(effect.Key);
+            string[] split = Effects.Split(':');
+            foreach (string s in split)
+                ActivateEffect(s);
         }
 
         public Image()

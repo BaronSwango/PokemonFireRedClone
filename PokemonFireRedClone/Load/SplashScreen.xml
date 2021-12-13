@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SplashScreen>
 	<Image>
-		<Path>SplashScreen/Image</Path>
+		<Path>SplashScreen/TitleScreen</Path>
 		<IsActive>true</IsActive>
 		<Scale>
-			<X>3.0</X>
-			<Y>3.0</Y>
+			<X>2.0</X>
+			<Y>2.0</Y>
 		</Scale>
 		<Position>
-			<X>200</X>
-			<Y>200</Y>
+			<X>225</X>
+			<Y>150</Y>
 		</Position>
 	</Image>
 </SplashScreen>
