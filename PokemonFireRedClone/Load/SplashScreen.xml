@@ -2,9 +2,18 @@
 <SplashScreen>
 	<Image>
 		<Path>SplashScreen/Image</Path>
+		<Effects>FadeEffect</Effects>
+		<IsActive>true</IsActive>
+		<Scale>
+			<X>3.0</X>
+			<Y>3.0</Y>
+		</Scale>
 		<Position>
-			<X>20</X>
-			<Y>300</Y>
+			<X>200</X>
+			<Y>200</Y>
 		</Position>
+		<FadeEffect>
+			<FadeSpeed>0.5</FadeSpeed>
+		</FadeEffect>
 	</Image>
 </SplashScreen>

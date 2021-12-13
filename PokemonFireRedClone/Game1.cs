@@ -40,7 +40,6 @@ namespace PokemonFireRedClone
                 Exit();
 
             ScreenManager.Instance.Update(gameTime);
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
