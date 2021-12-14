@@ -23,6 +23,8 @@
     <None Remove="Load\SplashScreen.xml" />
     <None Remove="Content\ScreenManager\" />
     <None Remove="Load\ScreenManager.xml" />
+    <None Remove="Load\Gameplay\Map\" />
+    <None Remove="Load\Gameplay\Map\Map1.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -54,9 +56,13 @@
     <Content Include="Load\ScreenManager.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Gameplay\Map\Map1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
     <Folder Include="Content\ScreenManager\" />
+    <Folder Include="Load\Gameplay\Map\" />
   </ItemGroup>
 </Project>
