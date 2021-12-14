@@ -6,6 +6,7 @@ using System.Text;
 
 namespace PokemonFireRedClone
 {
+    //Menu
     public class TitleScreen : GameScreen
     {
         MenuManager menuManager;

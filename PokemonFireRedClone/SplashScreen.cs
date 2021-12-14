@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 
 namespace PokemonFireRedClone
 {
+    //Opening screeen
     public class SplashScreen : GameScreen
     {
         public Image Image;
