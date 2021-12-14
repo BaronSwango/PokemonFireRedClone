@@ -52,5 +52,15 @@ namespace PokemonFireRedClone
             return false;
         }
 
+        public bool KeyDown(params Keys[] keys)
+        {
+            foreach (Keys key in keys)
+            {
+                if (currentKeyState.IsKeyDown(key))
+                    return true;
+            }
+            return false;
+        }
+
     }
 }

@@ -27,6 +27,7 @@ namespace PokemonFireRedClone
         public string Effects;
 
         public FadeEffect FadeEffect;
+        public SpriteSheetEffect SpriteSheetEffect;
 
         void SetEffect<T>(ref T effect) where T:ImageEffect
         {
@@ -132,6 +133,7 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
 
             SetEffect(ref FadeEffect);
+            SetEffect(ref SpriteSheetEffect);
 
             if (Effects != string.Empty)
             {

@@ -46,7 +46,7 @@ namespace PokemonFireRedClone
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.Blue);
 
             spriteBatch.Begin();
             ScreenManager.Instance.Draw(spriteBatch);
