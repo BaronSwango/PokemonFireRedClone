@@ -3,6 +3,10 @@
 	<Image>
 		<Path>Gameplay/Player</Path>
 		<Effects>SpriteSheetEffect</Effects>
+		<Scale>
+			<X>0.75</X>
+			<Y>0.75</Y>
+        </Scale>
 	</Image>
-	<MoveSpeed>150</MoveSpeed>
+	<MoveSpeed>100</MoveSpeed>
 </Player>

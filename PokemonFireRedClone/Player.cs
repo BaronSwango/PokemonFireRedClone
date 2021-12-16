@@ -69,7 +69,7 @@ namespace PokemonFireRedClone
 
             Image.Update(gameTime);
             //Rounding vector to prevent sprite sheet bug
-            Image.Position += Velocity.ToPoint().ToVector2();
+            Image.Position += new Vector2((int) Velocity.X, (int) Velocity.Y);
         }
 
         public void Draw(SpriteBatch spriteBatch)
