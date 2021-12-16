@@ -23,14 +23,17 @@ namespace PokemonFireRedClone
 
         [XmlElement("TileMap")]
         public TileMap Tile;
-        List<Tile> tiles;
+        List<Tile> underlayTiles, overlayTiles;
+        public string SolidTiles, OverlayTiles;
         public Image Image;
+        string state;
 
         public Layer()
         {
             Image = new Image();
-            tiles = new List<Tile>();
-
+            underlayTiles = new List<Tile>();
+            overlayTiles = new List<Tile>();
+            SolidTiles = OverlayTiles = string.Empty;
         }
 
         public void LoadContent(Vector2 tileDimensions)
@@ -48,14 +51,29 @@ namespace PokemonFireRedClone
                     if (s != string.Empty)
                     {
                         position.X += tileDimensions.X;
-                        tiles.Add(new Tile());
+                        if (!s.Contains("x"))
+                        {
+                            state = "Passive";
+                            Tile tile = new Tile();
 
-                        string str = s.Replace("[", string.Empty);
-                        int value1 = int.Parse(str.Substring(0, str.IndexOf(':')));
-                        int value2 = int.Parse(str.Substring(str.IndexOf(':')+1));
-                        tiles[tiles.Count - 1].LoadContent(position, new Rectangle(
-                            value1 * (int) tileDimensions.X, value2 * (int) tileDimensions.Y, 
-                            (int) tileDimensions.X, (int) tileDimensions.Y));
+                            string str = s.Replace("[", string.Empty);
+                            int value1 = int.Parse(str.Substring(0, str.IndexOf(':')));
+                            int value2 = int.Parse(str.Substring(str.IndexOf(':') + 1));
+
+                            if (SolidTiles.Contains("[" + value1.ToString() + ":" + value2.ToString()
+                                + "]"))
+                                state = "Solid";
+
+                            tile.LoadContent(position, new Rectangle(
+                                value1 * (int)tileDimensions.X, value2 * (int)tileDimensions.Y,
+                                (int)tileDimensions.X, (int)tileDimensions.Y), state);
+
+                            if (OverlayTiles.Contains("[" + value1.ToString() + ":" + value2.ToString()
+                                + "]"))
+                                overlayTiles.Add(tile);
+                            else
+                                underlayTiles.Add(tile);
+                        }
                     }
                 }
             }
@@ -66,13 +84,23 @@ namespace PokemonFireRedClone
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref Player player)
         {
+            foreach(Tile tile in underlayTiles)
+                tile.Update(gameTime, ref player);
 
+            foreach (Tile tile in overlayTiles)
+                tile.Update(gameTime, ref player);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, string drawType)
         {
+            List<Tile> tiles;
+            if (drawType == "Underlay")
+                tiles = underlayTiles;
+            else
+                tiles = overlayTiles;
+
             foreach (Tile tile in tiles)
             {
                 Image.Position = tile.Position;

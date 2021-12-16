@@ -32,16 +32,16 @@ namespace PokemonFireRedClone
                 l.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref Player player)
         {
             foreach (Layer l in Layer)
-                l.Update(gameTime);
+                l.Update(gameTime, ref player);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, string drawType)
         {
             foreach (Layer l in Layer)
-                l.Draw(spriteBatch);
+                l.Draw(spriteBatch, drawType);
         }
 
     }

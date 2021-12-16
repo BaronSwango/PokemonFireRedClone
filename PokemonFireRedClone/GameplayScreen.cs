@@ -36,14 +36,15 @@ namespace PokemonFireRedClone
         {
             base.Update(gameTime);
             player.Update(gameTime);
-            map.Update(gameTime);
+            map.Update(gameTime, ref player);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            map.Draw(spriteBatch);
+            map.Draw(spriteBatch, "Underlay");
             player.Draw(spriteBatch);
+            map.Draw(spriteBatch, "Overlay");
         }
     }
 }
