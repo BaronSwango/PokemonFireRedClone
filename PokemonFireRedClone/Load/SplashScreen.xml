@@ -4,12 +4,12 @@
 		<Path>SplashScreen/TitleScreen</Path>
 		<IsActive>true</IsActive>
 		<Scale>
-			<X>2.0</X>
-			<Y>2.0</Y>
+			<X>0.67</X>
+			<Y>0.67</Y>
 		</Scale>
 		<Position>
-			<X>225</X>
-			<Y>150</Y>
+			<X>-320</X>
+			<Y>-180</Y>
 		</Position>
 	</Image>
 </SplashScreen>

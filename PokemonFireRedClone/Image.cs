@@ -21,13 +21,15 @@ namespace PokemonFireRedClone
         public Texture2D Texture;
         Vector2 origin;
         ContentManager content;
-        RenderTarget2D renderTarget;
+        [XmlIgnore]
+        public RenderTarget2D RenderTarget;
         SpriteFont font;
         Dictionary<string, ImageEffect> effectList;
         public string Effects;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
+
 
         void SetEffect<T>(ref T effect) where T:ImageEffect
         {
@@ -118,17 +120,17 @@ namespace PokemonFireRedClone
             if (SourceRect == Rectangle.Empty)
                 SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
 
-            renderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice, 
+            RenderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice, 
                 (int) dimensions.X, (int) dimensions.Y);
-            ScreenManager.Instance.GraphicsDevice.SetRenderTarget(renderTarget);
+            ScreenManager.Instance.GraphicsDevice.SetRenderTarget(RenderTarget);
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin();
             if (Texture != null)
-                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
+                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);                
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero, Color.White);
             ScreenManager.Instance.SpriteBatch.End();
-
-            Texture = renderTarget;
+ 
+            Texture = RenderTarget;
 
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
 
@@ -166,6 +168,7 @@ namespace PokemonFireRedClone
             spriteBatch.Draw(Texture, Position + origin, SourceRect, Color.White * Alpha,
                 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
         }
-        
+
+
     }
 }

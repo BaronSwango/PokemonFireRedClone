@@ -17,12 +17,14 @@ namespace PokemonFireRedClone
 
         private static ScreenManager instance;
         [XmlIgnore]
-        public Vector2 Dimensions { private set; get; }
+        public Vector2 Dimensions { set; get; }
         [XmlIgnore]
         public ContentManager Content { private set; get; }
         XmlManager<GameScreen> xmlGameScreenManager;
 
-        GameScreen currentScreen, newScreen;
+        [XmlIgnore]
+        public GameScreen CurrentScreen;
+        GameScreen newScreen;
         [XmlIgnore]
         public GraphicsDevice GraphicsDevice;
         [XmlIgnore]
@@ -62,12 +64,12 @@ namespace PokemonFireRedClone
                 Image.Update(gameTime);
                 if (Image.Alpha == 1.0f)
                 {
-                    currentScreen.UnloadContent();
-                    currentScreen = newScreen;
-                    xmlGameScreenManager.Type = currentScreen.Type;
-                    if (File.Exists(currentScreen.XmlPath))
-                        currentScreen = xmlGameScreenManager.Load(currentScreen.XmlPath);
-                    currentScreen.LoadContent();
+                    CurrentScreen.UnloadContent();
+                    CurrentScreen = newScreen;
+                    xmlGameScreenManager.Type = CurrentScreen.Type;
+                    if (File.Exists(CurrentScreen.XmlPath))
+                        CurrentScreen = xmlGameScreenManager.Load(CurrentScreen.XmlPath);
+                    CurrentScreen.LoadContent();
                 }
                 else if (Image.Alpha == 0.0f)
                 {
@@ -80,35 +82,36 @@ namespace PokemonFireRedClone
 
         public ScreenManager()
         {
-            Dimensions = new Vector2(900, 600);
-            currentScreen = new SplashScreen();
+            Dimensions = new Vector2(1280, 720);
+            CurrentScreen = new SplashScreen();
             xmlGameScreenManager = new XmlManager<GameScreen>();
-            xmlGameScreenManager.Type = currentScreen.Type;
-            currentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
+            xmlGameScreenManager.Type = CurrentScreen.Type;
+            CurrentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
         }
 
         public void LoadContent(ContentManager Content)
         {
             this.Content = new ContentManager(Content.ServiceProvider, "Content");
-            currentScreen.LoadContent();
+            CurrentScreen.LoadContent();
             Image.LoadContent();
         }
 
         public void UnloadContent()
         {
-            currentScreen.UnloadContent();
+            CurrentScreen.UnloadContent();
             Image.UnloadContent();
         }
 
         public void Update(GameTime gameTime)
         {
-            currentScreen.Update(gameTime);
+
+            CurrentScreen.Update(gameTime);
             Transition(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            currentScreen.Draw(spriteBatch);
+            CurrentScreen.Draw(spriteBatch);
             if (IsTransitioning)
                 Image.Draw(spriteBatch);
         }
