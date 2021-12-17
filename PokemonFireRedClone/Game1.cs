@@ -11,8 +11,9 @@ namespace PokemonFireRedClone
         SpriteBatch spriteBatch;
         RenderTarget2D renderTarget;
         Rectangle sourceRect;
-        //For the eventual option of scaling the window partially without full screen
-        //int scaled;
+        //For the eventual multiple options of scaling the window partially without full screen
+        //int scaled
+        bool scaled;
 
         int defaultWidth, defaultHeight;
         public Game1()
@@ -29,6 +30,7 @@ namespace PokemonFireRedClone
             graphics.ApplyChanges();
             renderTarget = new RenderTarget2D(GraphicsDevice, defaultWidth, defaultHeight);
             sourceRect = new Rectangle(0, 0, defaultWidth, defaultHeight);
+            scaled = false;
             base.Initialize();
         }
 
@@ -43,10 +45,21 @@ namespace PokemonFireRedClone
 
         protected override void Update(GameTime gameTime)
         {
-            if (InputManager.Instance.KeyPressed(Keys.F11))
+            if (InputManager.Instance.KeyPressed(Keys.F11) || InputManager.Instance.KeyPressed(Keys.OemTilde) || InputManager.Instance.KeyPressed(Keys.LeftShift))
             {
-                graphics.IsFullScreen = !graphics.IsFullScreen;
-                sourceRect = graphics.IsFullScreen ? new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height) : new Rectangle(0, 0, defaultWidth, defaultHeight);
+                if (InputManager.Instance.KeyPressed(Keys.LeftShift))
+                {
+                    scaled = !scaled;
+                    sourceRect = scaled ? new Rectangle(0, 0, 1600, 900) : new Rectangle(0, 0, defaultWidth, defaultHeight);
+                }
+                else
+                {
+                    graphics.IsFullScreen = !graphics.IsFullScreen;
+                    sourceRect = graphics.IsFullScreen ? new Rectangle(0, 0,
+                        GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width,
+                        GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height) :
+                        new Rectangle(0, 0, defaultWidth, defaultHeight);
+                }
                 graphics.PreferredBackBufferWidth = sourceRect.Width;
                 graphics.PreferredBackBufferHeight = sourceRect.Height;
                 graphics.ApplyChanges();
