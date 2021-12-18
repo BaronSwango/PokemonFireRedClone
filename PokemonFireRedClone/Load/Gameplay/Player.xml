@@ -7,6 +7,10 @@
 			<X>1</X>
 			<Y>1</Y>
         </Scale>
+		<Position>
+			<X>1225</X>
+			<Y>750</Y>
+        </Position>
 	</Image>
 	<MoveSpeed>250</MoveSpeed>
 </Player>

@@ -43,8 +43,8 @@ namespace PokemonFireRedClone
         {
             if (state == "Solid")
             {
-                Rectangle tileRect = new Rectangle((int) Position.X, (int) Position.Y, 
-                    sourceRect.Width, sourceRect.Height-20);
+                Rectangle tileRect = new Rectangle((int) Position.X+4, (int) Position.Y, 
+                    sourceRect.Width-8, sourceRect.Height-20);
                 Rectangle playerRect = new Rectangle((int) player.Image.Position.X, (int) player.Image.Position.Y,
                     player.Image.SourceRect.Width, player.Image.SourceRect.Height);
 
