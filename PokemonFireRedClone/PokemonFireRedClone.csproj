@@ -25,6 +25,8 @@
     <None Remove="Load\ScreenManager.xml" />
     <None Remove="Load\Gameplay\Map\" />
     <None Remove="Load\Gameplay\Map\Map1.xml" />
+    <None Remove="Content\Gameplay\TileSheets\" />
+    <None Remove="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -64,5 +66,6 @@
     <Folder Include="Content\Fonts\" />
     <Folder Include="Content\ScreenManager\" />
     <Folder Include="Load\Gameplay\Map\" />
+    <Folder Include="Content\Gameplay\TileSheets\" />
   </ItemGroup>
 </Project>

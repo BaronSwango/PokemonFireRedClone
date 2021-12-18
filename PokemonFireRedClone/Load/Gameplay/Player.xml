@@ -8,5 +8,5 @@
 			<Y>1</Y>
         </Scale>
 	</Image>
-	<MoveSpeed>150</MoveSpeed>
+	<MoveSpeed>250</MoveSpeed>
 </Player>
