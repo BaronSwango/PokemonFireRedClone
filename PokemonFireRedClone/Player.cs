@@ -20,7 +20,7 @@ namespace PokemonFireRedClone
             Velocity = Vector2.Zero;
         }
 
-        public void LoadContent()
+        public void LoadContent(Map map)
         {
             Image.LoadContent();
         }

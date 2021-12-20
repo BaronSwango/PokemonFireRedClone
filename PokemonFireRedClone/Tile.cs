@@ -25,8 +25,17 @@ namespace PokemonFireRedClone
         public Vector2 Center
         {
             get
-            { return new Vector2(SourceRect.Width, SourceRect.Height); }
+            { return new Vector2(position.X + (SourceRect.Width / 2), position.Y + (SourceRect.Height / 2)); }
         }
+
+
+        /*
+         * Find position of tile
+         * FInd Height znd width of tile
+         * Find center position of tile
+         *
+         *
+         */
 
         public Tile()
         {

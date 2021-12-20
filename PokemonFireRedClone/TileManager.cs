@@ -14,7 +14,7 @@ namespace PokemonFireRedClone
         {
             get
             {
-                if (Instance == null)
+                if (instance == null)
                 {
                     instance = new TileManager();
                 }
@@ -23,11 +23,16 @@ namespace PokemonFireRedClone
             }
         }
 
-        public Tile GetCurrentTile(Map map, Vector2 position)
+        public Tile GetCurrentTile(Map map, Image image, int offSet)
         {
+
             foreach (Tile tile in map.Tiles)
             {
-                if (tile.SourceRect.Contains(position.ToPoint()))
+                Rectangle tileRect = new Rectangle((int)tile.Position.X + 4, (int)tile.Position.Y,
+                    tile.SourceRect.Width - 8, tile.SourceRect.Height - 20);
+                Rectangle playerRect = new Rectangle((int)image.Position.X, (int)image.Position.Y,
+                    image.SourceRect.Width, image.SourceRect.Height);
+                if (tileRect.Contains(new Vector2(playerRect.Location.X + (playerRect.Width/ 8), playerRect.Location.Y + offSet)))
                     return tile;
             }
             return null;

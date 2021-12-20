@@ -25,8 +25,15 @@ namespace PokemonFireRedClone
             XmlManager<Map> mapLoader = new XmlManager<Map>();
             player = playerLoader.Load("Load/Gameplay/Player.xml");
             map = mapLoader.Load("Load/Gameplay/Map/PalletTown.xml");
-            player.LoadContent();
+            player.LoadContent(map);
             map.LoadContent();
+
+            if (TileManager.Instance.GetCurrentTile(map, player.Image, player.Image.SourceRect.Height/4) != null)
+            {
+                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, player.Image, player.Image.SourceRect.Height/4).Position.X-4,
+                    TileManager.Instance.GetCurrentTile(map, player.Image, player.Image.SourceRect.Height/4).Position.Y-84);
+                player.Image.Position = centerTile;
+            }
 
             Camera = new Camera();
         }
