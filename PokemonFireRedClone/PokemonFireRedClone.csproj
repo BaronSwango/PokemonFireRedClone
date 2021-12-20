@@ -58,7 +58,7 @@
     <Content Include="Load\ScreenManager.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Load\Gameplay\Map\Map1.xml">
+    <Content Include="Load\Gameplay\Map\PalletTown.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

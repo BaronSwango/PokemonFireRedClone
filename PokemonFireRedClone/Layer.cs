@@ -24,15 +24,18 @@ namespace PokemonFireRedClone
         [XmlElement("TileMap")]
         public TileMap Tile;
         List<Tile> underlayTiles, overlayTiles;
+        public List<Tile> Tiles;
         public string SolidTiles, OverlayTiles;
         public Image Image;
         string state;
+
 
         public Layer()
         {
             Image = new Image();
             underlayTiles = new List<Tile>();
             overlayTiles = new List<Tile>();
+            Tiles = new List<Tile>();
             SolidTiles = OverlayTiles = string.Empty;
         }
 
@@ -73,6 +76,7 @@ namespace PokemonFireRedClone
                                 overlayTiles.Add(tile);
                             else
                                 underlayTiles.Add(tile);
+                            Tiles.Add(tile);
                         }
                     }
                 }

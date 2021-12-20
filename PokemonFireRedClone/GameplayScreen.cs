@@ -24,7 +24,7 @@ namespace PokemonFireRedClone
             XmlManager<Player> playerLoader = new XmlManager<Player>();
             XmlManager<Map> mapLoader = new XmlManager<Map>();
             player = playerLoader.Load("Load/Gameplay/Player.xml");
-            map = mapLoader.Load("Load/Gameplay/Map/Map1.xml");
+            map = mapLoader.Load("Load/Gameplay/Map/PalletTown.xml");
             player.LoadContent();
             map.LoadContent();
 
@@ -41,7 +41,7 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            player.Update(gameTime);
+            player.Update(gameTime, map);
             map.Update(gameTime, ref player);
             Camera.Follow(player);
         }

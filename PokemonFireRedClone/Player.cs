@@ -14,6 +14,7 @@ namespace PokemonFireRedClone
         public Image Image;
         public Vector2 Velocity;
         public float MoveSpeed;
+
         public Player()
         {
             Velocity = Vector2.Zero;
@@ -29,19 +30,19 @@ namespace PokemonFireRedClone
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Map map)
         {
             Image.IsActive = true;
             if (Velocity.X == 0)
             {
                 if (InputManager.Instance.KeyDown(Keys.Down))
                 {
-                    Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Velocity.Y += 64;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Up))
                 {
-                    Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Velocity.Y -= 64;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 3;
                 }
                 else
@@ -52,12 +53,12 @@ namespace PokemonFireRedClone
             {
                 if (InputManager.Instance.KeyDown(Keys.Right))
                 {
-                    Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Velocity.X += 64;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 1;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Left))
                 {
-                    Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Velocity.X -= 64;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 0;
                 }
                 else
@@ -65,7 +66,9 @@ namespace PokemonFireRedClone
             }
 
             if (Velocity.X == 0 && Velocity.Y == 0)
+            {
                 Image.IsActive = false;
+            }
 
             Image.Update(gameTime);
             //Rounding vector to prevent sprite sheet bug

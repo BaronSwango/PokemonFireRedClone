@@ -12,5 +12,5 @@
 			<Y>750</Y>
         </Position>
 	</Image>
-	<MoveSpeed>250</MoveSpeed>
+	<MoveSpeed>10</MoveSpeed>
 </Player>

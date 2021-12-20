@@ -22,6 +22,12 @@ namespace PokemonFireRedClone
             get { return position; }
         }
 
+        public Vector2 Center
+        {
+            get
+            { return new Vector2(SourceRect.Width, SourceRect.Height); }
+        }
+
         public Tile()
         {
         }
@@ -67,7 +73,6 @@ namespace PokemonFireRedClone
         {
 
         }
-
 
     }
 
