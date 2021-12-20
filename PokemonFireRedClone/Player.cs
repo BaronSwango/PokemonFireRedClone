@@ -46,76 +46,62 @@ namespace PokemonFireRedClone
             {
                 case State.Idle:
                     destination = Image.Position;
-                    if (InputManager.Instance.KeyDown(Keys.W) || InputManager.Instance.KeyReleased(Keys.W))
+
+
+                    if (InputManager.Instance.KeyDown(Keys.W))
                     {
-                        if (InputManager.Instance.KeyDown(Keys.W)) { 
-                            destination.Y -= 64;
-                            state = State.MoveUp;
-                        }
+                        destination.Y -= 64;
+                        state = State.MoveUp;
                         Image.SpriteSheetEffect.CurrentFrame.Y = 3;
 
                     }
-                    else if (InputManager.Instance.KeyDown(Keys.S) || InputManager.Instance.KeyReleased(Keys.S))
+                    else if (InputManager.Instance.KeyDown(Keys.S))
                     {
-                        if (InputManager.Instance.KeyDown(Keys.S) && !InputManager.Instance.KeyReleased(Keys.S))
-                        {
-                            destination.Y += 64;
-                            state = State.MoveDown;
-                        }
+                        destination.Y += 64;
+                        state = State.MoveDown;
                         Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                     }
-                    else if (InputManager.Instance.KeyDown(Keys.A) || InputManager.Instance.KeyReleased(Keys.A))
+                    else if (InputManager.Instance.KeyDown(Keys.A))
                     {
-                            if (InputManager.Instance.KeyDown(Keys.A))
-                            {
-                                destination.X -= 64;
-                                state = State.MoveLeft;
-                            }
+                        destination.X -= 64;
+                        state = State.MoveLeft;
                         Image.SpriteSheetEffect.CurrentFrame.Y = 0;
                     }
-                    else if (InputManager.Instance.KeyDown(Keys.D) || InputManager.Instance.KeyReleased(Keys.D))
+                    else if (InputManager.Instance.KeyDown(Keys.D))
                     {
-                        if (InputManager.Instance.KeyDown(Keys.D))
-                        {
-                            destination.X += 64;
-                            state = State.MoveRight;
-                        }
+                        destination.X += 64;
+                        state = State.MoveRight;
                         Image.SpriteSheetEffect.CurrentFrame.Y = 1;
                     } else
-                    {
                         Image.IsActive = false;
-                        destination = Image.Position;
-                    }
 
 
                     break;
                 case State.MoveUp:
-                    if (Image.Position.Y - MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds < destination.Y)
+
+                    if (Image.Position.Y - (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds) < (int) destination.Y)
                     {
-                        Image.Position.Y = (int) destination.Y;
+                        
+                        Image.Position.Y = (int)destination.Y;
                         destination.Y -= 64;
 
                         if (!InputManager.Instance.KeyDown(Keys.W))
-                        {
                             state = State.Idle;
-                        }
                     }
                     else
-                        Image.Position.Y -= MoveSpeed * (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+                        Image.Position.Y -= (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
                     break;
                 case State.MoveDown:
-                    if (Image.Position.Y + MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds > destination.Y)
+                    if (Image.Position.Y + (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds) > (int) destination.Y)
                     {
                         Image.Position.Y = (int) destination.Y;
                         destination.Y += 64;
 
                         if (!InputManager.Instance.KeyDown(Keys.S))
-                        {
                             state = State.Idle;
-                        }
                     }
                     else
-                        Image.Position.Y += MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                        Image.Position.Y += (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
                     break;
                 case State.MoveLeft:
                     if (Image.Position.X - MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds < destination.X)
@@ -123,12 +109,10 @@ namespace PokemonFireRedClone
                         Image.Position.X = (int) destination.X;
                         destination.X -= 64;
                         if (!InputManager.Instance.KeyDown(Keys.A))
-                        {
                             state = State.Idle;
-                        }
                     }
                     else
-                        Image.Position.X -= MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                        Image.Position.X -= (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
                     break;
                 case State.MoveRight:
 
@@ -137,12 +121,10 @@ namespace PokemonFireRedClone
                         Image.Position.X = (int) destination.X;
                         destination.X += 64;
                         if (!InputManager.Instance.KeyDown(Keys.D))
-                        {
                             state = State.Idle;
-                        }
                     }
                     else
-                        Image.Position.X += MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                        Image.Position.X += (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
                     break;
                 default:
                     break;
@@ -156,11 +138,12 @@ namespace PokemonFireRedClone
             Image.Draw(spriteBatch);
         }
 
+        // spawns in player on a tile
         public void Spawn(Map map)
         {
             if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4) != null)
             {
-                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.X - 4,
+                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.X,
                     TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.Y - 84);
                 Image.Position = centerTile;
             }

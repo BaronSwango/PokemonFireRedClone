@@ -66,9 +66,9 @@ namespace PokemonFireRedClone
                 if (playerRect.Intersects(tileRect))
                 {
                     if (player.state == Player.State.MoveLeft)
-                        player.Image.Position.X = (int) tileRect.Right;
+                        player.Image.Position.X = tileRect.Right;
                     else if (player.state == Player.State.MoveRight)
-                        player.Image.Position.X = (int) tileRect.Left - player.Image.SourceRect.Width;
+                        player.Image.Position.X = tileRect.Left - player.Image.SourceRect.Width;
                     else if (player.state == Player.State.MoveUp)
                         player.Image.Position.Y = tileRect.Bottom;
                     else
