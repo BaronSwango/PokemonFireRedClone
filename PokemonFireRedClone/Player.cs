@@ -15,23 +15,22 @@ namespace PokemonFireRedClone
         public Vector2 Velocity;
 
         public float MoveSpeed;
-        Vector2 position;
         Vector2 destination;
-        State state;
+        public State state;
 
-        enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
+        public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
 
         public Player()
         {
             Velocity = Vector2.Zero;
-            position = new Vector2(64,64);
-            destination = position;
+            destination = Vector2.Zero;
             state = State.Idle;
         }
 
         public void LoadContent()
         {
             Image.LoadContent();
+            destination = Image.Position;
         }
 
         public void UnloadContent()
@@ -42,44 +41,114 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
-            if (Velocity.X == 0)
+
+            switch (state)
             {
-                if (InputManager.Instance.KeyDown(Keys.Down))
-                {
-                    Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 2;
-                }
-                else if (InputManager.Instance.KeyDown(Keys.Up))
-                {
-                    Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 3;
-                }
-                else
-                    Velocity.Y = 0;
+                case State.Idle:
+                    destination = Image.Position;
+                    if (InputManager.Instance.KeyDown(Keys.W) || InputManager.Instance.KeyReleased(Keys.W))
+                    {
+                        if (InputManager.Instance.KeyDown(Keys.W)) { 
+                            destination.Y -= 64;
+                            state = State.MoveUp;
+                        }
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 3;
+
+                    }
+                    else if (InputManager.Instance.KeyDown(Keys.S) || InputManager.Instance.KeyReleased(Keys.S))
+                    {
+                        if (InputManager.Instance.KeyDown(Keys.S) && !InputManager.Instance.KeyReleased(Keys.S))
+                        {
+                            destination.Y += 64;
+                            state = State.MoveDown;
+                        }
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 2;
+                    }
+                    else if (InputManager.Instance.KeyDown(Keys.A) || InputManager.Instance.KeyReleased(Keys.A))
+                    {
+                            if (InputManager.Instance.KeyDown(Keys.A))
+                            {
+                                destination.X -= 64;
+                                state = State.MoveLeft;
+                            }
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 0;
+                    }
+                    else if (InputManager.Instance.KeyDown(Keys.D) || InputManager.Instance.KeyReleased(Keys.D))
+                    {
+                        if (InputManager.Instance.KeyDown(Keys.D))
+                        {
+                            destination.X += 64;
+                            state = State.MoveRight;
+                        }
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 1;
+                    } else
+                    {
+                        Image.IsActive = false;
+                        destination = Image.Position;
+                    }
+
+
+                    break;
+                case State.MoveUp:
+                    if (Image.Position.Y - MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds < destination.Y)
+                    {
+                        Image.Position.Y = (int) destination.Y;
+                        destination.Y -= 64;
+
+                        if (!InputManager.Instance.KeyDown(Keys.W))
+                        {
+                            state = State.Idle;
+                        }
+                    }
+                    else
+                        Image.Position.Y -= MoveSpeed * (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+                    break;
+                case State.MoveDown:
+                    if (Image.Position.Y + MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds > destination.Y)
+                    {
+                        Image.Position.Y = (int) destination.Y;
+                        destination.Y += 64;
+
+                        if (!InputManager.Instance.KeyDown(Keys.S))
+                        {
+                            state = State.Idle;
+                        }
+                    }
+                    else
+                        Image.Position.Y += MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    break;
+                case State.MoveLeft:
+                    if (Image.Position.X - MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds < destination.X)
+                    {
+                        Image.Position.X = (int) destination.X;
+                        destination.X -= 64;
+                        if (!InputManager.Instance.KeyDown(Keys.A))
+                        {
+                            state = State.Idle;
+                        }
+                    }
+                    else
+                        Image.Position.X -= MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    break;
+                case State.MoveRight:
+
+                    if (Image.Position.X + MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds > destination.X)
+                    {
+                        Image.Position.X = (int) destination.X;
+                        destination.X += 64;
+                        if (!InputManager.Instance.KeyDown(Keys.D))
+                        {
+                            state = State.Idle;
+                        }
+                    }
+                    else
+                        Image.Position.X += MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    break;
+                default:
+                    break;
             }
-
-            if (Velocity.Y == 0)
-            {
-                if (InputManager.Instance.KeyDown(Keys.Right))
-                {
-                    Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 1;
-                }
-                else if (InputManager.Instance.KeyDown(Keys.Left))
-                {
-                    Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 0;
-                }
-                else
-                    Velocity.X = 0;
-            }
-
-            if (Velocity.X == 0 && Velocity.Y == 0)
-                Image.IsActive = false;
-
             Image.Update(gameTime);
-            //Rounding vector to prevent sprite sheet bug
-            Image.Position += new Vector2((int)Velocity.X, (int)Velocity.Y);
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -28,7 +28,7 @@ namespace PokemonFireRedClone
             player.LoadContent();
             map.LoadContent();
 
-            //player.Spawn(map);
+            player.Spawn(map);
 
             Camera = new Camera();
         }
@@ -46,6 +46,7 @@ namespace PokemonFireRedClone
             player.Update(gameTime);
             map.Update(gameTime, ref player);
             Camera.Follow(player);
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)

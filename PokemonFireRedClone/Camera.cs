@@ -14,8 +14,8 @@ namespace PokemonFireRedClone
         public void Follow(Player target)
         {
             var position = Matrix.CreateTranslation(
-                -target.Image.Position.X - (target.Image.SourceRect.Width / 2),
-                -target.Image.Position.Y - (target.Image.SourceRect.Height / 2),
+                (int) (-target.Image.Position.X - (target.Image.SourceRect.Width / 2)),
+                (int) (-target.Image.Position.Y - (target.Image.SourceRect.Height / 2)),
                 0); 
             var offset = Matrix.CreateTranslation(
                     (int) ScreenManager.Instance.Dimensions.X / 2,

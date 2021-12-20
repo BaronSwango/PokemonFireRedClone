@@ -58,22 +58,22 @@ namespace PokemonFireRedClone
         {
             if (state == "Solid")
             {
-                Rectangle tileRect = new Rectangle((int) Position.X+4, (int) Position.Y, 
-                    sourceRect.Width-8, sourceRect.Height-20);
+                Rectangle tileRect = new Rectangle((int) Position.X, (int) Position.Y, 
+                    sourceRect.Width, sourceRect.Height-20);
                 Rectangle playerRect = new Rectangle((int) player.Image.Position.X, (int) player.Image.Position.Y,
                     player.Image.SourceRect.Width, player.Image.SourceRect.Height);
 
                 if (playerRect.Intersects(tileRect))
                 {
-                    if (player.Velocity.X < 0)
-                        player.Image.Position.X = tileRect.Right;
-                    else if (player.Velocity.X > 0)             
-                        player.Image.Position.X = tileRect.Left - player.Image.SourceRect.Width;
-                    else if (player.Velocity.Y < 0)
+                    if (player.state == Player.State.MoveLeft)
+                        player.Image.Position.X = (int) tileRect.Right;
+                    else if (player.state == Player.State.MoveRight)
+                        player.Image.Position.X = (int) tileRect.Left - player.Image.SourceRect.Width;
+                    else if (player.state == Player.State.MoveUp)
                         player.Image.Position.Y = tileRect.Bottom;
                     else
                         player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
-
+                    player.state = Player.State.Idle;
                 }
             }
         }
