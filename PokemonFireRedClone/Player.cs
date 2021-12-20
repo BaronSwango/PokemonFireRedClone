@@ -37,12 +37,12 @@ namespace PokemonFireRedClone
             {
                 if (InputManager.Instance.KeyDown(Keys.Down))
                 {
-                    Velocity.Y += 64;
+                    Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Up))
                 {
-                    Velocity.Y -= 64;
+                    Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 3;
                 }
                 else
@@ -53,12 +53,12 @@ namespace PokemonFireRedClone
             {
                 if (InputManager.Instance.KeyDown(Keys.Right))
                 {
-                    Velocity.X += 64;
+                    Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 1;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Left))
                 {
-                    Velocity.X -= 64;
+                    Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 0;
                 }
                 else
@@ -66,9 +66,7 @@ namespace PokemonFireRedClone
             }
 
             if (Velocity.X == 0 && Velocity.Y == 0)
-            {
                 Image.IsActive = false;
-            }
 
             Image.Update(gameTime);
             //Rounding vector to prevent sprite sheet bug
