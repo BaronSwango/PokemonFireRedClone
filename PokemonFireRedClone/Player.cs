@@ -19,7 +19,7 @@ namespace PokemonFireRedClone
         int waitToMove;
         bool changeDirection;
         public State state;
-        State prevState;
+        bool wasMoving;
 
         public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
 
@@ -52,7 +52,7 @@ namespace PokemonFireRedClone
                     destination = Image.Position;
 
                     // causes a change in direction but no movement unless key is held down more than 4 iterations of the Update method
-                    if (changeDirection && prevState == State.Idle)
+                    if (changeDirection && !wasMoving)
                     {
                         if (waitToMove < 4)
                         {
@@ -112,7 +112,7 @@ namespace PokemonFireRedClone
                     } else
                         Image.IsActive = false;
 
-                    prevState = State.Idle;
+                    wasMoving = false;
                     break;
                 case State.MoveUp:
 
@@ -128,7 +128,7 @@ namespace PokemonFireRedClone
                         if (!InputManager.Instance.KeyDown(Keys.W))
                         {
                             state = State.Idle;
-                            prevState = State.MoveUp;
+                            wasMoving = true;
                         }
                     }
                     else
@@ -144,7 +144,7 @@ namespace PokemonFireRedClone
                         if (!InputManager.Instance.KeyDown(Keys.S))
                         {
                             state = State.Idle;
-                            prevState = State.MoveDown;
+                            wasMoving = true;
                         }
                     }
                     else
@@ -159,7 +159,7 @@ namespace PokemonFireRedClone
                         if (!InputManager.Instance.KeyDown(Keys.A))
                         {
                             state = State.Idle;
-                            prevState = State.MoveLeft;
+                            wasMoving = true;
                         }
                     }
                     else
@@ -174,7 +174,7 @@ namespace PokemonFireRedClone
                         if (!InputManager.Instance.KeyDown(Keys.D))
                         {
                             state = State.Idle;
-                            prevState = State.MoveRight;
+                            wasMoving = true;
                         }
                     }
                     else
