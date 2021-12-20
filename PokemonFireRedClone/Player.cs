@@ -13,14 +13,23 @@ namespace PokemonFireRedClone
     {
         public Image Image;
         public Vector2 Velocity;
+
         public float MoveSpeed;
+        Vector2 position;
+        Vector2 destination;
+        State state;
+
+        enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
 
         public Player()
         {
             Velocity = Vector2.Zero;
+            position = new Vector2(64,64);
+            destination = position;
+            state = State.Idle;
         }
 
-        public void LoadContent(Map map)
+        public void LoadContent()
         {
             Image.LoadContent();
         }
@@ -30,7 +39,7 @@ namespace PokemonFireRedClone
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, Map map)
+        public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
             if (Velocity.X == 0)
@@ -70,12 +79,22 @@ namespace PokemonFireRedClone
 
             Image.Update(gameTime);
             //Rounding vector to prevent sprite sheet bug
-            Image.Position += new Vector2((int) Velocity.X, (int) Velocity.Y);
+            Image.Position += new Vector2((int)Velocity.X, (int)Velocity.Y);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             Image.Draw(spriteBatch);
+        }
+
+        public void Spawn(Map map)
+        {
+            if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4) != null)
+            {
+                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.X - 4,
+                    TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.Y - 84);
+                Image.Position = centerTile;
+            }
         }
 
     }

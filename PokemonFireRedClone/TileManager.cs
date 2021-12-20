@@ -32,7 +32,7 @@ namespace PokemonFireRedClone
                     tile.SourceRect.Width - 8, tile.SourceRect.Height - 20);
                 Rectangle playerRect = new Rectangle((int)image.Position.X, (int)image.Position.Y,
                     image.SourceRect.Width, image.SourceRect.Height);
-                if (tileRect.Contains(new Vector2(playerRect.Location.X + (playerRect.Width/ 8), playerRect.Location.Y + offSet)))
+                if (tileRect.Contains(new Vector2(playerRect.Location.X + (playerRect.Width/8), playerRect.Location.Y + offSet)))
                     return tile;
             }
             return null;
