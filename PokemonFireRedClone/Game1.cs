@@ -45,7 +45,7 @@ namespace PokemonFireRedClone
 
         protected override void Update(GameTime gameTime)
         {
-            if (InputManager.Instance.KeyPressed(Keys.F11) || InputManager.Instance.KeyPressed(Keys.OemTilde) || InputManager.Instance.KeyPressed(Keys.LeftShift))
+            if (InputManager.Instance.KeyPressed(Keys.F11) || InputManager.Instance.KeyPressed(Keys.OemTilde) || InputManager.Instance.KeyPressed(Keys.RightShift))
             {
                 if (InputManager.Instance.KeyPressed(Keys.LeftShift))
                 {

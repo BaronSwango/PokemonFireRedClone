@@ -20,8 +20,10 @@ namespace PokemonFireRedClone
         bool changeDirection;
         public State state;
         bool wasMoving;
+        bool running;
 
         public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
+        public enum Direction { Left, Right, Down, Up, RunLeft, RunRight, RunDown, RunUp }
 
         public Player()
         {
@@ -29,6 +31,7 @@ namespace PokemonFireRedClone
             destination = Vector2.Zero;
             state = State.Idle;
             changeDirection = false;
+            running = false;
             waitToMove = 0;
         }
 
@@ -45,6 +48,8 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
+            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 1.4) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+            running = InputManager.Instance.KeyDown(Keys.LeftShift);
 
             switch (state)
             {
@@ -69,7 +74,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 3)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = 3;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
                             changeDirection = true;
                             break;
                         }
@@ -81,7 +86,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 2)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = 2;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
                             changeDirection = true;
                             break;
                         }
@@ -92,7 +97,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 0)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = 0;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
                             changeDirection = true;
                             break;
                         }
@@ -103,23 +108,25 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 1)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = 1;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
                             changeDirection = true;
                             break;
                         }
                         destination.X += 64;
                         state = State.MoveRight;
-                    } else
+                    }
+                    else
+                    {
+                        if (running)
+                            Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                         Image.IsActive = false;
+                    }
 
                     wasMoving = false;
                     break;
                 case State.MoveUp:
 
-                    // causes a change in direction but no movement unless key is held down more than 4 iterations of the Update method
-
-
-                    if (Image.Position.Y - (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds) < (int) destination.Y)
+                    if (Image.Position.Y - speed < (int) destination.Y)
                     {
                         
                         Image.Position.Y = (int)destination.Y;
@@ -132,11 +139,11 @@ namespace PokemonFireRedClone
                         }
                     }
                     else
-                        Image.Position.Y -= (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+                        Image.Position.Y -= speed;
                     break;
                 case State.MoveDown:
 
-                    if (Image.Position.Y + (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds) > (int) destination.Y)
+                    if (Image.Position.Y + speed > (int) destination.Y)
                     {
                         Image.Position.Y = (int) destination.Y;
                         destination.Y += 64;
@@ -148,11 +155,11 @@ namespace PokemonFireRedClone
                         }
                     }
                     else
-                        Image.Position.Y += (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+                        Image.Position.Y += speed;
                     break;
                 case State.MoveLeft:
 
-                    if (Image.Position.X - MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds < destination.X)
+                    if (Image.Position.X - speed < destination.X)
                     {
                         Image.Position.X = (int) destination.X;
                         destination.X -= 64;
@@ -163,11 +170,11 @@ namespace PokemonFireRedClone
                         }
                     }
                     else
-                        Image.Position.X -= (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+                        Image.Position.X -= speed;
                     break;
                 case State.MoveRight:
 
-                    if (Image.Position.X + MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds > destination.X)
+                    if (Image.Position.X + speed > destination.X)
                     {
                         Image.Position.X = (int) destination.X;
                         destination.X += 64;
@@ -178,7 +185,8 @@ namespace PokemonFireRedClone
                         }
                     }
                     else
-                        Image.Position.X += (int) (MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+                        Image.Position.X += speed;
+                       
                     break;
                 default:
                     break;
