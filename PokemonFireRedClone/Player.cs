@@ -49,8 +49,8 @@ namespace PokemonFireRedClone
         {
             Image.IsActive = true;
             running = InputManager.Instance.KeyDown(Keys.LeftShift);
-            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
-            Image.SpriteSheetEffect.SwitchFrame = running ? 66 : 125;
+            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+            Image.SpriteSheetEffect.SwitchFrame = running ? 62 : 125;
 
             switch (state)
             {
@@ -118,7 +118,7 @@ namespace PokemonFireRedClone
                     }
                     else
                     {
-                        if (running && Image.SpriteSheetEffect.CurrentFrame.Y > 3)
+                        if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
                             Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                         Image.IsActive = false;
                     }
