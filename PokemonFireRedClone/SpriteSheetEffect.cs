@@ -34,11 +34,12 @@ namespace PokemonFireRedClone
             }
         }
 
+
         public SpriteSheetEffect()
         {
             AmountOfFrames = new Vector2(4, 8);
             CurrentFrame = new Vector2(1, 0);
-            SwitchFrame = 100;
+            SwitchFrame = 125;
             FrameCounter = 0;
         }
         public override void LoadContent(ref Image Image)

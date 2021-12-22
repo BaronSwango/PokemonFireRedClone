@@ -48,8 +48,10 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
-            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 1.4) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
             running = InputManager.Instance.KeyDown(Keys.LeftShift);
+            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+            Image.SpriteSheetEffect.SwitchFrame = running ? 66 : 125;
+
 
             switch (state)
             {
@@ -72,7 +74,7 @@ namespace PokemonFireRedClone
 
                     if (InputManager.Instance.KeyDown(Keys.W))
                     {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 3)
+                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 3 && Image.SpriteSheetEffect.CurrentFrame.Y != 7)
                         {
                             Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
                             changeDirection = true;
@@ -84,7 +86,7 @@ namespace PokemonFireRedClone
                     }
                     else if (InputManager.Instance.KeyDown(Keys.S))
                     {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 2)
+                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 2 && Image.SpriteSheetEffect.CurrentFrame.Y != 6)
                         {
                             Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
                             changeDirection = true;
@@ -95,7 +97,7 @@ namespace PokemonFireRedClone
                     }
                     else if (InputManager.Instance.KeyDown(Keys.A))
                     {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 0)
+                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 0 && Image.SpriteSheetEffect.CurrentFrame.Y != 4)
                         {
                             Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
                             changeDirection = true;
@@ -106,7 +108,7 @@ namespace PokemonFireRedClone
                     }
                     else if (InputManager.Instance.KeyDown(Keys.D))
                     {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 1)
+                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 1 && Image.SpriteSheetEffect.CurrentFrame.Y != 5)
                         {
                             Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
                             changeDirection = true;
@@ -117,7 +119,7 @@ namespace PokemonFireRedClone
                     }
                     else
                     {
-                        if (running)
+                        if (running && Image.SpriteSheetEffect.CurrentFrame.Y > 3)
                             Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                         Image.IsActive = false;
                     }
@@ -125,6 +127,8 @@ namespace PokemonFireRedClone
                     wasMoving = false;
                     break;
                 case State.MoveUp:
+
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
 
                     if (Image.Position.Y - speed < (int) destination.Y)
                     {
@@ -143,6 +147,8 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveDown:
 
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
+
                     if (Image.Position.Y + speed > (int) destination.Y)
                     {
                         Image.Position.Y = (int) destination.Y;
@@ -159,6 +165,8 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveLeft:
 
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
+
                     if (Image.Position.X - speed < destination.X)
                     {
                         Image.Position.X = (int) destination.X;
@@ -173,6 +181,8 @@ namespace PokemonFireRedClone
                         Image.Position.X -= speed;
                     break;
                 case State.MoveRight:
+
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
 
                     if (Image.Position.X + speed > destination.X)
                     {
