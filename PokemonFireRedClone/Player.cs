@@ -91,7 +91,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 3 && Image.SpriteSheetEffect.CurrentFrame.Y != 7)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 7 : 3;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
                             changeDirection = true;
                             break;
                         }
@@ -103,7 +103,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 2 && Image.SpriteSheetEffect.CurrentFrame.Y != 6)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 6 : 2;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
                             changeDirection = true;
                             break;
                         }
@@ -114,7 +114,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 0 && Image.SpriteSheetEffect.CurrentFrame.Y != 4)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 4 : 0;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
                             changeDirection = true;
                             break;
                         }
@@ -125,7 +125,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 1 && Image.SpriteSheetEffect.CurrentFrame.Y != 5)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 5 : 1;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
                             changeDirection = true;
                             break;
                         }
@@ -143,7 +143,7 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveUp:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 7 : 3;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
 
                     if (Image.Position.Y - speed < (int) destination.Y)
                     {
@@ -163,7 +163,7 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveDown:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 6 : 2;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
 
                     if (Image.Position.Y + speed > (int) destination.Y)
                     {
@@ -182,7 +182,7 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveLeft:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding? 4 : 0;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
 
                     if (Image.Position.X - speed < destination.X)
                     {
@@ -201,7 +201,7 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveRight:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 5 : 1;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
 
                     if (Image.Position.X + speed > destination.X)
                     {
