@@ -58,13 +58,17 @@ namespace PokemonFireRedClone
         {
             if (state == "Solid")
             {
-                Rectangle tileRect = new Rectangle((int) Position.X, (int) Position.Y, 
-                    sourceRect.Width, sourceRect.Height-20);
-                Rectangle playerRect = new Rectangle((int) player.Image.Position.X, (int) player.Image.Position.Y,
+                Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,
+                    sourceRect.Width, sourceRect.Height - 20);
+                Rectangle playerRect = new Rectangle((int)player.Image.Position.X, (int)player.Image.Position.Y,
                     player.Image.SourceRect.Width, player.Image.SourceRect.Height);
 
                 if (playerRect.Intersects(tileRect))
                 {
+                    player.Colliding = true;
+                    player.Image.SpriteSheetEffect.SwitchFrame = 250;
+                    if (player.Image.SpriteSheetEffect.CurrentFrame.Y > 3)
+                        player.Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                     if (player.state == Player.State.MoveLeft)
                         player.Image.Position.X = tileRect.Right;
                     else if (player.state == Player.State.MoveRight)
@@ -76,6 +80,7 @@ namespace PokemonFireRedClone
                     player.state = Player.State.Idle;
                 }
             }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

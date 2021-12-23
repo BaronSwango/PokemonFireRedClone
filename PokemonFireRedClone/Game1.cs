@@ -47,7 +47,7 @@ namespace PokemonFireRedClone
         {
             if (InputManager.Instance.KeyPressed(Keys.F11) || InputManager.Instance.KeyPressed(Keys.OemTilde) || InputManager.Instance.KeyPressed(Keys.RightShift))
             {
-                if (InputManager.Instance.KeyPressed(Keys.LeftShift))
+                if (InputManager.Instance.KeyPressed(Keys.RightShift))
                 {
                     scaled = !scaled;
                     sourceRect = scaled ? new Rectangle(0, 0, 1600, 900) : new Rectangle(0, 0, defaultWidth, defaultHeight);
@@ -73,7 +73,7 @@ namespace PokemonFireRedClone
         {
             GraphicsDevice.SetRenderTarget(renderTarget);
 
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(new Color(94, 99, 150));
 
             if (ScreenManager.Instance.CurrentScreen.Type.Name == "GameplayScreen")
                 spriteBatch.Begin(transformMatrix: ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Camera.Transform);

@@ -27,6 +27,12 @@
     <None Remove="Load\Gameplay\Map\Map1.xml" />
     <None Remove="Content\Gameplay\TileSheets\" />
     <None Remove="Content\Content.mgcb" />
+    <None Remove="Screens\" />
+    <None Remove="Managers\" />
+    <None Remove="Util\" />
+    <None Remove="Util\Effects\" />
+    <None Remove="Util\Map\" />
+    <None Remove="Util\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -67,5 +73,11 @@
     <Folder Include="Content\ScreenManager\" />
     <Folder Include="Load\Gameplay\Map\" />
     <Folder Include="Content\Gameplay\TileSheets\" />
+    <Folder Include="Screens\" />
+    <Folder Include="Managers\" />
+    <Folder Include="Util\" />
+    <Folder Include="Util\Effects\" />
+    <Folder Include="Util\Map\" />
+    <Folder Include="Util\Menu\" />
   </ItemGroup>
 </Project>

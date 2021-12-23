@@ -20,7 +20,8 @@ namespace PokemonFireRedClone
         bool changeDirection;
         public State state;
         bool wasMoving;
-        bool running;
+        public bool running;
+        public bool Colliding;
 
         public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
         public enum Direction { Left, Right, Down, Up, RunLeft, RunRight, RunDown, RunUp }
@@ -33,6 +34,7 @@ namespace PokemonFireRedClone
             changeDirection = false;
             running = false;
             waitToMove = 0;
+            Colliding = false;
         }
 
         public void LoadContent()
@@ -48,14 +50,28 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
-            running = InputManager.Instance.KeyDown(Keys.LeftShift);
+
+            if (changeDirection && Colliding)
+                Colliding = false;
+
+            if (Colliding)
+            {
+                Image.SpriteSheetEffect.SwitchFrame = 250;
+                if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
+                    Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
+            }
+            else if (running)
+                Image.SpriteSheetEffect.SwitchFrame = 62;
+            else
+                Image.SpriteSheetEffect.SwitchFrame = 125;
+
             int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
-            Image.SpriteSheetEffect.SwitchFrame = running ? 62 : 125;
 
             switch (state)
             {
                 case State.Idle:
                     destination = Image.Position;
+                    running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
                     // causes a change in direction but no movement unless key is held down more than 4 iterations of the Update method
                     if (changeDirection && !wasMoving)
@@ -75,7 +91,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 3 && Image.SpriteSheetEffect.CurrentFrame.Y != 7)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 7 : 3;
                             changeDirection = true;
                             break;
                         }
@@ -87,7 +103,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 2 && Image.SpriteSheetEffect.CurrentFrame.Y != 6)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 6 : 2;
                             changeDirection = true;
                             break;
                         }
@@ -98,7 +114,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 0 && Image.SpriteSheetEffect.CurrentFrame.Y != 4)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 4 : 0;
                             changeDirection = true;
                             break;
                         }
@@ -109,7 +125,7 @@ namespace PokemonFireRedClone
                     {
                         if (Image.SpriteSheetEffect.CurrentFrame.Y != 1 && Image.SpriteSheetEffect.CurrentFrame.Y != 5)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
+                            Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 5 : 1;
                             changeDirection = true;
                             break;
                         }
@@ -127,13 +143,14 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveUp:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 7 : 3;
 
                     if (Image.Position.Y - speed < (int) destination.Y)
                     {
                         
                         Image.Position.Y = (int)destination.Y;
                         destination.Y -= 64;
+                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
                         if (!InputManager.Instance.KeyDown(Keys.W))
                         {
@@ -146,12 +163,13 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveDown:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 6 : 2;
 
                     if (Image.Position.Y + speed > (int) destination.Y)
                     {
                         Image.Position.Y = (int) destination.Y;
                         destination.Y += 64;
+                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
                         if (!InputManager.Instance.KeyDown(Keys.S))
                         {
@@ -164,12 +182,14 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveLeft:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding? 4 : 0;
 
                     if (Image.Position.X - speed < destination.X)
                     {
                         Image.Position.X = (int) destination.X;
                         destination.X -= 64;
+                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+
                         if (!InputManager.Instance.KeyDown(Keys.A))
                         {
                             state = State.Idle;
@@ -181,12 +201,14 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveRight:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running && !Colliding ? 5 : 1;
 
                     if (Image.Position.X + speed > destination.X)
                     {
                         Image.Position.X = (int) destination.X;
                         destination.X += 64;
+                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+
                         if (!InputManager.Instance.KeyDown(Keys.D))
                         {
                             state = State.Idle;
