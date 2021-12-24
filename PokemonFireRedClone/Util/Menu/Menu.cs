@@ -14,7 +14,7 @@ namespace PokemonFireRedClone
     {
         public event EventHandler OnMenuChange;
 
-        public String Axis;
+        public string Axis;
         public string Effects;
         [XmlElement("Item")]
         public List<MenuItem> Items;

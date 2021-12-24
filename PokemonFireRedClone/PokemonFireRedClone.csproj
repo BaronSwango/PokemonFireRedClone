@@ -33,6 +33,7 @@
     <None Remove="Util\Effects\" />
     <None Remove="Util\Map\" />
     <None Remove="Util\Menu\" />
+    <None Remove="Content\Menus\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -79,5 +80,6 @@
     <Folder Include="Util\Effects\" />
     <Folder Include="Util\Map\" />
     <Folder Include="Util\Menu\" />
+    <Folder Include="Content\Menus\" />
   </ItemGroup>
 </Project>
