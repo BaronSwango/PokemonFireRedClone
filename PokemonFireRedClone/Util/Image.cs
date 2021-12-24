@@ -26,9 +26,11 @@ namespace PokemonFireRedClone
         SpriteFont font;
         Dictionary<string, ImageEffect> effectList;
         public string Effects;
+        public Color Tint;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
+        public GrayOutEffect GrayOutEffect;
 
 
         void SetEffect<T>(ref T effect) where T:ImageEffect
@@ -94,6 +96,7 @@ namespace PokemonFireRedClone
             Alpha = 1.0f;
             SourceRect = Rectangle.Empty;
             effectList = new Dictionary<string, ImageEffect>();
+            Tint = Color.White;
         }
 
         public void LoadContent()
@@ -126,8 +129,8 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
             if (Texture != null)
-                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);                
-            ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero, Color.White);
+                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);                
+            ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero, Tint);
             ScreenManager.Instance.SpriteBatch.End();
  
             Texture = RenderTarget;
@@ -136,6 +139,7 @@ namespace PokemonFireRedClone
 
             SetEffect(ref FadeEffect);
             SetEffect(ref SpriteSheetEffect);
+            SetEffect(ref GrayOutEffect);
 
             if (Effects != string.Empty)
             {
@@ -165,7 +169,7 @@ namespace PokemonFireRedClone
         {
             origin = new Vector2(SourceRect.Width / 2,
                 SourceRect.Height / 2);
-            spriteBatch.Draw(Texture, Position + origin, SourceRect, Color.White * Alpha,
+            spriteBatch.Draw(Texture, Position + origin, SourceRect, Tint * Alpha,
                 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
         }
 

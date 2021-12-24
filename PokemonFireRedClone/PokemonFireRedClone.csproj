@@ -18,8 +18,6 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="Load\Gameplay\Player.xml" />
-    <None Remove="Load\Menus\TestMenu.xml" />
-    <None Remove="Load\Menus\TitleMenu.xml" />
     <None Remove="Load\SplashScreen.xml" />
     <None Remove="Content\ScreenManager\" />
     <None Remove="Load\ScreenManager.xml" />
@@ -34,6 +32,8 @@
     <None Remove="Util\Map\" />
     <None Remove="Util\Menu\" />
     <None Remove="Content\Menus\" />
+    <None Remove="Load\Menus\" />
+    <None Remove="Load\Menus\TitleMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -53,12 +53,6 @@
     <Content Include="Load\Gameplay\Player.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Load\Menus\TestMenu.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Load\Menus\TitleMenu.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -66,6 +60,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Gameplay\Map\PalletTown.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Menus\TitleMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -81,5 +78,6 @@
     <Folder Include="Util\Map\" />
     <Folder Include="Util\Menu\" />
     <Folder Include="Content\Menus\" />
+    <Folder Include="Load\Menus\" />
   </ItemGroup>
 </Project>

@@ -125,7 +125,6 @@ namespace PokemonFireRedClone
                         Items[i].Image.IsActive = true;
                     else
                         Items[i].Image.IsActive = false;
-
                     Items[i].Image.Update(gameTime);
                 }
             }

@@ -1,11 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Menu>
-	<Axis>Y</Axis>
-	<Item>
-		<LinkType>Screen</LinkType>
-		<LinkID>GameplayScreen</LinkID>
-		<Image>
-			<Path>Menus/NewGameBox</Path>
-		</Image>
-	</Item>
+    <Effects>GrayOutEffect</Effects>
+    <Item>
+        <Image>
+            <Path>Menus/ContinueBox</Path>
+        </Image>
+    </Item>
+    <Item>
+        <LinkType>Screen</LinkType>
+        <LinkID>GameplayScreen</LinkID>
+        <Image>
+            <Path>Menus/NewGameBox</Path>
+        </Image>
+    </Item>
 </Menu>

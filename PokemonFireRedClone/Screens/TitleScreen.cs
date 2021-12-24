@@ -20,6 +20,7 @@ namespace PokemonFireRedClone
         {
             base.LoadContent();
             menuManager.LoadContent("Load/Menus/TitleMenu.xml");
+            
         }
 
         public override void UnloadContent()
