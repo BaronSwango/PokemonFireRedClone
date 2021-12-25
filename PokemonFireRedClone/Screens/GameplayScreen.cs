@@ -36,6 +36,8 @@ namespace PokemonFireRedClone
         public override void UnloadContent()
         {
             base.UnloadContent();
+            XmlManager<Player> playerSaver = new XmlManager<Player>();
+            playerSaver.Save("Load/Gameplay/Baron.xml", player.Image.Position.X);
             player.UnloadContent();
             map.UnloadContent();
         }

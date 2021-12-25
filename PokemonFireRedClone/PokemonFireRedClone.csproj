@@ -34,6 +34,7 @@
     <None Remove="Content\Menus\" />
     <None Remove="Load\Menus\" />
     <None Remove="Load\Menus\TitleMenu.xml" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -48,6 +49,7 @@
   <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Load\Gameplay\Player.xml">

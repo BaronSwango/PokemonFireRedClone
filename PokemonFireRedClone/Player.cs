@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -12,7 +13,9 @@ namespace PokemonFireRedClone
     public class Player
     {
         public Image Image;
-        public Vector2 Velocity;
+
+        public PlayerJsonObject PlayerJsonObject = new PlayerJsonObject();
+        JsonManager<PlayerJsonObject> playerLoader;
 
         public float MoveSpeed;
         Vector2 destination;
@@ -28,7 +31,6 @@ namespace PokemonFireRedClone
 
         public Player()
         {
-            Velocity = Vector2.Zero;
             destination = Vector2.Zero;
             state = State.Idle;
             changeDirection = false;
@@ -40,6 +42,7 @@ namespace PokemonFireRedClone
         public void LoadContent()
         {
             Image.LoadContent();
+            load();
         }
 
         public void UnloadContent()
@@ -50,6 +53,10 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
+
+            if (InputManager.Instance.KeyDown(Keys.Tab))
+                save();
+
 
             if (changeDirection && Colliding)
                 Colliding = false;
@@ -143,8 +150,6 @@ namespace PokemonFireRedClone
                     break;
                 case State.MoveUp:
 
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
-
                     if (Image.Position.Y - speed < (int) destination.Y)
                     {
                         
@@ -160,10 +165,10 @@ namespace PokemonFireRedClone
                     }
                     else
                         Image.Position.Y -= speed;
+
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
                     break;
                 case State.MoveDown:
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
 
                     if (Image.Position.Y + speed > (int) destination.Y)
                     {
@@ -179,10 +184,10 @@ namespace PokemonFireRedClone
                     }
                     else
                         Image.Position.Y += speed;
+
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
                     break;
                 case State.MoveLeft:
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
 
                     if (Image.Position.X - speed < destination.X)
                     {
@@ -198,10 +203,10 @@ namespace PokemonFireRedClone
                     }
                     else
                         Image.Position.X -= speed;
+
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
                     break;
                 case State.MoveRight:
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
 
                     if (Image.Position.X + speed > destination.X)
                     {
@@ -217,7 +222,8 @@ namespace PokemonFireRedClone
                     }
                     else
                         Image.Position.X += speed;
-                       
+
+                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
                     break;
                 default:
                     break;
@@ -234,12 +240,30 @@ namespace PokemonFireRedClone
         // spawns in player on a tile
         public void Spawn(Map map)
         {
-            if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4) != null)
+            if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 8) != null)
             {
-                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.X,
-                    TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 4).Position.Y - 84);
+                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 8).Position.X,
+                    TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 8).Position.Y - 84);
                 Image.Position = centerTile;
             }
+        }
+
+        void load()
+        {
+            playerLoader = new JsonManager<PlayerJsonObject>();
+
+            if (!File.Exists("Load/Gameplay/Player.json")) return;
+
+            PlayerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
+            Image.Position = PlayerJsonObject.Position;
+            Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
+        }
+
+        void save()
+        {
+            PlayerJsonObject.Position = Image.Position;
+            PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? Image.SpriteSheetEffect.CurrentFrame.Y - 4 : Image.SpriteSheetEffect.CurrentFrame.Y;
+            playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");
         }
 
     }
