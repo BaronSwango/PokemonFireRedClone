@@ -18,8 +18,11 @@ namespace PokemonFireRedClone
         public string Effects;
         [XmlElement("Item")]
         public List<MenuItem> Items;
+        public int Padding;
+        public int FromTop;
         int itemNumber;
         string id;
+        
 
         public int ItemNumber
         {
@@ -48,6 +51,9 @@ namespace PokemonFireRedClone
                     item.Image.FadeEffect.Increase = false;
             }
         }
+
+        //TODO: Figure out a way to center & also allow padding for Y axis
+        //TODO: Possibly add padding for X axis
         void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
@@ -56,7 +62,7 @@ namespace PokemonFireRedClone
                     item.Image.SourceRect.Height);
 
             dimensions = new Vector2((ScreenManager.Instance.Dimensions.X -
-                dimensions.X) / 2, (ScreenManager.Instance.Dimensions.Y - dimensions.Y) / 2);
+                dimensions.X) / 2, FromTop);
 
             foreach(MenuItem item in Items)
             {
@@ -68,7 +74,7 @@ namespace PokemonFireRedClone
                         item.Image.SourceRect.Width) / 2, dimensions.Y);
 
                 dimensions += new Vector2(item.Image.SourceRect.Width,
-                    item.Image.SourceRect.Height);
+                    item.Image.SourceRect.Height+Padding);
             }
         }
 

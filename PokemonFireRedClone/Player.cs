@@ -10,11 +10,16 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
+
+    //TODO: Spawn player in room when creating a new game
+    //TODO: When creating a new game, don't load in player's save file or the json object
+    
+
     public class Player
     {
         public Image Image;
 
-        public PlayerJsonObject PlayerJsonObject = new PlayerJsonObject();
+        public PlayerJsonObject PlayerJsonObject;
         JsonManager<PlayerJsonObject> playerLoader;
 
         public float MoveSpeed;
@@ -37,6 +42,7 @@ namespace PokemonFireRedClone
             running = false;
             waitToMove = 0;
             Colliding = false;
+            PlayerJsonObject = new PlayerJsonObject();
         }
 
         public void LoadContent()
