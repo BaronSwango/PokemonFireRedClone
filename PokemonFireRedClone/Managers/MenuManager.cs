@@ -11,7 +11,7 @@ namespace PokemonFireRedClone
     class MenuManager
     {
 
-        Menu menu;
+        public Menu menu;
         bool isTransitioning;
         public bool IsLoaded;
 

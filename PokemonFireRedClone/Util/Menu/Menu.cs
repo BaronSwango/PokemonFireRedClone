@@ -73,22 +73,22 @@ namespace PokemonFireRedClone
         void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
+
+            if (Type == "TitleMenu")
+                dimensions = new Vector2((ScreenManager.Instance.Dimensions.X -
+                    dimensions.X) / 2, FromTop);
+
+
+            if (Type == "MainMenu")
+            {
+                Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
+                Background.Position = new Vector2(playerPos.X - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) + 256,
+                    playerPos.Y - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) + 240);
+            }
             foreach (MenuItem item in Items)
-                dimensions += new Vector2(item.Image.SourceRect.Width,
-                    item.Image.SourceRect.Height);
-
-            dimensions = new Vector2((ScreenManager.Instance.Dimensions.X -
-                dimensions.X) / 2, FromTop);
-
-            foreach(MenuItem item in Items)
             {
                 if (Type == "MainMenu")
-                {
-                    Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
-                    Background.Position = new Vector2(playerPos.X - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2)+256,
-                        playerPos.Y - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2)+240);
-                    item.Image.Position = new Vector2((int)playerPos.X + 392, (int)playerPos.Y - 312);
-                }
+                    item.Image.Position = new Vector2(Background.Position.X+1050, Background.Position.Y+dimensions.Y+28);
                 else if (Type == "TitleMenu")
                     item.Image.Position = new Vector2((ScreenManager.Instance.Dimensions.X -
                         item.Image.SourceRect.Width) / 2, dimensions.Y);
@@ -141,6 +141,8 @@ namespace PokemonFireRedClone
             }
             else if (Type == "TitleMenu" || Type == "MainMenu")
             {
+                if (Type == "MainMenu")
+                    AlignMenuItems();
                 if (InputManager.Instance.KeyPressed(Keys.Down))
                     itemNumber++;
                 else if (InputManager.Instance.KeyPressed(Keys.Up))

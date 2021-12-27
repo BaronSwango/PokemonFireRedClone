@@ -9,5 +9,6 @@ namespace PokemonFireRedClone
         public string LinkType;
         public string LinkID;
         public Image Image;
+        public Image Description;
     }
 }

@@ -4,11 +4,28 @@
     <Background>
         <Path>Menus/MainMenu</Path>
     </Background>
-    <FromTop>4</FromTop>
-    <Padding>8</Padding>
     <Item>
         <Image>
-            <Text>Test</Text>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <Text>POKeDEX</Text>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <Text>POKeMON</Text>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <Text>BAG</Text>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <Text>Baron</Text>
         </Image>
     </Item>
 </Menu>
