@@ -35,6 +35,7 @@
     <None Remove="Load\Menus\" />
     <None Remove="Load\Menus\TitleMenu.xml" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Load\Menus\MainMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -65,6 +66,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Menus\TitleMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Menus\MainMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

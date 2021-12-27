@@ -13,6 +13,7 @@ namespace PokemonFireRedClone
 
         Menu menu;
         bool isTransitioning;
+        public bool IsLoaded;
 
         void Transition(GameTime gameTime)
         {
@@ -64,11 +65,13 @@ namespace PokemonFireRedClone
         {
             if (menuPath != string.Empty)
                 menu.ID = menuPath;
+            IsLoaded = true;
         }
 
         public void UnloadContent()
         {
             menu.UnloadContent();
+            IsLoaded = false;
         }
 
         public void Update(GameTime gameTime)

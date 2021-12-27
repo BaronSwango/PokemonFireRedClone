@@ -10,19 +10,35 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
+
+    /*
+ * Image with menu interface
+ * Move arrow to each item of menu
+ * each item of menu denoted by enum value
+ * 
+ * Allow for description image with text anywhere on screen
+ * 
+ * 
+ */
+
     public class Menu
     {
         public event EventHandler OnMenuChange;
 
-        public string Axis;
+        public string Type;
         public string Effects;
         [XmlElement("Item")]
         public List<MenuItem> Items;
-        public int Padding;
-        public int FromTop;
+        public Image Arrow;
+        public Image Background;
+        public int PaddingX;
+        public int PaddingY;
+        public bool CenterX;
+        public bool CenterY;
+        public int FromSide; // indent from left side of screen
+        public int FromTop; // indent from top of screen
         int itemNumber;
         string id;
-        
 
         public int ItemNumber
         {
@@ -66,15 +82,19 @@ namespace PokemonFireRedClone
 
             foreach(MenuItem item in Items)
             {
-                if (Axis == "X")
-                    item.Image.Position = new Vector2(dimensions.X,
-                        (ScreenManager.Instance.Dimensions.Y - item.Image.SourceRect.Height) / 2);
-                else if (Axis == "Y")
+                if (Type == "MainMenu")
+                {
+                    Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
+                    Background.Position = new Vector2(playerPos.X - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2)+256,
+                        playerPos.Y - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2)+240);
+                    item.Image.Position = new Vector2((int)playerPos.X + 392, (int)playerPos.Y - 312);
+                }
+                else if (Type == "TitleMenu")
                     item.Image.Position = new Vector2((ScreenManager.Instance.Dimensions.X -
                         item.Image.SourceRect.Width) / 2, dimensions.Y);
 
-                dimensions += new Vector2(item.Image.SourceRect.Width,
-                    item.Image.SourceRect.Height+Padding);
+                dimensions += new Vector2(item.Image.SourceRect.Width+PaddingX,
+                    item.Image.SourceRect.Height+PaddingY);
             }
         }
 
@@ -83,12 +103,14 @@ namespace PokemonFireRedClone
             id = string.Empty;
             itemNumber = 0;
             Effects = string.Empty;
-            Axis = "Y";
+            Type = "TitleMenu";
             Items = new List<MenuItem>();
         }
         public void LoadContent()
         {
             string[] split = Effects.Split(':');
+            if (Background != null)
+                Background.LoadContent();
             foreach (MenuItem item in Items)
             {
                 item.Image.LoadContent();
@@ -100,20 +122,24 @@ namespace PokemonFireRedClone
 
         public void UnloadContent()
         {
+            if (Background != null)
+                Background.UnloadContent();
             foreach (MenuItem item in Items)
                 item.Image.UnloadContent();
         }
 
         public void Update(GameTime gameTime)
         {
-            if (Axis == "X")
+            if (Background != null)
+                Background.Update(gameTime);
+            if (Type == "X")
             {
                 if (InputManager.Instance.KeyPressed(Keys.Down))
                     itemNumber++;
                 else if (InputManager.Instance.KeyPressed(Keys.Up))
                     itemNumber--;
             }
-            else if (Axis == "Y")
+            else if (Type == "TitleMenu" || Type == "MainMenu")
             {
                 if (InputManager.Instance.KeyPressed(Keys.Down))
                     itemNumber++;
@@ -139,6 +165,8 @@ namespace PokemonFireRedClone
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (Background != null)
+                Background.Draw(spriteBatch);
             foreach (MenuItem item in Items)
                 item.Image.Draw(spriteBatch);
         }
