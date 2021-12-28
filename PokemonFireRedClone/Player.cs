@@ -22,7 +22,7 @@ namespace PokemonFireRedClone
     {
         public Image Image;
 
-        public static PlayerJsonObject PlayerJsonObject;
+        public PlayerJsonObject PlayerJsonObject;
         JsonManager<PlayerJsonObject> playerLoader;
 
         public float MoveSpeed;

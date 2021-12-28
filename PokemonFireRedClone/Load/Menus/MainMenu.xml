@@ -48,10 +48,10 @@ received,   or   found.</Text>
         </Description>
     </Item>
     <Item>
-        <Custom>true</Custom>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <FontColor>DimGray</FontColor>
+            <Text>Baron</Text>
         </Image>
         <Description>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
@@ -59,7 +59,7 @@ received,   or   found.</Text>
             <Text>Check   your   money   and   other   game   data.</Text>
         </Description>
     </Item>
-        <Item>
+    <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <FontColor>DimGray</FontColor>
@@ -72,7 +72,7 @@ received,   or   found.</Text>
 progress   to   take   a   break.</Text>
         </Description>
     </Item>
-        <Item>
+    <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <FontColor>DimGray</FontColor>
@@ -85,7 +85,7 @@ progress   to   take   a   break.</Text>
 rules,   etc.</Text>
         </Description>
     </Item>
-        <Item>
+    <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <FontColor>DimGray</FontColor>

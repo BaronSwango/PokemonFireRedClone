@@ -29,7 +29,7 @@ namespace PokemonFireRedClone
         Dictionary<string, ImageEffect> effectList;
         public string Effects;
         public Color Tint;
-        public String FontColor;
+        public string FontColor;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
