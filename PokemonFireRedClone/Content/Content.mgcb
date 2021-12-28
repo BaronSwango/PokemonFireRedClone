@@ -123,6 +123,18 @@
 /processorParam:TextureFormat=Color
 /build:Menus/MainMenuWithoutPokedex.png
 
+#begin Menus/MenuArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/MenuArrow.png
+
 #begin Menus/NewGameBox.png
 /importer:TextureImporter
 /processor:TextureProcessor

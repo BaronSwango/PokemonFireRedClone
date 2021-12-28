@@ -6,13 +6,10 @@ namespace PokemonFireRedClone
 
 /*TODO: List of things to save in json object
  * 
- * Player name
  * Rival name
  * Area
  * Pokemon
- * Gym badges
  * Phase of game
- * Time spent playing
  * Pokedex
  * Items
  * Trainers battled
@@ -27,5 +24,6 @@ namespace PokemonFireRedClone
         public int Time;
         public int Badges;
         public int Pokedex;
+
     }
 }

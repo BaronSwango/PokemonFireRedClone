@@ -87,8 +87,11 @@ namespace PokemonFireRedClone
             }
             foreach (MenuItem item in Items)
             {
-                if (Type == "MainMenu")
-                    item.Image.Position = new Vector2(Background.Position.X+1050, Background.Position.Y+dimensions.Y+28);
+                if (Type == "MainMenu") {
+                    item.Image.Position = new Vector2(Background.Position.X + 1052, Background.Position.Y + dimensions.Y + 24);
+                    if (item.Description != null)
+                        item.Description.Position = new Vector2(Background.Position.X + 8, Background.Position.Y + 580);
+                }
                 else if (Type == "TitleMenu")
                     item.Image.Position = new Vector2((ScreenManager.Instance.Dimensions.X -
                         item.Image.SourceRect.Width) / 2, dimensions.Y);
@@ -111,11 +114,15 @@ namespace PokemonFireRedClone
             string[] split = Effects.Split(':');
             if (Background != null)
                 Background.LoadContent();
+            if (Arrow != null)
+                Arrow.LoadContent();
             foreach (MenuItem item in Items)
             {
                 item.Image.LoadContent();
                 foreach (string s in split)
                     item.Image.ActivateEffect(s);
+                if (item.Description != null)
+                    item.Description.LoadContent();
             }
             AlignMenuItems();
         }
@@ -124,42 +131,56 @@ namespace PokemonFireRedClone
         {
             if (Background != null)
                 Background.UnloadContent();
+            if (Arrow != null)
+                Arrow.UnloadContent();
             foreach (MenuItem item in Items)
+            {
                 item.Image.UnloadContent();
+                if (item.Description != null)
+                    item.Description.LoadContent();
+            }
         }
 
         public void Update(GameTime gameTime)
         {
             if (Background != null)
                 Background.Update(gameTime);
-            if (Type == "X")
-            {
-                if (InputManager.Instance.KeyPressed(Keys.Down))
-                    itemNumber++;
-                else if (InputManager.Instance.KeyPressed(Keys.Up))
-                    itemNumber--;
-            }
-            else if (Type == "TitleMenu" || Type == "MainMenu")
+            if (Type == "TitleMenu" || Type == "MainMenu")
             {
                 if (Type == "MainMenu")
                     AlignMenuItems();
-                if (InputManager.Instance.KeyPressed(Keys.Down))
+                if (InputManager.Instance.KeyPressed(Keys.S))
                     itemNumber++;
-                else if (InputManager.Instance.KeyPressed(Keys.Up))
+                else if (InputManager.Instance.KeyPressed(Keys.W))
                     itemNumber--;
 
                 if (itemNumber < 0)
-                    itemNumber = 0;
+                    itemNumber = Type == "MainMenu" ? Items.Count - 1 : 0;
                 else if (itemNumber > Items.Count - 1)
-                    itemNumber = Items.Count - 1;
+                    itemNumber = Type == "MainMenu" ? 0 : Items.Count - 1;
 
                 for (int i = 0; i < Items.Count; i++)
                 {
                     if (i == itemNumber)
+                    {
                         Items[i].Image.IsActive = true;
+                        if (Type == "MainMenu")
+                        {
+                            Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width, Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4));
+                            if (Items[i].Description != null)
+                                Items[i].Description.IsActive = true;
+                        }
+                    }
                     else
+                    {
                         Items[i].Image.IsActive = false;
+                        if (Items[i].Description != null)
+                            Items[i].Description.IsActive = false;
+                    }
+                    
                     Items[i].Image.Update(gameTime);
+                    if (Items[i].Description != null)
+                        Items[i].Description.Update(gameTime);
                 }
             }
         }
@@ -169,8 +190,17 @@ namespace PokemonFireRedClone
         {
             if (Background != null)
                 Background.Draw(spriteBatch);
+            if (Arrow != null)
+                Arrow.Draw(spriteBatch);
             foreach (MenuItem item in Items)
+            {
                 item.Image.Draw(spriteBatch);
+                if (item.Description != null)
+                {
+                    if (item.Description.IsActive)
+                        item.Description.Draw(spriteBatch);
+                }
+            }
         }
 
     }

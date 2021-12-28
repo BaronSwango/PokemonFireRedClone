@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
+using CColor = System.Drawing.Color;
+
 namespace PokemonFireRedClone
 {
     public class Image
@@ -27,7 +29,7 @@ namespace PokemonFireRedClone
         Dictionary<string, ImageEffect> effectList;
         public string Effects;
         public Color Tint;
-        public Color FontColor;
+        public String FontColor;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
@@ -98,7 +100,7 @@ namespace PokemonFireRedClone
             SourceRect = Rectangle.Empty;
             effectList = new Dictionary<string, ImageEffect>();
             Tint = Color.White;
-            FontColor = Color.Black;
+            FontColor = "Black";
         }
 
         public void LoadContent()
@@ -131,8 +133,12 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
             if (Texture != null)
-                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);                
-            ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero, FontColor);
+                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
+            ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,
+                new Color(CColor.FromName(FontColor).R,
+                CColor.FromName(FontColor).G,
+                CColor.FromName(FontColor).B,
+                CColor.FromName(FontColor).A));
             ScreenManager.Instance.SpriteBatch.End();
  
             Texture = RenderTarget;

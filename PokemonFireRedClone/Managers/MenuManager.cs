@@ -40,6 +40,7 @@ namespace PokemonFireRedClone
 
         public MenuManager()
         {
+            //this.menu = menu;
             menu = new Menu();
             menu.OnMenuChange += menu_OnMenuChange;
         }
@@ -81,14 +82,15 @@ namespace PokemonFireRedClone
                 foreach (MenuItem item in menu.Items)
                     item.Image.RestoreEffects();
             }
+  
 
             if (!isTransitioning)
                 menu.Update(gameTime);
-            if (InputManager.Instance.KeyPressed(Keys.Enter) && !isTransitioning)
+            if (InputManager.Instance.KeyPressed(Keys.E) && !isTransitioning)
             {
                 if (menu.Items[menu.ItemNumber].LinkType == "Screen")
                     ScreenManager.Instance.ChangeScreens(menu.Items[menu.ItemNumber].LinkID);
-                else
+                else if (menu.Items[menu.ItemNumber].LinkType == "Menu")
                 {
                     isTransitioning = true;
                     menu.Transition(1.0f);
@@ -97,6 +99,9 @@ namespace PokemonFireRedClone
                         item.Image.StoreEffects();
                         item.Image.ActivateEffect("FadeEffect");
                     }
+                } else if (menu.Items[menu.ItemNumber].LinkType == "Exit")
+                {
+
                 }
             }
 

@@ -13,13 +13,16 @@ namespace PokemonFireRedClone
 
     //TODO: Spawn player in room when creating a new game
     //TODO: When creating a new game, don't load in player's save file or the json object
+
+    //TODO: Make PlayerJsonObject accessible anywhere, even start of game, going to have to
+    // make a JsonObject manager with static variables in order to load the data to the main menu
     
 
     public class Player
     {
         public Image Image;
 
-        public PlayerJsonObject PlayerJsonObject;
+        public static PlayerJsonObject PlayerJsonObject;
         JsonManager<PlayerJsonObject> playerLoader;
 
         public float MoveSpeed;
@@ -269,6 +272,7 @@ namespace PokemonFireRedClone
         {
             PlayerJsonObject.Position = Image.Position;
             PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? Image.SpriteSheetEffect.CurrentFrame.Y - 4 : Image.SpriteSheetEffect.CurrentFrame.Y;
+            PlayerJsonObject.Name = "BillyBOB";
             playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");
         }
 

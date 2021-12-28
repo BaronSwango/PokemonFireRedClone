@@ -4,28 +4,97 @@
     <Background>
         <Path>Menus/MainMenu</Path>
     </Background>
+    <PaddingY>2</PaddingY>
+    <Arrow>
+        <Path>Menus/MenuArrow</Path>
+    </Arrow>
     <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>DimGray</FontColor>
             <Text>POKeDEX</Text>
         </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>A   device   that   records   POKeMON   secrets   upon   meeting   or
+catching   them.</Text>
+        </Description>
     </Item>
     <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>DimGray</FontColor>
             <Text>POKeMON</Text>
         </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>Check   and   organize   POKeMON   that   are   traveling   with
+you   in   your   party.</Text>
+        </Description>
     </Item>
     <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>DimGray</FontColor>
             <Text>BAG</Text>
         </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>Equipped   with   pockets   for   storing   items   you   bought,
+received,   or   found.</Text>
+        </Description>
     </Item>
     <Item>
+        <Custom>true</Custom>
         <Image>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
-            <Text>Baron</Text>
+            <FontColor>DimGray</FontColor>
         </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>Check   your   money   and   other   game   data.</Text>
+        </Description>
+    </Item>
+        <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>DimGray</FontColor>
+            <Text>SAVE</Text>
+        </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>Save   your   game   with   a   complete   record   of   your
+progress   to   take   a   break.</Text>
+        </Description>
+    </Item>
+        <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>DimGray</FontColor>
+            <Text>OPTION</Text>
+        </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>Adjust   various   game   settings   such   as   text   speed,   game
+rules,   etc.</Text>
+        </Description>
+    </Item>
+        <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>DimGray</FontColor>
+            <Text>EXIT</Text>
+        </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontColor>White</FontColor>
+            <Text>Close   this   MENU   window.</Text>
+        </Description>
     </Item>
 </Menu>

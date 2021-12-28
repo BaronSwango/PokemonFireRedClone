@@ -19,6 +19,7 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             base.LoadContent();
+            // Load PlayerJsonObject here
             menuManager.LoadContent("Load/Menus/TitleMenu.xml");
             
         }

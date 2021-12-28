@@ -42,6 +42,7 @@ namespace PokemonFireRedClone
 
             Camera = new Camera();
             menuManager.LoadContent("Load/Menus/MainMenu.xml");
+
         }
 
         public override void UnloadContent()
@@ -58,13 +59,9 @@ namespace PokemonFireRedClone
         {
             base.Update(gameTime);
 
-            if (InputManager.Instance.KeyPressed(Keys.F))
+            if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle)
             { 
                 menuOpen = !menuOpen;
-                //if (!menuManager.IsLoaded)
-                    //menuManager.LoadContent("Load/Menus/MainMenu.xml");
-                //else
-                    //menuManager.UnloadContent();
             }
 
             if (!menuOpen)
@@ -72,7 +69,9 @@ namespace PokemonFireRedClone
             map.Update(gameTime, ref player);
             Camera.Follow(player);
             //if (menuOpen)
+            //{
                 menuManager.Update(gameTime);
+            //}
         }
 
         public override void Draw(SpriteBatch spriteBatch)
