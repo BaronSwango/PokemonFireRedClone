@@ -15,7 +15,7 @@ namespace PokemonFireRedClone
     //TODO: When creating a new game, don't load in player's save file or the json object
 
     //TODO: Make PlayerJsonObject accessible anywhere, even start of game, going to have to
-    // make a JsonObject manager with static variables in order to load the data to the main menu
+    // make a JsonObjectManager (singleton) in order to load the data to the main menu
     
 
     public class Player

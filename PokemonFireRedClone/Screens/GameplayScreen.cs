@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
-    public class GameplayScreen : GameSgcreen
+    public class GameplayScreen : GameScreen
     {
         public Player player;
         Map map;
