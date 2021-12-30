@@ -38,10 +38,9 @@ namespace PokemonFireRedClone
 
         }
 
-        public MenuManager()
+        public MenuManager(Menu menu)
         {
-            //this.menu = menu;
-            menu = new Menu();
+            this.menu = menu;
             menu.OnMenuChange += menu_OnMenuChange;
         }
 
@@ -49,7 +48,7 @@ namespace PokemonFireRedClone
         {
             XmlManager<Menu> xmlMenuManager = new XmlManager<Menu>();
             menu.UnloadContent();
-            menu = xmlMenuManager.Load(menu.ID);
+            menu = (TitleMenu) xmlMenuManager.Load(menu.ID);
             menu.LoadContent();
             menu.OnMenuChange += menu_OnMenuChange;
             menu.Transition(0.0f);

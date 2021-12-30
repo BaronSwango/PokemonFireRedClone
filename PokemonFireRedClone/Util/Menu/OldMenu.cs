@@ -21,7 +21,7 @@ namespace PokemonFireRedClone
  * 
  */
 
-    public class Menu
+    public class OldMenu
     {
         public event EventHandler OnMenuChange;
 
@@ -33,8 +33,6 @@ namespace PokemonFireRedClone
         public Image Background;
         public int PaddingX;
         public int PaddingY;
-        public bool CenterX;
-        public bool CenterY;
         public int FromSide; // indent from left side of screen
         public int FromTop; // indent from top of screen
         int itemNumber;
@@ -101,7 +99,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        public Menu()
+        public OldMenu()
         {
             id = string.Empty;
             itemNumber = 0;

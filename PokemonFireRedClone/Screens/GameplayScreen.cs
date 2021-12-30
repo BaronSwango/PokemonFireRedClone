@@ -24,7 +24,7 @@ namespace PokemonFireRedClone
 
         public GameplayScreen()
         {
-            menuManager = new MenuManager();
+            menuManager = new MenuManager(new MainMenu());
         }
 
         public override void LoadContent()

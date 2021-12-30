@@ -13,7 +13,7 @@ namespace PokemonFireRedClone
 
         public TitleScreen()
         {
-            menuManager = new MenuManager();
+            menuManager = new MenuManager(new TitleMenu());
         }
 
         public override void LoadContent()
