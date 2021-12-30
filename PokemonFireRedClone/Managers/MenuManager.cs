@@ -44,11 +44,13 @@ namespace PokemonFireRedClone
             menu.OnMenuChange += menu_OnMenuChange;
         }
 
+
+        //TODO: Figure out how to use different menu types here
         void menu_OnMenuChange(object sender, EventArgs e)
         {
             XmlManager<Menu> xmlMenuManager = new XmlManager<Menu>();
             menu.UnloadContent();
-            menu = (TitleMenu) xmlMenuManager.Load(menu.ID);
+            menu = xmlMenuManager.Load(menu.ID);
             menu.LoadContent();
             menu.OnMenuChange += menu_OnMenuChange;
             menu.Transition(0.0f);
