@@ -82,9 +82,8 @@ namespace PokemonFireRedClone
             if (Type == "MainMenu")
             {
                 Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
-                Rectangle playerRect = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.SourceRect;
-                Background.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + playerRect.Width / 2,
-                    playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + playerRect.Height / 2);
+                Background.Position = new Vector2(playerPos.X - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2) + 256,
+                    playerPos.Y - (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2) + 240);
             }
             foreach (MenuItem item in Items)
             {
