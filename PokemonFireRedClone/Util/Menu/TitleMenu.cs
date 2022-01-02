@@ -27,8 +27,6 @@ namespace PokemonFireRedClone
 
         protected override void AlignMenuItems()
         {
-            base.AlignMenuItems();
-            Console.WriteLine("test");
             Vector2 dimensions = Vector2.Zero;
 
             dimensions = new Vector2((ScreenManager.Instance.Dimensions.X -
@@ -41,17 +39,6 @@ namespace PokemonFireRedClone
                 dimensions += new Vector2(item.Image.SourceRect.Width + PaddingX,
                     item.Image.SourceRect.Height + PaddingY);
             }
-        }
-
-
-        public override void LoadContent()
-        {
-            base.LoadContent();
-        }
-
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)

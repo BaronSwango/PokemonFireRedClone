@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<Menu>
-    <Type>MainMenu</Type>
+<MainMenu>
     <Background>
         <Path>Menus/MainMenu</Path>
     </Background>
@@ -97,4 +96,4 @@ rules,   etc.</Text>
             <Text>Close   this   MENU   window.</Text>
         </Description>
     </Item>
-</Menu>
+</MainMenu>

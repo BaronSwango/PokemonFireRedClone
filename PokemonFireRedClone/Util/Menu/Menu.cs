@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -11,6 +12,8 @@ namespace PokemonFireRedClone
 
         public event EventHandler OnMenuChange;
 
+        [XmlIgnore]
+        public Type Type;
         public string Effects;
         [XmlElement("Item")]
         public List<MenuItem> Items;
@@ -51,13 +54,11 @@ namespace PokemonFireRedClone
             //}
         }
 
-        protected virtual void AlignMenuItems()
-        {
-
-        }
+        protected virtual void AlignMenuItems() { }
 
         public Menu()
         {
+            Type = this.GetType();
             id = string.Empty;
             itemNumber = 0;
             Effects = string.Empty;

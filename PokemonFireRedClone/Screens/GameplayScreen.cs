@@ -24,7 +24,7 @@ namespace PokemonFireRedClone
 
         public GameplayScreen()
         {
-            menuManager = new MenuManager(new MainMenu());
+            menuManager = new MenuManager("MainMenu");
         }
 
         public override void LoadContent()
@@ -41,8 +41,6 @@ namespace PokemonFireRedClone
             player.Spawn(map);
 
             Camera = new Camera();
-            menuManager.LoadContent("Load/Menus/MainMenu.xml");
-
         }
 
         public override void UnloadContent()
@@ -52,7 +50,6 @@ namespace PokemonFireRedClone
             playerSaver.Save("Load/Gameplay/Baron.xml", player.Image.Position.X);
             player.UnloadContent();
             map.UnloadContent();
-            menuManager.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
@@ -62,16 +59,18 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle)
             { 
                 menuOpen = !menuOpen;
+                if (menuOpen && !menuManager.IsLoaded)
+                    menuManager.LoadContent("Load/Menus/MainMenu.xml");
+                else if (!menuOpen && menuManager.IsLoaded)
+                    menuManager.UnloadContent();
             }
 
             if (!menuOpen)
                 player.Update(gameTime);
             map.Update(gameTime, ref player);
             Camera.Follow(player);
-            //if (menuOpen)
-            //{
+            if (menuOpen)
                 menuManager.Update(gameTime);
-            //}
         }
 
         public override void Draw(SpriteBatch spriteBatch)

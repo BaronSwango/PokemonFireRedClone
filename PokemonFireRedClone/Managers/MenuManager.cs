@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
     {
 
         public Menu menu;
+        string menuName;
         bool isTransitioning;
         public bool IsLoaded;
 
@@ -38,18 +39,20 @@ namespace PokemonFireRedClone
 
         }
 
-        public MenuManager(Menu menu)
+        public MenuManager(string menuName)
         {
-            this.menu = menu;
+            //menu = (Menu) Activator.CreateInstance(Type.GetType("PokemonFireRedClone." + menuName));
+            this.menuName = menuName;
+            menu = new Menu();
             menu.OnMenuChange += menu_OnMenuChange;
         }
 
 
-        //TODO: Figure out how to use different menu types here
         void menu_OnMenuChange(object sender, EventArgs e)
         {
             XmlManager<Menu> xmlMenuManager = new XmlManager<Menu>();
             menu.UnloadContent();
+            xmlMenuManager.Type = Type.GetType("PokemonFireRedClone." + menuName);
             menu = xmlMenuManager.Load(menu.ID);
             menu.LoadContent();
             menu.OnMenuChange += menu_OnMenuChange;

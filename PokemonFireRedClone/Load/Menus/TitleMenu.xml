@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<Menu>
-    <Type>TitleMenu</Type>
+<TitleMenu>
     <FromTop>4</FromTop>
     <PaddingY>8</PaddingY>
     <Effects>GrayOutEffect</Effects>
@@ -16,4 +15,4 @@
             <Path>Menus/NewGameBox</Path>
         </Image>
     </Item>
-</Menu>
+</TitleMenu>
