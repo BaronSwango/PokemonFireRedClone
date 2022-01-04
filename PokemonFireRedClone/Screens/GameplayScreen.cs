@@ -54,7 +54,7 @@ namespace PokemonFireRedClone
         {
             base.Update(gameTime);
 
-            if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle)
+            if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && player.Image.SpriteSheetEffect.CurrentFrame.X == 0)
             {               
                 if (!menuManager.IsLoaded)
                     menuManager.LoadContent("Load/Menus/MainMenu.xml");
