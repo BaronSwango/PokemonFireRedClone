@@ -7,8 +7,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-using CColor = System.Drawing.Color;
-
 namespace PokemonFireRedClone
 {
     public class Image
@@ -30,6 +28,7 @@ namespace PokemonFireRedClone
         public string Effects;
         public Color Tint;
         public string FontColor;
+        public int R, G, B, A;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
@@ -135,14 +134,11 @@ namespace PokemonFireRedClone
             if (Texture != null)
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,
-                new Color(CColor.FromName(FontColor).R,
-                CColor.FromName(FontColor).G,
-                CColor.FromName(FontColor).B,
-                CColor.FromName(FontColor).A));
+                new Color(R, G, B, A));
             ScreenManager.Instance.SpriteBatch.End();
  
             Texture = RenderTarget;
-
+             
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
 
             SetEffect(ref FadeEffect);

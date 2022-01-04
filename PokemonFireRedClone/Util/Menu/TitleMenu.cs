@@ -9,6 +9,8 @@ namespace PokemonFireRedClone
     //TODO: Display player stats (Name [string], time [int -> string], amount of pokemon in pokedex [int], gym badges[int])
     public class TitleMenu : Menu
     {
+        PlayerJsonObject playerJsonObject;
+        
 
         public override void Transition(float alpha)
         {
@@ -24,7 +26,6 @@ namespace PokemonFireRedClone
             }
         }
 
-
         protected override void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
@@ -32,13 +33,41 @@ namespace PokemonFireRedClone
             dimensions = new Vector2((ScreenManager.Instance.Dimensions.X -
                 dimensions.X) / 2, FromTop);
 
-            foreach (MenuItem item in Items)
+            for (int i = 0; i < 2; i++)
             {
-                item.Image.Position = new Vector2((ScreenManager.Instance.Dimensions.X -
-                        item.Image.SourceRect.Width) / 2, dimensions.Y);
-                dimensions += new Vector2(item.Image.SourceRect.Width + PaddingX,
-                    item.Image.SourceRect.Height + PaddingY);
+                Items[i].Image.Position = new Vector2((ScreenManager.Instance.Dimensions.X -
+                    Items[i].Image.SourceRect.Width) / 2, dimensions.Y);
+                dimensions += new Vector2(Items[i].Image.SourceRect.Width + PaddingX,
+                    Items[i].Image.SourceRect.Height + PaddingY);
             }
+
+            dimensions = Vector2.Zero;
+
+            for (int i = 2; i < Items.Count; i++)
+            {
+                Items[i].Image.Position = new Vector2(ScreenManager.Instance.Dimensions.X / 2 - 136 , dimensions.Y+100);
+                dimensions += new Vector2(Items[i].Image.SourceRect.Width,
+                    Items[i].Image.SourceRect.Height + 6);
+            }
+
+        }
+
+        public override void LoadContent()
+        {
+            playerJsonObject = new PlayerJsonObject();
+            var playerLoader = new JsonManager<PlayerJsonObject>();
+
+            playerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
+
+            // format time to include days to hours
+            var tsTime = TimeSpan.FromHours(playerJsonObject.Time);
+
+            Items[2].Image.Text = playerJsonObject.Name;
+            Items[3].Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
+            Items[4].Image.Text = playerJsonObject.Pokedex.ToString();
+            Items[5].Image.Text = playerJsonObject.Badges.ToString();
+
+            base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
@@ -50,16 +79,20 @@ namespace PokemonFireRedClone
 
                 if (itemNumber < 0)
                     itemNumber = 0;
-                else if (itemNumber > Items.Count - 1)
-                    itemNumber = Items.Count - 1;
+                else if (itemNumber > 1)
+                    itemNumber = 1;
 
-                for (int i = 0; i < Items.Count; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     if (i == itemNumber)
+                    {
                         Items[i].Image.IsActive = true;
+                        for (int j = 2; j < Items.Count; j++)
+                            Items[j].Image.IsActive = i == 0 ? true : false;
+                    }
                     else
                         Items[i].Image.IsActive = false;
-                }
+                } 
                 base.Update(gameTime);
         }
 
@@ -69,4 +102,5 @@ namespace PokemonFireRedClone
         }
 
     }
+
 }

@@ -4,7 +4,6 @@ using System.Text;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
@@ -14,7 +13,6 @@ namespace PokemonFireRedClone
         public Player player;
         Map map;
         MenuManager menuManager;
-        bool menuOpen;
 
         public Camera Camera
         {
@@ -57,19 +55,18 @@ namespace PokemonFireRedClone
             base.Update(gameTime);
 
             if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle)
-            { 
-                menuOpen = !menuOpen;
-                if (menuOpen && !menuManager.IsLoaded)
+            {               
+                if (!menuManager.IsLoaded)
                     menuManager.LoadContent("Load/Menus/MainMenu.xml");
-                else if (!menuOpen && menuManager.IsLoaded)
+                else
                     menuManager.UnloadContent();
             }
 
-            if (!menuOpen)
+            if (!menuManager.IsLoaded)
                 player.Update(gameTime);
             map.Update(gameTime, ref player);
             Camera.Follow(player);
-            if (menuOpen)
+            if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
         }
 
@@ -79,7 +76,7 @@ namespace PokemonFireRedClone
             map.Draw(spriteBatch, "Underlay");
             player.Draw(spriteBatch);
             map.Draw(spriteBatch, "Overlay");
-            if (menuOpen)
+            if (menuManager.IsLoaded)
                 menuManager.Draw(spriteBatch);
         }
 

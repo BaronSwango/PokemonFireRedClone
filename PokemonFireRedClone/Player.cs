@@ -28,6 +28,7 @@ namespace PokemonFireRedClone
         public float MoveSpeed;
         Vector2 destination;
         int waitToMove;
+        double elapsedTime;
         bool changeDirection;
         public State state;
         bool wasMoving;
@@ -46,6 +47,7 @@ namespace PokemonFireRedClone
             waitToMove = 0;
             Colliding = false;
             PlayerJsonObject = new PlayerJsonObject();
+            elapsedTime = 0;
         }
 
         public void LoadContent()
@@ -63,9 +65,10 @@ namespace PokemonFireRedClone
         {
             Image.IsActive = true;
 
-            if (InputManager.Instance.KeyDown(Keys.Tab))
-                save();
+            if (InputManager.Instance.KeyPressed(Keys.Tab))
+                save(elapsedTime);
 
+            elapsedTime += (double) gameTime.ElapsedGameTime.TotalSeconds / 3600;
 
             if (changeDirection && Colliding)
                 Colliding = false;
@@ -268,11 +271,14 @@ namespace PokemonFireRedClone
             Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
         }
 
-        void save()
+        void save(double elapsedTime)
         {
             PlayerJsonObject.Position = Image.Position;
             PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? Image.SpriteSheetEffect.CurrentFrame.Y - 4 : Image.SpriteSheetEffect.CurrentFrame.Y;
-            PlayerJsonObject.Name = "BillyBOB";
+
+            PlayerJsonObject.Time += elapsedTime;
+            this.elapsedTime = 0;
+
             playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");
         }
 

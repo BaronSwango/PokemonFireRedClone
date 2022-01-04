@@ -15,4 +15,40 @@
             <Path>Menus/NewGameBox</Path>
         </Image>
     </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>75</R>
+            <G>145</G>
+            <B>247</B>
+            <A>255</A>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>75</R>
+            <G>145</G>
+            <B>247</B>
+            <A>255</A>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>75</R>
+            <G>145</G>
+            <B>247</B>
+            <A>255</A>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>75</R>
+            <G>145</G>
+            <B>247</B>
+            <A>255</A>
+        </Image>
+    </Item>
 </TitleMenu>

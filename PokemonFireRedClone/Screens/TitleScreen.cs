@@ -10,16 +10,18 @@ namespace PokemonFireRedClone
     public class TitleScreen : GameScreen
     {
         MenuManager menuManager;
+        PlayerJsonObject playerJsonObject;
+        
 
         public TitleScreen()
         {
             menuManager = new MenuManager("TitleMenu");
+            playerJsonObject = new PlayerJsonObject();
         }
 
         public override void LoadContent()
         {
             base.LoadContent();
-            // Load PlayerJsonObject here
             menuManager.LoadContent("Load/Menus/TitleMenu.xml");
             
         }

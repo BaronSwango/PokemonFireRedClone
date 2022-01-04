@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
-    class MenuManager
+    public class MenuManager
     {
 
         public Menu menu;
@@ -41,7 +41,6 @@ namespace PokemonFireRedClone
 
         public MenuManager(string menuName)
         {
-            //menu = (Menu) Activator.CreateInstance(Type.GetType("PokemonFireRedClone." + menuName));
             this.menuName = menuName;
             menu = new Menu();
             menu.OnMenuChange += menu_OnMenuChange;
@@ -104,9 +103,7 @@ namespace PokemonFireRedClone
                         item.Image.ActivateEffect("FadeEffect");
                     }
                 } else if (menu.Items[menu.ItemNumber].LinkType == "Exit")
-                {
-
-                }
+                    UnloadContent();
             }
 
             Transition(gameTime);

@@ -21,9 +21,10 @@ namespace PokemonFireRedClone
         public Vector2 Position;
         public float Direction;
         public string Name;
-        public int Time;
+        public double Time;
         public int Badges;
         public int Pokedex;
+        public int Money;
 
     }
 }
