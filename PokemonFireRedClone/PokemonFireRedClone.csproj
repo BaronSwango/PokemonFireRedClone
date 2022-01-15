@@ -36,6 +36,7 @@
     <None Remove="Load\Menus\TitleMenu.xml" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Load\Menus\MainMenu.xml" />
+    <None Remove="Content\TextBoxes\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -85,5 +86,6 @@
     <Folder Include="Util\Menu\" />
     <Folder Include="Content\Menus\" />
     <Folder Include="Load\Menus\" />
+    <Folder Include="Content\TextBoxes\" />
   </ItemGroup>
 </Project>
