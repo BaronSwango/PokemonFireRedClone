@@ -33,6 +33,7 @@ namespace PokemonFireRedClone
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
         public GrayOutEffect GrayOutEffect;
+        public TextBoxEffect TextBoxEffect;
 
 
         void SetEffect<T>(ref T effect) where T:ImageEffect
@@ -144,6 +145,7 @@ namespace PokemonFireRedClone
             SetEffect(ref FadeEffect);
             SetEffect(ref SpriteSheetEffect);
             SetEffect(ref GrayOutEffect);
+            SetEffect(ref TextBoxEffect);
 
             if (Effects != string.Empty)
             {
