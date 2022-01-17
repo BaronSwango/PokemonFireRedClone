@@ -18,6 +18,7 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="Load\Gameplay\Player.xml" />
+    <None Remove="Load\Gameplay\TextBoxManager.xml" />
     <None Remove="Load\SplashScreen.xml" />
     <None Remove="Content\ScreenManager\" />
     <None Remove="Load\ScreenManager.xml" />
@@ -59,6 +60,9 @@
     <Content Include="Load\Gameplay\Player.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Gameplay\TextBoxManager.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -72,9 +76,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Menus\MainMenu.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Load\Gameplay\TextBoxLibrary.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
