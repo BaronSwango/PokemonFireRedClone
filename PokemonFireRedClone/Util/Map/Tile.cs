@@ -65,13 +65,11 @@ namespace PokemonFireRedClone
                     else if (player.state == Player.State.MoveUp)
                     {
                         player.Image.Position.Y = tileRect.Bottom;
-                        player.Image.SpriteSheetEffect.CurrentFrame.X = 0;
                         ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
                     }
                     else
                     {
                         player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
-                        player.Image.SpriteSheetEffect.CurrentFrame.X = 0;
                         ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
                     }
                     player.state = Player.State.Idle;
