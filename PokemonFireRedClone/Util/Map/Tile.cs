@@ -42,6 +42,7 @@ namespace PokemonFireRedClone
         }
 
         //TODO: Play sound when colliding
+        //TODO: 
         public void Update(GameTime gameTime, ref Player player)
         {
             if (State == "Solid")
