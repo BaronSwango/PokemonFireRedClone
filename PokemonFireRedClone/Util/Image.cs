@@ -46,7 +46,6 @@ namespace PokemonFireRedClone
                 var obj = this;
                 effect.LoadContent(ref obj);
             }
-
             effectList.Add(effect.GetType().ToString().Replace("PokemonFireRedClone.", ""), effect);
         }
 

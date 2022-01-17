@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<TextBoxManager>
+    <TextBoxes>
+        <Type>Tile</Type>
+        <ID>[4:0:2]</ID>
+        <Dialogue>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>PALLET   TOWN
+Shades   of   your   journey   await!</Text>
+        </Dialogue>
+    </TextBoxes>
+        <TextBoxes>
+        <Type>Tile</Type>
+        <ID>[4:0:4]</ID>
+        <Dialogue>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>OAK   POKeMON   RESEARCH   LAB</Text>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <Type>Tile</Type>
+        <ID>[4:1:3]</ID>
+        <Dialogue>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>TRAINER   TIPS</Text>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <Type>Tile</Type>
+        <ID>[3:2:0]</ID>
+        <Dialogue>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>Baron's   house</Text>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <Type>Tile</Type>
+        <ID>[3:2:1]</ID>
+        <Dialogue>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>Gary's   house</Text>
+        </Dialogue>
+    </TextBoxes>
+</TextBoxManager>

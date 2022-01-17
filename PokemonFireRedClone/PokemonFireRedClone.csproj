@@ -37,6 +37,8 @@
     <None Remove="Newtonsoft.Json" />
     <None Remove="Load\Menus\MainMenu.xml" />
     <None Remove="Content\TextBoxes\" />
+    <None Remove="Load\Gameplay\TextBoxes.xml" />
+    <None Remove="Util\TextBox\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -72,6 +74,9 @@
     <Content Include="Load\Menus\MainMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Gameplay\TextBoxLibrary.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
@@ -87,5 +92,6 @@
     <Folder Include="Content\Menus\" />
     <Folder Include="Load\Menus\" />
     <Folder Include="Content\TextBoxes\" />
+    <Folder Include="Util\TextBox\" />
   </ItemGroup>
 </Project>

@@ -69,9 +69,10 @@ namespace PokemonFireRedClone
             }
             else
                 CurrentFrame.X = 0;
-
+            //Console.WriteLine(image.SourceRect.Location.X + ", " + image.SourceRect.Location.Y + ", " + image.SourceRect.Width + ", " + image.SourceRect.Height);
             image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
                 (int) CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
+            //Console.WriteLine(image.SourceRect.Location.X + ", " + image.SourceRect.Location.Y + ", " + image.SourceRect.Width + ", " + image.SourceRect.Height);
         }
     }
 }

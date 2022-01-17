@@ -27,6 +27,7 @@ namespace PokemonFireRedClone
 
         public float MoveSpeed;
         Vector2 destination;
+        public Direction direction;
         int waitToMove;
         double elapsedTime;
         bool changeDirection;
@@ -34,9 +35,10 @@ namespace PokemonFireRedClone
         bool wasMoving;
         public bool running;
         public bool Colliding;
+        public bool CanUpdate;
 
         public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
-        public enum Direction { Left, Right, Down, Up, RunLeft, RunRight, RunDown, RunUp }
+        public enum Direction { Left, Right, Down, Up }
 
         public Player()
         {
@@ -48,6 +50,8 @@ namespace PokemonFireRedClone
             Colliding = false;
             PlayerJsonObject = new PlayerJsonObject();
             elapsedTime = 0;
+            CanUpdate = true;
+            direction = Direction.Up;
         }
 
         public void LoadContent()
@@ -63,185 +67,191 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime)
         {
-            Image.IsActive = true;
-
-            if (InputManager.Instance.KeyPressed(Keys.Tab))
-                save(elapsedTime);
-
-            elapsedTime += (double) gameTime.ElapsedGameTime.TotalSeconds / 3600;
-
-            if (changeDirection && Colliding)
-                Colliding = false;
-
-            if (Colliding)
+            if (CanUpdate)
             {
-                Image.SpriteSheetEffect.SwitchFrame = 250;
-                if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
-                    Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
-            }
-            else if (running)
-                Image.SpriteSheetEffect.SwitchFrame = 62;
-            else
-                Image.SpriteSheetEffect.SwitchFrame = 125;
+                direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? (Direction) Image.SpriteSheetEffect.CurrentFrame.Y - 4 : (Direction) Image.SpriteSheetEffect.CurrentFrame.Y;
 
-            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+                Image.IsActive = true;
 
-            switch (state)
-            {
-                case State.Idle:
-                    destination = Image.Position;
-                    running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+                if (InputManager.Instance.KeyPressed(Keys.Tab))
+                    save(elapsedTime);
 
-                    // causes a change in direction but no movement unless key is held down more than 4 iterations of the Update method
-                    if (changeDirection && !wasMoving)
-                    {
-                        if (waitToMove < 4)
+                elapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
+
+                if (changeDirection && Colliding)
+                    Colliding = false;
+
+                if (Colliding)
+                {
+                    Image.SpriteSheetEffect.SwitchFrame = 250;
+                    if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
+                        Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
+                }
+                else if (running)
+                    Image.SpriteSheetEffect.SwitchFrame = 62;
+                else
+                    Image.SpriteSheetEffect.SwitchFrame = 124;
+
+                int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+
+                switch (state)
+                {
+                    case State.Idle:
+                        destination = Image.Position;
+                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+
+                        // causes a change in direction but no movement unless key is held down more than 4 iterations of the Update method
+                        if (changeDirection && !wasMoving)
                         {
-                            if (!InputManager.Instance.KeyDown(Keys.W, Keys.A, Keys.S, Keys.D))
+                            if (waitToMove < 4)
+                            {
+                                if (!InputManager.Instance.KeyDown(Keys.W, Keys.A, Keys.S, Keys.D))
+                                    state = State.Idle;
+                                waitToMove++;
+                                break;
+                            }
+                            changeDirection = false;
+                            waitToMove = 0;
+                            Image.SpriteSheetEffect.CurrentFrame.X = 0;
+                        }
+
+                        if (InputManager.Instance.KeyDown(Keys.W))
+                        {
+                            if (Image.SpriteSheetEffect.CurrentFrame.Y != 3 && Image.SpriteSheetEffect.CurrentFrame.Y != 7)
+                            {
+                                Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
+                                changeDirection = true;
+                                break;
+                            }
+                            destination.Y -= 64;
+                            state = State.MoveUp;
+
+                        }
+                        else if (InputManager.Instance.KeyDown(Keys.S))
+                        {
+                            if (Image.SpriteSheetEffect.CurrentFrame.Y != 2 && Image.SpriteSheetEffect.CurrentFrame.Y != 6)
+                            {
+                                 Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
+                                changeDirection = true;
+                                break;
+                            }
+                            destination.Y += 64;
+                            state = State.MoveDown;
+                        }
+                        else if (InputManager.Instance.KeyDown(Keys.A))
+                        {
+                            if (Image.SpriteSheetEffect.CurrentFrame.Y != 0 && Image.SpriteSheetEffect.CurrentFrame.Y != 4)
+                            {
+                                Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
+                                changeDirection = true;
+                                break;
+                            }
+                            destination.X -= 64;
+                            state = State.MoveLeft;
+                        }
+                        else if (InputManager.Instance.KeyDown(Keys.D))
+                        {
+                            if (Image.SpriteSheetEffect.CurrentFrame.Y != 1 && Image.SpriteSheetEffect.CurrentFrame.Y != 5)
+                            {
+                                Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
+                                changeDirection = true;
+                                break;
+                            }
+                            destination.X += 64;
+                            state = State.MoveRight;
+                        }
+                        else
+                        {
+                            if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
+                                Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
+                            Image.IsActive = false;
+                        }
+
+                        wasMoving = false;
+                        break;
+                    case State.MoveUp:
+
+                        if (Image.Position.Y - speed < (int)destination.Y)
+                        {
+
+                            Image.Position.Y = (int)destination.Y;
+                            destination.Y -= 64;
+                            running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+
+                            if (!InputManager.Instance.KeyDown(Keys.W))
+                            {
                                 state = State.Idle;
-                            waitToMove++;
-                            break;
+                                wasMoving = true;
+                            }
                         }
-                        changeDirection = false;
-                        waitToMove = 0;
-                    }
+                        else
+                            Image.Position.Y -= speed;
 
-                    if (InputManager.Instance.KeyDown(Keys.W))
-                    {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 3 && Image.SpriteSheetEffect.CurrentFrame.Y != 7)
+                        Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
+                        break;
+                    case State.MoveDown:
+
+                        if (Image.Position.Y + speed > (int)destination.Y)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
-                            changeDirection = true;
-                            break;
-                        }
-                        destination.Y -= 64;
-                        state = State.MoveUp;
+                            Image.Position.Y = (int)destination.Y;
+                            destination.Y += 64;
+                            running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
-                    }
-                    else if (InputManager.Instance.KeyDown(Keys.S))
-                    {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 2 && Image.SpriteSheetEffect.CurrentFrame.Y != 6)
+                            if (!InputManager.Instance.KeyDown(Keys.S))
+                            {
+                                state = State.Idle;
+                                wasMoving = true;
+                            }
+                        }
+                        else
+                            Image.Position.Y += speed;
+
+                        Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
+                        break;
+                    case State.MoveLeft:
+
+                        if (Image.Position.X - speed < destination.X)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
-                            changeDirection = true;
-                            break;
+                            Image.Position.X = (int)destination.X;
+                            destination.X -= 64;
+                            running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+
+                            if (!InputManager.Instance.KeyDown(Keys.A))
+                            {
+                                state = State.Idle;
+                                wasMoving = true;
+                            }
                         }
-                        destination.Y += 64;
-                        state = State.MoveDown;
-                    }
-                    else if (InputManager.Instance.KeyDown(Keys.A))
-                    {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 0 && Image.SpriteSheetEffect.CurrentFrame.Y != 4)
+                        else
+                            Image.Position.X -= speed;
+
+                        Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
+                        break;
+                    case State.MoveRight:
+
+                        if (Image.Position.X + speed > destination.X)
                         {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
-                            changeDirection = true;
-                            break;
+                            Image.Position.X = (int)destination.X;
+                            destination.X += 64;
+                            running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+
+                            if (!InputManager.Instance.KeyDown(Keys.D))
+                            {
+                                state = State.Idle;
+                                wasMoving = true;
+                            }
                         }
-                        destination.X -= 64;
-                        state = State.MoveLeft;
-                    }
-                    else if (InputManager.Instance.KeyDown(Keys.D))
-                    {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y != 1 && Image.SpriteSheetEffect.CurrentFrame.Y != 5)
-                        {
-                            Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
-                            changeDirection = true;
-                            break;
-                        }
-                        destination.X += 64;
-                        state = State.MoveRight;
-                    }
-                    else
-                    {
-                        if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
-                            Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
-                        Image.IsActive = false;
-                    }
+                        else
+                            Image.Position.X += speed;
 
-                    wasMoving = false;
-                    break;
-                case State.MoveUp:
+                        Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
+                        break;
+                    default:
+                        break;
+                }
 
-                    if (Image.Position.Y - speed < (int) destination.Y)
-                    {
-                        
-                        Image.Position.Y = (int)destination.Y;
-                        destination.Y -= 64;
-                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
-
-                        if (!InputManager.Instance.KeyDown(Keys.W))
-                        {
-                            state = State.Idle;
-                            wasMoving = true;
-                        }
-                    }
-                    else
-                        Image.Position.Y -= speed;
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
-                    break;
-                case State.MoveDown:
-
-                    if (Image.Position.Y + speed > (int) destination.Y)
-                    {
-                        Image.Position.Y = (int) destination.Y;
-                        destination.Y += 64;
-                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
-
-                        if (!InputManager.Instance.KeyDown(Keys.S))
-                        {
-                            state = State.Idle;
-                            wasMoving = true;
-                        }
-                    }
-                    else
-                        Image.Position.Y += speed;
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
-                    break;
-                case State.MoveLeft:
-
-                    if (Image.Position.X - speed < destination.X)
-                    {
-                        Image.Position.X = (int) destination.X;
-                        destination.X -= 64;
-                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
-
-                        if (!InputManager.Instance.KeyDown(Keys.A))
-                        {
-                            state = State.Idle;
-                            wasMoving = true;
-                        }
-                    }
-                    else
-                        Image.Position.X -= speed;
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 4 : 0;
-                    break;
-                case State.MoveRight:
-
-                    if (Image.Position.X + speed > destination.X)
-                    {
-                        Image.Position.X = (int) destination.X;
-                        destination.X += 64;
-                        running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
-
-                        if (!InputManager.Instance.KeyDown(Keys.D))
-                        {
-                            state = State.Idle;
-                            wasMoving = true;
-                        }
-                    }
-                    else
-                        Image.Position.X += speed;
-
-                    Image.SpriteSheetEffect.CurrentFrame.Y = running ? 5 : 1;
-                    break;
-                default:
-                    break;
+                Image.Update(gameTime);
             }
-            Image.Update(gameTime);
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -252,10 +262,10 @@ namespace PokemonFireRedClone
         // spawns in player on a tile
         public void Spawn(Map map)
         {
-            if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 8) != null)
+            if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8) != null)
             {
-                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 8).Position.X,
-                    TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Height / 8).Position.Y - 84);
+                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8).Position.X,
+                    TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8).Position.Y - 84);
                 Image.Position = centerTile;
             }
         }

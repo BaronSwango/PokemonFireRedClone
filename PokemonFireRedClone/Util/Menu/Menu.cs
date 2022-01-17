@@ -40,19 +40,7 @@ namespace PokemonFireRedClone
         }
 
         // transitioning from menu to screen or menu to other menu through link ID
-        public virtual void Transition(float alpha)
-        {
-            //TODO: Add to TitleMenu
-            //foreach (MenuItem item in Items)
-            //{
-                //item.Image.IsActive = true;
-                //item.Image.Alpha = alpha;
-                //if (alpha == 0.0f)
-                    //item.Image.FadeEffect.Increase = true;
-                //else
-                    //item.Image.FadeEffect.Increase = false;
-            //}
-        }
+        public virtual void Transition(float alpha) { }
 
         protected virtual void AlignMenuItems() { }
 

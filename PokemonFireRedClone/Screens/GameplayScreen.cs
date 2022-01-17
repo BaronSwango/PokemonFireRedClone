@@ -13,6 +13,7 @@ namespace PokemonFireRedClone
         public Player player;
         Map map;
         MenuManager menuManager;
+        public TextBoxManager TextBoxManager;
 
         public Camera Camera
         {
@@ -23,6 +24,7 @@ namespace PokemonFireRedClone
         public GameplayScreen()
         {
             menuManager = new MenuManager("MainMenu");
+            TextBoxManager = new TextBoxManager();
         }
 
         public override void LoadContent()
@@ -35,6 +37,7 @@ namespace PokemonFireRedClone
             map = mapLoader.Load("Load/Gameplay/Map/PalletTown.xml");
             player.LoadContent();
             map.LoadContent();
+            TextBoxManager.LoadXML();
 
             player.Spawn(map);
 
@@ -44,8 +47,6 @@ namespace PokemonFireRedClone
         public override void UnloadContent()
         {
             base.UnloadContent();
-            XmlManager<Player> playerSaver = new XmlManager<Player>();
-            playerSaver.Save("Load/Gameplay/Baron.xml", player.Image.Position.X);
             player.UnloadContent();
             map.UnloadContent();
         }
@@ -53,21 +54,28 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
             if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && player.Image.SpriteSheetEffect.CurrentFrame.X == 0)
-            {               
-                if (!menuManager.IsLoaded)
+            {
+                if (!menuManager.IsLoaded && player.CanUpdate)
+                {
                     menuManager.LoadContent("Load/Menus/MainMenu.xml");
-                else
+                    player.CanUpdate = false;
+                }
+                else if (menuManager.IsLoaded)
+                {
                     menuManager.UnloadContent();
+                    player.CanUpdate = true;
+                }
             }
 
-            if (!menuManager.IsLoaded)
+            if (!menuManager.IsLoaded && player.CanUpdate)
                 player.Update(gameTime);
             map.Update(gameTime, ref player);
             Camera.Follow(player);
             if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
+            TextBoxManager.Update(gameTime, ref map, ref player);
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -78,6 +86,7 @@ namespace PokemonFireRedClone
             map.Draw(spriteBatch, "Overlay");
             if (menuManager.IsLoaded)
                 menuManager.Draw(spriteBatch);
+            TextBoxManager.Draw(spriteBatch);
         }
 
 

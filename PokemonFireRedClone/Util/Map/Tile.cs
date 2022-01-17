@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,7 +11,8 @@ namespace PokemonFireRedClone
 
         Vector2 position;
         Rectangle sourceRect;
-        string state;
+        public string State;
+        public string ID;
 
         public Rectangle SourceRect
         {
@@ -22,30 +24,16 @@ namespace PokemonFireRedClone
             get { return position; }
         }
 
-        public Vector2 Center
-        {
-            get
-            { return new Vector2(position.X + (SourceRect.Width / 2), position.Y + (SourceRect.Height / 2)); }
-        }
-
-
-        /*
-         * Find position of tile
-         * FInd Height znd width of tile
-         * Find center position of tile
-         *
-         *
-         */
 
         public Tile()
         {
         }
 
-        public void LoadContent(Vector2 position, Rectangle sourceRect, string state)
+        public void LoadContent(Vector2 position, Rectangle sourceRect, string State)
         {
             this.position = position;
             this.sourceRect = sourceRect;
-            this.state = state;
+            this.State = State;
         }
 
         public void UnloadContent()
@@ -56,7 +44,7 @@ namespace PokemonFireRedClone
         //TODO: Play sound when colliding
         public void Update(GameTime gameTime, ref Player player)
         {
-            if (state == "Solid")
+            if (State == "Solid")
             {
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,
                     sourceRect.Width, sourceRect.Height - 20);
@@ -74,9 +62,17 @@ namespace PokemonFireRedClone
                     else if (player.state == Player.State.MoveRight)
                         player.Image.Position.X = tileRect.Left - player.Image.SourceRect.Width;
                     else if (player.state == Player.State.MoveUp)
+                    {
                         player.Image.Position.Y = tileRect.Bottom;
+                        player.Image.SpriteSheetEffect.CurrentFrame.X = 0;
+                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
+                    }
                     else
+                    {
                         player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
+                        player.Image.SpriteSheetEffect.CurrentFrame.X = 0;
+                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
+                    }
                     player.state = Player.State.Idle;
                 }
             }
@@ -85,7 +81,6 @@ namespace PokemonFireRedClone
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
         }
 
     }

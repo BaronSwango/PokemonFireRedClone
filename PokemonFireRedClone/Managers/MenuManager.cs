@@ -65,6 +65,7 @@ namespace PokemonFireRedClone
 
 
         }
+
         public void LoadContent(string menuPath)
         {
             if (menuPath != string.Empty)
@@ -102,8 +103,12 @@ namespace PokemonFireRedClone
                         item.Image.StoreEffects();
                         item.Image.ActivateEffect("FadeEffect");
                     }
-                } else if (menu.Items[menu.ItemNumber].LinkType == "Exit")
+                }
+                else if (menu.Items[menu.ItemNumber].LinkType == "Exit")
+                {
                     UnloadContent();
+                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.CanUpdate = true;
+                }
             }
 
             Transition(gameTime);
