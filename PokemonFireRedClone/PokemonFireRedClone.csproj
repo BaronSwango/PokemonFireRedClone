@@ -18,7 +18,6 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="Load\Gameplay\Player.xml" />
-    <None Remove="Load\Gameplay\TextBoxManager.xml" />
     <None Remove="Load\SplashScreen.xml" />
     <None Remove="Content\ScreenManager\" />
     <None Remove="Load\ScreenManager.xml" />
@@ -40,6 +39,7 @@
     <None Remove="Content\TextBoxes\" />
     <None Remove="Load\Gameplay\TextBoxes.xml" />
     <None Remove="Util\TextBox\" />
+    <None Remove="Load\Gameplay\TextBoxManager.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -60,9 +60,6 @@
     <Content Include="Load\Gameplay\Player.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Load\Gameplay\TextBoxManager.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -76,6 +73,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Menus\MainMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Gameplay\TextBoxManager.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
