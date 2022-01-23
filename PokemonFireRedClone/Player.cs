@@ -86,9 +86,9 @@ namespace PokemonFireRedClone
                         Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                 }
                 else if (running)
-                    Image.SpriteSheetEffect.SwitchFrame = 64;
+                    Image.SpriteSheetEffect.SwitchFrame = 61;
                 else
-                    Image.SpriteSheetEffect.SwitchFrame = 137;
+                    Image.SpriteSheetEffect.SwitchFrame = 131;
 
                 int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
 
