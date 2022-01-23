@@ -13,7 +13,7 @@ namespace PokemonFireRedClone
         [XmlElement("TextBoxes")]
         public List<TextBox> TextBoxes;
         [XmlIgnore]
-        public TextBox ActiveTextBox;
+        TextBox textBox;
 
         public void LoadXML()
         {
@@ -29,8 +29,8 @@ namespace PokemonFireRedClone
             {
                 if (textBox.ID == ID)
                 {
-                    ActiveTextBox = textBox;
-                    ActiveTextBox.LoadContent(ref player);
+                    this.textBox = textBox;
+                    this.textBox.LoadContent(ref player);
                 }
             }
         }
@@ -38,10 +38,10 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime, ref Map map, ref Player player)
         {
 
-            if (ActiveTextBox != null)
+            if (textBox != null)
             {
-                ActiveTextBox.Update(gameTime);
-                if (ActiveTextBox.IsDisplayed)
+                textBox.Update(gameTime);
+                if (textBox.IsDisplayed)
                 {
                     if ((InputManager.Instance.KeyPressed(Keys.D, Keys.W, Keys.S) && player.direction == Player.Direction.Left)
                         || (InputManager.Instance.KeyPressed(Keys.W, Keys.A, Keys.D) && player.direction == Player.Direction.Down)
@@ -49,8 +49,8 @@ namespace PokemonFireRedClone
                         || (InputManager.Instance.KeyPressed(Keys.S, Keys.W, Keys.A) && player.direction == Player.Direction.Right)
                         || InputManager.Instance.KeyPressed(Keys.E))
                     {
-                        ActiveTextBox.UnloadContent(ref player);
-                        ActiveTextBox = null;
+                        textBox.UnloadContent(ref player);
+                        textBox = null;
                     }
 
                 }
@@ -78,8 +78,8 @@ namespace PokemonFireRedClone
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (ActiveTextBox != null)
-                ActiveTextBox.Draw(spriteBatch);
+            if (textBox != null)
+                textBox.Draw(spriteBatch);
         }
 
     }
