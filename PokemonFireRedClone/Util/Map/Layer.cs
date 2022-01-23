@@ -47,7 +47,6 @@ namespace PokemonFireRedClone
         {
             Image.LoadContent();
             Vector2 position = -tileDimensions;
-            int solidID = 0;
             foreach (string row in Tile.Row)
             {
                 string[] split = row.Split(']');

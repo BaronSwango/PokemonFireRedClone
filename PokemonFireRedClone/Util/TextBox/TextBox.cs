@@ -13,7 +13,7 @@ namespace PokemonFireRedClone
 
         //TODO: Also add bouncing red triangle after text if applicable
 
-        public event EventHandler OnPageChange;
+        //public event EventHandler OnPageChange;
 
         public string Type;
         [XmlElement("Dialogue")]
