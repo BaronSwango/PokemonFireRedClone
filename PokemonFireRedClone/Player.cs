@@ -110,7 +110,6 @@ namespace PokemonFireRedClone
                             }
                             changeDirection = false;
                             waitToMove = 0;
-                            Image.SpriteSheetEffect.CurrentFrame.X = 0;
                         }
 
                         if (InputManager.Instance.KeyDown(Keys.W))
