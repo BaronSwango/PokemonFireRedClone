@@ -25,6 +25,10 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public bool IsDisplayed;
 
+        int positionOffset;
+        int dialogueOffsetX;
+        int dialogueOffsetY;
+
         private void Transition()
         {
             //TODO: Add text animation slide animation with two white rectangles getting smaller through the update function
@@ -50,14 +54,26 @@ namespace PokemonFireRedClone
             border = new Image();
 
             if (Type == "Tile")
+            {
                 border.Path = "TextBoxes/GrayTextBox";
+                positionOffset = 216;
+                dialogueOffsetX = 48;
+                dialogueOffsetY = 24;
+            }
+            else if (Type == "NPC")
+            {
+                border.Path = "TextBoxes/BlueTextBox";
+                positionOffset = 220;
+                dialogueOffsetX = 44;
+                dialogueOffsetY = 20;
+            }
             border.LoadContent();
             border.Position = new Vector2(player.Image.Position.X - (ScreenManager.Instance.Dimensions.X -
-                border.SourceRect.Width) - 64, player.Image.Position.Y + 216);
+                border.SourceRect.Width) - 64, player.Image.Position.Y + positionOffset);
             foreach (Image image in Dialogue)
             {
                 image.LoadContent();
-                image.Position = new Vector2(border.Position.X + 48, border.Position.Y + 24);
+                image.Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY);
                 //image.ActivateEffect("TextBoxEffect");
             }
 

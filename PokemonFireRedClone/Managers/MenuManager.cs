@@ -15,6 +15,7 @@ namespace PokemonFireRedClone
         string menuName;
         bool isTransitioning;
         public bool IsLoaded;
+        public bool wasLoaded;
 
         void Transition(GameTime gameTime)
         {
@@ -86,7 +87,6 @@ namespace PokemonFireRedClone
                 foreach (MenuItem item in menu.Items)
                     item.Image.RestoreEffects();
             }
-  
 
             if (!isTransitioning)
                 menu.Update(gameTime);
@@ -108,6 +108,7 @@ namespace PokemonFireRedClone
                 {
                     UnloadContent();
                     ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.CanUpdate = true;
+                    wasLoaded = true;
                 }
             }
 

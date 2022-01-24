@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
 {
@@ -73,9 +68,11 @@ namespace PokemonFireRedClone
             }
             else
             {
+
                 if (CurrentFrame.Y > 3)
                     CurrentFrame.Y -= 4;
                 CurrentFrame.X = CurrentFrame.X == 1 || CurrentFrame.X == 2 ? 2 : 0;
+
                 if (wasActive)
                 {
                     FrameCounter = 0;

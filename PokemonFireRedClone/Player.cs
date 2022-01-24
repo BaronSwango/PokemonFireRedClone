@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -106,11 +103,16 @@ namespace PokemonFireRedClone
                 // COLLISION DETECTION END
 
 
+                // SAVE GAME HOTKEY
                 if (InputManager.Instance.KeyPressed(Keys.Tab))
                     save(elapsedTime);
 
+
+                // COUNTS AND ADDS TIME TO PLAYER'S TOTAL GAME TIME
                 elapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
 
+
+                // CHANGES ANIMATION SPEED
                 if (Colliding)
                 {
                     Image.SpriteSheetEffect.SwitchFrame = 250;
@@ -122,11 +124,15 @@ namespace PokemonFireRedClone
                 else
                     Image.SpriteSheetEffect.SwitchFrame = 130;
 
+                
                 if (changeDirection && Colliding)
                     Colliding = false;
 
+
                 int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
 
+
+                // TILE BASED MOVEMENT START
                 switch (state)
                 {
                     case State.Idle:
@@ -144,6 +150,7 @@ namespace PokemonFireRedClone
                                 waitToMove++;
                                 break;
                             }
+                            Image.SpriteSheetEffect.CurrentFrame.X = 0;
                             changeDirection = false;
                             waitToMove = 0;
                         }
@@ -295,6 +302,8 @@ namespace PokemonFireRedClone
                     default:
                         break;
                 }
+                // TILE BASED MOVEMENT END
+
                 Image.Update(gameTime);
             }
         }
@@ -304,7 +313,7 @@ namespace PokemonFireRedClone
             Image.Draw(spriteBatch);
         }
 
-        // spawns in player on a tile
+        
         public void Spawn(Map map)
         {
             if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8) != null)

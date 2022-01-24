@@ -54,6 +54,10 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            if (menuManager.wasLoaded)
+                menuManager.wasLoaded = false;
+
             if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && (player.Image.SpriteSheetEffect.CurrentFrame.X == 0 || player.Image.SpriteSheetEffect.CurrentFrame.X == 2))
             {
                 if (!menuManager.IsLoaded && player.CanUpdate)
@@ -74,7 +78,8 @@ namespace PokemonFireRedClone
             Camera.Follow(player);
             if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
-            TextBoxManager.Update(gameTime, ref map, ref player);
+            if (!menuManager.wasLoaded)
+                TextBoxManager.Update(gameTime, ref map, ref player);
 
         }
 
