@@ -24,7 +24,7 @@ namespace PokemonFireRedClone
         public void LoadContent(string ID, ref Player player)
         {
             LoadXML();
-
+            
             foreach (TextBox textBox in TextBoxes)
             {
                 if (textBox.ID == ID)
@@ -56,22 +56,31 @@ namespace PokemonFireRedClone
                 }
             } else
             {
-                if (InputManager.Instance.KeyPressed(Keys.E) && player.CanUpdate && player.state == Player.State.Idle)
+                if (player.CanUpdate)
                 {
-
                     Tile currentTile = TileManager.Instance.GetCurrentTile(map, player.Image, player.Image.SourceRect.Width / 2, player.Image.SourceRect.Height);
 
-                    if (TileManager.Instance.UpTile(map, currentTile) != null && player.direction == Player.Direction.Up)
+                    if (InputManager.Instance.KeyPressed(Keys.E) && player.state == Player.State.Idle)
+                    {
+
+                        if (TileManager.Instance.UpTile(map, currentTile) != null && player.direction == Player.Direction.Up)
+                            LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref player);
+
+                        if (TileManager.Instance.DownTile(map, currentTile) != null && player.direction == Player.Direction.Down)
+                            LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref player);
+
+                        if (TileManager.Instance.LeftTile(map, currentTile) != null && player.direction == Player.Direction.Left)
+                            LoadContent(TileManager.Instance.LeftTile(map, currentTile).ID, ref player);
+
+                        if (TileManager.Instance.RightTile(map, currentTile) != null && player.direction == Player.Direction.Right)
+                            LoadContent(TileManager.Instance.RightTile(map, currentTile).ID, ref player);
+                    }
+                    else if (currentTile != null && InputManager.Instance.KeyPressed(Keys.W) && TileManager.Instance.UpTile(map, currentTile) != null && player.direction == Player.Direction.Up)
                         LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref player);
 
-                    if (TileManager.Instance.DownTile(map, currentTile) != null && player.direction == Player.Direction.Down)
+                    else if (currentTile != null && InputManager.Instance.KeyPressed(Keys.S) && TileManager.Instance.DownTile(map, currentTile) != null && player.direction == Player.Direction.Down)
                         LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref player);
 
-                    if (TileManager.Instance.LeftTile(map, currentTile) != null && player.direction == Player.Direction.Left)
-                        LoadContent(TileManager.Instance.LeftTile(map, currentTile).ID, ref player);
-
-                    if (TileManager.Instance.RightTile(map, currentTile) != null && player.direction == Player.Direction.Right)
-                        LoadContent(TileManager.Instance.RightTile(map, currentTile).ID, ref player);
                 }
             }
         }

@@ -15,7 +15,7 @@ namespace PokemonFireRedClone
     //TODO: When creating a new game, don't load in player's save file or the json object
 
     //TODO: Make PlayerJsonObject accessible anywhere, even start of game, going to have to
-    //TODO: Clean up player movement LAST THING TO DO AFTER GAME IS BASICALLY DONE
+    //TODO: Clean up player animation so animation doesn't glitch (has to do with frame counter and move speed per tile)
     
 
     public class Player
@@ -72,6 +72,8 @@ namespace PokemonFireRedClone
                 Image.IsActive = true;
                 direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? (Direction)Image.SpriteSheetEffect.CurrentFrame.Y - 4 : (Direction)Image.SpriteSheetEffect.CurrentFrame.Y;
 
+
+                // COLLISION DETECTION START
                 Tile currentTile = TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 2, Image.SourceRect.Height);
 
                 if (currentTile != null)
@@ -101,6 +103,8 @@ namespace PokemonFireRedClone
                     }
 
                 }
+                // COLLISION DETECTION END
+
 
                 if (InputManager.Instance.KeyPressed(Keys.Tab))
                     save(elapsedTime);
