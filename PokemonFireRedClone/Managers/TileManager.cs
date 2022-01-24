@@ -49,7 +49,6 @@ namespace PokemonFireRedClone
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X-64, currentTile.Position.Y-64)))
                     return tile;
             }
-            Console.WriteLine();
             return null;
         }
 
@@ -80,8 +79,20 @@ namespace PokemonFireRedClone
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
                     return tile;
             }
-            Console.WriteLine();
             return null;
+        }
+
+        public bool IsTextBoxTile(GameplayScreen gameplayScreen, Tile tile)
+        {
+            foreach (TextBox textBox in gameplayScreen.TextBoxManager.TextBoxes)
+            {
+                if (tile != null)
+                {
+                    if (textBox.ID == tile.ID)
+                        return true;
+                }
+            }
+            return false;
         }
 
     }

@@ -54,10 +54,6 @@ namespace PokemonFireRedClone
 
                 if (playerRect.Intersects(tileRect))
                 {
-                    player.Colliding = true;
-                    player.Image.SpriteSheetEffect.SwitchFrame = 250;
-                    if (player.Image.SpriteSheetEffect.CurrentFrame.Y > 3)
-                        player.Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                     if (player.state == Player.State.MoveLeft)
                         player.Image.Position.X = tileRect.Right;
                     else if (player.state == Player.State.MoveRight)
@@ -65,16 +61,17 @@ namespace PokemonFireRedClone
                     else if (player.state == Player.State.MoveUp)
                     {
                         player.Image.Position.Y = tileRect.Bottom;
-                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
+                        //((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
                     }
                     else
                     {
                         player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
-                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
+                        //((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(ID, ref player);
                     }
                     player.state = Player.State.Idle;
                 }
             }
+
 
         }
 

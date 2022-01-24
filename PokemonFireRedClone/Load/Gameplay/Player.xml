@@ -4,5 +4,5 @@
 		<Path>Gameplay/Player</Path>
 		<Effects>SpriteSheetEffect</Effects>
 	</Image>
-	<MoveSpeed>0.25</MoveSpeed>
+	<MoveSpeed>0.26</MoveSpeed>
 </Player>

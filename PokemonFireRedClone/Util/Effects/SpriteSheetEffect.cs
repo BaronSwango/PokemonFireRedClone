@@ -13,6 +13,7 @@ namespace PokemonFireRedClone
         public int SwitchFrame;
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
+        bool wasActive;
 
         public int FrameWidth
         {
@@ -39,7 +40,7 @@ namespace PokemonFireRedClone
         {
             AmountOfFrames = new Vector2(4, 8);
             CurrentFrame = new Vector2(1, 0);
-            SwitchFrame = 125;
+            SwitchFrame = 130;
             FrameCounter = 0;
         }
         public override void LoadContent(ref Image Image)
@@ -66,10 +67,22 @@ namespace PokemonFireRedClone
                     if (CurrentFrame.X * FrameWidth >= image.Texture.Width)
                         CurrentFrame.X = 0;
 
+                    if (!wasActive)
+                        wasActive = true;
                 }
             }
             else
+            {
+                if (CurrentFrame.Y > 3)
+                    CurrentFrame.Y -= 4;
                 CurrentFrame.X = CurrentFrame.X == 1 || CurrentFrame.X == 2 ? 2 : 0;
+                if (wasActive)
+                {
+                    FrameCounter = 0;
+                    wasActive = false;
+                }
+                
+            }
             
             image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
                 (int) CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);

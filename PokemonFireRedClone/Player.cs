@@ -15,7 +15,7 @@ namespace PokemonFireRedClone
     //TODO: When creating a new game, don't load in player's save file or the json object
 
     //TODO: Make PlayerJsonObject accessible anywhere, even start of game, going to have to
-    //TODO: Clean up player movement and add Collision detection to player update function
+    //TODO: Clean up player movement LAST THING TO DO AFTER GAME IS BASICALLY DONE
     
 
     public class Player
@@ -65,19 +65,47 @@ namespace PokemonFireRedClone
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref Map map)
         {
             if (CanUpdate)
             {
-                direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? (Direction) Image.SpriteSheetEffect.CurrentFrame.Y - 4 : (Direction) Image.SpriteSheetEffect.CurrentFrame.Y;
+                Image.IsActive = true;
+                direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? (Direction)Image.SpriteSheetEffect.CurrentFrame.Y - 4 : (Direction)Image.SpriteSheetEffect.CurrentFrame.Y;
+
+                Tile currentTile = TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 2, Image.SourceRect.Height);
+
+                if (currentTile != null)
+                {
+                    if (((TileManager.Instance.UpTile(map, currentTile) != null && TileManager.Instance.UpTile(map, currentTile).State == "Solid" && direction == Direction.Up)
+                        || (TileManager.Instance.DownTile(map, currentTile) != null && TileManager.Instance.DownTile(map, currentTile).State == "Solid" && direction == Direction.Down)
+                        || (TileManager.Instance.LeftTile(map, currentTile) != null && TileManager.Instance.LeftTile(map, currentTile).State == "Solid" && direction == Direction.Left)
+                        || (TileManager.Instance.RightTile(map, currentTile) != null && TileManager.Instance.RightTile(map, currentTile).State == "Solid" && direction == Direction.Right))
+                        && state == State.Idle)
+                    {
+                        if (!Colliding)
+                        {
+                            if ((TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.UpTile(map, currentTile)) && direction == Direction.Up)
+                            || (TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.DownTile(map, currentTile)) && direction == Direction.Down))
+                            {
+                                if (direction == Direction.Up)
+                                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
+                                else
+                                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
+
+                                Image.IsActive = false;
+                            }
+                            if (changeDirection)
+                                changeDirection = false;
+                            Colliding = true;
+                        }
+                    }
+
+                }
 
                 if (InputManager.Instance.KeyPressed(Keys.Tab))
                     save(elapsedTime);
 
                 elapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
-
-                if (changeDirection && Colliding)
-                    Colliding = false;
 
                 if (Colliding)
                 {
@@ -86,9 +114,12 @@ namespace PokemonFireRedClone
                         Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
                 }
                 else if (running)
-                    Image.SpriteSheetEffect.SwitchFrame = 61;
+                    Image.SpriteSheetEffect.SwitchFrame = 60;
                 else
-                    Image.SpriteSheetEffect.SwitchFrame = 132;
+                    Image.SpriteSheetEffect.SwitchFrame = 130;
+
+                if (changeDirection && Colliding)
+                    Colliding = false;
 
                 int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
 
@@ -99,6 +130,7 @@ namespace PokemonFireRedClone
                         running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
                         // causes a change in direction but no movement unless key is held down more than 4 iterations of the Update method
+
                         if (changeDirection && !wasMoving)
                         {
                             if (waitToMove < 4)
@@ -118,6 +150,7 @@ namespace PokemonFireRedClone
                             {
                                 Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
                                 changeDirection = true;
+                                Console.WriteLine(gameTime.ElapsedGameTime.TotalMilliseconds);
                                 break;
                             }
                             destination.Y -= 64;
@@ -129,7 +162,7 @@ namespace PokemonFireRedClone
                         {
                             if (Image.SpriteSheetEffect.CurrentFrame.Y != 2 && Image.SpriteSheetEffect.CurrentFrame.Y != 6)
                             {
-                                 Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
+                                Image.SpriteSheetEffect.CurrentFrame.Y = running ? 6 : 2;
                                 changeDirection = true;
                                 break;
                             }
@@ -258,7 +291,6 @@ namespace PokemonFireRedClone
                     default:
                         break;
                 }
-
                 Image.Update(gameTime);
             }
         }

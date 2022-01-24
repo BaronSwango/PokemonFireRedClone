@@ -40,7 +40,7 @@ namespace PokemonFireRedClone
             TextBoxManager.LoadXML();
 
             player.Spawn(map);
-
+            
             Camera = new Camera();
         }
 
@@ -54,7 +54,7 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && player.Image.SpriteSheetEffect.CurrentFrame.X == 0)
+            if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && (player.Image.SpriteSheetEffect.CurrentFrame.X == 0 || player.Image.SpriteSheetEffect.CurrentFrame.X == 2))
             {
                 if (!menuManager.IsLoaded && player.CanUpdate)
                 {
@@ -69,7 +69,7 @@ namespace PokemonFireRedClone
             }
 
             if (!menuManager.IsLoaded && player.CanUpdate)
-                player.Update(gameTime);
+                player.Update(gameTime, ref map);
             map.Update(gameTime, ref player);
             Camera.Follow(player);
             if (menuManager.IsLoaded)
