@@ -29,7 +29,6 @@ namespace PokemonFireRedClone
         public Color Tint;
         public string FontColor;
         public int R, G, B, A;
-        public int Page;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;

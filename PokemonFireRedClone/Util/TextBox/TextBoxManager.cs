@@ -68,7 +68,6 @@ namespace PokemonFireRedClone
 
                     if (InputManager.Instance.KeyPressed(Keys.E) && player.state == Player.State.Idle)
                     {
-
                         if (TileManager.Instance.UpTile(map, currentTile) != null && player.direction == Player.Direction.Up)
                             LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref player);
 

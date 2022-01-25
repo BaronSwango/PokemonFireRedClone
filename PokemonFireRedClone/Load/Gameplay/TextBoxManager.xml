@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <TextBoxManager>
     <TextBoxes>
-        <TotalPages>2</TotalPages>
+        <TotalPages>1</TotalPages>
         <Type>Tile</Type>
         <ID>[4:0:2]</ID>
         <Dialogue>
@@ -22,24 +22,6 @@
             <A>255</A>
             <Text>Shades   of   your   journey   await!</Text>
         </Dialogue>
-        <Dialogue>
-            <Page>2</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>Devon   Nedved</Text>
-        </Dialogue>
-        <Dialogue>
-            <Page>2</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>Can   We   Watch   Survivor   Now?</Text>
-        </Dialogue>
     </TextBoxes>
     <TextBoxes>
         <TotalPages>1</TotalPages>
@@ -56,7 +38,7 @@
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
-        <TotalPages>1</TotalPages>
+        <TotalPages>2</TotalPages>
         <Type>Tile</Type>
         <ID>[4:1:3]</ID>
         <Dialogue>
@@ -67,6 +49,15 @@
             <B>113</B>
             <A>255</A>
             <Text>TRAINER   TIPS</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>Press   F   to   open   the   MENU!</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
