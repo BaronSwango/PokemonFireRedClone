@@ -64,6 +64,7 @@ namespace PokemonFireRedClone
                         player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
 
                     player.state = Player.State.Idle;
+                    player.Colliding = true;
                 }
             }
 
