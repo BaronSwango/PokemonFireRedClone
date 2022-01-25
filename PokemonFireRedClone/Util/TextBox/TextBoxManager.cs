@@ -41,14 +41,20 @@ namespace PokemonFireRedClone
             if (textBox != null)
             {
                 textBox.Update(gameTime);
-                if (textBox.IsDisplayed)
+                if (textBox.IsDisplayed && !textBox.IsTransitioning)
                 {
-                    if ((InputManager.Instance.KeyPressed(Keys.D, Keys.W, Keys.S) && player.direction == Player.Direction.Left)
-                        || (InputManager.Instance.KeyPressed(Keys.W, Keys.A, Keys.D) && player.direction == Player.Direction.Down)
-                        || (InputManager.Instance.KeyPressed(Keys.S, Keys.D, Keys.A) && player.direction == Player.Direction.Up)
-                        || (InputManager.Instance.KeyPressed(Keys.S, Keys.W, Keys.A) && player.direction == Player.Direction.Right)
+                    if ((InputManager.Instance.KeyDown(Keys.D, Keys.W, Keys.S) && player.direction == Player.Direction.Left)
+                        || (InputManager.Instance.KeyDown(Keys.W, Keys.A, Keys.D) && player.direction == Player.Direction.Down)
+                        || (InputManager.Instance.KeyDown(Keys.S, Keys.D, Keys.A) && player.direction == Player.Direction.Up)
+                        || (InputManager.Instance.KeyDown(Keys.S, Keys.W, Keys.A) && player.direction == Player.Direction.Right)
                         || InputManager.Instance.KeyPressed(Keys.E))
                     {
+                        if (InputManager.Instance.KeyPressed(Keys.E) && textBox.Page != textBox.TotalPages)
+                        {
+                            textBox.IsTransitioning = true;
+                            return;
+                        }
+
                         textBox.UnloadContent(ref player);
                         textBox = null;
                     }

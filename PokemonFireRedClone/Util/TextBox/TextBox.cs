@@ -21,24 +21,88 @@ namespace PokemonFireRedClone
         public string ID;
         [XmlIgnore]
         public int Page;
+        public int TotalPages;
         Image border;
         [XmlIgnore]
         public bool IsDisplayed;
+        public bool IsTransitioning;
 
         int positionOffset;
         int dialogueOffsetX;
         int dialogueOffsetY;
 
-        private void Transition()
+        Image transitionRect;
+        Image transitionRect2;
+        List<Image> currentDialogue;
+        bool updateDialogue;
+
+        private void Transition(GameTime gameTime)
         {
             //TODO: Add text animation slide animation with two white rectangles getting smaller through the update function
+            if (IsTransitioning)
+            {
+                if (updateDialogue)
+                {
+                    if (Page <= TotalPages)
+                    {
+                        Page++;
+                        currentDialogue.Clear();
+                        foreach (Image image in Dialogue)
+                        {
+                            if (image.Page == Page)
+                                currentDialogue.Add(image);
+                        }
+
+                        currentDialogue[0].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY);
+
+                        transitionRect.Scale = new Vector2(currentDialogue[0].SourceRect.Width, currentDialogue[0].SourceRect.Height);
+                        transitionRect.Position = new Vector2(currentDialogue[0].Position.X, currentDialogue[0].Position.Y);
+
+                        if (currentDialogue.Count == 2)
+                        {
+                            currentDialogue[1].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY + 60);
+
+                            transitionRect2.Scale = new Vector2(currentDialogue[1].SourceRect.Width, currentDialogue[1].SourceRect.Height);
+                            transitionRect2.Position = new Vector2(currentDialogue[1].Position.X, currentDialogue[1].Position.Y);
+                        }
+                    }
+
+                    updateDialogue = false;
+
+                }
+
+
+
+                float speed = (float)(1.5 * gameTime.ElapsedGameTime.TotalMilliseconds);
+
+                if (transitionRect.Scale.X > 1)
+                {
+                    transitionRect.Scale = new Vector2(transitionRect.Scale.X - speed, transitionRect.Scale.Y);
+                    transitionRect.Position = new Vector2(transitionRect.Position.X + speed, transitionRect.Position.Y);
+                }
+                else
+                {
+                    if (currentDialogue.Count == 2 && transitionRect2.Scale.X > 1)
+                    {
+                        transitionRect2.Scale = new Vector2(transitionRect2.Scale.X - speed, transitionRect2.Scale.Y);
+                        transitionRect2.Position = new Vector2(transitionRect2.Position.X + speed, transitionRect2.Position.Y);
+                        return;
+                    }
+
+                    IsTransitioning = false;
+                    updateDialogue = true;
+                }
+            }
+                
+
         }
 
 
         public TextBox()
         {
             Dialogue = new List<Image>();
-            Page = 0;
+            currentDialogue = new List<Image>();
+            Page = 1;
         }
 
         public void LoadContent(ref Player player)
@@ -50,6 +114,7 @@ namespace PokemonFireRedClone
             player.CanUpdate = false;
 
             IsDisplayed = true;
+            IsTransitioning = true;
 
             border = new Image();
 
@@ -73,10 +138,36 @@ namespace PokemonFireRedClone
             foreach (Image image in Dialogue)
             {
                 image.LoadContent();
-                image.Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY);
-                //image.ActivateEffect("TextBoxEffect");
+
             }
 
+            foreach (Image image in Dialogue)
+            {
+                if (image.Page == 1)
+                    currentDialogue.Add(image);
+            }
+
+            currentDialogue[0].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY);
+
+            //TRANSITION
+            transitionRect = new Image();
+            transitionRect.Path = "TextBoxes/TextBoxEffectPixel";
+            transitionRect.LoadContent();
+            transitionRect.Scale = new Vector2(currentDialogue[0].SourceRect.Width, currentDialogue[0].SourceRect.Height);
+            transitionRect.Position = new Vector2(currentDialogue[0].Position.X, currentDialogue[0].Position.Y);
+
+
+            if (currentDialogue.Count == 2)
+            {
+                currentDialogue[1].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY + 60);
+                transitionRect2 = new Image();
+                transitionRect2.Path = "TextBoxes/TextBoxEffectPixel";
+                transitionRect2.LoadContent();
+                transitionRect2.Scale = new Vector2(currentDialogue[1].SourceRect.Width, currentDialogue[1].SourceRect.Height);
+                transitionRect2.Position = new Vector2(currentDialogue[1].Position.X, currentDialogue[1].Position.Y);
+            }
+
+            //END TRANSITION
         }
 
         public void UnloadContent(ref Player player)
@@ -95,6 +186,10 @@ namespace PokemonFireRedClone
                 border.Update(gameTime);
                 foreach (Image image in Dialogue)
                     image.Update(gameTime);
+
+
+                Transition(gameTime);
+
             }
         }
 
@@ -103,8 +198,20 @@ namespace PokemonFireRedClone
             if (IsDisplayed)
             {
                 border.Draw(spriteBatch);
-                foreach (Image image in Dialogue)
-                    image.Draw(spriteBatch);
+                foreach (Image image in currentDialogue)
+                {
+                    if (image.Page == Page)
+                        image.Draw(spriteBatch);
+                }
+
+                if (IsTransitioning)
+                {
+                    transitionRect.Draw(spriteBatch);
+                    if (currentDialogue.Count == 2)
+                        transitionRect2.Draw(spriteBatch);
+                }
+                //foreach (Image image in Dialogue)
+                    //image.Draw(spriteBatch);
             }
         }
 

@@ -1,34 +1,66 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <TextBoxManager>
     <TextBoxes>
+        <TotalPages>2</TotalPages>
         <Type>Tile</Type>
         <ID>[4:0:2]</ID>
         <Dialogue>
+            <Page>1</Page>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>PALLET   TOWN
-Shades   of   your   journey   await!</Text>
+            <Text>PALLET   TOWN</Text>
         </Dialogue>
-    </TextBoxes>
-        <TextBoxes>
-        <Type>NPC</Type>
-        <ID>[4:0:4]</ID>
         <Dialogue>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <Page>1</Page>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>Technology   POKeMON   RESEARCH   LAB</Text>
+            <Text>Shades   of   your   journey   await!</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>Devon   Nedved</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>Can   We   Watch   Survivor   Now?</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
+        <TotalPages>1</TotalPages>
+        <Type>Tile</Type>
+        <ID>[4:0:4]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>OAK   POKeMON   RESEARCH   LAB</Text>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>1</TotalPages>
         <Type>Tile</Type>
         <ID>[4:1:3]</ID>
         <Dialogue>
+            <Page>1</Page>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <R>113</R>
             <G>113</G>
@@ -38,9 +70,11 @@ Shades   of   your   journey   await!</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
+        <TotalPages>1</TotalPages>
         <Type>Tile</Type>
         <ID>[3:2:0]</ID>
         <Dialogue>
+            <Page>1</Page>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <R>113</R>
             <G>113</G>
@@ -50,9 +84,11 @@ Shades   of   your   journey   await!</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
+        <TotalPages>1</TotalPages>
         <Type>Tile</Type>
         <ID>[3:2:1]</ID>
         <Dialogue>
+            <Page>1</Page>
             <FontName>Fonts/PokemonFireRedRegular18</FontName>
             <R>113</R>
             <G>113</G>

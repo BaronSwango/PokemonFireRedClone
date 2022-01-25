@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
@@ -30,6 +31,11 @@ namespace PokemonFireRedClone
         public virtual void Update(GameTime gameTime)
         {
 
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            
         }
 
     }

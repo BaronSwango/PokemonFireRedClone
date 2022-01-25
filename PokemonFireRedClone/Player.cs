@@ -161,7 +161,6 @@ namespace PokemonFireRedClone
                             {
                                 Image.SpriteSheetEffect.CurrentFrame.Y = running ? 7 : 3;
                                 changeDirection = true;
-                                Console.WriteLine(gameTime.ElapsedGameTime.TotalMilliseconds);
                                 break;
                             }
                             destination.Y -= 64;

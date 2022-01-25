@@ -29,11 +29,11 @@ namespace PokemonFireRedClone
         public Color Tint;
         public string FontColor;
         public int R, G, B, A;
+        public int Page;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
         public GrayOutEffect GrayOutEffect;
-        public TextBoxEffect TextBoxEffect;
 
 
         void SetEffect<T>(ref T effect) where T:ImageEffect
@@ -144,7 +144,6 @@ namespace PokemonFireRedClone
             SetEffect(ref FadeEffect);
             SetEffect(ref SpriteSheetEffect);
             SetEffect(ref GrayOutEffect);
-            SetEffect(ref TextBoxEffect);
 
             if (Effects != string.Empty)
             {
@@ -176,6 +175,12 @@ namespace PokemonFireRedClone
                 SourceRect.Height / 2);
             spriteBatch.Draw(Texture, Position + origin, SourceRect, Tint * Alpha,
                 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
+
+            foreach (var effect in effectList)
+            {
+                if (effect.Value.IsActive)
+                    effect.Value.Draw(spriteBatch);
+            }
         }
 
 
