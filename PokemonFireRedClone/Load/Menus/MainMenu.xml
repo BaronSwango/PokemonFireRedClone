@@ -3,7 +3,7 @@
     <Background>
         <Path>Menus/MainMenu</Path>
     </Background>
-    <PaddingY>2</PaddingY>
+    <PaddingY>4</PaddingY>
     <Arrow>
         <Path>Menus/MenuArrow</Path>
     </Arrow>

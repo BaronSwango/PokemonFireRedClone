@@ -68,7 +68,7 @@ namespace PokemonFireRedClone
                 {
                     Items[i].Image.IsActive = true;
                     Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width,
-                        Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4));
+                        Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4)-2);
                     Items[i].Description.IsActive = true;
                         
                 }

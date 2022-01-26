@@ -6,7 +6,7 @@
         <ID>[4:0:2]</ID>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
@@ -15,12 +15,12 @@
         </Dialogue>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>Shades   of   your   journey   await!</Text>
+            <Text>Shades   of   your   journey   await !</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
@@ -29,7 +29,7 @@
         <ID>[4:0:4]</ID>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
@@ -43,7 +43,7 @@
         <ID>[4:1:3]</ID>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
@@ -52,12 +52,12 @@
         </Dialogue>
         <Dialogue>
             <Page>2</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>Press   F   to   open   the   MENU!</Text>
+            <Text>Press   F   to   open   the   MENU !</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
@@ -66,7 +66,7 @@
         <ID>[3:2:0]</ID>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
@@ -80,12 +80,22 @@
         <ID>[3:2:1]</ID>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedRegular18</FontName>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>
             <G>113</G>
             <B>113</B>
             <A>255</A>
             <Text>Gary's   house</Text>
         </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>1</TotalPages>
+        <Type>Save</Type>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+            <Text>Gary's   house</Text>
     </TextBoxes>
 </TextBoxManager>
