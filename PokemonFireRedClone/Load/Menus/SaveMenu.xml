@@ -28,7 +28,6 @@
         <G>113</G>
         <B>113</B>
         <A>255</A>
-        <Text>Placeholder</Text>
     </Info>
         <Info>
         <FontName>Fonts/PokemonFireRedRegular18</FontName>
@@ -36,7 +35,6 @@
         <G>113</G>
         <B>113</B>
         <A>255</A>
-        <Text>Placeholder</Text>
     </Info>
     <Info>
         <FontName>Fonts/PokemonFireRedRegular18</FontName>
@@ -44,7 +42,6 @@
         <G>113</G>
         <B>113</B>
         <A>255</A>
-        <Text>Placeholder</Text>
     </Info>
     <Info>
         <FontName>Fonts/PokemonFireRedRegular18</FontName>
@@ -52,7 +49,6 @@
         <G>113</G>
         <B>113</B>
         <A>255</A>
-        <Text>Placeholder</Text>
     </Info>
 
     <SaveDialogue>
@@ -93,7 +89,6 @@
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>Placehold</Text>
         </Dialogue>
     </SaveDialogue>
     <Item>

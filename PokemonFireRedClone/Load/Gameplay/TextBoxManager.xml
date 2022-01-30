@@ -86,14 +86,4 @@
             <A>255</A>
         </Dialogue>
     </TextBoxes>
-    <TextBoxes>
-        <TotalPages>1</TotalPages>
-        <Type>Save</Type>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>Gary's   house</Text>
-    </TextBoxes>
 </TextBoxManager>
