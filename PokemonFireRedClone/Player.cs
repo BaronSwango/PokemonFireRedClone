@@ -26,7 +26,6 @@ namespace PokemonFireRedClone
         Vector2 destination;
         public Direction direction;
         int waitToMove;
-        double elapsedTime;
         bool changeDirection;
         public State state;
         bool wasMoving;
@@ -46,7 +45,6 @@ namespace PokemonFireRedClone
             waitToMove = 0;
             Colliding = false;
             PlayerJsonObject = new PlayerJsonObject();
-            elapsedTime = 0;
             CanUpdate = true;
             direction = Direction.Up;
         }
@@ -107,16 +105,6 @@ namespace PokemonFireRedClone
                     }
                 }
                 // COLLISION DETECTION END
-
-
-                // SAVE GAME HOTKEY
-                if (InputManager.Instance.KeyPressed(Keys.Tab))
-                    save(elapsedTime);
-
-
-                // COUNTS AND ADDS TIME TO PLAYER'S TOTAL GAME TIME
-                elapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
-
 
                 // CHANGES ANIMATION SPEED
                 if (Colliding)
@@ -353,14 +341,13 @@ namespace PokemonFireRedClone
             Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
         }
 
-        void save(double elapsedTime)
+        public void Save(ref double elapsedTime)
         {
             PlayerJsonObject.Position = Image.Position;
             PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? Image.SpriteSheetEffect.CurrentFrame.Y - 4 : Image.SpriteSheetEffect.CurrentFrame.Y;
 
             PlayerJsonObject.Time += elapsedTime;
-            this.elapsedTime = 0;
-
+            elapsedTime = 0;
             playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");
         }
 

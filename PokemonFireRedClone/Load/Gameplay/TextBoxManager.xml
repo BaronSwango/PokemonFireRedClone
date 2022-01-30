@@ -62,7 +62,7 @@
     </TextBoxes>
     <TextBoxes>
         <TotalPages>1</TotalPages>
-        <Type>Tile</Type>
+        <Type>TilePlayer</Type>
         <ID>[3:2:0]</ID>
         <Dialogue>
             <Page>1</Page>
@@ -71,12 +71,11 @@
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>Baron's   house</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
         <TotalPages>1</TotalPages>
-        <Type>Tile</Type>
+        <Type>TileRival</Type>
         <ID>[3:2:1]</ID>
         <Dialogue>
             <Page>1</Page>
@@ -85,7 +84,6 @@
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>Gary's   house</Text>
         </Dialogue>
     </TextBoxes>
     <TextBoxes>

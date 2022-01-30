@@ -21,13 +21,8 @@ namespace PokemonFireRedClone
         public int PaddingY;
         public int FromSide; // indent from left side of screen
         public int FromTop; // indent from top of screen
-        protected int itemNumber;
+        public int ItemNumber;
         string id;
-
-        public int ItemNumber
-        {
-            get { return itemNumber; }
-        }
 
         public string ID
         {
@@ -44,11 +39,13 @@ namespace PokemonFireRedClone
 
         protected virtual void AlignMenuItems() { }
 
+        public virtual void Yes() { }
+
         public Menu()
         {
             Type = this.GetType();
             id = string.Empty;
-            itemNumber = 0;
+            ItemNumber = 0;
             Effects = string.Empty;
             Items = new List<MenuItem>();
         }

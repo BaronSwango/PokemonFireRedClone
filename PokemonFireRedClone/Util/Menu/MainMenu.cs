@@ -34,7 +34,12 @@ namespace PokemonFireRedClone
             Background.LoadContent();
             Arrow.LoadContent();
             foreach (MenuItem item in Items)
+            {
+                if (item.Image.Text == "PlayerName")
+                    item.Image.Text = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.PlayerJsonObject.Name;
+
                 item.Description.LoadContent();
+            }
             base.LoadContent();
         }
 
@@ -53,18 +58,18 @@ namespace PokemonFireRedClone
 
             AlignMenuItems();
             if (InputManager.Instance.KeyPressed(Keys.S))
-                itemNumber++;
+                ItemNumber++;
             else if (InputManager.Instance.KeyPressed(Keys.W))
-                itemNumber--;
+                ItemNumber--;
 
-            if (itemNumber < 0)
-                itemNumber = Items.Count - 1;
-            else if (itemNumber > Items.Count - 1)
-                itemNumber = 0;
+            if (ItemNumber < 0)
+                ItemNumber = Items.Count - 1;
+            else if (ItemNumber > Items.Count - 1)
+                ItemNumber = 0;
 
             for (int i = 0; i < Items.Count; i++)
             {
-                if (i == itemNumber)
+                if (i == ItemNumber)
                 {
                     Items[i].Image.IsActive = true;
                     Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width,

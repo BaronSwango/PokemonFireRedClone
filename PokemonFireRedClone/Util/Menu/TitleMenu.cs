@@ -73,18 +73,18 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
                 if (InputManager.Instance.KeyPressed(Keys.S))
-                    itemNumber++;
+                    ItemNumber++;
                 else if (InputManager.Instance.KeyPressed(Keys.W))
-                    itemNumber--;
+                    ItemNumber--;
 
-                if (itemNumber < 0)
-                    itemNumber = 0;
-                else if (itemNumber > 1)
-                    itemNumber = 1;
+                if (ItemNumber < 0)
+                    ItemNumber = 0;
+                else if (ItemNumber > 1)
+                    ItemNumber = 1;
 
                 for (int i = 0; i < 2; i++)
                 {
-                    if (i == itemNumber)
+                    if (i == ItemNumber)
                     {
                         Items[i].Image.IsActive = true;
                         for (int j = 2; j < Items.Count; j++)
