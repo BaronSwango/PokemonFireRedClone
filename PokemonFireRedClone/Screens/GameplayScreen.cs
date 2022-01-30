@@ -86,7 +86,7 @@ namespace PokemonFireRedClone
 
             if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
-            if (!menuManager.wasLoaded)
+            if (!menuManager.wasLoaded && !menuManager.IsLoaded)
                 TextBoxManager.Update(gameTime, ref map, ref player);
 
         }

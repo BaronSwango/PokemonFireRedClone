@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <SaveMenu>
     <PaddingY>13</PaddingY>
+
     <InfoTitlesBackground>
         <Path>Menus/SaveMenuInfoBackground</Path>
     </InfoTitlesBackground>
@@ -91,6 +92,7 @@
             <A>255</A>
         </Dialogue>
     </SaveDialogue>
+
     <Item>
         <LinkType>Yes</LinkType>
         <Image>
