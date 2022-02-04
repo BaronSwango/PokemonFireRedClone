@@ -13,7 +13,7 @@ namespace PokemonFireRedClone
         public event EventHandler OnMenuChange;
 
         [XmlIgnore]
-        public Type Type;
+        public System.Type Type;
         public string Effects;
         [XmlElement("Item")]
         public List<MenuItem> Items;
@@ -43,7 +43,7 @@ namespace PokemonFireRedClone
 
         public Menu()
         {
-            Type = this.GetType();
+            Type = GetType();
             id = string.Empty;
             ItemNumber = 0;
             Effects = string.Empty;

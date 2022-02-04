@@ -50,7 +50,7 @@ namespace PokemonFireRedClone
 
         public void ChangeScreens(string screenName)
         {
-            newScreen = (GameScreen) Activator.CreateInstance(Type.GetType("PokemonFireRedClone."+  screenName));
+            newScreen = (GameScreen) Activator.CreateInstance(System.Type.GetType("PokemonFireRedClone."+  screenName));
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;

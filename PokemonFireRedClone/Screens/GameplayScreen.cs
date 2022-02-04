@@ -60,6 +60,11 @@ namespace PokemonFireRedClone
             if (menuManager.wasLoaded)
                 menuManager.wasLoaded = false;
 
+            if (InputManager.Instance.KeyPressed(Keys.K))
+            {
+                ScreenManager.Instance.ChangeScreens("BattleScreen");
+            }
+
             if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && (player.Image.SpriteSheetEffect.CurrentFrame.X == 0 || player.Image.SpriteSheetEffect.CurrentFrame.X == 2))
             {
                 if (!menuManager.IsLoaded && player.CanUpdate)

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<PokemonManager>
+    <Pokemon>
+        <Name>Bulbasaur</Name>
+        <Index>1</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>Seed Pokemon</Classification>
+        <Height>2'04"</Height>
+        <Weight>15.2 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>64</EXPYield>
+        <Ability>Overgrow</Ability>
+        <Description>There is a plant seed on its back right from the day this POKéMON is born. The seed slowly grows larger.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Charmander</Name>
+        <Index>4</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>Lizard Pokemon</Classification>
+        <Height>2'00"</Height>
+        <Weight>18.7 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>62</EXPYield>
+        <Ability>Blaze</Ability>
+        <Description>From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Charmeleon</Name>
+        <Index>5</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>Flame Pokemon</Classification>
+        <Height>3'07"</Height>
+        <Weight>41.9 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>142</EXPYield>
+        <Ability>Blaze</Ability>
+        <Description>It lashes about with its tail to knock down its foe. It then tears up the fallen opponent with sharp claws.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Squirtle</Name>
+        <Index>7</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>Tiny Turtle Pokemon</Classification>
+        <Height>1'08"</Height>
+        <Weight>19.8 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>63</EXPYield>
+        <Ability>Torrent</Ability>
+        <Description>When it retracts its long neck into its shell, it squirts out water with vigorous force.</Description>
+    </Pokemon>
+</PokemonManager>

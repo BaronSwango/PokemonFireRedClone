@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<MoveManager>
+    <Moves>
+        <Name>Absorb</Name>
+        <TypeName>Grass</TypeName>
+        <Power>20</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>An attack that absorbs half the damage it inflicted to restore HP.</Description>
+    </Moves>
+    <Moves>
+        <Name>Acid</Name>
+        <TypeName>Poison</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>30</PP>
+        <Description>The foe is sprayed with a harsh, hide-melting acid that may lower DEFENSE.</Description>
+    </Moves>
+    <Moves>
+        <Name>Acid Armor</Name>
+        <TypeName>Poison</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>40</PP>
+        <Description>The user alters its cells to liquefy itself and sharply raise DEFENSE.</Description>
+    </Moves>
+    <Moves>
+        <Name>Aerial Ace</Name>
+        <TypeName>Flying</TypeName>
+        <Power>60</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>An extremely fast attack against one target. It can’t be evaded.</Description>
+    </Moves>
+    <Moves>
+        <Name>Aeroblast</Name>
+        <TypeName>Flying</TypeName>
+        <Power>95</Power>
+        <Accuracy>100</Accuracy>
+        <PP>5</PP>
+        <Description>A vortex of air is shot at the foe. It has a high critical-hit ratio.</Description>
+    </Moves>
+    <Moves>
+        <Name>Agility</Name>
+        <TypeName>Psychic</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>30</PP>
+        <Description>The user relaxes and lightens its body to sharply boost its SPEED.</Description>
+    </Moves>
+    <Moves>
+        <Name>Air Cutter</Name>
+        <TypeName>Flying</TypeName>
+        <Power>55</Power>
+        <Accuracy>95</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is hit with razor-like wind. It has a high critical-hit ratio.</Description>
+    </Moves>
+    <Moves>
+        <Name>Amnesia</Name>
+        <TypeName>Psychic</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>Forgets about something and sharply raises SP. DEF.</Description>
+    </Moves>
+    <Moves>
+        <Name>Ancient Power</Name>
+        <TypeName>Rock</TypeName>
+        <Power>60</Power>
+        <Accuracy>100</Accuracy>
+        <PP>5</PP>
+        <Description>An ancient power is used to attack. It may also raise all the user’s stats.</Description>
+    </Moves>
+    <Moves>
+        <Name>Ember</Name>
+        <TypeName>Fire</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is attacked with small flames. The foe may suffer a burn.</Description>
+    </Moves>
+    <Moves>
+        <Name>Tackle</Name>
+        <TypeName>Normal</TypeName>
+        <Power>35</Power>
+        <Accuracy>95</Accuracy>
+        <PP>35</PP>
+        <Description>A physical attack in which the user charges, full body, into the foe.</Description>
+    </Moves>
+    <Moves>
+        <Name>Vine Whip</Name>
+        <TypeName>Grass</TypeName>
+        <Power>45</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with slender, whiplike vines.</Description>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+    </Moves>
+</MoveManager>

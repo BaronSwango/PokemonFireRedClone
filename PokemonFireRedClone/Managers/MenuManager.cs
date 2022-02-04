@@ -63,7 +63,7 @@ namespace PokemonFireRedClone
             if (menu.GetType().ToString() == "PokemonFireRedClone.SaveMenu")
                 itemNumber = 4;
 
-            xmlMenuManager.Type = Type.GetType("PokemonFireRedClone." + menuName);
+            xmlMenuManager.Type = System.Type.GetType("PokemonFireRedClone." + menuName);
             menu = xmlMenuManager.Load(menu.ID);
             menu.LoadContent();
             menu.ItemNumber = itemNumber;

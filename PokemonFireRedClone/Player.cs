@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,6 +21,7 @@ namespace PokemonFireRedClone
     {
         public Image Image;
 
+        [XmlIgnore]
         public PlayerJsonObject PlayerJsonObject;
         JsonManager<PlayerJsonObject> playerLoader;
 
@@ -32,6 +35,8 @@ namespace PokemonFireRedClone
         public bool running;
         public bool Colliding;
         public bool CanUpdate;
+        [XmlIgnore]
+        public List<Pokemon> Pokemon;
 
         public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
         public enum Direction { Left, Right, Down, Up }

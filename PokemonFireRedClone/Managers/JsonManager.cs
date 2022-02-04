@@ -2,12 +2,13 @@
 using System.IO;
 using Newtonsoft.Json;
 
+
 namespace PokemonFireRedClone
 {
     public class JsonManager<T>
     {
 
-        public Type Type;
+        public System.Type Type;
 
         public JsonManager()
         {

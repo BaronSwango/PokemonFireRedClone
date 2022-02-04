@@ -42,6 +42,10 @@
     <None Remove="Util\TextBox\" />
     <None Remove="Load\Gameplay\TextBoxManager.xml" />
     <None Remove="Load\Menus\SaveMenu.xml" />
+    <None Remove="Pokemon\" />
+    <None Remove="Load\Pokemon\" />
+    <None Remove="Load\Pokemon\MoveManager.xml" />
+    <None Remove="Load\Pokemon\PokemonManager.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -83,6 +87,12 @@
     <Content Include="Load\Menus\SaveMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Pokemon\MoveManager.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Pokemon\PokemonManager.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
@@ -99,5 +109,7 @@
     <Folder Include="Load\Menus\" />
     <Folder Include="Content\TextBoxes\" />
     <Folder Include="Util\TextBox\" />
+    <Folder Include="Pokemon\" />
+    <Folder Include="Load\Pokemon\" />
   </ItemGroup>
 </Project>

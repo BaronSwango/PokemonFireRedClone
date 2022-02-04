@@ -13,13 +13,13 @@ namespace PokemonFireRedClone
     {
         protected ContentManager content;
         [XmlIgnore]
-        public Type Type;
+        public System.Type Type;
 
         public string XmlPath;
 
         public GameScreen()
         {
-            Type = this.GetType();
+            Type = GetType();
             XmlPath = "Load/" + Type.ToString().Replace("PokemonFireRedClone.", "")+ ".xml";
         }
         public virtual void LoadContent()

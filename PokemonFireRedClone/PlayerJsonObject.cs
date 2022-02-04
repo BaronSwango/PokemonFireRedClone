@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
@@ -26,6 +27,8 @@ namespace PokemonFireRedClone
         public int Badges;
         public int Pokedex;
         public int Money;
+        public List<Pokemon> PokemonInBag;
+        public List<Pokemon> PokemonInPC;
 
     }
 }

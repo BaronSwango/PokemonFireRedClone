@@ -9,7 +9,7 @@ namespace PokemonFireRedClone
 {
     public class XmlManager<T>
     {
-        public Type Type;
+        public System.Type Type;
 
         public XmlManager()
         {
