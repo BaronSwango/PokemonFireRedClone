@@ -11,7 +11,6 @@ namespace PokemonFireRedClone
     public class GameplayScreen : GameScreen
     {
         public Player player;
-        public double ElapsedTime;
         Map map;
         public MenuManager menuManager;
         public TextBoxManager TextBoxManager;
@@ -26,7 +25,6 @@ namespace PokemonFireRedClone
         {
             menuManager = new MenuManager("MainMenu");
             TextBoxManager = new TextBoxManager();
-            ElapsedTime = 0;
         }
 
         public override void LoadContent()
@@ -87,8 +85,7 @@ namespace PokemonFireRedClone
 
             // COUNTS AND ADDS TIME TO PLAYER'S TOTAL GAME TIME
             if (menuManager.menuName != "SaveMenu")
-                ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
-
+                Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
             if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
             if (!menuManager.wasLoaded && !menuManager.IsLoaded)

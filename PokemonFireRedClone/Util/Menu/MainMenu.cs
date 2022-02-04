@@ -36,7 +36,7 @@ namespace PokemonFireRedClone
             foreach (MenuItem item in Items)
             {
                 if (item.Image.Text == "PlayerName")
-                    item.Image.Text = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.PlayerJsonObject.Name;
+                    item.Image.Text = Player.PlayerJsonObject.Name;
 
                 item.Description.LoadContent();
             }

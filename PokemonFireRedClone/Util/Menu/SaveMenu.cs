@@ -99,16 +99,15 @@ namespace PokemonFireRedClone
             MenuBackground.LoadContent();
 
             Player player = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player;
-            SaveDialogue.Dialogue[3].Text = player.PlayerJsonObject.Name + "   saved   the   game.";
+            SaveDialogue.Dialogue[3].Text = Player.PlayerJsonObject.Name + "   saved   the   game.";
             SaveDialogue.LoadContent(ref player);
 
-            PlayerJsonObject playerJsonObject = player.PlayerJsonObject;
             // format time to include days to hours
-            var tsTime = TimeSpan.FromHours(playerJsonObject.Time + ((GameplayScreen)ScreenManager.Instance.CurrentScreen).ElapsedTime);
+            var tsTime = TimeSpan.FromHours(Player.PlayerJsonObject.Time + Player.ElapsedTime);
 
-            InfoTitles[0].Text = playerJsonObject.Name;
-            InfoTitles[1].Text = playerJsonObject.Badges.ToString();
-            InfoTitles[2].Text = playerJsonObject.Pokedex.ToString();
+            InfoTitles[0].Text = Player.PlayerJsonObject.Name;
+            InfoTitles[1].Text = Player.PlayerJsonObject.Badges.ToString();
+            InfoTitles[2].Text = Player.PlayerJsonObject.Pokedex.ToString();
             InfoTitles[3].Text = $"{tsTime.Hours + (tsTime.Days * 24):0} : {tsTime.Minutes:00}";
 
             foreach (Image image in InfoTitles)
@@ -134,11 +133,14 @@ namespace PokemonFireRedClone
             SaveDialogue.Update(gameTime);
             if (SaveDialogue.Page == 3)
             {
-                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Save(ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).ElapsedTime);
+                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Save();
                 done = true;
                 exitCounter += gameTime.ElapsedGameTime.TotalSeconds;
                 if (exitCounter >= 2)
-                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).menuManager.UnloadContent();
+                {
+                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).menuManager.menuName = "MainMenu";
+                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).menuManager.UnloadContent();
+                }
             }
             if (!SaveDialogue.IsTransitioning && !done)
             {

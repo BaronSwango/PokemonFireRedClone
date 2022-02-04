@@ -182,9 +182,9 @@ namespace PokemonFireRedClone
             foreach (Image image in Dialogue)
             {
                 if (Type == "TilePlayer")
-                    image.Text = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.PlayerJsonObject.Name + "'s   house";
+                    image.Text = Player.PlayerJsonObject.Name + "'s   house";
                 else if (Type == "TileRival")
-                    image.Text = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.PlayerJsonObject.RivalName + "'s   house";
+                    image.Text = Player.PlayerJsonObject.RivalName + "'s   house";
                 image.LoadContent();
 
             }

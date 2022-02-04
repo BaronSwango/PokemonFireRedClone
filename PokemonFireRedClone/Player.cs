@@ -22,8 +22,9 @@ namespace PokemonFireRedClone
         public Image Image;
 
         [XmlIgnore]
-        public PlayerJsonObject PlayerJsonObject;
-        JsonManager<PlayerJsonObject> playerLoader;
+        public static PlayerJsonObject PlayerJsonObject;
+        static JsonManager<PlayerJsonObject> playerLoader;
+        public static double ElapsedTime;
 
         public float MoveSpeed;
         Vector2 destination;
@@ -37,6 +38,8 @@ namespace PokemonFireRedClone
         public bool CanUpdate;
         [XmlIgnore]
         public List<Pokemon> Pokemon;
+        bool isSpawned;
+        static bool isLoaded;
 
         public enum State { Idle, MoveRight, MoveLeft, MoveUp, MoveDown }
         public enum Direction { Left, Right, Down, Up }
@@ -49,7 +52,6 @@ namespace PokemonFireRedClone
             running = false;
             waitToMove = 0;
             Colliding = false;
-            PlayerJsonObject = new PlayerJsonObject();
             CanUpdate = true;
             direction = Direction.Up;
         }
@@ -57,11 +59,22 @@ namespace PokemonFireRedClone
         public void LoadContent()
         {
             Image.LoadContent();
-            load();
+            if (!isLoaded)
+            {
+                load();
+                isLoaded = true;
+            }
+            else
+            {
+                Image.Position = PlayerJsonObject.Position;
+                Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
+            }
         }
 
         public void UnloadContent()
         {
+            PlayerJsonObject.Position = Image.Position;
+            PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y;
             Image.UnloadContent();
         }
 
@@ -327,11 +340,15 @@ namespace PokemonFireRedClone
         
         public void Spawn(Map map)
         {
-            if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8) != null)
+            if (!isSpawned)
             {
-                Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8).Position.X,
-                    TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8).Position.Y - 84);
-                Image.Position = centerTile;
+                if (TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8) != null)
+                {
+                    Vector2 centerTile = new Vector2(TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8).Position.X,
+                        TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 8, Image.SourceRect.Height / 8).Position.Y - 84);
+                    Image.Position = centerTile;
+                }
+                isSpawned = true;
             }
         }
 
@@ -344,15 +361,16 @@ namespace PokemonFireRedClone
             PlayerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
             Image.Position = PlayerJsonObject.Position;
             Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
+
         }
 
-        public void Save(ref double elapsedTime)
+        public void Save()
         {
             PlayerJsonObject.Position = Image.Position;
             PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? Image.SpriteSheetEffect.CurrentFrame.Y - 4 : Image.SpriteSheetEffect.CurrentFrame.Y;
 
-            PlayerJsonObject.Time += elapsedTime;
-            elapsedTime = 0;
+            PlayerJsonObject.Time += ElapsedTime;
+            ElapsedTime = 0;
             playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");
         }
 
