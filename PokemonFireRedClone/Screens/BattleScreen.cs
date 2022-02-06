@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml.Serialization;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -8,7 +10,7 @@ namespace PokemonFireRedClone
     public class BattleScreen : GameScreen
     {
 
-        TextBox battleTextBox;
+        public BattleTextBox TextBox;
         Image Background;
         Image EnemyPlatform;
         Image PlayerPlatform;
@@ -16,6 +18,8 @@ namespace PokemonFireRedClone
         Image EnemyPokemon;
         Image PlayerSprite;
         Image Pokeball;
+
+        public static bool Wild;
 
         
         
@@ -41,6 +45,7 @@ namespace PokemonFireRedClone
 
         public BattleScreen()
         {
+            Wild = true;
         }
 
 
@@ -48,8 +53,12 @@ namespace PokemonFireRedClone
         {
             // TODO: Load Background based on what environment the battle is in
             Background = new Image();
+            EnemyPlatform = new Image();
+
             Background.Path = "BattleScreen/BattleBackground1";
+            
             Background.LoadContent();
+            TextBox.LoadContent();
             base.LoadContent();
         }
 
@@ -65,14 +74,15 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
 
-
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
-
+            if (!ScreenManager.Instance.IsTransitioning)
+                TextBox.Update(gameTime);
             base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            TextBox.Draw(spriteBatch);
             Background.Draw(spriteBatch);
             base.Draw(spriteBatch);
         }

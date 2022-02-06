@@ -14,7 +14,7 @@
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>POKeDEX</Text>
+            <Text>POKéDEX</Text>
         </Image>
         <Description>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
@@ -22,7 +22,7 @@
             <G>255</G>
             <B>255</B>
             <A>255</A>
-            <Text>A   device   that   records   POKeMON   secrets   upon   meeting   or
+            <Text>A   device   that   records   POKéMON   secrets   upon   meeting   or
 catching   them.</Text>
         </Description>
     </Item>
@@ -33,7 +33,7 @@ catching   them.</Text>
             <G>113</G>
             <B>113</B>
             <A>255</A>
-            <Text>POKeMON</Text>
+            <Text>POKéMON</Text>
         </Image>
         <Description>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
@@ -41,7 +41,7 @@ catching   them.</Text>
             <G>255</G>
             <B>255</B>
             <A>255</A>
-            <Text>Check   and   organize   POKeMON   that   are   traveling   with
+            <Text>Check   and   organize   POKéMON   that   are   traveling   with
 you   in   your   party.</Text>
         </Description>
     </Item>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<BattleScreen>
+    <wildEncounterPoke>
+
+    </wildEncounterPoke>
+    <TextBox>
+        <TotalPages>9</TotalPages>
+        <Border>
+            <Path>TextBoxes/BattleTextBox</Path>
+        </Border>
+        <Arrow>
+            <Path>TextBoxes/RedArrowBlack</Path>
+        </Arrow>
+        <ArrowOffset>0</ArrowOffset>
+        <DialogueOffsetX>40</DialogueOffsetX>
+        <DialogueOffsetY>36</DialogueOffsetY>
+        <Dialogue>
+            <Page>1</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Wi ld   RATTATA   appeared ! or Trainer battle text</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>1</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Trainer battle text</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Trainer sends out pokemon</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Trainer sends out pokemon</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Go! Name of pokemon!</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>4</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>What   will</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>4</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>POKeMON   do?</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>5</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Foe or wild or player's name of player pokemon used </Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>5</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Move !</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>6</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Foe or Wild or player's name of pokemon's</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>6</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>attack   missed !</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>7</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>It`s   super   effective !</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>8</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>It`s   not   very   effective...</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>9</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Foe or Wild or player's pokemon name</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>9</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>fainted !</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>10</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Got   away   safely !</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>11</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Player name is out of</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>11</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>usable   POKéMON !</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>12</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Player name panicked and lost $money...</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>13</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>...   ...   ...   ...</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>14</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Player name whited out!</Text>
+            <Skippable>true</Skippable>
+        </Dialogue>
+    </TextBox>
+</BattleScreen>

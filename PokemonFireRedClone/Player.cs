@@ -361,14 +361,12 @@ namespace PokemonFireRedClone
             PlayerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
             Image.Position = PlayerJsonObject.Position;
             Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
-
         }
 
         public void Save()
         {
             PlayerJsonObject.Position = Image.Position;
             PlayerJsonObject.Direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? Image.SpriteSheetEffect.CurrentFrame.Y - 4 : Image.SpriteSheetEffect.CurrentFrame.Y;
-
             PlayerJsonObject.Time += ElapsedTime;
             ElapsedTime = 0;
             playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");

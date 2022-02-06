@@ -1,10 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
@@ -22,26 +21,26 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public int Page;
         public int TotalPages;
-        Image border;
+        public Image Border;
         [XmlIgnore]
         public bool IsDisplayed;
         [XmlIgnore]
         public bool IsTransitioning;
         public bool Menu;
 
-        Image arrow;
-        float arrowOffset;
-        bool increase;
-        float arrowOriginalY;
+        public Image Arrow;
+        public float ArrowOffset;
+        protected bool increase;
+        protected float arrowOriginalY;
 
         int positionOffset;
-        int dialogueOffsetX;
-        int dialogueOffsetY;
+        public int DialogueOffsetX;
+        public int DialogueOffsetY;
 
-        Image transitionRect;
-        Image transitionRect2;
-        List<TextBoxImage> currentDialogue;
-        bool updateDialogue;
+        protected Image transitionRect;
+        protected Image transitionRect2;
+        protected List<TextBoxImage> currentDialogue;
+        protected bool updateDialogue;
 
         private void Transition(GameTime gameTime)
         {
@@ -53,7 +52,7 @@ namespace PokemonFireRedClone
                     if (Page <= TotalPages)
                     {
                         if (!Menu)
-                            arrow.IsActive = false;
+                            Arrow.IsActive = false;
                         Page++;
                         currentDialogue.Clear();
                         foreach (TextBoxImage image in Dialogue)
@@ -62,14 +61,14 @@ namespace PokemonFireRedClone
                                 currentDialogue.Add(image);
                         }
 
-                        currentDialogue[0].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY);
+                        currentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
 
                         transitionRect.Scale = new Vector2(currentDialogue[0].SourceRect.Width, currentDialogue[0].SourceRect.Height);
                         transitionRect.Position = new Vector2(currentDialogue[0].Position.X, currentDialogue[0].Position.Y);
 
                         if (currentDialogue.Count == 2)
                         {
-                            currentDialogue[1].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY + 60);
+                            currentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
 
                             if (transitionRect2 == null)
                             {
@@ -110,25 +109,22 @@ namespace PokemonFireRedClone
             }
         }
 
-        private void animateRedArrow(GameTime gameTime)
+        protected void animateRedArrow(GameTime gameTime)
         {
-            if (!Menu && TotalPages > 1 && arrow.IsActive)
-            {
-                float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
+            float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
 
-                if (arrowOffset >= 8)
-                    increase = false;
-                else if (arrowOffset <= 0)
-                    increase = true;
+            if (ArrowOffset >= 8)
+                increase = false;
+            else if (ArrowOffset <= 0)
+                increase = true;
 
-                if (increase)
-                    arrowOffset += speed;
-                else
-                    arrowOffset -= speed;
+            if (increase)
+                ArrowOffset += speed;
+            else
+                ArrowOffset -= speed;
 
-                //if (arrowOffset % 4 < 0.1)
-                    arrow.Position = new Vector2(arrow.Position.X, arrowOriginalY + arrowOffset);
-            }
+            //if (ArrowOffset % 4 < 0.1)
+                Arrow.Position = new Vector2(Arrow.Position.X, arrowOriginalY + ArrowOffset);
         }
 
 
@@ -152,39 +148,41 @@ namespace PokemonFireRedClone
             IsDisplayed = true;
             IsTransitioning = true;
 
-            border = new Image();
+            Border = new Image();
 
             if (TotalPages > 1 && !Menu)
             {
-                arrow = new Image();
-                arrow.Path = "TextBoxes/RedArrow";
-                arrow.LoadContent();
-                arrowOffset = 0;
+                Arrow = new Image
+                {
+                    Path = "TextBoxes/RedArrow"
+                };
+                Arrow.LoadContent();
+                ArrowOffset = 0;
             }
 
             if (Type.Contains("Tile"))
             {
-                border.Path = "TextBoxes/GrayTextBox";
+                Border.Path = "TextBoxes/GrayTextBox";
                 positionOffset = 216;
-                dialogueOffsetX = 48;
-                dialogueOffsetY = 24;
+                DialogueOffsetX = 48;
+                DialogueOffsetY = 24;
             }
             else if (Type == "NPC")
             {
-                border.Path = "TextBoxes/BlueTextBox";
+                Border.Path = "TextBoxes/BlueTextBox";
                 positionOffset = 220;
-                dialogueOffsetX = 44;
-                dialogueOffsetY = 20;
+                DialogueOffsetX = 44;
+                DialogueOffsetY = 20;
             }
-            border.LoadContent();
-            border.Position = new Vector2(player.Image.Position.X - (ScreenManager.Instance.Dimensions.X -
-                border.SourceRect.Width) - 64, player.Image.Position.Y + positionOffset);
+            Border.LoadContent();
+            Border.Position = new Vector2(player.Image.Position.X - (ScreenManager.Instance.Dimensions.X -
+                Border.SourceRect.Width) - 64, player.Image.Position.Y + positionOffset);
             foreach (Image image in Dialogue)
             {
                 if (Type == "TilePlayer")
-                    image.Text = Player.PlayerJsonObject.Name + "'s   house";
+                    image.Text = Player.PlayerJsonObject.Name + "`s   house";
                 else if (Type == "TileRival")
-                    image.Text = Player.PlayerJsonObject.RivalName + "'s   house";
+                    image.Text = Player.PlayerJsonObject.RivalName + "`s   house";
                 image.LoadContent();
 
             }
@@ -197,34 +195,38 @@ namespace PokemonFireRedClone
 
 
 
-            currentDialogue[0].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY);
+            currentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
 
             //TRANSITION
             if (currentDialogue.Count >= 1)
             {
-                transitionRect = new Image();
-                transitionRect.Path = "TextBoxes/TextBoxEffectPixel";
+                transitionRect = new Image
+                {
+                    Path = "TextBoxes/TextBoxEffectPixel"
+                };
                 transitionRect.LoadContent();
                 transitionRect.Scale = new Vector2(currentDialogue[0].SourceRect.Width, currentDialogue[0].SourceRect.Height);
                 transitionRect.Position = new Vector2(currentDialogue[0].Position.X, currentDialogue[0].Position.Y);
                 if (TotalPages > 1 && !Menu)
                 {
-                    arrow.Position = new Vector2(currentDialogue[0].Position.X + currentDialogue[0].SourceRect.Width, currentDialogue[0].Position.Y + 12);
-                    arrowOriginalY = arrow.Position.Y;
+                    Arrow.Position = new Vector2(currentDialogue[0].Position.X + currentDialogue[0].SourceRect.Width, currentDialogue[0].Position.Y + 12);
+                    arrowOriginalY = Arrow.Position.Y;
                 }
             }
             if (currentDialogue.Count == 2)
             {
-                currentDialogue[1].Position = new Vector2(border.Position.X + dialogueOffsetX, border.Position.Y + dialogueOffsetY + 60);
-                transitionRect2 = new Image();
-                transitionRect2.Path = "TextBoxes/TextBoxEffectPixel";
+                currentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
+                transitionRect2 = new Image
+                {
+                    Path = "TextBoxes/TextBoxEffectPixel"
+                };
                 transitionRect2.LoadContent();
                 transitionRect2.Scale = new Vector2(currentDialogue[1].SourceRect.Width, currentDialogue[1].SourceRect.Height);
                 transitionRect2.Position = new Vector2(currentDialogue[1].Position.X, currentDialogue[1].Position.Y);
                 if (TotalPages > 1 && !Menu)
                 {
-                    arrow.Position = new Vector2(currentDialogue[1].Position.X + currentDialogue[1].SourceRect.Width, currentDialogue[1].Position.Y + 12);
-                    arrowOriginalY = arrow.Position.Y;
+                    Arrow.Position = new Vector2(currentDialogue[1].Position.X + currentDialogue[1].SourceRect.Width, currentDialogue[1].Position.Y + 12);
+                    arrowOriginalY = Arrow.Position.Y;
                 }
             }
 
@@ -235,37 +237,37 @@ namespace PokemonFireRedClone
         {
             IsDisplayed = false;
             player.CanUpdate = true;
-            border.UnloadContent();
+            Border.UnloadContent();
             foreach (Image image in Dialogue)
                 image.UnloadContent();
 
             if (TotalPages > 1 && !Menu)
-                arrow.UnloadContent();
+                Arrow.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             if (IsDisplayed)
             {
-                border.Update(gameTime);
+                Border.Update(gameTime);
                 foreach (Image image in Dialogue)
                     image.Update(gameTime);
 
 
                 Transition(gameTime);
-                animateRedArrow(gameTime);
+                if (!Menu && TotalPages > 1 && Arrow.IsActive)
+                    animateRedArrow(gameTime);
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             if (IsDisplayed)
             {
-                border.Draw(spriteBatch);
+                Border.Draw(spriteBatch);
                 foreach (TextBoxImage image in currentDialogue)
                 {
-                    if (image.Page == Page)
-                        image.Draw(spriteBatch);
+                    image.Draw(spriteBatch);
                 }
 
                 if (IsTransitioning)
@@ -276,9 +278,9 @@ namespace PokemonFireRedClone
                 }
                 else if (!Menu && TotalPages > 1 && Page < TotalPages)
                 {
-                    arrow.Draw(spriteBatch);
-                    if (!arrow.IsActive)
-                        arrow.IsActive = true;
+                    Arrow.Draw(spriteBatch);
+                    if (!Arrow.IsActive)
+                        Arrow.IsActive = true;
                 }
 
             }
@@ -303,7 +305,7 @@ namespace PokemonFireRedClone
  * 
  * Contents of TextBox class:
  * - Type (string: Blue or gray currently)
- * - List of Image (Text in the box, only have red arrow if list of images > 1 && index < images.Count)
+ * - List of Image (Text in the box, only have red Arrow if list of images > 1 && index < images.Count)
  * - 
  * - 
  * - 
@@ -311,7 +313,7 @@ namespace PokemonFireRedClone
  * TextBox comes up when running into or interacting with sign
  * TextBox must be unique to each sign tile and NPC
  * 
- * border color must match NPC or Tile
+ * Border color must match NPC or Tile
  * TextBox drawn after player and map (same area as Menu)
  * Player can't move when TextBox displayed
  * Press E to close Box, can only be done after animation
