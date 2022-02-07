@@ -48,6 +48,7 @@
     <None Remove="Load\Pokemon\PokemonManager.xml" />
     <None Remove="Content\BattleScreen\" />
     <None Remove="Load\BattleScreen.xml" />
+    <None Remove="Load\Menus\BattleMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -96,6 +97,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\BattleScreen.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Menus\BattleMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

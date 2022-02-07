@@ -117,6 +117,7 @@ namespace PokemonFireRedClone
                                     IsTransitioning = true;
                                     break;
                                 case 4:
+
                                     break;
                                 default:
                                     return;

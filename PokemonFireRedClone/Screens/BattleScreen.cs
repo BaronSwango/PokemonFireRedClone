@@ -18,6 +18,7 @@ namespace PokemonFireRedClone
         Image EnemyPokemon;
         Image PlayerSprite;
         Image Pokeball;
+        MenuManager menuManager;
 
         public static bool Wild;
 
@@ -46,6 +47,7 @@ namespace PokemonFireRedClone
         public BattleScreen()
         {
             Wild = true;
+            menuManager = new MenuManager("BattleMenu");
         }
 
 
@@ -73,7 +75,13 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.K))
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
+            if (TextBox.Page == 4 && !menuManager.IsLoaded)
+                menuManager.LoadContent("Load/Menus/BattleMenu.xml");
+            else if (TextBox.Page != 4 && menuManager.IsLoaded)
+                menuManager.UnloadContent();
 
+            if (menuManager.IsLoaded)
+                menuManager.Update(gameTime);
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
             if (!ScreenManager.Instance.IsTransitioning)
                 TextBox.Update(gameTime);
@@ -84,6 +92,8 @@ namespace PokemonFireRedClone
         {
             TextBox.Draw(spriteBatch);
             Background.Draw(spriteBatch);
+            if (menuManager.IsLoaded)
+                menuManager.Draw(spriteBatch);
             base.Draw(spriteBatch);
         }
     }
