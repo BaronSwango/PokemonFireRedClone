@@ -41,6 +41,7 @@ namespace PokemonFireRedClone
                 item.Description.LoadContent();
             }
             base.LoadContent();
+            AlignMenuItems();
         }
 
         public override void UnloadContent()
@@ -56,7 +57,6 @@ namespace PokemonFireRedClone
         {
             Background.Update(gameTime);
 
-            AlignMenuItems();
             if (InputManager.Instance.KeyPressed(Keys.S))
                 ItemNumber++;
             else if (InputManager.Instance.KeyPressed(Keys.W))
