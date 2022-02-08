@@ -13,7 +13,6 @@ namespace PokemonFireRedClone
 
         int nextPage;
         Pokemon wildEncounterPoke;
-        Pokemon playerPokemon;
         double nextPageCounter;
 
         /*
@@ -48,11 +47,11 @@ namespace PokemonFireRedClone
                             switch (Page)
                             {
                                 case 3:
-                                    image.Text = "Go !   " + playerPokemon.Name.ToUpper() + " !";
+                                    image.Text = "Go !   " + Player.PlayerJsonObject.Pokemon.Name + " !";
                                     break;
                                 case 4:
                                     if (image.Text.Contains("P"))
-                                        image.Text = playerPokemon.Name.ToUpper() + "   do?";
+                                        image.Text = Player.PlayerJsonObject.Name + "   do?";
                                     break;
                                 default:
                                     return;
@@ -116,9 +115,6 @@ namespace PokemonFireRedClone
                                     nextPage = 4;
                                     IsTransitioning = true;
                                     break;
-                                case 4:
-
-                                    break;
                                 default:
                                     return;
                             }
@@ -134,7 +130,6 @@ namespace PokemonFireRedClone
         public BattleTextBox()
         {
             wildEncounterPoke = PokemonManager.Instance.GetPokemon("Squirtle");
-            playerPokemon = PokemonManager.Instance.GetPokemon(Player.PlayerJsonObject.Pokemon);
         }
 
 
@@ -191,8 +186,7 @@ namespace PokemonFireRedClone
         }
 
         public void UnloadContent()
-        {
-        }
+        { }
 
         public override void Update(GameTime gameTime)
         {

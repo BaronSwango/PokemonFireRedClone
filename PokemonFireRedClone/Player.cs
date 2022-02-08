@@ -37,7 +37,7 @@ namespace PokemonFireRedClone
         public bool Colliding;
         public bool CanUpdate;
         [XmlIgnore]
-        public List<Pokemon> Pokemon;
+        public List<CustomPokemon> Pokemon;
         bool isSpawned;
         static bool isLoaded;
 
