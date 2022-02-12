@@ -22,6 +22,7 @@ namespace PokemonFireRedClone
         public Vector2 Position;
         public float Direction;
         public string Name;
+        public Gender Gender;
         public string RivalName;
         public double Time;
         public int Badges;
