@@ -56,12 +56,14 @@ namespace PokemonFireRedClone
                     PlayerPlatform.Position.X -= playerSpeed;
                     PlayerSprite.Position.X -= playerSpeed;
                     EnemyPlatform.Position.X += enemySpeed;
+                    EnemySprite.Position.X += enemySpeed;
                     return;
                 }
 
                 PlayerPlatform.Position.X = playerPlatformDestinationX;
                 PlayerSprite.Position.X = PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2;
                 EnemyPlatform.Position.X = enemyPlatformDestinationX;
+                EnemySprite.Position.X = EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemySprite.SourceRect.Width / 2;
                 IsTransitioning = false;
             }
         }
@@ -81,20 +83,24 @@ namespace PokemonFireRedClone
             EnemyPlatform = new Image();
             PlayerPlatform = new Image();
             PlayerSprite = new Image();
+            EnemySprite = new Image();
 
             Background.Path = "BattleScreen/BattleBackground1";
             EnemyPlatform.Path = "BattleScreen/BattleBackground1EnemyPlatform";
             PlayerPlatform.Path = "BattleScreen/BattleBackground1PlayerPlatform";
             PlayerSprite.Path = Player.PlayerJsonObject.Gender == Gender.MALE ? "BattleScreen/RedSpriteFront" : "BattleScreen/BattleBackground1";
+            EnemySprite = TextBox.wildEncounterPoke.Front;
 
             Background.LoadContent();
 
             EnemyPlatform.LoadContent();
+            EnemySprite.LoadContent();
             PlayerPlatform.LoadContent();
             PlayerSprite.LoadContent();
             TextBox.LoadContent();
 
             EnemyPlatform.Position = new Vector2(-EnemyPlatform.SourceRect.Width, 192);
+            EnemySprite.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemySprite.SourceRect.Width / 2, EnemyPlatform.Position.Y - EnemySprite.SourceRect.Height / 3);
             PlayerPlatform.Position = new Vector2(ScreenManager.Instance.Dimensions.X + PlayerPlatform.SourceRect.Width, TextBox.Border.Position.Y - PlayerPlatform.SourceRect.Height);
             PlayerSprite.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerSprite.SourceRect.Height);
             IsTransitioning = true;
@@ -105,6 +111,7 @@ namespace PokemonFireRedClone
         {
             Background.UnloadContent();
             EnemyPlatform.UnloadContent();
+            EnemySprite.UnloadContent();
             PlayerPlatform.UnloadContent();
             PlayerSprite.UnloadContent();
             TextBox.UnloadContent();
@@ -136,6 +143,7 @@ namespace PokemonFireRedClone
             TextBox.Draw(spriteBatch);
             Background.Draw(spriteBatch);
             EnemyPlatform.Draw(spriteBatch);
+            EnemySprite.Draw(spriteBatch);
             PlayerPlatform.Draw(spriteBatch);
             PlayerSprite.Draw(spriteBatch);
             if (menuManager.IsLoaded)

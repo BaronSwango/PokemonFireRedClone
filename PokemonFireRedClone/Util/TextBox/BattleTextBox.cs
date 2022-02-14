@@ -12,7 +12,7 @@ namespace PokemonFireRedClone
     {
 
         int nextPage;
-        Pokemon wildEncounterPoke;
+        public Pokemon wildEncounterPoke;
         double nextPageCounter;
 
         /*

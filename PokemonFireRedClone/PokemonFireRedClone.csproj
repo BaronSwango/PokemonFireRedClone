@@ -49,6 +49,7 @@
     <None Remove="Content\BattleScreen\" />
     <None Remove="Load\BattleScreen.xml" />
     <None Remove="Load\Menus\BattleMenu.xml" />
+    <None Remove="Content\Pokemon\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -121,5 +122,6 @@
     <Folder Include="Pokemon\" />
     <Folder Include="Load\Pokemon\" />
     <Folder Include="Content\BattleScreen\" />
+    <Folder Include="Content\Pokemon\" />
   </ItemGroup>
 </Project>

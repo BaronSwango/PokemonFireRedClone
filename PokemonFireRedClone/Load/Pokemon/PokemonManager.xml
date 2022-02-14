@@ -14,7 +14,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>Seed Pokemon</Classification>
+        <Classification>SEED POKéMON</Classification>
         <Height>2'04"</Height>
         <Weight>15.2 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -35,7 +35,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>Lizard Pokemon</Classification>
+        <Classification>LIZARD POKéMON</Classification>
         <Height>2'00"</Height>
         <Weight>18.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -56,7 +56,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>Flame Pokemon</Classification>
+        <Classification>FLAME POKéMON</Classification>
         <Height>3'07"</Height>
         <Weight>41.9 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -72,17 +72,38 @@
             <Path></Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SquirtleFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>Tiny Turtle Pokemon</Classification>
+        <Classification>TINY TURTLE POKéMON</Classification>
         <Height>1'08"</Height>
         <Weight>19.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>63</EXPYield>
         <Ability>Torrent</Ability>
         <Description>When it retracts its long neck into its shell, it squirts out water with vigorous force.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Rattata</Name>
+        <Index>19</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path>Pokemon/RattataFront</Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOUSE POKEeMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>7.7 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>57</EXPYield>
+        <Ability>Guts</Ability>
+        <Description>Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to wittle them down.</Description>
     </Pokemon>
 </PokemonManager>
