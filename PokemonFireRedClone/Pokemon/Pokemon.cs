@@ -21,6 +21,12 @@ namespace PokemonFireRedClone
         public int EXPYield;
         public string Description;
         public string Ability;
+        public int BaseHP;
+        public int BaseAttack;
+        public int BaseDefense;
+        public int BaseSpecialAttack;
+        public int BaseSpecialDefense;
+        public int BaseSpeed;
 
         [XmlIgnore]
         public List<Type> Types
@@ -40,7 +46,6 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public Dictionary<int, Move> MoveLearnset
         {
-
             get
             {
                 if (MoveLearnset.Count == 0)
@@ -48,7 +53,10 @@ namespace PokemonFireRedClone
                     switch(Name)
                     {
                         case "Charmander":
-                            MoveLearnset.Add(16, MoveManager.Instance.GetMove("Ember"));
+                            MoveLearnset.Add(1, MoveManager.Instance.GetMove("Scratch"));
+                            MoveLearnset.Add(1, MoveManager.Instance.GetMove("Growl"));
+                            MoveLearnset.Add(7, MoveManager.Instance.GetMove("Ember"));
+                            MoveLearnset.Add(13, MoveManager.Instance.GetMove("Metal Claw"));
                             break;
                         default:
                             break;
@@ -66,8 +74,17 @@ namespace PokemonFireRedClone
             {
                 switch(Name)
                 {
+                    case "Bulbasaur":
+                        Evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Ivysaur"));
+                        break;
+                    case "Ivysaur":
+                        Evolution = new KeyValuePair<int, Pokemon>(32, PokemonManager.Instance.GetPokemon("Venusaur"));
+                        break;
                     case "Charmander":
                         Evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Charmeleon"));
+                        break;
+                    case "Charmeleon":
+                        Evolution = new KeyValuePair<int, Pokemon>(36, PokemonManager.Instance.GetPokemon("Charizard"));
                         break;
                     default:
                         break;

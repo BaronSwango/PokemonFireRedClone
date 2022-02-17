@@ -104,6 +104,15 @@ namespace PokemonFireRedClone
             PlayerPlatform.Position = new Vector2(ScreenManager.Instance.Dimensions.X + PlayerPlatform.SourceRect.Width, TextBox.Border.Position.Y - PlayerPlatform.SourceRect.Height);
             PlayerSprite.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerSprite.SourceRect.Height);
             IsTransitioning = true;
+
+
+            CustomPokemon poke = PokemonManager.createRandomPokemon(PokemonManager.Instance.GetPokemon("Charmander"));
+            Console.WriteLine(poke.Stats.HP);
+            Console.WriteLine(poke.Stats.Attack);
+            Console.WriteLine(poke.Stats.Defense);
+            Console.WriteLine(poke.Stats.SpecialAttack);
+            Console.WriteLine(poke.Stats.SpecialDefense);
+            Console.WriteLine(poke.Stats.Speed);
             base.LoadContent();
         }
 

@@ -19,6 +19,12 @@
         <Weight>15.2 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>64</EXPYield>
+        <BaseHP>45</BaseHP>
+        <BaseAttack>49</BaseAttack>
+        <BaseDefense>49</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
         <Ability>Overgrow</Ability>
         <Description>There is a plant seed on its back right from the day this POKéMON is born. The seed slowly grows larger.</Description>
     </Pokemon>
@@ -40,6 +46,12 @@
         <Weight>18.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>62</EXPYield>
+        <BaseHP>39</BaseHP>
+        <BaseAttack>52</BaseAttack>
+        <BaseDefense>43</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>65</BaseSpeed>
         <Ability>Blaze</Ability>
         <Description>From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.</Description>
     </Pokemon>
@@ -61,6 +73,12 @@
         <Weight>41.9 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>142</EXPYield>
+        <BaseHP>58</BaseHP>
+        <BaseAttack>64</BaseAttack>
+        <BaseDefense>58</BaseDefense>
+        <BaseSpecialAttack>80</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
         <Ability>Blaze</Ability>
         <Description>It lashes about with its tail to knock down its foe. It then tears up the fallen opponent with sharp claws.</Description>
     </Pokemon>
@@ -82,6 +100,12 @@
         <Weight>19.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>63</EXPYield>
+        <BaseHP>44</BaseHP>
+        <BaseAttack>48</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>64</BaseSpecialDefense>
+        <BaseSpeed>43</BaseSpeed>
         <Ability>Torrent</Ability>
         <Description>When it retracts its long neck into its shell, it squirts out water with vigorous force.</Description>
     </Pokemon>
@@ -103,6 +127,12 @@
         <Weight>7.7 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>57</EXPYield>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>56</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>25</BaseSpecialAttack>
+        <BaseSpecialDefense>35</BaseSpecialDefense>
+        <BaseSpeed>72</BaseSpeed>
         <Ability>Guts</Ability>
         <Description>Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to wittle them down.</Description>
     </Pokemon>
