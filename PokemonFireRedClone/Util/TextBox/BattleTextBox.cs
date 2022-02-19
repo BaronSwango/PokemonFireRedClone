@@ -95,7 +95,11 @@ namespace PokemonFireRedClone
                             transitionRect2.Position = new Vector2(transitionRect2.Position.X + speed, transitionRect2.Position.Y);
                             return;
                         }
-
+                        if (Page == 3)
+                        {
+                            BattleScreen.state = BattleScreen.BattleState.PLAYER_SEND_POKEMON;
+                            BattleScreen.IsTransitioning = true;
+                        }
                         IsTransitioning = false;
                         updateDialogue = true;
                     }
@@ -106,8 +110,7 @@ namespace PokemonFireRedClone
                 {
                     if (!image.Skippable && !image.Arrow)
                     {
-                        nextPageCounter += gameTime.ElapsedGameTime.TotalSeconds;
-                        if (nextPageCounter >= 2)
+                        if (!BattleScreen.IsTransitioning)
                         {
                             switch (Page)
                             {
@@ -118,7 +121,6 @@ namespace PokemonFireRedClone
                                 default:
                                     return;
                             }
-                            nextPageCounter = 0;
                         }
                     }
                        

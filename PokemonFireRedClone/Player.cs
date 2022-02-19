@@ -59,6 +59,7 @@ namespace PokemonFireRedClone
         public void LoadContent()
         {
             Image.LoadContent();
+            Image.SpriteSheetEffect.Player = true;
             if (!isLoaded)
             {
                 load();

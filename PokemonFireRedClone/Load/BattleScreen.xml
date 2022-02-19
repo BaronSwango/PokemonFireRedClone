@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <BattleScreen>
-    
+    <Pokeball>
+        <Path>BattleScreen/Pokeball</Path>
+    </Pokeball>
     <TextBox>
         <TotalPages>9</TotalPages>
         <Border>

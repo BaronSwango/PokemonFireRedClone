@@ -27,6 +27,7 @@ namespace PokemonFireRedClone
         Dictionary<string, ImageEffect> effectList;
         public string Effects;
         public Color Tint;
+        public float Angle;
         public string FontColor;
         public int R, G, B, A;
 
@@ -98,6 +99,7 @@ namespace PokemonFireRedClone
             SourceRect = Rectangle.Empty;
             effectList = new Dictionary<string, ImageEffect>();
             Tint = Color.White;
+            Angle = 0;
             FontColor = "Black";
         }
 
@@ -173,7 +175,7 @@ namespace PokemonFireRedClone
             origin = new Vector2(SourceRect.Width / 2,
                 SourceRect.Height / 2);
             spriteBatch.Draw(Texture, Position + origin, SourceRect, Tint * Alpha,
-                0.0f, origin, Scale, SpriteEffects.None, 0.0f);
+                Angle, origin, Scale, SpriteEffects.None, 0.0f);
 
             foreach (var effect in effectList)
             {

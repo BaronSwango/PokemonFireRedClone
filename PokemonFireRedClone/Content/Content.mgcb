@@ -49,7 +49,7 @@
 /processorParam:TextureFormat=Color
 /build:BattleScreen/BattleBackground1PlayerPlatform.png
 
-#begin BattleScreen/RedSpriteFront.png
+#begin BattleScreen/BattleRedSpriteSheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -59,7 +59,19 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BattleScreen/RedSpriteFront.png
+/build:BattleScreen/BattleRedSpriteSheet.png
+
+#begin BattleScreen/Pokeball.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/Pokeball.png
 
 #begin Fonts/Arial.spritefont
 /importer:FontDescriptionImporter

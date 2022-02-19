@@ -9,6 +9,7 @@ namespace PokemonFireRedClone
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
         bool wasActive;
+        public bool Player;
 
         public int FrameWidth
         {
@@ -68,17 +69,18 @@ namespace PokemonFireRedClone
             }
             else
             {
-
-                if (CurrentFrame.Y > 3)
-                    CurrentFrame.Y -= 4;
-                CurrentFrame.X = CurrentFrame.X == 1 || CurrentFrame.X == 2 ? 2 : 0;
-
-                if (wasActive)
+                if (Player)
                 {
-                    FrameCounter = 0;
-                    wasActive = false;
+                    if (CurrentFrame.Y > 3)
+                        CurrentFrame.Y -= 4;
+                    CurrentFrame.X = CurrentFrame.X == 1 || CurrentFrame.X == 2 ? 2 : 0;
+
+                    if (wasActive)
+                    {
+                        FrameCounter = 0;
+                        wasActive = false;
+                    }
                 }
-                
             }
             
             image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
