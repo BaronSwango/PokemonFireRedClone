@@ -13,7 +13,6 @@ namespace PokemonFireRedClone
 
         int nextPage;
         public Pokemon wildEncounterPoke;
-        double nextPageCounter;
 
         /*
          * 
@@ -51,7 +50,7 @@ namespace PokemonFireRedClone
                                     break;
                                 case 4:
                                     if (image.Text.Contains("P"))
-                                        image.Text = Player.PlayerJsonObject.Name + "   do?";
+                                        image.Text = Player.PlayerJsonObject.Pokemon.Name + "   do?";
                                     break;
                                 default:
                                     return;

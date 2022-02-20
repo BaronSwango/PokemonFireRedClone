@@ -37,14 +37,14 @@ namespace PokemonFireRedClone
         }
 
         // Level ranges and pokemon from specific area of map
-        public static CustomPokemon createRandomPokemon(Pokemon pokemon)
+        public static CustomPokemon createRandomPokemon(Pokemon pokemon, int level)
         {
             Random random = new Random();
 
             //Pokemon pokemon = pokemons[pokemonIndex];
 
             CustomPokemon poke = new CustomPokemon(pokemon.Name, (Nature)random.Next(25), (Gender)random.Next(2),
-                new List<string>(), 6,
+                new List<string>(), level,
                 new StatList
                 {
                     HPIV = random.Next(32),
@@ -55,12 +55,12 @@ namespace PokemonFireRedClone
                     SpeedIV = random.Next(32),
                 });
 
-            poke.Stats.HP = ((2 * pokemon.BaseHP + poke.Stats.HPIV) * poke.Level / 100) + poke.Level + 10;
-            poke.Stats.Attack = calculateStats(pokemon.BaseAttack, poke.Stats.AttackIV, poke.Level);
-            poke.Stats.SpecialAttack = calculateStats(pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, poke.Level);
-            poke.Stats.Defense = calculateStats(pokemon.BaseDefense, poke.Stats.DefenseIV, poke.Level);
-            poke.Stats.SpecialDefense = calculateStats(pokemon.BaseSpecialDefense, poke.Stats.SpecialDefenseIV, poke.Level);
-            poke.Stats.Speed = calculateStats(pokemon.BaseSpeed, poke.Stats.SpeedIV, poke.Level);
+            poke.Stats.HP = ((2 * pokemon.BaseHP + poke.Stats.HPIV) * poke.Level / 100) + level + 10;
+            poke.Stats.Attack = calculateStats(pokemon.BaseAttack, poke.Stats.AttackIV, level);
+            poke.Stats.SpecialAttack = calculateStats(pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, level);
+            poke.Stats.Defense = calculateStats(pokemon.BaseDefense, poke.Stats.DefenseIV, level);
+            poke.Stats.SpecialDefense = calculateStats(pokemon.BaseSpecialDefense, poke.Stats.SpecialDefenseIV, level);
+            poke.Stats.Speed = calculateStats(pokemon.BaseSpeed, poke.Stats.SpeedIV, level);
             return poke;
         }
     }

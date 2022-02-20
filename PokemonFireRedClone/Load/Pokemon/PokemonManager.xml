@@ -6,7 +6,7 @@
         <Type>Grass</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/BulbasaurBack</Path>
         </Back>
         <Front>
             <Path></Path>
@@ -33,7 +33,7 @@
         <Index>4</Index>
         <Type>Fire</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/CharmanderBack</Path>
         </Back>
         <Front>
             <Path></Path>
@@ -87,7 +87,7 @@
         <Index>7</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SquirtleBack</Path>
         </Back>
         <Front>
             <Path>Pokemon/SquirtleFront</Path>

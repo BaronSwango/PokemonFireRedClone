@@ -3,6 +3,12 @@
     <Pokeball>
         <Path>BattleScreen/Pokeball</Path>
     </Pokeball>
+    <PlayerHPBar>
+        <Path>BattleScreen/PlayerHPBar</Path>
+    </PlayerHPBar>
+    <EnemyHPBar>
+        <Path>BattleScreen/EnemyHPBar</Path>
+    </EnemyHPBar>
     <TextBox>
         <TotalPages>9</TotalPages>
         <Border>
