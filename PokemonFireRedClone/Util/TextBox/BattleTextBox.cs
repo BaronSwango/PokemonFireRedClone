@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -20,7 +16,7 @@ namespace PokemonFireRedClone
          * 
          */
 
-        private void Transition(GameTime gameTime, BattleScreen BattleScreen)
+        private void Transition(GameTime gameTime, BattleScreen battleScreen)
         {
             if (IsTransitioning)
             {
@@ -95,8 +91,8 @@ namespace PokemonFireRedClone
                         }
                         if (Page == 3)
                         {
-                            BattleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_SEND_POKEMON;
-                            BattleScreen.BattleAnimations.IsTransitioning = true;
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_SEND_POKEMON;
+                            battleScreen.BattleAnimations.IsTransitioning = true;
                         }
                         IsTransitioning = false;
                         updateDialogue = true;
@@ -108,7 +104,7 @@ namespace PokemonFireRedClone
                 {
                     if (!image.Skippable && !image.Arrow)
                     {
-                        if (!BattleScreen.BattleAnimations.IsTransitioning)
+                        if (!battleScreen.BattleAnimations.IsTransitioning)
                         {
                             switch (Page)
                             {
@@ -124,11 +120,6 @@ namespace PokemonFireRedClone
                        
                 }
             }
-        }
-
-        
-        public BattleTextBox()
-        {
         }
 
 

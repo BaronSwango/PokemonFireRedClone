@@ -9,7 +9,7 @@
             <Path>Pokemon/BulbasaurBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/BulbasaurFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -36,7 +36,7 @@
             <Path>Pokemon/CharmanderBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/CharmanderFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -81,6 +81,34 @@
         <BaseSpeed>80</BaseSpeed>
         <Ability>Blaze</Ability>
         <Description>It lashes about with its tail to knock down its foe. It then tears up the fallen opponent with sharp claws.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Charizard</Name>
+        <Index>6</Index>
+        <Type>Fire</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path>Pokemon/CharizardBack</Path>
+        </Back>
+        <Front>
+            <Path>Pokemon/CharizardFront</Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLAME POKéMON</Classification>
+        <Height>5'07"</Height>
+        <Weight>199.5 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>240</EXPYield>
+        <BaseHP>78</BaseHP>
+        <BaseAttack>84</BaseAttack>
+        <BaseDefense>78</BaseDefense>
+        <BaseSpecialAttack>109</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Blaze</Ability>
+        <Description>Its wings can carry this POKéMON close to an altitude of 4,600 feet. It blows out fire at very high temperatures.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Squirtle</Name>
