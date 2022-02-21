@@ -12,7 +12,6 @@ namespace PokemonFireRedClone
     {
 
         int nextPage;
-        public Pokemon wildEncounterPoke;
 
         /*
          * 
@@ -21,7 +20,7 @@ namespace PokemonFireRedClone
          * 
          */
 
-        private void Transition(GameTime gameTime)
+        private void Transition(GameTime gameTime, BattleScreen BattleScreen)
         {
             if (IsTransitioning)
             {
@@ -96,8 +95,8 @@ namespace PokemonFireRedClone
                         }
                         if (Page == 3)
                         {
-                            BattleScreen.state = BattleScreen.BattleState.PLAYER_SEND_POKEMON;
-                            BattleScreen.IsTransitioning = true;
+                            BattleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_SEND_POKEMON;
+                            BattleScreen.BattleAnimations.IsTransitioning = true;
                         }
                         IsTransitioning = false;
                         updateDialogue = true;
@@ -109,7 +108,7 @@ namespace PokemonFireRedClone
                 {
                     if (!image.Skippable && !image.Arrow)
                     {
-                        if (!BattleScreen.IsTransitioning)
+                        if (!BattleScreen.BattleAnimations.IsTransitioning)
                         {
                             switch (Page)
                             {
@@ -130,11 +129,10 @@ namespace PokemonFireRedClone
         
         public BattleTextBox()
         {
-            wildEncounterPoke = PokemonManager.Instance.GetPokemon("Squirtle");
         }
 
 
-        public void LoadContent()
+        public void LoadContent(CustomPokemon enemyPokemon)
         {
             IsTransitioning = true;
 
@@ -150,7 +148,7 @@ namespace PokemonFireRedClone
                 {
                     if (BattleScreen.Wild)
                     {
-                        image.Text = "Wild   " + wildEncounterPoke.Name.ToUpper() + "   appeared !";
+                        image.Text = "Wild   " + enemyPokemon.Pokemon.Name.ToUpper() + "   appeared !";
                         nextPage = 3;
                         currentDialogue.Add(image);
                         image.LoadContent();
@@ -189,9 +187,9 @@ namespace PokemonFireRedClone
         public void UnloadContent()
         { }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, BattleScreen battleScreen)
         {
-            Transition(gameTime);
+            Transition(gameTime, battleScreen);
 
             if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning)
             {

@@ -36,8 +36,21 @@ namespace PokemonFireRedClone
             return ((2*b+iv)*level/100)+5;
         }
 
+        public static StatList generateStatList(CustomPokemon poke)
+        {
+            StatList newStatList = poke.Stats;
+            poke.Stats.HP = ((2 * poke.Pokemon.BaseHP + poke.Stats.HPIV) * poke.Level / 100) + poke.Level + 10;
+            poke.Stats.Attack = calculateStats(poke.Pokemon.BaseAttack, poke.Stats.AttackIV, poke.Level);
+            poke.Stats.SpecialAttack = calculateStats(poke.Pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, poke.Level);
+            poke.Stats.Defense = calculateStats(poke.Pokemon.BaseDefense, poke.Stats.DefenseIV, poke.Level);
+            poke.Stats.SpecialDefense = calculateStats(poke.Pokemon.BaseSpecialDefense, poke.Stats.SpecialDefenseIV, poke.Level);
+            poke.Stats.Speed = calculateStats(poke.Pokemon.BaseSpeed, poke.Stats.SpeedIV, poke.Level);
+            poke.Stats = applyNature(poke.Nature, poke.Stats);
+            return newStatList;
+        }
+
         // Level ranges and pokemon from specific area of map
-        public static CustomPokemon createRandomPokemon(Pokemon pokemon, int level)
+        public static CustomPokemon createPokemon(Pokemon pokemon, int level)
         {
             Random random = new Random();
 
@@ -55,13 +68,108 @@ namespace PokemonFireRedClone
                     SpeedIV = random.Next(32),
                 });
 
-            poke.Stats.HP = ((2 * pokemon.BaseHP + poke.Stats.HPIV) * poke.Level / 100) + level + 10;
-            poke.Stats.Attack = calculateStats(pokemon.BaseAttack, poke.Stats.AttackIV, level);
-            poke.Stats.SpecialAttack = calculateStats(pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, level);
-            poke.Stats.Defense = calculateStats(pokemon.BaseDefense, poke.Stats.DefenseIV, level);
-            poke.Stats.SpecialDefense = calculateStats(pokemon.BaseSpecialDefense, poke.Stats.SpecialDefenseIV, level);
-            poke.Stats.Speed = calculateStats(pokemon.BaseSpeed, poke.Stats.SpeedIV, level);
+            poke.Stats = generateStatList(poke);
             return poke;
+        }
+
+        private static StatList applyNature(Nature nature, StatList statList)
+        {
+            switch(nature)
+            {
+                case Nature.LONELY:
+                    statList.Attack = (int) (statList.Attack * 1.1);
+                    statList.Defense = (int) (statList.Defense * 0.9);
+                    break;
+                case Nature.BRAVE:
+                    statList.Attack = (int)(statList.Attack * 1.1);
+                    statList.Speed = (int)(statList.Speed * 0.9);
+                    break;
+                case Nature.ADAMANT:
+                    statList.Attack = (int)(statList.Attack * 1.1);
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 0.9);
+                    break;
+                case Nature.NAUGHTY:
+                    statList.Attack = (int)(statList.Attack * 1.1);
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 0.9);
+                    break;
+
+                case Nature.BOLD:
+                    statList.Defense = (int)(statList.Defense * 1.1);
+                    statList.Attack = (int)(statList.Attack * 0.9);
+                    break;
+                case Nature.RELAXED:
+                    statList.Defense = (int)(statList.Defense * 1.1);
+                    statList.Speed = (int)(statList.Speed * 0.9);
+                    break;
+                case Nature.IMPISH:
+                    statList.Defense = (int)(statList.Defense * 1.1);
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 0.9);
+                    break;
+                case Nature.LAX:
+                    statList.Defense = (int)(statList.Defense * 1.1);
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 0.9);
+                    break;
+
+                case Nature.TIMID:
+                    statList.Speed = (int)(statList.Speed * 1.1);
+                    statList.Attack = (int)(statList.Attack * 0.9);
+                    break;
+                case Nature.HASTY:
+                    statList.Speed = (int)(statList.Speed * 1.1);
+                    statList.Defense = (int)(statList.Defense * 0.9);
+                    break;
+                case Nature.JOLLY:
+                    statList.Speed = (int)(statList.Speed * 1.1);
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 0.9);
+                    break;
+                case Nature.NAIVE:
+                    statList.Speed = (int)(statList.Speed * 1.1);
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 0.9);
+                    break;
+
+                case Nature.MODEST:
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 1.1);
+                    statList.Attack = (int)(statList.Attack * 0.9);
+                    break;
+                case Nature.MILD:
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 1.1);
+                    statList.Defense = (int)(statList.Defense * 0.9);
+                    break;
+                case Nature.QUIET:
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 1.1);
+                    statList.Speed = (int)(statList.Speed * 0.9);
+                    break;
+                case Nature.RASH:
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 1.1);
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 0.9);
+                    break;
+
+                case Nature.CALM:
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 1.1);
+                    statList.Attack = (int)(statList.Attack * 0.9);
+                    break;
+                case Nature.GENTLE:
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 1.1);
+                    statList.Defense = (int)(statList.Defense * 0.9);
+                    break;
+                case Nature.SASSY:
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 1.1);
+                    statList.Speed = (int)(statList.Speed * 0.9);
+                    break;
+                case Nature.CAREFUL:
+                    statList.SpecialDefense = (int)(statList.SpecialDefense * 1.1);
+                    statList.SpecialAttack = (int)(statList.SpecialAttack * 0.9);
+                    break;
+
+                case Nature.BASHFUL:
+                case Nature.DOCILE:
+                case Nature.HARDY:
+                case Nature.QUIRKY:
+                case Nature.SERIOUS:
+                default:
+                    break;
+            }
+            return statList;
         }
     }
 }

@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <BattleScreen>
-    <Pokeball>
-        <Path>BattleScreen/Pokeball</Path>
-    </Pokeball>
-    <PlayerHPBar>
-        <Path>BattleScreen/PlayerHPBar</Path>
-    </PlayerHPBar>
-    <EnemyHPBar>
-        <Path>BattleScreen/EnemyHPBar</Path>
-    </EnemyHPBar>
+    <BattleAnimations>
+        <Pokeball>
+            <Path>BattleScreen/Pokeball</Path>
+        </Pokeball>
+        <PlayerHPBar>
+            <Path>BattleScreen/PlayerHPBar</Path>
+        </PlayerHPBar>
+        <EnemyHPBar>
+            <Path>BattleScreen/EnemyHPBar</Path>
+        </EnemyHPBar>
+    </BattleAnimations>
+
     <TextBox>
         <TotalPages>9</TotalPages>
         <Border>
