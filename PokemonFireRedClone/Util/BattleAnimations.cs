@@ -21,19 +21,34 @@ namespace PokemonFireRedClone
             ENEMY_POKEMON_FAINT
         }
 
+        // General battle screen data
         Image Background;
         Image EnemyPlatform;
         Image PlayerPlatform;
         Image EnemySprite;
         Image PlayerSprite;
         Image PlayerPokemon;
-        public Image PlayerHPBar;
-        public Image EnemyHPBar;
+        public Image PlayerHPBarBackground;
+        public Image EnemyHPBarBackground;
         public Image Pokeball;
         public bool IsTransitioning;
         public BattleState state;
 
+        // HP bar data
+        Image PlayerPokemonName;
+        Image EnemyPokemonName;
+        Image PlayerPokemonGender;
+        Image EnemyPokemonGender;
+        Image PlayerHPBar;
+        Image PlayerPokemonHP;
+        Image PlayerPokemonMaxHP;
+        Image EnemyHPBar;
+        Image PlayerPokemonLevel;
+        Image EnemyPokemonLevel;
+        Image EXPBar;
 
+
+        // Transition data
         float pokeballSpeedY = 4f;
         bool maxHeight;
         bool whiteBackgroundTransitioned;
@@ -73,15 +88,15 @@ namespace PokemonFireRedClone
                     case BattleState.WILD_POKEMON_FADE_IN:
                         float enemyHPDestinationX = 52;
                         enemySpeed = (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
-                        if (EnemySprite.Tint != Color.White || EnemyHPBar.Position.X + enemySpeed < enemyHPDestinationX)
+                        if (EnemySprite.Tint != Color.White || EnemyHPBarBackground.Position.X + enemySpeed < enemyHPDestinationX)
                         {
-                            if (EnemyHPBar.Position.X + enemySpeed < enemyHPDestinationX)
-                                EnemyHPBar.Position.X += enemySpeed;
+                            if (EnemyHPBarBackground.Position.X + enemySpeed < enemyHPDestinationX)
+                                EnemyHPBarBackground.Position.X += enemySpeed;
                             if (EnemySprite.Tint != Color.White)
                                 EnemySprite.Tint = new Color(EnemySprite.Tint.R + 3, EnemySprite.Tint.G + 3, EnemySprite.Tint.B + 3, 255);
                             return;
                         }
-                        EnemyHPBar.Position.X = enemyHPDestinationX;
+                        EnemyHPBarBackground.Position.X = enemyHPDestinationX;
                         IsTransitioning = false;
                         break;
                     case BattleState.PLAYER_SEND_POKEMON:
@@ -150,12 +165,12 @@ namespace PokemonFireRedClone
                         PlayerPokemon.Scale = Vector2.One;
                         PlayerPokemon.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width * 0.55f - PlayerPokemon.SourceRect.Width / 2, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerPokemon.SourceRect.Height);
 
-                        float playerHPDestinationX = ScreenManager.Instance.Dimensions.X - PlayerHPBar.SourceRect.Width - 40;
+                        float playerHPDestinationX = ScreenManager.Instance.Dimensions.X - PlayerHPBarBackground.SourceRect.Width - 40;
                         playerSpeed = (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
-                        if (PlayerPokemon.Tint != Color.White || whiteBackground.Alpha > 0 || PlayerHPBar.Position.X - playerSpeed > playerHPDestinationX)
+                        if (PlayerPokemon.Tint != Color.White || whiteBackground.Alpha > 0 || PlayerHPBarBackground.Position.X - playerSpeed > playerHPDestinationX)
                         {
-                            if (PlayerHPBar.Position.X - playerSpeed > playerHPDestinationX)
-                                PlayerHPBar.Position.X -= playerSpeed;
+                            if (PlayerHPBarBackground.Position.X - playerSpeed > playerHPDestinationX)
+                                PlayerHPBarBackground.Position.X -= playerSpeed;
 
                             if (whiteBackground.Alpha > 0)
                                 whiteBackground.Alpha -= 0.05f;
@@ -163,7 +178,7 @@ namespace PokemonFireRedClone
                             return;
                         }
 
-                        PlayerHPBar.Position.X = playerHPDestinationX;
+                        PlayerHPBarBackground.Position.X = playerHPDestinationX;
                         whiteBackground.Alpha = 0;
                         IsTransitioning = false;
                         break;
@@ -188,7 +203,7 @@ namespace PokemonFireRedClone
             if (barBounceTimer < 0)
             {
                 barBounce = !barBounce;
-                PlayerHPBar.Position.Y += barBounce ? 4 : -4;
+                PlayerHPBarBackground.Position.Y += barBounce ? 4 : -4;
                 barBounceTimer = 0.3f;
             }
 
@@ -212,7 +227,7 @@ namespace PokemonFireRedClone
             whiteBackgroundTransitioned = false;
             pokeballSpeedY = 4f;
             PlayerPokemon.Position.Y = pokeOriginalY;
-            PlayerHPBar.Position.Y = barOriginalY;
+            PlayerHPBarBackground.Position.Y = barOriginalY;
 
         }
 
@@ -241,8 +256,8 @@ namespace PokemonFireRedClone
             PlayerPlatform.LoadContent();
             PlayerSprite.LoadContent();
             Pokeball.LoadContent();
-            PlayerHPBar.LoadContent();
-            EnemyHPBar.LoadContent();
+            PlayerHPBarBackground.LoadContent();
+            EnemyHPBarBackground.LoadContent();
 
             PlayerSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(5, 1);
             PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
@@ -267,9 +282,9 @@ namespace PokemonFireRedClone
             EnemySprite.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemySprite.SourceRect.Width / 2, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemySprite.SourceRect.Height);
             PlayerPlatform.Position = new Vector2(ScreenManager.Instance.Dimensions.X + PlayerPlatform.SourceRect.Width, textBox.Border.Position.Y - PlayerPlatform.SourceRect.Height);
             PlayerSprite.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2 - 48, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerSprite.SourceRect.Height);
-            EnemyHPBar.Position = new Vector2(-EnemyHPBar.SourceRect.Width, EnemyPlatform.Position.Y - EnemyHPBar.SourceRect.Height - 12);
-            PlayerHPBar.Position = new Vector2(ScreenManager.Instance.Dimensions.X, textBox.Border.Position.Y - PlayerHPBar.SourceRect.Height - 4);
-            barOriginalY = PlayerHPBar.Position.Y;
+            EnemyHPBarBackground.Position = new Vector2(-EnemyHPBarBackground.SourceRect.Width, EnemyPlatform.Position.Y - EnemyHPBarBackground.SourceRect.Height - 12);
+            PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, textBox.Border.Position.Y - PlayerHPBarBackground.SourceRect.Height - 4);
+            barOriginalY = PlayerHPBarBackground.Position.Y;
             IsTransitioning = true;
 
 
@@ -304,8 +319,8 @@ namespace PokemonFireRedClone
             EnemyPlatform.Draw(spriteBatch);
             if (state == BattleState.PLAYER_SEND_POKEMON && PlayerSprite.SpriteSheetEffect.CurrentFrame.X == 4)
                 whiteBackground.Draw(spriteBatch);
-            PlayerHPBar.Draw(spriteBatch);
-            EnemyHPBar.Draw(spriteBatch);
+            PlayerHPBarBackground.Draw(spriteBatch);
+            EnemyHPBarBackground.Draw(spriteBatch);
             PlayerSprite.Draw(spriteBatch);
             if (Pokeball.Position.Y >= textBox.Border.Position.Y)
                 PlayerPokemon.Draw(spriteBatch);

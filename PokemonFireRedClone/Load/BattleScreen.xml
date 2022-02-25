@@ -4,12 +4,12 @@
         <Pokeball>
             <Path>BattleScreen/Pokeball</Path>
         </Pokeball>
-        <PlayerHPBar>
+        <PlayerHPBarBackground>
             <Path>BattleScreen/PlayerHPBar</Path>
-        </PlayerHPBar>
-        <EnemyHPBar>
+        </PlayerHPBarBackground>
+        <EnemyHPBarBackground>
             <Path>BattleScreen/EnemyHPBar</Path>
-        </EnemyHPBar>
+        </EnemyHPBarBackground>
     </BattleAnimations>
 
     <TextBox>
