@@ -28,8 +28,9 @@ namespace PokemonFireRedClone
         public string Effects;
         public Color Tint;
         public float Angle;
-        public string FontColor;
+        public Color FontColor;
         public int R, G, B, A;
+        public bool UseFontColor;     
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
@@ -100,7 +101,7 @@ namespace PokemonFireRedClone
             effectList = new Dictionary<string, ImageEffect>();
             Tint = Color.White;
             Angle = 0;
-            FontColor = "Black";
+            FontColor = Color.Black;
         }
 
         public void LoadContent()
@@ -112,6 +113,8 @@ namespace PokemonFireRedClone
                 Texture = content.Load<Texture2D>(Path);
 
             font = content.Load<SpriteFont>(FontName);
+            if (!UseFontColor)
+                FontColor = new Color(R, G, B, A);
 
             Vector2 dimensions = Vector2.Zero;
 
@@ -135,7 +138,7 @@ namespace PokemonFireRedClone
             if (Texture != null)
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,
-                new Color(R, G, B, A));
+                FontColor);
             ScreenManager.Instance.SpriteBatch.End();
  
             Texture = RenderTarget;

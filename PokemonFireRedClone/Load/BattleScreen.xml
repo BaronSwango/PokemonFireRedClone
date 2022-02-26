@@ -13,6 +13,10 @@
 
         <PlayerPokemonName>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>81</R>
+            <G>81</G>
+            <B>81</B>
+            <A>255</A>
         </PlayerPokemonName>
         <EnemyPokemonName>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
@@ -23,13 +27,11 @@
         </EnemyPokemonName>
         <PlayerPokemonGender>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <UseFontColor>true</UseFontColor>
         </PlayerPokemonGender>
         <EnemyPokemonGender>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>243</R>
-            <G>169</G>
-            <B>161</B>
-            <A>255</A>
+            <UseFontColor>true</UseFontColor>
         </EnemyPokemonGender>
         <PlayerHPBar>
             <Path></Path>
@@ -39,12 +41,24 @@
         </EnemyHPBar>
         <PlayerPokemonHP>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>81</R>
+            <G>81</G>
+            <B>81</B>
+            <A>255</A>
         </PlayerPokemonHP>
         <PlayerPokemonMaxHP>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>81</R>
+            <G>81</G>
+            <B>81</B>
+            <A>255</A>
         </PlayerPokemonMaxHP>
         <PlayerPokemonLevel>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>81</R>
+            <G>81</G>
+            <B>81</B>
+            <A>255</A>
         </PlayerPokemonLevel>
         <EnemyPokemonLevel>
             <FontName>Fonts/PokemonFireRedSmall</FontName>

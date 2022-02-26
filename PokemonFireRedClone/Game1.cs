@@ -30,6 +30,7 @@ namespace PokemonFireRedClone
             graphics.ApplyChanges();
             renderTarget = new RenderTarget2D(GraphicsDevice, defaultWidth, defaultHeight);
             sourceRect = new Rectangle(0, 0, defaultWidth, defaultHeight);
+            
             scaled = false;
             base.Initialize();
         }
@@ -78,15 +79,15 @@ namespace PokemonFireRedClone
             if (ScreenManager.Instance.CurrentScreen.Type.Name == "GameplayScreen")
                 spriteBatch.Begin(transformMatrix: ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Camera.Transform);
             else 
-                spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+                spriteBatch.Begin();
             ScreenManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
 
             GraphicsDevice.SetRenderTarget(null);
 
-
+            // settings: SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone
             //render target to back buffer
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
+            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Draw(renderTarget, sourceRect, Color.White);
             spriteBatch.End();
 
