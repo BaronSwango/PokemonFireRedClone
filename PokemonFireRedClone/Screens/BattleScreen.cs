@@ -53,6 +53,7 @@ namespace PokemonFireRedClone
             // TODO: Load Background based on what environment the battle is in
 
             TextBox.LoadContent(enemyPokemon);
+            playerPokemon.Name = playerPokemon.PokemonName;
             BattleAnimations.LoadContent(TextBox, playerPokemon, enemyPokemon);
 
             Console.WriteLine("Player Poke: ");

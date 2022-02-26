@@ -78,7 +78,7 @@ namespace PokemonFireRedClone
             if (ScreenManager.Instance.CurrentScreen.Type.Name == "GameplayScreen")
                 spriteBatch.Begin(transformMatrix: ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Camera.Transform);
             else 
-                spriteBatch.Begin();
+                spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             ScreenManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
 

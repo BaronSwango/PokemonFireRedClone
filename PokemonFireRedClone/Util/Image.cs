@@ -131,7 +131,7 @@ namespace PokemonFireRedClone
                 (int) dimensions.X, (int) dimensions.Y);
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(RenderTarget);
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
-            ScreenManager.Instance.SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            ScreenManager.Instance.SpriteBatch.Begin(samplerState: SamplerState.LinearClamp);
             if (Texture != null)
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,

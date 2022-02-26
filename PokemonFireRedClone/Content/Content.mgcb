@@ -111,12 +111,12 @@
 /processorParam:TextureFormat=Compressed
 /build:Fonts/PokemonFireRedDialogue.spritefont
 
-#begin Fonts/PokemonFireRedRegular18.spritefont
+#begin Fonts/PokemonFireRedSmall.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:Fonts/PokemonFireRedRegular18.spritefont
+/build:Fonts/PokemonFireRedSmall.spritefont
 
 #begin Gameplay/Carson.png
 /importer:TextureImporter

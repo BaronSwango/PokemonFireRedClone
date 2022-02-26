@@ -10,6 +10,53 @@
         <EnemyHPBarBackground>
             <Path>BattleScreen/EnemyHPBar</Path>
         </EnemyHPBarBackground>
+
+        <PlayerPokemonName>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+        </PlayerPokemonName>
+        <EnemyPokemonName>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>81</R>
+            <G>81</G>
+            <B>81</B>
+            <A>255</A>
+        </EnemyPokemonName>
+        <PlayerPokemonGender>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+        </PlayerPokemonGender>
+        <EnemyPokemonGender>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>243</R>
+            <G>169</G>
+            <B>161</B>
+            <A>255</A>
+        </EnemyPokemonGender>
+        <PlayerHPBar>
+            <Path></Path>
+        </PlayerHPBar>
+        <EnemyHPBar>
+            <Path></Path>
+        </EnemyHPBar>
+        <PlayerPokemonHP>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+        </PlayerPokemonHP>
+        <PlayerPokemonMaxHP>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+        </PlayerPokemonMaxHP>
+        <PlayerPokemonLevel>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+        </PlayerPokemonLevel>
+        <EnemyPokemonLevel>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>81</R>
+            <G>81</G>
+            <B>81</B>
+            <A>255</A>
+        </EnemyPokemonLevel>
+        <EXPBar>
+            <Path></Path>
+        </EXPBar>
+
     </BattleAnimations>
 
     <TextBox>

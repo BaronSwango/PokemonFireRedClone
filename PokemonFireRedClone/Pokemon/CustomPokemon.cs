@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
         public Gender Gender;
         public List<string> MoveNames;
         public int Level;
+        public int currentHP;
         public StatList Stats;
 
         public CustomPokemon(string pokemonName, Nature nature, Gender gender, List<string> moveNames, int level, StatList stats)
