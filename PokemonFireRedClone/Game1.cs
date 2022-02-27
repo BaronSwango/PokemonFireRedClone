@@ -85,9 +85,9 @@ namespace PokemonFireRedClone
 
             GraphicsDevice.SetRenderTarget(null);
 
-            // settings: SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone
+            
             //render target to back buffer
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
             spriteBatch.Draw(renderTarget, sourceRect, Color.White);
             spriteBatch.End();
 

@@ -34,10 +34,10 @@
             <UseFontColor>true</UseFontColor>
         </EnemyPokemonGender>
         <PlayerHPBar>
-            <Path></Path>
+            <Path>BattleScreen/HPBar</Path>
         </PlayerHPBar>
         <EnemyHPBar>
-            <Path></Path>
+            <Path>BattleScreen/HPBar</Path>
         </EnemyHPBar>
         <PlayerPokemonHP>
             <FontName>Fonts/PokemonFireRedSmall</FontName>

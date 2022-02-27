@@ -43,9 +43,10 @@ namespace PokemonFireRedClone
         {
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
-            playerPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Squirtle"), 300);
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 100);
-            playerPokemon.currentHP = 97;
+            playerPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Squirtle"), 75);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 75);
+            enemyPokemon.currentHP = enemyPokemon.Stats.HP;
+            playerPokemon.currentHP = playerPokemon.Stats.HP;
         }
 
 
