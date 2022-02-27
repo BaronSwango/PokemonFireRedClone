@@ -47,8 +47,8 @@ namespace PokemonFireRedClone
             enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 3);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP / 6;
             playerPokemon.CurrentHP = playerPokemon.Stats.HP / 3;
-            playerPokemon.LevelEXP = 18356;
-            playerPokemon.CurrentEXP = 7659;
+            playerPokemon.LevelEXP = 57;
+            playerPokemon.CurrentEXP = 2;
         }
 
 

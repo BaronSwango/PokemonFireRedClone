@@ -215,7 +215,6 @@ namespace PokemonFireRedClone
             }
         }
 
-        bool pokeBounce;
         bool barBounce;
         float pokeBounceTimer = 0.2f;
         float barBounceTimer = 0.3f;
@@ -243,7 +242,6 @@ namespace PokemonFireRedClone
 
             if (pokeBounceTimer < 0)
             {
-                pokeBounce = !pokeBounce;
                 PlayerPokemon.Position.Y += barBounce ? -4 : 4;
                 pokeBounceTimer = 0.3f;
             }
@@ -253,7 +251,6 @@ namespace PokemonFireRedClone
         // when battle menu option is selected
         public void reset()
         {
-            pokeBounce = false;
             barBounce = false;
             barBounceTimer = 0.3f;
             pokeBounceTimer = 0.2f;
