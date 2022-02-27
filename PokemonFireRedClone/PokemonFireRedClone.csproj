@@ -51,6 +51,7 @@
     <None Remove="Load\Menus\BattleMenu.xml" />
     <None Remove="Content\Pokemon\" />
     <None Remove="Util\Battle\" />
+    <None Remove="Load\Menus\MoveMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -102,6 +103,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Menus\BattleMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Menus\MoveMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

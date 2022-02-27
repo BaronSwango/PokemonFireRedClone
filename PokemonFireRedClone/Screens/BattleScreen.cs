@@ -44,11 +44,9 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charmander"), 6);
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 3);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Rattata"), 6);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP / 6;
             playerPokemon.CurrentHP = playerPokemon.Stats.HP / 3;
-            playerPokemon.LevelEXP = 57;
-            playerPokemon.CurrentEXP = 2;
         }
 
 
@@ -68,6 +66,7 @@ namespace PokemonFireRedClone
             Console.WriteLine("Special Attack: " + playerPokemon.Stats.SpecialAttack);
             Console.WriteLine("Special Defense: " + playerPokemon.Stats.SpecialDefense);
             Console.WriteLine("Speed: " + playerPokemon.Stats.Speed);
+            Console.WriteLine("EXP TO NEXT: " + playerPokemon.CurrentLevelEXP);
             Console.WriteLine("--------");
             Console.WriteLine("Enemy Poke: ");
             Console.WriteLine("Nature: " + enemyPokemon.Nature.ToString());
@@ -77,6 +76,7 @@ namespace PokemonFireRedClone
             Console.WriteLine("Special Attack: " + enemyPokemon.Stats.SpecialAttack);
             Console.WriteLine("Special Defense: " + enemyPokemon.Stats.SpecialDefense);
             Console.WriteLine("Speed: " + enemyPokemon.Stats.Speed);
+            Console.WriteLine("EXP TO NEXT: " + enemyPokemon.CurrentLevelEXP);
             Console.WriteLine("---------------");
             Console.WriteLine();
             base.LoadContent();

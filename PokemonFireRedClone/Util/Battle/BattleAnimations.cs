@@ -364,7 +364,7 @@ namespace PokemonFireRedClone
 
             // Handle Health ane exp bars
             float playerHealthRatio = (float)playerPokemon.CurrentHP / playerPokemon.Stats.HP;
-            float expRatio = (float)playerPokemon.CurrentEXP / playerPokemon.LevelEXP;
+            float expRatio = (float)playerPokemon.EXPTowardsLevelUp / playerPokemon.EXPNeededToLevelUp;
             float enemyHealthRatio = (float)enemyPokemon.CurrentHP / enemyPokemon.Stats.HP;
 
             PlayerHPBar.Scale.X = playerHealthRatio;

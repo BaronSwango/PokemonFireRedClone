@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<BattleMenu>
+<MoveMenu>
     <Background>
         <Path>Menus/BattleMenuBackground</Path>
     </Background>
@@ -7,16 +7,13 @@
         <Path>Menus/BlackMenuArrow</Path>
     </Arrow>
     <Item>
-        <LinkType>Menu</LinkType>
-        <LinkID>Load/Menus/MoveMenu.xml</LinkID>
-        <MenuName>MoveMenu</MenuName>
         <Image>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>89</R>
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>FIGHT</Text>
+            <Text>-</Text>
         </Image>
     </Item>
     <Item>
@@ -26,7 +23,7 @@
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>POKéMON</Text>
+            <Text>-</Text>
         </Image>
     </Item>
     <Item>
@@ -36,7 +33,7 @@
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>BAG</Text>
+            <Text>-</Text>
         </Image>
     </Item>
     <Item>
@@ -46,7 +43,7 @@
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>RUN</Text>
+            <Text>-</Text>
         </Image>
     </Item>
-</BattleMenu>
+</MoveMenu>
