@@ -67,12 +67,11 @@ namespace PokemonFireRedClone
 
             SaveRegion.Position = new Vector2(InfoTitlesBackground.Position.X + 116, InfoTitlesBackground.Position.Y + 20);
 
-            foreach(Image image in InfoTitles)
+            InfoTitles[0].Position = new Vector2(InfoTitlesBackground.Position.X + 264, InfoTitlesBackground.Position.Y + 76);
+            InfoTitles[1].Position = new Vector2(InfoTitles[0].Position.X, InfoTitles[0].Position.Y + 76);
+            for (int i = 2; i < InfoTitles.Count; i++)
             {
-                image.Position = new Vector2(InfoTitlesBackground.Position.X + 264, InfoTitlesBackground.Position.Y + infoDimensions.Y + 76);
-
-                infoDimensions += new Vector2(image.SourceRect.Width,
-                     image.SourceRect.Height + PaddingY);
+                InfoTitles[i].Position = new Vector2(InfoTitles[0].Position.X, InfoTitles[i-1].Position.Y + 56);
             }
 
             MenuBackground.Position = new Vector2(playerPos.X + 200, playerPos.Y + 20);
@@ -108,7 +107,7 @@ namespace PokemonFireRedClone
             InfoTitles[0].Text = Player.PlayerJsonObject.Name;
             InfoTitles[1].Text = Player.PlayerJsonObject.Badges.ToString();
             InfoTitles[2].Text = Player.PlayerJsonObject.Pokedex.ToString();
-            InfoTitles[3].Text = $"{tsTime.Hours + (tsTime.Days * 24):0} : {tsTime.Minutes:00}";
+            InfoTitles[3].Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
 
             foreach (Image image in InfoTitles)
                 image.LoadContent();

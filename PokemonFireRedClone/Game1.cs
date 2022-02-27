@@ -51,7 +51,7 @@ namespace PokemonFireRedClone
                 if (InputManager.Instance.KeyPressed(Keys.RightShift))
                 {
                     scaled = !scaled;
-                    sourceRect = scaled ? new Rectangle(0, 0, 1600, 900) : new Rectangle(0, 0, defaultWidth, defaultHeight);
+                    sourceRect = scaled ? new Rectangle(0, 0, 1920, 1080) : new Rectangle(0, 0, defaultWidth, defaultHeight);
                 }
                 else
                 {

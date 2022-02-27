@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <SaveMenu>
-    <PaddingY>13</PaddingY>
 
     <InfoTitlesBackground>
         <Path>Menus/SaveMenuInfoBackground</Path>
@@ -30,22 +29,22 @@
         <B>113</B>
         <A>255</A>
     </Info>
-        <Info>
-        <FontName>Fonts/PokemonFireRedRegular18</FontName>
+    <Info>
+        <FontName>Fonts/PokemonFireRedSmall</FontName>
         <R>113</R>
         <G>113</G>
         <B>113</B>
         <A>255</A>
     </Info>
     <Info>
-        <FontName>Fonts/PokemonFireRedRegular18</FontName>
+        <FontName>Fonts/PokemonFireRedSmall</FontName>
         <R>113</R>
         <G>113</G>
         <B>113</B>
         <A>255</A>
     </Info>
     <Info>
-        <FontName>Fonts/PokemonFireRedRegular18</FontName>
+        <FontName>Fonts/PokemonFireRedSmall</FontName>
         <R>113</R>
         <G>113</G>
         <B>113</B>

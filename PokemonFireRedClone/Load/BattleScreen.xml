@@ -68,7 +68,7 @@
             <A>255</A>
         </EnemyPokemonLevel>
         <EXPBar>
-            <Path></Path>
+            <Path>BattleScreen/EXPBar</Path>
         </EXPBar>
 
     </BattleAnimations>

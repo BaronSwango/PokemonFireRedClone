@@ -16,6 +16,8 @@ namespace PokemonFireRedClone
             BATTLE_MENU,
             PLAYER_MOVE,
             ENEMY_MOVE,
+            PLAYER_SWITCH,
+            ENEMY_SWITCH,
             THROW_POKEBALL,
             PLAYER_POKEMON_FAINT,
             ENEMY_POKEMON_FAINT
@@ -103,6 +105,10 @@ namespace PokemonFireRedClone
                             return;
                         }
                         EnemyHPBarBackground.Position.X = enemyHPDestinationX;
+                        EnemyPokemonName.Position = new Vector2(EnemyHPBarBackground.Position.X + 24, EnemyHPBarBackground.Position.Y + 19);
+                        EnemyPokemonGender.Position = new Vector2(EnemyPokemonName.Position.X + EnemyPokemonName.SourceRect.Width, EnemyPokemonName.Position.Y);
+                        EnemyPokemonLevel.Position = new Vector2(EnemyHPBarBackground.Position.X + EnemyHPBarBackground.SourceRect.Width - 56 - EnemyPokemonLevel.SourceRect.Width, EnemyPokemonName.Position.Y);
+                        EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
                         break;
                     case BattleState.PLAYER_SEND_POKEMON:
                         float playerSpriteDestinationX = -PlayerSprite.SourceRect.Width - 8;
@@ -183,6 +189,7 @@ namespace PokemonFireRedClone
                                 PlayerPokemonMaxHP.Position.X -= playerSpeed;
                                 PlayerPokemonHP.Position.X -= playerSpeed;
                                 PlayerHPBar.Position.X -= playerSpeed;
+                                EXPBar.Position.X -= playerSpeed;
                             }
 
                             if (whiteBackground.Alpha > 0)
@@ -192,6 +199,13 @@ namespace PokemonFireRedClone
                         }
 
                         PlayerHPBarBackground.Position.X = playerHPDestinationX;
+                        PlayerPokemonName.Position = new Vector2(PlayerHPBarBackground.Position.X + 64, PlayerHPBarBackground.Position.Y + 19);
+                        PlayerPokemonGender.Position = new Vector2(PlayerPokemonName.Position.X + PlayerPokemonName.SourceRect.Width, PlayerPokemonName.Position.Y);
+                        PlayerPokemonLevel.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 36 - PlayerPokemonLevel.SourceRect.Width, PlayerPokemonName.Position.Y);
+                        PlayerPokemonMaxHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 36 - PlayerPokemonMaxHP.SourceRect.Width, PlayerHPBarBackground.Position.Y + 92);
+                        PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
+                        PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
+                        EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
                         whiteBackground.Alpha = 0;
                         IsTransitioning = false;
                         break;
@@ -223,6 +237,7 @@ namespace PokemonFireRedClone
                 PlayerPokemonMaxHP.Position.Y += barBounce ? 4 : -4;
                 PlayerPokemonHP.Position.Y += barBounce ? 4 : -4;
                 PlayerHPBar.Position.Y += barBounce ? 4 : -4;
+                EXPBar.Position.Y += barBounce ? 4 : -4;
                 barBounceTimer = 0.3f;
             }
 
@@ -347,14 +362,16 @@ namespace PokemonFireRedClone
 
             PlayerPokemonLevel.Text = "Lv" + playerPokemon.Level;
             EnemyPokemonLevel.Text = "Lv" + enemyPokemon.Level;
-            PlayerPokemonHP.Text = playerPokemon.currentHP.ToString();
+            PlayerPokemonHP.Text = playerPokemon.CurrentHP.ToString();
             PlayerPokemonMaxHP.Text = playerPokemon.Stats.HP.ToString();
 
-            // Handle Health bars
-            float playerHealthRatio = (float)playerPokemon.currentHP / playerPokemon.Stats.HP;
-            float enemyHealthRatio = (float)enemyPokemon.currentHP / enemyPokemon.Stats.HP;
+            // Handle Health ane exp bars
+            float playerHealthRatio = (float)playerPokemon.CurrentHP / playerPokemon.Stats.HP;
+            float expRatio = (float)playerPokemon.CurrentEXP / playerPokemon.LevelEXP;
+            float enemyHealthRatio = (float)enemyPokemon.CurrentHP / enemyPokemon.Stats.HP;
 
             PlayerHPBar.Scale.X = playerHealthRatio;
+            EXPBar.Scale.X = expRatio;
             EnemyHPBar.Scale.X = enemyHealthRatio;
 
             if (playerHealthRatio > 0.5)
@@ -364,7 +381,7 @@ namespace PokemonFireRedClone
             }
             else if (playerHealthRatio > 0.2 && playerHealthRatio <= 0.5)
             {
-                PlayerHPBar.Tint = new Color(255, 255, 0, 50);
+                PlayerHPBar.Tint = new Color(255, 232, 0, 0);
                 PlayerHPBar.Alpha = 0.5f;
             }
             else
@@ -380,7 +397,7 @@ namespace PokemonFireRedClone
             }
             else if (enemyHealthRatio > 0.2 && enemyHealthRatio <= 0.5)
             {
-                EnemyHPBar.Tint = new Color(255, 255, 0, 50);
+                EnemyHPBar.Tint = new Color(255, 232, 0, 0);
                 EnemyHPBar.Alpha = 0.5f;
             }
             else
@@ -410,6 +427,7 @@ namespace PokemonFireRedClone
             PlayerPokemonMaxHP.LoadContent();
             PlayerHPBar.LoadContent();
             EnemyHPBar.LoadContent();
+            EXPBar.LoadContent();
 
 
             /* POKEBALL TRANSITION CODE */
@@ -434,16 +452,18 @@ namespace PokemonFireRedClone
             PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, textBox.Border.Position.Y - PlayerHPBarBackground.SourceRect.Height - 4);
 
             // set hp bar image positions
-            PlayerPokemonName.Position = new Vector2(PlayerHPBarBackground.Position.X + 48, PlayerHPBarBackground.Position.Y + 19);
-            EnemyPokemonName.Position = new Vector2(EnemyHPBarBackground.Position.X + 40, EnemyHPBarBackground.Position.Y + 19);
+            PlayerPokemonName.Position = new Vector2(PlayerHPBarBackground.Position.X + 64, PlayerHPBarBackground.Position.Y + 19);
             PlayerPokemonGender.Position = new Vector2(PlayerPokemonName.Position.X + PlayerPokemonName.SourceRect.Width, PlayerPokemonName.Position.Y);
+            PlayerPokemonLevel.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 36 - PlayerPokemonLevel.SourceRect.Width, PlayerPokemonName.Position.Y);
+            PlayerPokemonMaxHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 36 - PlayerPokemonMaxHP.SourceRect.Width, PlayerHPBarBackground.Position.Y + 92);
+            PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
+            PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
+            EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
+
+            EnemyPokemonName.Position = new Vector2(EnemyHPBarBackground.Position.X + 24, EnemyHPBarBackground.Position.Y + 19);
             EnemyPokemonGender.Position = new Vector2(EnemyPokemonName.Position.X + EnemyPokemonName.SourceRect.Width, EnemyPokemonName.Position.Y);
-            EnemyPokemonLevel.Position = new Vector2(EnemyHPBarBackground.Position.X + EnemyHPBarBackground.SourceRect.Width - 40 - EnemyPokemonLevel.SourceRect.Width, EnemyPokemonName.Position.Y);
-            PlayerPokemonLevel.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 48 - PlayerPokemonLevel.SourceRect.Width, PlayerPokemonName.Position.Y);
-            PlayerPokemonMaxHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 52 - PlayerPokemonMaxHP.SourceRect.Width, PlayerHPBarBackground.Position.Y + 92);
-            PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 132 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
-            EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 168 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
-            PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 176 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
+            EnemyPokemonLevel.Position = new Vector2(EnemyHPBarBackground.Position.X + EnemyHPBarBackground.SourceRect.Width - 56 - EnemyPokemonLevel.SourceRect.Width, EnemyPokemonName.Position.Y);
+            EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
 
         }
 
@@ -459,6 +479,7 @@ namespace PokemonFireRedClone
             PlayerPokemonHP.Draw(spriteBatch);
             PlayerPokemonMaxHP.Draw(spriteBatch);
             PlayerHPBar.Draw(spriteBatch);
+            EXPBar.Draw(spriteBatch);
         }
 
 

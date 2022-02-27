@@ -4,13 +4,13 @@
     <PaddingY>8</PaddingY>
     <Effects>GrayOutEffect</Effects>
     <Item>
+        <LinkType>Screen</LinkType>
+        <LinkID>GameplayScreen</LinkID>
         <Image>
             <Path>Menus/ContinueBox</Path>
         </Image>
     </Item>
     <Item>
-        <LinkType>Screen</LinkType>
-        <LinkID>GameplayScreen</LinkID>
         <Image>
             <Path>Menus/NewGameBox</Path>
         </Image>

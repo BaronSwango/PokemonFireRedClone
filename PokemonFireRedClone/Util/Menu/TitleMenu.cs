@@ -47,7 +47,7 @@ namespace PokemonFireRedClone
             {
                 Items[i].Image.Position = new Vector2(ScreenManager.Instance.Dimensions.X / 2 - 136 , dimensions.Y+100);
                 dimensions += new Vector2(Items[i].Image.SourceRect.Width,
-                    Items[i].Image.SourceRect.Height + 6);
+                    Items[i].Image.SourceRect.Height + 8);
             }
 
         }
