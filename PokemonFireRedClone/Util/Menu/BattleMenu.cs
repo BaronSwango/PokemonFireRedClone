@@ -27,6 +27,7 @@ namespace PokemonFireRedClone
         {
             Background.LoadContent();
             Arrow.LoadContent();
+            Arrow.Position = new Vector2(-Arrow.SourceRect.Width, 0);
             base.LoadContent();
             AlignMenuItems();
         }

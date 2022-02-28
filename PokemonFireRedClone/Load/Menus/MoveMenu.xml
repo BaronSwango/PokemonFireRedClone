@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <MoveMenu>
     <Background>
-        <Path>Menus/BattleMenuBackground</Path>
+        <Path>Menus/MoveMenuBackground</Path>
     </Background>
     <Arrow>
         <Path>Menus/BlackMenuArrow</Path>
     </Arrow>
+    <PrevMenuName>BattleMenu</PrevMenuName>
     <Item>
         <Image>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>

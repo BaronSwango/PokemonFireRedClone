@@ -24,7 +24,8 @@ namespace PokemonFireRedClone
             MoveNames = moveNames;
             Level = level;
             Stats = stats;
-            CurrentEXP = CurrentLevelEXP + EXPNeededToLevelUp / 2;
+            CurrentHP = Stats.HP;
+            CurrentEXP = CurrentLevelEXP;
         }
 
         [JsonIgnore]
@@ -49,12 +50,15 @@ namespace PokemonFireRedClone
             private set { }
         }
 
+        [JsonIgnore]
         public int EXPTowardsLevelUp
         {
             get { return CurrentEXP - CurrentLevelEXP; }
+
             private set { }
         }
 
+        [JsonIgnore]
         public int EXPNeededToLevelUp
         {
             get { return NextLevelEXP - CurrentLevelEXP; }
@@ -62,6 +66,7 @@ namespace PokemonFireRedClone
             private set {  }
         }
 
+        [JsonIgnore]
         public int CurrentLevelEXP
         {
             get
@@ -82,6 +87,8 @@ namespace PokemonFireRedClone
             private set {  }
         }
 
+
+        [JsonIgnore]
         public int NextLevelEXP
         {
             get
@@ -99,6 +106,7 @@ namespace PokemonFireRedClone
                 }
                 return 0;
             }
+
             private set { } 
         }
 

@@ -115,10 +115,11 @@ namespace PokemonFireRedClone
         public override void Draw(SpriteBatch spriteBatch)
         {
             BattleAnimations.Draw(spriteBatch, TextBox);
-            
+
             TextBox.Draw(spriteBatch);
             if (menuManager.IsLoaded)
                 menuManager.Draw(spriteBatch);
+
             base.Draw(spriteBatch);
         }
     }

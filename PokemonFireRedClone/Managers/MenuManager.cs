@@ -124,6 +124,12 @@ namespace PokemonFireRedClone
                 wasLoaded = true;
             }
 
+            if (InputManager.Instance.KeyPressed(Keys.Q) && !isTransitioning && menu.PrevMenuName != null)
+            {
+                menuName = menu.PrevMenuName;
+                menu.ID = "Load/Menus/" + menu.PrevMenuName + ".xml";
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

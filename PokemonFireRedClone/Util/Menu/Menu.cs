@@ -22,6 +22,7 @@ namespace PokemonFireRedClone
         public int FromSide; // indent from left side of screen
         public int FromTop; // indent from top of screen
         public int ItemNumber;
+        public string PrevMenuName;
         string id;
 
         public string ID
