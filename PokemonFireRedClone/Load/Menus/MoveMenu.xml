@@ -9,7 +9,17 @@
     <PrevMenuName>BattleMenu</PrevMenuName>
     <Item>
         <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>SCRATCH</Text>
+        </Image>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
             <G>89</G>
             <B>89</B>
@@ -19,27 +29,17 @@
     </Item>
     <Item>
         <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>-</Text>
+            <Text>GROWL</Text>
         </Image>
     </Item>
     <Item>
         <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>89</R>
-            <G>89</G>
-            <B>89</B>
-            <A>255</A>
-            <Text>-</Text>
-        </Image>
-    </Item>
-    <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
             <G>89</G>
             <B>89</B>

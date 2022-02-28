@@ -16,9 +16,9 @@ namespace PokemonFireRedClone
         {
             Background.Position = new Vector2(0, ScreenManager.Instance.Dimensions.Y - Background.SourceRect.Height);
 
-            Items[0].Image.Position = new Vector2(Background.Position.X + 64, Background.Position.Y + 36);
+            Items[0].Image.Position = new Vector2(Background.Position.X + 128, Background.Position.Y + 52);
             Items[1].Image.Position = new Vector2(Items[0].Image.Position.X, Items[0].Image.Position.Y + 64);
-            Items[2].Image.Position = new Vector2(Items[0].Image.Position.X + 224, Items[0].Image.Position.Y);
+            Items[2].Image.Position = new Vector2(Items[0].Image.Position.X + 300, Items[0].Image.Position.Y);
             Items[3].Image.Position = new Vector2(Items[2].Image.Position.X, Items[1].Image.Position.Y);
 
         }
@@ -71,7 +71,7 @@ namespace PokemonFireRedClone
                 {
                     Items[i].Image.IsActive = true;
                     Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width - 4,
-                        Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4) - 2);
+                        Items[i].Image.Position.Y - 4);
 
                 }
                 else
