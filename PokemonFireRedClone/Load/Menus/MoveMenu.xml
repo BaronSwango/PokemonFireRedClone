@@ -14,8 +14,40 @@
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>SCRATCH</Text>
+            <Text>-</Text>
         </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>PP</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>TYPE/</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
     </Item>
     <Item>
         <Image>
@@ -26,16 +58,38 @@
             <A>255</A>
             <Text>-</Text>
         </Image>
-    </Item>
-    <Item>
-        <Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>PP</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
+        <Description>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
             <G>89</G>
             <B>89</B>
             <A>255</A>
-            <Text>GROWL</Text>
-        </Image>
+            <Text>TYPE/</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
     </Item>
     <Item>
         <Image>
@@ -46,5 +100,79 @@
             <A>255</A>
             <Text>-</Text>
         </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>PP</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>TYPE/</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
+    </Item>
+    <Item>
+        <Image>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Image>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>PP</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>TYPE/</Text>
+        </Description>
+        <Description>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>89</R>
+            <G>89</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>-</Text>
+        </Description>
     </Item>
 </MoveMenu>

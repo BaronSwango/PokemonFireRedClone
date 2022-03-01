@@ -22,7 +22,7 @@ namespace PokemonFireRedClone
             foreach (MenuItem item in Items)
             {
                 item.Image.Position = new Vector2(Background.Position.X + 1052, Background.Position.Y + dimensions.Y + 24);
-                item.Description.Position = new Vector2(Background.Position.X + 8, Background.Position.Y + 580);
+                item.Description[0].Position = new Vector2(Background.Position.X + 8, Background.Position.Y + 580);
 
                 dimensions += new Vector2(item.Image.SourceRect.Width + PaddingX,
                     item.Image.SourceRect.Height + PaddingY);
@@ -38,7 +38,7 @@ namespace PokemonFireRedClone
                 if (item.Image.Text == "PlayerName")
                     item.Image.Text = Player.PlayerJsonObject.Name;
 
-                item.Description.LoadContent();
+                item.Description[0].LoadContent();
             }
             base.LoadContent();
             AlignMenuItems();
@@ -49,7 +49,7 @@ namespace PokemonFireRedClone
             Background.UnloadContent();
             Arrow.UnloadContent();
             foreach (MenuItem item in Items)
-                item.Description.UnloadContent();
+                item.Description[0].UnloadContent();
             base.UnloadContent();
         }
 
@@ -74,16 +74,16 @@ namespace PokemonFireRedClone
                     Items[i].Image.IsActive = true;
                     Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width,
                         Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4)-2);
-                    Items[i].Description.IsActive = true;
+                    Items[i].Description[0].IsActive = true;
                         
                 }
                 else
                 {
                     Items[i].Image.IsActive = false;
-                    Items[i].Description.IsActive = false;
+                    Items[i].Description[0].IsActive = false;
                 }
 
-                Items[i].Description.Update(gameTime); 
+                Items[i].Description[0].Update(gameTime); 
             }
             base.Update(gameTime);
         }
@@ -94,8 +94,8 @@ namespace PokemonFireRedClone
             Arrow.Draw(spriteBatch);
             foreach (MenuItem item in Items)
             {
-                if (item.Description.IsActive)
-                    item.Description.Draw(spriteBatch);
+                if (item.Description[0].IsActive)
+                    item.Description[0].Draw(spriteBatch);
             }
             base.Draw(spriteBatch);
         }

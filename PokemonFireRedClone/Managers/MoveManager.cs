@@ -15,11 +15,8 @@ namespace PokemonFireRedClone
         {
             get
             {
-                if (instance == null)
-                {
-                    XmlManager<MoveManager> xml = new XmlManager<MoveManager>();
-                    instance = xml.Load("Load/Pokemon/MoveManager.xml");
-                }
+                XmlManager<MoveManager> xml = new XmlManager<MoveManager>();
+                instance = xml.Load("Load/Pokemon/MoveManager.xml");
 
                 return instance;
             }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace PokemonFireRedClone
 {
@@ -10,6 +11,7 @@ namespace PokemonFireRedClone
         public string LinkID;
         public string MenuName;
         public Image Image;
-        public Image Description;
+        [XmlElement("Description")]
+        public List<Image> Description;
     }
 }

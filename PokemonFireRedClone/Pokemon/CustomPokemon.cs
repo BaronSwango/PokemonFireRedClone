@@ -10,13 +10,13 @@ namespace PokemonFireRedClone
         public string PokemonName;
         public Nature Nature;
         public Gender Gender;
-        public List<string> MoveNames;
+        public Dictionary<string, int> MoveNames;
         public int Level;
         public int CurrentEXP;
         public int CurrentHP;
         public StatList Stats;
 
-        public CustomPokemon(string pokemonName, Nature nature, Gender gender, List<string> moveNames, int level, StatList stats)
+        public CustomPokemon(string pokemonName, Nature nature, Gender gender, Dictionary<string, int> moveNames, int level, StatList stats)
         {
             PokemonName = pokemonName;
             Nature = nature;
@@ -25,17 +25,18 @@ namespace PokemonFireRedClone
             Level = level;
             Stats = stats;
             CurrentHP = Stats.HP;
+
             CurrentEXP = CurrentLevelEXP;
         }
 
         [JsonIgnore]
-        public List<Move> Moves {
+        public Dictionary<Move, int> Moves {
 
             get
             {
-                Moves = new List<Move>();
-                foreach (string name in MoveNames)
-                    Moves.Add(MoveManager.Instance.GetMove(name));
+                Moves = new Dictionary<Move, int>();
+                foreach (string name in MoveNames.Keys)
+                    Moves.Add(MoveManager.Instance.GetMove(name), MoveNames[name]);
 
                 return Moves;
             }

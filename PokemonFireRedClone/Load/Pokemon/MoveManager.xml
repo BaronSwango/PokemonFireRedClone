@@ -81,6 +81,22 @@
         <Description>The foe is attacked with small flames. The foe may suffer a burn.</Description>
     </Moves>
     <Moves>
+        <Name>Growl</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>40</PP>
+        <Description>The user growls in a cute way, making the foe lower its ATTACK stat.</Description>
+    </Moves>
+    <Moves>
+        <Name>Scratch</Name>
+        <TypeName>Normal</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>35</PP>
+        <Description>Hard, pointed, and sharp claws rake the foe.</Description>
+    </Moves>
+    <Moves>
         <Name>Tackle</Name>
         <TypeName>Normal</TypeName>
         <Power>35</Power>

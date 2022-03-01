@@ -43,7 +43,7 @@ namespace PokemonFireRedClone
         {
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
-            playerPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 100);
+            playerPokemon = Player.PlayerJsonObject.Pokemon;
             enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Rattata"), 100);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP / 6;
             playerPokemon.CurrentHP = playerPokemon.Stats.HP / 3;
@@ -55,7 +55,6 @@ namespace PokemonFireRedClone
             // TODO: Load Background based on what environment the battle is in
 
             TextBox.LoadContent(enemyPokemon);
-            playerPokemon.Name = playerPokemon.PokemonName.ToUpper();
             BattleAnimations.LoadContent(TextBox, playerPokemon, enemyPokemon);
 
             Console.WriteLine("Player Poke: ");

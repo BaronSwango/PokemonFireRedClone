@@ -33,13 +33,13 @@ namespace PokemonFireRedClone
 
         private static int calculateStats(int b, int iv, int ev, int level)
         {
-            return (int) ((2.0f*b+iv+(ev / 4.0f))*level/100.0f)+5;
+            return ((2*b+iv+(ev / 4))*level/100)+5;
         }
 
         public static StatList generateStatList(CustomPokemon poke)
         {
             StatList newStatList = poke.Stats;
-            newStatList.HP = (int) ((2.0f * poke.Pokemon.BaseHP + poke.Stats.HPIV + (poke.Stats.HPEV / 4.0f)) * poke.Level / 100.0f) + poke.Level + 10;
+            newStatList.HP = ((2 * poke.Pokemon.BaseHP + poke.Stats.HPIV + (poke.Stats.HPEV / 4)) * poke.Level / 100) + poke.Level + 10;
             newStatList.Attack = calculateStats(poke.Pokemon.BaseAttack, poke.Stats.AttackIV, poke.Stats.AttackEV, poke.Level);
             newStatList.SpecialAttack = calculateStats(poke.Pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, poke.Stats.SpecialAttackEV, poke.Level);
             newStatList.Defense = calculateStats(poke.Pokemon.BaseDefense, poke.Stats.DefenseIV, poke.Stats.DefenseEV, poke.Level);
@@ -57,7 +57,7 @@ namespace PokemonFireRedClone
             //Pokemon pokemon = pokemons[pokemonIndex];
 
             CustomPokemon poke = new CustomPokemon(pokemon.Name, (Nature)random.Next(25), (Gender)random.Next(2),
-                new List<string>(), level,
+                new Dictionary<string, int>(), level,
                 new StatList
                 {
                     HPIV = random.Next(32),
@@ -67,7 +67,6 @@ namespace PokemonFireRedClone
                     SpecialDefenseIV = random.Next(32),
                     SpeedIV = random.Next(32)
                 });
-
             poke.Stats = generateStatList(poke);
             return poke;
         }
