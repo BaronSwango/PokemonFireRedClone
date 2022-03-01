@@ -24,7 +24,8 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public RenderTarget2D RenderTarget;
         SpriteFont font;
-        Dictionary<string, ImageEffect> effectList;
+        [XmlIgnore]
+        public Dictionary<string, ImageEffect> EffectList;
         public string Effects;
         public Color Tint;
         public float Angle;
@@ -47,32 +48,32 @@ namespace PokemonFireRedClone
                 var obj = this;
                 effect.LoadContent(ref obj);
             }
-            effectList.Add(effect.GetType().ToString().Replace("PokemonFireRedClone.", ""), effect);
+            EffectList.Add(effect.GetType().ToString().Replace("PokemonFireRedClone.", ""), effect);
         }
 
         public void ActivateEffect(string effect)
         {
-            if (effectList.ContainsKey(effect))
+            if (EffectList.ContainsKey(effect))
             {
-                effectList[effect].IsActive = true;
+                EffectList[effect].IsActive = true;
                 var obj = this;
-                effectList[effect].LoadContent(ref obj);
+                EffectList[effect].LoadContent(ref obj);
             }
         }
 
         public void DeactivateEffect(string effect)
         {
-            if (effectList.ContainsKey(effect))
+            if (EffectList.ContainsKey(effect))
             {
-                effectList[effect].IsActive = false;
-                effectList[effect].UnloadContent();
+                EffectList[effect].IsActive = false;
+                EffectList[effect].UnloadContent();
             }
         }
 
         public void StoreEffects()
         {
             Effects = string.Empty;
-            foreach(var effect in effectList)
+            foreach(var effect in EffectList)
             {
                 if (effect.Value.IsActive)
                     Effects += effect.Key + ":";
@@ -83,7 +84,7 @@ namespace PokemonFireRedClone
 
         public void RestoreEffects()
         {
-            foreach(var effect in effectList)
+            foreach(var effect in EffectList)
                 DeactivateEffect(effect.Key);
             string[] split = Effects.Split(':');
             foreach (string s in split)
@@ -98,10 +99,36 @@ namespace PokemonFireRedClone
             Scale = Vector2.One;
             Alpha = 1.0f;
             SourceRect = Rectangle.Empty;
-            effectList = new Dictionary<string, ImageEffect>();
+            EffectList = new Dictionary<string, ImageEffect>();
             Tint = Color.White;
             Angle = 0;
             FontColor = Color.Black;
+        }
+
+        public void ReloadText()
+        {
+            font = content.Load<SpriteFont>(FontName);
+            if (!UseFontColor)
+                FontColor = new Color(R, G, B, A);
+
+            Vector2 dimensions = Vector2.Zero;
+            dimensions.Y = font.MeasureString(Text).Y;
+            dimensions.X += font.MeasureString(Text).X;
+
+            SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
+
+            RenderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice,
+                (int)dimensions.X, (int)dimensions.Y);
+            ScreenManager.Instance.GraphicsDevice.SetRenderTarget(RenderTarget);
+            ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
+            ScreenManager.Instance.SpriteBatch.Begin();
+            ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,
+                FontColor);
+            ScreenManager.Instance.SpriteBatch.End();
+
+            Texture = RenderTarget;
+
+            ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
         }
 
         public void LoadContent()
@@ -134,7 +161,7 @@ namespace PokemonFireRedClone
                 (int) dimensions.X, (int) dimensions.Y);
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(RenderTarget);
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
-            ScreenManager.Instance.SpriteBatch.Begin(samplerState: SamplerState.LinearClamp);
+            ScreenManager.Instance.SpriteBatch.Begin();
             if (Texture != null)
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,
@@ -160,13 +187,13 @@ namespace PokemonFireRedClone
         public void UnloadContent()
         {
             content.Unload();
-            foreach (var effect in effectList)
+            foreach (var effect in EffectList)
                 DeactivateEffect(effect.Key);
         }
 
         public void Update(GameTime gameTime)
         {
-            foreach (var effect in effectList)
+            foreach (var effect in EffectList)
             {
                 if (effect.Value.IsActive)
                     effect.Value.Update(gameTime);
@@ -180,7 +207,7 @@ namespace PokemonFireRedClone
             spriteBatch.Draw(Texture, Position + origin, SourceRect, Tint * Alpha,
                 Angle, origin, Scale, SpriteEffects.None, 0.0f);
 
-            foreach (var effect in effectList)
+            foreach (var effect in EffectList)
             {
                 if (effect.Value.IsActive)
                     effect.Value.Draw(spriteBatch);

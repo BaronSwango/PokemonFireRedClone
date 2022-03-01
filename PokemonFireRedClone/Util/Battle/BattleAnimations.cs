@@ -248,6 +248,18 @@ namespace PokemonFireRedClone
 
         }
 
+        private void resetHealthBars(CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
+        {
+            setUpHealthBars(playerPokemon, enemyPokemon);
+
+            PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
+            EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
+            PlayerPokemonHP.UnloadContent();
+            PlayerPokemonHP.Text = playerPokemon.CurrentHP.ToString();
+            PlayerPokemonHP.ReloadText();
+            PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
+        }
+
         // when battle menu option is selected
         public void reset()
         {
@@ -301,12 +313,16 @@ namespace PokemonFireRedClone
             PlayerPokemon.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, BattleTextBox textBox)
+        public void Update(GameTime gameTime, BattleScreen battleScreen)
         {
-            Transition(gameTime, textBox);
+            Transition(gameTime, battleScreen.TextBox);
             PlayerSprite.Update(gameTime);
             if (state == BattleState.BATTLE_MENU)
+            {
                 animateBattleMenu(gameTime);
+                resetHealthBars(Player.PlayerJsonObject.Pokemon, battleScreen.enemyPokemon);
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, BattleTextBox textBox)
@@ -363,45 +379,7 @@ namespace PokemonFireRedClone
             PlayerPokemonMaxHP.Text = playerPokemon.Stats.HP.ToString();
 
             // Handle Health ane exp bars
-            float playerHealthRatio = (float)playerPokemon.CurrentHP / playerPokemon.Stats.HP;
-            float expRatio = (float)playerPokemon.EXPTowardsLevelUp / playerPokemon.EXPNeededToLevelUp;
-            float enemyHealthRatio = (float)enemyPokemon.CurrentHP / enemyPokemon.Stats.HP;
-
-            PlayerHPBar.Scale.X = playerHealthRatio;
-            EXPBar.Scale.X = expRatio;
-            EnemyHPBar.Scale.X = enemyHealthRatio;
-
-            if (playerHealthRatio > 0.5)
-            {
-                PlayerHPBar.Tint = new Color(175, 252, 175, 1);
-                PlayerHPBar.Alpha = 0.5f;
-            }
-            else if (playerHealthRatio > 0.2 && playerHealthRatio <= 0.5)
-            {
-                PlayerHPBar.Tint = new Color(255, 232, 0, 0);
-                PlayerHPBar.Alpha = 0.5f;
-            }
-            else
-            {
-                PlayerHPBar.Tint = new Color(255, 100, 0, 100);
-                PlayerHPBar.Alpha = 0.4f;
-            }
-
-            if (enemyHealthRatio > 0.5)
-            {
-                EnemyHPBar.Tint = new Color(175, 252, 175, 1);
-                EnemyHPBar.Alpha = 0.5f;
-            }
-            else if (enemyHealthRatio > 0.2 && enemyHealthRatio <= 0.5)
-            {
-                EnemyHPBar.Tint = new Color(255, 232, 0, 0);
-                EnemyHPBar.Alpha = 0.5f;
-            }
-            else
-            {
-                EnemyHPBar.Tint = new Color(255, 100, 0, 100);
-                EnemyHPBar.Alpha = 0.4f;
-            }
+            setUpHealthBars(playerPokemon, enemyPokemon);
 
             // Battle assets
             Background.LoadContent();
@@ -477,6 +455,49 @@ namespace PokemonFireRedClone
             PlayerPokemonMaxHP.Draw(spriteBatch);
             PlayerHPBar.Draw(spriteBatch);
             EXPBar.Draw(spriteBatch);
+        }
+
+        private void setUpHealthBars(CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
+        {
+            float playerHealthRatio = (float)playerPokemon.CurrentHP / playerPokemon.Stats.HP;
+            float expRatio = (float)playerPokemon.EXPTowardsLevelUp / playerPokemon.EXPNeededToLevelUp;
+            float enemyHealthRatio = (float)enemyPokemon.CurrentHP / enemyPokemon.Stats.HP;
+
+            PlayerHPBar.Scale.X = playerHealthRatio;
+            EXPBar.Scale.X = expRatio;
+            EnemyHPBar.Scale.X = enemyHealthRatio;
+
+            if (playerHealthRatio > 0.5)
+            {
+                PlayerHPBar.Tint = new Color(175, 252, 175, 1);
+                PlayerHPBar.Alpha = 0.5f;
+            }
+            else if (playerHealthRatio > 0.2 && playerHealthRatio <= 0.5)
+            {
+                PlayerHPBar.Tint = new Color(255, 232, 0, 100);
+                PlayerHPBar.Alpha = 0.5f;
+            }
+            else
+            {
+                PlayerHPBar.Tint = new Color(255, 100, 0, 50);
+                PlayerHPBar.Alpha = 0.4f;
+            }
+
+            if (enemyHealthRatio > 0.5)
+            {
+                EnemyHPBar.Tint = new Color(175, 252, 175, 1);
+                EnemyHPBar.Alpha = 0.5f;
+            }
+            else if (enemyHealthRatio > 0.2 && enemyHealthRatio <= 0.5)
+            {
+                EnemyHPBar.Tint = new Color(255, 232, 0, 100);
+                EnemyHPBar.Alpha = 0.5f;
+            }
+            else
+            {
+                EnemyHPBar.Tint = new Color(255, 100, 0, 50);
+                EnemyHPBar.Alpha = 0.4f;
+            }
         }
 
 

@@ -120,6 +120,13 @@ namespace PokemonFireRedClone
                 {
                     UnloadContent();
                     ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.CanUpdate = true;
+                } else if (menu.Items[menu.ItemNumber].LinkType == "Move")
+                {
+                    BattleLogic.playerMoveOption = MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text);
+                    UnloadContent();
+                    ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAnimations.state = BattleAnimations.BattleState.PLAYER_MOVE;
+                    menuName = menu.PrevMenuName;
+                    menu.ID = "Load/Menus/" + menu.PrevMenuName + ".xml";
                 }
                 wasLoaded = true;
             }

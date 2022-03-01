@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
         public int Power;
         public int Accuracy;
         public int PP;
+        public bool Special;
 
         [XmlIgnore]
         public Type Type

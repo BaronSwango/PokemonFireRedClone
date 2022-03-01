@@ -12,8 +12,10 @@ namespace PokemonFireRedClone
 
         public BattleTextBox TextBox;
         public BattleAnimations BattleAnimations;
+        BattleLogic battleLogic;
         MenuManager menuManager;
-        CustomPokemon enemyPokemon;
+        [XmlIgnore]
+        public CustomPokemon enemyPokemon;
         CustomPokemon playerPokemon;
 
         public static bool Wild;
@@ -44,9 +46,12 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Rattata"), 100);
-            enemyPokemon.CurrentHP = enemyPokemon.Stats.HP / 6;
-            playerPokemon.CurrentHP = playerPokemon.Stats.HP / 3;
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 100);
+            enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
+            //playerPokemon.CurrentHP = playerPokemon.Stats.HP;
+            enemyPokemon.MoveNames.Add("Ember", 25);
+            enemyPokemon.MoveNames.Add("Scratch", 20);
+            battleLogic = new BattleLogic();
         }
 
 
@@ -78,6 +83,10 @@ namespace PokemonFireRedClone
             Console.WriteLine("EXP TO NEXT: " + enemyPokemon.CurrentLevelEXP);
             Console.WriteLine("---------------");
             Console.WriteLine();
+            foreach (Move move in playerPokemon.Pokemon.MoveLearnset.Keys)
+            {
+                Console.WriteLine(move.Name);
+            }
             base.LoadContent();
         }
 
@@ -90,7 +99,7 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
-            BattleAnimations.Update(gameTime, TextBox);
+            BattleAnimations.Update(gameTime, this);
             
             if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
@@ -108,6 +117,8 @@ namespace PokemonFireRedClone
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
             if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN)
                 TextBox.Update(gameTime, this);
+
+            battleLogic.Update(gameTime, this);
             base.Update(gameTime);
         }
 

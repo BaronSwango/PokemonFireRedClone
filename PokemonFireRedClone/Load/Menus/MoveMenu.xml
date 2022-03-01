@@ -8,6 +8,7 @@
     </Arrow>
     <PrevMenuName>BattleMenu</PrevMenuName>
     <Item>
+        <LinkType>Move</LinkType>
         <Image>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
@@ -50,6 +51,7 @@
         </Description>
     </Item>
     <Item>
+        <LinkType>Move</LinkType>
         <Image>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
@@ -92,6 +94,7 @@
         </Description>
     </Item>
     <Item>
+        <LinkType>Move</LinkType>
         <Image>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>
@@ -134,6 +137,7 @@
         </Description>
     </Item>
     <Item>
+        <LinkType>Move</LinkType>
         <Image>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
             <R>89</R>

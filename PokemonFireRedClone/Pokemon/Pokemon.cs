@@ -28,45 +28,48 @@ namespace PokemonFireRedClone
         public int BaseSpecialDefense;
         public int BaseSpeed;
 
+        private List<Type> types;
         [XmlIgnore]
         public List<Type> Types
         {
-            get
-            {
-                if (Types.Count == 0)
-                {
-                    foreach (string name in TypesName)
-                        Types.Add(TypeProperties.TypeFromName(name));
-                }
+            get { return types; }
 
-                return Types;
+            private set
+            {
+                types = value;
+                foreach (string name in TypesName)
+                    types.Add(TypeProperties.TypeFromName(name));
             }
         }
 
+        private Dictionary<Move, int> moveLearnset;
         [XmlIgnore]
-        public Dictionary<int, Move> MoveLearnset
+        public Dictionary<Move, int> MoveLearnset
         {
-            get
+            get { return moveLearnset; }
+
+            private set
             {
-                if (MoveLearnset.Count == 0)
+                moveLearnset = value;
+                switch (Name)
                 {
-                    switch(Name)
-                    {
-                        case "Charmander":
-                            MoveLearnset.Add(1, MoveManager.Instance.GetMove("Scratch"));
-                            MoveLearnset.Add(1, MoveManager.Instance.GetMove("Growl"));
-                            MoveLearnset.Add(7, MoveManager.Instance.GetMove("Ember"));
-                            MoveLearnset.Add(13, MoveManager.Instance.GetMove("Metal Claw"));
-                            break;
-                        default:
-                            break;
-                    }
+                    case "Charmander":
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Scratch"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Growl"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Ember"), 7);
+                        break;
+                    case "Charizard":
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Scratch"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Growl"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Ember"), 7);
+                        break;
+                    default:
+                        break;
                 }
-                return MoveLearnset;
             }
-            private set { }
         }
 
+        private KeyValuePair<int, Pokemon> evolution;
         [XmlIgnore]
         public KeyValuePair<int, Pokemon> Evolution
         {
@@ -75,30 +78,34 @@ namespace PokemonFireRedClone
                 switch(Name)
                 {
                     case "Bulbasaur":
-                        Evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Ivysaur"));
+                        evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Ivysaur"));
                         break;
                     case "Ivysaur":
-                        Evolution = new KeyValuePair<int, Pokemon>(32, PokemonManager.Instance.GetPokemon("Venusaur"));
+                        evolution = new KeyValuePair<int, Pokemon>(32, PokemonManager.Instance.GetPokemon("Venusaur"));
                         break;
                     case "Charmander":
-                        Evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Charmeleon"));
+                        evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Charmeleon"));
                         break;
                     case "Charmeleon":
-                        Evolution = new KeyValuePair<int, Pokemon>(36, PokemonManager.Instance.GetPokemon("Charizard"));
+                        evolution = new KeyValuePair<int, Pokemon>(36, PokemonManager.Instance.GetPokemon("Charizard"));
                         break;
                     default:
                         break;
                 }
-                return Evolution;
+                return evolution;
             }
             private set { }
         }
 
-
+        public void loadInfo()
+        {
+            MoveLearnset = new Dictionary<Move, int>();
+            Types = new List<Type>();
+        }
 
         public Pokemon()
         {
-            MoveLearnset = new Dictionary<int, Move>();
+            
         }
 
 

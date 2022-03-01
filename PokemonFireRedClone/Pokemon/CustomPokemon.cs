@@ -25,22 +25,25 @@ namespace PokemonFireRedClone
             Level = level;
             Stats = stats;
             CurrentHP = Stats.HP;
-
             CurrentEXP = CurrentLevelEXP;
+            Moves = new Dictionary<Move, int>();
         }
 
+        private Dictionary<Move, int> moves;
         [JsonIgnore]
         public Dictionary<Move, int> Moves {
 
             get
             {
-                Moves = new Dictionary<Move, int>();
                 foreach (string name in MoveNames.Keys)
                     Moves.Add(MoveManager.Instance.GetMove(name), MoveNames[name]);
-
-                return Moves;
+                return moves;
             }
-            private set { }
+            private set
+            {
+                moves = value;
+
+            }
         }
 
         [JsonIgnore]

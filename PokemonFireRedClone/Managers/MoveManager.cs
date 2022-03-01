@@ -26,7 +26,7 @@ namespace PokemonFireRedClone
         {
             foreach (Move move in Moves)
             {
-                if (move.Name == name)
+                if (move.Name.ToLower().Equals(name.ToLower()))
                     return move;
             }
             return null;

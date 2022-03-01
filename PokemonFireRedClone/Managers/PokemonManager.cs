@@ -26,7 +26,10 @@ namespace PokemonFireRedClone
             foreach (Pokemon pokemon in Pokemon)
             {
                 if (pokemon.Name == name)
+                {
+                    pokemon.loadInfo();
                     return pokemon;
+                }
             }
             return null;
         }

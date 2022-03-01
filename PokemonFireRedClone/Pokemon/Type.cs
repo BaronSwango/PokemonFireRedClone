@@ -89,7 +89,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        public static double DamageMultiplier(Type attacker, Type defender)
+        public static float DamageMultiplier(Type attacker, Type defender)
         {
             switch(attacker)
             {
@@ -113,7 +113,7 @@ namespace PokemonFireRedClone
                             return 1;
                         case Type.ROCK:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                         case Type.GHOST:
                             return 0;
                     }
@@ -140,7 +140,7 @@ namespace PokemonFireRedClone
                         case Type.WATER:
                         case Type.ROCK:
                         case Type.DRAGON:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.WATER:
@@ -165,7 +165,7 @@ namespace PokemonFireRedClone
                         case Type.WATER:
                         case Type.GRASS:
                         case Type.DRAGON:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.GRASS:
@@ -190,7 +190,7 @@ namespace PokemonFireRedClone
                         case Type.BUG:
                         case Type.DRAGON:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.ELECTRIC:
@@ -213,7 +213,7 @@ namespace PokemonFireRedClone
                         case Type.GRASS:
                         case Type.ELECTRIC:
                         case Type.DRAGON:
-                            return 0.5;
+                            return 0.5f;
                         case Type.GROUND:
                             return 0;
                     }
@@ -240,7 +240,7 @@ namespace PokemonFireRedClone
                         case Type.WATER:
                         case Type.ICE:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.FIGHTING:
@@ -264,7 +264,7 @@ namespace PokemonFireRedClone
                         case Type.FLYING:
                         case Type.PSYCHIC:
                         case Type.BUG:
-                            return 0.5;
+                            return 0.5f;
                         case Type.GHOST:
                             return 0;
                     }
@@ -290,7 +290,7 @@ namespace PokemonFireRedClone
                         case Type.GROUND:
                         case Type.ROCK:
                         case Type.GHOST:
-                            return 0.5;
+                            return 0.5f;
                         case Type.STEEL:
                             return 0;
                     }
@@ -316,7 +316,7 @@ namespace PokemonFireRedClone
                             return 1;
                         case Type.GRASS:
                         case Type.BUG:
-                            return 0.5;
+                            return 0.5f;
                         case Type.FLYING:
                             return 0;
                     }
@@ -343,7 +343,7 @@ namespace PokemonFireRedClone
                         case Type.ELECTRIC:
                         case Type.ROCK:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.PSYCHIC:
@@ -367,7 +367,7 @@ namespace PokemonFireRedClone
                             return 1;
                         case Type.PSYCHIC:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                         case Type.DARK:
                             return 0;
                     }
@@ -394,7 +394,7 @@ namespace PokemonFireRedClone
                         case Type.FLYING:
                         case Type.GHOST:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.ROCK:
@@ -419,7 +419,7 @@ namespace PokemonFireRedClone
                         case Type.FIGHTING:
                         case Type.GROUND:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
 
                     }
                     break;
@@ -444,7 +444,7 @@ namespace PokemonFireRedClone
                             return 1;
                         case Type.DARK:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                         case Type.NORMAL:
                             return 0;
                     }
@@ -471,7 +471,7 @@ namespace PokemonFireRedClone
                         case Type.DARK:
                             return 1;
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.DARK:
@@ -496,7 +496,7 @@ namespace PokemonFireRedClone
                         case Type.FIGHTING:
                         case Type.DARK:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 case Type.STEEL:
@@ -521,7 +521,7 @@ namespace PokemonFireRedClone
                         case Type.FIRE:
                         case Type.WATER:
                         case Type.STEEL:
-                            return 0.5;
+                            return 0.5f;
                     }
                     break;
                 default:
