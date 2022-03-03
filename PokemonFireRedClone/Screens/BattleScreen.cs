@@ -12,7 +12,7 @@ namespace PokemonFireRedClone
 
         public BattleTextBox TextBox;
         public BattleAnimations BattleAnimations;
-        BattleLogic battleLogic;
+        public BattleLogic BattleLogic;
         [XmlIgnore]
         public MenuManager menuManager;
         [XmlIgnore]
@@ -47,11 +47,11 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 100);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charmander"), 5);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Ember", 25);
             enemyPokemon.MoveNames.Add("Scratch", 20);
-            battleLogic = new BattleLogic();
+            BattleLogic = new BattleLogic();
         }
 
 
@@ -100,6 +100,7 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             BattleAnimations.Update(gameTime, this);
+            BattleLogic.Update(gameTime, this);
             
             if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
@@ -118,7 +119,6 @@ namespace PokemonFireRedClone
             if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                 TextBox.Update(gameTime, this);
 
-            battleLogic.Update(gameTime, this);
             base.Update(gameTime);
         }
 

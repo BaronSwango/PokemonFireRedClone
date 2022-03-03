@@ -174,12 +174,12 @@ namespace PokemonFireRedClone
 
                             PlayerPokemon.Scale = new Vector2(PlayerPokemon.Scale.X + 0.05f, PlayerPokemon.Scale.Y + 0.05f);
                             PlayerPokemon.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width * 0.55f - PlayerPokemon.SourceRect.Width / 2, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - (int)(PlayerPokemon.SourceRect.Height * PlayerPokemon.Scale.Y));
-                            pokeOriginalY = PlayerPokemon.Position.Y;
                             return;
                         }
 
                         PlayerPokemon.Scale = Vector2.One;
                         PlayerPokemon.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width * 0.55f - PlayerPokemon.SourceRect.Width / 2, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerPokemon.SourceRect.Height);
+                        pokeOriginalY = PlayerPokemon.Position.Y;
 
                         float playerHPDestinationX = ScreenManager.Instance.Dimensions.X - PlayerHPBarBackground.SourceRect.Width - 40;
                         playerSpeed = (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
@@ -272,6 +272,8 @@ namespace PokemonFireRedClone
                         {
                             float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+                            
+
                             if (blinkCounter < 4)
                             {
                                 if (counter > 60)
@@ -343,6 +345,11 @@ namespace PokemonFireRedClone
         float barBounceTimer = 0.3f;
         float pokeOriginalY;
         float barOriginalY;
+        float pokeNameOriginalY;
+        float pokeHPOriginalY;
+        float pokeHealthBarOriginalY;
+        float pokeEXPOriginalY;
+
 
         private void animateBattleMenu(GameTime gameTime)
         {
@@ -394,7 +401,10 @@ namespace PokemonFireRedClone
             pokeballSpeedY = 4f;
             PlayerPokemon.Position.Y = pokeOriginalY;
             PlayerHPBarBackground.Position.Y = barOriginalY;
-
+            PlayerHPBar.Position.Y = pokeHealthBarOriginalY;
+            PlayerPokemonName.Position.Y = PlayerPokemonGender.Position.Y = PlayerPokemonLevel.Position.Y = pokeNameOriginalY;
+            EXPBar.Position.Y = pokeEXPOriginalY;
+            PlayerPokemonHP.Position.Y = PlayerPokemonMaxHP.Position.Y = pokeHPOriginalY;
         }
 
 
@@ -557,6 +567,10 @@ namespace PokemonFireRedClone
             PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
             PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
             EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
+            pokeNameOriginalY = PlayerPokemonName.Position.Y;
+            pokeHPOriginalY = PlayerPokemonMaxHP.Position.Y;
+            pokeHealthBarOriginalY = PlayerHPBar.Position.Y;
+            pokeEXPOriginalY = EXPBar.Position.Y;
 
             EnemyPokemonName.Position = new Vector2(EnemyHPBarBackground.Position.X + 24, EnemyHPBarBackground.Position.Y + 19);
             EnemyPokemonGender.Position = new Vector2(EnemyPokemonName.Position.X + EnemyPokemonName.SourceRect.Width, EnemyPokemonName.Position.Y);

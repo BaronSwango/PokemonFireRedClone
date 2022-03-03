@@ -8,13 +8,21 @@ namespace PokemonFireRedClone
     public class BattleLogic
     {
 
-        public static Move playerMoveOption;
-        public static Move enemyMoveOption;
-        public static bool MoveUsed;
+        public Move PlayerMoveOption;
+        public Move EnemyMoveOption;
+        public bool MoveUsed;
+        public bool SuperEffective;
+        public bool NotVeryEffective;
+        public bool NoEffect;
+        public bool PlayerFirstMove;
 
         public BattleLogic()
         {
             MoveUsed = false;
+            SuperEffective = false;
+            NotVeryEffective = false;
+            NoEffect = false;
+            PlayerFirstMove = false;
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
@@ -22,7 +30,7 @@ namespace PokemonFireRedClone
 
             if (MoveUsed)
             {
-                useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, playerMoveOption);
+                useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, PlayerMoveOption);
                 enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
                 MoveUsed = false;
             }
@@ -67,7 +75,7 @@ namespace PokemonFireRedClone
         {
             Random random = new Random();
             Move move = MoveManager.Instance.GetMove(enemyPokemon.MoveNames.Keys.ElementAt(random.Next(enemyPokemon.MoveNames.Count)));
-            enemyMoveOption = move;
+            EnemyMoveOption = move;
             useMove(ref enemyPokemon, ref playerPokemon, move);
         }
 
@@ -116,8 +124,15 @@ namespace PokemonFireRedClone
                 Console.WriteLine("It's super effective!");
             else if (typeMult < 1)
                 Console.WriteLine("It's not very effective...");
-            Console.WriteLine((int)((2.0f * level / 5 + 2) * power * ((float)attack / defense) / 50 * STAB * random * crit * typeMult));
-            return (int) ((2.0f*level / 5 + 2) * power * ((float) attack / defense) / 50 * STAB * random * crit * typeMult);
+
+            int damage = (int)((2.0f * level / 5 + 2) * power * ((float)attack / defense) / 50 * STAB * random * crit * typeMult);
+
+            if (damage < 1)
+                damage = 1;
+
+            Console.WriteLine("Damage: " + damage);
+
+            return damage;
         }
 
     }

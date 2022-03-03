@@ -84,14 +84,15 @@ namespace PokemonFireRedClone
             if (menuPath != string.Empty)
                 menu.ID = menuPath;
             IsLoaded = true;
-            menu.ItemNumber = menuItemNumber;
+            menu.ItemNumber = menuName == "MainMenu" ? menuItemNumber : 0;
         }
 
         public void UnloadContent()
         {
             menu.UnloadContent();
             IsLoaded = false;
-            menuItemNumber = menu.ItemNumber;
+            if (menuName == "MainMenu")
+                menuItemNumber = menu.ItemNumber;
         }
 
         public void Update(GameTime gameTime)
@@ -122,10 +123,11 @@ namespace PokemonFireRedClone
                     ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.CanUpdate = true;
                 } else if (menu.Items[menu.ItemNumber].LinkType == "Move")
                 {
-                    BattleLogic.playerMoveOption = MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text);
+                    ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveOption = MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text);
                     UnloadContent();
 
-                    BattleLogic.MoveUsed = true;
+                    ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAnimations.reset();
+                    ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.MoveUsed = true;
                     ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 5;
                     ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
                 }

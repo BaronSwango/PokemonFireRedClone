@@ -20,7 +20,7 @@ namespace PokemonFireRedClone
         {
             if (IsTransitioning)
             {
-                if (BattleLogic.MoveUsed && !updateDialogue)
+                if (battleScreen.BattleLogic.MoveUsed && !updateDialogue)
                 {
                     updateDialogue = true;
                     battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
@@ -72,11 +72,11 @@ namespace PokemonFireRedClone
 
                                         if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
                                         {
-                                            image.Text = BattleLogic.playerMoveOption.Name.ToUpper() + "!";
+                                            image.Text = battleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + "!";
                                         }
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                                         {
-                                            image.Text = BattleLogic.enemyMoveOption.Name.ToUpper() + "!";
+                                            image.Text = battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + "!";
                                         }
                                     }
                                     
