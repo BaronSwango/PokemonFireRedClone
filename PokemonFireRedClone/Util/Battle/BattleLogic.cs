@@ -9,22 +9,22 @@ namespace PokemonFireRedClone
     {
 
         public static Move playerMoveOption;
+        public static Move enemyMoveOption;
+        public static bool MoveUsed;
+
+        public BattleLogic()
+        {
+            MoveUsed = false;
+        }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
         {
-            switch(battleScreen.BattleAnimations.state)
+
+            if (MoveUsed)
             {
-                case BattleAnimations.BattleState.PLAYER_MOVE:
-                    useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, playerMoveOption);
-                    enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
-                    battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_MOVE;
-                    break;
-                case BattleAnimations.BattleState.ENEMY_MOVE:
-                    enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
-                    battleScreen.BattleAnimations.state = BattleAnimations.BattleState.BATTLE_MENU;
-                    break;
-                default:
-                    break;
+                useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, playerMoveOption);
+                enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
+                MoveUsed = false;
             }
 
         }
@@ -67,7 +67,7 @@ namespace PokemonFireRedClone
         {
             Random random = new Random();
             Move move = MoveManager.Instance.GetMove(enemyPokemon.MoveNames.Keys.ElementAt(random.Next(enemyPokemon.MoveNames.Count)));
-
+            enemyMoveOption = move;
             useMove(ref enemyPokemon, ref playerPokemon, move);
         }
 

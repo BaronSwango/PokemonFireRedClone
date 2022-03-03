@@ -13,7 +13,8 @@ namespace PokemonFireRedClone
         public BattleTextBox TextBox;
         public BattleAnimations BattleAnimations;
         BattleLogic battleLogic;
-        MenuManager menuManager;
+        [XmlIgnore]
+        public MenuManager menuManager;
         [XmlIgnore]
         public CustomPokemon enemyPokemon;
         CustomPokemon playerPokemon;
@@ -59,7 +60,7 @@ namespace PokemonFireRedClone
             // TODO: Load Background based on what environment the battle is in
 
             TextBox.LoadContent(enemyPokemon);
-            BattleAnimations.LoadContent(TextBox, playerPokemon, enemyPokemon);
+            BattleAnimations.LoadContent(this);
 
             Console.WriteLine("Player Poke: ");
             Console.WriteLine("Nature: " + playerPokemon.Nature.ToString());
@@ -103,7 +104,7 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
-            if (TextBox.Page == 4 && !menuManager.IsLoaded)
+            if (TextBox.Page == 4 && BattleAnimations.state != BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION && !menuManager.IsLoaded)
             {
                 menuManager.LoadContent("Load/Menus/BattleMenu.xml");
                 BattleAnimations.state = BattleAnimations.BattleState.BATTLE_MENU;
@@ -114,7 +115,7 @@ namespace PokemonFireRedClone
             if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
-            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN)
+            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                 TextBox.Update(gameTime, this);
 
             battleLogic.Update(gameTime, this);

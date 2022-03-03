@@ -14,8 +14,9 @@ namespace PokemonFireRedClone
             PLAYER_SEND_POKEMON,
             ENEMY_SEND_POKEMON,
             BATTLE_MENU,
-            PLAYER_MOVE,
-            ENEMY_MOVE,
+            MOVE_EXCHANGE,
+            ENEMY_DAMAGE_ANIMATION,
+            PLAYER_DAMAGE_ANIMATION,
             PLAYER_SWITCH,
             ENEMY_SWITCH,
             THROW_POKEBALL,
@@ -56,7 +57,11 @@ namespace PokemonFireRedClone
         bool whiteBackgroundTransitioned;
         Image whiteBackground;
 
-        private void Transition(GameTime gameTime, BattleTextBox textBox)
+        // time counters and animation ints
+        float counter = 0;
+        int blinkCounter = 0;
+
+        private void Transition(GameTime gameTime, BattleScreen battleScreen)
         {
             if (IsTransitioning && !ScreenManager.Instance.IsTransitioning)
             {
@@ -112,7 +117,7 @@ namespace PokemonFireRedClone
                         break;
                     case BattleState.PLAYER_SEND_POKEMON:
                         float playerSpriteDestinationX = -PlayerSprite.SourceRect.Width - 8;
-                        float pokeballMaxHeight = textBox.Border.Position.Y - PlayerSprite.SourceRect.Height - 36;
+                        float pokeballMaxHeight = battleScreen.TextBox.Border.Position.Y - PlayerSprite.SourceRect.Height - 36;
                         float pokeballSpeedX = (float)(0.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
                         playerSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
@@ -127,7 +132,7 @@ namespace PokemonFireRedClone
                         {
                             PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 4;
                             if (Pokeball.Position.X < PlayerSprite.SourceRect.Width - 100)
-                                Pokeball.Position = new Vector2(PlayerSprite.SourceRect.Width - 100, textBox.Border.Position.Y - PlayerSprite.SourceRect.Height + 20);
+                                Pokeball.Position = new Vector2(PlayerSprite.SourceRect.Width - 100, battleScreen.TextBox.Border.Position.Y - PlayerSprite.SourceRect.Height + 20);
 
                             if (!maxHeight)
                             {
@@ -140,7 +145,7 @@ namespace PokemonFireRedClone
                             }
                             else
                             {
-                                if (Pokeball.Position.Y < textBox.Border.Position.Y)
+                                if (Pokeball.Position.Y < battleScreen.TextBox.Border.Position.Y)
                                 {
                                     pokeballSpeedX = (float)(0.1 * gameTime.ElapsedGameTime.TotalMilliseconds);
                                     Pokeball.Angle += 0.7f;
@@ -152,7 +157,7 @@ namespace PokemonFireRedClone
                             Pokeball.Position.X += pokeballSpeedX;
                         }
 
-                        if (!(PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || Pokeball.Position.Y < textBox.Border.Position.Y)
+                        if (!(PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || Pokeball.Position.Y < battleScreen.TextBox.Border.Position.Y)
                         {
                             PlayerSprite.Position.X -= (int)playerSpeed;
                             return;
@@ -208,6 +213,124 @@ namespace PokemonFireRedClone
                         EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
                         whiteBackground.Alpha = 0;
                         IsTransitioning = false;
+                        break;
+                    case BattleState.ENEMY_DAMAGE_ANIMATION:
+                        if (!battleScreen.TextBox.IsTransitioning)
+                        {
+                            float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                          
+
+                            if (blinkCounter < 4)
+                            {
+                                if (counter > 60)
+                                {
+                                    if (EnemySprite.Alpha == 1)
+                                        EnemySprite.Alpha = 0;
+                                    else if (EnemySprite.Alpha == 0)
+                                    {
+                                        EnemySprite.Alpha = 1;
+                                        blinkCounter++;
+                                    }
+                                    counter = 0;
+                                    if (blinkCounter == 4) return;
+                                }
+                                counter += counterSpeed;
+                                return;
+                            }
+
+
+
+                            float goalScale = (float)battleScreen.enemyPokemon.CurrentHP / battleScreen.enemyPokemon.Stats.HP;
+                            float speed = 0.01f;
+                            if (EnemyHPBar.Scale.X - speed > goalScale)
+                            {
+                                EnemyHPBar.Scale.X -= speed;
+                                calculateHealthBarColor(EnemyHPBar.Scale.X, EnemyHPBar);
+                                EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
+                                return;
+                            }
+
+                            EnemyHPBar.Scale.X = goalScale;
+                            calculateHealthBarColor(goalScale, EnemyHPBar);
+                            EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
+
+                            if (counter < 1000.0f)
+                            {
+                                counter += counterSpeed;
+                                return;
+                            }
+
+                            counter = 0;
+                            blinkCounter = 0;
+
+                            IsTransitioning = false;
+                        }
+                        break;
+                    case BattleState.PLAYER_DAMAGE_ANIMATION:
+                        if (!battleScreen.TextBox.IsTransitioning)
+                        {
+                            float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                            if (blinkCounter < 4)
+                            {
+                                if (counter > 60)
+                                {
+                                    if (PlayerPokemon.Alpha == 1)
+                                        PlayerPokemon.Alpha = 0;
+                                    else if (PlayerPokemon.Alpha == 0)
+                                    {
+                                        PlayerPokemon.Alpha = 1;
+                                        blinkCounter++;
+                                    }
+                                    counter = 0;
+                                    if (blinkCounter == 4) return;
+                                }
+                                counter += counterSpeed;
+                                return;
+                            }
+
+
+                            float goalScale = (float) Player.PlayerJsonObject.Pokemon.CurrentHP / Player.PlayerJsonObject.Pokemon.Stats.HP;
+                            int goalHP = Player.PlayerJsonObject.Pokemon.CurrentHP;
+                            float speed = 0.01f;
+
+                            if (PlayerHPBar.Scale.X - speed > goalScale)
+                            {
+                                PlayerHPBar.Scale.X -= speed;
+                                calculateHealthBarColor(PlayerHPBar.Scale.X, PlayerHPBar);
+                                PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
+                                PlayerPokemonHP.UnloadContent();
+                                PlayerPokemonHP.Text = ((int) (PlayerHPBar.Scale.X * Player.PlayerJsonObject.Pokemon.Stats.HP)).ToString();
+                                PlayerPokemonHP.ReloadText();
+                                PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
+                                return;
+                            }
+
+                            PlayerPokemonHP.UnloadContent();
+                            PlayerPokemonHP.Text = goalHP.ToString();
+                            PlayerPokemonHP.ReloadText();
+                            PlayerPokemonHP.Position = new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonHP.SourceRect.Width, PlayerPokemonMaxHP.Position.Y);
+                            PlayerHPBar.Scale.X = goalScale;
+                            calculateHealthBarColor(goalScale, PlayerHPBar);
+                            PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
+
+                            if (counter < 1000.0f)
+                            {
+                                counter += counterSpeed;
+                                return;
+                            }
+
+                            blinkCounter = 0;
+                            counter = 0;
+
+                            battleScreen.menuManager.menuName = battleScreen.menuManager.menu.PrevMenuName;
+                            battleScreen.menuManager.menu.ID = "Load/Menus/BattleMenu.xml";
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 4;
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
+                            state = BattleState.BATTLE_MENU;
+                            IsTransitioning = false;
+                        }
                         break;
                     default:
                         break;
@@ -275,12 +398,12 @@ namespace PokemonFireRedClone
         }
 
 
-        public void LoadContent(BattleTextBox textBox, CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
+        public void LoadContent(BattleScreen battleScreen)
         {
             // TODO: Load Background based on what environment the battle is in
 
             //Load battle images
-            loadBattleContent(playerPokemon, enemyPokemon);
+            loadBattleContent(Player.PlayerJsonObject.Pokemon, battleScreen.enemyPokemon);
 
             PlayerSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(5, 1);
             PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
@@ -290,14 +413,14 @@ namespace PokemonFireRedClone
             if (BattleScreen.Wild)
                 EnemySprite.Tint = Color.LightGray;
 
-            setBattleImagePositions(textBox);
+            setBattleImagePositions(battleScreen.TextBox);
 
 
             barOriginalY = PlayerHPBarBackground.Position.Y;
             IsTransitioning = true;
 
 
-            PlayerPokemon = playerPokemon.Pokemon.Back;
+            PlayerPokemon = Player.PlayerJsonObject.Pokemon.Pokemon.Back;
             PlayerPokemon.Scale = new Vector2(0.01f, 0.01f);
             PlayerPokemon.LoadContent();
             PlayerPokemon.Tint = Color.Red;
@@ -315,7 +438,7 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
         {
-            Transition(gameTime, battleScreen.TextBox);
+            Transition(gameTime, battleScreen);
             PlayerSprite.Update(gameTime);
             if (state == BattleState.BATTLE_MENU)
             {
@@ -467,39 +590,29 @@ namespace PokemonFireRedClone
             EXPBar.Scale.X = expRatio;
             EnemyHPBar.Scale.X = enemyHealthRatio;
 
-            if (playerHealthRatio > 0.5)
-            {
-                PlayerHPBar.Tint = new Color(175, 252, 175, 1);
-                PlayerHPBar.Alpha = 0.5f;
-            }
-            else if (playerHealthRatio > 0.2 && playerHealthRatio <= 0.5)
-            {
-                PlayerHPBar.Tint = new Color(255, 232, 0, 100);
-                PlayerHPBar.Alpha = 0.5f;
-            }
-            else
-            {
-                PlayerHPBar.Tint = new Color(255, 100, 0, 50);
-                PlayerHPBar.Alpha = 0.4f;
-            }
+            calculateHealthBarColor(playerHealthRatio, PlayerHPBar);
+            calculateHealthBarColor(enemyHealthRatio, EnemyHPBar);
 
-            if (enemyHealthRatio > 0.5)
-            {
-                EnemyHPBar.Tint = new Color(175, 252, 175, 1);
-                EnemyHPBar.Alpha = 0.5f;
-            }
-            else if (enemyHealthRatio > 0.2 && enemyHealthRatio <= 0.5)
-            {
-                EnemyHPBar.Tint = new Color(255, 232, 0, 100);
-                EnemyHPBar.Alpha = 0.5f;
-            }
-            else
-            {
-                EnemyHPBar.Tint = new Color(255, 100, 0, 50);
-                EnemyHPBar.Alpha = 0.4f;
-            }
         }
 
+        private void calculateHealthBarColor(float ratio, Image image)
+        {
+            if (ratio > 0.5)
+            {
+                image.Tint = new Color(175, 252, 175, 1);
+                image.Alpha = 0.5f;
+            }
+            else if (ratio > 0.2 && ratio <= 0.5)
+            {
+                image.Tint = new Color(255, 232, 0, 100);
+                image.Alpha = 0.5f;
+            }
+            else
+            {
+                image.Tint = new Color(255, 100, 0, 50);
+                image.Alpha = 0.4f;
+            }
+        }
 
     }
 }

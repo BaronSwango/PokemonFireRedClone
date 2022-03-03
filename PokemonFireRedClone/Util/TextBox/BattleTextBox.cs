@@ -7,7 +7,7 @@ namespace PokemonFireRedClone
     public class BattleTextBox : TextBox
     {
 
-        int nextPage;
+        public int NextPage;
 
         /*
          * 
@@ -20,12 +20,19 @@ namespace PokemonFireRedClone
         {
             if (IsTransitioning)
             {
+                if (BattleLogic.MoveUsed && !updateDialogue)
+                {
+                    updateDialogue = true;
+                    battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
+                    battleScreen.BattleAnimations.IsTransitioning = true;
+                }
+
                 if (updateDialogue)
                 {
                     if (Page != 10 && Page != 14)
                     {
 
-                        Page = nextPage;
+                        Page = NextPage;
 
                         foreach (TextBoxImage image in currentDialogue)
                             image.UnloadContent();
@@ -47,10 +54,41 @@ namespace PokemonFireRedClone
                                     if (image.Text.Contains("P"))
                                         image.Text = Player.PlayerJsonObject.Pokemon.Name + "   do?";
                                     break;
+                                case 5:
+
+                                    if (currentDialogue[0] == image)
+                                    {
+                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
+                                        {
+                                            image.Text = Player.PlayerJsonObject.Pokemon.Name + "   used";
+                                        } else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                                        {
+                                            image.Text = battleScreen.enemyPokemon.Pokemon.Name.ToUpper() + "   used";
+                                        }
+                                    }
+                                    
+                                    else if (currentDialogue[1] == image)
+                                    {
+
+                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
+                                        {
+                                            image.Text = BattleLogic.playerMoveOption.Name.ToUpper() + "!";
+                                        }
+                                        else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                                        {
+                                            image.Text = BattleLogic.enemyMoveOption.Name.ToUpper() + "!";
+                                        }
+                                    }
+                                    
+                                    break;
                                 default:
                                     return;
                             }
-                            image.LoadContent();
+
+                            if (image.EffectList.Count == 0)
+                                image.LoadContent();
+                            else
+                                image.ReloadText();
                         }
 
                         currentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
@@ -94,8 +132,10 @@ namespace PokemonFireRedClone
                             battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_SEND_POKEMON;
                             battleScreen.BattleAnimations.IsTransitioning = true;
                         }
+
                         IsTransitioning = false;
                         updateDialogue = true;
+
                     }
                 }
             } else
@@ -109,15 +149,22 @@ namespace PokemonFireRedClone
                             switch (Page)
                             {
                                 case 3:
-                                    nextPage = 4;
+                                    NextPage = 4;
                                     IsTransitioning = true;
                                     break;
                                 default:
-                                    return;
+                                    break;
                             }
                         }
                     }
                        
+                }
+
+                if (Page == 5 && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION && !battleScreen.BattleAnimations.IsTransitioning)
+                {
+                    battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION;
+                    battleScreen.BattleAnimations.IsTransitioning = true;
+                    IsTransitioning = true;
                 }
             }
         }
@@ -140,7 +187,7 @@ namespace PokemonFireRedClone
                     if (BattleScreen.Wild)
                     {
                         image.Text = "Wild   " + enemyPokemon.Pokemon.Name.ToUpper() + "   appeared !";
-                        nextPage = 3;
+                        NextPage = 3;
                         currentDialogue.Add(image);
                         image.LoadContent();
                         break;

@@ -34,10 +34,10 @@
         <Type>Grass</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/IvysaurBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/IvysaurFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -62,10 +62,10 @@
         <Type>Grass</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/VenusaurBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/VenusaurFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
