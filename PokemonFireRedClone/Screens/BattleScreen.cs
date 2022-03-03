@@ -48,7 +48,6 @@ namespace PokemonFireRedClone
             playerPokemon = Player.PlayerJsonObject.Pokemon;
             enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charizard"), 100);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
-            //playerPokemon.CurrentHP = playerPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Ember", 25);
             enemyPokemon.MoveNames.Add("Scratch", 20);
             battleLogic = new BattleLogic();

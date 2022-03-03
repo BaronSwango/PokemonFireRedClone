@@ -29,6 +29,62 @@
         <Description>There is a plant seed on its back right from the day this POKéMON is born. The seed slowly grows larger.</Description>
     </Pokemon>
     <Pokemon>
+        <Name>Ivysaur</Name>
+        <Index>2</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SEED POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>28.7 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>141</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>62</BaseAttack>
+        <BaseDefense>63</BaseDefense>
+        <BaseSpecialAttack>80</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Overgrow</Ability>
+        <Description>There is a plant bulb on its back. When it absorbs nutrients, the bulb is said to blossom into a large flower.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Venusaur</Name>
+        <Index>3</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SEED POKéMON</Classification>
+        <Height>6'07"</Height>
+        <Weight>220.5 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>208</EXPYield>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>82</BaseAttack>
+        <BaseDefense>83</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
+        <Ability>Overgrow</Ability>
+        <Description>A bewitching aroma wafts from its flower. The fragrance becalms those engaged in a battle.</Description>
+    </Pokemon>
+    <Pokemon>
         <Name>Charmander</Name>
         <Index>4</Index>
         <Type>Fire</Type>
@@ -45,7 +101,7 @@
         <Height>2'00"</Height>
         <Weight>18.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
-        <EXPYield>62</EXPYield>
+        <EXPYield>65</EXPYield>
         <BaseHP>39</BaseHP>
         <BaseAttack>52</BaseAttack>
         <BaseDefense>43</BaseDefense>
@@ -100,7 +156,7 @@
         <Height>5'07"</Height>
         <Weight>199.5 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
-        <EXPYield>240</EXPYield>
+        <EXPYield>209</EXPYield>
         <BaseHP>78</BaseHP>
         <BaseAttack>84</BaseAttack>
         <BaseDefense>78</BaseDefense>
@@ -127,7 +183,7 @@
         <Height>1'08"</Height>
         <Weight>19.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
-        <EXPYield>63</EXPYield>
+        <EXPYield>66</EXPYield>
         <BaseHP>44</BaseHP>
         <BaseAttack>48</BaseAttack>
         <BaseDefense>65</BaseDefense>
@@ -136,6 +192,310 @@
         <BaseSpeed>43</BaseSpeed>
         <Ability>Torrent</Ability>
         <Description>When it retracts its long neck into its shell, it squirts out water with vigorous force.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Wartortle</Name>
+        <Index>8</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TURTLE POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>49.6 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>143</EXPYield>
+        <BaseHP>59</BaseHP>
+        <BaseAttack>63</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>58</BaseSpeed>
+        <Ability>Torrent</Ability>
+        <Description>This POKéMON is very popular as a pet. Its fur-covered tail is a symbol of its longevity.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Blastoise</Name>
+        <Index>9</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SHELLFISH POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>188.5 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>210</EXPYield>
+        <BaseHP>79</BaseHP>
+        <BaseAttack>83</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>105</BaseSpecialDefense>
+        <BaseSpeed>78</BaseSpeed>
+        <Ability>Torrent</Ability>
+        <Description>It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Caterpie</Name>
+        <Index>10</Index>
+        <Type>Bug</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>WORM POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>6.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>53</EXPYield>
+        <BaseHP>45</BaseHP>
+        <BaseAttack>30</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>20</BaseSpecialAttack>
+        <BaseSpecialDefense>20</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Shield Dust</Ability>
+        <Description>It is covered with a green skin. When it grows, it sheds the skin, covers itself with silk, and becomes a cocoon.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Metapod</Name>
+        <Index>11</Index>
+        <Type>Bug</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>COCOON POKéMON</Classification>
+        <Height>2'04"</Height>
+        <Weight>21.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>72</EXPYield>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>20</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>25</BaseSpecialAttack>
+        <BaseSpecialDefense>25</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Shed Skin</Ability>
+        <Description>Even though it is encased in a sturdy shell, the body inside is tender. It can’t withstand a harsh attack.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Butterfree</Name>
+        <Index>12</Index>
+        <Type>Bug</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BUTTERFLY POKéMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>70.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>160</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>80</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Compound Eyes</Ability>
+        <Description>The wings are protected by rain-repellent dust. As a result, this POKéMON can fly about even in rain.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Weedle</Name>
+        <Index>13</Index>
+        <Type>Bug</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>HAIRY BUG POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>7.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>52</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>35</BaseAttack>
+        <BaseDefense>30</BaseDefense>
+        <BaseSpecialAttack>20</BaseSpecialAttack>
+        <BaseSpecialDefense>20</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Shield Dust</Ability>
+        <Description>Often found in forests and grasslands. It has a sharp, toxic barb of around two inches on top of its head.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Kakuna</Name>
+        <Index>14</Index>
+        <Type>Bug</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>COCOON POKéMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>22.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>71</EXPYield>
+        <BaseHP>45</BaseHP>
+        <BaseAttack>25</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>25</BaseSpecialAttack>
+        <BaseSpecialDefense>25</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Shed Skin</Ability>
+        <Description>This POKéMON is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Beedrill</Name>
+        <Index>15</Index>
+        <Type>Bug</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON BEE POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>65.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>159</EXPYield>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>40</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>75</BaseSpeed>
+        <Ability>Swarm</Ability>
+        <Description>This POKéMON is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Pidgey</Name>
+        <Index>16</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TINY BIRD POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>4.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>55</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>40</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>35</BaseSpecialDefense>
+        <BaseSpeed>56</BaseSpeed>
+        <Ability>Keen Eye</Ability>
+        <Description>Does not like to fight. It hides in tall grass and so on, foraging for food such as small bugs.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Pidgeotto</Name>
+        <Index>17</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BIRD POKéMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>113</EXPYield>
+        <BaseHP>63</BaseHP>
+        <BaseAttack>60</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>71</BaseSpeed>
+        <Ability>Keen Eye</Ability>
+        <Description>The claws on its feet are well developed. It can carry prey such as an EXEGGCUTE to its nest over 60 miles away.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Pidgeot</Name>
+        <Index>18</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BIRD POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>87.1 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>172</EXPYield>
+        <BaseHP>83</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>75</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>91</BaseSpeed>
+        <Ability>Keen Eye</Ability>
+        <Description>The claws on its feet are well developed. It can carry prey such as an EXEGGCUTE to its nest over 60 miles away.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Rattata</Name>
@@ -163,5 +523,522 @@
         <BaseSpeed>72</BaseSpeed>
         <Ability>Guts</Ability>
         <Description>Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to wittle them down.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Raticate</Name>
+        <Index>20</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOUSE POKEeMON</Classification>
+        <Height>2'04"</Height>
+        <Weight>40.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>116</EXPYield>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>81</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>97</BaseSpeed>
+        <Ability>Run Away:Guts</Ability>
+        <Description>Its rear feet have three toes each. They are webbed, enabling it to swim across rivers.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Spearow</Name>
+        <Index>21</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TINY BIRD POKEeMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>4.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>58</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>60</BaseAttack>
+        <BaseDefense>30</BaseDefense>
+        <BaseSpecialAttack>31</BaseSpecialAttack>
+        <BaseSpecialDefense>31</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Keen Eye</Ability>
+        <Description>It busily flits around here and there. Even if it is frail, it can be a tough foe that uses MIRROR MOVE.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Fearow</Name>
+        <Index>22</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BEAK POKEeMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>83.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>162</EXPYield>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>90</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>61</BaseSpecialAttack>
+        <BaseSpecialDefense>61</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Keen Eye</Ability>
+        <Description>Its huge and magnificent wings can keep it aloft in the sky. It can remain flying a whole day without landing.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Ekans</Name>
+        <Index>23</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SNAKE POKEeMON</Classification>
+        <Height>6'07"</Height>
+        <Weight>15.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>62</EXPYield>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>60</BaseAttack>
+        <BaseDefense>44</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>54</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Intimidate:Shed Skin</Ability>
+        <Description>A very common sight in grassland, etc. It flicks its tongue in and out to sense danger in its surroundings.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Arbok</Name>
+        <Index>24</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SNAKE POKEeMON</Classification>
+        <Height>11'06"</Height>
+        <Weight>143.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>147</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>69</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>79</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
+        <Ability>Intimidate:Shed Skin</Ability>
+        <Description>The pattern on its belly appears to be a frightening face. Weak foes will flee just at the sight of the pattern.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Pikachu</Name>
+        <Index>25</Index>
+        <Type>Electric</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOUSE POKEeMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>13.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>82</EXPYield>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>55</BaseAttack>
+        <BaseDefense>30</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Static</Ability>
+        <Description>It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Raichu</Name>
+        <Index>26</Index>
+        <Type>Electric</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOUSE POKEeMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>122</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>90</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>90</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Static</Ability>
+        <Description>It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Sandshrew</Name>
+        <Index>27</Index>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOUSE POKEeMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>26.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>93</EXPYield>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>75</BaseAttack>
+        <BaseDefense>85</BaseDefense>
+        <BaseSpecialAttack>20</BaseSpecialAttack>
+        <BaseSpecialDefense>30</BaseSpecialDefense>
+        <BaseSpeed>40</BaseSpeed>
+        <Ability>Sand Veil</Ability>
+        <Description>It burrows and lives underground. If threatened, it curls itself up into a ball for protection.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Sandslash</Name>
+        <Index>28</Index>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOUSE POKEeMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>65.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>163</EXPYield>
+        <BaseHP>75</BaseHP>
+        <BaseAttack>100</BaseAttack>
+        <BaseDefense>110</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>65</BaseSpeed>
+        <Ability>Sand Veil</Ability>
+        <Description>It is adept at attacking with the spines on its back and its sharp claws while quickly scurrying about.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Nidoran♀</Name>
+        <Index>29</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON PIN POKEeMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>15.4 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>59</EXPYield>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>47</BaseAttack>
+        <BaseDefense>52</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>41</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>Though small, it must be treated with caution because of its powerfully toxic barbs. The female has smaller horns.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Nidorina</Name>
+        <Index>30</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON PIN POKEeMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>44.1 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>117</EXPYield>
+        <BaseHP>70</BaseHP>
+        <BaseAttack>62</BaseAttack>
+        <BaseDefense>67</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>56</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>The female has a gentle temperament. It emits ultrasonic cries that have the power to befuddle foes.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Nidoqueen</Name>
+        <Index>31</Index>
+        <Type>Poison</Type>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRILL POKEeMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>132.3 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>194</EXPYield>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>82</BaseAttack>
+        <BaseDefense>87</BaseDefense>
+        <BaseSpecialAttack>75</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>76</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>The body is covered by stiff, needle-like scales. If it becomes excited, the needles bristle outwards.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Nidoran♂</Name>
+        <Index>32</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON PIN POKEeMON</Classification>
+        <Height>1'08"</Height>
+        <Weight>19.8 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>60</EXPYield>
+        <BaseHP>46</BaseHP>
+        <BaseAttack>57</BaseAttack>
+        <BaseDefense>40</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>Its large ears are flapped like wings when it is listening to distant sounds. It extends toxic barbs when angered.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Nidorino</Name>
+        <Index>33</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON PIN POKEeMON</Classification>
+        <Height>2'11"</Height>
+        <Weight>43.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>118</EXPYield>
+        <BaseHP>71</BaseHP>
+        <BaseAttack>72</BaseAttack>
+        <BaseDefense>57</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>65</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>It is easily angered. By swinging its well-developed horn wildly, it can even punch through diamond.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Nidoking</Name>
+        <Index>34</Index>
+        <Type>Poison</Type>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRILL POKEeMON</Classification>
+        <Height>4'07"</Height>
+        <Weight>136.7 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>195</EXPYield>
+        <BaseHP>81</BaseHP>
+        <BaseAttack>92</BaseAttack>
+        <BaseDefense>77</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>85</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>It is recognized by its rock-hard hide and its extended horn. Be careful with the horn as it contains venom.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Clefairy</Name>
+        <Index>35</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FAIRY POKEeMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>16.5 lbs</Weight>
+        <EXPGroup>F</EXPGroup>
+        <EXPYield>68</EXPYield>
+        <BaseHP>70</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>48</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Cute Charm</Ability>
+        <Description>Its adorable appearance makes it popular as a pet. However, it is rare and difficult to find.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Clefable</Name>
+        <Index>36</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FAIRY POKEeMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>88.2 lbs</Weight>
+        <EXPGroup>F</EXPGroup>
+        <EXPYield>129</EXPYield>
+        <BaseHP>95</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>73</BaseDefense>
+        <BaseSpecialAttack>95</BaseSpecialAttack>
+        <BaseSpecialDefense>90</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Cute Charm</Ability>
+        <Description>It has an acute sense of hearing. It can easily hear a pin being dropped nearly 1,100 yards away.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Vulpix</Name>
+        <Index>37</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FOX POKEeMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>21.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>63</EXPYield>
+        <BaseHP>38</BaseHP>
+        <BaseAttack>41</BaseAttack>
+        <BaseDefense>40</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>65</BaseSpeed>
+        <Ability>Flash Fire</Ability>
+        <Description>While young, it has six gorgeous tails. When it grows, several new tails are sprouted.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Ninetails</Name>
+        <Index>38</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FOX POKEeMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>43.9 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>178</EXPYield>
+        <BaseHP>73</BaseHP>
+        <BaseAttack>76</BaseAttack>
+        <BaseDefense>75</BaseDefense>
+        <BaseSpecialAttack>81</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Flash Fire</Ability>
+        <Description>While young, it has six gorgeous tails. When it grows, several new tails are sprouted.</Description>
     </Pokemon>
 </PokemonManager>
