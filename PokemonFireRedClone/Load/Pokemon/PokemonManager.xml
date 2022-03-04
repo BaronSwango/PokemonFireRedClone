@@ -116,10 +116,10 @@
         <Index>5</Index>
         <Type>Fire</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/CharmeleonBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/CharmeleonFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -198,10 +198,10 @@
         <Index>8</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/WartortleBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/WartortleFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -225,10 +225,10 @@
         <Index>9</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/BlastoiseBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/BlastoiseFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
