@@ -252,10 +252,10 @@
         <Index>10</Index>
         <Type>Bug</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/CaterpieBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/CaterpieFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -279,10 +279,10 @@
         <Index>11</Index>
         <Type>Bug</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MetapodBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MetapodFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -307,10 +307,10 @@
         <Type>Bug</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ButterfreeBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ButterfreeFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -335,10 +335,10 @@
         <Type>Bug</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/WeedleBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/WeedleFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -363,10 +363,10 @@
         <Type>Bug</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/KakunaBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/KakunaFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -391,10 +391,10 @@
         <Type>Bug</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/BeedrillBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/BeedrillFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -419,10 +419,10 @@
         <Type>Normal</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PidgeyBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PidgeyFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -510,7 +510,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKEeMON</Classification>
+        <Classification>MOUSE POKéMON</Classification>
         <Height>1'00"</Height>
         <Weight>7.7 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -537,7 +537,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKEeMON</Classification>
+        <Classification>MOUSE POKéMON</Classification>
         <Height>2'04"</Height>
         <Weight>40.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -565,7 +565,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TINY BIRD POKEeMON</Classification>
+        <Classification>TINY BIRD POKéMON</Classification>
         <Height>1'00"</Height>
         <Weight>4.4 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -593,7 +593,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BEAK POKEeMON</Classification>
+        <Classification>BEAK POKéMON</Classification>
         <Height>3'11"</Height>
         <Weight>83.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -620,7 +620,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SNAKE POKEeMON</Classification>
+        <Classification>SNAKE POKéMON</Classification>
         <Height>6'07"</Height>
         <Weight>15.2 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -647,7 +647,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SNAKE POKEeMON</Classification>
+        <Classification>SNAKE POKéMON</Classification>
         <Height>11'06"</Height>
         <Weight>143.3 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -674,7 +674,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKEeMON</Classification>
+        <Classification>MOUSE POKéMON</Classification>
         <Height>1'04"</Height>
         <Weight>13.2 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -701,7 +701,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKEeMON</Classification>
+        <Classification>MOUSE POKéMON</Classification>
         <Height>2'07"</Height>
         <Weight>66.1 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -728,7 +728,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKEeMON</Classification>
+        <Classification>MOUSE POKéMON</Classification>
         <Height>2'00"</Height>
         <Weight>26.5 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -755,7 +755,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKEeMON</Classification>
+        <Classification>MOUSE POKéMON</Classification>
         <Height>3'03"</Height>
         <Weight>65.0 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -782,7 +782,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKEeMON</Classification>
+        <Classification>POISON PIN POKéMON</Classification>
         <Height>1'04"</Height>
         <Weight>15.4 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -809,7 +809,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKEeMON</Classification>
+        <Classification>POISON PIN POKéMON</Classification>
         <Height>2'07"</Height>
         <Weight>44.1 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -837,7 +837,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRILL POKEeMON</Classification>
+        <Classification>DRILL POKéMON</Classification>
         <Height>4'03"</Height>
         <Weight>132.3 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -864,7 +864,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKEeMON</Classification>
+        <Classification>POISON PIN POKéMON</Classification>
         <Height>1'08"</Height>
         <Weight>19.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -891,7 +891,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKEeMON</Classification>
+        <Classification>POISON PIN POKéMON</Classification>
         <Height>2'11"</Height>
         <Weight>43.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -919,7 +919,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRILL POKEeMON</Classification>
+        <Classification>DRILL POKéMON</Classification>
         <Height>4'07"</Height>
         <Weight>136.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
@@ -946,7 +946,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FAIRY POKEeMON</Classification>
+        <Classification>FAIRY POKéMON</Classification>
         <Height>2'00"</Height>
         <Weight>16.5 lbs</Weight>
         <EXPGroup>F</EXPGroup>
@@ -973,7 +973,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FAIRY POKEeMON</Classification>
+        <Classification>FAIRY POKéMON</Classification>
         <Height>4'03"</Height>
         <Weight>88.2 lbs</Weight>
         <EXPGroup>F</EXPGroup>
@@ -1000,7 +1000,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FOX POKEeMON</Classification>
+        <Classification>FOX POKéMON</Classification>
         <Height>2'00"</Height>
         <Weight>21.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -1027,7 +1027,7 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FOX POKEeMON</Classification>
+        <Classification>FOX POKéMON</Classification>
         <Height>3'07"</Height>
         <Weight>43.9 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
@@ -1040,5 +1040,115 @@
         <BaseSpeed>100</BaseSpeed>
         <Ability>Flash Fire</Ability>
         <Description>While young, it has six gorgeous tails. When it grows, several new tails are sprouted.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Jigglypuff</Name>
+        <Index>39</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BALLOON POKéMON</Classification>
+        <Height>1'08"</Height>
+        <Weight>12.1 lbs</Weight>
+        <EXPGroup>F</EXPGroup>
+        <EXPYield>76</EXPYield>
+        <BaseHP>115</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>20</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>25</BaseSpecialDefense>
+        <BaseSpeed>20</BaseSpeed>
+        <Ability>Cute Charm</Ability>
+        <Description>It captivates foes with its huge, round eyes, then lulls them to sleep by singing a soothing melody.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Wigglytuff</Name>
+        <Index>40</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BALLOON POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>26.5 lbs</Weight>
+        <EXPGroup>F</EXPGroup>
+        <EXPYield>109</EXPYield>
+        <BaseHP>140</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>75</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Cute Charm</Ability>
+        <Description>Its fur is extremely fine, dense, and supple. The exquisitely pleasant fur conveys an image of luxury.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Zubat</Name>
+        <Index>41</Index>
+        <Type>Poison</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BAT POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>16.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>54</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>30</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Inner Focus</Ability>
+        <Description>It has no eyes. Instead, it relies on its ultrasonic cries for echo location to flit about in darkness.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Golbat</Name>
+        <Index>42</Index>
+        <Type>Poison</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BAT POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>121.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>171</EXPYield>
+        <BaseHP>75</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Inner Focus</Ability>
+        <Description>It clamps down on its prey with needle-sharp fangs and drains over 10 ounces of blood in one gulp.</Description>
     </Pokemon>
 </PokemonManager>
