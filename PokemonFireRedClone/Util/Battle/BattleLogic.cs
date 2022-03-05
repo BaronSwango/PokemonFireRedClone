@@ -18,7 +18,8 @@ namespace PokemonFireRedClone
         public bool NotVeryEffective;
         public bool NoEffect;
         public bool Crit;
-        //public bool PlayerFirstMove;
+        public bool StartSequence;
+        bool playerFirst;
 
         public BattleLogic()
         {
@@ -30,12 +31,18 @@ namespace PokemonFireRedClone
             SuperEffective = false;
             NotVeryEffective = false;
             NoEffect = false;
-            //PlayerFirstMove = false;
+            StartSequence = false;
+            playerFirst = false;
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
         {
-            bool playerFirst = playerFirstMover(Player.PlayerJsonObject.Pokemon, battleScreen.enemyPokemon);
+
+            if (StartSequence)
+            {
+                playerFirst = playerFirstMover(Player.PlayerJsonObject.Pokemon, battleScreen.enemyPokemon);
+                StartSequence = false;
+            }
 
             if (PlayerMoveUsed)
             {
