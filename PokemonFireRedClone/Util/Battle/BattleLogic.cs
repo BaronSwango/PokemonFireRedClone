@@ -106,16 +106,19 @@ namespace PokemonFireRedClone
         {
             user.MoveNames[move.Name] -= 1;
 
-            int damage = move.Special ?
-                calculateDamage(
+            int damage = 0;
+
+            if (move.Category == "Special")
+                damage = calculateDamage(
                     user.Level,
                     move.Power,
                     user.Stats.SpecialAttack,
                     defender.Stats.SpecialDefense,
                     user.Pokemon.Types,
                     move.Type,
-                    defender.Pokemon.Types) :
-                calculateDamage(
+                    defender.Pokemon.Types);
+            else if (move.Category == "Physical")
+                damage = calculateDamage(
                     user.Level,
                     move.Power,
                     user.Stats.Attack,
@@ -123,6 +126,11 @@ namespace PokemonFireRedClone
                     user.Pokemon.Types,
                     move.Type,
                     defender.Pokemon.Types);
+            else
+            {
+                // Status moves
+            }
+
 
             Console.WriteLine("User used " + move.Name + "!");
             defender.CurrentHP = defender.CurrentHP - damage > 0 ? defender.CurrentHP - damage : 0;

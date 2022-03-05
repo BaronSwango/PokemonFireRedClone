@@ -7,6 +7,7 @@
         <Accuracy>100</Accuracy>
         <PP>20</PP>
         <Description>An attack that absorbs half the damage it inflicted to restore HP.</Description>
+        <Category>Special</Category>
     </Moves>
     <Moves>
         <Name>Acid</Name>
@@ -15,6 +16,7 @@
         <Accuracy>100</Accuracy>
         <PP>30</PP>
         <Description>The foe is sprayed with a harsh, hide-melting acid that may lower DEFENSE.</Description>
+        <Category>Special</Category>
     </Moves>
     <Moves>
         <Name>Acid Armor</Name>
@@ -23,6 +25,7 @@
         <Accuracy>0</Accuracy>
         <PP>40</PP>
         <Description>The user alters its cells to liquefy itself and sharply raise DEFENSE.</Description>
+        <Category>Status</Category>
     </Moves>
     <Moves>
         <Name>Aerial Ace</Name>
@@ -31,6 +34,7 @@
         <Accuracy>0</Accuracy>
         <PP>20</PP>
         <Description>An extremely fast attack against one target. It can’t be evaded.</Description>
+        <Category>Physical</Category>
     </Moves>
     <Moves>
         <Name>Aeroblast</Name>
@@ -39,6 +43,7 @@
         <Accuracy>100</Accuracy>
         <PP>5</PP>
         <Description>A vortex of air is shot at the foe. It has a high critical-hit ratio.</Description>
+        <Category>Special</Category>
     </Moves>
     <Moves>
         <Name>Agility</Name>
@@ -47,6 +52,7 @@
         <Accuracy>0</Accuracy>
         <PP>30</PP>
         <Description>The user relaxes and lightens its body to sharply boost its SPEED.</Description>
+        <Category>Status</Category>
     </Moves>
     <Moves>
         <Name>Air Cutter</Name>
@@ -55,6 +61,7 @@
         <Accuracy>95</Accuracy>
         <PP>25</PP>
         <Description>The foe is hit with razor-like wind. It has a high critical-hit ratio.</Description>
+        <Category>Special</Category>
     </Moves>
     <Moves>
         <Name>Amnesia</Name>
@@ -63,6 +70,7 @@
         <Accuracy>0</Accuracy>
         <PP>20</PP>
         <Description>Forgets about something and sharply raises SP. DEF.</Description>
+        <Category>Status</Category>
     </Moves>
     <Moves>
         <Name>Ancient Power</Name>
@@ -71,6 +79,7 @@
         <Accuracy>100</Accuracy>
         <PP>5</PP>
         <Description>An ancient power is used to attack. It may also raise all the user’s stats.</Description>
+        <Category>Specia</Category>
     </Moves>
     <Moves>
         <Name>Ember</Name>
@@ -79,6 +88,7 @@
         <Accuracy>100</Accuracy>
         <PP>25</PP>
         <Description>The foe is attacked with small flames. The foe may suffer a burn.</Description>
+        <Category>Special</Category>
     </Moves>
     <Moves>
         <Name>Growl</Name>
@@ -87,6 +97,7 @@
         <Accuracy>100</Accuracy>
         <PP>40</PP>
         <Description>The user growls in a cute way, making the foe lower its ATTACK stat.</Description>
+        <Category>Status</Category>
     </Moves>
     <Moves>
         <Name>Scratch</Name>
@@ -95,6 +106,7 @@
         <Accuracy>100</Accuracy>
         <PP>35</PP>
         <Description>Hard, pointed, and sharp claws rake the foe.</Description>
+        <Category>Physical</Category>
     </Moves>
     <Moves>
         <Name>Tackle</Name>
@@ -103,6 +115,7 @@
         <Accuracy>95</Accuracy>
         <PP>35</PP>
         <Description>A physical attack in which the user charges, full body, into the foe.</Description>
+        <Category>Physical</Category>
     </Moves>
     <Moves>
         <Name>Vine Whip</Name>
@@ -111,6 +124,7 @@
         <Accuracy>100</Accuracy>
         <PP>25</PP>
         <Description>The foe is struck with slender, whiplike vines.</Description>
+        <Category>Physical</Category>
     </Moves>
     <Moves>
         <Name>Water Gun</Name>
@@ -119,5 +133,6 @@
         <Accuracy>100</Accuracy>
         <PP>25</PP>
         <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
     </Moves>
 </MoveManager>
