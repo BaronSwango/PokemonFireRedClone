@@ -447,10 +447,10 @@
         <Type>Normal</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PidgeottoBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PidgeottoFront</Path>
         </Front>
         <Footprint>
             <Path></Path>

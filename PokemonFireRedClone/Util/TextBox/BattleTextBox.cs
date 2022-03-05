@@ -19,13 +19,8 @@ namespace PokemonFireRedClone
         private void Transition(GameTime gameTime, BattleScreen battleScreen)
         {
             if (IsTransitioning)
-            {
-                if (battleScreen.BattleLogic.MoveUsed && !updateDialogue)
-                {
-                    updateDialogue = true;
-                    battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
-                    battleScreen.BattleAnimations.IsTransitioning = true;
-                }
+            {    
+
 
                 if (updateDialogue)
                 {
@@ -51,7 +46,7 @@ namespace PokemonFireRedClone
                                     image.Text = "Go !   " + Player.PlayerJsonObject.Pokemon.Name + " !";
                                     break;
                                 case 4:
-                                    if (image.Text.Contains("P"))
+                                    if (image == currentDialogue[1])
                                         image.Text = Player.PlayerJsonObject.Pokemon.Name + "   do?";
                                     break;
                                 case 5:
@@ -82,7 +77,7 @@ namespace PokemonFireRedClone
                                     
                                     break;
                                 default:
-                                    return;
+                                    break;
                             }
 
                             if (image.EffectList.Count == 0)
@@ -118,6 +113,7 @@ namespace PokemonFireRedClone
                     {
                         transitionRect.Scale = new Vector2(transitionRect.Scale.X - speed, transitionRect.Scale.Y);
                         transitionRect.Position = new Vector2(transitionRect.Position.X + speed, transitionRect.Position.Y);
+                        return;
                     }
                     else
                     {
@@ -127,17 +123,12 @@ namespace PokemonFireRedClone
                             transitionRect2.Position = new Vector2(transitionRect2.Position.X + speed, transitionRect2.Position.Y);
                             return;
                         }
-                        if (Page == 3)
-                        {
-                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_SEND_POKEMON;
-                            battleScreen.BattleAnimations.IsTransitioning = true;
-                        }
 
-                        IsTransitioning = false;
-                        updateDialogue = true;
 
                     }
                 }
+                IsTransitioning = false;
+                updateDialogue = true;
             } else
             {
                 foreach (TextBoxImage image in currentDialogue)
@@ -160,12 +151,6 @@ namespace PokemonFireRedClone
                        
                 }
 
-                if (Page == 5 && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION && !battleScreen.BattleAnimations.IsTransitioning)
-                {
-                    battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION;
-                    battleScreen.BattleAnimations.IsTransitioning = true;
-                    IsTransitioning = true;
-                }
             }
         }
 

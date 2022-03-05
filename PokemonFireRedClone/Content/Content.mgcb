@@ -586,6 +586,30 @@
 /processorParam:TextureFormat=Color
 /build:Pokemon/MetapodFront.png
 
+#begin Pokemon/PidgeottoBack.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/PidgeottoBack.png
+
+#begin Pokemon/PidgeottoFront.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/PidgeottoFront.png
+
 #begin Pokemon/PidgeyBack.png
 /importer:TextureImporter
 /processor:TextureProcessor

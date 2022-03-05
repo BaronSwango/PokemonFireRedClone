@@ -281,5 +281,14 @@
             <Text>Player name whited out!</Text>
             <Skippable>true</Skippable>
         </Dialogue>
+        <Dialogue>
+            <Page>15</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>A   critical   hit !</Text>
+        </Dialogue>
     </TextBox>
 </BattleScreen>

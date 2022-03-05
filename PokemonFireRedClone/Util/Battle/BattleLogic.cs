@@ -10,44 +10,102 @@ namespace PokemonFireRedClone
 
         public Move PlayerMoveOption;
         public Move EnemyMoveOption;
-        public bool MoveUsed;
+        public bool PlayerMoveUsed;
+        public bool EnemyMoveUsed;
+        public bool PlayerHasMoved;
+        public bool EnemyHasMoved;
         public bool SuperEffective;
         public bool NotVeryEffective;
         public bool NoEffect;
-        public bool PlayerFirstMove;
+        public bool Crit;
+        //public bool PlayerFirstMove;
 
         public BattleLogic()
         {
-            MoveUsed = false;
+            PlayerMoveUsed = false;
+            EnemyMoveUsed = false;
+            PlayerHasMoved = false;
+            EnemyHasMoved = false;
+            Crit = false;
             SuperEffective = false;
             NotVeryEffective = false;
             NoEffect = false;
-            PlayerFirstMove = false;
+            //PlayerFirstMove = false;
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
         {
+            bool playerFirst = playerFirstMover(Player.PlayerJsonObject.Pokemon, battleScreen.enemyPokemon);
 
-            if (MoveUsed)
+            if (PlayerMoveUsed)
             {
-                useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, PlayerMoveOption);
-                enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
-                MoveUsed = false;
+                if (playerFirst)
+                {
+                    if (PlayerHasMoved)
+                    {
+                        if (battleScreen.BattleAnimations.state != BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                        {
+                            enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.IsTransitioning = true;
+                            battleScreen.TextBox.NextPage = 5;
+                            battleScreen.TextBox.IsTransitioning = true;
+                        }
+                    }
+                    else
+                    {
+                        if (battleScreen.BattleAnimations.state != BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
+                        {
+                            useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, PlayerMoveOption);
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.IsTransitioning = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (EnemyHasMoved)
+                    {
+                        if (battleScreen.BattleAnimations.state != BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
+                        {
+                            useMove(ref Player.PlayerJsonObject.Pokemon, ref battleScreen.enemyPokemon, PlayerMoveOption);
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.IsTransitioning = true;
+                            battleScreen.TextBox.NextPage = 5;
+                            battleScreen.TextBox.IsTransitioning = true;
+                        }
+                    }
+                    else
+                    {
+                        if (battleScreen.BattleAnimations.state != BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                        {
+                            enemyUseMove(ref battleScreen.enemyPokemon, ref Player.PlayerJsonObject.Pokemon);
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.IsTransitioning = true;
+                        }
+                    }
+                }
             }
+
 
         }
 
         private bool playerFirstMover(CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
         {
-
-            return false;
+            if (playerPokemon.Stats.Speed == enemyPokemon.Stats.Speed)
+            {
+                Random random = new Random();
+                int first = random.Next(2);
+                if (first == 0)
+                    return true;
+            }
+            return playerPokemon.Stats.Speed > enemyPokemon.Stats.Speed;
         }
 
         private void useMove(ref CustomPokemon user, ref CustomPokemon defender, Move move)
         {
             user.MoveNames[move.Name] -= 1;
 
-            
             int damage = move.Special ?
                 calculateDamage(
                     user.Level,
@@ -81,6 +139,7 @@ namespace PokemonFireRedClone
 
         private int calculateDamage(int level, int power, int attack, int defense, List<Type> userTypes, Type moveType, List<Type> defenderTypes)
         {
+
             float STAB = 1;
             foreach (Type type in userTypes)
             {
@@ -96,7 +155,7 @@ namespace PokemonFireRedClone
 
             float critRand = (float) Math.Round(rand.NextDouble(), 4);
 
-            float crit = critRand <= 0.0625f ? 1.5f : 1.0f;
+            float crit = critRand < 0.0625f ? 2.0f : 1.0f;
             float typeMult = 1.0f;
 
             foreach (Type type in defenderTypes)
@@ -118,12 +177,14 @@ namespace PokemonFireRedClone
             }
 
             if (crit > 1)
-                Console.WriteLine("Critical hit!");
+                Crit = true;
 
             if (typeMult > 1)
-                Console.WriteLine("It's super effective!");
-            else if (typeMult < 1)
-                Console.WriteLine("It's not very effective...");
+                SuperEffective = true;
+            else if (typeMult < 1 && typeMult > 0)
+                NotVeryEffective = true;
+            else if (typeMult == 0)
+                NoEffect = true;
 
             int damage = (int)((2.0f * level / 5 + 2) * power * ((float)attack / defense) / 50 * STAB * random * crit * typeMult);
 
@@ -134,6 +195,7 @@ namespace PokemonFireRedClone
 
             return damage;
         }
+
 
     }
 }

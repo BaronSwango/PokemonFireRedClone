@@ -114,6 +114,10 @@ namespace PokemonFireRedClone
                         EnemyPokemonGender.Position = new Vector2(EnemyPokemonName.Position.X + EnemyPokemonName.SourceRect.Width, EnemyPokemonName.Position.Y);
                         EnemyPokemonLevel.Position = new Vector2(EnemyHPBarBackground.Position.X + EnemyHPBarBackground.SourceRect.Width - 56 - EnemyPokemonLevel.SourceRect.Width, EnemyPokemonName.Position.Y);
                         EnemyHPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyHPBar.Scale.X) / 2 * EnemyHPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
+                        
+                        if (battleScreen.TextBox.Page == 3 && !battleScreen.TextBox.IsTransitioning)
+                            state = BattleState.PLAYER_SEND_POKEMON;
+
                         break;
                     case BattleState.PLAYER_SEND_POKEMON:
                         float playerSpriteDestinationX = -PlayerSprite.SourceRect.Width - 8;
@@ -261,8 +265,39 @@ namespace PokemonFireRedClone
                                 return;
                             }
 
+                            if (battleScreen.BattleLogic.Crit)
+                            {
+                                battleScreen.TextBox.NextPage = 15;
+                                battleScreen.TextBox.IsTransitioning = true;
+                                battleScreen.BattleLogic.Crit = false;
+                                counter = 0;
+                                return;
+                            }
+
+                            
+                            if (battleScreen.BattleLogic.SuperEffective)
+                            {
+                                battleScreen.TextBox.NextPage = 7;
+                                battleScreen.TextBox.IsTransitioning = true;
+                                battleScreen.BattleLogic.SuperEffective = false;
+                                counter = 0;
+                                return;
+                            } else if (battleScreen.BattleLogic.NotVeryEffective)
+                            {
+                                battleScreen.TextBox.NextPage = 8;
+                                battleScreen.TextBox.IsTransitioning = true;
+                                battleScreen.BattleLogic.NotVeryEffective = false;
+                                counter = 0;
+                                return;
+                            }
+                            
                             counter = 0;
                             blinkCounter = 0;
+
+                            battleScreen.BattleLogic.PlayerHasMoved = true;
+
+                            if (battleScreen.BattleLogic.EnemyHasMoved && battleScreen.BattleLogic.PlayerHasMoved)
+                                endFightSequence(battleScreen);
 
                             IsTransitioning = false;
                         }
@@ -323,14 +358,44 @@ namespace PokemonFireRedClone
                                 return;
                             }
 
+                            if (battleScreen.BattleLogic.Crit)
+                            {
+                                battleScreen.TextBox.NextPage = 15;
+                                battleScreen.TextBox.IsTransitioning = true;
+                                battleScreen.BattleLogic.Crit = false;
+                                counter = 0;
+                                return;
+                            }
+
+                            if (battleScreen.BattleLogic.SuperEffective)
+                            {
+                                battleScreen.TextBox.NextPage = 7;
+                                battleScreen.TextBox.IsTransitioning = true;
+                                battleScreen.BattleLogic.SuperEffective = false;
+                                counter = 0;
+                                return;
+                            }
+                            else if (battleScreen.BattleLogic.NotVeryEffective)
+                            {
+                                battleScreen.TextBox.NextPage = 8;
+                                battleScreen.TextBox.IsTransitioning = true;
+                                battleScreen.BattleLogic.NotVeryEffective = false;
+                                counter = 0;
+                                return;
+                            }
+
                             blinkCounter = 0;
                             counter = 0;
 
                             battleScreen.menuManager.menuName = battleScreen.menuManager.menu.PrevMenuName;
                             battleScreen.menuManager.menu.ID = "Load/Menus/BattleMenu.xml";
-                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 4;
-                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
-                            state = BattleState.BATTLE_MENU;
+
+
+                            battleScreen.BattleLogic.EnemyHasMoved = true;
+
+                            if (battleScreen.BattleLogic.EnemyHasMoved && battleScreen.BattleLogic.PlayerHasMoved)
+                                endFightSequence(battleScreen);
+
                             IsTransitioning = false;
                         }
                         break;
@@ -626,6 +691,16 @@ namespace PokemonFireRedClone
                 image.Tint = new Color(255, 100, 0, 50);
                 image.Alpha = 0.4f;
             }
+        }
+
+        private void endFightSequence(BattleScreen battleScreen)
+        {
+            battleScreen.TextBox.NextPage = 4;
+            battleScreen.TextBox.IsTransitioning = true;
+            battleScreen.BattleLogic.EnemyHasMoved = false;
+            battleScreen.BattleLogic.PlayerHasMoved = false;
+            battleScreen.BattleLogic.PlayerMoveUsed = false;
+            state = BattleState.BATTLE_MENU;
         }
 
     }
