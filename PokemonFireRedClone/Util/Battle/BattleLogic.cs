@@ -11,20 +11,19 @@ namespace PokemonFireRedClone
         public Move PlayerMoveOption;
         public Move EnemyMoveOption;
         public bool PlayerMoveUsed;
-        public bool EnemyMoveUsed;
         public bool PlayerHasMoved;
         public bool EnemyHasMoved;
         public bool SuperEffective;
         public bool NotVeryEffective;
         public bool NoEffect;
         public bool Crit;
+        public bool PokemonFainted;
         public bool StartSequence;
         bool playerFirst;
 
         public BattleLogic()
         {
             PlayerMoveUsed = false;
-            EnemyMoveUsed = false;
             PlayerHasMoved = false;
             EnemyHasMoved = false;
             Crit = false;
@@ -33,6 +32,7 @@ namespace PokemonFireRedClone
             NoEffect = false;
             StartSequence = false;
             playerFirst = false;
+            PokemonFainted = false;
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
@@ -44,7 +44,7 @@ namespace PokemonFireRedClone
                 StartSequence = false;
             }
 
-            if (PlayerMoveUsed)
+            if (!PokemonFainted && PlayerMoveUsed)
             {
                 if (playerFirst)
                 {

@@ -47,11 +47,10 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Charmander"), 100);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Blastoise"), 100);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
-            enemyPokemon.MoveNames.Add("Ember", 25);
-            enemyPokemon.MoveNames.Add("Aeroblast", 5);
-            enemyPokemon.Stats.Speed = 165;
+            enemyPokemon.MoveNames.Add("Water Gun", 25);
+            //enemyPokemon.MoveNames.Add("Aeroblast", 5);
             BattleLogic = new BattleLogic();
         }
 

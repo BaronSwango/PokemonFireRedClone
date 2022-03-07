@@ -6,6 +6,7 @@ namespace PokemonFireRedClone
 {
     public class BattleAnimations
     {
+        // TODO: Add sounds to all animations
 
         public enum BattleState
         {
@@ -28,6 +29,7 @@ namespace PokemonFireRedClone
         Image Background;
         Image EnemyPlatform;
         Image PlayerPlatform;
+        Image EnemyPokemon;
         Image EnemySprite;
         Image PlayerSprite;
         Image PlayerPokemon;
@@ -59,12 +61,14 @@ namespace PokemonFireRedClone
 
         // time counters and animation ints
         float counter = 0;
+        //float counterSpeed;
         int blinkCounter = 0;
 
         private void Transition(GameTime gameTime, BattleScreen battleScreen)
         {
             if (IsTransitioning && !ScreenManager.Instance.IsTransitioning)
             {
+                float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                 switch (state)
                 {
                     case BattleState.INTRO:
@@ -78,14 +82,14 @@ namespace PokemonFireRedClone
                             PlayerPlatform.Position.X -= playerSpeed;
                             PlayerSprite.Position.X -= playerSpeed;
                             EnemyPlatform.Position.X += enemySpeed;
-                            EnemySprite.Position.X += enemySpeed;
+                            EnemyPokemon.Position.X += enemySpeed;
                             return;
                         }
 
                         PlayerPlatform.Position.X = playerPlatformDestinationX;
                         PlayerSprite.Position.X = PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2 - 48;
                         EnemyPlatform.Position.X = enemyPlatformDestinationX;
-                        EnemySprite.Position.X = EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemySprite.SourceRect.Width / 2;
+                        EnemyPokemon.Position.X = EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemyPokemon.SourceRect.Width / 2;
 
                         if (BattleScreen.Wild)
                             state = BattleState.WILD_POKEMON_FADE_IN;
@@ -95,7 +99,7 @@ namespace PokemonFireRedClone
                     case BattleState.WILD_POKEMON_FADE_IN:
                         float enemyHPDestinationX = 52;
                         enemySpeed = (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
-                        if (EnemySprite.Tint != Color.White || EnemyHPBarBackground.Position.X + enemySpeed < enemyHPDestinationX)
+                        if (EnemyPokemon.Tint != Color.White || EnemyHPBarBackground.Position.X + enemySpeed < enemyHPDestinationX)
                         {
                             if (EnemyHPBarBackground.Position.X + enemySpeed < enemyHPDestinationX)
                             {
@@ -105,8 +109,8 @@ namespace PokemonFireRedClone
                                 EnemyPokemonLevel.Position.X += enemySpeed;
                                 EnemyHPBar.Position.X += enemySpeed;
                             }
-                            if (EnemySprite.Tint != Color.White)
-                                EnemySprite.Tint = new Color(EnemySprite.Tint.R + 3, EnemySprite.Tint.G + 3, EnemySprite.Tint.B + 3, 255);
+                            if (EnemyPokemon.Tint != Color.White)
+                                EnemyPokemon.Tint = new Color(EnemyPokemon.Tint.R + 3, EnemyPokemon.Tint.G + 3, EnemyPokemon.Tint.B + 3, 255);
                             return;
                         }
                         EnemyHPBarBackground.Position.X = enemyHPDestinationX;
@@ -221,19 +225,17 @@ namespace PokemonFireRedClone
                     case BattleState.ENEMY_DAMAGE_ANIMATION:
                         if (!battleScreen.TextBox.IsTransitioning)
                         {
-                            float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
                           
 
                             if (blinkCounter < 4)
                             {
                                 if (counter > 60)
                                 {
-                                    if (EnemySprite.Alpha == 1)
-                                        EnemySprite.Alpha = 0;
-                                    else if (EnemySprite.Alpha == 0)
+                                    if (EnemyPokemon.Alpha == 1)
+                                        EnemyPokemon.Alpha = 0;
+                                    else if (EnemyPokemon.Alpha == 0)
                                     {
-                                        EnemySprite.Alpha = 1;
+                                        EnemyPokemon.Alpha = 1;
                                         blinkCounter++;
                                     }
                                     counter = 0;
@@ -296,17 +298,23 @@ namespace PokemonFireRedClone
 
                             battleScreen.BattleLogic.PlayerHasMoved = true;
 
+
                             if (battleScreen.BattleLogic.EnemyHasMoved && battleScreen.BattleLogic.PlayerHasMoved)
                                 endFightSequence(battleScreen);
 
-                            IsTransitioning = false;
+                            if (battleScreen.enemyPokemon.CurrentHP == 0)
+                            {
+                                state = BattleState.ENEMY_POKEMON_FAINT;
+                                IsTransitioning = true;
+                                battleScreen.BattleLogic.PokemonFainted = true;
+                            }
+                            else
+                                IsTransitioning = false;
                         }
                         break;
                     case BattleState.PLAYER_DAMAGE_ANIMATION:
                         if (!battleScreen.TextBox.IsTransitioning)
                         {
-                            float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
                             
 
                             if (blinkCounter < 4)
@@ -396,8 +404,56 @@ namespace PokemonFireRedClone
                             if (battleScreen.BattleLogic.EnemyHasMoved && battleScreen.BattleLogic.PlayerHasMoved)
                                 endFightSequence(battleScreen);
 
-                            IsTransitioning = false;
+                            if (Player.PlayerJsonObject.Pokemon.CurrentHP == 0)
+                            {
+                                state = BattleState.PLAYER_POKEMON_FAINT;
+                                IsTransitioning = true;
+                                battleScreen.BattleLogic.PokemonFainted = true;
+                            } else 
+                                IsTransitioning = false;
+
                         }
+                        break;
+                    case BattleState.ENEMY_POKEMON_FAINT:
+                        //TODO: REPLACE WITH SOUND ENDING TO TRIGGER INSTEAD OF COUNTER
+
+                        if (counter < 1000.0f)
+                        {
+                            counter += counterSpeed;
+                            return;
+                        }
+
+                        if (EnemyPokemon.SourceRect.Height - 12 > 0)
+                        {
+                            EnemyPokemon.SourceRect.Height -= 12;
+                            EnemyPokemon.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemyPokemon.SourceRect.Width / 2, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemyPokemon.SourceRect.Height);
+                            return;
+                        }
+                        EnemyPokemon.SourceRect.Height = 0;
+
+                        // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
+                        // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
+
+                        break;
+                    case BattleState.PLAYER_POKEMON_FAINT:
+                        //TODO: REPLACE WITH SOUND ENDING TO TRIGGER INSTEAD OF COUNTER
+
+                        if (counter < 1000.0f)
+                        {
+                            counter += counterSpeed;
+                            return;
+                        }
+
+                        if (PlayerPokemon.SourceRect.Height - 16 > 0)
+                        {
+                            PlayerPokemon.SourceRect.Height -= 16;
+                            PlayerPokemon.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width * 0.55f - PlayerPokemon.SourceRect.Width / 2, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerPokemon.SourceRect.Height);
+                            return;
+                        }
+                        PlayerPokemon.SourceRect.Height = 0;
+
+                        // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
+                        // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
                         break;
                     default:
                         break;
@@ -486,7 +542,7 @@ namespace PokemonFireRedClone
             state = BattleState.INTRO;
 
             if (BattleScreen.Wild)
-                EnemySprite.Tint = Color.LightGray;
+                EnemyPokemon.Tint = Color.LightGray;
 
             setBattleImagePositions(battleScreen.TextBox);
 
@@ -505,7 +561,7 @@ namespace PokemonFireRedClone
         {
             Background.UnloadContent();
             EnemyPlatform.UnloadContent();
-            EnemySprite.UnloadContent();
+            EnemyPokemon.UnloadContent();
             PlayerPlatform.UnloadContent();
             PlayerSprite.UnloadContent();
             PlayerPokemon.UnloadContent();
@@ -538,7 +594,7 @@ namespace PokemonFireRedClone
             PlayerSprite.Draw(spriteBatch);
             if (Pokeball.Position.Y >= textBox.Border.Position.Y)
                 PlayerPokemon.Draw(spriteBatch);
-            EnemySprite.Draw(spriteBatch);
+            EnemyPokemon.Draw(spriteBatch);
             if (state == BattleState.PLAYER_SEND_POKEMON && PlayerSprite.SpriteSheetEffect.CurrentFrame.X == 4)
                 Pokeball.Draw(spriteBatch);
         }
@@ -551,7 +607,7 @@ namespace PokemonFireRedClone
             EnemyPlatform = new Image();
             PlayerPlatform = new Image();
             PlayerSprite = new Image();
-            EnemySprite = new Image();
+            EnemyPokemon = new Image();
             PlayerPokemon = new Image();
 
             // Battle assets
@@ -560,7 +616,7 @@ namespace PokemonFireRedClone
             PlayerPlatform.Path = "BattleScreen/BattleBackground1PlayerPlatform";
             PlayerSprite.Path = Player.PlayerJsonObject.Gender == Gender.MALE ? "BattleScreen/BattleRedSpriteSheet" : "BattleScreen/BattleBackground1";
             PlayerSprite.Effects = "SpriteSheetEffect";
-            EnemySprite = enemyPokemon.Pokemon.Front;
+            EnemyPokemon = enemyPokemon.Pokemon.Front;
 
             // HP Bar assets
             PlayerPokemonName.Text = playerPokemon.Name;
@@ -582,7 +638,7 @@ namespace PokemonFireRedClone
             // Battle assets
             Background.LoadContent();
             EnemyPlatform.LoadContent();
-            EnemySprite.LoadContent();
+            EnemyPokemon.LoadContent();
             PlayerPlatform.LoadContent();
             PlayerSprite.LoadContent();
             Pokeball.LoadContent();
@@ -618,7 +674,7 @@ namespace PokemonFireRedClone
         {
             // set battle image positions
             EnemyPlatform.Position = new Vector2(-EnemyPlatform.SourceRect.Width, 192);
-            EnemySprite.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemySprite.SourceRect.Width / 2, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemySprite.SourceRect.Height);
+            EnemyPokemon.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemyPokemon.SourceRect.Width / 2, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemyPokemon.SourceRect.Height);
             PlayerPlatform.Position = new Vector2(ScreenManager.Instance.Dimensions.X + PlayerPlatform.SourceRect.Width, textBox.Border.Position.Y - PlayerPlatform.SourceRect.Height);
             PlayerSprite.Position = new Vector2(PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2 - 48, PlayerPlatform.Position.Y + PlayerPlatform.SourceRect.Height - PlayerSprite.SourceRect.Height);
             EnemyHPBarBackground.Position = new Vector2(-EnemyHPBarBackground.SourceRect.Width, EnemyPlatform.Position.Y - EnemyHPBarBackground.SourceRect.Height - 12);
