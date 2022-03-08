@@ -57,7 +57,8 @@ namespace PokemonFireRedClone
                                             image.Text = Player.PlayerJsonObject.Pokemon.Name + "   used";
                                         } else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                                         {
-                                            image.Text = battleScreen.enemyPokemon.Pokemon.Name.ToUpper() + "   used";
+                                            string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + battleScreen.enemyPokemon.Pokemon.Name.ToUpper() + "   used";
                                         }
                                     }
                                     
