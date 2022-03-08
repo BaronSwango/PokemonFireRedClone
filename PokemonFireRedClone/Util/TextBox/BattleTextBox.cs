@@ -21,7 +21,6 @@ namespace PokemonFireRedClone
             if (IsTransitioning)
             {    
 
-
                 if (updateDialogue)
                 {
                     if (Page != 10 && Page != 14)
@@ -37,7 +36,7 @@ namespace PokemonFireRedClone
                             if (image.Page == Page)
                                 currentDialogue.Add(image);
                         }
-
+                        
                         foreach (TextBoxImage image in currentDialogue)
                         {
                             switch (Page)
@@ -67,16 +66,40 @@ namespace PokemonFireRedClone
 
                                         if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
                                         {
-                                            image.Text = battleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + "!";
+                                            image.Text = battleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + " !";
                                         }
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                                         {
-                                            image.Text = battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + "!";
+                                            image.Text = battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !";
                                         }
                                     }
                                     
                                     break;
-                                default:
+                                case 9:
+                                    if (currentDialogue[0] == image)
+                                    {
+                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT)
+                                            image.Text = Player.PlayerJsonObject.Pokemon.Name;
+
+                                        else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT)
+                                        {
+                                            if (BattleScreen.Wild)
+                                                image.Text = "Wild   " + battleScreen.enemyPokemon.PokemonName.ToUpper();
+                                            else
+                                                image.Text = "Foe   " + battleScreen.enemyPokemon.PokemonName.ToUpper();
+                                            if (Player.PlayerJsonObject.Pokemon.Level < 100)
+                                                NextPage = 16;
+                                        }
+                                    }
+                                    break;
+                                case 16:
+
+                                    if (currentDialogue[0] == image)
+                                        image.Text = Player.PlayerJsonObject.Pokemon.Name + image.Text;
+
+                                    else if (currentDialogue[1] == image)
+                                        image.Text = battleScreen.BattleLogic.GainedEXP + image.Text;
+
                                     break;
                             }
 
@@ -189,8 +212,7 @@ namespace PokemonFireRedClone
 
             currentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
 
-            Arrow.Position = new Vector2(currentDialogue[0].Position.X + currentDialogue[0].SourceRect.Width + 8, currentDialogue[0].Position.Y + 12);
-            arrowOriginalY = Arrow.Position.Y;
+            setArrowPosition();
 
             transitionRect = new Image
             {
@@ -216,6 +238,12 @@ namespace PokemonFireRedClone
 
             if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning)
             {
+                // FOR RIGHT NOW, CHANGE TO WHITING OUT OR SWITCH POKEMON
+                if (Page == 16 || (Page == 9 && (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || Player.PlayerJsonObject.Pokemon.Level == 100)))
+                {
+                    ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                    return;
+                }
                 foreach (TextBoxImage image in currentDialogue)
                 {
                     if (image.Skippable || image.Arrow)
@@ -223,6 +251,7 @@ namespace PokemonFireRedClone
                 }
             }
 
+            setArrowPosition();
             animateRedArrow(gameTime);
         }
 
@@ -242,6 +271,20 @@ namespace PokemonFireRedClone
                 if (currentDialogue.Count == 2)
                     transitionRect2.Draw(spriteBatch);
             }
+        }
+
+        private void setArrowPosition()
+        {
+            foreach (TextBoxImage image in currentDialogue)
+            {
+                if (image.Arrow && Arrow.Position.X != image.Position.X + image.SourceRect.Width + 8)
+                {
+                    Arrow.Position = new Vector2(image.Position.X + image.SourceRect.Width + 8, image.Position.Y + 12);
+                    arrowOriginalY = Arrow.Position.Y;
+                    return;
+                }
+            }
+
         }
     }
 }

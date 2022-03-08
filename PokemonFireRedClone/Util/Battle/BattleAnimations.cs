@@ -249,6 +249,11 @@ namespace PokemonFireRedClone
 
                             float goalScale = (float)battleScreen.enemyPokemon.CurrentHP / battleScreen.enemyPokemon.Stats.HP;
                             float speed = 0.01f;
+                            if (battleScreen.enemyPokemon.Stats.HP < 50)
+                                speed = 0.02f;
+                            else if (battleScreen.enemyPokemon.Stats.HP >= 100)
+                                speed = 0.005f;
+
                             if (EnemyHPBar.Scale.X - speed > goalScale)
                             {
                                 EnemyHPBar.Scale.X -= speed;
@@ -339,6 +344,10 @@ namespace PokemonFireRedClone
                             float goalScale = (float) Player.PlayerJsonObject.Pokemon.CurrentHP / Player.PlayerJsonObject.Pokemon.Stats.HP;
                             int goalHP = Player.PlayerJsonObject.Pokemon.CurrentHP;
                             float speed = 0.01f;
+                            if (Player.PlayerJsonObject.Pokemon.Stats.HP < 50)
+                                speed = 0.04f;
+                            else if (Player.PlayerJsonObject.Pokemon.Stats.HP >= 100)
+                                speed = 0.005f;
 
                             if (PlayerHPBar.Scale.X - speed > goalScale)
                             {
@@ -431,6 +440,11 @@ namespace PokemonFireRedClone
                         }
                         EnemyPokemon.SourceRect.Height = 0;
 
+                        IsTransitioning = false;
+
+                        battleScreen.TextBox.NextPage = 9;
+                        battleScreen.TextBox.IsTransitioning = true;
+
                         // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
                         // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
 
@@ -451,7 +465,10 @@ namespace PokemonFireRedClone
                             return;
                         }
                         PlayerPokemon.SourceRect.Height = 0;
+                        IsTransitioning = false;
 
+                        battleScreen.TextBox.NextPage = 9;
+                        battleScreen.TextBox.IsTransitioning = true;
                         // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
                         // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
                         break;

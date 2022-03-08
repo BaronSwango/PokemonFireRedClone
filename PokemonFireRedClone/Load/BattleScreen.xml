@@ -290,5 +290,24 @@
             <A>255</A>
             <Text>A   critical   hit !</Text>
         </Dialogue>
+        <Dialogue>
+            <Page>16</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>   gained</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>16</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>   EXP.   Points !</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
     </TextBox>
 </BattleScreen>

@@ -91,6 +91,15 @@
         <Category>Special</Category>
     </Moves>
     <Moves>
+        <Name>Flamethrower</Name>
+        <TypeName>Fire</TypeName>
+        <Power>95</Power>
+        <Accuracy>100</Accuracy>
+        <PP>15</PP>
+        <Description>The foe is scorched with intense flames. The foe may suffer a burn.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
         <Name>Growl</Name>
         <TypeName>Normal</TypeName>
         <Power>0</Power>

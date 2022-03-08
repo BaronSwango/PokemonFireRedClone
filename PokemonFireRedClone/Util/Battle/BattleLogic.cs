@@ -10,6 +10,7 @@ namespace PokemonFireRedClone
 
         public Move PlayerMoveOption;
         public Move EnemyMoveOption;
+        public int GainedEXP;
         public bool PlayerMoveUsed;
         public bool PlayerHasMoved;
         public bool EnemyHasMoved;
@@ -19,6 +20,7 @@ namespace PokemonFireRedClone
         public bool Crit;
         public bool PokemonFainted;
         public bool StartSequence;
+        public bool EXPGainApplied;
         bool playerFirst;
 
         public BattleLogic()
@@ -33,6 +35,7 @@ namespace PokemonFireRedClone
             StartSequence = false;
             playerFirst = false;
             PokemonFainted = false;
+            EXPGainApplied = false;
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
@@ -91,6 +94,19 @@ namespace PokemonFireRedClone
                             battleScreen.BattleAnimations.IsTransitioning = true;
                         }
                     }
+                }
+            } else if (PokemonFainted && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT && Player.PlayerJsonObject.Pokemon.Level < 100)
+            {
+                if (!EXPGainApplied)
+                {
+                    
+                    GainedEXP = calcualteEXP(battleScreen.enemyPokemon, BattleScreen.Wild, false, 1);
+                    Player.PlayerJsonObject.Pokemon.CurrentEXP += GainedEXP;
+                    if (Player.PlayerJsonObject.Pokemon.CurrentEXP >= Player.PlayerJsonObject.Pokemon.NextLevelEXP)
+                        Player.PlayerJsonObject.Pokemon.Level++;
+
+                    Player.PlayerJsonObject.Pokemon.Stats = PokemonManager.generateStatList(Player.PlayerJsonObject.Pokemon);
+                    EXPGainApplied = true;
                 }
             }
 
@@ -211,6 +227,14 @@ namespace PokemonFireRedClone
             return damage;
         }
 
+        // add exp share calculation
+        private int calcualteEXP(CustomPokemon faintedPokemon, bool wild, bool luckyEgg, int numOfPokemonNotFained)
+        {
+            float trainerMult = !wild ? 1.5f : 1f;
+            float eggMult = luckyEgg ? 1.5f : 1f;
+
+            return (int)(trainerMult * faintedPokemon.Pokemon.EXPYield * faintedPokemon.Level * eggMult / (numOfPokemonNotFained * 7));
+        }
 
     }
 }
