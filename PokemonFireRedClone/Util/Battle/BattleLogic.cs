@@ -21,6 +21,7 @@ namespace PokemonFireRedClone
         public bool PokemonFainted;
         public bool StartSequence;
         public bool EXPGainApplied;
+        public bool LevelUp;
         bool playerFirst;
 
         public BattleLogic()
@@ -103,7 +104,10 @@ namespace PokemonFireRedClone
                     GainedEXP = calcualteEXP(battleScreen.enemyPokemon, BattleScreen.Wild, false, 1);
                     Player.PlayerJsonObject.Pokemon.CurrentEXP += GainedEXP;
                     if (Player.PlayerJsonObject.Pokemon.CurrentEXP >= Player.PlayerJsonObject.Pokemon.NextLevelEXP)
+                    {
                         Player.PlayerJsonObject.Pokemon.Level++;
+                        LevelUp = true;
+                    }
 
                     Player.PlayerJsonObject.Pokemon.Stats = PokemonManager.generateStatList(Player.PlayerJsonObject.Pokemon);
                     EXPGainApplied = true;

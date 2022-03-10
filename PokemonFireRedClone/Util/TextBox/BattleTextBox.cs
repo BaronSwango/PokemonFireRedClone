@@ -242,8 +242,16 @@ namespace PokemonFireRedClone
                 // FOR RIGHT NOW, CHANGE TO WHITING OUT OR SWITCH POKEMON
                 if (Page == 16 || (Page == 9 && (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || Player.PlayerJsonObject.Pokemon.Level == 100)))
                 {
-                    ScreenManager.Instance.ChangeScreens("GameplayScreen");
-                    return;
+                    if (Page == 16)
+                    {
+                        battleScreen.BattleAnimations.state = BattleAnimations.BattleState.EXP_ANIMATION;
+                        battleScreen.BattleAnimations.IsTransitioning = true;
+                    }
+                    else
+                    {
+                        ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                        return;
+                    }
                 }
                 foreach (TextBoxImage image in currentDialogue)
                 {

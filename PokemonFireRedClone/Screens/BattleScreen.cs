@@ -47,7 +47,7 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Venusaur"), 1);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Bulbasaur"), 1);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Ember", 25);
             //enemyPokemon.MoveNames.Add("Aeroblast", 5);

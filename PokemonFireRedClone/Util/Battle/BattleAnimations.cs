@@ -22,7 +22,8 @@ namespace PokemonFireRedClone
             ENEMY_SWITCH,
             THROW_POKEBALL,
             PLAYER_POKEMON_FAINT,
-            ENEMY_POKEMON_FAINT
+            ENEMY_POKEMON_FAINT,
+            EXP_ANIMATION
         }
 
         // General battle screen data
@@ -444,6 +445,7 @@ namespace PokemonFireRedClone
 
                         battleScreen.TextBox.NextPage = 9;
                         battleScreen.TextBox.IsTransitioning = true;
+                        counter = 0;
 
                         // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
                         // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
@@ -469,10 +471,33 @@ namespace PokemonFireRedClone
 
                         battleScreen.TextBox.NextPage = 9;
                         battleScreen.TextBox.IsTransitioning = true;
+                        counter = 0;
                         // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
                         // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
                         break;
                     default:
+                        break;
+                    case BattleState.EXP_ANIMATION:
+                        float goalEXPScale = (float)Player.PlayerJsonObject.Pokemon.EXPTowardsLevelUp / Player.PlayerJsonObject.Pokemon.EXPNeededToLevelUp;
+
+                        if (EXPBar.Scale.X < goalEXPScale)
+                        {
+                            EXPBar.Scale.X += 0.01f;
+                            EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
+                            return;
+                        }
+                        EXPBar.Scale.X = goalEXPScale;
+                        EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
+
+                        if (counter < 1000.0f)
+                        {
+                            counter += counterSpeed;
+                            return;
+                        }
+                        counter = 0;
+
+                        ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                        IsTransitioning = false;
                         break;
                 }
             }
