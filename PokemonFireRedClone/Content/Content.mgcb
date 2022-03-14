@@ -109,6 +109,18 @@
 /processorParam:TextureFormat=Color
 /build:BattleScreen/PlayerHPBar.png
 
+#begin BattleScreen/PlayerHPBarLevelUp.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/PlayerHPBarLevelUp.png
+
 #begin BattleScreen/Pokeball.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -586,6 +598,30 @@
 /processorParam:TextureFormat=Color
 /build:Pokemon/MetapodFront.png
 
+#begin Pokemon/PidgeotBack.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/PidgeotBack.png
+
+#begin Pokemon/PidgeotFront.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/PidgeotFront.png
+
 #begin Pokemon/PidgeottoBack.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -633,6 +669,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Pokemon/PidgeyFront.png
+
+#begin Pokemon/RattataBack.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/RattataBack.png
 
 #begin Pokemon/RattataFront.png
 /importer:TextureImporter

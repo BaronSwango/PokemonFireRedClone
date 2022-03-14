@@ -88,7 +88,7 @@ namespace PokemonFireRedClone
                                                 image.Text = "Wild   " + battleScreen.enemyPokemon.PokemonName.ToUpper();
                                             else
                                                 image.Text = "Foe   " + battleScreen.enemyPokemon.PokemonName.ToUpper();
-                                            if (Player.PlayerJsonObject.Pokemon.Level < 100)
+                                            if (Player.PlayerJsonObject.Pokemon.Level < 100 || battleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
                                         }
                                     }
@@ -240,7 +240,7 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning)
             {
                 // FOR RIGHT NOW, CHANGE TO WHITING OUT OR SWITCH POKEMON
-                if (Page == 16 || (Page == 9 && (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || Player.PlayerJsonObject.Pokemon.Level == 100)))
+                if (Page == 16 || (Page == 9 && (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp))))
                 {
                     if (Page == 16)
                     {

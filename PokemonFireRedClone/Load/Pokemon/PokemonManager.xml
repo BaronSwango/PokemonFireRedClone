@@ -475,10 +475,10 @@
         <Type>Normal</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PidgeotBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PidgeotFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -502,7 +502,7 @@
         <Index>19</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/RattataBack</Path>
         </Back>
         <Front>
             <Path>Pokemon/RattataFront</Path>

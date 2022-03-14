@@ -101,15 +101,23 @@ namespace PokemonFireRedClone
                 if (!EXPGainApplied)
                 {
                     
-                    GainedEXP = calcualteEXP(battleScreen.enemyPokemon, BattleScreen.Wild, false, 1);
+                    GainedEXP = calcualteEXP(battleScreen.enemyPokemon, BattleScreen.Wild, false, 1) * 100;
                     Player.PlayerJsonObject.Pokemon.CurrentEXP += GainedEXP;
-                    if (Player.PlayerJsonObject.Pokemon.CurrentEXP >= Player.PlayerJsonObject.Pokemon.NextLevelEXP)
+                    int oldMaxHP = Player.PlayerJsonObject.Pokemon.Stats.HP;
+                    while (Player.PlayerJsonObject.Pokemon.CurrentEXP >= Player.PlayerJsonObject.Pokemon.NextLevelEXP)
                     {
                         Player.PlayerJsonObject.Pokemon.Level++;
                         LevelUp = true;
+                        if (Player.PlayerJsonObject.Pokemon.Level == 100)
+                        {
+                            GainedEXP -= Player.PlayerJsonObject.Pokemon.CurrentEXP - Player.PlayerJsonObject.Pokemon.CurrentLevelEXP;
+                            Player.PlayerJsonObject.Pokemon.CurrentEXP = Player.PlayerJsonObject.Pokemon.CurrentLevelEXP;
+                            break;
+                        }
                     }
 
                     Player.PlayerJsonObject.Pokemon.Stats = PokemonManager.generateStatList(Player.PlayerJsonObject.Pokemon);
+                    Player.PlayerJsonObject.Pokemon.CurrentHP += Player.PlayerJsonObject.Pokemon.Stats.HP - oldMaxHP;
                     EXPGainApplied = true;
                 }
             }
@@ -159,7 +167,6 @@ namespace PokemonFireRedClone
             }
 
 
-            Console.WriteLine("User used " + move.Name + "!");
             defender.CurrentHP = defender.CurrentHP - damage > 0 ? defender.CurrentHP - damage : 0;
             Console.WriteLine("Defender HP: " + defender.CurrentHP);
         }
@@ -180,7 +187,7 @@ namespace PokemonFireRedClone
             {
                 if (moveType == type)
                 {
-                    STAB *= 1.5f;
+                    STAB = 1.5f;
                     break;
                 }
             }
