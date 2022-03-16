@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,6 +10,8 @@ namespace PokemonFireRedClone
     {
 
         public int NextPage;
+        [XmlIgnore]
+        public BattleLevelUp BattleLevelUp;
 
         /*
          * 
@@ -15,6 +19,8 @@ namespace PokemonFireRedClone
          * Need to adjust to different trainers, wild pokemon, etc
          * 
          */
+
+      
 
         private void Transition(GameTime gameTime, BattleScreen battleScreen)
         {
@@ -27,7 +33,6 @@ namespace PokemonFireRedClone
                     {
 
                         Page = NextPage;
-
                         foreach (TextBoxImage image in currentDialogue)
                             image.UnloadContent();
                         currentDialogue.Clear();
@@ -101,6 +106,13 @@ namespace PokemonFireRedClone
                                     else if (currentDialogue[1] == image)
                                         image.Text = battleScreen.BattleLogic.GainedEXP + image.Text;
 
+                                    break;
+                                case 17:
+                                    if (currentDialogue[0] == image)
+                                        image.Text = Player.PlayerJsonObject.Pokemon.Name + "   grew   to";
+
+                                    else if (currentDialogue[1] == image)
+                                        image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]+ " !";
                                     break;
                             }
 
@@ -182,6 +194,7 @@ namespace PokemonFireRedClone
         public void LoadContent(CustomPokemon enemyPokemon)
         {
             IsTransitioning = true;
+            BattleLevelUp = new BattleLevelUp();
 
             Border.LoadContent();
             Arrow.LoadContent();
@@ -239,25 +252,36 @@ namespace PokemonFireRedClone
 
             if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning)
             {
-                // FOR RIGHT NOW, CHANGE TO WHITING OUT OR SWITCH POKEMON
-                if (Page == 16 || (Page == 9 && (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp))))
+                switch (Page)
                 {
-                    if (Page == 16)
-                    {
+                    case 1:
+                        IsTransitioning = true;
+                        break;
+                    case 9:
+                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
+                            ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                            return;
+                        }
+                        IsTransitioning = true;
+                        break;
+                    case 16:
                         battleScreen.BattleAnimations.state = BattleAnimations.BattleState.EXP_ANIMATION;
                         battleScreen.BattleAnimations.IsTransitioning = true;
-                    }
-                    else
-                    {
-                        ScreenManager.Instance.ChangeScreens("GameplayScreen");
-                        return;
-                    }
+                        break;
+                    case 17:
+                        BattleLevelUp.LoadContent(Player.PlayerJsonObject.Pokemon, int.Parse(battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]));
+                        break;
+                    default:
+                        break;
                 }
+
+                /*
                 foreach (TextBoxImage image in currentDialogue)
                 {
                     if (image.Skippable || image.Arrow)
                         IsTransitioning = true;
                 }
+                */
             }
 
             setArrowPosition();
@@ -274,12 +298,17 @@ namespace PokemonFireRedClone
                 if (image.Arrow && !IsTransitioning)
                     Arrow.Draw(spriteBatch);
             }
+
+
             if (IsTransitioning && Page != 4)
             {
                 transitionRect.Draw(spriteBatch);
                 if (currentDialogue.Count == 2)
                     transitionRect2.Draw(spriteBatch);
             }
+
+
+            BattleLevelUp.Draw(spriteBatch);
         }
 
         private void setArrowPosition()

@@ -1151,4 +1151,552 @@
         <Ability>Inner Focus</Ability>
         <Description>It clamps down on its prey with needle-sharp fangs and drains over 10 ounces of blood in one gulp.</Description>
     </Pokemon>
+    <Pokemon>
+        <Name>Oddish</Name>
+        <Index>43</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>WEED POKéMON</Classification>
+        <Height>1'08"</Height>
+        <Weight>11.9 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>78</EXPYield>
+        <BaseHP>45</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>75</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Its scientific name is “Oddium Wanderus.” At night, it is said to walk nearly 1,000 feet on its two roots.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Gloom</Name>
+        <Index>44</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>WEED POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>19.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>132</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>40</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Its pistils exude an incredibly foul odor. The horrid stench can cause fainting at a distance of 1.25 miles.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Vileplume</Name>
+        <Index>45</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLOWER POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>41.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>184</EXPYield>
+        <BaseHP>75</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>85</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>90</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Its petals are the largest in the world. It fiendishly scatters allergy-causing pollen from its petals.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Paras</Name>
+        <Index>46</Index>
+        <Type>Bug</Type>
+        <Type>Grass</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MUSHROOM POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>11.9 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>70</EXPYield>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>25</BaseSpeed>
+        <Ability>Effect Spore</Ability>
+        <Description>Growing out of the bug’s back are mushrooms called tochukaso. The mushrooms grow with the bug host.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Parasect</Name>
+        <Index>47</Index>
+        <Type>Bug</Type>
+        <Type>Grass</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MUSHROOM POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>65.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>128</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>95</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Effect Spore</Ability>
+        <Description>It scatters toxic spores from the mushroom cap. In China, the spores are used as herbal medicine.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Venonat</Name>
+        <Index>48</Index>
+        <Type>Bug</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>INSECT POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>75</EXPYield>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>55</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Compound Eyes</Ability>
+        <Description>Its eyes act as radar, enabling it to be active in darkness. The eyes can also shoot powerful beams.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Venomoth</Name>
+        <Index>49</Index>
+        <Type>Bug</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON MOTH POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>27.6 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>138</EXPYield>
+        <BaseHP>70</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>90</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Shield Dust</Ability>
+        <Description>The wings are covered with dustlike scales. Every time it flaps its wings, it looses highly toxic dust.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Diglett</Name>
+        <Index>50</Index>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOLE POKéMON</Classification>
+        <Height>0'08"</Height>
+        <Weight>1.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>81</EXPYield>
+        <BaseHP>10</BaseHP>
+        <BaseAttack>55</BaseAttack>
+        <BaseDefense>25</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>95</BaseSpeed>
+        <Ability>Sand Veil:Arena Trap</Ability>
+        <Description>It burrows through the ground at a shallow depth. It leaves raised earth in its wake, making it easy to spot.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Dugtrio</Name>
+        <Index>51</Index>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MOLE POKéMON</Classification>
+        <Height>2'04"</Height>
+        <Weight>73.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>153</EXPYield>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>120</BaseSpeed>
+        <Ability>Sand Veil:Arena Trap</Ability>
+        <Description>In battle, it digs through the ground and strikes the unsuspecting foe from an unexpected direction.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Meowth</Name>
+        <Index>52</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SCRATCH CAT POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>9.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>69</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Pickup</Ability>
+        <Description>All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Persian</Name>
+        <Index>53</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>CLASSY CAT POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>70.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>148</EXPYield>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>115</BaseSpeed>
+        <Ability>Limber</Ability>
+        <Description>Has a vicious temperament. Beware if it raises its tail straight up. It is a signal that it is about to pounce and bite.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Psyduck</Name>
+        <Index>54</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DUCK POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>43.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>80</EXPYield>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>52</BaseAttack>
+        <BaseDefense>48</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Damp:Cloud Nine</Ability>
+        <Description>It is constantly wracked by a headache. When the headache turns intense, it begins using mysterious powers.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Golduck</Name>
+        <Index>55</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DUCK POKéMON</Classification>
+        <Height>5'07"</Height>
+        <Weight>168.9 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>174</EXPYield>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>82</BaseAttack>
+        <BaseDefense>78</BaseDefense>
+        <BaseSpecialAttack>95</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>85</BaseSpeed>
+        <Ability>Damp:Cloud Nine</Ability>
+        <Description>The forelegs are webbed, helping to make it an adept swimmer. It can be seen swimming elegantly in lakes, etc.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Mankey</Name>
+        <Index>56</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PIG MONKEY POKéMON</Classification>
+        <Height>1'08"</Height>
+        <Weight>61.7 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>74</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Vital Spirit</Ability>
+        <Description>Light and agile on its feet, and ferocious in temperament. When angered, it flies into an uncontrollable frenzy.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Primeape</Name>
+        <Index>57</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PIG MONKEY POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>70.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>149</EXPYield>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>105</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>95</BaseSpeed>
+        <Ability>Vital Spirit</Ability>
+        <Description>It is always outrageously furious. If it gives chase, it will tenaciously track the target no matter how far.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Growlithe</Name>
+        <Index>58</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PUPPY POKéMON</Classification>
+        <Height>2'04"</Height>
+        <Weight>41.9 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>91</EXPYield>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Intimidate:Flash Fire</Ability>
+        <Description>Very friendly and faithful to people. It will try to repel enemies by barking and biting.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Arcanine</Name>
+        <Index>59</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>LEGENDARY POKéMON</Classification>
+        <Height>6'03"</Height>
+        <Weight>341.7 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>213</EXPYield>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>110</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>95</BaseSpeed>
+        <Ability>Intimidate:Flash Fire</Ability>
+        <Description>A POKéMON that is described in Chinese legends. It is said to race at an unbelievable speed.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Poliwag</Name>
+        <Index>60</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TADPOLE POKéMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>27.3 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>77</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>40</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Water Absorb:Damp</Ability>
+        <Description>Its slick black skin is thin and damp. A part of its internal organs can be seen through the skin as a spiral pattern.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Poliwhirl</Name>
+        <Index>61</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TADPOLE POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>44.1 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>131</EXPYield>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Water Absorb:Damp</Ability>
+        <Description>Its two legs are well developed. Even though it can live on the ground, it prefers living in water.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Poliwrath</Name>
+        <Index>62</Index>
+        <Type>Water</Type>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TADPOLE POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>119.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>185</EXPYield>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>90</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Water Absorb:Damp</Ability>
+        <Description>An adept swimmer, it knows the front crawl, butterfly, and more. It is faster than the best human swimmers.</Description>
+    </Pokemon>
 </PokemonManager>

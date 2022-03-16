@@ -103,6 +103,7 @@ namespace PokemonFireRedClone
             Tint = Color.White;
             Angle = 0;
             FontColor = Color.Black;
+            A = 255;
         }
 
         public void ReloadText()

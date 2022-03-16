@@ -87,6 +87,7 @@
         <ArrowOffset>0</ArrowOffset>
         <DialogueOffsetX>40</DialogueOffsetX>
         <DialogueOffsetY>36</DialogueOffsetY>
+
         <Dialogue>
             <Page>1</Page>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
@@ -310,6 +311,25 @@
             <B>255</B>
             <A>255</A>
             <Text>   EXP.   Points !</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>17</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>   grew   to</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>17</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>Level Up</Text>
             <Arrow>true</Arrow>
         </Dialogue>
     </TextBox>

@@ -47,7 +47,7 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Pidgeot"), 50);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Pidgeot"), 1);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Water Gun", 25);
             //enemyPokemon.MoveNames.Add("Aeroblast", 5);
@@ -116,8 +116,13 @@ namespace PokemonFireRedClone
             if (menuManager.IsLoaded)
                 menuManager.Update(gameTime);
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
-            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+
+            if (InputManager.Instance.KeyPressed(Keys.E) && TextBox.BattleLevelUp.IsActive)
+                TextBox.BattleLevelUp.NextPage(this);
+
+            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                 TextBox.Update(gameTime, this);
+
 
             base.Update(gameTime);
         }

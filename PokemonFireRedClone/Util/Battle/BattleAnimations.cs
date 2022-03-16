@@ -519,6 +519,7 @@ namespace PokemonFireRedClone
                         if (BattleScreen.Wild)
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
+                        battleScreen.BattleLogic.LevelUp = false;
                         IsTransitioning = false;
                         break;
                     case BattleState.LEVEL_UP_ANIMATION:
@@ -559,9 +560,12 @@ namespace PokemonFireRedClone
                         PlayerHPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerHPBar.Scale.X) / 2 * PlayerHPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
 
                         EXPBar.Scale.X = 0;
-                        state = BattleState.EXP_ANIMATION;
+                        //state = BattleState.EXP_ANIMATION;
                         levelUpTransitioned = false;
 
+                        IsTransitioning = false;
+                        battleScreen.TextBox.NextPage = 17;
+                        battleScreen.TextBox.IsTransitioning = true;
                         // ADD TEXTBOX SAYING "name grew to level [level]" with box showing stat increases and new stats
                         break;
                 }
