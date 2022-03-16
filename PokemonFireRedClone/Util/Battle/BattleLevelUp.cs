@@ -60,7 +60,6 @@ namespace PokemonFireRedClone
                 foreach (Image image in images)
                     image.UnloadContent();
             }
-            Page = 0;
             IsActive = false;
             battleScreen.BattleAnimations.state = BattleAnimations.BattleState.EXP_ANIMATION;
             battleScreen.BattleAnimations.IsTransitioning = true;

@@ -20,7 +20,6 @@ namespace PokemonFireRedClone
          * 
          */
 
-      
 
         private void Transition(GameTime gameTime, BattleScreen battleScreen)
         {
