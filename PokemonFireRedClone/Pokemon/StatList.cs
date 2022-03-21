@@ -23,5 +23,24 @@ namespace PokemonFireRedClone
         public int SpeedIV;
         public int SpeedEV;
 
+        public int GetStat(string stat)
+        {
+            switch(stat)
+            {
+                case "A":
+                    return Attack;
+                case "D":
+                    return Defense;
+                case "SA":
+                    return SpecialAttack;
+                case "SD":
+                    return SpecialDefense;
+                case "S":
+                    return Speed;
+                default:
+                    return 0;
+            }
+        }
+
     }
 }

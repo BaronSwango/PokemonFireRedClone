@@ -77,8 +77,21 @@ namespace PokemonFireRedClone
                                         {
                                             image.Text = battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !";
                                         }
+
+                                        if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
+                                        {
+                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
+                                                : BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION;
+                                            NextPage = 18;
+                                         }
+                                         else if (battleScreen.BattleLogic.EnemyMoveOption != null && battleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                                         {
+                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION
+                                                : BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
+                                            NextPage = 18;
+                                         }
                                     }
-                                    
+
                                     break;
                                 case 9:
                                     if (currentDialogue[0] == image)
@@ -88,10 +101,9 @@ namespace PokemonFireRedClone
 
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT)
                                         {
-                                            if (BattleScreen.Wild)
-                                                image.Text = "Wild   " + battleScreen.enemyPokemon.PokemonName.ToUpper();
-                                            else
-                                                image.Text = "Foe   " + battleScreen.enemyPokemon.PokemonName.ToUpper();
+                                            string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + battleScreen.enemyPokemon.PokemonName.ToUpper();
+
                                             if (Player.PlayerJsonObject.Pokemon.Level < 100 || battleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
                                         }
@@ -112,6 +124,26 @@ namespace PokemonFireRedClone
 
                                     else if (currentDialogue[1] == image)
                                         image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]+ " !";
+                                    break;
+                                case 18:
+                                    if (currentDialogue[0] == image)
+                                    {
+                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION)
+                                            image.Text = Player.PlayerJsonObject.Pokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
+                                        else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION)
+                                        {
+                                            string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + battleScreen.enemyPokemon.PokemonName.ToUpper() + "`s   " + battleScreen.BattleLogic.Stat;
+                                        }
+                                    }
+
+                                    else if (currentDialogue[1] == image)
+                                    {
+                                        string sharply = battleScreen.BattleLogic.SharplyStat ? "sharply   " : "";
+                                        string change = battleScreen.BattleLogic.StatStageIncrease ? "rose" : "fell";
+                                        image.Text = sharply + change + " !";
+                                    }
+                                        
                                     break;
                             }
 

@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
 
         public BattleTextBox TextBox;
         public BattleAnimations BattleAnimations;
+        [XmlIgnore]
         public BattleLogic BattleLogic;
         [XmlIgnore]
         public MenuManager menuManager;
@@ -47,11 +48,12 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Pidgeot"), 1);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Pidgeot"), 20);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
-            enemyPokemon.MoveNames.Add("Water Gun", 25);
+            //enemyPokemon.MoveNames.Add("Water Gun", 25);
+            enemyPokemon.MoveNames.Add("Acid Armor", 40);
             //enemyPokemon.MoveNames.Add("Aeroblast", 5);
-            BattleLogic = new BattleLogic();
+            BattleLogic = new BattleLogic(this);
         }
 
 
@@ -105,7 +107,7 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
-            if (TextBox.Page == 4 && BattleAnimations.state != BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION && !menuManager.IsLoaded)
+            if (TextBox.Page == 4 && !menuManager.IsLoaded)
             {
                 menuManager.LoadContent("Load/Menus/BattleMenu.xml");
                 BattleAnimations.state = BattleAnimations.BattleState.BATTLE_MENU;
@@ -120,7 +122,7 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.E) && TextBox.BattleLevelUp.IsActive)
                 TextBox.BattleLevelUp.NextPage(this);
 
-            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION)
                 TextBox.Update(gameTime, this);
 
 

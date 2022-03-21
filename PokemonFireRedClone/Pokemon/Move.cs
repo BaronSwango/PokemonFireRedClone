@@ -13,6 +13,10 @@ namespace PokemonFireRedClone
         public int Accuracy;
         public int PP;
         public string Category;
+        public string Stat;
+        public bool Self;
+        public int StageChange;
+        public float StatusChangeChance;
 
         [XmlIgnore]
         public Type Type

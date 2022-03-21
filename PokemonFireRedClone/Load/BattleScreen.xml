@@ -10,6 +10,12 @@
         <EnemyHPBarBackground>
             <Path>BattleScreen/EnemyHPBar</Path>
         </EnemyHPBarBackground>
+        <StatChangeAnimationImage1>
+            <Path>BattleScreen/StatAnimation</Path>
+        </StatChangeAnimationImage1>
+        <StatChangeAnimationImage2>
+            <Path>BattleScreen/StatAnimation</Path>
+        </StatChangeAnimationImage2>
 
         <PlayerPokemonName>
             <FontName>Fonts/PokemonFireRedSmall</FontName>
@@ -77,7 +83,7 @@
     </BattleAnimations>
 
     <TextBox>
-        <TotalPages>14</TotalPages>
+        <TotalPages>18</TotalPages>
         <Border>
             <Path>TextBoxes/BattleTextBox</Path>
         </Border>
@@ -331,6 +337,24 @@
             <A>255</A>
             <Text>Level Up</Text>
             <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>18</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text></Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>18</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text></Text>
         </Dialogue>
     </TextBox>
 </BattleScreen>
