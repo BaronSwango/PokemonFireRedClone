@@ -64,6 +64,8 @@ namespace PokemonFireRedClone
                     return 2f / 4f;
                 case -1:
                     return 2f / 3f;
+                case 0:
+                    return 1;
                 case 1:
                     return 3f / 2f;
                 case 2:
@@ -79,6 +81,7 @@ namespace PokemonFireRedClone
                 default:
                     return 1;
             }
+
         }
 
         public string AdjustTempStat(string stat, int adjustment)

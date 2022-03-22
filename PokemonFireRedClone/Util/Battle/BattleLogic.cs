@@ -186,9 +186,7 @@ namespace PokemonFireRedClone
                     Console.WriteLine("Attack: " + defender.TempAttack);
                 }
 
-                if (Math.Abs(move.StageChange) > 1)
-                    SharplyStat = true;
-
+                SharplyStat = Math.Abs(move.StageChange) > 1 ? true : false;
                 StatStageIncrease = move.StageChange > 0 ? true : false;
 
             }

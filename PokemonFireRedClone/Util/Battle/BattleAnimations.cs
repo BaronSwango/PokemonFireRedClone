@@ -468,14 +468,15 @@ namespace PokemonFireRedClone
                             if (StatChangeAnimationImage1.Position.X != PlayerPokemon.Position.X)
                             {
                                 StatChangeAnimationImage1.Position = new Vector2(PlayerPokemon.Position.X, PlayerPokemon.Position.Y);
-                                StatChangeAnimationImage2.Position = new Vector2(PlayerPokemon.Position.X, PlayerPokemon.Position.Y);
+                                StatChangeAnimationImage2.Position = battleScreen.BattleLogic.StatStageIncrease ? new Vector2(PlayerPokemon.Position.X, PlayerPokemon.Position.Y + StatChangeAnimationImage2.Texture.Height)
+                                    : new Vector2(PlayerPokemon.Position.X, PlayerPokemon.Position.Y);
                                 StatChangeAnimationImage1.Alpha = 0.00001f;
                                 StatChangeAnimationImage1.Alpha = 0.00001f;
                                 //StatChangeAnimationImage2.SourceRect.Height = 0;
-                                reveal = 0;
+                                reveal = battleScreen.BattleLogic.StatStageIncrease ? StatChangeAnimationImage1.Texture.Height : 0;
                                 spinCounter = 0;
-                                StatChangeAnimationImage1.Tint = Color.LightBlue;
-                                StatChangeAnimationImage2.Tint = Color.LightBlue;
+                                StatChangeAnimationImage1.Tint = battleScreen.BattleLogic.StatStageIncrease ? Color.Red : Color.LightBlue;
+                                StatChangeAnimationImage2.Tint = battleScreen.BattleLogic.StatStageIncrease ? Color.Red : Color.LightBlue;
                             }
                             float speed = (float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.3f;
                             float alphaSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.0005f;
@@ -500,24 +501,49 @@ namespace PokemonFireRedClone
 
                                 if (increase)
                                 {
-                                    reveal += (int)speed;
-                                    StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
-                                    StatChangeAnimationImage1.SourceRect.Location = Point.Zero;
-                                    StatChangeAnimationImage1.SourceRect.Offset(0, StatChangeAnimationImage1.Texture.Height - reveal);
-                                    StatChangeAnimationImage1.SourceRect.Height -= StatChangeAnimationImage1.Texture.Height - reveal;
-                                    StatChangeAnimationImage2.SourceRect.Height -= (int)speed;
-                                    StatChangeAnimationImage2.Position.Y += (int)speed;
-
+                                    if (battleScreen.BattleLogic.StatStageIncrease)
+                                    {
+                                        reveal -= (int)speed;
+                                        StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
+                                        StatChangeAnimationImage1.SourceRect.Location = Point.Zero;
+                                        StatChangeAnimationImage1.SourceRect.Offset(0, StatChangeAnimationImage1.Texture.Height - reveal);
+                                        StatChangeAnimationImage1.SourceRect.Height -= StatChangeAnimationImage1.Texture.Height - reveal;
+                                        StatChangeAnimationImage2.SourceRect.Height += (int)speed;
+                                        StatChangeAnimationImage2.Position.Y -= (int)speed;
+                                    }
+                                    else
+                                    {
+                                        reveal += (int)speed;
+                                        StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
+                                        StatChangeAnimationImage1.SourceRect.Location = Point.Zero;
+                                        StatChangeAnimationImage1.SourceRect.Offset(0, StatChangeAnimationImage1.Texture.Height - reveal);
+                                        StatChangeAnimationImage1.SourceRect.Height -= StatChangeAnimationImage1.Texture.Height - reveal;
+                                        StatChangeAnimationImage2.SourceRect.Height -= (int)speed;
+                                        StatChangeAnimationImage2.Position.Y += (int)speed;
+                                    }
                                 }
                                 else
                                 {
-                                    reveal += (int)speed;
-                                    StatChangeAnimationImage2.SourceRect.Height = StatChangeAnimationImage2.Texture.Height;
-                                    StatChangeAnimationImage2.SourceRect.Location = Point.Zero;
-                                    StatChangeAnimationImage2.SourceRect.Offset(0, StatChangeAnimationImage2.Texture.Height - reveal);
-                                    StatChangeAnimationImage2.SourceRect.Height -= StatChangeAnimationImage2.Texture.Height - reveal;
-                                    StatChangeAnimationImage1.SourceRect.Height -= (int)speed;
-                                    StatChangeAnimationImage1.Position.Y += (int)speed;
+                                    if (battleScreen.BattleLogic.StatStageIncrease)
+                                    {
+                                        reveal -= (int)speed;
+                                        StatChangeAnimationImage2.SourceRect.Height = StatChangeAnimationImage2.Texture.Height;
+                                        StatChangeAnimationImage2.SourceRect.Location = Point.Zero;
+                                        StatChangeAnimationImage2.SourceRect.Offset(0, StatChangeAnimationImage2.Texture.Height - reveal);
+                                        StatChangeAnimationImage2.SourceRect.Height -= StatChangeAnimationImage2.Texture.Height - reveal;
+                                        StatChangeAnimationImage1.SourceRect.Height += (int)speed;
+                                        StatChangeAnimationImage1.Position.Y -= (int)speed;
+                                    }
+                                    else
+                                    {
+                                        reveal += (int)speed;
+                                        StatChangeAnimationImage2.SourceRect.Height = StatChangeAnimationImage2.Texture.Height;
+                                        StatChangeAnimationImage2.SourceRect.Location = Point.Zero;
+                                        StatChangeAnimationImage2.SourceRect.Offset(0, StatChangeAnimationImage2.Texture.Height - reveal);
+                                        StatChangeAnimationImage2.SourceRect.Height -= StatChangeAnimationImage2.Texture.Height - reveal;
+                                        StatChangeAnimationImage1.SourceRect.Height -= (int)speed;
+                                        StatChangeAnimationImage1.Position.Y += (int)speed;
+                                    }
                                 }
 
 
@@ -527,7 +553,7 @@ namespace PokemonFireRedClone
                                     increase = true;
                                     StatChangeAnimationImage1.Position.Y = PlayerPokemon.Position.Y;
                                     StatChangeAnimationImage2.Position.Y = PlayerPokemon.Position.Y;
-                                    reveal = 0;
+                                    reveal = battleScreen.BattleLogic.StatStageIncrease ? StatChangeAnimationImage1.Texture.Height : 0;
                                     spinCounter++;
                                 }
                                 else if (StatChangeAnimationImage2.SourceRect.Height <= 0)
@@ -535,7 +561,7 @@ namespace PokemonFireRedClone
                                     increase = false;
                                     StatChangeAnimationImage1.Position.Y = PlayerPokemon.Position.Y;
                                     StatChangeAnimationImage2.Position.Y = PlayerPokemon.Position.Y;
-                                    reveal = 0;
+                                    reveal = battleScreen.BattleLogic.StatStageIncrease ? StatChangeAnimationImage1.Texture.Height : 0;
                                     spinCounter++;
                                 }
 
@@ -592,14 +618,19 @@ namespace PokemonFireRedClone
                             if (StatChangeAnimationImage1.Position.X != EnemyPokemon.Position.X)
                             {
                                 StatChangeAnimationImage1.Position = new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y);
-                                StatChangeAnimationImage2.Position = new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y);
+                                StatChangeAnimationImage2.Position = battleScreen.BattleLogic.StatStageIncrease ? new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y + StatChangeAnimationImage2.Texture.Height)
+                                    : new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y);
+                                StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
+                                StatChangeAnimationImage1.SourceRect.Location = Point.Zero;
+                                StatChangeAnimationImage2.SourceRect.Height = battleScreen.BattleLogic.StatStageIncrease ? 0 : StatChangeAnimationImage2.Texture.Height;
+                                StatChangeAnimationImage2.SourceRect.Location = Point.Zero;
                                 StatChangeAnimationImage1.Alpha = 0.00001f;
                                 StatChangeAnimationImage1.Alpha = 0.00001f;
-                                //StatChangeAnimationImage2.SourceRect.Height = 0;
-                                reveal = 0;
+                                reveal = battleScreen.BattleLogic.StatStageIncrease ? StatChangeAnimationImage1.Texture.Height : 0;
                                 spinCounter = 0;
-                                StatChangeAnimationImage1.Tint = Color.LightBlue;
-                                StatChangeAnimationImage2.Tint = Color.LightBlue;
+                                increase = false;
+                                StatChangeAnimationImage1.Tint = battleScreen.BattleLogic.StatStageIncrease ? Color.OrangeRed : Color.LightBlue;
+                                StatChangeAnimationImage2.Tint = battleScreen.BattleLogic.StatStageIncrease ? Color.OrangeRed : Color.LightBlue;
                             }
                             float speed = (float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.3f;
                             float alphaSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.0005f;
@@ -624,24 +655,49 @@ namespace PokemonFireRedClone
 
                                 if (increase)
                                 {
-                                    reveal += (int)speed;
-                                    StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
-                                    StatChangeAnimationImage1.SourceRect.Location = Point.Zero;
-                                    StatChangeAnimationImage1.SourceRect.Offset(0, StatChangeAnimationImage1.Texture.Height - reveal);
-                                    StatChangeAnimationImage1.SourceRect.Height -= StatChangeAnimationImage1.Texture.Height - reveal;
-                                    StatChangeAnimationImage2.SourceRect.Height -= (int)speed;
-                                    StatChangeAnimationImage2.Position.Y += (int)speed;
-
+                                    
+                                    if (battleScreen.BattleLogic.StatStageIncrease)
+                                    {
+                                        reveal -= (int)speed;
+                                        StatChangeAnimationImage2.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
+                                        StatChangeAnimationImage2.SourceRect.Location = new Point(0, StatChangeAnimationImage2.Texture.Height - reveal);
+                                        StatChangeAnimationImage2.SourceRect.Height -= StatChangeAnimationImage1.Texture.Height - reveal;
+                                        StatChangeAnimationImage1.SourceRect.Height += (int)speed;
+                                        StatChangeAnimationImage1.Position.Y -= (int)speed;
+                                    }
+                                    else
+                                    
+                                    {
+                                        reveal += (int)speed;
+                                        StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage1.Texture.Height;
+                                        StatChangeAnimationImage1.SourceRect.Location = new Point(0, StatChangeAnimationImage1.Texture.Height - reveal);
+                                        StatChangeAnimationImage1.SourceRect.Height -= StatChangeAnimationImage1.Texture.Height - reveal;
+                                        StatChangeAnimationImage2.SourceRect.Height -= (int)speed;
+                                        StatChangeAnimationImage2.Position.Y += (int)speed;
+                                    }
                                 }
                                 else
                                 {
-                                    reveal += (int)speed;
-                                    StatChangeAnimationImage2.SourceRect.Height = StatChangeAnimationImage2.Texture.Height;
-                                    StatChangeAnimationImage2.SourceRect.Location = Point.Zero;
-                                    StatChangeAnimationImage2.SourceRect.Offset(0, StatChangeAnimationImage2.Texture.Height - reveal);
-                                    StatChangeAnimationImage2.SourceRect.Height -= StatChangeAnimationImage2.Texture.Height - reveal;
-                                    StatChangeAnimationImage1.SourceRect.Height -= (int)speed;
-                                    StatChangeAnimationImage1.Position.Y += (int)speed;
+                                    
+                                    if (battleScreen.BattleLogic.StatStageIncrease)
+                                    {
+                                        reveal -= (int)speed;
+                                        StatChangeAnimationImage1.SourceRect.Height = StatChangeAnimationImage2.Texture.Height;
+                                        StatChangeAnimationImage1.SourceRect.Location = new Point(0, StatChangeAnimationImage1.Texture.Height - reveal);
+                                        StatChangeAnimationImage1.SourceRect.Height -= StatChangeAnimationImage2.Texture.Height - reveal;
+                                        StatChangeAnimationImage2.SourceRect.Height += (int)speed;
+                                        StatChangeAnimationImage2.Position.Y -= (int)speed;
+                                    }
+                                    else
+                                    
+                                    {
+                                        reveal += (int)speed;
+                                        StatChangeAnimationImage2.SourceRect.Height = StatChangeAnimationImage2.Texture.Height;
+                                        StatChangeAnimationImage2.SourceRect.Location = new Point(0, StatChangeAnimationImage2.Texture.Height - reveal);
+                                        StatChangeAnimationImage2.SourceRect.Height -= StatChangeAnimationImage2.Texture.Height - reveal;
+                                        StatChangeAnimationImage1.SourceRect.Height -= (int)speed;
+                                        StatChangeAnimationImage1.Position.Y += (int)speed;
+                                    }
                                 }
 
 
@@ -649,16 +705,20 @@ namespace PokemonFireRedClone
                                 if (StatChangeAnimationImage1.SourceRect.Height <= 0)
                                 {
                                     increase = true;
-                                    StatChangeAnimationImage1.Position.Y = EnemyPokemon.Position.Y;
+                                    StatChangeAnimationImage1.Position = battleScreen.BattleLogic.StatStageIncrease ? new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y + StatChangeAnimationImage1.Texture.Height)
+                                    : new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y);
+                                    StatChangeAnimationImage1.SourceRect.Location = Point.Zero;
                                     StatChangeAnimationImage2.Position.Y = EnemyPokemon.Position.Y;
-                                    reveal = 0;
+                                    reveal = battleScreen.BattleLogic.StatStageIncrease ? StatChangeAnimationImage1.Texture.Height : 0;
                                     spinCounter++;
                                 } else if (StatChangeAnimationImage2.SourceRect.Height <= 0)
                                 {
                                     increase = false;
                                     StatChangeAnimationImage1.Position.Y = EnemyPokemon.Position.Y;
-                                    StatChangeAnimationImage2.Position.Y = EnemyPokemon.Position.Y;
-                                    reveal = 0;
+                                    StatChangeAnimationImage2.Position = battleScreen.BattleLogic.StatStageIncrease ? new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y + StatChangeAnimationImage2.Texture.Height)
+                                    : new Vector2(EnemyPokemon.Position.X, EnemyPokemon.Position.Y);
+                                    StatChangeAnimationImage2.SourceRect.Location = Point.Zero;
+                                    reveal = battleScreen.BattleLogic.StatStageIncrease ? StatChangeAnimationImage2.Texture.Height : 0;
                                     spinCounter++;
                                 }
 
