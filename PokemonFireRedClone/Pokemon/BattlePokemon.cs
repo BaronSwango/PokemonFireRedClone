@@ -84,30 +84,81 @@ namespace PokemonFireRedClone
 
         }
 
+        public int GetStat(string stat)
+        {
+            switch(stat)
+            {
+                case "A":
+                    return AttackStage;
+                case "D":
+                    return DefenseStage;
+                case "SA":
+                    return SpecialAttackStage;
+                case "SD":
+                    return SpecialDefenseStage;
+                case "S":
+                    return SpeedStage;
+                case "ACC":
+                    return AccuracyStage;
+                case "EVAS":
+                    return EvasionStage;
+                default:
+                    return 0;
+            }
+        }
+
         public string AdjustTempStat(string stat, int adjustment)
         {
             switch(stat)
             {
                 case "A":
                     AttackStage += adjustment;
+                    if (AttackStage > 6)
+                        AttackStage = 6;
+                    else if (AttackStage < -6)
+                        AttackStage = -6;
                     return "ATTACK";
                 case "D":
                     DefenseStage += adjustment;
+                    if (DefenseStage > 6)
+                        DefenseStage = 6;
+                    else if (DefenseStage < -6)
+                        DefenseStage = -6;
                     return "DEFENSE";
                 case "SA":
                     SpecialAttackStage += adjustment;
+                    if (SpecialAttackStage > 6)
+                        SpecialAttackStage = 6;
+                    else if (SpecialAttackStage < -6)
+                        SpecialAttackStage = -6;
                     return "SP. ATTACK";
                 case "SD":
                     SpecialDefenseStage += adjustment;
+                    if (SpecialDefenseStage > 6)
+                        SpecialDefenseStage = 6;
+                    else if (SpecialDefenseStage < -6)
+                        SpecialDefenseStage = -6;
                     return "SP. DEFENSE";
                 case "S":
                     SpeedStage += adjustment;
+                    if (SpeedStage > 6)
+                        SpeedStage = 6;
+                    else if (SpeedStage < -6)
+                        SpeedStage = -6;
                     return "SPEED";
                 case "ACC":
                     AccuracyStage += adjustment;
+                    if (AccuracyStage > 6)
+                        AccuracyStage = 6;
+                    else if (AccuracyStage < -6)
+                        AccuracyStage = -6;
                     return "accuracy";
                 case "EVAS":
                     EvasionStage += adjustment;
+                    if (EvasionStage > 6)
+                        EvasionStage = 6;
+                    else if (EvasionStage < -6)
+                        EvasionStage = -6;
                     return "evasiveness";
             }
             return "";

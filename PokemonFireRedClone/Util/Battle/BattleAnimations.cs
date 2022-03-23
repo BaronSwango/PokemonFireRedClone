@@ -590,6 +590,7 @@ namespace PokemonFireRedClone
                     case BattleState.ENEMY_STATUS_ANIMATION:
                         if (!battleScreen.TextBox.IsTransitioning)
                         {
+
                             if (battleScreen.TextBox.Page == 18)
                             {
                                 if (counter < 1000.0f)
@@ -612,6 +613,19 @@ namespace PokemonFireRedClone
                                 StatChangeAnimationImage2.Position = new Vector2(-StatChangeAnimationImage2.SourceRect.Width, 0);
                                 counter = 0;
                                 IsTransitioning = false;
+                                break;
+                            }
+
+                            if (battleScreen.BattleLogic.StageMaxed)
+                            {
+                                if (counter < 1000.0f)
+                                {
+                                    counter += counterSpeed;
+                                    break;
+                                }
+
+                                counter = 0;
+                                battleScreen.TextBox.IsTransitioning = true;
                                 break;
                             }
 

@@ -28,6 +28,7 @@ namespace PokemonFireRedClone
         public bool SharplyStat;
         public bool StatStageIncrease;
         public string Stat;
+        public bool StageMaxed;
         public bool PlayerMoveExecuted;
         public bool EnemyMoveExecuted;
         bool playerFirst;
@@ -177,18 +178,25 @@ namespace PokemonFireRedClone
                     defender.Pokemon.Pokemon.Types);
             else
             {
+                int StageChange;
+                int OldStat;
                 if (move.Self)
                 {
+                    // get stat stage being changed and check if it's already 6 or 5 in order to calculate the new stage change and see if it can still be increased
+                    OldStat = user.GetStat(move.Stat);
                     Stat = user.AdjustTempStat(move.Stat, move.StageChange);
+                    StageChange = user.GetStat(move.Stat) - OldStat;
                 } else
                 {
+                    OldStat = defender.GetStat(move.Stat);
                     Stat = defender.AdjustTempStat(move.Stat, move.StageChange);
+                    StageChange = defender.GetStat(move.Stat) - OldStat;
                     Console.WriteLine("Attack: " + defender.TempAttack);
                 }
 
-                SharplyStat = Math.Abs(move.StageChange) > 1 ? true : false;
+                SharplyStat = Math.Abs(StageChange) > 1 ? true : false;
                 StatStageIncrease = move.StageChange > 0 ? true : false;
-
+                StageMaxed = StageChange == 0 ? true : false;
             }
 
 

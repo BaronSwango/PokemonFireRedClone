@@ -51,7 +51,7 @@ namespace PokemonFireRedClone
             enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Pidgeot"), 20);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Tackle", 35);
-            //enemyPokemon.MoveNames.Add("Acid Armor", 40);
+            //eenemyPokemon.MoveNames.Add("Acid Armor", 40);
             enemyPokemon.MoveNames.Add("Amnesia", 25);
             BattleLogic = new BattleLogic(this);
         }

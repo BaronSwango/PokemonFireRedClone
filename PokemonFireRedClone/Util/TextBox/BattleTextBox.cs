@@ -139,9 +139,17 @@ namespace PokemonFireRedClone
 
                                     else if (currentDialogue[1] == image)
                                     {
-                                        string sharply = battleScreen.BattleLogic.SharplyStat ? "sharply   " : "";
-                                        string change = battleScreen.BattleLogic.StatStageIncrease ? "rose" : "fell";
-                                        image.Text = sharply + change + " !";
+                                        if (battleScreen.BattleLogic.StageMaxed)
+                                        {
+                                            string change = battleScreen.BattleLogic.StatStageIncrease ? "higher" : "lower";
+                                            image.Text = "won`t   go   " + change + " !";
+                                        }
+                                        else
+                                        {
+                                            string sharply = battleScreen.BattleLogic.SharplyStat ? "sharply   " : "";
+                                            string change = battleScreen.BattleLogic.StatStageIncrease ? "rose" : "fell";
+                                            image.Text = sharply + change + " !";
+                                        }
                                     }
                                         
                                     break;
