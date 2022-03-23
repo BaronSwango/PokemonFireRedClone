@@ -1699,4 +1699,31 @@
         <Ability>Water Absorb:Damp</Ability>
         <Description>An adept swimmer, it knows the front crawl, butterfly, and more. It is faster than the best human swimmers.</Description>
     </Pokemon>
+    <Pokemon>
+        <Name>Abra</Name>
+        <Index>63</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PSI POKéMON</Classification>
+        <Height>2'11"</Height>
+        <Weight>43.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>73</EXPYield>
+        <BaseHP>25</BaseHP>
+        <BaseAttack>20</BaseAttack>
+        <BaseDefense>15</BaseDefense>
+        <BaseSpecialAttack>105</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Synchronize:Inner Focus</Ability>
+        <Description>It sleeps for 18 hours a day. It uses a variety of extrasensory powers even while asleep.</Description>
+    </Pokemon>
 </PokemonManager>

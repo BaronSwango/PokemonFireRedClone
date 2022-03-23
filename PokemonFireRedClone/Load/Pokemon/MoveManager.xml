@@ -82,13 +82,76 @@
         <StageChange>2</StageChange>
     </Moves>
     <Moves>
-        <Name>Ancient Power</Name>
+        <Name>Ancientpower</Name>
         <TypeName>Rock</TypeName>
         <Power>60</Power>
         <Accuracy>100</Accuracy>
         <PP>5</PP>
         <Description>An ancient power is used to attack. It may also raise all the user’s stats.</Description>
-        <Category>Specia</Category>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Arm Thrust</Name>
+        <TypeName>Fighting</TypeName>
+        <Power>15</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>A quick flurry of straight-arm punches that hit two to five times.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Aromatherapy</Name>
+        <TypeName>Grass</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>5</PP>
+        <Description>A soothing scent is released to heal all status problems in the user’s party.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Assist</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>The user randomly picks and uses a move of an allied POKéMON.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Astonish</Name>
+        <TypeName>Ghost</TypeName>
+        <Power>30</Power>
+        <Accuracy>100</Accuracy>
+        <PP>15</PP>
+        <Description>An attack using a startling shout. It also may make the foe flinch.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Attract</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>15</PP>
+        <Description>If it is the other gender, the foe is made infatuated and unlikely to attack.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Aurora Beam</Name>
+        <TypeName>Ice</TypeName>
+        <Power>65</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>A rainbow-colored attack beam. It may lower the foe’s ATTACK stat.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Barrage</Name>
+        <TypeName>Normal</TypeName>
+        <Power>15</Power>
+        <Accuracy>85</Accuracy>
+        <PP>20</PP>
+        <Description>Round objects are hurled at the foe to strike two to five times.</Description>
+        <Category>Physical</Category>
     </Moves>
     <Moves>
         <Name>Ember</Name>
@@ -156,4 +219,5 @@
         <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
         <Category>Special</Category>
     </Moves>
+
 </MoveManager>
