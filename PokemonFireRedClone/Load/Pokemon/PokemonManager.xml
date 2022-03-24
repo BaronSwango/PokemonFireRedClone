@@ -1726,4 +1726,306 @@
         <Ability>Synchronize:Inner Focus</Ability>
         <Description>It sleeps for 18 hours a day. It uses a variety of extrasensory powers even while asleep.</Description>
     </Pokemon>
+    <Pokemon>
+        <Name>Kadabra</Name>
+        <Index>64</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PSI POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>124.6 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>145</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>35</BaseAttack>
+        <BaseDefense>30</BaseDefense>
+        <BaseSpecialAttack>120</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>105</BaseSpeed>
+        <Ability>Synchronize:Inner Focus</Ability>
+        <Description>It happened one morning - a boy with extrasensory powers awoke in bed transformed into KADABRA.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Alakazam</Name>
+        <Index>65</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PSI POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>105.8 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>186</EXPYield>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>135</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>120</BaseSpeed>
+        <Ability>Synchronize:Inner Focus</Ability>
+        <Description>It does not like physical attacks very much. Instead, it freely uses extrasensory powers to defeat foes.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Machop</Name>
+        <Index>66</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SUPERPOWER POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>43.0 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>88</EXPYield>
+        <BaseHP>70</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>35</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Guts</Ability>
+        <Description>Its whole body is composed of muscles. Even though it’s the size of a human child, it can hurl 100 grown-ups.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Machoke</Name>
+        <Index>67</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SUPERPOWER POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>155.4 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>146</EXPYield>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>100</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>60</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Guts</Ability>
+        <Description>Its formidable body never gets tired. It helps people by doing work such as the moving of heavy goods.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Machamp</Name>
+        <Index>68</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SUPERPOWER POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>286.6 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>193</EXPYield>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>130</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Guts</Ability>
+        <Description>Its four ruggedly developed arms can launch a flurry of 1,000 punches in just two seconds.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Machamp</Name>
+        <Index>68</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SUPERPOWER POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>286.6 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>193</EXPYield>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>130</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Guts</Ability>
+        <Description>Its four ruggedly developed arms can launch a flurry of 1,000 punches in just two seconds.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Bellsprout</Name>
+        <Index>69</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLOWER POKéMON</Classification>
+        <Height>2'04"</Height>
+        <Weight>8.8 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>84</EXPYield>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>75</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>30</BaseSpecialDefense>
+        <BaseSpeed>40</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Its bud looks like a human face. Because of the bud, it is rumored to be a type of legendary mandrake plant.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Weepinbell</Name>
+        <Index>70</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLYCATCHER POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>14.1 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>151</EXPYield>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>90</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>The leafy parts act as cutters for slashing foes. It spits a fluid that dissolves everything.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Victreebell</Name>
+        <Index>71</Index>
+        <Type>Grass</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLYCATCHER POKéMON</Classification>
+        <Height>5'07"</Height>
+        <Weight>34.2 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>191</EXPYield>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>105</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>60</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Lures prey into its mouth with a honeylike aroma. The helpless prey is melted with a dissolving fluid.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Tentacool</Name>
+        <Index>72</Index>
+        <Type>Water</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>JELLYFISH POKéMON</Classification>
+        <Height>2'11"</Height>
+        <Weight>100.3 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>191</EXPYield>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>40</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Clear Body:Liquid Ooze</Ability>
+        <Description>Its eyes are as transparent as crystals. From them, it shoots mysterious beams of light.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Tentacruel</Name>
+        <Index>73</Index>
+        <Type>Water</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>JELLYFISH POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>121.3 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>205</EXPYield>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>80</BaseSpecialAttack>
+        <BaseSpecialDefense>120</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Clear Body:Liquid Ooze</Ability>
+        <Description>It has 80 tentacles that move about freely. They can sting, causing poisoning and sharp, stabbing pain.</Description>
+    </Pokemon>
 </PokemonManager>
