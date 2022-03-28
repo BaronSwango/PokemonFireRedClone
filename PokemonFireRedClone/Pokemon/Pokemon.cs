@@ -21,6 +21,7 @@ namespace PokemonFireRedClone
         public int EXPYield;
         public string Description;
         public string Ability;
+        public float PercentMale;
         public int BaseHP;
         public int BaseAttack;
         public int BaseDefense;
@@ -57,11 +58,19 @@ namespace PokemonFireRedClone
                         moveLearnset.Add(MoveManager.Instance.GetMove("Scratch"), 1);
                         moveLearnset.Add(MoveManager.Instance.GetMove("Growl"), 1);
                         moveLearnset.Add(MoveManager.Instance.GetMove("Ember"), 7);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Flamethrower"), 31);
+                        break;
+                    case "Charmeleon":
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Scratch"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Growl"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Ember"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Flamethrower"), 34);
                         break;
                     case "Charizard":
                         moveLearnset.Add(MoveManager.Instance.GetMove("Scratch"), 1);
                         moveLearnset.Add(MoveManager.Instance.GetMove("Growl"), 1);
-                        moveLearnset.Add(MoveManager.Instance.GetMove("Ember"), 7);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Ember"), 1);
+                        moveLearnset.Add(MoveManager.Instance.GetMove("Flamethrower"), 34);
                         break;
                     default:
                         break;
@@ -88,6 +97,12 @@ namespace PokemonFireRedClone
                         break;
                     case "Charmeleon":
                         evolution = new KeyValuePair<int, Pokemon>(36, PokemonManager.Instance.GetPokemon("Charizard"));
+                        break;
+                    case "Squirtle":
+                        evolution = new KeyValuePair<int, Pokemon>(16, PokemonManager.Instance.GetPokemon("Wartortle"));
+                        break;
+                    case "Wartortle":
+                        evolution = new KeyValuePair<int, Pokemon>(36, PokemonManager.Instance.GetPokemon("Blastoise"));
                         break;
                     default:
                         break;

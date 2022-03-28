@@ -19,6 +19,7 @@
         <Weight>15.2 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>64</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>45</BaseHP>
         <BaseAttack>49</BaseAttack>
         <BaseDefense>49</BaseDefense>
@@ -47,6 +48,7 @@
         <Weight>28.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>141</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>62</BaseAttack>
         <BaseDefense>63</BaseDefense>
@@ -75,6 +77,7 @@
         <Weight>220.5 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>208</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>80</BaseHP>
         <BaseAttack>82</BaseAttack>
         <BaseDefense>83</BaseDefense>
@@ -102,6 +105,7 @@
         <Weight>18.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>65</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>39</BaseHP>
         <BaseAttack>52</BaseAttack>
         <BaseDefense>43</BaseDefense>
@@ -129,6 +133,7 @@
         <Weight>41.9 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>142</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>58</BaseHP>
         <BaseAttack>64</BaseAttack>
         <BaseDefense>58</BaseDefense>
@@ -157,6 +162,7 @@
         <Weight>199.5 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>209</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>78</BaseHP>
         <BaseAttack>84</BaseAttack>
         <BaseDefense>78</BaseDefense>
@@ -184,6 +190,7 @@
         <Weight>19.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>66</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>44</BaseHP>
         <BaseAttack>48</BaseAttack>
         <BaseDefense>65</BaseDefense>
@@ -211,6 +218,7 @@
         <Weight>49.6 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>143</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>59</BaseHP>
         <BaseAttack>63</BaseAttack>
         <BaseDefense>80</BaseDefense>
@@ -238,6 +246,7 @@
         <Weight>188.5 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>210</EXPYield>
+        <PercentMale>87.5</PercentMale>
         <BaseHP>79</BaseHP>
         <BaseAttack>83</BaseAttack>
         <BaseDefense>100</BaseDefense>
@@ -265,6 +274,7 @@
         <Weight>6.4 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>53</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>45</BaseHP>
         <BaseAttack>30</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -292,6 +302,7 @@
         <Weight>21.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>72</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>50</BaseHP>
         <BaseAttack>20</BaseAttack>
         <BaseDefense>55</BaseDefense>
@@ -320,6 +331,7 @@
         <Weight>70.5 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>160</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>45</BaseAttack>
         <BaseDefense>50</BaseDefense>
@@ -348,6 +360,7 @@
         <Weight>7.1 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>52</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>35</BaseAttack>
         <BaseDefense>30</BaseDefense>
@@ -376,6 +389,7 @@
         <Weight>22.0 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>71</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>45</BaseHP>
         <BaseAttack>25</BaseAttack>
         <BaseDefense>50</BaseDefense>
@@ -404,6 +418,7 @@
         <Weight>65.0 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>159</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>65</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>40</BaseDefense>
@@ -432,6 +447,7 @@
         <Weight>4.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>55</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>45</BaseAttack>
         <BaseDefense>40</BaseDefense>
@@ -460,6 +476,7 @@
         <Weight>66.1 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>113</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>63</BaseHP>
         <BaseAttack>60</BaseAttack>
         <BaseDefense>55</BaseDefense>
@@ -488,6 +505,7 @@
         <Weight>87.1 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>172</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>83</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>75</BaseDefense>
@@ -515,6 +533,7 @@
         <Weight>7.7 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>57</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>30</BaseHP>
         <BaseAttack>56</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -529,10 +548,10 @@
         <Index>20</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/RaticateBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/RaticateFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -542,6 +561,7 @@
         <Weight>40.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>116</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>55</BaseHP>
         <BaseAttack>81</BaseAttack>
         <BaseDefense>60</BaseDefense>
@@ -557,10 +577,10 @@
         <Type>Normal</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SpearowBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SpearowFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -570,6 +590,7 @@
         <Weight>4.4 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>58</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>60</BaseAttack>
         <BaseDefense>30</BaseDefense>
@@ -585,10 +606,10 @@
         <Type>Normal</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/FearowBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/FearowFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -598,6 +619,7 @@
         <Weight>83.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>162</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>65</BaseHP>
         <BaseAttack>90</BaseAttack>
         <BaseDefense>65</BaseDefense>
@@ -612,10 +634,10 @@
         <Index>23</Index>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/EkansBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/EkansFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -625,6 +647,7 @@
         <Weight>15.2 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>62</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>35</BaseHP>
         <BaseAttack>60</BaseAttack>
         <BaseDefense>44</BaseDefense>
@@ -639,10 +662,10 @@
         <Index>24</Index>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ArbokBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ArbokFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -652,6 +675,7 @@
         <Weight>143.3 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>147</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>85</BaseAttack>
         <BaseDefense>69</BaseDefense>
@@ -666,10 +690,10 @@
         <Index>25</Index>
         <Type>Electric</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PikachuBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PikachuFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -679,6 +703,7 @@
         <Weight>13.2 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>82</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>35</BaseHP>
         <BaseAttack>55</BaseAttack>
         <BaseDefense>30</BaseDefense>
@@ -693,10 +718,10 @@
         <Index>26</Index>
         <Type>Electric</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/RaichuBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/RaichuFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -706,6 +731,7 @@
         <Weight>66.1 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>122</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>90</BaseAttack>
         <BaseDefense>55</BaseDefense>
@@ -720,10 +746,10 @@
         <Index>27</Index>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SandshrewBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SandshrewFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -733,6 +759,7 @@
         <Weight>26.5 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>93</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>50</BaseHP>
         <BaseAttack>75</BaseAttack>
         <BaseDefense>85</BaseDefense>
@@ -747,10 +774,10 @@
         <Index>28</Index>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SandslashBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SandslashFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -760,6 +787,7 @@
         <Weight>65.0 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>163</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>75</BaseHP>
         <BaseAttack>100</BaseAttack>
         <BaseDefense>110</BaseDefense>
@@ -770,14 +798,14 @@
         <Description>It is adept at attacking with the spines on its back and its sharp claws while quickly scurrying about.</Description>
     </Pokemon>
     <Pokemon>
-        <Name>Nidoran♀</Name>
+        <Name>Nidoran¬</Name>
         <Index>29</Index>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/NidoranFemaleBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/NidoranFemaleFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -787,6 +815,7 @@
         <Weight>15.4 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>59</EXPYield>
+        <PercentMale>0</PercentMale>
         <BaseHP>55</BaseHP>
         <BaseAttack>47</BaseAttack>
         <BaseDefense>52</BaseDefense>
@@ -801,10 +830,10 @@
         <Index>30</Index>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/NidorinaBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/NidorinaFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -814,6 +843,7 @@
         <Weight>44.1 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>117</EXPYield>
+        <PercentMale>0</PercentMale>
         <BaseHP>70</BaseHP>
         <BaseAttack>62</BaseAttack>
         <BaseDefense>67</BaseDefense>
@@ -829,10 +859,10 @@
         <Type>Poison</Type>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/NidoqueenBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/NidoqueenFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -842,6 +872,7 @@
         <Weight>132.3 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>194</EXPYield>
+        <PercentMale>0</PercentMale>
         <BaseHP>90</BaseHP>
         <BaseAttack>82</BaseAttack>
         <BaseDefense>87</BaseDefense>
@@ -852,14 +883,14 @@
         <Description>The body is covered by stiff, needle-like scales. If it becomes excited, the needles bristle outwards.</Description>
     </Pokemon>
     <Pokemon>
-        <Name>Nidoran♂</Name>
+        <Name>Nidoran£</Name>
         <Index>32</Index>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/NidoranMaleBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/NidoranMaleFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -869,6 +900,7 @@
         <Weight>19.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>60</EXPYield>
+        <PercentMale>100</PercentMale>
         <BaseHP>46</BaseHP>
         <BaseAttack>57</BaseAttack>
         <BaseDefense>40</BaseDefense>
@@ -883,10 +915,10 @@
         <Index>33</Index>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/NidorinoBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/NidorinoFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -896,6 +928,7 @@
         <Weight>43.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>118</EXPYield>
+        <PercentMale>100</PercentMale>
         <BaseHP>71</BaseHP>
         <BaseAttack>72</BaseAttack>
         <BaseDefense>57</BaseDefense>
@@ -911,10 +944,10 @@
         <Type>Poison</Type>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/NidokingBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/NidokingFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -924,6 +957,7 @@
         <Weight>136.7 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>195</EXPYield>
+        <PercentMale>100</PercentMale>
         <BaseHP>81</BaseHP>
         <BaseAttack>92</BaseAttack>
         <BaseDefense>77</BaseDefense>
@@ -951,6 +985,7 @@
         <Weight>16.5 lbs</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>68</EXPYield>
+        <PercentMale>25</PercentMale>
         <BaseHP>70</BaseHP>
         <BaseAttack>45</BaseAttack>
         <BaseDefense>48</BaseDefense>
@@ -978,6 +1013,7 @@
         <Weight>88.2 lbs</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>129</EXPYield>
+        <PercentMale>25</PercentMale>
         <BaseHP>95</BaseHP>
         <BaseAttack>70</BaseAttack>
         <BaseDefense>73</BaseDefense>
@@ -1005,6 +1041,7 @@
         <Weight>21.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>63</EXPYield>
+        <PercentMale>25</PercentMale>
         <BaseHP>38</BaseHP>
         <BaseAttack>41</BaseAttack>
         <BaseDefense>40</BaseDefense>
@@ -1032,6 +1069,7 @@
         <Weight>43.9 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>178</EXPYield>
+        <PercentMale>25</PercentMale>
         <BaseHP>73</BaseHP>
         <BaseAttack>76</BaseAttack>
         <BaseDefense>75</BaseDefense>
@@ -1059,6 +1097,7 @@
         <Weight>12.1 lbs</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>76</EXPYield>
+        <PercentMale>25</PercentMale>
         <BaseHP>115</BaseHP>
         <BaseAttack>45</BaseAttack>
         <BaseDefense>20</BaseDefense>
@@ -1086,6 +1125,7 @@
         <Weight>26.5 lbs</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>109</EXPYield>
+        <PercentMale>25</PercentMale>
         <BaseHP>140</BaseHP>
         <BaseAttack>70</BaseAttack>
         <BaseDefense>45</BaseDefense>
@@ -1114,6 +1154,7 @@
         <Weight>16.5 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>54</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>45</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -1142,6 +1183,7 @@
         <Weight>121.3 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>171</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>75</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>70</BaseDefense>
@@ -1170,6 +1212,7 @@
         <Weight>11.9 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>78</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>45</BaseHP>
         <BaseAttack>50</BaseAttack>
         <BaseDefense>55</BaseDefense>
@@ -1198,6 +1241,7 @@
         <Weight>19.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>132</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>65</BaseAttack>
         <BaseDefense>70</BaseDefense>
@@ -1226,6 +1270,7 @@
         <Weight>41.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>184</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>75</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>85</BaseDefense>
@@ -1254,6 +1299,7 @@
         <Weight>11.9 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>70</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>35</BaseHP>
         <BaseAttack>70</BaseAttack>
         <BaseDefense>55</BaseDefense>
@@ -1282,6 +1328,7 @@
         <Weight>65.0 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>128</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>95</BaseAttack>
         <BaseDefense>80</BaseDefense>
@@ -1310,6 +1357,7 @@
         <Weight>66.1 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>75</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>60</BaseHP>
         <BaseAttack>55</BaseAttack>
         <BaseDefense>50</BaseDefense>
@@ -1338,6 +1386,7 @@
         <Weight>27.6 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>138</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>70</BaseHP>
         <BaseAttack>65</BaseAttack>
         <BaseDefense>60</BaseDefense>
@@ -1365,6 +1414,7 @@
         <Weight>1.8 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>81</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>10</BaseHP>
         <BaseAttack>55</BaseAttack>
         <BaseDefense>25</BaseDefense>
@@ -1392,6 +1442,7 @@
         <Weight>73.4 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>153</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>35</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>50</BaseDefense>
@@ -1419,6 +1470,7 @@
         <Weight>9.3 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>69</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>45</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -1446,6 +1498,7 @@
         <Weight>70.5 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>148</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>65</BaseHP>
         <BaseAttack>70</BaseAttack>
         <BaseDefense>60</BaseDefense>
@@ -1473,6 +1526,7 @@
         <Weight>43.2 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>80</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>50</BaseHP>
         <BaseAttack>52</BaseAttack>
         <BaseDefense>48</BaseDefense>
@@ -1500,6 +1554,7 @@
         <Weight>168.9 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>174</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>80</BaseHP>
         <BaseAttack>82</BaseAttack>
         <BaseDefense>78</BaseDefense>
@@ -1527,6 +1582,7 @@
         <Weight>61.7 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>74</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -1554,6 +1610,7 @@
         <Weight>70.5 lbs</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>149</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>65</BaseHP>
         <BaseAttack>105</BaseAttack>
         <BaseDefense>60</BaseDefense>
@@ -1581,6 +1638,7 @@
         <Weight>41.9 lbs</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>91</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>55</BaseHP>
         <BaseAttack>70</BaseAttack>
         <BaseDefense>45</BaseDefense>
@@ -1608,6 +1666,7 @@
         <Weight>341.7 lbs</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>213</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>90</BaseHP>
         <BaseAttack>110</BaseAttack>
         <BaseDefense>80</BaseDefense>
@@ -1635,6 +1694,7 @@
         <Weight>27.3 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>77</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>50</BaseAttack>
         <BaseDefense>40</BaseDefense>
@@ -1662,6 +1722,7 @@
         <Weight>44.1 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>131</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>65</BaseHP>
         <BaseAttack>65</BaseAttack>
         <BaseDefense>65</BaseDefense>
@@ -1690,6 +1751,7 @@
         <Weight>119.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>185</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>90</BaseHP>
         <BaseAttack>85</BaseAttack>
         <BaseDefense>95</BaseDefense>
@@ -1717,6 +1779,7 @@
         <Weight>43.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>73</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>25</BaseHP>
         <BaseAttack>20</BaseAttack>
         <BaseDefense>15</BaseDefense>
@@ -1744,6 +1807,7 @@
         <Weight>124.6 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>145</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>35</BaseAttack>
         <BaseDefense>30</BaseDefense>
@@ -1771,6 +1835,7 @@
         <Weight>105.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>186</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>55</BaseHP>
         <BaseAttack>50</BaseAttack>
         <BaseDefense>45</BaseDefense>
@@ -1798,6 +1863,7 @@
         <Weight>43.0 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>88</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>70</BaseHP>
         <BaseAttack>80</BaseAttack>
         <BaseDefense>50</BaseDefense>
@@ -1825,6 +1891,7 @@
         <Weight>155.4 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>146</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>80</BaseHP>
         <BaseAttack>100</BaseAttack>
         <BaseDefense>70</BaseDefense>
@@ -1852,33 +1919,7 @@
         <Weight>286.6 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>193</EXPYield>
-        <BaseHP>90</BaseHP>
-        <BaseAttack>130</BaseAttack>
-        <BaseDefense>80</BaseDefense>
-        <BaseSpecialAttack>65</BaseSpecialAttack>
-        <BaseSpecialDefense>85</BaseSpecialDefense>
-        <BaseSpeed>55</BaseSpeed>
-        <Ability>Guts</Ability>
-        <Description>Its four ruggedly developed arms can launch a flurry of 1,000 punches in just two seconds.</Description>
-    </Pokemon>
-    <Pokemon>
-        <Name>Machamp</Name>
-        <Index>68</Index>
-        <Type>Fighting</Type>
-        <Back>
-            <Path></Path>
-        </Back>
-        <Front>
-            <Path></Path>
-        </Front>
-        <Footprint>
-            <Path></Path>
-        </Footprint>
-        <Classification>SUPERPOWER POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>286.6 lbs</Weight>
-        <EXPGroup>MS</EXPGroup>
-        <EXPYield>193</EXPYield>
+        <PercentMale>75</PercentMale>
         <BaseHP>90</BaseHP>
         <BaseAttack>130</BaseAttack>
         <BaseDefense>80</BaseDefense>
@@ -1907,6 +1948,7 @@
         <Weight>8.8 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>84</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>50</BaseHP>
         <BaseAttack>75</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -1935,6 +1977,7 @@
         <Weight>14.1 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>151</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>65</BaseHP>
         <BaseAttack>90</BaseAttack>
         <BaseDefense>50</BaseDefense>
@@ -1963,6 +2006,7 @@
         <Weight>34.2 lbs</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>191</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>80</BaseHP>
         <BaseAttack>105</BaseAttack>
         <BaseDefense>65</BaseDefense>
@@ -1991,6 +2035,7 @@
         <Weight>100.3 lbs</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>191</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>40</BaseHP>
         <BaseAttack>40</BaseAttack>
         <BaseDefense>35</BaseDefense>
@@ -2019,6 +2064,7 @@
         <Weight>121.3 lbs</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>205</EXPYield>
+        <PercentMale>50</PercentMale>
         <BaseHP>80</BaseHP>
         <BaseAttack>70</BaseAttack>
         <BaseDefense>65</BaseDefense>
@@ -2027,5 +2073,2223 @@
         <BaseSpeed>100</BaseSpeed>
         <Ability>Clear Body:Liquid Ooze</Ability>
         <Description>It has 80 tentacles that move about freely. They can sting, causing poisoning and sharp, stabbing pain.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Geodude</Name>
+        <Index>74</Index>
+        <Type>Rock</Type>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>ROCK POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>44.1 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>86</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>30</BaseSpecialAttack>
+        <BaseSpecialDefense>30</BaseSpecialDefense>
+        <BaseSpeed>20</BaseSpeed>
+        <Ability>Rock Head:Sturdy</Ability>
+        <Description>Its round form makes it easy to pick up. Some people have used them to hurl at each other in a snowball fight.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Graveler</Name>
+        <Index>75</Index>
+        <Type>Rock</Type>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>ROCK POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>231.5 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>134</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>95</BaseAttack>
+        <BaseDefense>115</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Rock Head:Sturdy</Ability>
+        <Description>Be careful while hiking on mountain trails. GRAVELER may come rolling down the path without slowing.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Golem</Name>
+        <Index>76</Index>
+        <Type>Rock</Type>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MEGATON POKéMON</Classification>
+        <Height>4'07"</Height>
+        <Weight>661.4 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>177</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>110</BaseAttack>
+        <BaseDefense>130</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Rock Head:Sturdy</Ability>
+        <Description>It is enclosed in a hard shell that is as rugged as slabs of rock. It sheds skin once a year to grow larger.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Ponyta</Name>
+        <Index>77</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FIRE HORSE POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>152</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Run Away:Flash Fire</Ability>
+        <Description>Its body is light, and its legs are incredibly powerful. It can clear Ayers Rock in one leap.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Rapidash</Name>
+        <Index>78</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FIRE HORSE POKéMON</Classification>
+        <Height>5'07"</Height>
+        <Weight>209.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>192</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>100</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>80</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>105</BaseSpeed>
+        <Ability>Run Away:Flash Fire</Ability>
+        <Description>It can gallop at a top speed of 150 miles per hour. It can race as fast as a bullet train while ablaze.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Slowpoke</Name>
+        <Index>79</Index>
+        <Type>Water</Type>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DOPEY POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>79.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>99</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>15</BaseSpeed>
+        <Ability>Oblivious:Own Tempo</Ability>
+        <Description>It is always vacantly lost in thought, but no one knows what it is thinking about. It is good at fishing with its tail.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Slowbro</Name>
+        <Index>80</Index>
+        <Type>Water</Type>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>HERMIT CRAB POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>173.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>164</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>95</BaseHP>
+        <BaseAttack>75</BaseAttack>
+        <BaseDefense>110</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Oblivious:Own Tempo</Ability>
+        <Description>When a SLOWPOKE went hunting in the sea, its tail was bitten by a SHELLDER. That made it evolve into SLOWBRO.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Magnemite</Name>
+        <Index>81</Index>
+        <Type>Electric</Type>
+        <Type>Steel</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MAGNET POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>13.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>89</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>25</BaseHP>
+        <BaseAttack>35</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>95</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Magnet Pull:Sturdy</Ability>
+        <Description>It moves while constantly hovering. It discharges THUNDER WAVE and so on from the units at its sides.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Magneton</Name>
+        <Index>82</Index>
+        <Type>Electric</Type>
+        <Type>Steel</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MAGNET POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>132.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>161</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>60</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>120</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Magnet Pull:Sturdy</Ability>
+        <Description>A linked cluster formed of several MAGNEMITE. It discharges powerful magnetic waves at high voltage.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Farfetch`d</Name>
+        <Index>83</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>WILD DUCK POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>33.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>94</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>52</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>58</BaseSpecialAttack>
+        <BaseSpecialDefense>62</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Keen Eye:Inner Focus</Ability>
+        <Description>It always walks about with a plant stalk clamped in its beak. The stalk is used for building its nest.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Doduo</Name>
+        <Index>84</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TWIN BIRD POKéMON</Classification>
+        <Height>4'07"</Height>
+        <Weight>86.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>96</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>35</BaseSpecialDefense>
+        <BaseSpeed>75</BaseSpeed>
+        <Ability>Run Away:Early Bird</Ability>
+        <Description>A two-headed POKéMON that was discovered as a sudden mutation. It runs at a pace of over 60 miles per hour.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Dodrio</Name>
+        <Index>85</Index>
+        <Type>Normal</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TRIPLE BIRD POKéMON</Classification>
+        <Height>5'11"</Height>
+        <Weight>187.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>158</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>110</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>60</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Run Away:Early Bird</Ability>
+        <Description>An odd species that is rarely found. The three heads respectively represent joy, sadness, and anger.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Seel</Name>
+        <Index>86</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SEA LION POKéMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>198.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>100</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Thick Fat</Ability>
+        <Description>Covered with light blue fur, its hide is thick and tough. It is active in bitter cold of minus 40 degrees Fahrenheit.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Dewgong</Name>
+        <Index>87</Index>
+        <Type>Water</Type>
+        <Type>Ice</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SEA LION POKéMON</Classification>
+        <Height>5'07"</Height>
+        <Weight>264.6 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>176</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>70</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>95</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Thick Fat</Ability>
+        <Description>Its body is covered with a pure white fur. The colder the weather, the more active it becomes.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Grimer</Name>
+        <Index>88</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SLUDGE POKéMON</Classification>
+        <Height>2'11"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>90</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>25</BaseSpeed>
+        <Ability>Stench:Sticky Hold</Ability>
+        <Description>Sludge exposed to X rays from the moon transformed into GRIMER. It loves feeding on filthy things.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Muk</Name>
+        <Index>89</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SLUDGE POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>157</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>105</BaseHP>
+        <BaseAttack>105</BaseAttack>
+        <BaseDefense>75</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Stench:Sticky Hold</Ability>
+        <Description>It is usually undetectable because it blends in with the ground. Touching it can cause terrible poisoning.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Shellder</Name>
+        <Index>90</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BIVALVE POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>8.8 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>97</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>25</BaseSpecialDefense>
+        <BaseSpeed>40</BaseSpeed>
+        <Ability>Shell Armor</Ability>
+        <Description>It is encased in a shell that is harder than diamond. Inside, however, it is surprisingly tender.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Cloyster</Name>
+        <Index>91</Index>
+        <Type>Water</Type>
+        <Type>Ice</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BIVALVE POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>292.1 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>203</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>95</BaseAttack>
+        <BaseDefense>180</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Shell Armor</Ability>
+        <Description>Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Gastly</Name>
+        <Index>92</Index>
+        <Type>Ghost</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>GAS POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>0.2 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>95</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>35</BaseAttack>
+        <BaseDefense>30</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>35</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
+        <Ability>Levitate</Ability>
+        <Description>A being that exists as a thin gas. It can topple an Indian elephant by enveloping the prey in two seconds.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Haunter</Name>
+        <Index>93</Index>
+        <Type>Ghost</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>GAS POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>0.2 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>126</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>45</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>115</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>95</BaseSpeed>
+        <Ability>Levitate</Ability>
+        <Description>If you get the feeling of being watched in darkness when nobody is around, HAUNTER is there.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Gengar</Name>
+        <Index>94</Index>
+        <Type>Ghost</Type>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SHADOW POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>89.3 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>190</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>130</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>110</BaseSpeed>
+        <Ability>Levitate</Ability>
+        <Description>It is said to emerge from darkness to steal the lives of those who become lost in mountains.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Onix</Name>
+        <Index>95</Index>
+        <Type>Rock</Type>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>ROCK SNAKE POKéMON</Classification>
+        <Height>28'10"</Height>
+        <Weight>463.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>108</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>160</BaseDefense>
+        <BaseSpecialAttack>30</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Rock Head:Sturdy</Ability>
+        <Description>It usually lives underground. It searches for food while boring its way through the ground at 50 miles per hour.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Drowzee</Name>
+        <Index>96</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>HYPNOSIS POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>71.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>102</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>48</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>43</BaseSpecialAttack>
+        <BaseSpecialDefense>90</BaseSpecialDefense>
+        <BaseSpeed>42</BaseSpeed>
+        <Ability>Insomnia</Ability>
+        <Description>A descendent of the legendary animal baku, which is said to eat dreams. It is skilled at hypnotism.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Hypno</Name>
+        <Index>97</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>HYPNOSIS POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>166.7 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>165</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>85</BaseHP>
+        <BaseAttack>73</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>73</BaseSpecialAttack>
+        <BaseSpecialDefense>115</BaseSpecialDefense>
+        <BaseSpeed>67</BaseSpeed>
+        <Ability>Insomnia</Ability>
+        <Description>It carries a pendulum-like device. There once was an incident in which it took away a child it hypnotized.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Krabby</Name>
+        <Index>98</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>RIVER CRAB POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>14.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>115</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>105</BaseAttack>
+        <BaseDefense>90</BaseDefense>
+        <BaseSpecialAttack>25</BaseSpecialAttack>
+        <BaseSpecialDefense>25</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Hyper Cutter:Shell Armor</Ability>
+        <Description>It can be found near the sea. The large pincers grow back if they are torn out of their sockets.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Kingler</Name>
+        <Index>99</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PINCER POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>132.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>206</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>130</BaseAttack>
+        <BaseDefense>115</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>75</BaseSpeed>
+        <Ability>Hyper Cutter:Shell Armor</Ability>
+        <Description>Its large and hard pincer has 10,000-horsepower strength. However, being so big, it is unwieldy to move.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Voltorb</Name>
+        <Index>100</Index>
+        <Type>Electric</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BALL POKéMON</Classification>
+        <Height>1'08"</Height>
+        <Weight>22.9 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>103</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>30</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Soundproof:Static</Ability>
+        <Description>A life-form whose identity is unknown. It is said to SCREECH or suddenly SELFDESTRUCT.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Electrode</Name>
+        <Index>101</Index>
+        <Type>Electric</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BALL POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>146.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>150</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>80</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>140</BaseSpeed>
+        <Ability>Soundproof:Static</Ability>
+        <Description>A life-form whose identity is unknown. It is said to SCREECH or suddenly SELFDESTRUCT.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Exeggcute</Name>
+        <Index>102</Index>
+        <Type>Grass</Type>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>EGG POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>5.5 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>98</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>40</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>40</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Even though it appears to be eggs of some sort, it was discovered to be a life-form more like plant seeds.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Exeggutor</Name>
+        <Index>103</Index>
+        <Type>Grass</Type>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>COCONUT POKéMON</Classification>
+        <Height>6'07"</Height>
+        <Weight>264.6 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>212</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>95</BaseHP>
+        <BaseAttack>95</BaseAttack>
+        <BaseDefense>85</BaseDefense>
+        <BaseSpecialAttack>125</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>It is called “The Walking Tropical Rainforest.” Each of the nuts has a face and a will of its own.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Cubone</Name>
+        <Index>104</Index>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>LONELY POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>14.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>87</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Rock Head:Lightning Rod</Ability>
+        <Description>It wears the skull of its dead mother on its head. When it becomes lonesome, it is said to cry loudly.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Marowak</Name>
+        <Index>105</Index>
+        <Type>Ground</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BONE KEEPER POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>99.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>124</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>110</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>45</BaseSpeed>
+        <Ability>Rock Head:Lightning Rod</Ability>
+        <Description>It is small and was originally very weak. Its temperament turned ferocious when it began using bones.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Hitmonlee</Name>
+        <Index>106</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>KICKING POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>109.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>139</EXPYield>
+        <PercentMale>100</PercentMale>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>120</BaseAttack>
+        <BaseDefense>53</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>110</BaseSpecialDefense>
+        <BaseSpeed>87</BaseSpeed>
+        <Ability>Limber</Ability>
+        <Description>The legs freely contract and stretch. The stretchy legs allow it to hit a distant foe with a rising kick.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Hitmonchan</Name>
+        <Index>107</Index>
+        <Type>Fighting</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PUNCHING POKéMON</Classification>
+        <Height>4'07"</Height>
+        <Weight>110.7 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>140</EXPYield>
+        <PercentMale>100</PercentMale>
+        <BaseHP>50</BaseHP>
+        <BaseAttack>105</BaseAttack>
+        <BaseDefense>79</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>110</BaseSpecialDefense>
+        <BaseSpeed>76</BaseSpeed>
+        <Ability>Keen Eye</Ability>
+        <Description>The spirit of a pro boxer has infused this POKéMON. It throws punches that are faster than a bullet train.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Lickitung</Name>
+        <Index>108</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>LICKING POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>144.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>127</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>55</BaseAttack>
+        <BaseDefense>75</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Own Tempo:Oblivious</Ability>
+        <Description>Its tongue is twice the length of its body. It can be moved like an arm for grabbing food and attacking.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Koffing</Name>
+        <Index>109</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON GAS POKéMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>2.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>114</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Levitate:Neutralizing Gas</Ability>
+        <Description>Its thin, balloon-like body is inflated by horribly toxic gases. It reeks when it is nearby.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Weezing</Name>
+        <Index>110</Index>
+        <Type>Poison</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>POISON GAS POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>20.9 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>173</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>90</BaseAttack>
+        <BaseDefense>120</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Levitate:Neutralizing Gas</Ability>
+        <Description>Very rarely, a sudden mutation can result in two small KOFFING twins becoming conjoined as a WEEZING.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Rhyhorn</Name>
+        <Index>111</Index>
+        <Type>Ground</Type>
+        <Type>Rock</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SPIKES POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>253.5 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>135</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>30</BaseSpecialAttack>
+        <BaseSpecialDefense>30</BaseSpecialDefense>
+        <BaseSpeed>25</BaseSpeed>
+        <Ability>Lightning Rod:Rock Head</Ability>
+        <Description>Strong, but not too bright, this POKéMON can shatter even a skyscraper with its charging TACKLES.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Rhydon</Name>
+        <Index>112</Index>
+        <Type>Ground</Type>
+        <Type>Rock</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRILL POKéMON</Classification>
+        <Height>6'03"</Height>
+        <Weight>264.6 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>204</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>105</BaseHP>
+        <BaseAttack>130</BaseAttack>
+        <BaseDefense>120</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Lightning Rod:Rock Head</Ability>
+        <Description>It begins walking on its hind legs after evolution. It can punch holes through boulders with its horn.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Chansey</Name>
+        <Index>113</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>EGG POKéMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>76.3 lbs</Weight>
+        <EXPGroup>F</EXPGroup>
+        <EXPYield>255</EXPYield>
+        <PercentMale>0</PercentMale>
+        <BaseHP>250</BaseHP>
+        <BaseAttack>5</BaseAttack>
+        <BaseDefense>5</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>105</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Natural Cure:Serene Grace</Ability>
+        <Description>It lays several eggs a day. The eggs are apparently rich in nutrients and extremely delicious.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Tangela</Name>
+        <Index>114</Index>
+        <Type>Grass</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>VINE POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>77.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>166</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>55</BaseAttack>
+        <BaseDefense>115</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>40</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Chlorophyll</Ability>
+        <Description>Blue plant vines cloak the POKéMON’s identity in a tangled mass. It entangles anything that gets close.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Kangaskhan</Name>
+        <Index>115</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>PARENT POKéMON</Classification>
+        <Height>7'03"</Height>
+        <Weight>176.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>175</EXPYield>
+        <PercentMale>0</PercentMale>
+        <BaseHP>105</BaseHP>
+        <BaseAttack>95</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Early Bird</Ability>
+        <Description>The female raises its offspring in a pouch on its belly. It is skilled at attacking using COMET PUNCH.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Horsea</Name>
+        <Index>116</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRAGON POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>17.6 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>83</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>40</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>25</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Swift Swim</Ability>
+        <Description>It maintains balance using its tail, which is wound up like a coil. It may spray ink from its mouth.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Seadra</Name>
+        <Index>117</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRAGON POKéMON</Classification>
+        <Height>3'11"</Height>
+        <Weight>55.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>155</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>95</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>85</BaseSpeed>
+        <Ability>Poison Point</Ability>
+        <Description>Its body bristles with sharp spikes. Carelessly trying to touch it could cause fainting from the spikes.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Goldeen</Name>
+        <Index>118</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>GOLDFISH POKéMON</Classification>
+        <Height>2'00"</Height>
+        <Weight>33.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>111</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>45</BaseHP>
+        <BaseAttack>67</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>35</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>63</BaseSpeed>
+        <Ability>Swift Swim:Water Veil</Ability>
+        <Description>Its dorsal and pectoral fins are strongly developed like muscles. It can swim at a speed of five knots.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Seaking</Name>
+        <Index>119</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>GOLDFISH POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>86.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>170</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>92</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>68</BaseSpeed>
+        <Ability>Swift Swim:Water Veil</Ability>
+        <Description>The horn on its head is sharp like a drill. It bores a hole in a boulder to make its nest.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Staryu</Name>
+        <Index>120</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>STAR SHAPE POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>76.1 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>106</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>85</BaseSpeed>
+        <Ability>Illuminate:Natural Cure</Ability>
+        <Description>It appears in large numbers by seashores. At night, its central core flashes with a red light.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Starmie</Name>
+        <Index>121</Index>
+        <Type>Water</Type>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MYSTERIOUS POKéMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>176.4 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>207</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>75</BaseAttack>
+        <BaseDefense>85</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>115</BaseSpeed>
+        <Ability>Illuminate:Natural Cure</Ability>
+        <Description>This POKéMON has a geometric body. Because of its body, the locals suspect that it is an alien creature.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Mr. Mime</Name>
+        <Index>122</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BARRIER POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>120.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>136</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>40</BaseHP>
+        <BaseAttack>45</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>120</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Soundproof</Ability>
+        <Description>It is adept at conning people. It is said to be able to create walls out of thin air by miming.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Scyther</Name>
+        <Index>123</Index>
+        <Type>Bug</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>MANTIS POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>123.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>187</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>70</BaseHP>
+        <BaseAttack>110</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>80</BaseSpecialDefense>
+        <BaseSpeed>105</BaseSpeed>
+        <Ability>Swarm</Ability>
+        <Description>It tears and shreds prey with its wickedly sharp scythes. It very rarely spreads its wings to fly.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Jynx</Name>
+        <Index>124</Index>
+        <Type>Ice</Type>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>HUMAN SHAPE POKéMON</Classification>
+        <Height>4'07"</Height>
+        <Weight>89.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>137</EXPYield>
+        <PercentMale>0</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>50</BaseAttack>
+        <BaseDefense>35</BaseDefense>
+        <BaseSpecialAttack>115</BaseSpecialAttack>
+        <BaseSpecialDefense>95</BaseSpecialDefense>
+        <BaseSpeed>95</BaseSpeed>
+        <Ability>Oblivious</Ability>
+        <Description>It speaks using a language that sounds human. Research is under way to determine what is being said.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Electabuzz</Name>
+        <Index>125</Index>
+        <Type>Electric</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>ELECTRIC POKéMON</Classification>
+        <Height>3'07"</Height>
+        <Weight>66.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>156</EXPYield>
+        <PercentMale>75</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>83</BaseAttack>
+        <BaseDefense>57</BaseDefense>
+        <BaseSpecialAttack>95</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>105</BaseSpeed>
+        <Ability>Static</Ability>
+        <Description>It loves to feed on strong electricity. It occasionally appears around large power plants and so on.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Magmar</Name>
+        <Index>126</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SPITFIRE POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>98.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>167</EXPYield>
+        <PercentMale>75</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>95</BaseAttack>
+        <BaseDefense>57</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>93</BaseSpeed>
+        <Ability>Flame Body</Ability>
+        <Description>Found near the mouth of a volcano. This fire-breather’s body temperature is nearly 2,200 degrees Fahrenheit.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Pinsir</Name>
+        <Index>127</Index>
+        <Type>Bug</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>STAG BEETLE POKéMON</Classification>
+        <Height>4'11"</Height>
+        <Weight>121.3 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>200</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>125</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>85</BaseSpeed>
+        <Ability>Hyper Cutter</Ability>
+        <Description>Its two long pincer horns are powerful. Once they grip an enemy, they won’t release until the foe is torn.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Tauros</Name>
+        <Index>128</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>WILD BULL POKéMON</Classification>
+        <Height>4'07"</Height>
+        <Weight>194.9 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>211</EXPYield>
+        <PercentMale>100</PercentMale>
+        <BaseHP>75</BaseHP>
+        <BaseAttack>100</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>40</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>110</BaseSpeed>
+        <Ability>Intimidate</Ability>
+        <Description>When it is about to TACKLE, it whips its body repeatedly with its three long tails.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Magikarp</Name>
+        <Index>129</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FISH POKéMON</Classification>
+        <Height>2'11"</Height>
+        <Weight>22.0 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>20</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>20</BaseHP>
+        <BaseAttack>10</BaseAttack>
+        <BaseDefense>55</BaseDefense>
+        <BaseSpecialAttack>15</BaseSpecialAttack>
+        <BaseSpecialDefense>20</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
+        <Ability>Swift Swim</Ability>
+        <Description>It is virtually worthless in terms of both power and speed. It is the most weak and pathetic POKéMON in the world.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Gyarados</Name>
+        <Index>130</Index>
+        <Type>Water</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>ATROCIOUS POKéMON</Classification>
+        <Height>21'04"</Height>
+        <Weight>518.1 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>214</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>95</BaseHP>
+        <BaseAttack>125</BaseAttack>
+        <BaseDefense>79</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>81</BaseSpeed>
+        <Ability>Intimidate</Ability>
+        <Description>It has an extremely aggressive nature. The HYPER BEAM it shoots from its mouth totally incinerates all targets.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Lapras</Name>
+        <Index>131</Index>
+        <Type>Water</Type>
+        <Type>Ice</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TRANSPORT POKéMON</Classification>
+        <Height>8'02"</Height>
+        <Weight>485.0 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>219</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>130</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>80</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>95</BaseSpecialDefense>
+        <BaseSpeed>60</BaseSpeed>
+        <Ability>Water Absorb:Shell Armor</Ability>
+        <Description>Its high intelligence enables it to understand human speech. It likes to ferry people on its back.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Ditto</Name>
+        <Index>132</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>TRANSFORM POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>8.8 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>61</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>48</BaseHP>
+        <BaseAttack>48</BaseAttack>
+        <BaseDefense>48</BaseDefense>
+        <BaseSpecialAttack>48</BaseSpecialAttack>
+        <BaseSpecialDefense>48</BaseSpecialDefense>
+        <BaseSpeed>48</BaseSpeed>
+        <Ability>Limber</Ability>
+        <Description>It can freely recombine its own cellular structure to transform into other life-forms.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Eevee</Name>
+        <Index>133</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>EVOLUTION POKéMON</Classification>
+        <Height>1'00"</Height>
+        <Weight>14.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>92</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>55</BaseHP>
+        <BaseAttack>55</BaseAttack>
+        <BaseDefense>50</BaseDefense>
+        <BaseSpecialAttack>45</BaseSpecialAttack>
+        <BaseSpecialDefense>65</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Run Away</Ability>
+        <Description>An extremely rare POKéMON that may evolve in a number of different ways depending on stimuli.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Vaporeon</Name>
+        <Index>134</Index>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>BUBBLE JET POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>63.9 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>196</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>130</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>110</BaseSpecialAttack>
+        <BaseSpecialDefense>95</BaseSpecialDefense>
+        <BaseSpeed>65</BaseSpeed>
+        <Ability>Water Absorb</Ability>
+        <Description>Its body’s cellular structure is similar to the molecular composition of water. It can melt invisibly in water.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Jolteon</Name>
+        <Index>135</Index>
+        <Type>Electric</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>LIGHTNING POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>54.0 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>197</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>65</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>110</BaseSpecialAttack>
+        <BaseSpecialDefense>95</BaseSpecialDefense>
+        <BaseSpeed>130</BaseSpeed>
+        <Ability>Volt Absorb</Ability>
+        <Description>If it is angered or startled, the fur all over its body bristles like sharp needles that pierce foes.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Flareon</Name>
+        <Index>136</Index>
+        <Type>Fire</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLAME POKéMON</Classification>
+        <Height>2'11"</Height>
+        <Weight>55.1 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>198</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>130</BaseAttack>
+        <BaseDefense>60</BaseDefense>
+        <BaseSpecialAttack>110</BaseSpecialAttack>
+        <BaseSpecialDefense>95</BaseSpecialDefense>
+        <BaseSpeed>65</BaseSpeed>
+        <Ability>Flash Fire</Ability>
+        <Description>It has a flame bag inside its body. After inhaling deeply, it blows out flames of nearly 3,100 degrees Fahrenheit.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Porygon</Name>
+        <Index>137</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>VIRTUAL POKéMON</Classification>
+        <Height>2'07"</Height>
+        <Weight>80.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>130</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>65</BaseHP>
+        <BaseAttack>60</BaseAttack>
+        <BaseDefense>70</BaseDefense>
+        <BaseSpecialAttack>85</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>40</BaseSpeed>
+        <Ability>Trace</Ability>
+        <Description>Using the most advanced technologies, scientists finally succeeded in making the first artificial POKéMON.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Omanyte</Name>
+        <Index>138</Index>
+        <Type>Rock</Type>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SPIRAL POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>16.5 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>120</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>35</BaseHP>
+        <BaseAttack>40</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>90</BaseSpecialAttack>
+        <BaseSpecialDefense>55</BaseSpecialDefense>
+        <BaseSpeed>35</BaseSpeed>
+        <Ability>Swift Swim:Shell Armor</Ability>
+        <Description>A prehistoric POKéMON that lived in the primordial sea, it swims by twisting its 10 tentacles about.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Omastar</Name>
+        <Index>139</Index>
+        <Type>Rock</Type>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SPIRAL POKéMON</Classification>
+        <Height>3'03"</Height>
+        <Weight>77.2 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>199</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>70</BaseHP>
+        <BaseAttack>60</BaseAttack>
+        <BaseDefense>125</BaseDefense>
+        <BaseSpecialAttack>115</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Swift Swim:Shell Armor</Ability>
+        <Description>Its tentacles are highly developed as if they are hands and feet. As soon as it ensnares prey, it bites.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Kabuto</Name>
+        <Index>140</Index>
+        <Type>Rock</Type>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SHELLFISH POKéMON</Classification>
+        <Height>1'08"</Height>
+        <Weight>25.4 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>119</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>30</BaseHP>
+        <BaseAttack>80</BaseAttack>
+        <BaseDefense>90</BaseDefense>
+        <BaseSpecialAttack>55</BaseSpecialAttack>
+        <BaseSpecialDefense>45</BaseSpecialDefense>
+        <BaseSpeed>55</BaseSpeed>
+        <Ability>Swift Swim:Battle Armor</Ability>
+        <Description>This POKéMON was regenerated from the fossil of an ancient creature. It protects itself with a hard shell.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Kabutops</Name>
+        <Index>141</Index>
+        <Type>Rock</Type>
+        <Type>Water</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SHELLFISH POKéMON</Classification>
+        <Height>4'03"</Height>
+        <Weight>89.3 lbs</Weight>
+        <EXPGroup>MF</EXPGroup>
+        <EXPYield>201</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>60</BaseHP>
+        <BaseAttack>115</BaseAttack>
+        <BaseDefense>105</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
+        <Ability>Swift Swim:Battle Armor</Ability>
+        <Description>It swims freely through water. It catches prey with its scythe-like arms and drains the victim’s fluids.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Aerodactyl</Name>
+        <Index>142</Index>
+        <Type>Rock</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FOSSIL POKéMON</Classification>
+        <Height>5'11"</Height>
+        <Weight>130.1 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>202</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>80</BaseHP>
+        <BaseAttack>105</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>60</BaseSpecialAttack>
+        <BaseSpecialDefense>75</BaseSpecialDefense>
+        <BaseSpeed>130</BaseSpeed>
+        <Ability>Rock Head:Pressure</Ability>
+        <Description>It was regenerated from a dinosaur’s genetic matter that was found in amber. It flies with high-pitched cries.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Snorlax</Name>
+        <Index>143</Index>
+        <Type>Normal</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>SLEEPING POKéMON</Classification>
+        <Height>6'11"</Height>
+        <Weight>1014.1 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>154</EXPYield>
+        <PercentMale>87.5</PercentMale>
+        <BaseHP>160</BaseHP>
+        <BaseAttack>110</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>65</BaseSpecialAttack>
+        <BaseSpecialDefense>110</BaseSpecialDefense>
+        <BaseSpeed>30</BaseSpeed>
+        <Ability>Immunity:Thick Fat</Ability>
+        <Description>It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Articuno</Name>
+        <Index>144</Index>
+        <Type>Ice</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FREEZE POKéMON</Classification>
+        <Height>5'07"</Height>
+        <Weight>122.1 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>215</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>85</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>95</BaseSpecialAttack>
+        <BaseSpecialDefense>125</BaseSpecialDefense>
+        <BaseSpeed>85</BaseSpeed>
+        <Ability>Pressure</Ability>
+        <Description>One of the legendary bird POKéMON. With its long tail trailing behind, its flying form is magnificent.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Zapdos</Name>
+        <Index>145</Index>
+        <Type>Electric</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>ELECTRIC POKéMON</Classification>
+        <Height>5'03"</Height>
+        <Weight>116.0 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>216</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>90</BaseAttack>
+        <BaseDefense>85</BaseDefense>
+        <BaseSpecialAttack>125</BaseSpecialAttack>
+        <BaseSpecialDefense>90</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Pressure</Ability>
+        <Description>One of the legendary bird POKéMON. While it is flying, it makes crackling and snapping sounds.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Moltres</Name>
+        <Index>146</Index>
+        <Type>Fire</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>FLAME POKéMON</Classification>
+        <Height>6'07"</Height>
+        <Weight>132.3 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>217</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>90</BaseHP>
+        <BaseAttack>100</BaseAttack>
+        <BaseDefense>90</BaseDefense>
+        <BaseSpecialAttack>125</BaseSpecialAttack>
+        <BaseSpecialDefense>85</BaseSpecialDefense>
+        <BaseSpeed>90</BaseSpeed>
+        <Ability>Pressure</Ability>
+        <Description>One of the legendary bird POKéMON. Those seeing it are overwhelmed by its orange wings that seem to be on fire.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Dratini</Name>
+        <Index>147</Index>
+        <Type>Dragon</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRAGON POKéMON</Classification>
+        <Height>5'11"</Height>
+        <Weight>7.3 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>67</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>41</BaseHP>
+        <BaseAttack>64</BaseAttack>
+        <BaseDefense>45</BaseDefense>
+        <BaseSpecialAttack>50</BaseSpecialAttack>
+        <BaseSpecialDefense>50</BaseSpecialDefense>
+        <BaseSpeed>50</BaseSpeed>
+        <Ability>Shed Skin</Ability>
+        <Description>Even the young can exceed 6.5 feet in length. It grows larger by repeatedly shedding skin.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Dragonair</Name>
+        <Index>148</Index>
+        <Type>Dragon</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRAGON POKéMON</Classification>
+        <Height>13'11"</Height>
+        <Weight>36.4 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>144</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>61</BaseHP>
+        <BaseAttack>84</BaseAttack>
+        <BaseDefense>65</BaseDefense>
+        <BaseSpecialAttack>70</BaseSpecialAttack>
+        <BaseSpecialDefense>70</BaseSpecialDefense>
+        <BaseSpeed>70</BaseSpeed>
+        <Ability>Shed Skin</Ability>
+        <Description>It is said to live in seas and lakes. Even though it has no wings, it has been seen flying occasionally.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Dragonite</Name>
+        <Index>149</Index>
+        <Type>Dragon</Type>
+        <Type>Flying</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>DRAGON POKéMON</Classification>
+        <Height>7'03"</Height>
+        <Weight>463.0 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>218</EXPYield>
+        <PercentMale>50</PercentMale>
+        <BaseHP>91</BaseHP>
+        <BaseAttack>134</BaseAttack>
+        <BaseDefense>95</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>80</BaseSpeed>
+        <Ability>Inner Focus</Ability>
+        <Description>It can fly in spite of its big and bulky physique. It circles the globe in just 16 hours.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Mewtwo</Name>
+        <Index>150</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>GENETIC POKéMON</Classification>
+        <Height>6'07"</Height>
+        <Weight>269.0 lbs</Weight>
+        <EXPGroup>S</EXPGroup>
+        <EXPYield>220</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>106</BaseHP>
+        <BaseAttack>110</BaseAttack>
+        <BaseDefense>90</BaseDefense>
+        <BaseSpecialAttack>154</BaseSpecialAttack>
+        <BaseSpecialDefense>90</BaseSpecialDefense>
+        <BaseSpeed>130</BaseSpeed>
+        <Ability>Pressure</Ability>
+        <Description>A POKéMON whose genetic code was repeatedly recombined for research. It turned vicious as a result.</Description>
+    </Pokemon>
+    <Pokemon>
+        <Name>Mew</Name>
+        <Index>151</Index>
+        <Type>Psychic</Type>
+        <Back>
+            <Path></Path>
+        </Back>
+        <Front>
+            <Path></Path>
+        </Front>
+        <Footprint>
+            <Path></Path>
+        </Footprint>
+        <Classification>NEW SPECIES POKéMON</Classification>
+        <Height>1'04"</Height>
+        <Weight>8.8 lbs</Weight>
+        <EXPGroup>MS</EXPGroup>
+        <EXPYield>64</EXPYield>
+        <PercentMale>-1</PercentMale>
+        <BaseHP>100</BaseHP>
+        <BaseAttack>100</BaseAttack>
+        <BaseDefense>100</BaseDefense>
+        <BaseSpecialAttack>100</BaseSpecialAttack>
+        <BaseSpecialDefense>100</BaseSpecialDefense>
+        <BaseSpeed>100</BaseSpeed>
+        <Ability>Synchronize</Ability>
+        <Description>A POKéMON of South America that was thought to have been extinct. It is very intelligent and learns any move.</Description>
     </Pokemon>
 </PokemonManager>

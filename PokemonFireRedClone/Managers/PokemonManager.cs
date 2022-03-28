@@ -57,9 +57,14 @@ namespace PokemonFireRedClone
         {
             Random random = new Random();
 
-            //Pokemon pokemon = pokemons[pokemonIndex];
+            Gender gender;
 
-            CustomPokemon poke = new CustomPokemon(pokemon.Name, (Nature)random.Next(25), (Gender)random.Next(2),
+            if (pokemon.PercentMale < 0)
+                gender = Gender.GENDERLESS;
+            else
+                gender = random.NextDouble() * 100f < pokemon.PercentMale ? Gender.MALE : Gender.FEMALE;
+
+            CustomPokemon poke = new CustomPokemon(pokemon.Name, (Nature)random.Next(25), gender,
                 new Dictionary<string, int>(), level,
                 new StatList
                 {
@@ -70,6 +75,7 @@ namespace PokemonFireRedClone
                     SpecialDefenseIV = random.Next(32),
                     SpeedIV = random.Next(32)
                 });
+            poke.Name = pokemon.Name.ToUpper();
             poke.Stats = generateStatList(poke);
             return poke;
         }

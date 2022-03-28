@@ -17,6 +17,7 @@ namespace PokemonFireRedClone
         public bool Self;
         public int StageChange;
         public float StatusChangeChance;
+        public int Priority;
 
         [XmlIgnore]
         public Type Type

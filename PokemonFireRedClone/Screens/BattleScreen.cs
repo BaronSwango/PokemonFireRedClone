@@ -18,7 +18,8 @@ namespace PokemonFireRedClone
         public MenuManager menuManager;
         [XmlIgnore]
         public CustomPokemon enemyPokemon;
-        CustomPokemon playerPokemon;
+        [XmlIgnore]
+        public CustomPokemon playerPokemon;
 
         public static bool Wild;
 
@@ -48,11 +49,11 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Pidgeot"), 20);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Nidoking"), 20);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Tackle", 35);
             //eenemyPokemon.MoveNames.Add("Acid Armor", 40);
-            enemyPokemon.MoveNames.Add("Amnesia", 25);
+            enemyPokemon.MoveNames.Add("Barrier", 30);
             BattleLogic = new BattleLogic(this);
         }
 
@@ -131,7 +132,7 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            BattleAnimations.Draw(spriteBatch, TextBox);
+            BattleAnimations.Draw(spriteBatch, this);
 
             TextBox.Draw(spriteBatch);
             if (menuManager.IsLoaded)

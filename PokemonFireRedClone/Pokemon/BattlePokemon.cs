@@ -131,14 +131,14 @@ namespace PokemonFireRedClone
                         SpecialAttackStage = 6;
                     else if (SpecialAttackStage < -6)
                         SpecialAttackStage = -6;
-                    return "SP. ATTACK";
+                    return "SP.   ATK";
                 case "SD":
                     SpecialDefenseStage += adjustment;
                     if (SpecialDefenseStage > 6)
                         SpecialDefenseStage = 6;
                     else if (SpecialDefenseStage < -6)
                         SpecialDefenseStage = -6;
-                    return "SP. DEFENSE";
+                    return "SP.   DEF";
                 case "S":
                     SpeedStage += adjustment;
                     if (SpeedStage > 6)

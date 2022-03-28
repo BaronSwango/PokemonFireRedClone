@@ -154,6 +154,426 @@
         <Category>Physical</Category>
     </Moves>
     <Moves>
+        <Name>Barrier</Name>
+        <TypeName>Psychic</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>30</PP>
+        <Description>The user creates a sturdy wall that sharply raises its DEFENSE stat.</Description>
+        <Category>Status</Category>
+        <Stat>D</Stat>
+        <Self>true</Self>
+        <StageChange>2</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Baton Pass</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>40</PP>
+        <Description>The user switches out, passing along any stat changes to the new battler.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Beat Up</Name>
+        <TypeName>Dark</TypeName>
+        <Power>10</Power>
+        <Accuracy>100</Accuracy>
+        <PP>10</PP>
+        <Description>All party POKéMON join in the attack. The more allies, the more damage.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Belly Drum</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>10</PP>
+        <Description>The user maximizes its ATTACK stat at the cost of half its full HP.</Description>
+        <Category>Status</Category>
+        <Stat>A</Stat>
+        <Self>true</Self>
+        <StageChange>6</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Bide</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>10</PP>
+        <Description>The user endures attacks for two turns, then strikes back double.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bind</Name>
+        <TypeName>Normal</TypeName>
+        <Power>15</Power>
+        <Accuracy>75</Accuracy>
+        <PP>20</PP>
+        <Description>A long body or tentacles are used to bind the foe for two to five turns.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bite</Name>
+        <TypeName>Dark</TypeName>
+        <Power>60</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The user bites with vicious fangs. It may make the foe flinch.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Blast Burn</Name>
+        <TypeName>Fire</TypeName>
+        <Power>150</Power>
+        <Accuracy>90</Accuracy>
+        <PP>5</PP>
+        <Description>The foe is hit with a huge explosion. The user can’t move on the next turn.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Blaze Kick</Name>
+        <TypeName>Fire</TypeName>
+        <Power>85</Power>
+        <Accuracy>90</Accuracy>
+        <PP>10</PP>
+        <Description>A fiery kick with a high critical-hit ratio. It may also burn the foe.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Blizzard</Name>
+        <TypeName>Ice</TypeName>
+        <Power>110</Power>
+        <Accuracy>70</Accuracy>
+        <PP>5</PP>
+        <Description>The foe is blasted with a blizzard. It may freeze the foe solid.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Block</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>5</PP>
+        <Description>The user blocks the foe’s way with arms spread wide to prevent escape.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Body Slam</Name>
+        <TypeName>Normal</TypeName>
+        <Power>85</Power>
+        <Accuracy>100</Accuracy>
+        <PP>15</PP>
+        <Description>The user drops its full body on the foe. It may leave the foe paralyzed.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bone Club</Name>
+        <TypeName>Ground</TypeName>
+        <Power>65</Power>
+        <Accuracy>85</Accuracy>
+        <PP>20</PP>
+        <Description>The foe is clubbed with a bone held in hand. It may make the foe flinch.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bone Rush</Name>
+        <TypeName>Ground</TypeName>
+        <Power>25</Power>
+        <Accuracy>90</Accuracy>
+        <PP>10</PP>
+        <Description>The user strikes the foe with a bone in hand two to five times.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bonemerang</Name>
+        <TypeName>Ground</TypeName>
+        <Power>50</Power>
+        <Accuracy>90</Accuracy>
+        <PP>10</PP>
+        <Description>The user throws a bone that hits the foe once, then once again on return.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bounce</Name>
+        <TypeName>Flying</TypeName>
+        <Power>85</Power>
+        <Accuracy>85</Accuracy>
+        <PP>5</PP>
+        <Description>The user bounces on the foe on the 2nd turn. It may paralyze the foe.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Brick Break</Name>
+        <TypeName>Fighting</TypeName>
+        <Power>75</Power>
+        <Accuracy>100</Accuracy>
+        <PP>15</PP>
+        <Description>An attack that also breaks any barrier like LIGHT SCREEN and REFLECT.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bubble</Name>
+        <TypeName>Water</TypeName>
+        <Power>20</Power>
+        <Accuracy>100</Accuracy>
+        <PP>30</PP>
+        <Description>A spray of bubbles hits the foe. It may lower the foe’s SPEED stat.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>BubbleBeam</Name>
+        <TypeName>Water</TypeName>
+        <Power>65</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>A spray of bubbles strikes the foe. It may lower the foe’s SPEED stat.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Bulk Up</Name>
+        <TypeName>Fighting</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>The user bulks up its body to boost both its ATTACK and DEFENSE stats.</Description>
+        <Category>Status</Category>
+        <Stat>A:D</Stat>
+        <Self>true</Self>
+        <StageChange>1</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Bullet Seed</Name>
+        <TypeName>Grass</TypeName>
+        <Power>10</Power>
+        <Accuracy>100</Accuracy>
+        <PP>30</PP>
+        <Description>The user shoots seeds at the foe. Two to five seeds are shot at once.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Bullet Seed</Name>
+        <TypeName>Grass</TypeName>
+        <Power>10</Power>
+        <Accuracy>100</Accuracy>
+        <PP>30</PP>
+        <Description>The user shoots seeds at the foe. Two to five seeds are shot at once.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Calm Mind</Name>
+        <TypeName>Psychic</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>The user focuses its mind to raise the SP. ATK and SP. DEF stats.</Description>
+        <Category>Status</Category>
+        <Stat>SA:D</Stat>
+        <Self>true</Self>
+        <StageChange>1</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Camouflage</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>Alters the user’s type depending on the location’s terrain.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Charge</Name>
+        <TypeName>Electric</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>The user charges power to boost the ELECTRIC move it uses next.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Charm</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>The foe is charmed by the user’s cute appeals, sharply cutting its ATTACK.</Description>
+        <Category>Status</Category>
+        <Stat>A</Stat>
+        <Self>false</Self>
+        <StageChange>-2</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Clamp</Name>
+        <TypeName>Water</TypeName>
+        <Power>35</Power>
+        <Accuracy>75</Accuracy>
+        <PP>10</PP>
+        <Description>The foe is clamped and squeezed by the user’s shell for two to five turns.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Comet Punch</Name>
+        <TypeName>Normal</TypeName>
+        <Power>18</Power>
+        <Accuracy>85</Accuracy>
+        <PP>15</PP>
+        <Description>The foe is hit with a flurry of punches that strike two to five times.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Confuse Ray</Name>
+        <TypeName>Ghost</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>10</PP>
+        <Description>The foe is exposed to a sinister ray that triggers confusion.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Confusion</Name>
+        <TypeName>Psychic</TypeName>
+        <Power>50</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>A weak telekinetic attack that may also leave the foe confused.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Constrict</Name>
+        <TypeName>Normal</TypeName>
+        <Power>10</Power>
+        <Accuracy>100</Accuracy>
+        <PP>35</PP>
+        <Description>The foe is attacked with long tentacles or vines. It may lower SPEED.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Conversion</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>30</PP>
+        <Description>The user changes its type to match the type of one of its moves.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Conversion 2</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>30</PP>
+        <Description>The user changes type to make itself resistant to the last attack it took.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Cosmic Power</Name>
+        <TypeName>Psychic</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>20</PP>
+        <Description>The user changes type to make itself resistant to the last attack it took.</Description>
+        <Category>Status</Category>
+        <Stat>D:SD</Stat>
+        <Self>true</Self>
+        <StageChange>1</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Cotton Spore</Name>
+        <TypeName>Grass</TypeName>
+        <Power>0</Power>
+        <Accuracy>85</Accuracy>
+        <PP>40</PP>
+        <Description>Cotton-like spores cling to the foe, sharply reducing its SPEED stat.</Description>
+        <Category>Status</Category>
+        <Stat>S</Stat>
+        <Self>false</Self>
+        <StageChange>-2</StageChange>
+    </Moves>
+    <Moves>
+        <Name>Counter</Name>
+        <TypeName>Fighting</TypeName>
+        <Power>0</Power>
+        <Accuracy>100</Accuracy>
+        <PP>20</PP>
+        <Description>A retaliation move that counters any physical hit with double the damage.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Covet</Name>
+        <TypeName>Normal</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>40</PP>
+        <Description>A cutely executed attack that also steals the foe’s hold item.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Crabhammer</Name>
+        <TypeName>Water</TypeName>
+        <Power>90</Power>
+        <Accuracy>85</Accuracy>
+        <PP>10</PP>
+        <Description>A large pincer is used to hammer the foe. It has a high critical-hit ratio.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Cross Chop</Name>
+        <TypeName>Fighting</TypeName>
+        <Power>100</Power>
+        <Accuracy>80</Accuracy>
+        <PP>5</PP>
+        <Description>The foe is hit with double chops. It has a high critical-hit ratio.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Crunch</Name>
+        <TypeName>Dark</TypeName>
+        <Power>80</Power>
+        <Accuracy>100</Accuracy>
+        <PP>15</PP>
+        <Description>The foe is crunched with sharp fangs. It may lower the foe’s SP. DEF.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Crush Claw</Name>
+        <TypeName>Normal</TypeName>
+        <Power>75</Power>
+        <Accuracy>95</Accuracy>
+        <PP>10</PP>
+        <Description>The foe is attacked with sharp claws. It may also lower the foe’s DEFENSE.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Curse</Name>
+        <TypeName>Ghost</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>10</PP>
+        <Description>A move that works differently for the GHOST-type and all the other types.</Description>
+        <Category>Status</Category>
+    </Moves>
+    <Moves>
+        <Name>Cut</Name>
+        <TypeName>Normal</TypeName>
+        <Power>50</Power>
+        <Accuracy>95</Accuracy>
+        <PP>30</PP>
+        <Description>A basic attack. It can be used to cut down thin trees and grass.</Description>
+        <Category>Physical</Category>
+    </Moves>
+    <Moves>
+        <Name>Defense Curl</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>40</PP>
+        <Description>The user curls up to conceal weak spots and raise its DEFENSE stat.</Description>
+        <Category>Status</Category>
+        <Stat>D</Stat>
+        <Self>true</Self>
+        <StageChange>1</StageChange>
+    </Moves>
+    <Moves>
         <Name>Ember</Name>
         <TypeName>Fire</TypeName>
         <Power>40</Power>

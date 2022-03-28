@@ -62,7 +62,7 @@ namespace PokemonFireRedClone
                                         } else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + battleScreen.enemyPokemon.Pokemon.Name.ToUpper() + "   used";
+                                            image.Text = encounter + battleScreen.enemyPokemon.Name + "   used";
                                         }
                                     }
                                     
@@ -102,7 +102,7 @@ namespace PokemonFireRedClone
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + battleScreen.enemyPokemon.PokemonName.ToUpper();
+                                            image.Text = encounter + battleScreen.enemyPokemon.Name;
 
                                             if (Player.PlayerJsonObject.Pokemon.Level < 100 || battleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
@@ -133,7 +133,7 @@ namespace PokemonFireRedClone
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + battleScreen.enemyPokemon.PokemonName.ToUpper() + "`s   " + battleScreen.BattleLogic.Stat;
+                                            image.Text = encounter + battleScreen.enemyPokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
                                         }
                                     }
 
@@ -247,7 +247,7 @@ namespace PokemonFireRedClone
                 {
                     if (BattleScreen.Wild)
                     {
-                        image.Text = "Wild   " + enemyPokemon.Pokemon.Name.ToUpper() + "   appeared !";
+                        image.Text = "Wild   " + enemyPokemon.Name + "   appeared !";
                         NextPage = 3;
                         currentDialogue.Add(image);
                         image.LoadContent();
