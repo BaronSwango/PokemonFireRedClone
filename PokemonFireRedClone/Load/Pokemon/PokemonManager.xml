@@ -1401,10 +1401,10 @@
         <Index>50</Index>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/DiglettBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/DiglettFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1429,10 +1429,10 @@
         <Index>51</Index>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/DugtrioBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/DugtrioFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1457,10 +1457,10 @@
         <Index>52</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MeowthBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MeowthFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1485,10 +1485,10 @@
         <Index>53</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PersianBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PersianFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1513,10 +1513,10 @@
         <Index>54</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PsyduckBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PsyduckFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1541,10 +1541,10 @@
         <Index>55</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GolduckBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GolduckFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1569,10 +1569,10 @@
         <Index>56</Index>
         <Type>Fighting</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MankeyBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MankeyFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1597,10 +1597,10 @@
         <Index>57</Index>
         <Type>Fighting</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PrimeapeBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PrimeapeFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1625,10 +1625,10 @@
         <Index>58</Index>
         <Type>Fire</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GrowlitheBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GrowlitheFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1653,10 +1653,10 @@
         <Index>59</Index>
         <Type>Fire</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ArcanineBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ArcanineFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1681,10 +1681,10 @@
         <Index>60</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PoliwagBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PoliwagFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1709,10 +1709,10 @@
         <Index>61</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PoliwhirlBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PoliwhirlFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1738,10 +1738,10 @@
         <Type>Water</Type>
         <Type>Fighting</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PoliwrathBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PoliwrathFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1766,10 +1766,10 @@
         <Index>63</Index>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/AbraBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/AbraFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1794,10 +1794,10 @@
         <Index>64</Index>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/KadabraBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/KadabraFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1822,10 +1822,10 @@
         <Index>65</Index>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/AlakazamBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/AlakazamFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1850,10 +1850,10 @@
         <Index>66</Index>
         <Type>Fighting</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MachopBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MachopFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1878,10 +1878,10 @@
         <Index>67</Index>
         <Type>Fighting</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MachokeBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MachokeFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1906,10 +1906,10 @@
         <Index>68</Index>
         <Type>Fighting</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MachampBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MachampFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1935,10 +1935,10 @@
         <Type>Grass</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/BellsproutBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/BellsproutFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1964,10 +1964,10 @@
         <Type>Grass</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/WeepinbellBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/WeepinbellFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -1993,10 +1993,10 @@
         <Type>Grass</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/VictreebellBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/VictreebellFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -2022,10 +2022,10 @@
         <Type>Water</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/TentacoolBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/TentacoolFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -2051,10 +2051,10 @@
         <Type>Water</Type>
         <Type>Poison</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/TentacruelBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/TentacruelFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -2080,10 +2080,10 @@
         <Type>Rock</Type>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GeodudeBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GeodudeFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -2109,10 +2109,10 @@
         <Type>Rock</Type>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GravelerBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GravelerFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -2138,10 +2138,10 @@
         <Type>Rock</Type>
         <Type>Ground</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GolemBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GolemFront</Path>
         </Front>
         <Footprint>
             <Path></Path>

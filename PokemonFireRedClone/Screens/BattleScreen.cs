@@ -49,7 +49,7 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Venomoth"), 20);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Golem"), 20);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Tackle", 35);
             //eenemyPokemon.MoveNames.Add("Acid Armor", 40);
