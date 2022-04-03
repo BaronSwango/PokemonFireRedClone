@@ -622,6 +622,15 @@
         <Category>Physical</Category>
     </Moves>
     <Moves>
+        <Name>Thunderbolt</Name>
+        <TypeName>Electric</TypeName>
+        <Power>95</Power>
+        <Accuracy>100</Accuracy>
+        <PP>15</PP>
+        <Description>A strong electrical attack that may also leave the foe paralyzed.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
         <Name>Vine Whip</Name>
         <TypeName>Grass</TypeName>
         <Power>45</Power>
