@@ -3163,10 +3163,10 @@
         <Type>Ground</Type>
         <Type>Rock</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/RhydonBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/RhydonFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3191,10 +3191,10 @@
         <Index>113</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ChanseyBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ChanseyFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3219,10 +3219,10 @@
         <Index>114</Index>
         <Type>Grass</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/TangelaBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/TangelaFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
