@@ -92,10 +92,8 @@ $RECYCLE.BIN/
 x64/
 x86/
 bld/
-**/[Bb]in/*
-!**/[Bb]in/**/*
-**/[Oo]bj/*
-!**/[Oo]bj/**/*
+[Bb]in/
+[Oo]bj/
 [Ll]og/
 
 # Visual Studio 2015/2017 cache/options directory
