@@ -3247,10 +3247,10 @@
         <Index>115</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/KangaskhanBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/KangaskhanFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3275,10 +3275,10 @@
         <Index>116</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/HorseaBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/HorseaFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3303,10 +3303,10 @@
         <Index>117</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SeadraBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SeadraFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3331,10 +3331,10 @@
         <Index>118</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GoldeenBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GoldeenFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3359,10 +3359,10 @@
         <Index>119</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SeakingBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SeakingFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3387,10 +3387,10 @@
         <Index>120</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/StaryuBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/StaryuFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3416,10 +3416,10 @@
         <Type>Water</Type>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/StarmieBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/StarmieFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3440,14 +3440,14 @@
         <Description>This POKéMON has a geometric body. Because of its body, the locals suspect that it is an alien creature.</Description>
     </Pokemon>
     <Pokemon>
-        <Name>Mr. Mime</Name>
+        <Name>Mr.  Mime</Name>
         <Index>122</Index>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MrMimeBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MrMimeFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3473,10 +3473,10 @@
         <Type>Bug</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ScytherBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ScytherFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3502,10 +3502,10 @@
         <Type>Ice</Type>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/JynxBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/JynxFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3530,10 +3530,10 @@
         <Index>125</Index>
         <Type>Electric</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ElectabuzzBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ElectabuzzFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3558,10 +3558,10 @@
         <Index>126</Index>
         <Type>Fire</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MagmarBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MagmarFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3586,10 +3586,10 @@
         <Index>127</Index>
         <Type>Bug</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PinsirBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PinsirFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3614,10 +3614,10 @@
         <Index>128</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/TaurosBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/TaurosFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3642,10 +3642,10 @@
         <Index>129</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MagikarpBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MagikarpFronte</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3671,10 +3671,10 @@
         <Type>Water</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/GyaradosBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/GyaradosFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
