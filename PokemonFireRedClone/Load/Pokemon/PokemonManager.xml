@@ -3700,10 +3700,10 @@
         <Type>Water</Type>
         <Type>Ice</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/LaprasBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/LaprasFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3728,10 +3728,10 @@
         <Index>132</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/DittoBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/DittoFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3756,10 +3756,10 @@
         <Index>133</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/EeveeBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/EeveeFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3784,10 +3784,10 @@
         <Index>134</Index>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/VaporeonBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/VaporeonFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3812,10 +3812,10 @@
         <Index>135</Index>
         <Type>Electric</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/JolteonBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/JolteonFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3840,10 +3840,10 @@
         <Index>136</Index>
         <Type>Fire</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/FlareonBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/FlareonFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3868,10 +3868,10 @@
         <Index>137</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/PorygonBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/PorygonFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3897,10 +3897,10 @@
         <Type>Rock</Type>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/OmanyteBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/OmanyteFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3926,10 +3926,10 @@
         <Type>Rock</Type>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/OmastarBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/OmastarFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3955,10 +3955,10 @@
         <Type>Rock</Type>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/KabutoBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/KabutoFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -3984,10 +3984,10 @@
         <Type>Rock</Type>
         <Type>Water</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/KabutopsBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/KabutopsFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4013,10 +4013,10 @@
         <Type>Rock</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/AerodactylBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/AerodactylFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4041,10 +4041,10 @@
         <Index>143</Index>
         <Type>Normal</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/SnorlaxBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/SnorlaxFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4070,10 +4070,10 @@
         <Type>Ice</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ArticunoBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ArticunoFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4099,10 +4099,10 @@
         <Type>Electric</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/ZapdosBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/ZapdosFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4128,10 +4128,10 @@
         <Type>Fire</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MoltresBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MoltresFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4156,10 +4156,10 @@
         <Index>147</Index>
         <Type>Dragon</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/DratiniBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/DratiniFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4184,10 +4184,10 @@
         <Index>148</Index>
         <Type>Dragon</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/DragonairBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/DragonairFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4213,10 +4213,10 @@
         <Type>Dragon</Type>
         <Type>Flying</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/DragoniteBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/DragoniteFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4241,10 +4241,10 @@
         <Index>150</Index>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MewtwoBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MewtwoFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
@@ -4269,10 +4269,10 @@
         <Index>151</Index>
         <Type>Psychic</Type>
         <Back>
-            <Path></Path>
+            <Path>Pokemon/MewBack</Path>
         </Back>
         <Front>
-            <Path></Path>
+            <Path>Pokemon/MewFront</Path>
         </Front>
         <Footprint>
             <Path></Path>
