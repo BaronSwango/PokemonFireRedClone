@@ -343,7 +343,8 @@ namespace PokemonFireRedClone
                         if (!battleScreen.TextBox.IsTransitioning)
                         {
                             
-
+                            // add boolean whether player or enemy is getting damaged in BattleLogic
+                            // combine Player_Damage_Animation and Enemy_damageAniamtion into one case
                             if (blinkCounter < 4)
                             {
                                 if (counter > 60)
