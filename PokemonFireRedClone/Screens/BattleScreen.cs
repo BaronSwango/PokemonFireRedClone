@@ -125,7 +125,7 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.E) && TextBox.BattleLevelUp.IsActive)
                 TextBox.BattleLevelUp.NextPage(this);
 
-            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION)
+            if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive) || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN || BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION || BattleAnimations.state == BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION)
                 TextBox.Update(gameTime, this);
 
 

@@ -53,31 +53,38 @@ namespace PokemonFireRedClone
                                         image.Text = Player.PlayerJsonObject.Pokemon.Name + "   do?";
                                     break;
                                 case 5:
-
+                                    
                                     if (currentDialogue[0] == image)
                                     {
-                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
-                                        {
-                                            image.Text = Player.PlayerJsonObject.Pokemon.Name + "   used";
-                                        } else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                                        if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
                                             image.Text = encounter + battleScreen.enemyPokemon.Name + "   used";
-                                        }
+                                        } else 
+                                            image.Text = Player.PlayerJsonObject.Pokemon.Name + "   used";
+
                                     }
                                     
                                     else if (currentDialogue[1] == image)
                                     {
+                                        image.Text = battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND ? battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !"
+                                            : battleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + " !";
 
-                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
+                                        if (battleScreen.BattleLogic.EnemyMoveOption != null && battleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION && battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
                                         {
-                                            image.Text = battleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + " !";
-                                        }
-                                        else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
+                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION
+                                                : BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
+                                            battleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                                            NextPage = 18;
+                                        } else if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION && battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND)
                                         {
-                                            image.Text = battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !";
+                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
+                                                : BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION;
+                                            battleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                                            NextPage = 18;
                                         }
 
+                                        /*
                                         if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
                                         {
                                             battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
@@ -90,6 +97,7 @@ namespace PokemonFireRedClone
                                                 : BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
                                             NextPage = 18;
                                          }
+                                        */
                                     }
 
                                     break;

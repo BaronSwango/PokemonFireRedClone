@@ -8,6 +8,16 @@ namespace PokemonFireRedClone
     public class BattleLogic
     {
 
+        public enum FightState
+        {
+            NONE,
+            PLAYER_DEFEND,
+            ENEMY_DEFEND,
+            PLAYER_STATUS,
+            ENEMY_STATUS
+        }
+
+        public FightState State;
         public BattlePokemon playerPokemon;
         public BattlePokemon enemyPokemon;
         public Move PlayerMoveOption;
@@ -31,6 +41,8 @@ namespace PokemonFireRedClone
         public bool StageMaxed;
         public bool PlayerMoveExecuted;
         public bool EnemyMoveExecuted;
+        //public bool PlayerDefend;
+        //public bool EnemyDefend;
         bool playerFirst;
 
         public BattleLogic(BattleScreen battleScreen)
@@ -48,6 +60,9 @@ namespace PokemonFireRedClone
             playerFirst = false;
             PokemonFainted = false;
             EXPGainApplied = false;
+            State = FightState.NONE;
+            //PlayerDefend = false;
+            //EnemyDefend = false;
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
@@ -68,7 +83,9 @@ namespace PokemonFireRedClone
                         if (!EnemyMoveExecuted)
                         {
                             enemyUseMove(enemyPokemon, playerPokemon);
-                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            //PlayerDefend = true;
+                            State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
                             battleScreen.TextBox.NextPage = 5;
@@ -80,7 +97,9 @@ namespace PokemonFireRedClone
                         if (!PlayerMoveExecuted)
                         {
                             useMove(playerPokemon, enemyPokemon, PlayerMoveOption);
-                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            State = FightState.ENEMY_DEFEND;
+                            //EnemyDefend = true;
                             PlayerMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
                         }
@@ -93,7 +112,9 @@ namespace PokemonFireRedClone
                         if (!PlayerMoveExecuted)
                         {
                             useMove(playerPokemon, enemyPokemon, PlayerMoveOption);
-                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            State = FightState.ENEMY_DEFEND;
+                            //EnemyDefend = true;
                             PlayerMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
                             battleScreen.TextBox.NextPage = 5;
@@ -105,7 +126,9 @@ namespace PokemonFireRedClone
                         if (!EnemyMoveExecuted)
                         {
                             enemyUseMove(enemyPokemon, playerPokemon);
-                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            State = FightState.PLAYER_DEFEND;
+                            //PlayerDefend = true;
                             EnemyMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
                         }
