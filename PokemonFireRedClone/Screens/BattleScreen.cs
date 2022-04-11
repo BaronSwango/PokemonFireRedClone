@@ -49,7 +49,7 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.Pokemon;
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Moltres"), 40);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Geodude"), 40);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             playerPokemon.CurrentHP = playerPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Water Gun", 35);

@@ -72,14 +72,10 @@ namespace PokemonFireRedClone
 
                                         if (battleScreen.BattleLogic.EnemyMoveOption != null && battleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
                                         {
-                                            //battleScreen.BattleAnimations.state = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION
-                                                //: BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
                                             battleScreen.BattleLogic.State = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleLogic.FightState.ENEMY_STATUS : BattleLogic.FightState.PLAYER_STATUS;
                                             NextPage = 18;
                                         } else if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND)
                                         {
-                                            //battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
-                                                //: BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION;
                                             battleScreen.BattleLogic.State = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleLogic.FightState.PLAYER_STATUS : BattleLogic.FightState.ENEMY_STATUS;
                                             NextPage = 18;
                                         }
