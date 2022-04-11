@@ -70,34 +70,20 @@ namespace PokemonFireRedClone
                                         image.Text = battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND ? battleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !"
                                             : battleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + " !";
 
-                                        if (battleScreen.BattleLogic.EnemyMoveOption != null && battleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION && battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
+                                        if (battleScreen.BattleLogic.EnemyMoveOption != null && battleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
                                         {
-                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION
-                                                : BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
-                                            battleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                                            //battleScreen.BattleAnimations.state = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION
+                                                //: BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
+                                            battleScreen.BattleLogic.State = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleLogic.FightState.ENEMY_STATUS : BattleLogic.FightState.PLAYER_STATUS;
                                             NextPage = 18;
-                                        } else if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION && battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND)
+                                        } else if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND)
                                         {
-                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
-                                                : BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION;
-                                            battleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                                            //battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
+                                                //: BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION;
+                                            battleScreen.BattleLogic.State = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleLogic.FightState.PLAYER_STATUS : BattleLogic.FightState.ENEMY_STATUS;
                                             NextPage = 18;
                                         }
 
-                                        /*
-                                        if (battleScreen.BattleLogic.PlayerMoveOption != null && battleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_DAMAGE_ANIMATION)
-                                        {
-                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.PlayerMoveOption.Self ? BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION
-                                                : BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION;
-                                            NextPage = 18;
-                                         }
-                                         else if (battleScreen.BattleLogic.EnemyMoveOption != null && battleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_DAMAGE_ANIMATION)
-                                         {
-                                            battleScreen.BattleAnimations.state = battleScreen.BattleLogic.EnemyMoveOption.Self ? BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION
-                                                : BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION;
-                                            NextPage = 18;
-                                         }
-                                        */
                                     }
 
                                     break;
@@ -136,9 +122,9 @@ namespace PokemonFireRedClone
                                 case 18:
                                     if (currentDialogue[0] == image)
                                     {
-                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_STATUS_ANIMATION)
+                                        if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
                                             image.Text = Player.PlayerJsonObject.Pokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
-                                        else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_STATUS_ANIMATION)
+                                        else if (battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
                                             image.Text = encounter + battleScreen.enemyPokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
