@@ -46,11 +46,11 @@ namespace PokemonFireRedClone
                             switch (Page)
                             {
                                 case 3:
-                                    image.Text = "Go !   " + Player.PlayerJsonObject.Pokemon.Name + " !";
+                                    image.Text = "Go !   " + Player.PlayerJsonObject.PokemonInBag[0].Name + " !";
                                     break;
                                 case 4:
                                     if (image == currentDialogue[1])
-                                        image.Text = Player.PlayerJsonObject.Pokemon.Name + "   do?";
+                                        image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   do?";
                                     break;
                                 case 5:
                                     
@@ -61,7 +61,7 @@ namespace PokemonFireRedClone
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
                                             image.Text = encounter + battleScreen.enemyPokemon.Name + "   used";
                                         } else 
-                                            image.Text = Player.PlayerJsonObject.Pokemon.Name + "   used";
+                                            image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   used";
 
                                     }
                                     
@@ -87,14 +87,14 @@ namespace PokemonFireRedClone
                                     if (currentDialogue[0] == image)
                                     {
                                         if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT)
-                                            image.Text = Player.PlayerJsonObject.Pokemon.Name;
+                                            image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name;
 
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
                                             image.Text = encounter + battleScreen.enemyPokemon.Name;
 
-                                            if (Player.PlayerJsonObject.Pokemon.Level < 100 || battleScreen.BattleLogic.LevelUp)
+                                            if (Player.PlayerJsonObject.PokemonInBag[0].Level < 100 || battleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
                                         }
                                     }
@@ -102,7 +102,7 @@ namespace PokemonFireRedClone
                                 case 16:
 
                                     if (currentDialogue[0] == image)
-                                        image.Text = Player.PlayerJsonObject.Pokemon.Name + image.Text;
+                                        image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + image.Text;
 
                                     else if (currentDialogue[1] == image)
                                         image.Text = battleScreen.BattleLogic.GainedEXP + image.Text;
@@ -110,7 +110,7 @@ namespace PokemonFireRedClone
                                     break;
                                 case 17:
                                     if (currentDialogue[0] == image)
-                                        image.Text = Player.PlayerJsonObject.Pokemon.Name + "   grew   to";
+                                        image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   grew   to";
 
                                     else if (currentDialogue[1] == image)
                                         image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]+ " !";
@@ -119,7 +119,7 @@ namespace PokemonFireRedClone
                                     if (currentDialogue[0] == image)
                                     {
                                         if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
-                                            image.Text = Player.PlayerJsonObject.Pokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
+                                            image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "`s   " + battleScreen.BattleLogic.Stat;
                                         else if (battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
                                         {
                                             string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
@@ -287,7 +287,7 @@ namespace PokemonFireRedClone
                         IsTransitioning = true;
                         break;
                     case 9:
-                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
+                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.PokemonInBag[0].Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
                             return;
                         }
@@ -298,7 +298,7 @@ namespace PokemonFireRedClone
                         battleScreen.BattleAnimations.IsTransitioning = true;
                         break;
                     case 17:
-                        BattleLevelUp.LoadContent(Player.PlayerJsonObject.Pokemon, int.Parse(battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]));
+                        BattleLevelUp.LoadContent(Player.PlayerJsonObject.PokemonInBag[0], int.Parse(battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]));
                         break;
                     default:
                         break;

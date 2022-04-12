@@ -27,6 +27,9 @@ catching   them.</Text>
         </Description>
     </Item>
     <Item>
+        <LinkType>Menu</LinkType>
+        <LinkID>Load/Menus/PokemonMenu.xml</LinkID>
+        <MenuName>PokemonMenu</MenuName>
         <Image>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>

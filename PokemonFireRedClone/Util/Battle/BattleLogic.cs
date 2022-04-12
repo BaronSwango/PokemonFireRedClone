@@ -45,7 +45,7 @@ namespace PokemonFireRedClone
 
         public BattleLogic(BattleScreen battleScreen)
         {
-            playerPokemon = new BattlePokemon(Player.PlayerJsonObject.Pokemon);
+            playerPokemon = new BattlePokemon(Player.PlayerJsonObject.PokemonInBag[0]);
             enemyPokemon = new BattlePokemon(battleScreen.enemyPokemon);
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
@@ -127,28 +127,28 @@ namespace PokemonFireRedClone
                         }
                     }
                 }
-            } else if (PokemonFainted && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT && Player.PlayerJsonObject.Pokemon.Level < 100)
+            } else if (PokemonFainted && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT && Player.PlayerJsonObject.PokemonInBag[0].Level < 100)
             {
                 if (!EXPGainApplied)
                 {
                     
                     GainedEXP = calcualteEXP(battleScreen.enemyPokemon, BattleScreen.Wild, false, 1) * 100;
-                    Player.PlayerJsonObject.Pokemon.CurrentEXP += GainedEXP;
-                    int oldMaxHP = Player.PlayerJsonObject.Pokemon.Stats.HP;
-                    while (Player.PlayerJsonObject.Pokemon.CurrentEXP >= Player.PlayerJsonObject.Pokemon.NextLevelEXP)
+                    Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP += GainedEXP;
+                    int oldMaxHP = Player.PlayerJsonObject.PokemonInBag[0].Stats.HP;
+                    while (Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP >= Player.PlayerJsonObject.PokemonInBag[0].NextLevelEXP)
                     {
-                        Player.PlayerJsonObject.Pokemon.Level++;
+                        Player.PlayerJsonObject.PokemonInBag[0].Level++;
                         LevelUp = true;
-                        if (Player.PlayerJsonObject.Pokemon.Level == 100)
+                        if (Player.PlayerJsonObject.PokemonInBag[0].Level == 100)
                         {
-                            GainedEXP -= Player.PlayerJsonObject.Pokemon.CurrentEXP - Player.PlayerJsonObject.Pokemon.CurrentLevelEXP;
-                            Player.PlayerJsonObject.Pokemon.CurrentEXP = Player.PlayerJsonObject.Pokemon.CurrentLevelEXP;
+                            GainedEXP -= Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP - Player.PlayerJsonObject.PokemonInBag[0].CurrentLevelEXP;
+                            Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP = Player.PlayerJsonObject.PokemonInBag[0].CurrentLevelEXP;
                             break;
                         }
                     }
 
-                    Player.PlayerJsonObject.Pokemon.Stats = PokemonManager.generateStatList(Player.PlayerJsonObject.Pokemon);
-                    Player.PlayerJsonObject.Pokemon.CurrentHP += Player.PlayerJsonObject.Pokemon.Stats.HP - oldMaxHP;
+                    Player.PlayerJsonObject.PokemonInBag[0].Stats = PokemonManager.generateStatList(Player.PlayerJsonObject.PokemonInBag[0]);
+                    Player.PlayerJsonObject.PokemonInBag[0].CurrentHP += Player.PlayerJsonObject.PokemonInBag[0].Stats.HP - oldMaxHP;
                     EXPGainApplied = true;
                 }
             }

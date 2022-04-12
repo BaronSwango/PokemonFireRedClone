@@ -59,7 +59,6 @@ namespace PokemonFireRedClone
         protected override void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
-            Vector2 infoDimensions = Vector2.Zero;
             Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
 
             InfoTitlesBackground.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 40,

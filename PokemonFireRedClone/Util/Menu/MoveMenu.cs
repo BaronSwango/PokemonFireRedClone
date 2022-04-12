@@ -40,12 +40,12 @@ namespace PokemonFireRedClone
             Arrow.LoadContent();
             Arrow.Position = new Vector2(-Arrow.SourceRect.Width, 0);
 
-            for (int i = 0; i < Player.PlayerJsonObject.Pokemon.MoveNames.Count; i++)
+            for (int i = 0; i < Player.PlayerJsonObject.PokemonInBag[0].MoveNames.Count; i++)
             {
-                string moveName = Player.PlayerJsonObject.Pokemon.MoveNames.Keys.ElementAt(i);
+                string moveName = Player.PlayerJsonObject.PokemonInBag[0].MoveNames.Keys.ElementAt(i);
                 Items[i].Image.Text = moveName.ToUpper();
 
-                Items[i].Description[1].Text = Player.PlayerJsonObject.Pokemon.MoveNames[moveName] + "/" + MoveManager.Instance.GetMove(moveName).PP;
+                Items[i].Description[1].Text = Player.PlayerJsonObject.PokemonInBag[0].MoveNames[moveName] + "/" + MoveManager.Instance.GetMove(moveName).PP;
                 Items[i].Description[3].Text = MoveManager.Instance.GetMove(moveName).TypeName.ToUpper();
             }
 
