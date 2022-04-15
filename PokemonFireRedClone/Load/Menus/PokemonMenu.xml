@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <PokemonMenu>
+
     <PrevMenuName>MainMenu</PrevMenuName>
     <Background>
-        <Path>Menus/PokemonMenuBackground</Path>
+        <Path>Menus/PokemonMenu/PokemonMenuBackground</Path>
     </Background>
+
+
 
 </PokemonMenu>

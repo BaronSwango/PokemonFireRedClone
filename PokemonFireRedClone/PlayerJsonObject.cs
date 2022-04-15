@@ -28,7 +28,7 @@ namespace PokemonFireRedClone
         public int Badges;
         public int Pokedex;
         public int Money;
-        public Dictionary<int, CustomPokemon> PokemonInBag;
+        public List<CustomPokemon> PokemonInBag;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;
 
     }

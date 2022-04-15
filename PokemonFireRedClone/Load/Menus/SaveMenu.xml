@@ -2,7 +2,7 @@
 <SaveMenu>
 
     <InfoTitlesBackground>
-        <Path>Menus/SaveMenuInfoBackground</Path>
+        <Path>Menus/SaveMenu/SaveMenuInfoBackground</Path>
     </InfoTitlesBackground>
 
     <MenuBackground>

@@ -360,7 +360,8 @@ namespace PokemonFireRedClone
             if (!File.Exists("Load/Gameplay/Player.json")) return;
 
             PlayerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
-            PlayerJsonObject.PokemonInBag[0].Stats = PokemonManager.generateStatList(PlayerJsonObject.PokemonInBag[0]);
+            foreach (CustomPokemon pokemon in PlayerJsonObject.PokemonInBag)
+                pokemon.Stats = PokemonManager.generateStatList(pokemon);
             Image.Position = PlayerJsonObject.Position;
             Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
         }

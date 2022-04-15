@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <MainMenu>
     <Background>
-        <Path>Menus/MainMenu</Path>
+        <Path>Menus/MainMenu/MainMenu</Path>
     </Background>
     <PaddingY>4</PaddingY>
     <Arrow>

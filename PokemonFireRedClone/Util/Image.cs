@@ -162,6 +162,36 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
         }
 
+        public void ReloadTexture(string newPath)
+        {
+            if (newPath != string.Empty)
+                Texture = content.Load<Texture2D>(newPath);
+
+            Vector2 dimensions = Vector2.Zero;
+
+            if (Texture != null)
+            {
+                dimensions.X += Texture.Width;
+                dimensions.Y = Math.Max(Texture.Height, font.MeasureString(Text).Y);
+            }
+
+            if (SourceRect == Rectangle.Empty)
+                SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
+
+            RenderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice,
+                (int)dimensions.X, (int)dimensions.Y);
+            ScreenManager.Instance.GraphicsDevice.SetRenderTarget(RenderTarget);
+            ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
+            ScreenManager.Instance.SpriteBatch.Begin();
+            if (Texture != null)
+                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
+            ScreenManager.Instance.SpriteBatch.End();
+
+            Texture = RenderTarget;
+
+            ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
+        }
+
         public void LoadContent()
         {
             content = new ContentManager(

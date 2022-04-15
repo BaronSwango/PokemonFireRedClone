@@ -7,12 +7,12 @@
         <LinkType>Screen</LinkType>
         <LinkID>GameplayScreen</LinkID>
         <Image>
-            <Path>Menus/ContinueBox</Path>
+            <Path>Menus/TitleMenu/ContinueBox</Path>
         </Image>
     </Item>
     <Item>
         <Image>
-            <Path>Menus/NewGameBox</Path>
+            <Path>Menus/TitleMenu/NewGameBox</Path>
         </Image>
     </Item>
     <Item>

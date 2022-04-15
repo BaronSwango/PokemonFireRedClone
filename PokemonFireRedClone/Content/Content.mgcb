@@ -226,7 +226,7 @@
 /processorParam:TextureFormat=Color
 /build:Gameplay/TileSheets/Ground.png
 
-#begin Menus/BattleMenuBackground.png
+#begin Menus/BattleMenu/BattleMenuBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -236,7 +236,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/BattleMenuBackground.png
+/build:Menus/BattleMenu/BattleMenuBackground.png
 
 #begin Menus/BlackMenuArrow.png
 /importer:TextureImporter
@@ -250,7 +250,7 @@
 /processorParam:TextureFormat=Color
 /build:Menus/BlackMenuArrow.png
 
-#begin Menus/ContinueBox.png
+#begin Menus/MainMenu/MainMenu.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -260,9 +260,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/ContinueBox.png
+/build:Menus/MainMenu/MainMenu.png
 
-#begin Menus/MainMenu.png
+#begin Menus/MainMenu/MainMenuExplanationBox.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -272,9 +272,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/MainMenu.png
+/build:Menus/MainMenu/MainMenuExplanationBox.png
 
-#begin Menus/MainMenuExplanationBox.png
+#begin Menus/MainMenu/MainMenuWithoutPokedex.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -284,19 +284,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/MainMenuExplanationBox.png
-
-#begin Menus/MainMenuWithoutPokedex.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Menus/MainMenuWithoutPokedex.png
+/build:Menus/MainMenu/MainMenuWithoutPokedex.png
 
 #begin Menus/MenuArrow.png
 /importer:TextureImporter
@@ -310,7 +298,7 @@
 /processorParam:TextureFormat=Color
 /build:Menus/MenuArrow.png
 
-#begin Menus/MoveMenuBackground.png
+#begin Menus/MoveMenu/MoveMenuBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -320,9 +308,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/MoveMenuBackground.png
+/build:Menus/MoveMenu/MoveMenuBackground.png
 
-#begin Menus/NewGameBox.png
+#begin Menus/PokemonMenu/PokemonMenuBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -332,9 +320,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/NewGameBox.png
+/build:Menus/PokemonMenu/PokemonMenuBackground.png
 
-#begin Menus/PokemonMenuBackground.png
+#begin Menus/PokemonMenu/PokemonMenuButton.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -344,9 +332,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/PokemonMenuBackground.png
+/build:Menus/PokemonMenu/PokemonMenuButton.png
 
-#begin Menus/SaveMenuInfoBackground.png
+#begin Menus/PokemonMenu/PokemonMenuMainButton.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -356,7 +344,43 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Menus/SaveMenuInfoBackground.png
+/build:Menus/PokemonMenu/PokemonMenuMainButton.png
+
+#begin Menus/SaveMenu/SaveMenuInfoBackground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/SaveMenu/SaveMenuInfoBackground.png
+
+#begin Menus/TitleMenu/ContinueBox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/TitleMenu/ContinueBox.png
+
+#begin Menus/TitleMenu/NewGameBox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/TitleMenu/NewGameBox.png
 
 #begin Menus/YesNoBackground.png
 /importer:TextureImporter
@@ -501,30 +525,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Pokemon/ArticunoBack.png
-
-#begin Pokemon/ArticunoBack.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Pokemon/ArticunoBack.png
-
-#begin Pokemon/ArticunoFront.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Pokemon/ArticunoFront.png
 
 #begin Pokemon/ArticunoFront.png
 /importer:TextureImporter
@@ -2685,30 +2685,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Pokemon/OmastarBack.png
-
-#begin Pokemon/OmastarBack.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Pokemon/OmastarBack.png
-
-#begin Pokemon/OmastarFront.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Pokemon/OmastarFront.png
 
 #begin Pokemon/OmastarFront.png
 /importer:TextureImporter

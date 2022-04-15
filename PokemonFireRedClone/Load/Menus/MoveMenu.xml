@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <MoveMenu>
     <Background>
-        <Path>Menus/MoveMenuBackground</Path>
+        <Path>Menus/MoveMenu/MoveMenuBackground</Path>
     </Background>
     <Arrow>
         <Path>Menus/BlackMenuArrow</Path>

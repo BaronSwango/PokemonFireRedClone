@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <BattleMenu>
     <Background>
-        <Path>Menus/BattleMenuBackground</Path>
+        <Path>Menus/BattleMenu/BattleMenuBackground</Path>
     </Background>
     <Arrow>
         <Path>Menus/BlackMenuArrow</Path>
