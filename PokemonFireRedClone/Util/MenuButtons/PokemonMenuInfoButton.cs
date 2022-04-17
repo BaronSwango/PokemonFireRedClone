@@ -11,26 +11,25 @@ namespace PokemonFireRedClone
         public Image BackgroundSwitchSelected;
         public Image BackgroundSwitchUnselected;
 
-        CustomPokemon pokemon;
-        protected Image PokemonName;
-        protected Image PokemonLevel;
+        protected PokemonAssets pokemonAssets;
 
         public PokemonMenuInfoButton(CustomPokemon pokemon)
         {
-            this.pokemon = pokemon;
+            pokemonAssets = new PokemonAssets(pokemon, true);
         }
 
 
         public void LoadContent()
         {
             LoadBackground();
-
-            loadPokemonInfo();
+            pokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", Color.White);
+            
         }
 
         public void UnloadContent()
         {
             BackgroundUnselected.UnloadContent();
+            pokemonAssets.UnloadContent();
         }
 
         public void Update(GameTime gameTime)
@@ -40,14 +39,18 @@ namespace PokemonFireRedClone
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            PokemonName.Draw(spriteBatch);
-            PokemonLevel.Draw(spriteBatch);
+            pokemonAssets.Draw(spriteBatch);
         }
 
         public virtual void UpdateInfoPositions()
         {
-            PokemonName.Position = new Vector2(BackgroundUnselected.Position.X + 116, BackgroundUnselected.Position.Y + 20);
-            PokemonLevel.Position = new Vector2(PokemonName.Position.X + 32, PokemonName.Position.Y + PokemonName.SourceRect.Height + 8);
+            pokemonAssets.Name.Position = new Vector2(BackgroundUnselected.Position.X + 116, BackgroundUnselected.Position.Y + 20);
+            pokemonAssets.Level.Position = new Vector2(pokemonAssets.Name.Position.X + 32, pokemonAssets.Name.Position.Y + pokemonAssets.Name.SourceRect.Height + 8);
+            if (pokemonAssets.Gender != null)
+                pokemonAssets.Gender.Position = new Vector2(BackgroundUnselected.Position.X + (BackgroundUnselected.SourceRect.Width / 2), pokemonAssets.Level.Position.Y);
+            pokemonAssets.MaxHP.Position = new Vector2(BackgroundUnselected.Position.X + BackgroundUnselected.SourceRect.Width - 21 - pokemonAssets.MaxHP.SourceRect.Width, pokemonAssets.Level.Position.Y);
+            pokemonAssets.CurrentHP.Position = new Vector2(BackgroundUnselected.Position.X + BackgroundUnselected.SourceRect.Width - 101 - pokemonAssets.CurrentHP.SourceRect.Width, pokemonAssets.Level.Position.Y);
+            pokemonAssets.HPBar.Position = new Vector2(BackgroundUnselected.Position.X + 384 - ((1 - pokemonAssets.HPBar.Scale.X) / 2 * pokemonAssets.HPBar.SourceRect.Width), BackgroundUnselected.Position.Y + 32);
         }
 
         protected virtual void LoadBackground()
@@ -58,27 +61,6 @@ namespace PokemonFireRedClone
             BackgroundSwitchUnselected = new Image();
             BackgroundUnselected.Path = "Menus/PokemonMenu/PokemonMenuButton";
 
-        }
-
-        void loadPokemonInfo()
-        {
-            //Initialize info images
-            PokemonName = new Image();
-            PokemonLevel = new Image();
-
-            //Update info text
-            PokemonName.FontName = "Fonts/PokemonFireRedSmall";
-            PokemonName.UseFontColor = true;
-            PokemonName.FontColor = Color.White;
-            PokemonName.Text = pokemon.Name;
-            PokemonLevel.FontName = "Fonts/PokemonFireRedSmall";
-            PokemonLevel.UseFontColor = true;
-            PokemonLevel.FontColor = Color.White;
-            PokemonLevel.Text = "Lv" + pokemon.Level;
-
-            //LoadContent
-            PokemonName.LoadContent();
-            PokemonLevel.LoadContent();
         }
  
     }

@@ -37,6 +37,7 @@ namespace PokemonFireRedClone
         Image PlayerPokemon;
         public Image PlayerHPBarBackground;
         public Image EnemyHPBarBackground;
+        public Image PlayerHPBarLevelUp;
         public Image Pokeball;
         public Image StatChangeAnimationImage1;
         public Image StatChangeAnimationImage2;
@@ -55,7 +56,6 @@ namespace PokemonFireRedClone
         public Image PlayerPokemonLevel;
         public Image EnemyPokemonLevel;
         public Image EXPBar;
-        public Image PlayerHPBarLevelUp;
         bool HPLoaded;
 
         // Level up transition data
@@ -890,7 +890,7 @@ namespace PokemonFireRedClone
             if (enemyPokemon.Name.Contains("NIDORAN") || enemyPokemon.Gender == Gender.GENDERLESS)
                 EnemyPokemonGender = null;
 
-                // Battle assets
+            // Battle assets
             Background.Path = "BattleScreen/BattleBackground1";
             EnemyPlatform.Path = "BattleScreen/BattleBackground1EnemyPlatform";
             PlayerPlatform.Path = "BattleScreen/BattleBackground1PlayerPlatform";

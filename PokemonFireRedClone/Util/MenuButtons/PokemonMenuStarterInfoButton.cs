@@ -12,8 +12,8 @@ namespace PokemonFireRedClone
 
         public override void UpdateInfoPositions()
         {
-            PokemonName.Position = new Vector2(BackgroundUnselected.Position.X + 120, BackgroundUnselected.Position.Y + 76);
-            PokemonLevel.Position = new Vector2(PokemonName.Position.X + 32, PokemonName.Position.Y + PokemonName.SourceRect.Height + 8);
+            pokemonAssets.Name.Position = new Vector2(BackgroundUnselected.Position.X + 120, BackgroundUnselected.Position.Y + 76);
+            pokemonAssets.Level.Position = new Vector2(pokemonAssets.Name.Position.X + 32, pokemonAssets.Name.Position.Y + pokemonAssets.Name.SourceRect.Height + 8);
         }
 
         protected override void LoadBackground()
