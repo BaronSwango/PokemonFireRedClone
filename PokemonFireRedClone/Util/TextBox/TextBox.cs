@@ -72,8 +72,10 @@ namespace PokemonFireRedClone
 
                             if (transitionRect2 == null)
                             {
-                                transitionRect2 = new Image();
-                                transitionRect2.Path = "TextBoxes/TextBoxEffectPixel";
+                                transitionRect2 = new Image
+                                {
+                                    Path = "TextBoxes/TextBoxEffectPixel"
+                                };
                                 transitionRect2.LoadContent();
                             }
                             transitionRect2.Scale = new Vector2(currentDialogue[1].SourceRect.Width, currentDialogue[1].SourceRect.Height);

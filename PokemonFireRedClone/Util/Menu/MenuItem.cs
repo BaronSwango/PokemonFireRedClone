@@ -11,6 +11,7 @@ namespace PokemonFireRedClone
         public string LinkID;
         public string MenuName;
         public Image Image;
+        public PokemonText PokemonText;
         [XmlElement("Description")]
         public List<Image> Description;
     }

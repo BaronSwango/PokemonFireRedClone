@@ -88,7 +88,7 @@ namespace PokemonFireRedClone
                     {
                         Items[i].Image.IsActive = true;
                         for (int j = 2; j < Items.Count; j++)
-                            Items[j].Image.IsActive = i == 0 ? true : false;
+                            Items[j].Image.IsActive = i == 0;
                     }
                     else
                         Items[i].Image.IsActive = false;

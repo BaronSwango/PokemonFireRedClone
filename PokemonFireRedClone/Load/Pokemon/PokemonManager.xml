@@ -4104,6 +4104,10 @@
         <Front>
             <Path>Pokemon/ZapdosFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/ZapdosMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>

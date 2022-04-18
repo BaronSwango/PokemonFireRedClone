@@ -7,12 +7,12 @@ namespace PokemonFireRedClone
 {
     public class PokemonAssets
     {
-        public Image Name;
-        public Image Gender;
-        public Image CurrentHP;
-        public Image MaxHP;
+        public PokemonText Name;
+        public PokemonText Gender;
+        public PokemonText CurrentHP;
+        public PokemonText MaxHP;
         public Image HPBar;
-        public Image Level;
+        public PokemonText Level;
 
         CustomPokemon pokemon;
         bool player;
@@ -24,9 +24,9 @@ namespace PokemonFireRedClone
             this.player = player;
         }
 
-        public void LoadContent(string font, Color fontColor)
+        public void LoadContent(string font, Color fontColor, Color shadowColor)
         {
-            initializeImages(font, fontColor);
+            initializeImages(font, fontColor, shadowColor);
 
             Name.LoadContent();
             if (Gender != null)
@@ -74,54 +74,29 @@ namespace PokemonFireRedClone
 
         }
 
-        void initializeImages(string font, Color fontColor)
+        void initializeImages(string font, Color fontColor, Color shadowColor)
         {
-            Name = new Image
-            {
-                FontName = font,
-                UseFontColor = true,
-                FontColor = fontColor,
-                Text = pokemon.Name
-            };
+            Name = new PokemonText(pokemon.Name, font, fontColor, shadowColor);
+
             if (pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !pokemon.Name.Contains("Nidoran"))
             {
-                Gender = new Image
-                {
-                    FontName = font,
-                    UseFontColor = true,
-                    FontColor = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(119, 208, 250, 255) : new Color(243, 169, 161, 255),
-                    Text = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "♂" : "♀"
-                };
+                Color genderFontColor = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(119, 208, 250, 255) : new Color(242, 170, 161, 255);
+                string genderText = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "♂" : "♀";
+                Color genderShadowColor = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(48, 111, 154, 255) : new Color(155, 86, 76, 255);
+                Gender = new PokemonText(genderText, font, genderFontColor, genderShadowColor);
             }
+
+            Level = new PokemonText("Lv" + pokemon.Level, font, fontColor, shadowColor);
+
             HPBar = new Image
             {
                 Path = "BattleScreen/HPBar"
             };
-            Level = new Image
-            {
-                FontName = font,
-                UseFontColor = true,
-                FontColor = fontColor,
-                Text = "Lv" + pokemon.Level
-            };
 
             if (player)
             {
-                MaxHP = new Image
-                {
-                    FontName = font,
-                    UseFontColor = true,
-                    FontColor = fontColor,
-                    Text = pokemon.Stats.HP.ToString()
-                };
-
-                CurrentHP = new Image
-                {
-                    FontName = font,
-                    UseFontColor = true,
-                    FontColor = fontColor,
-                    Text = pokemon.CurrentHP.ToString()
-                };
+                MaxHP = new PokemonText(pokemon.Stats.HP.ToString(), font, fontColor, shadowColor);
+                CurrentHP = new PokemonText(pokemon.CurrentHP.ToString(), font, fontColor, shadowColor);
             }
 
         }

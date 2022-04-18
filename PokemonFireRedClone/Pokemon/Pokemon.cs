@@ -13,6 +13,7 @@ namespace PokemonFireRedClone
         public List<string> TypesName;
         public Image Back;
         public Image Front;
+        public Image MenuSprite;
         public Image Footprint;
         public string Classification;
         public string Height;

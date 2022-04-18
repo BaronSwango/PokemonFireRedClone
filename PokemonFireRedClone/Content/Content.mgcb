@@ -2290,6 +2290,18 @@
 /processorParam:TextureFormat=Color
 /build:Pokemon/MarowakFront.png
 
+#begin Pokemon/MenuSprites/ZapdosMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/ZapdosMenu.png
+
 #begin Pokemon/MeowthBack.png
 /importer:TextureImporter
 /processor:TextureProcessor

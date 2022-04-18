@@ -80,6 +80,8 @@ namespace PokemonFireRedClone
                 Items[0].Image.ReloadTexture("Menus/PokemonMenu/");
             }
             */
+            foreach (var button in buttons)
+                button.Update(gameTime);
 
         }
 
