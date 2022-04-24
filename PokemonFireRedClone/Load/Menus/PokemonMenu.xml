@@ -6,6 +6,14 @@
         <Path>Menus/PokemonMenu/PokemonMenuBackground</Path>
     </Background>
 
+    <CancelUnselected>
+        <Path>Menus/PokemonMenu/PokemonMenuCancelButton</Path>
+    </CancelUnselected>
+    <CancelSelected>
+        <Path>Menus/PokemonMenu/PokemonMenuCancelButtonSelected</Path>
+    </CancelSelected>
 
-
+    <Text>
+        <Path>Menus/PokemonMenu/ChooseAPokemon</Path>
+    </Text>
 </PokemonMenu>

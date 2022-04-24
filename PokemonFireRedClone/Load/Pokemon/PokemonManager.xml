@@ -11,6 +11,10 @@
         <Front>
             <Path>Pokemon/BulbasaurFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/BulbasaurMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -40,6 +44,10 @@
         <Front>
             <Path>Pokemon/IvysaurFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/IvysaurMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -69,6 +77,10 @@
         <Front>
             <Path>Pokemon/VenusaurFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/VenusaurMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -97,6 +109,10 @@
         <Front>
             <Path>Pokemon/CharmanderFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/CharmanderMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -125,6 +141,10 @@
         <Front>
             <Path>Pokemon/CharmeleonFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/CharmeleonMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -154,6 +174,10 @@
         <Front>
             <Path>Pokemon/CharizardFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/CharizardMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -266,6 +290,10 @@
         <Front>
             <Path>Pokemon/CaterpieFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/CaterpieMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>

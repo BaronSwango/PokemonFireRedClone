@@ -16,6 +16,7 @@ namespace PokemonFireRedClone
         public Vector2 Position, Scale;
         public Rectangle SourceRect;
         public bool IsActive;
+        public bool IsLoaded;
 
         [XmlIgnore]
         public Texture2D Texture;
@@ -136,7 +137,7 @@ namespace PokemonFireRedClone
         {
             if (Path != string.Empty)
                 Texture = content.Load<Texture2D>(Path);
-
+            
             Vector2 dimensions = Vector2.Zero;
 
             if (Texture != null)
@@ -243,6 +244,7 @@ namespace PokemonFireRedClone
                 foreach(string item in split)
                     ActivateEffect(item);
             }
+            IsLoaded = true;
         }
 
         public void UnloadContent()
