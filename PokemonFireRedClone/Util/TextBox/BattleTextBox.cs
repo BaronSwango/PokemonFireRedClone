@@ -113,7 +113,7 @@ namespace PokemonFireRedClone
                                         image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   grew   to";
 
                                     else if (currentDialogue[1] == image)
-                                        image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]+ " !";
+                                        image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]+ " !";
                                     break;
                                 case 18:
                                     if (currentDialogue[0] == image)
@@ -298,7 +298,7 @@ namespace PokemonFireRedClone
                         battleScreen.BattleAnimations.IsTransitioning = true;
                         break;
                     case 17:
-                        BattleLevelUp.LoadContent(Player.PlayerJsonObject.PokemonInBag[0], int.Parse(battleScreen.BattleAnimations.PlayerPokemonLevel.Text[2..]));
+                        BattleLevelUp.LoadContent(Player.PlayerJsonObject.PokemonInBag[0], int.Parse(battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]));
                         break;
                     default:
                         break;

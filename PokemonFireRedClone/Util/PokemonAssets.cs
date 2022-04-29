@@ -13,14 +13,14 @@ namespace PokemonFireRedClone
         public PokemonText MaxHP;
         public Image HPBar;
         public PokemonText Level;
+        public CustomPokemon Pokemon;
 
-        CustomPokemon pokemon;
         bool player;
         bool HPLoaded;
 
         public PokemonAssets(CustomPokemon pokemon, bool player)
         {
-            this.pokemon = pokemon;
+            Pokemon = pokemon;
             this.player = player;
         }
 
@@ -76,17 +76,17 @@ namespace PokemonFireRedClone
 
         void initializeImages(string font, Color fontColor, Color shadowColor)
         {
-            Name = new PokemonText(pokemon.Name, font, fontColor, shadowColor);
+            Name = new PokemonText(Pokemon.Name, font, fontColor, shadowColor);
 
-            if (pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !pokemon.Name.Contains("Nidoran"))
+            if (Pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !Pokemon.Name.Contains("Nidoran"))
             {
-                Color genderFontColor = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(119, 208, 250, 255) : new Color(242, 170, 161, 255);
-                string genderText = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "♂" : "♀";
-                Color genderShadowColor = pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(48, 111, 154, 255) : new Color(155, 86, 76, 255);
+                Color genderFontColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(119, 208, 250, 255) : new Color(242, 170, 161, 255);
+                string genderText = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "♂" : "♀";
+                Color genderShadowColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(48, 111, 154, 255) : new Color(155, 86, 76, 255);
                 Gender = new PokemonText(genderText, font, genderFontColor, genderShadowColor);
             }
 
-            Level = new PokemonText("Lv" + pokemon.Level, font, fontColor, shadowColor);
+            Level = new PokemonText("Lv" + Pokemon.Level, font, fontColor, shadowColor);
 
             HPBar = new Image
             {
@@ -95,29 +95,29 @@ namespace PokemonFireRedClone
 
             if (player)
             {
-                MaxHP = new PokemonText(pokemon.Stats.HP.ToString(), font, fontColor, shadowColor);
-                CurrentHP = new PokemonText(pokemon.CurrentHP.ToString(), font, fontColor, shadowColor);
+                MaxHP = new PokemonText(Pokemon.Stats.HP.ToString(), font, fontColor, shadowColor);
+                CurrentHP = new PokemonText(Pokemon.CurrentHP.ToString(), font, fontColor, shadowColor);
             }
 
         }
 
         public void SetUpHealthBar()
         {
-            float healthRatio = (float)pokemon.CurrentHP / pokemon.Stats.HP;
+            float healthRatio = (float)Pokemon.CurrentHP / Pokemon.Stats.HP;
 
             HPBar.Scale.X = healthRatio;
 
-            calculateHealthBarColor(healthRatio);
+            CalculateHealthBarColor(healthRatio);
 
         }
 
         public void ScaleEXPBar(Image image)
         {
-            float expRatio = (float)pokemon.EXPTowardsLevelUp / pokemon.EXPNeededToLevelUp;
+            float expRatio = (float)Pokemon.EXPTowardsLevelUp / Pokemon.EXPNeededToLevelUp;
             image.Scale.X = expRatio;
         }
 
-        void calculateHealthBarColor(float ratio)
+        public void CalculateHealthBarColor(float ratio)
         {
             if (ratio > 0.5)
             {

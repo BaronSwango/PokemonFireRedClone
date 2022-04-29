@@ -61,6 +61,8 @@
     <None Remove="Content\Menus\BattleMenu\" />
     <None Remove="Content\Menus\MoveMenu\" />
     <None Remove="Content\Pokemon\MenuSprites\" />
+    <None Remove="Load\Menus\PokemonInfoMenu.xml" />
+    <None Remove="Util\Menu\OverlayMenu\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -149,5 +151,6 @@
     <Folder Include="Content\Menus\BattleMenu\" />
     <Folder Include="Content\Menus\MoveMenu\" />
     <Folder Include="Content\Pokemon\MenuSprites\" />
+    <Folder Include="Util\Menu\OverlayMenu\" />
   </ItemGroup>
 </Project>

@@ -310,6 +310,30 @@
 /processorParam:TextureFormat=Color
 /build:Menus/MoveMenu/MoveMenuBackground.png
 
+#begin Menus/PokemonMenu/BattleButtonMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/BattleButtonMenu.png
+
+#begin Menus/PokemonMenu/ButtonMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/ButtonMenu.png
+
 #begin Menus/PokemonMenu/ChooseAPokemon.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -321,6 +345,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Menus/PokemonMenu/ChooseAPokemon.png
+
+#begin Menus/PokemonMenu/DoWhatWithThisPokemon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/DoWhatWithThisPokemon.png
 
 #begin Menus/PokemonMenu/PokemonMenuBackground.png
 /importer:TextureImporter
@@ -2350,6 +2386,30 @@
 /processorParam:TextureFormat=Color
 /build:Pokemon/MarowakFront.png
 
+#begin Pokemon/MenuSprites/BeedrillMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/BeedrillMenu.png
+
+#begin Pokemon/MenuSprites/BlastoiseMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/BlastoiseMenu.png
+
 #begin Pokemon/MenuSprites/BulbasaurMenu.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -2361,6 +2421,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Pokemon/MenuSprites/BulbasaurMenu.png
+
+#begin Pokemon/MenuSprites/ButterfreeMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/ButterfreeMenu.png
 
 #begin Pokemon/MenuSprites/CaterpieMenu.png
 /importer:TextureImporter
@@ -2422,6 +2494,42 @@
 /processorParam:TextureFormat=Color
 /build:Pokemon/MenuSprites/IvysaurMenu.png
 
+#begin Pokemon/MenuSprites/KakunaMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/KakunaMenu.png
+
+#begin Pokemon/MenuSprites/MetapodMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/MetapodMenu.png
+
+#begin Pokemon/MenuSprites/SquirtleMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/SquirtleMenu.png
+
 #begin Pokemon/MenuSprites/VenusaurMenu.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -2433,6 +2541,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Pokemon/MenuSprites/VenusaurMenu.png
+
+#begin Pokemon/MenuSprites/WartortleMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/WartortleMenu.png
+
+#begin Pokemon/MenuSprites/WeedleMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Pokemon/MenuSprites/WeedleMenu.png
 
 #begin Pokemon/MenuSprites/ZapdosMenu.png
 /importer:TextureImporter

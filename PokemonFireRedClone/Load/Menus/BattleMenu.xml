@@ -20,6 +20,10 @@
         </Image>
     </Item>
     <Item>
+        <LinkType>Menu</LinkType>
+        <LinkID>Load/Menus/PokemonMenu.xml</LinkID>
+        <MenuName>PokemonMenu</MenuName>
+        <HasTransition>true</HasTransition>
         <Image>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>89</R>

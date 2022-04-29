@@ -14,7 +14,7 @@ namespace PokemonFireRedClone
         public Vector2 Position
         {
             get { return Text.Position; }
-            private set { }
+            set { Text.Position = value; }
         }
 
         [XmlIgnore]
@@ -69,11 +69,40 @@ namespace PokemonFireRedClone
             Text.Draw(spriteBatch);
         }
 
+        public void UpdateText(string text)
+        {
+            Text.Text = text;
+            TextShadow.Text = text;
+            Text.ReloadText();
+            TextShadow.ReloadText();
+        }
 
         public void SetPosition(Vector2 position)
         {
             Text.Position = position;
             TextShadow.Position = new Vector2(Text.Position.X + 2, Text.Position.Y + 2);
+        }
+
+        public void OffsetX(float value)
+        {
+            SetX(Text.Position.X + value);
+        }
+
+        public void OffsetY(float value)
+        {
+            SetY(Text.Position.Y + value);
+        }
+
+        public void SetX(float coord)
+        {
+            Text.Position.X = coord;
+            TextShadow.Position.X = coord + 2;
+        }
+
+        public void SetY(float coord)
+        {
+            Text.Position.Y = coord;
+            TextShadow.Position.Y = coord + 2;
         }
 
     }

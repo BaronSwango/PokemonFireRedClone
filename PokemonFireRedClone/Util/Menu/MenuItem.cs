@@ -14,5 +14,6 @@ namespace PokemonFireRedClone
         public PokemonText PokemonText;
         [XmlElement("Description")]
         public List<Image> Description;
+        public bool HasTransition;
     }
 }

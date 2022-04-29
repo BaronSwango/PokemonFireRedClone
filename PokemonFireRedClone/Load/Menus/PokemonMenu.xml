@@ -1,7 +1,57 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <PokemonMenu>
 
-    <PrevMenuName>MainMenu</PrevMenuName>
+    <ButtonMenu>
+        <Background>
+            <Path>Menus/PokemonMenu/ButtonMenu</Path>
+        </Background>
+        <Arrow>
+            <Path>Menus/MenuArrow</Path>
+        </Arrow>
+
+        <Items>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>SUMMARY</Text>
+            </Image>
+        </Items>
+        <Items>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>SWITCH</Text>
+            </Image>
+        </Items>
+        <Items>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>ITEM</Text>
+            </Image>
+        </Items>
+        <Items>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>CANCEL</Text>
+            </Image>
+        </Items>
+
+    </ButtonMenu>
+
     <Background>
         <Path>Menus/PokemonMenu/PokemonMenuBackground</Path>
     </Background>
@@ -15,5 +65,8 @@
 
     <Text>
         <Path>Menus/PokemonMenu/ChooseAPokemon</Path>
+    </Text>
+    <Text>
+        <Path>Menus/PokemonMenu/DoWhatWithThisPokemon</Path>
     </Text>
 </PokemonMenu>

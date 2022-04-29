@@ -206,6 +206,10 @@
         <Front>
             <Path>Pokemon/SquirtleFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/SquirtleMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -234,6 +238,10 @@
         <Front>
             <Path>Pokemon/WartortleFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/WartortleMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -262,6 +270,10 @@
         <Front>
             <Path>Pokemon/BlastoiseFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/BlastoiseMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -322,6 +334,10 @@
         <Front>
             <Path>Pokemon/MetapodFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/MetapodMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -351,6 +367,10 @@
         <Front>
             <Path>Pokemon/ButterfreeFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/ButterfreeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -380,6 +400,10 @@
         <Front>
             <Path>Pokemon/WeedleFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/WeedleMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -409,6 +433,10 @@
         <Front>
             <Path>Pokemon/KakunaFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/KakunaMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -438,6 +466,10 @@
         <Front>
             <Path>Pokemon/BeedrillFront</Path>
         </Front>
+        <MenuSprite>
+            <Effects>SpriteSheetEffect</Effects>
+            <Path>Pokemon/MenuSprites/BeedrillMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>

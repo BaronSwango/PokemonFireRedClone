@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <SaveMenu>
-
+    <PrevMenuName>MainMenu</PrevMenuName>
     <InfoTitlesBackground>
         <Path>Menus/SaveMenu/SaveMenuInfoBackground</Path>
     </InfoTitlesBackground>
@@ -104,7 +104,7 @@
         </Image>
     </Item>
     <Item>
-        <LinkType>Menu</LinkType>
+        <LinkType>Exit</LinkType>
         <LinkID>Load/Menus/MainMenu.xml</LinkID>
         <MenuName>MainMenu</MenuName>
         <Image>

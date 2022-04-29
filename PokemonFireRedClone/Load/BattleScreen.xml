@@ -17,62 +17,7 @@
             <Path>BattleScreen/StatAnimation</Path>
         </StatChangeAnimationImage2>
 
-        <PlayerPokemonName>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>81</R>
-            <G>81</G>
-            <B>81</B>
-            <A>255</A>
-        </PlayerPokemonName>
-        <EnemyPokemonName>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>81</R>
-            <G>81</G>
-            <B>81</B>
-            <A>255</A>
-        </EnemyPokemonName>
-        <PlayerPokemonGender>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <UseFontColor>true</UseFontColor>
-        </PlayerPokemonGender>
-        <EnemyPokemonGender>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <UseFontColor>true</UseFontColor>
-        </EnemyPokemonGender>
-        <PlayerHPBar>
-            <Path>BattleScreen/HPBar</Path>
-        </PlayerHPBar>
-        <EnemyHPBar>
-            <Path>BattleScreen/HPBar</Path>
-        </EnemyHPBar>
-        <PlayerPokemonHP>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>81</R>
-            <G>81</G>
-            <B>81</B>
-            <A>255</A>
-        </PlayerPokemonHP>
-        <PlayerPokemonMaxHP>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>81</R>
-            <G>81</G>
-            <B>81</B>
-            <A>255</A>
-        </PlayerPokemonMaxHP>
-        <PlayerPokemonLevel>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>81</R>
-            <G>81</G>
-            <B>81</B>
-            <A>255</A>
-        </PlayerPokemonLevel>
-        <EnemyPokemonLevel>
-            <FontName>Fonts/PokemonFireRedSmall</FontName>
-            <R>81</R>
-            <G>81</G>
-            <B>81</B>
-            <A>255</A>
-        </EnemyPokemonLevel>
+        
         <EXPBar>
             <Path>BattleScreen/EXPBar</Path>
         </EXPBar>

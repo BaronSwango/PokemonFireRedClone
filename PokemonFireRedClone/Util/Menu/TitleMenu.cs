@@ -14,7 +14,7 @@ namespace PokemonFireRedClone
 
         public override void Transition(float alpha)
         {
-            base.Transition(alpha);
+            
             foreach (MenuItem item in Items)
             {
                 item.Image.IsActive = true;
@@ -24,6 +24,7 @@ namespace PokemonFireRedClone
                 else
                     item.Image.FadeEffect.Increase = false;
             }
+            
         }
 
         protected override void AlignMenuItems()

@@ -11,6 +11,8 @@ namespace PokemonFireRedClone
         public Image Arrow;
         public Image Background;
 
+        static int itemNumber;
+
         protected override void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
@@ -18,6 +20,7 @@ namespace PokemonFireRedClone
 
             Background.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2)+32,
                 playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2)+44);
+            Position = new Vector2(Background.Position.X, Background.Position.Y - 2);
 
             foreach (MenuItem item in Items)
             {
@@ -42,10 +45,12 @@ namespace PokemonFireRedClone
             }
             base.LoadContent();
             AlignMenuItems();
+            ItemNumber = itemNumber;
         }
 
         public override void UnloadContent()
         {
+            itemNumber = ItemNumber;
             Background.UnloadContent();
             Arrow.UnloadContent();
             foreach (MenuItem item in Items)
@@ -57,10 +62,13 @@ namespace PokemonFireRedClone
         {
             Background.Update(gameTime);
 
-            if (InputManager.Instance.KeyPressed(Keys.S))
-                ItemNumber++;
-            else if (InputManager.Instance.KeyPressed(Keys.W))
-                ItemNumber--;
+            if (Transitioned)
+            {
+                if (InputManager.Instance.KeyPressed(Keys.S))
+                    ItemNumber++;
+                else if (InputManager.Instance.KeyPressed(Keys.W))
+                    ItemNumber--;
+            }
 
             if (ItemNumber < 0)
                 ItemNumber = Items.Count - 1;
