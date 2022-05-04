@@ -12,7 +12,7 @@ namespace PokemonFireRedClone
         public Image Background;
 
         // STORE ITEM NUMBER SO FADE ANIMATION WORKS
-        static int itemNumber;
+        //static int itemNumber;
 
         protected override void AlignMenuItems()
         {
@@ -46,30 +46,28 @@ namespace PokemonFireRedClone
         {
             Background.Update(gameTime);
 
-            if (Transitioned)
+            if (InputManager.Instance.KeyPressed(Keys.W))
             {
-                if (InputManager.Instance.KeyPressed(Keys.W))
-                {
-                    if (ItemNumber == 1 || ItemNumber == 3)
-                        ItemNumber--;
-                }
-                else if (InputManager.Instance.KeyPressed(Keys.S))
-                {
-                    if (ItemNumber == 0 || ItemNumber == 2)
-                        ItemNumber++;
-                }
-
-                else if (InputManager.Instance.KeyPressed(Keys.A))
-                {
-                    if (ItemNumber == 2 || ItemNumber == 3)
-                        ItemNumber -= 2;
-                }
-                else if (InputManager.Instance.KeyPressed(Keys.D))
-                {
-                    if (ItemNumber == 0 || ItemNumber == 1)
-                        ItemNumber += 2;
-                }
+                if (ItemNumber == 1 || ItemNumber == 3)
+                    ItemNumber--;
             }
+            else if (InputManager.Instance.KeyPressed(Keys.S))
+            {
+                if (ItemNumber == 0 || ItemNumber == 2)
+                    ItemNumber++;
+            }
+
+            else if (InputManager.Instance.KeyPressed(Keys.A))
+            {
+                if (ItemNumber == 2 || ItemNumber == 3)
+                    ItemNumber -= 2;
+            }
+            else if (InputManager.Instance.KeyPressed(Keys.D))
+            {
+                if (ItemNumber == 0 || ItemNumber == 1)
+                    ItemNumber += 2;
+            }
+            
 
             for (int i = 0; i < Items.Count; i++)
             {

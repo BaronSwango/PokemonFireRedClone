@@ -10,7 +10,6 @@ namespace PokemonFireRedClone
     public class TitleMenu : Menu
     {
         PlayerJsonObject playerJsonObject;
-        
 
         public override void Transition(float alpha)
         {

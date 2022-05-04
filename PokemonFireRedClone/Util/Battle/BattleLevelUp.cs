@@ -13,6 +13,12 @@ namespace PokemonFireRedClone
         Image LevelUpBorder;
         List<List<Image>> LevelUpPages;
 
+        BattleScreen battleScreen
+        {
+            get { return (BattleScreen) ScreenManager.Instance.CurrentScreen; }
+            set { }
+        }
+
         public void LoadContent(CustomPokemon pokemon, int level)
         {
             IsActive = true;
@@ -52,7 +58,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        void UnloadContent(BattleScreen battleScreen)
+        void UnloadContent()
         {
             LevelUpBorder.UnloadContent();
             foreach (List<Image> images in LevelUpPages)
@@ -65,12 +71,12 @@ namespace PokemonFireRedClone
             battleScreen.BattleAnimations.IsTransitioning = true;
         }
 
-        public void NextPage(BattleScreen battleScreen)
+        public void NextPage()
         {
             if (IsActive)
             {
                 if (Page == 2)
-                    UnloadContent(battleScreen);
+                    UnloadContent();
                 else
                     Page++;
             }

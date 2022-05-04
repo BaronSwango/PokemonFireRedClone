@@ -59,8 +59,7 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            HasTransition = true;
-            PrevMenuName = ScreenManager.Instance.CurrentScreen is BattleScreen ? "BattleMenu" : "MainMenu";
+            ScreenMenu = true;
 
             buttons = new List<PokemonMenuInfoButton>();
             Background.LoadContent();
@@ -77,7 +76,7 @@ namespace PokemonFireRedClone
             }
 
             Items.Add(new MenuItem());
-            Items[^1].LinkType = "Exit";
+            Items[^1].LinkType = "ExitToScreen";
             Items[^1].Image = CancelUnselected;
 
             foreach (Image i in Text)
@@ -92,6 +91,8 @@ namespace PokemonFireRedClone
             base.UnloadContent();
             foreach (Image i in Text)
                 i.UnloadContent();
+            if (ButtonMenu.IsOpen)
+                ButtonMenu.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
@@ -101,37 +102,34 @@ namespace PokemonFireRedClone
                 if (!BaseMenu)
                     BaseMenu = true;
 
-                if (Transitioned)
+                if (InputManager.Instance.KeyPressed(Keys.A))
                 {
-                    if (InputManager.Instance.KeyPressed(Keys.A))
+                    if (ItemNumber > 0 && ItemNumber < buttons.Count)
                     {
-                        if (ItemNumber > 0 && ItemNumber < buttons.Count)
-                        {
-                            prevItemNumber = ItemNumber;
-                            ItemNumber = 0;
-                        }
+                        prevItemNumber = ItemNumber;
+                        ItemNumber = 0;
                     }
-                    else if (InputManager.Instance.KeyPressed(Keys.D))
-                    {
+                }
+                else if (InputManager.Instance.KeyPressed(Keys.D))
+                {
 
-                        if (prevItemNumber > 0 && ItemNumber == 0)
-                            ItemNumber = prevItemNumber;
-                        else if (ItemNumber == 0)
-                            ItemNumber = 1;
-                    }
-                    else if (InputManager.Instance.KeyPressed(Keys.S))
-                        ItemNumber++;
-                    else if (InputManager.Instance.KeyPressed(Keys.W))
-                        ItemNumber--;
-                    else if (InputManager.Instance.KeyPressed(Keys.E))
+                    if (prevItemNumber > 0 && ItemNumber == 0)
+                        ItemNumber = prevItemNumber;
+                    else if (ItemNumber == 0)
+                        ItemNumber = 1;
+                }
+                else if (InputManager.Instance.KeyPressed(Keys.S))
+                    ItemNumber++;
+                else if (InputManager.Instance.KeyPressed(Keys.W))
+                    ItemNumber--;
+                else if (InputManager.Instance.KeyPressed(Keys.E))
+                {
+                    if (ItemNumber < Items.Count - 1)
                     {
-                        if (ItemNumber < Items.Count - 1)
-                        {
-                            ButtonMenu.LoadContent();
-                            ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
-                                Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));
-                            BaseMenu = false;
-                        }
+                        ButtonMenu.LoadContent();
+                        ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
+                            Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));
+                        BaseMenu = false;
                     }
                 }
 

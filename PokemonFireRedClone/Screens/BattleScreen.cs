@@ -49,21 +49,19 @@ namespace PokemonFireRedClone
             Wild = true;
             menuManager = new MenuManager("BattleMenu");
             playerPokemon = Player.PlayerJsonObject.PokemonInBag[0];
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Geodude"), 40);
+            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Mew"), 85);
             enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
             playerPokemon.CurrentHP = playerPokemon.Stats.HP;
             enemyPokemon.MoveNames.Add("Water Gun", 35);
             enemyPokemon.MoveNames.Add("Growl", 40);
             enemyPokemon.MoveNames.Add("Vine Whip", 30);
-            enemyPokemon.MoveNames.Add("Thunderbolt", 15);
-            BattleLogic = new BattleLogic(this);
         }
 
 
         public override void LoadContent()
         {
             // TODO: Load Background based on what environment the battle is in
-
+            BattleLogic = new BattleLogic();
             TextBox.LoadContent(enemyPokemon);
             BattleAnimations.LoadContent(this);
 
@@ -104,10 +102,10 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
-            if (!(menuManager.menu is PokemonMenu))
+            if (menuManager.menuName != "PokemonMenu")
             {
                 BattleAnimations.Update(gameTime, this);
-                BattleLogic.Update(gameTime, this);
+                BattleLogic.Update(gameTime);
 
                 if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
                     ScreenManager.Instance.ChangeScreens("GameplayScreen");
@@ -126,16 +124,16 @@ namespace PokemonFireRedClone
 
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
 
-            if (!(menuManager.menu is PokemonMenu))
+            if (menuManager.menuName != "PokemonMenu")
             {
                 if (InputManager.Instance.KeyPressed(Keys.E) && TextBox.BattleLevelUp.IsActive)
-                    TextBox.BattleLevelUp.NextPage(this);
+                    TextBox.BattleLevelUp.NextPage();
 
                 if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive)
                     || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN
                     || BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION
                     || BattleAnimations.state == BattleAnimations.BattleState.STATUS_ANIMATION)
-                    TextBox.Update(gameTime, this);
+                    TextBox.Update(gameTime);
 
 
             }
@@ -144,7 +142,7 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (!(menuManager.menu is PokemonMenu))
+            if (menuManager.menuName != "PokemonMenu")
             {
                 BattleAnimations.Draw(spriteBatch, this);
 

@@ -41,9 +41,16 @@ namespace PokemonFireRedClone
         public bool StageMaxed;
         public bool PlayerMoveExecuted;
         public bool EnemyMoveExecuted;
+        public bool PlayerSwitch;
         bool playerFirst;
 
-        public BattleLogic(BattleScreen battleScreen)
+        BattleScreen battleScreen
+        {
+            get { return (BattleScreen)ScreenManager.Instance.CurrentScreen; }
+            set { }
+        }
+
+        public BattleLogic()
         {
             playerPokemon = new BattlePokemon(Player.PlayerJsonObject.PokemonInBag[0]);
             enemyPokemon = new BattlePokemon(battleScreen.enemyPokemon);
@@ -58,13 +65,22 @@ namespace PokemonFireRedClone
             playerFirst = false;
             PokemonFainted = false;
             EXPGainApplied = false;
+            PlayerSwitch = false;
             State = FightState.NONE;
         }
 
-        public void Update(GameTime gameTime, BattleScreen battleScreen)
+        public void Update(GameTime gameTime)
         {
-
-            if (StartSequence)
+            if (PlayerSwitch)
+            {
+                playerFirst = true;
+                PlayerMoveExecuted = true;
+                battleScreen.BattleAnimations.state = BattleAnimations.BattleState.FADE_TRANSITION;
+                battleScreen.BattleAnimations.IsTransitioning = true;
+                battleScreen.TextBox.NextPage = 19;
+                battleScreen.TextBox.Page = 19;
+            }
+            else if (StartSequence)
             {
                 playerFirst = playerFirstMover(playerPokemon, enemyPokemon);
                 StartSequence = false;
@@ -289,8 +305,7 @@ namespace PokemonFireRedClone
 
         private bool moveMissed(int moveAccuracy, BattlePokemon attacker, BattlePokemon defender)
         {
-            int accuracyStage = 0;
-            accuracyStage += attacker.AccuracyStage -= defender.EvasionStage;
+            int accuracyStage = attacker.AccuracyStage - defender.EvasionStage;
 
 
             Random random = new Random();

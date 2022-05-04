@@ -1,26 +1,25 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Xna.Framework.Input;
+
 
 namespace PokemonFireRedClone
 {
-    
-    public class TitleScreen : GameScreen
+    public class PokemonScreen : GameScreen
     {
-        MenuManager menuManager;        
+        MenuManager menuManager;
 
-        public TitleScreen()
+        public PokemonScreen()
         {
-            menuManager = new MenuManager("TitleMenu");
+            menuManager = new MenuManager("PokemonMenu");
         }
 
         public override void LoadContent()
         {
             base.LoadContent();
-            menuManager.LoadContent("Load/Menus/TitleMenu.xml");
-            
+            menuManager.LoadContent("Load/Menus/PokemonMenu.xml");
+
         }
 
         public override void UnloadContent()
@@ -33,6 +32,9 @@ namespace PokemonFireRedClone
         {
             base.Update(gameTime);
             menuManager.Update(gameTime);
+            Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
+            //if (InputManager.Instance.KeyPressed(Keys.Q))
+                //ScreenManager.Instance.ChangeScreens(ScreenManager.Instance.PreviousScreen.Type.ToString().Replace("PokemonFireRedClone.", ""));
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -7,7 +7,7 @@ namespace PokemonFireRedClone
     {
         bool InBattle
         {
-            get { return ScreenManager.Instance.CurrentScreen is BattleScreen; }
+            get { return ScreenManager.Instance.PreviousScreen is BattleScreen; }
             set { }
         }
 
@@ -40,7 +40,7 @@ namespace PokemonFireRedClone
                         case 0:
                             if (InBattle)
                             {
-
+                                
                             } else
                             {
 

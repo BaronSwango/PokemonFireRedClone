@@ -62,13 +62,11 @@ namespace PokemonFireRedClone
         {
             Background.Update(gameTime);
 
-            if (Transitioned)
-            {
-                if (InputManager.Instance.KeyPressed(Keys.S))
-                    ItemNumber++;
-                else if (InputManager.Instance.KeyPressed(Keys.W))
-                    ItemNumber--;
-            }
+            if (InputManager.Instance.KeyPressed(Keys.S))
+                ItemNumber++;
+            else if (InputManager.Instance.KeyPressed(Keys.W))
+                ItemNumber--;
+            
 
             if (ItemNumber < 0)
                 ItemNumber = Items.Count - 1;
@@ -93,7 +91,6 @@ namespace PokemonFireRedClone
 
                 Items[i].Description[0].Update(gameTime); 
             }
-            base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

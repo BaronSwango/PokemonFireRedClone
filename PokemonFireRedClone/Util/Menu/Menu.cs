@@ -23,10 +23,9 @@ namespace PokemonFireRedClone
         public int FromTop; // indent from top of screen
         public int ItemNumber;
         public string PrevMenuName;
+        public bool ScreenMenu;
         public Vector2 Position;
         public bool BaseMenu;
-        public bool HasTransition;
-        public bool Transitioned;
 
         string id;
 
@@ -56,7 +55,6 @@ namespace PokemonFireRedClone
             Items = new List<MenuItem>();
             BaseMenu = true;
             Position = Vector2.Zero;
-            Transitioned = true;
         }
 
         public virtual void LoadContent()

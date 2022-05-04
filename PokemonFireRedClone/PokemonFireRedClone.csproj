@@ -21,7 +21,6 @@
     <None Remove="Load\Gameplay\TextBoxManager.xml" />
     <None Remove="Load\SplashScreen.xml" />
     <None Remove="Content\ScreenManager\" />
-    <None Remove="Load\ScreenManager.xml" />
     <None Remove="Load\Gameplay\Map\" />
     <None Remove="Load\Gameplay\Map\Map1.xml" />
     <None Remove="Content\Gameplay\TileSheets\" />
@@ -87,9 +86,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\SplashScreen.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Load\ScreenManager.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Gameplay\Map\PalletTown.xml">

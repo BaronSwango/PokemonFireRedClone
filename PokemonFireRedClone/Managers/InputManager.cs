@@ -28,7 +28,9 @@ namespace PokemonFireRedClone
         {
             prevKeyState = currentKeyState;
             if (!ScreenManager.Instance.IsTransitioning)
-                currentKeyState = Keyboard.GetState();         
+            {
+                currentKeyState = Keyboard.GetState();
+            }
         }
 
 

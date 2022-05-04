@@ -13,6 +13,12 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public BattleLevelUp BattleLevelUp;
 
+        BattleScreen battleScreen
+        {
+            get { return (BattleScreen)ScreenManager.Instance.CurrentScreen; }
+            set { }
+        }
+
         /*
          * 
          * Very dynamic textbox
@@ -21,7 +27,7 @@ namespace PokemonFireRedClone
          */
 
 
-        private void Transition(GameTime gameTime, BattleScreen battleScreen)
+        private void Transition(GameTime gameTime)
         {
             if (IsTransitioning)
             {    
@@ -275,9 +281,9 @@ namespace PokemonFireRedClone
         public void UnloadContent()
         { }
 
-        public void Update(GameTime gameTime, BattleScreen battleScreen)
+        public override void Update(GameTime gameTime)
         {
-            Transition(gameTime, battleScreen);
+            Transition(gameTime);
 
             if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning)
             {

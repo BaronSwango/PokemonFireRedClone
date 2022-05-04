@@ -16,18 +16,14 @@ namespace PokemonFireRedClone
 
 
         private static ScreenManager instance;
-        [XmlIgnore]
-        public Vector2 Dimensions { set; get; }
-        [XmlIgnore]
-        public ContentManager Content { private set; get; }
+        public Vector2 Dimensions;
+        public ContentManager Content { get; private set; }
         XmlManager<GameScreen> xmlGameScreenManager;
 
-        [XmlIgnore]
         public GameScreen CurrentScreen;
+        public GameScreen PreviousScreen;
         GameScreen newScreen;
-        [XmlIgnore]
         public GraphicsDevice GraphicsDevice;
-        [XmlIgnore]
         public SpriteBatch SpriteBatch;
 
         public Image Image;
@@ -39,10 +35,7 @@ namespace PokemonFireRedClone
             get
             {
                 if (instance == null)
-                {
-                    XmlManager<ScreenManager> xml = new XmlManager<ScreenManager>();
-                    instance = xml.Load("Load/ScreenManager.xml");
-                }
+                    instance = new ScreenManager();
 
                 return instance;
             }
@@ -55,6 +48,7 @@ namespace PokemonFireRedClone
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
             IsTransitioning = true;
+            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 3f : 1;
         }
 
         void Transition(GameTime gameTime)
@@ -65,16 +59,33 @@ namespace PokemonFireRedClone
                 if (Image.Alpha == 1.0f)
                 {
                     CurrentScreen.UnloadContent();
+                    PreviousScreen = CurrentScreen;
                     CurrentScreen = newScreen;
                     xmlGameScreenManager.Type = CurrentScreen.Type;
                     if (File.Exists(CurrentScreen.XmlPath))
                         CurrentScreen = xmlGameScreenManager.Load(CurrentScreen.XmlPath);
                     CurrentScreen.LoadContent();
+                    if (CurrentScreen is GameplayScreen screen)
+                    {
+                        Vector2 playerPos = screen.player.Image.Position;
+                        Image.Position = new Vector2(playerPos.X - (Dimensions.X / 2) + 32,
+                        playerPos.Y - (Dimensions.Y / 2) + 40);
+                    }
+                    else
+                        Image.Position = Vector2.Zero;
                 }
                 else if (Image.Alpha == 0.0f)
                 {
                     Image.IsActive = false;
                     IsTransitioning = false;
+                } else
+                {
+                    if (CurrentScreen is GameplayScreen screen)
+                    {
+                        Vector2 playerPos = screen.player.Image.Position;
+                        Image.Position = new Vector2(playerPos.X - (Dimensions.X / 2) + 32,
+                        playerPos.Y - (Dimensions.Y / 2) + 40);
+                    }
                 }
 
             }
@@ -93,7 +104,7 @@ namespace PokemonFireRedClone
         {
             this.Content = new ContentManager(Content.ServiceProvider, "Content");
             CurrentScreen.LoadContent();
-            Image.LoadContent();
+            loadFadeImage();
         }
 
         public void UnloadContent()
@@ -116,6 +127,18 @@ namespace PokemonFireRedClone
                 Image.Draw(spriteBatch);
         }
 
+        void loadFadeImage()
+        {
+            Image = new Image
+            {
+                Texture = new Texture2D(GraphicsDevice, (int) Dimensions.X + 8, (int) Dimensions.Y + 8)
+            };
+            Color[] data = new Color[Image.Texture.Width * Image.Texture.Height];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.Black;
+            Image.Texture.SetData(data);
+            Image.Effects = "FadeEffect";
+            Image.LoadContent();
+        }
 
     }
 }

@@ -19,6 +19,7 @@ namespace PokemonFireRedClone
             MOVE_EXCHANGE,
             DAMAGE_ANIMATION,
             STATUS_ANIMATION,
+            FADE_TRANSITION,
             PLAYER_SWITCH,
             ENEMY_SWITCH,
             THROW_POKEBALL,
@@ -137,6 +138,12 @@ namespace PokemonFireRedClone
                         float pokeballMaxHeight = battleScreen.TextBox.Border.Position.Y - PlayerSprite.SourceRect.Height - 36;
                         float pokeballSpeedX = (float)(0.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
+                        if (!Pokeball.IsLoaded && !whiteBackground.IsLoaded)
+                        {
+                            Pokeball.LoadContent();
+                            whiteBackground.LoadContent();
+                        }
+
                         playerSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
                         if (PlayerSprite.Position.X > 0)
@@ -234,6 +241,8 @@ namespace PokemonFireRedClone
                         PlayerPokemonAssets.HPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 192 - ((1 - PlayerPokemonAssets.HPBar.Scale.X) / 2 * PlayerPokemonAssets.HPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + 68);
                         EXPBar.Position = new Vector2(PlayerHPBarBackground.Position.X + 128 - ((1 - EXPBar.Scale.X) / 2 * EXPBar.SourceRect.Width), PlayerHPBarBackground.Position.Y + PlayerHPBarBackground.SourceRect.Height - 16);
                         whiteBackground.Alpha = 0;
+                        whiteBackground.UnloadContent();
+                        Pokeball.UnloadContent();
                         IsTransitioning = false;
                         break;
                     case BattleState.DAMAGE_ANIMATION:
@@ -703,7 +712,9 @@ namespace PokemonFireRedClone
                         IsTransitioning = false;
                         battleScreen.TextBox.NextPage = 17;
                         battleScreen.TextBox.IsTransitioning = true;
-                        // ADD TEXTBOX SAYING "name grew to level [level]" with box showing stat increases and new stats
+                        break;
+                    case BattleState.PLAYER_SWITCH:
+
                         break;
                     default:
                         break;
@@ -823,7 +834,7 @@ namespace PokemonFireRedClone
             PlayerPlatform.UnloadContent();
             PlayerSprite.UnloadContent();
             PlayerPokemon.UnloadContent();
-            Pokeball.UnloadContent();
+            //Pokeball.UnloadContent();
             PlayerHPBarBackground.UnloadContent();
             EnemyHPBarBackground.UnloadContent();
             PlayerHPBarLevelUp.UnloadContent();
@@ -832,6 +843,7 @@ namespace PokemonFireRedClone
             PlayerPokemonAssets.UnloadContent();
             EnemyPokemonAssets.UnloadContent();
             EXPBar.UnloadContent();
+            //TransitionRect.UnloadContent();
         }
 
         public void Update(GameTime gameTime, BattleScreen battleScreen)
@@ -913,7 +925,7 @@ namespace PokemonFireRedClone
             EnemyPokemon.LoadContent();
             PlayerPlatform.LoadContent();
             PlayerSprite.LoadContent();
-            Pokeball.LoadContent();
+            //Pokeball.LoadContent();
             PlayerHPBarBackground.LoadContent();
             EnemyHPBarBackground.LoadContent();
             PlayerHPBarLevelUp.LoadContent();
@@ -934,7 +946,7 @@ namespace PokemonFireRedClone
             {
                 Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, Background.SourceRect.Width, Background.SourceRect.Height)
             };
-            whiteBackground.LoadContent();
+            //whiteBackground.LoadContent();
             Color[] data = new Color[Background.SourceRect.Width * Background.SourceRect.Height];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             whiteBackground.Texture.SetData(data);

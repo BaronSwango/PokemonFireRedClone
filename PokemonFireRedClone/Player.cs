@@ -81,70 +81,68 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, ref Map map)
         {
+            direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? (Direction)Image.SpriteSheetEffect.CurrentFrame.Y - 4 : (Direction)Image.SpriteSheetEffect.CurrentFrame.Y;
+
+            // COLLISION DETECTION START
+            if (state == State.Idle
+                && direction == Direction.Up && !InputManager.Instance.KeyDown(Keys.A, Keys.S, Keys.D)
+                || (direction == Direction.Down && !InputManager.Instance.KeyDown(Keys.W, Keys.A, Keys.D))
+                || (direction == Direction.Left && !InputManager.Instance.KeyDown(Keys.W, Keys.S, Keys.D))
+                || (direction == Direction.Right && !InputManager.Instance.KeyDown(Keys.W, Keys.S, Keys.A)))
+            {
+                Tile currentTile = TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 2, Image.SourceRect.Height);
+
+                if (currentTile != null)
+                {
+                    if ((TileManager.Instance.UpTile(map, currentTile) != null && TileManager.Instance.UpTile(map, currentTile).State == "Solid" && direction == Direction.Up)
+                        || (TileManager.Instance.DownTile(map, currentTile) != null && TileManager.Instance.DownTile(map, currentTile).State == "Solid" && direction == Direction.Down)
+                        || (TileManager.Instance.LeftTile(map, currentTile) != null && TileManager.Instance.LeftTile(map, currentTile).State == "Solid" && direction == Direction.Left)
+                        || (TileManager.Instance.RightTile(map, currentTile) != null && TileManager.Instance.RightTile(map, currentTile).State == "Solid" && direction == Direction.Right))
+                    {
+                        if (!Colliding)
+                        {
+                            if ((TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.UpTile(map, currentTile)) && direction == Direction.Up)
+                            || (TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.DownTile(map, currentTile)) && direction == Direction.Down))
+                            {
+                                if (direction == Direction.Up)
+                                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
+                                else
+                                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
+
+                            }
+                            if (changeDirection)
+                                changeDirection = false;
+                            Colliding = true;
+
+                        }
+                    }
+
+                }
+            }
+            // COLLISION DETECTION END
+
+            // CHANGES ANIMATION SPEED
+            if (Colliding)
+            {
+                Image.SpriteSheetEffect.SwitchFrame = 250;
+                if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
+                    Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
+            }
+            else if (running)
+                Image.SpriteSheetEffect.SwitchFrame = 60;
+            else
+                Image.SpriteSheetEffect.SwitchFrame = 130;
+
+                
+            if (changeDirection && Colliding)
+                Colliding = false;
+
+
+            int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
+
             if (CanUpdate)
             {
                 Image.IsActive = true;
-                direction = Image.SpriteSheetEffect.CurrentFrame.Y > 3 ? (Direction)Image.SpriteSheetEffect.CurrentFrame.Y - 4 : (Direction)Image.SpriteSheetEffect.CurrentFrame.Y;
-
-
-                // COLLISION DETECTION START
-                if (state == State.Idle
-                    && direction == Direction.Up && !InputManager.Instance.KeyDown(Keys.A, Keys.S, Keys.D)
-                    || (direction == Direction.Down && !InputManager.Instance.KeyDown(Keys.W, Keys.A, Keys.D))
-                    || (direction == Direction.Left && !InputManager.Instance.KeyDown(Keys.W, Keys.S, Keys.D))
-                    || (direction == Direction.Right && !InputManager.Instance.KeyDown(Keys.W, Keys.S, Keys.A)))
-                {
-                    Tile currentTile = TileManager.Instance.GetCurrentTile(map, Image, Image.SourceRect.Width / 2, Image.SourceRect.Height);
-
-                    if (currentTile != null)
-                    {
-                        if ((TileManager.Instance.UpTile(map, currentTile) != null && TileManager.Instance.UpTile(map, currentTile).State == "Solid" && direction == Direction.Up)
-                            || (TileManager.Instance.DownTile(map, currentTile) != null && TileManager.Instance.DownTile(map, currentTile).State == "Solid" && direction == Direction.Down)
-                            || (TileManager.Instance.LeftTile(map, currentTile) != null && TileManager.Instance.LeftTile(map, currentTile).State == "Solid" && direction == Direction.Left)
-                            || (TileManager.Instance.RightTile(map, currentTile) != null && TileManager.Instance.RightTile(map, currentTile).State == "Solid" && direction == Direction.Right))
-                        {
-                            if (!Colliding)
-                            {
-                                if ((TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.UpTile(map, currentTile)) && direction == Direction.Up)
-                                || (TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.DownTile(map, currentTile)) && direction == Direction.Down))
-                                {
-                                    if (direction == Direction.Up)
-                                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
-                                    else
-                                        ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
-
-                                }
-                                if (changeDirection)
-                                    changeDirection = false;
-                                Colliding = true;
-
-                            }
-                        }
-
-                    }
-                }
-                // COLLISION DETECTION END
-
-                // CHANGES ANIMATION SPEED
-                if (Colliding)
-                {
-                    Image.SpriteSheetEffect.SwitchFrame = 250;
-                    if (Image.SpriteSheetEffect.CurrentFrame.Y > 3)
-                        Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
-                }
-                else if (running)
-                    Image.SpriteSheetEffect.SwitchFrame = 60;
-                else
-                    Image.SpriteSheetEffect.SwitchFrame = 130;
-
-                
-                if (changeDirection && Colliding)
-                    Colliding = false;
-
-
-                int speed = running ? (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 2.2) : (int)(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds);
-
-
                 // TILE BASED MOVEMENT START
                 switch (state)
                 {
@@ -329,8 +327,9 @@ namespace PokemonFireRedClone
                 }
                 // TILE BASED MOVEMENT END
 
-                Image.Update(gameTime);
             }
+
+            Image.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -373,6 +372,12 @@ namespace PokemonFireRedClone
             PlayerJsonObject.Time += ElapsedTime;
             ElapsedTime = 0;
             playerLoader.Save(PlayerJsonObject, "Load/Gameplay/Player.json");
+        }
+
+        public void ResetPosition()
+        {
+            Image.Position = PlayerJsonObject.Position;
+            Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
         }
 
     }
