@@ -37,17 +37,17 @@ namespace PokemonFireRedClone
         public int DialogueOffsetX;
         public int DialogueOffsetY;
 
+        public bool UpdateDialogue;
         protected Image transitionRect;
         protected Image transitionRect2;
         protected List<TextBoxImage> currentDialogue;
-        protected bool updateDialogue;
 
         private void Transition(GameTime gameTime)
         {
             //TODO: Add text animation slide animation with two white rectangles getting smaller through the update function
             if (IsTransitioning)
             {
-                if (updateDialogue)
+                if (UpdateDialogue)
                 {
                     if (Page <= TotalPages)
                     {
@@ -83,7 +83,7 @@ namespace PokemonFireRedClone
                         }
                     }
 
-                    updateDialogue = false;
+                    UpdateDialogue = false;
 
                 }
 
@@ -106,7 +106,7 @@ namespace PokemonFireRedClone
                     }
 
                     IsTransitioning = false;
-                    updateDialogue = true;
+                    UpdateDialogue = true;
                 }
             }
         }

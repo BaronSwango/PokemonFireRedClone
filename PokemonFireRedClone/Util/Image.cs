@@ -143,11 +143,10 @@ namespace PokemonFireRedClone
             if (Texture != null)
             {
                 dimensions.X += Texture.Width;
-                dimensions.Y = Math.Max(Texture.Height, font.MeasureString(Text).Y);
+                dimensions.Y = Texture.Height;
             }
 
-            if (SourceRect == Rectangle.Empty)
-                SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
+            SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
 
             RenderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice,
                 (int)dimensions.X, (int)dimensions.Y);
@@ -173,11 +172,10 @@ namespace PokemonFireRedClone
             if (Texture != null)
             {
                 dimensions.X += Texture.Width;
-                dimensions.Y = Math.Max(Texture.Height, font.MeasureString(Text).Y);
+                dimensions.Y += Texture.Height;
             }
 
-            if (SourceRect == Rectangle.Empty)
-                SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
+            SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
 
             RenderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice,
                 (int)dimensions.X, (int)dimensions.Y);

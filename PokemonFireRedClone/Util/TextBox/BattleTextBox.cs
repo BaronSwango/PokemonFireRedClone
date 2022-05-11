@@ -13,12 +13,13 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public BattleLevelUp BattleLevelUp;
 
+        
         BattleScreen battleScreen
         {
             get { return (BattleScreen)ScreenManager.Instance.CurrentScreen; }
             set { }
         }
-
+        
         /*
          * 
          * Very dynamic textbox
@@ -32,7 +33,7 @@ namespace PokemonFireRedClone
             if (IsTransitioning)
             {    
 
-                if (updateDialogue)
+                if (UpdateDialogue)
                 {
                     if (Page != 10 && Page != 14)
                     {
@@ -52,11 +53,11 @@ namespace PokemonFireRedClone
                             switch (Page)
                             {
                                 case 3:
-                                    image.Text = "Go !   " + Player.PlayerJsonObject.PokemonInBag[0].Name + " !";
+                                    image.Text = "Go !   " + BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " !";
                                     break;
                                 case 4:
                                     if (image == currentDialogue[1])
-                                        image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   do?";
+                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   do?";
                                     break;
                                 case 5:
                                     
@@ -64,10 +65,10 @@ namespace PokemonFireRedClone
                                     {
                                         if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
                                         {
-                                            string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + battleScreen.enemyPokemon.Name + "   used";
+                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "   used";
                                         } else 
-                                            image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   used";
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   used";
 
                                     }
                                     
@@ -93,14 +94,14 @@ namespace PokemonFireRedClone
                                     if (currentDialogue[0] == image)
                                     {
                                         if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT)
-                                            image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name;
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name;
 
                                         else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT)
                                         {
-                                            string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + battleScreen.enemyPokemon.Name;
+                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name;
 
-                                            if (Player.PlayerJsonObject.PokemonInBag[0].Level < 100 || battleScreen.BattleLogic.LevelUp)
+                                            if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100 || battleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
                                         }
                                     }
@@ -108,7 +109,7 @@ namespace PokemonFireRedClone
                                 case 16:
 
                                     if (currentDialogue[0] == image)
-                                        image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + image.Text;
+                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + image.Text;
 
                                     else if (currentDialogue[1] == image)
                                         image.Text = battleScreen.BattleLogic.GainedEXP + image.Text;
@@ -116,7 +117,7 @@ namespace PokemonFireRedClone
                                     break;
                                 case 17:
                                     if (currentDialogue[0] == image)
-                                        image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "   grew   to";
+                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   grew   to";
 
                                     else if (currentDialogue[1] == image)
                                         image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]+ " !";
@@ -125,11 +126,11 @@ namespace PokemonFireRedClone
                                     if (currentDialogue[0] == image)
                                     {
                                         if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
-                                            image.Text = Player.PlayerJsonObject.PokemonInBag[0].Name + "`s   " + battleScreen.BattleLogic.Stat;
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
                                         else if (battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
                                         {
-                                            string encounter = BattleScreen.Wild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + battleScreen.enemyPokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
+                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "`s   " + battleScreen.BattleLogic.Stat;
                                         }
                                     }
 
@@ -148,6 +149,18 @@ namespace PokemonFireRedClone
                                         }
                                     }
                                         
+                                    break;
+                                case 19:
+                                    if (currentDialogue[0] == image)
+                                    {
+                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " ,   that`s enough !";
+                                    }
+                                    else if (currentDialogue[1] == image)
+                                    {
+                                        image.Text = "Come   back !";
+                                    }
+
+
                                     break;
                             }
 
@@ -171,7 +184,7 @@ namespace PokemonFireRedClone
                         }
                     }
 
-                    updateDialogue = false;
+                    UpdateDialogue = false;
 
                 }
 
@@ -199,7 +212,7 @@ namespace PokemonFireRedClone
                     }
                 }
                 IsTransitioning = false;
-                updateDialogue = true;
+                UpdateDialogue = true;
             } else
             {
                 foreach (TextBoxImage image in currentDialogue)
@@ -211,8 +224,8 @@ namespace PokemonFireRedClone
                             switch (Page)
                             {
                                 case 3:
-                                    NextPage = 4;
-                                    IsTransitioning = true;
+                                    //NextPage = 4;
+                                    //IsTransitioning = true;
                                     break;
                                 default:
                                     break;
@@ -241,7 +254,7 @@ namespace PokemonFireRedClone
             {
                 if (image.Page == 1)
                 {
-                    if (BattleScreen.Wild)
+                    if (BattleLogic.Battle.IsWild)
                     {
                         image.Text = "Wild   " + enemyPokemon.Name + "   appeared !";
                         NextPage = 3;
@@ -295,6 +308,7 @@ namespace PokemonFireRedClone
                     case 9:
                         if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.PokemonInBag[0].Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                            BattleLogic.EndBattle();
                             return;
                         }
                         IsTransitioning = true;

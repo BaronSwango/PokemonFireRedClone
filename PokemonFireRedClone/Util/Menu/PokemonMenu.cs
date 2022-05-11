@@ -21,6 +21,12 @@ namespace PokemonFireRedClone
         List<PokemonMenuInfoButton> buttons;
         int prevItemNumber;
 
+        bool inBattle
+        {
+            get { return ScreenManager.Instance.PreviousScreen is BattleScreen; }
+            set { }
+        }
+
         protected override void AlignMenuItems()
         {
             if (ScreenManager.Instance.CurrentScreen is GameplayScreen screen)
@@ -64,9 +70,11 @@ namespace PokemonFireRedClone
             buttons = new List<PokemonMenuInfoButton>();
             Background.LoadContent();
 
-            buttons.Add(new PokemonMenuStarterInfoButton(Player.PlayerJsonObject.PokemonInBag[0]));
+            List<CustomPokemon> menuList = inBattle ? BattleLogic.Battle.BattlePokemonMenu : Player.PlayerJsonObject.PokemonInBag;
+
+            buttons.Add(new PokemonMenuStarterInfoButton(menuList[0]));
             for (int i = 1; i < Player.PlayerJsonObject.PokemonInBag.Count; i++)
-                buttons.Add(new PokemonMenuInfoButton(Player.PlayerJsonObject.PokemonInBag[i]));
+                buttons.Add(new PokemonMenuInfoButton(menuList[i]));
 
             for (int i = 0; i < buttons.Count; i++)
             {
@@ -126,6 +134,7 @@ namespace PokemonFireRedClone
                 {
                     if (ItemNumber < Items.Count - 1)
                     {
+                        ButtonMenu.ShiftNumber = ItemNumber;
                         ButtonMenu.LoadContent();
                         ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
                             Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));

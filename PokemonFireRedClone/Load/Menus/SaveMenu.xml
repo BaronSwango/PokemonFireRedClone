@@ -105,8 +105,6 @@
     </Item>
     <Item>
         <LinkType>Exit</LinkType>
-        <LinkID>Load/Menus/MainMenu.xml</LinkID>
-        <MenuName>MainMenu</MenuName>
         <Image>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>113</R>

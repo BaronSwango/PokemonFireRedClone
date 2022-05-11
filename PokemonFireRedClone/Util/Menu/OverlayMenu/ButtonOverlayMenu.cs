@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
@@ -11,17 +12,26 @@ namespace PokemonFireRedClone
             set { }
         }
 
+        public int ShiftNumber;
+
         public override void LoadContent()
         {
+            string path = ShiftNumber == 0 ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
             if (InBattle)
             {
-                Background.Path = "Menus/PokemonMenu/BattleButtonMenu";
+                if (Background.IsLoaded)
+                   Background.ReloadTexture(path);
+                else
+                    Background.Path = path;
                 Items[1].Image.Text = Items[0].Image.Text;
                 Items[0].Image.Text = "SHIFT";
                 for (int i = 2; i < Items.Count - 1; i++)
                     Items.RemoveAt(i);
             }
+
             base.LoadContent();
+            if (ShiftNumber == 0)
+                itemNumber = 1;
         }
 
         public void Update()
@@ -35,12 +45,14 @@ namespace PokemonFireRedClone
                 else if (InputManager.Instance.KeyPressed(Keys.W))
                     itemNumber--;
                 else if (InputManager.Instance.KeyPressed(Keys.E)) {
-                    switch(itemNumber)
+                    BattleLogic.ShiftNumber = ShiftNumber;
+                    switch (itemNumber)
                     {
                         case 0:
                             if (InBattle)
                             {
-                                
+                                BattleLogic.PlayerShift = true;
+                                ScreenManager.Instance.ChangeScreens("BattleScreen");
                             } else
                             {
 
@@ -72,12 +84,13 @@ namespace PokemonFireRedClone
                     }
                 }
 
-                if (itemNumber < 0)
+                int smallestIndex = ShiftNumber == 0 ? 1 : 0;
+                if (itemNumber < smallestIndex)
                     itemNumber = Items.Count - 1;
                 else if (itemNumber > Items.Count - 1)
-                    itemNumber = 0;
+                    itemNumber = smallestIndex;
 
-                for (int i = 0; i < Items.Count; i++)
+                for (int i = smallestIndex; i < Items.Count; i++)
                 {
                     if (i == itemNumber)
                     {
@@ -90,6 +103,19 @@ namespace PokemonFireRedClone
 
                 }
             }
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            if (ShiftNumber == 0 && IsOpen)
+            {
+                Background.Draw(spriteBatch);
+                Arrow.Draw(spriteBatch);
+                for (int i = 1; i < Items.Count; i++)
+                    Items[i].Image.Draw(spriteBatch);
+            }
+            else
+                base.Draw(spriteBatch);
         }
 
     }

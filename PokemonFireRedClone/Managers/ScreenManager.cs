@@ -48,7 +48,7 @@ namespace PokemonFireRedClone
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
             IsTransitioning = true;
-            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 3f : 1;
+            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 4f : 1;
         }
 
         void Transition(GameTime gameTime)

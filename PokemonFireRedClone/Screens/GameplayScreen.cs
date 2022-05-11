@@ -59,39 +59,44 @@ namespace PokemonFireRedClone
         {
             base.Update(gameTime);
 
+            if (InputManager.Instance.KeyPressed(Keys.K))
+                ScreenManager.Instance.ChangeScreens("BattleScreen");
+
             if (menuManager.wasLoaded)
                 menuManager.wasLoaded = false;
-
-            if (InputManager.Instance.KeyPressed(Keys.K))
-            {
-                ScreenManager.Instance.ChangeScreens("BattleScreen");
-            }
 
             if (menuWasLoaded)
             {
                 menuManager.menuName = "MainMenu";
                 menuManager.LoadContent("Load/Menus/MainMenu.xml");
                 player.ResetPosition();
-                player.CanUpdate = false;
                 menuWasLoaded = false;
             }
             else
             {
-                if (InputManager.Instance.KeyPressed(Keys.F) && player.state == Player.State.Idle && (player.Image.SpriteSheetEffect.CurrentFrame.X == 0 || player.Image.SpriteSheetEffect.CurrentFrame.X == 2))
+                if (InputManager.Instance.KeyPressed(Keys.F)
+                    && player.state == Player.State.Idle
+                    && (player.Image.SpriteSheetEffect.CurrentFrame.X == 0 || player.Image.SpriteSheetEffect.CurrentFrame.X == 2)
+                    && player.Image.SpriteSheetEffect.CurrentFrame.Y < 4)
                 {
                     if (!menuManager.IsLoaded)
                     {
+                        if (TextBoxManager.IsDisplayed)
+                            TextBoxManager.UnloadContent(ref player);
+                        player.Image.IsActive = false;
                         menuManager.menuName = "MainMenu";
                         menuManager.LoadContent("Load/Menus/MainMenu.xml");
-                        player.CanUpdate = false;
                     }
                     else
-                    {
                         menuManager.UnloadContent();
-                        player.CanUpdate = true;
-                    }
+                    
                 }
             }
+
+            if ((menuManager.IsLoaded || TextBoxManager.IsDisplayed) && player.CanUpdate)
+                player.CanUpdate = false;
+            else if (!menuManager.IsLoaded && !TextBoxManager.IsDisplayed && !player.CanUpdate)
+                player.CanUpdate = true;
 
             player.Update(gameTime, ref map);
             map.Update(gameTime, ref player);
@@ -102,7 +107,14 @@ namespace PokemonFireRedClone
             if (!(menuManager.menu is SaveMenu))
                 Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
             if (menuManager.IsLoaded)
+            {
+                if (TextBoxManager.IsDisplayed)
+                {
+                    TextBoxManager.UnloadContent(ref player);
+                    TextBoxManager.Closed = true;
+                }
                 menuManager.Update(gameTime);
+            }
             if (!menuManager.wasLoaded && !menuManager.IsLoaded)
                 TextBoxManager.Update(gameTime, ref map, ref player);
 

@@ -61,9 +61,11 @@ namespace PokemonFireRedClone
             pokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", Color.White, Color.Gray);
 
             menuSprite = pokemon.Pokemon.MenuSprite;
+            menuSprite.Effects = "SpriteSheetEffect";
             menuSprite.LoadContent();
             menuSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(2, 1);
             menuSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
+            menuSprite.SpriteSheetEffect.SwitchFrame = 120;
             menuSprite.IsActive = true;
         }
 
@@ -105,13 +107,13 @@ namespace PokemonFireRedClone
                     if (bounce)
                     {
                         menuSprite.SpriteSheetEffect.CurrentFrame.X = 1;
-                        menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y - 8);
+                        menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 32 - (menuSprite.SourceRect.Height / 2));
                         bounce = false;
                     }
                     else
                     {
                         menuSprite.SpriteSheetEffect.CurrentFrame.X = 0;
-                        menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 8);
+                        menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 48 - (menuSprite.SourceRect.Height / 2));
                         bounce = true;
                     }
                     counter = 0;
@@ -120,7 +122,7 @@ namespace PokemonFireRedClone
             {
                 menuSprite.IsActive = true;
                 bounce = true;
-                menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 20 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 8);
+                menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 20 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 48 - (menuSprite.SourceRect.Height / 2));
             }
 
         }

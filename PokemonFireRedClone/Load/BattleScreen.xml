@@ -28,7 +28,7 @@
     </BattleAnimations>
 
     <TextBox>
-        <TotalPages>18</TotalPages>
+        <TotalPages>19</TotalPages>
         <Border>
             <Path>TextBoxes/BattleTextBox</Path>
         </Border>
@@ -294,6 +294,24 @@
         </Dialogue>
         <Dialogue>
             <Page>18</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text></Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>19</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text></Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>19</Page>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
             <R>255</R>
             <G>255</G>

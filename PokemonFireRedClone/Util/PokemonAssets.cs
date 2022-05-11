@@ -140,5 +140,23 @@ namespace PokemonFireRedClone
 
         }
 
+        public void SetAlpha(float alpha)
+        {
+            Name.SetAlpha(alpha);
+
+            if (Pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !Pokemon.Name.Contains("Nidoran"))
+                Gender.SetAlpha(alpha);
+
+            Level.SetAlpha(alpha);
+
+            HPBar.Alpha = alpha;
+
+            if (player)
+            {
+                MaxHP.SetAlpha(alpha);
+                CurrentHP.SetAlpha(alpha);
+            }
+        }
+
     }
 }

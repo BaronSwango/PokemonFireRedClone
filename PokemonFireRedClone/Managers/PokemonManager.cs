@@ -34,26 +34,9 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        private static int calculateStats(int b, int iv, int ev, int level)
-        {
-            return ((2*b+iv+(ev / 4))*level/100)+5;
-        }
-
-        public static StatList generateStatList(CustomPokemon poke)
-        {
-            StatList newStatList = poke.Stats;
-            newStatList.HP = ((2 * poke.Pokemon.BaseHP + poke.Stats.HPIV + (poke.Stats.HPEV / 4)) * poke.Level / 100) + poke.Level + 10;
-            newStatList.Attack = calculateStats(poke.Pokemon.BaseAttack, poke.Stats.AttackIV, poke.Stats.AttackEV, poke.Level);
-            newStatList.SpecialAttack = calculateStats(poke.Pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, poke.Stats.SpecialAttackEV, poke.Level);
-            newStatList.Defense = calculateStats(poke.Pokemon.BaseDefense, poke.Stats.DefenseIV, poke.Stats.DefenseEV, poke.Level);
-            newStatList.SpecialDefense = calculateStats(poke.Pokemon.BaseSpecialDefense, poke.Stats.SpecialDefenseIV, poke.Stats.SpecialDefenseEV, poke.Level);
-            newStatList.Speed = calculateStats(poke.Pokemon.BaseSpeed, poke.Stats.SpeedIV, poke.Stats.SpeedEV, poke.Level);
-            newStatList = applyNature(poke.Nature, newStatList);
-            return newStatList;
-        }
 
         // Level ranges and pokemon from specific area of map
-        public static CustomPokemon createPokemon(Pokemon pokemon, int level)
+        public CustomPokemon CreatePokemon(Pokemon pokemon, int level)
         {
             Random random = new Random();
 
@@ -74,13 +57,29 @@ namespace PokemonFireRedClone
                     DefenseIV = random.Next(32),
                     SpecialDefenseIV = random.Next(32),
                     SpeedIV = random.Next(32)
-                });
-            poke.Name = pokemon.Name.ToUpper();
-            poke.Stats = generateStatList(poke);
+                })
+            {
+                Name = pokemon.Name.ToUpper()
+            };
+            poke.Stats = GenerateStatList(poke);
             return poke;
         }
 
-        public static StatList statsOfLevel(CustomPokemon poke, int level)
+
+        public StatList GenerateStatList(CustomPokemon poke)
+        {
+            StatList newStatList = poke.Stats;
+            newStatList.HP = ((2 * poke.Pokemon.BaseHP + poke.Stats.HPIV + (poke.Stats.HPEV / 4)) * poke.Level / 100) + poke.Level + 10;
+            newStatList.Attack = calculateStats(poke.Pokemon.BaseAttack, poke.Stats.AttackIV, poke.Stats.AttackEV, poke.Level);
+            newStatList.SpecialAttack = calculateStats(poke.Pokemon.BaseSpecialAttack, poke.Stats.SpecialAttackIV, poke.Stats.SpecialAttackEV, poke.Level);
+            newStatList.Defense = calculateStats(poke.Pokemon.BaseDefense, poke.Stats.DefenseIV, poke.Stats.DefenseEV, poke.Level);
+            newStatList.SpecialDefense = calculateStats(poke.Pokemon.BaseSpecialDefense, poke.Stats.SpecialDefenseIV, poke.Stats.SpecialDefenseEV, poke.Level);
+            newStatList.Speed = calculateStats(poke.Pokemon.BaseSpeed, poke.Stats.SpeedIV, poke.Stats.SpeedEV, poke.Level);
+            newStatList = applyNature(poke.Nature, newStatList);
+            return newStatList;
+        }
+
+        public StatList StatsOfLevel(CustomPokemon poke, int level)
         {
             StatList newStatList = new StatList();
             newStatList.HP = ((2 * poke.Pokemon.BaseHP + poke.Stats.HPIV + (poke.Stats.HPEV / 4)) * level / 100) + level + 10;
@@ -93,8 +92,12 @@ namespace PokemonFireRedClone
             return newStatList;
         }
 
+        int calculateStats(int b, int iv, int ev, int level)
+        {
+            return ((2*b+iv+(ev / 4))*level/100)+5;
+        }
 
-        private static StatList applyNature(Nature nature, StatList statList)
+        StatList applyNature(Nature nature, StatList statList)
         {
             switch(nature)
             {

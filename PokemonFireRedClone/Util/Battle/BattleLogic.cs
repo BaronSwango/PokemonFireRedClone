@@ -17,9 +17,12 @@ namespace PokemonFireRedClone
             ENEMY_STATUS
         }
 
+        public static Battle Battle;
+
+        public static bool PlayerShift;
+        public static int ShiftNumber;
+
         public FightState State;
-        public BattlePokemon playerPokemon;
-        public BattlePokemon enemyPokemon;
         public Move PlayerMoveOption;
         public Move EnemyMoveOption;
         public int GainedEXP;
@@ -41,7 +44,6 @@ namespace PokemonFireRedClone
         public bool StageMaxed;
         public bool PlayerMoveExecuted;
         public bool EnemyMoveExecuted;
-        public bool PlayerSwitch;
         bool playerFirst;
 
         BattleScreen battleScreen
@@ -52,8 +54,9 @@ namespace PokemonFireRedClone
 
         public BattleLogic()
         {
-            playerPokemon = new BattlePokemon(Player.PlayerJsonObject.PokemonInBag[0]);
-            enemyPokemon = new BattlePokemon(battleScreen.enemyPokemon);
+            if (!Battle.InBattle)
+                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 5));
+
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
             EnemyHasMoved = false;
@@ -65,24 +68,28 @@ namespace PokemonFireRedClone
             playerFirst = false;
             PokemonFainted = false;
             EXPGainApplied = false;
-            PlayerSwitch = false;
             State = FightState.NONE;
         }
 
         public void Update(GameTime gameTime)
         {
-            if (PlayerSwitch)
+            if (PlayerShift)
             {
                 playerFirst = true;
                 PlayerMoveExecuted = true;
-                battleScreen.BattleAnimations.state = BattleAnimations.BattleState.FADE_TRANSITION;
+                PlayerMoveUsed = true;
+                PlayerShift = false;
+                BattleMenu.SavedItemNumber = 0;
+                MoveMenu.SavedItemNumber = 0;
+                Battle.SwapPokemonInBattle(ShiftNumber);
+                battleScreen.BattleAnimations.state = BattleAnimations.BattleState.POKEMON_SWITCH;
                 battleScreen.BattleAnimations.IsTransitioning = true;
                 battleScreen.TextBox.NextPage = 19;
-                battleScreen.TextBox.Page = 19;
+                battleScreen.TextBox.IsTransitioning = true;
             }
             else if (StartSequence)
             {
-                playerFirst = playerFirstMover(playerPokemon, enemyPokemon);
+                playerFirst = playerFirstMover(Battle.PlayerPokemon, Battle.EnemyPokemon);
                 StartSequence = false;
             }
 
@@ -95,7 +102,7 @@ namespace PokemonFireRedClone
                     {
                         if (!EnemyMoveExecuted)
                         {
-                            enemyUseMove(enemyPokemon, playerPokemon);
+                            enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
                             battleScreen.BattleAnimations.state = EnemyMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
@@ -108,7 +115,7 @@ namespace PokemonFireRedClone
                     {
                         if (!PlayerMoveExecuted)
                         {
-                            useMove(playerPokemon, enemyPokemon, PlayerMoveOption);
+                            useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
                             battleScreen.BattleAnimations.state = PlayerMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.ENEMY_DEFEND;
                             PlayerMoveExecuted = true;
@@ -122,7 +129,7 @@ namespace PokemonFireRedClone
                     {
                         if (!PlayerMoveExecuted)
                         {
-                            useMove(playerPokemon, enemyPokemon, PlayerMoveOption);
+                            useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
                             battleScreen.BattleAnimations.state = PlayerMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.ENEMY_DEFEND;
                             PlayerMoveExecuted = true;
@@ -135,7 +142,7 @@ namespace PokemonFireRedClone
                     {
                         if (!EnemyMoveExecuted)
                         {
-                            enemyUseMove(enemyPokemon, playerPokemon);
+                            enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
                             battleScreen.BattleAnimations.state = EnemyMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
@@ -143,28 +150,28 @@ namespace PokemonFireRedClone
                         }
                     }
                 }
-            } else if (PokemonFainted && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT && Player.PlayerJsonObject.PokemonInBag[0].Level < 100)
+            } else if (PokemonFainted && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT && Battle.PlayerPokemon.Pokemon.Level < 100)
             {
                 if (!EXPGainApplied)
                 {
                     
-                    GainedEXP = calcualteEXP(battleScreen.enemyPokemon, BattleScreen.Wild, false, 1) * 100;
-                    Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP += GainedEXP;
-                    int oldMaxHP = Player.PlayerJsonObject.PokemonInBag[0].Stats.HP;
-                    while (Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP >= Player.PlayerJsonObject.PokemonInBag[0].NextLevelEXP)
+                    GainedEXP = calcualteEXP(Battle.EnemyPokemon.Pokemon, Battle.IsWild, false, 1) * 100;
+                    Battle.PlayerPokemon.Pokemon.CurrentEXP += GainedEXP;
+                    int oldMaxHP = Battle.PlayerPokemon.Pokemon.Stats.HP;
+                    while (Battle.PlayerPokemon.Pokemon.CurrentEXP >= Battle.PlayerPokemon.Pokemon.NextLevelEXP)
                     {
-                        Player.PlayerJsonObject.PokemonInBag[0].Level++;
+                        Battle.PlayerPokemon.Pokemon.Level++;
                         LevelUp = true;
-                        if (Player.PlayerJsonObject.PokemonInBag[0].Level == 100)
+                        if (Battle.PlayerPokemon.Pokemon.Level == 100)
                         {
-                            GainedEXP -= Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP - Player.PlayerJsonObject.PokemonInBag[0].CurrentLevelEXP;
-                            Player.PlayerJsonObject.PokemonInBag[0].CurrentEXP = Player.PlayerJsonObject.PokemonInBag[0].CurrentLevelEXP;
+                            GainedEXP -= Battle.PlayerPokemon.Pokemon.CurrentEXP - Battle.PlayerPokemon.Pokemon.CurrentLevelEXP;
+                            Battle.PlayerPokemon.Pokemon.CurrentEXP = Battle.PlayerPokemon.Pokemon.CurrentLevelEXP;
                             break;
                         }
                     }
 
-                    Player.PlayerJsonObject.PokemonInBag[0].Stats = PokemonManager.generateStatList(Player.PlayerJsonObject.PokemonInBag[0]);
-                    Player.PlayerJsonObject.PokemonInBag[0].CurrentHP += Player.PlayerJsonObject.PokemonInBag[0].Stats.HP - oldMaxHP;
+                    Battle.PlayerPokemon.Pokemon.Stats = PokemonManager.Instance.GenerateStatList(Battle.PlayerPokemon.Pokemon);
+                    Battle.PlayerPokemon.Pokemon.CurrentHP += Battle.PlayerPokemon.Pokemon.Stats.HP - oldMaxHP;
                     EXPGainApplied = true;
                 }
             }
@@ -322,6 +329,14 @@ namespace PokemonFireRedClone
             float eggMult = luckyEgg ? 1.5f : 1f;
 
             return (int)(trainerMult * faintedPokemon.Pokemon.EXPYield * faintedPokemon.Level * eggMult / (numOfPokemonNotFained * 7));
+        }
+
+        public static void EndBattle()
+        {
+            Battle.InBattle = false;
+            BattleAnimations.FromMenu = false;
+            BattleMenu.SavedItemNumber = 0;
+            MoveMenu.SavedItemNumber = 0;
         }
 
     }

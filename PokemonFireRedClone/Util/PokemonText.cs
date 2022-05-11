@@ -105,5 +105,11 @@ namespace PokemonFireRedClone
             TextShadow.Position.Y = coord + 2;
         }
 
+        public void SetAlpha(float alpha)
+        {
+            Text.Alpha = alpha;
+            TextShadow.Alpha = alpha;
+        }
+
     }
 }

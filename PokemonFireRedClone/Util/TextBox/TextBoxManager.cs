@@ -10,10 +10,28 @@ namespace PokemonFireRedClone
     public class TextBoxManager
     {
 
+        // fix when opening pokemon menu in front of sign
+
         [XmlElement("TextBoxes")]
         public List<TextBox> TextBoxes;
-        [XmlIgnore]
+
         TextBox textBox;
+        public bool Closed;
+
+        [XmlIgnore]
+        public bool IsDisplayed
+        {
+            get
+            {
+                if (textBox != null)
+                    return textBox.IsDisplayed;
+                return false;
+            }
+            set {
+                if (textBox != null)
+                    textBox.IsDisplayed = value;
+            }
+        }
 
         public void LoadXML()
         {
@@ -24,15 +42,22 @@ namespace PokemonFireRedClone
         public void LoadContent(string ID, ref Player player)
         {
             LoadXML();
-            
+
             foreach (TextBox textBox in TextBoxes)
             {
                 if (textBox.ID == ID)
                 {
                     this.textBox = textBox;
                     this.textBox.LoadContent(ref player);
+                    break;
                 }
             }
+        }
+
+        public void UnloadContent(ref Player player)
+        {
+            textBox.UnloadContent(ref player);
+            textBox = null;
         }
 
         public void Update(GameTime gameTime, ref Map map, ref Player player)
@@ -55,8 +80,8 @@ namespace PokemonFireRedClone
                             return;
                         }
 
-                        textBox.UnloadContent(ref player);
-                        textBox = null;
+                        UnloadContent(ref player);
+                        Closed = true;
                     }
 
                 }

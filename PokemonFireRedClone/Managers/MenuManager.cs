@@ -14,28 +14,21 @@ namespace PokemonFireRedClone
         public bool IsLoaded;
         public bool wasLoaded;
 
-        int menuItemNumber;
-
         public MenuManager(string menuName)
         {
             this.menuName = menuName;
             menu = new Menu();
             menu.OnMenuChange += menu_OnMenuChange;
-            menuItemNumber = 0;
         }
 
 
         void menu_OnMenuChange(object sender, EventArgs e)
         {
             XmlManager<Menu> xmlMenuManager = new XmlManager<Menu>();
-            if (menu is BattleMenu)
-                menuItemNumber = menu.ItemNumber;
             menu.UnloadContent();
             xmlMenuManager.Type = System.Type.GetType("PokemonFireRedClone." + menuName);
             menu = xmlMenuManager.Load(menu.ID);
             menu.LoadContent();
-            if (menu is MoveMenu)
-                menu.ItemNumber = menuItemNumber;
             menu.OnMenuChange += menu_OnMenuChange;
             menu.Transition(0.0f);
 
@@ -59,8 +52,6 @@ namespace PokemonFireRedClone
         {
             menu.UnloadContent();
             IsLoaded = false;
-            if (menu is MoveMenu)
-                menuItemNumber = menu.ItemNumber;
         }
 
         public void Update(GameTime gameTime)
@@ -94,10 +85,9 @@ namespace PokemonFireRedClone
                         {
                             menuName = menu.PrevMenuName;
                             menu.ID = "Load/Menus/" + menu.PrevMenuName + ".xml";
-                        } else { 
+                        } else 
                             UnloadContent();
-                            ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.CanUpdate = true;
-                        }
+                        
                         break;
                     case "ExitToScreen":
                         ScreenManager.Instance.ChangeScreens(ScreenManager.Instance.PreviousScreen.Type.ToString().Replace("PokemonFireRedClone.", ""));
@@ -126,10 +116,10 @@ namespace PokemonFireRedClone
                 {
                     menuName = menu.PrevMenuName;
                     menu.ID = "Load/Menus/" + menu.PrevMenuName + ".xml";
-                } else if (menu.ScreenMenu)
-                {
-                    ScreenManager.Instance.ChangeScreens(ScreenManager.Instance.PreviousScreen.Type.ToString().Replace("PokemonFireRedClone.", ""));
                 }
+                else if (menu.ScreenMenu)
+                    ScreenManager.Instance.ChangeScreens(ScreenManager.Instance.PreviousScreen.Type.ToString().Replace("PokemonFireRedClone.", ""));
+                
             }
 
         }

@@ -13,6 +13,7 @@ namespace PokemonFireRedClone
 
         public Image Arrow;
         public Image Background;
+        public static int SavedItemNumber;
 
         protected override void AlignMenuItems()
         {
@@ -40,12 +41,12 @@ namespace PokemonFireRedClone
             Arrow.LoadContent();
             Arrow.Position = new Vector2(-Arrow.SourceRect.Width, 0);
 
-            for (int i = 0; i < Player.PlayerJsonObject.PokemonInBag[0].MoveNames.Count; i++)
+            for (int i = 0; i < BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames.Count; i++)
             {
-                string moveName = Player.PlayerJsonObject.PokemonInBag[0].MoveNames.Keys.ElementAt(i);
+                string moveName = BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames.Keys.ElementAt(i);
                 Items[i].Image.Text = moveName.ToUpper();
 
-                Items[i].Description[1].Text = Player.PlayerJsonObject.PokemonInBag[0].MoveNames[moveName] + "/" + MoveManager.Instance.GetMove(moveName).PP;
+                Items[i].Description[1].Text = BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames[moveName] + "/" + MoveManager.Instance.GetMove(moveName).PP;
                 Items[i].Description[3].Text = MoveManager.Instance.GetMove(moveName).TypeName.ToUpper();
             }
 
@@ -54,7 +55,7 @@ namespace PokemonFireRedClone
                 foreach (Image image in item.Description)
                     image.LoadContent();
             }
-
+            ItemNumber = SavedItemNumber;
             base.LoadContent();
             AlignMenuItems();
         }
@@ -69,7 +70,7 @@ namespace PokemonFireRedClone
                 foreach (Image image in item.Description)
                     image.UnloadContent();
             }
-
+            SavedItemNumber = ItemNumber;
             base.UnloadContent();
         }
 

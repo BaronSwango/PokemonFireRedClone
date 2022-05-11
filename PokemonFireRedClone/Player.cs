@@ -101,18 +101,19 @@ namespace PokemonFireRedClone
                     {
                         if (!Colliding)
                         {
-                            if ((TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.UpTile(map, currentTile)) && direction == Direction.Up)
-                            || (TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.DownTile(map, currentTile)) && direction == Direction.Down))
-                            {
-                                if (direction == Direction.Up)
-                                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
-                                else
-                                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
-
-                            }
                             if (changeDirection)
                                 changeDirection = false;
                             Colliding = true;
+
+                        } 
+                        if (((TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.UpTile(map, currentTile)) && direction == Direction.Up)
+                            || (TileManager.Instance.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.Instance.DownTile(map, currentTile)) && direction == Direction.Down))
+                            && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed)
+                        {
+                            if (direction == Direction.Up && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
+                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.UpTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
+                            else if (direction == Direction.Down && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
+                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.Instance.DownTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
 
                         }
                     }
@@ -120,6 +121,9 @@ namespace PokemonFireRedClone
                 }
             }
             // COLLISION DETECTION END
+
+           if (!Colliding && ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed)
+                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed = false;
 
             // CHANGES ANIMATION SPEED
             if (Colliding)
@@ -360,7 +364,10 @@ namespace PokemonFireRedClone
 
             PlayerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
             foreach (CustomPokemon pokemon in PlayerJsonObject.PokemonInBag)
-                pokemon.Stats = PokemonManager.generateStatList(pokemon);
+            {
+                pokemon.Stats = PokemonManager.Instance.GenerateStatList(pokemon);
+                pokemon.CurrentHP = pokemon.Stats.HP;
+            }
             Image.Position = PlayerJsonObject.Position;
             Image.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
         }

@@ -12,7 +12,6 @@
             <Path>Pokemon/BulbasaurFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/BulbasaurMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -45,7 +44,6 @@
             <Path>Pokemon/IvysaurFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/IvysaurMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -78,7 +76,6 @@
             <Path>Pokemon/VenusaurFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/VenusaurMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -110,7 +107,6 @@
             <Path>Pokemon/CharmanderFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/CharmanderMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -142,7 +138,6 @@
             <Path>Pokemon/CharmeleonFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/CharmeleonMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -175,7 +170,6 @@
             <Path>Pokemon/CharizardFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/CharizardMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -207,7 +201,6 @@
             <Path>Pokemon/SquirtleFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/SquirtleMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -239,7 +232,6 @@
             <Path>Pokemon/WartortleFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/WartortleMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -271,7 +263,6 @@
             <Path>Pokemon/BlastoiseFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/BlastoiseMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -303,7 +294,6 @@
             <Path>Pokemon/CaterpieFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/CaterpieMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -335,7 +325,6 @@
             <Path>Pokemon/MetapodFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/MetapodMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -368,7 +357,6 @@
             <Path>Pokemon/ButterfreeFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/ButterfreeMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -401,7 +389,7 @@
             <Path>Pokemon/WeedleFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
+            
             <Path>Pokemon/MenuSprites/WeedleMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -434,7 +422,6 @@
             <Path>Pokemon/KakunaFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/KakunaMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -467,7 +454,6 @@
             <Path>Pokemon/BeedrillFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
             <Path>Pokemon/MenuSprites/BeedrillMenu</Path>
         </MenuSprite>
         <Footprint>
@@ -499,6 +485,9 @@
         <Front>
             <Path>Pokemon/PidgeyFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PidgeyMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -528,6 +517,9 @@
         <Front>
             <Path>Pokemon/PidgeottoFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PidgeottoMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -557,6 +549,9 @@
         <Front>
             <Path>Pokemon/PidgeotFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PidgeotMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -585,6 +580,9 @@
         <Front>
             <Path>Pokemon/RattataFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/RattataMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -613,6 +611,9 @@
         <Front>
             <Path>Pokemon/RaticateFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/RaticateMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -642,6 +643,9 @@
         <Front>
             <Path>Pokemon/SpearowFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/SpearowMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -671,6 +675,9 @@
         <Front>
             <Path>Pokemon/FearowFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/FearowMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -699,6 +706,9 @@
         <Front>
             <Path>Pokemon/EkansFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/EkansMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -727,6 +737,9 @@
         <Front>
             <Path>Pokemon/ArbokFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ArbokMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -755,6 +768,9 @@
         <Front>
             <Path>Pokemon/PikachuFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PikachuMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -783,6 +799,9 @@
         <Front>
             <Path>Pokemon/RaichuFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/RaichuMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -811,6 +830,9 @@
         <Front>
             <Path>Pokemon/SandshrewFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/SandshrewMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -839,6 +861,9 @@
         <Front>
             <Path>Pokemon/SandslashFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/SandslashMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -867,6 +892,9 @@
         <Front>
             <Path>Pokemon/NidoranFemaleFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NidoranFemaleMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -895,6 +923,9 @@
         <Front>
             <Path>Pokemon/NidorinaFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NidorinaMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -924,6 +955,9 @@
         <Front>
             <Path>Pokemon/NidoqueenFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NidoqueenMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -952,6 +986,9 @@
         <Front>
             <Path>Pokemon/NidoranMaleFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NidoranMaleMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -980,6 +1017,9 @@
         <Front>
             <Path>Pokemon/NidorinoFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NidorinoMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1009,6 +1049,9 @@
         <Front>
             <Path>Pokemon/NidokingFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NidokingMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1037,6 +1080,9 @@
         <Front>
             <Path>Pokemon/ClefairyFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ClefairyMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1065,6 +1111,9 @@
         <Front>
             <Path>Pokemon/ClefableFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ClefableMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1093,6 +1142,9 @@
         <Front>
             <Path>Pokemon/VulpixFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/VulpixMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1121,6 +1173,9 @@
         <Front>
             <Path>Pokemon/NinetailsFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/NinetailsMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1149,6 +1204,9 @@
         <Front>
             <Path>Pokemon/JigglypuffFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/JigglypuffMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1177,6 +1235,9 @@
         <Front>
             <Path>Pokemon/WigglytuffFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/WigglytuffMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1206,6 +1267,9 @@
         <Front>
             <Path>Pokemon/ZubatFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ZubatMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1235,6 +1299,9 @@
         <Front>
             <Path>Pokemon/GolbatFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GolbatMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1264,6 +1331,9 @@
         <Front>
             <Path>Pokemon/OddishFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/OddishMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1293,6 +1363,9 @@
         <Front>
             <Path>Pokemon/GloomFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GloomMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1322,6 +1395,9 @@
         <Front>
             <Path>Pokemon/VileplumeFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/VileplumeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1351,6 +1427,9 @@
         <Front>
             <Path>Pokemon/ParasFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ParasMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1380,6 +1459,9 @@
         <Front>
             <Path>Pokemon/ParasectFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ParasectMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1409,6 +1491,9 @@
         <Front>
             <Path>Pokemon/VenonatFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/VenonatMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1438,6 +1523,9 @@
         <Front>
             <Path>Pokemon/VenomothFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/VenomothMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1466,6 +1554,9 @@
         <Front>
             <Path>Pokemon/DiglettFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/DiglettMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1494,6 +1585,9 @@
         <Front>
             <Path>Pokemon/DugtrioFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/DugtrioMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1522,6 +1616,9 @@
         <Front>
             <Path>Pokemon/MeowthFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MeowthMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1550,6 +1647,9 @@
         <Front>
             <Path>Pokemon/PersianFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PersianMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1578,6 +1678,9 @@
         <Front>
             <Path>Pokemon/PsyduckFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PsyduckMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1606,6 +1709,9 @@
         <Front>
             <Path>Pokemon/GolduckFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GolduckMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1634,6 +1740,9 @@
         <Front>
             <Path>Pokemon/MankeyFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MankeyMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1662,6 +1771,9 @@
         <Front>
             <Path>Pokemon/PrimeapeFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PrimeapeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1690,6 +1802,9 @@
         <Front>
             <Path>Pokemon/GrowlitheFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GrowlitheMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1718,6 +1833,9 @@
         <Front>
             <Path>Pokemon/ArcanineFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ArcanineMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1746,6 +1864,9 @@
         <Front>
             <Path>Pokemon/PoliwagFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PoliwagMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -4165,7 +4286,7 @@
             <Path>Pokemon/ZapdosFront</Path>
         </Front>
         <MenuSprite>
-            <Effects>SpriteSheetEffect</Effects>
+            
             <Path>Pokemon/MenuSprites/ZapdosMenu</Path>
         </MenuSprite>
         <Footprint>

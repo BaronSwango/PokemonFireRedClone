@@ -94,8 +94,8 @@ namespace PokemonFireRedClone
 
         void loadLevelInfo(CustomPokemon pokemon, int level)
         {
-            StatList newStats = PokemonManager.statsOfLevel(pokemon, level);
-            StatList oldStats = PokemonManager.statsOfLevel(pokemon, level - 1);
+            StatList newStats = PokemonManager.Instance.StatsOfLevel(pokemon, level);
+            StatList oldStats = PokemonManager.Instance.StatsOfLevel(pokemon, level - 1);
 
             LevelUpPages[0][0].Text += newStats.HP - oldStats.HP;
             LevelUpPages[0][1].Text += newStats.Attack - oldStats.Attack;

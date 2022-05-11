@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -10,9 +11,8 @@ namespace PokemonFireRedClone
 
         public Image Arrow;
         public Image Background;
-
-        // STORE ITEM NUMBER SO FADE ANIMATION WORKS
-        //static int itemNumber;
+        [XmlIgnore]
+        public static int SavedItemNumber;
 
         protected override void AlignMenuItems()
         {
@@ -31,6 +31,7 @@ namespace PokemonFireRedClone
             Background.LoadContent();
             Arrow.LoadContent();
             Arrow.Position = new Vector2(-Arrow.SourceRect.Width, 0);
+            ItemNumber = SavedItemNumber;
             base.LoadContent();
             AlignMenuItems();
         }
@@ -39,6 +40,7 @@ namespace PokemonFireRedClone
         {
             Background.UnloadContent();
             Arrow.UnloadContent();
+            SavedItemNumber = ItemNumber;
             base.UnloadContent();
         }
 
@@ -82,7 +84,6 @@ namespace PokemonFireRedClone
                     Items[i].Image.IsActive = false;
   
             }
-            base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -16,12 +16,6 @@ namespace PokemonFireRedClone
         public BattleLogic BattleLogic;
         [XmlIgnore]
         public MenuManager menuManager;
-        [XmlIgnore]
-        public CustomPokemon enemyPokemon;
-        [XmlIgnore]
-        public CustomPokemon playerPokemon;
-
-        public static bool Wild;
 
         /*
          * Battle screen:
@@ -43,68 +37,39 @@ namespace PokemonFireRedClone
          * 
          */
 
-
         public BattleScreen()
         {
-            Wild = true;
             menuManager = new MenuManager("BattleMenu");
-            playerPokemon = Player.PlayerJsonObject.PokemonInBag[0];
-            enemyPokemon = PokemonManager.createPokemon(PokemonManager.Instance.GetPokemon("Mew"), 85);
-            enemyPokemon.CurrentHP = enemyPokemon.Stats.HP;
-            playerPokemon.CurrentHP = playerPokemon.Stats.HP;
-            enemyPokemon.MoveNames.Add("Water Gun", 35);
-            enemyPokemon.MoveNames.Add("Growl", 40);
-            enemyPokemon.MoveNames.Add("Vine Whip", 30);
         }
 
 
         public override void LoadContent()
         {
+            
             // TODO: Load Background based on what environment the battle is in
             BattleLogic = new BattleLogic();
-            TextBox.LoadContent(enemyPokemon);
-            BattleAnimations.LoadContent(this);
-
-            Console.WriteLine("Player Poke: ");
-            Console.WriteLine("Nature: " + playerPokemon.Nature.ToString());
-            Console.WriteLine("HP: " + playerPokemon.Stats.HP);
-            Console.WriteLine("Attack: " + playerPokemon.Stats.Attack);
-            Console.WriteLine("Defense: " + playerPokemon.Stats.Defense);
-            Console.WriteLine("Special Attack: " + playerPokemon.Stats.SpecialAttack);
-            Console.WriteLine("Special Defense: " + playerPokemon.Stats.SpecialDefense);
-            Console.WriteLine("Speed: " + playerPokemon.Stats.Speed);
-            Console.WriteLine("EXP TO NEXT: " + playerPokemon.CurrentLevelEXP);
-            Console.WriteLine("--------");
-            Console.WriteLine("Enemy Poke: ");
-            Console.WriteLine("Nature: " + enemyPokemon.Nature.ToString());
-            Console.WriteLine("HP: " + enemyPokemon.Stats.HP);
-            Console.WriteLine("Attack: " + enemyPokemon.Stats.Attack);
-            Console.WriteLine("Defense: " + enemyPokemon.Stats.Defense);
-            Console.WriteLine("Special Attack: " + enemyPokemon.Stats.SpecialAttack);
-            Console.WriteLine("Special Defense: " + enemyPokemon.Stats.SpecialDefense);
-            Console.WriteLine("Speed: " + enemyPokemon.Stats.Speed);
-            Console.WriteLine("EXP TO NEXT: " + enemyPokemon.CurrentLevelEXP);
-            Console.WriteLine("---------------");
-            Console.WriteLine();
-            foreach (Move move in playerPokemon.Pokemon.MoveLearnset.Keys)
-            {
-                Console.WriteLine(move.Name);
-            }
+            TextBox.LoadContent(BattleLogic.Battle.EnemyPokemon.Pokemon);
+            BattleAnimations.LoadContent();
             base.LoadContent();
         }
 
         public override void UnloadContent()
         {
+            
             BattleAnimations.UnloadContent();
             TextBox.UnloadContent();
+            if (menuManager.IsLoaded)
+                menuManager.UnloadContent();
+
             base.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
+            
             if (menuManager.menuName != "PokemonMenu")
             {
-                BattleAnimations.Update(gameTime, this);
+                BattleAnimations.Update(gameTime);
                 BattleLogic.Update(gameTime);
 
                 if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
@@ -129,28 +94,32 @@ namespace PokemonFireRedClone
                 if (InputManager.Instance.KeyPressed(Keys.E) && TextBox.BattleLevelUp.IsActive)
                     TextBox.BattleLevelUp.NextPage();
 
-                if ((!BattleAnimations.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !TextBox.BattleLevelUp.IsActive)
+                if ((!BattleAnimations.IsTransitioning && !TextBox.BattleLevelUp.IsActive && (!ScreenManager.Instance.IsTransitioning || TextBox.NextPage == 4))
                     || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN
                     || BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION
-                    || BattleAnimations.state == BattleAnimations.BattleState.STATUS_ANIMATION)
+                    || BattleAnimations.state == BattleAnimations.BattleState.STATUS_ANIMATION
+                    || (BattleAnimations.state == BattleAnimations.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))
                     TextBox.Update(gameTime);
 
 
             }
+            
             base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            
             if (menuManager.menuName != "PokemonMenu")
             {
-                BattleAnimations.Draw(spriteBatch, this);
+                BattleAnimations.Draw(spriteBatch);
 
                 TextBox.Draw(spriteBatch);
 
             }
             if (menuManager.IsLoaded)
                 menuManager.Draw(spriteBatch);
+            
         }
     }
 }
