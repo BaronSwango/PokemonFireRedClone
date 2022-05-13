@@ -19,8 +19,8 @@ namespace PokemonFireRedClone
             InBattle = true;
             EnemyPokemon = new BattlePokemon(enemyPokemon);
             EnemyPokemon.Pokemon.CurrentHP = EnemyPokemon.Pokemon.Stats.HP;
-            PlayerPokemon = new BattlePokemon(Player.PlayerJsonObject.PokemonInBag[0]);
             BattlePokemonMenu = new List<CustomPokemon>(Player.PlayerJsonObject.PokemonInBag);
+            PlayerPokemon = new BattlePokemon(BattlePokemonMenu[0]);
             EnemyPokemon.Pokemon.MoveNames.Add("Water Gun", 35);
             EnemyPokemon.Pokemon.MoveNames.Add("Growl", 40);
             EnemyPokemon.Pokemon.MoveNames.Add("Vine Whip", 30);

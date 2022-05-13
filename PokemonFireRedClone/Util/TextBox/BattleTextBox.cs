@@ -153,7 +153,7 @@ namespace PokemonFireRedClone
                                 case 19:
                                     if (currentDialogue[0] == image)
                                     {
-                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " ,   that`s enough !";
+                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " ,   that`s   enough !";
                                     }
                                     else if (currentDialogue[1] == image)
                                     {
@@ -306,7 +306,7 @@ namespace PokemonFireRedClone
                         IsTransitioning = true;
                         break;
                     case 9:
-                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (Player.PlayerJsonObject.PokemonInBag[0].Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
+                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
                             BattleLogic.EndBattle();
                             return;
@@ -318,7 +318,7 @@ namespace PokemonFireRedClone
                         battleScreen.BattleAnimations.IsTransitioning = true;
                         break;
                     case 17:
-                        BattleLevelUp.LoadContent(Player.PlayerJsonObject.PokemonInBag[0], int.Parse(battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]));
+                        BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]));
                         break;
                     default:
                         break;

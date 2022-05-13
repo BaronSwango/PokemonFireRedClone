@@ -1895,6 +1895,9 @@
         <Front>
             <Path>Pokemon/PoliwhirlFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PoliwhirlMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1924,6 +1927,9 @@
         <Front>
             <Path>Pokemon/PoliwrathFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PoliwrathMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1952,6 +1958,9 @@
         <Front>
             <Path>Pokemon/AbraFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/AbraMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -1980,6 +1989,9 @@
         <Front>
             <Path>Pokemon/KadabraFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/KadabraMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2008,6 +2020,9 @@
         <Front>
             <Path>Pokemon/AlakazamFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/AlakazamMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2036,6 +2051,9 @@
         <Front>
             <Path>Pokemon/MachopFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MachopMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2064,6 +2082,9 @@
         <Front>
             <Path>Pokemon/MachokeFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MachokeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2092,6 +2113,9 @@
         <Front>
             <Path>Pokemon/MachampFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MachampMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2121,6 +2145,9 @@
         <Front>
             <Path>Pokemon/BellsproutFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/BellsproutMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2150,6 +2177,9 @@
         <Front>
             <Path>Pokemon/WeepinbellFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/WeepinbellMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2179,6 +2209,9 @@
         <Front>
             <Path>Pokemon/VictreebellFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/VictreebellMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2266,6 +2299,9 @@
         <Front>
             <Path>Pokemon/GeodudeFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GeodudeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>

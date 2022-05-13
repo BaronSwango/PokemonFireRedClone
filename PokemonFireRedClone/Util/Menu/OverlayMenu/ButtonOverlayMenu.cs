@@ -16,7 +16,7 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            string path = ShiftNumber == 0 ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
+            string path = ShiftNumber == 0 && InBattle ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
             if (InBattle)
             {
                 if (Background.IsLoaded)
@@ -30,7 +30,8 @@ namespace PokemonFireRedClone
             }
 
             base.LoadContent();
-            if (ShiftNumber == 0)
+
+            if (ShiftNumber == 0 && InBattle)
                 itemNumber = 1;
         }
 
@@ -84,7 +85,7 @@ namespace PokemonFireRedClone
                     }
                 }
 
-                int smallestIndex = ShiftNumber == 0 ? 1 : 0;
+                int smallestIndex = ShiftNumber == 0 && InBattle ? 1 : 0;
                 if (itemNumber < smallestIndex)
                     itemNumber = Items.Count - 1;
                 else if (itemNumber > Items.Count - 1)
@@ -107,7 +108,7 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (ShiftNumber == 0 && IsOpen)
+            if (ShiftNumber == 0 && InBattle && IsOpen)
             {
                 Background.Draw(spriteBatch);
                 Arrow.Draw(spriteBatch);
