@@ -828,8 +828,6 @@ namespace PokemonFireRedClone
                                     PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, BattleScreen.TextBox.Border.Position.Y - PlayerHPBarBackground.SourceRect.Height - 4);
                                     setAssetPositions();
                                 }
-
-                                
                                 
                                 if (counter < 100.0f)
                                 {

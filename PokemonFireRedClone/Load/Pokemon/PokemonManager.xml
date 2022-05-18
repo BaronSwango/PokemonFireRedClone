@@ -2241,6 +2241,9 @@
         <Front>
             <Path>Pokemon/TentacoolFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/TentacoolMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2270,6 +2273,9 @@
         <Front>
             <Path>Pokemon/TentacruelFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/TentacruelMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2331,6 +2337,9 @@
         <Front>
             <Path>Pokemon/GravelerFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GravelerMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2360,6 +2369,9 @@
         <Front>
             <Path>Pokemon/GolemFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GolemMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2388,6 +2400,9 @@
         <Front>
             <Path>Pokemon/PonytaFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/PonytaMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2416,6 +2431,9 @@
         <Front>
             <Path>Pokemon/RapidashFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/RapidashMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2445,6 +2463,9 @@
         <Front>
             <Path>Pokemon/SlowpokeFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/SlowpokeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2474,6 +2495,9 @@
         <Front>
             <Path>Pokemon/SlowbroFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/SlowbroMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2503,6 +2527,9 @@
         <Front>
             <Path>Pokemon/MagnemiteFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MagnemiteMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2532,6 +2559,9 @@
         <Front>
             <Path>Pokemon/MagnetonFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MagnetonMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2561,6 +2591,9 @@
         <Front>
             <Path>Pokemon/FarfetchdFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/FarfetchdMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2590,6 +2623,9 @@
         <Front>
             <Path>Pokemon/DoduoFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/DoduoMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2619,6 +2655,9 @@
         <Front>
             <Path>Pokemon/DodrioFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/DodrioMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2647,6 +2686,9 @@
         <Front>
             <Path>Pokemon/SeelFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/SeelMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2676,6 +2718,9 @@
         <Front>
             <Path>Pokemon/DewgongFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/DewgongMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2704,6 +2749,9 @@
         <Front>
             <Path>Pokemon/GrimerFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GrimerMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2732,6 +2780,9 @@
         <Front>
             <Path>Pokemon/MukFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/MukMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2760,6 +2811,9 @@
         <Front>
             <Path>Pokemon/ShellderFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/ShellderMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2789,6 +2843,9 @@
         <Front>
             <Path>Pokemon/CloysterFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/CloysterMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2818,6 +2875,9 @@
         <Front>
             <Path>Pokemon/GastlyFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GastlyMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2847,6 +2907,9 @@
         <Front>
             <Path>Pokemon/HaunterFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/HaunterMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2876,6 +2939,9 @@
         <Front>
             <Path>Pokemon/GengarFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/GengarMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2905,6 +2971,9 @@
         <Front>
             <Path>Pokemon/OnixFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/OnixMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
@@ -2933,6 +3002,9 @@
         <Front>
             <Path>Pokemon/DrowzeeFront</Path>
         </Front>
+        <MenuSprite>
+            <Path>Pokemon/MenuSprites/DrowzeeMenu</Path>
+        </MenuSprite>
         <Footprint>
             <Path></Path>
         </Footprint>
