@@ -123,7 +123,7 @@ namespace PokemonFireRedClone
 
                     if (prevItemNumber > 0 && ItemNumber == 0)
                         ItemNumber = prevItemNumber;
-                    else if (ItemNumber == 0)
+                    else if (ItemNumber == 0 && buttons.Count > 1)
                         ItemNumber = 1;
                 }
                 else if (InputManager.Instance.KeyPressed(Keys.S))

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <PublishReadyToRun>false</PublishReadyToRun>
     <TieredCompilation>false</TieredCompilation>
 	<UseNETCoreGenerator>true</UseNETCoreGenerator>
@@ -62,6 +62,7 @@
     <None Remove="Content\Pokemon\MenuSprites\" />
     <None Remove="Load\Menus\PokemonInfoMenu.xml" />
     <None Remove="Util\Menu\OverlayMenu\" />
+    <None Remove="Util\Battle\Animations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -148,5 +149,6 @@
     <Folder Include="Content\Menus\MoveMenu\" />
     <Folder Include="Content\Pokemon\MenuSprites\" />
     <Folder Include="Util\Menu\OverlayMenu\" />
+    <Folder Include="Util\Battle\Animations\" />
   </ItemGroup>
 </Project>

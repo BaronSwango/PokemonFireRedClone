@@ -35,13 +35,13 @@ namespace PokemonFireRedClone
         }
 
         // General battle screen data
-        Image Background;
-        Image EnemyPlatform;
-        Image PlayerPlatform;
-        Image EnemyPokemon;
-        Image EnemySprite;
-        Image PlayerSprite;
-        Image PlayerPokemon;
+        public Image Background;
+        public Image EnemyPlatform;
+        public Image PlayerPlatform;
+        public Image EnemyPokemon;
+        public Image EnemySprite;
+        public Image PlayerSprite;
+        public Image PlayerPokemon;
         public Image PlayerHPBarBackground;
         public Image EnemyHPBarBackground;
         public Image PlayerHPBarLevelUp;
@@ -57,8 +57,10 @@ namespace PokemonFireRedClone
         public PokemonAssets PlayerPokemonAssets;
         [XmlIgnore]
         public PokemonAssets EnemyPokemonAssets;
-
         public Image EXPBar;
+
+        // ---------- Animation TEST ----------
+        BattleAnimation animation;
 
         // Level up transition data
         bool levelUpTransitioned;
@@ -88,6 +90,7 @@ namespace PokemonFireRedClone
                     case BattleState.INTRO:
                         float enemySpeed = (float)(0.596 * gameTime.ElapsedGameTime.TotalMilliseconds);
                         float playerSpeed = (float)(0.807 * gameTime.ElapsedGameTime.TotalMilliseconds);
+                        /*
                         float enemyPlatformDestinationX = ScreenManager.Instance.Dimensions.X - EnemyPlatform.SourceRect.Width;
                         float playerPlatformDestinationX = 16;
 
@@ -104,6 +107,10 @@ namespace PokemonFireRedClone
                         PlayerSprite.Position.X = PlayerPlatform.Position.X + PlayerPlatform.SourceRect.Width / 2 - 48;
                         EnemyPlatform.Position.X = enemyPlatformDestinationX;
                         EnemyPokemon.Position.X = EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemyPokemon.SourceRect.Width / 2;
+                        */
+
+                        if (!animation.Animate(gameTime)) 
+                            break;
 
                         if (BattleLogic.Battle.IsWild)
                             state = BattleState.WILD_POKEMON_FADE_IN;
@@ -948,7 +955,7 @@ namespace PokemonFireRedClone
                 PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
 
                 state = BattleState.INTRO;
-
+                animation = new IntroAnimation();
                 if (BattleLogic.Battle.IsWild)
                     EnemyPokemon.Tint = Color.LightGray;
 
