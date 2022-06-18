@@ -14,7 +14,9 @@ namespace PokemonFireRedClone
             PLAYER_DEFEND,
             ENEMY_DEFEND,
             PLAYER_STATUS,
-            ENEMY_STATUS
+            ENEMY_STATUS,
+            PLAYER_FAINT,
+            ENEMY_FAINT
         }
 
         public static Battle Battle;
@@ -55,7 +57,7 @@ namespace PokemonFireRedClone
         public BattleLogic()
         {
             if (!Battle.InBattle)
-                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 5));
+                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 6));
 
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
@@ -150,7 +152,7 @@ namespace PokemonFireRedClone
                         }
                     }
                 }
-            } else if (PokemonFainted && battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT && Battle.PlayerPokemon.Pokemon.Level < 100)
+            } else if (PokemonFainted && State == FightState.ENEMY_FAINT && Battle.PlayerPokemon.Pokemon.Level < 100)
             {
                 if (!EXPGainApplied)
                 {

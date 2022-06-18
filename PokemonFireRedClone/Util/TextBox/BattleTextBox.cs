@@ -93,16 +93,17 @@ namespace PokemonFireRedClone
                                 case 9:
                                     if (currentDialogue[0] == image)
                                     {
-                                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT)
+                                        if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT)
                                             image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name;
 
-                                        else if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.ENEMY_POKEMON_FAINT)
+                                        else if (battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT)
                                         {
                                             string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
                                             image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name;
 
                                             if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100 || battleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
+                                            battleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
                                         }
                                     }
                                     break;
@@ -306,7 +307,7 @@ namespace PokemonFireRedClone
                         IsTransitioning = true;
                         break;
                     case 9:
-                        if (battleScreen.BattleAnimations.state == BattleAnimations.BattleState.PLAYER_POKEMON_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
+                        if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !battleScreen.BattleLogic.LevelUp)) {
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
                             BattleLogic.EndBattle();
                             return;

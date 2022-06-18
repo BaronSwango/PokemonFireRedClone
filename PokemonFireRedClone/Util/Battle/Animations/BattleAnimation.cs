@@ -7,13 +7,19 @@ namespace PokemonFireRedClone
     public abstract class BattleAnimation
     {
 
-        protected BattleAnimations BattleAnimations
+        protected BattleScreen BattleScreen
         {
-            get { return ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAnimations; }
+            get { return (BattleScreen)ScreenManager.Instance.CurrentScreen; }
             set { }
         }
 
-        protected int counter;
+        protected BattleAnimations BattleAnimations
+        {
+            get { return BattleScreen.BattleAnimations; }
+            set { }
+        }
+
+        protected float counter;
         protected float counterSpeed;
 
         //public abstract void LoadContent();
