@@ -7,7 +7,7 @@ namespace PokemonFireRedClone
 {
     public class BattleAnimations
     {
-        // TODO: Add sounds to all animations
+        // TODO: Add sounds to all Animations
 
         BattleScreen BattleScreen
         {
@@ -50,7 +50,7 @@ namespace PokemonFireRedClone
         public Image StatChangeAnimationImage1;
         public Image StatChangeAnimationImage2;
         public bool IsTransitioning;
-        public BattleState state;
+        public BattleState State;
         public static bool FromMenu;
 
         // HP bar data
@@ -61,7 +61,7 @@ namespace PokemonFireRedClone
         public Image EXPBar;
 
         // ---------- Animation TEST ----------
-        BattleAnimation animation;
+        public BattleAnimation Animation;
 
         Image whiteBackground;
 
@@ -69,138 +69,59 @@ namespace PokemonFireRedClone
         {
             if (IsTransitioning && !ScreenManager.Instance.IsTransitioning)
             {
-                switch (state)
+                switch (State)
                 {
                     case BattleState.INTRO:
 
-                        if (!animation.Animate(gameTime)) 
+                        if (!Animation.Animate(gameTime)) 
                             break;
 
-                        if (BattleLogic.Battle.IsWild)
-                        {
-                            state = BattleState.WILD_POKEMON_FADE_IN;
-                            animation = new WildPokemonFadeIn();
-                        }
-                        else 
-                            IsTransitioning = false;
                         break;
                     case BattleState.WILD_POKEMON_FADE_IN:
 
-                        if (!animation.Animate(gameTime))
+                        if (!Animation.Animate(gameTime))
                             break;
-
-                        if (BattleScreen.TextBox.Page == 3 && !BattleScreen.TextBox.IsTransitioning)
-                        {
-                            state = BattleState.PLAYER_SEND_POKEMON;
-                            animation = new PlayerSendPokemon();
-                        }
 
                         break;
                     case BattleState.PLAYER_SEND_POKEMON:
 
-                        if (!animation.Animate(gameTime))
+                        if (!Animation.Animate(gameTime))
                             break;
 
-                        state = BattleState.POKEMON_SEND_OUT;
-                        animation = new PokemonSendOut();
-                        resetPokeball();
                         break;
                     case BattleState.POKEMON_SEND_OUT:
 
-                        if (!(animation is PokemonSendOut))
-                            animation = new PokemonSendOut();
+                        if (!(Animation is PokemonSendOut))
+                            Animation = new PokemonSendOut();
 
-                        if (!animation.Animate(gameTime)) break;
-
-                        resetPokeball();
-                        Pokeball.UnloadContent();
-                        IsTransitioning = false;
-
-                        if (PlayerSprite != null)
-                        {
-                            BattleScreen.TextBox.NextPage = 4;
-                            BattleScreen.TextBox.IsTransitioning = true;
-                        } else
-                            BattleScreen.BattleLogic.PlayerHasMoved = true;
+                        if (!Animation.Animate(gameTime)) break;
 
                         break;
                     case BattleState.DAMAGE_ANIMATION:
                         if (!BattleScreen.TextBox.IsTransitioning)
                         {
-                            if (!(animation is DamageAnimation))
-                                animation = new DamageAnimation();
+                            if (!(Animation is DamageAnimation))
+                                Animation = new DamageAnimation();
 
-                            bool player = BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND;
+                            if (!Animation.Animate(gameTime)) break;
 
-                            if (!animation.Animate(gameTime)) break;
-
-                            animation = null;
-
-                            if (player)
-                                BattleScreen.BattleLogic.EnemyHasMoved = true;
-                            else
-                                BattleScreen.BattleLogic.PlayerHasMoved = true;
-
-                            if (BattleScreen.BattleLogic.EnemyHasMoved && BattleScreen.BattleLogic.PlayerHasMoved)
-                                endFightSequence(BattleScreen);
-                            
-
-                            if (player)
-                            {
-                                if (BattleLogic.Battle.PlayerPokemon.Pokemon.CurrentHP == 0)
-                                {
-                                    state = BattleState.POKEMON_FAINT;
-                                    BattleScreen.BattleLogic.State = BattleLogic.FightState.PLAYER_FAINT;
-                                    IsTransitioning = true;
-                                    BattleScreen.BattleLogic.PokemonFainted = true;
-                                }
-                                else
-                                {
-                                    IsTransitioning = false;
-                                    BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
-                                }
-                            } else
-                            {
-                                if (BattleLogic.Battle.EnemyPokemon.Pokemon.CurrentHP == 0)
-                                {
-                                    state = BattleState.POKEMON_FAINT;
-                                    BattleScreen.BattleLogic.State = BattleLogic.FightState.ENEMY_FAINT;
-                                    IsTransitioning = true;
-                                    BattleScreen.BattleLogic.PokemonFainted = true;
-                                }
-                                else
-                                {
-                                    IsTransitioning = false;
-                                    BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
-                                }
-                            }
                         }
                         break;
                     case BattleState.STATUS_ANIMATION:
                         if (!BattleScreen.TextBox.IsTransitioning)
                         { 
-                            if (!(animation is StatusAnimation))
-                                animation = new StatusAnimation();
+                            if (!(Animation is StatusAnimation))
+                                Animation = new StatusAnimation();
 
-                            if (!animation.Animate(gameTime)) break;
-
-                            if (BattleScreen.TextBox.Page == 18)
-                            {
-
-                                if (BattleScreen.BattleLogic.EnemyHasMoved && BattleScreen.BattleLogic.PlayerHasMoved)
-                                    endFightSequence(BattleScreen);
-
-                                animation = null;
-                                break;
-                            }
+                            if (!Animation.Animate(gameTime)) break;
                         }
                         break;
                     case BattleState.POKEMON_FAINT:
 
-                        if (!(animation is PokemonFaint))
-                            animation = new PokemonFaint();
+                        if (!(Animation is PokemonFaint))
+                            Animation = new PokemonFaint();
 
-                        if (!animation.Animate(gameTime)) break;
+                        if (!Animation.Animate(gameTime)) break;
 
                         //TODO: REPLACE WITH SOUND ENDING TO TRIGGER INSTEAD OF COUNTER
                         // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
@@ -208,26 +129,26 @@ namespace PokemonFireRedClone
                         break;
                     case BattleState.EXP_ANIMATION:
 
-                        if (!(animation is EXPAnimation))
-                            animation = new EXPAnimation();
+                        if (!(Animation is EXPAnimation))
+                            Animation = new EXPAnimation();
 
-                        if (!animation.Animate(gameTime)) break;
+                        if (!Animation.Animate(gameTime)) break;
 
                         break;
                     case BattleState.LEVEL_UP_ANIMATION:
 
-                        if (!(animation is LevelUpAnimation))
-                            animation = new LevelUpAnimation();
+                        if (!(Animation is LevelUpAnimation))
+                            Animation = new LevelUpAnimation();
 
-                        if (!animation.Animate(gameTime)) break;
+                        if (!Animation.Animate(gameTime)) break;
 
                         break;
                     case BattleState.POKEMON_SWITCH:
 
-                        if (!(animation is PokemonSwitchAnimation))
-                            animation = new PokemonSwitchAnimation();
+                        if (!(Animation is PokemonSwitchAnimation))
+                            Animation = new PokemonSwitchAnimation();
 
-                        if (!animation.Animate(gameTime)) break;
+                        if (!Animation.Animate(gameTime)) break;
 
                         break;
                     default:
@@ -247,7 +168,7 @@ namespace PokemonFireRedClone
         float pokeEXPOriginalY;
 
 
-        private void animateBattleMenu(GameTime gameTime)
+        void animateBattleMenu(GameTime gameTime)
         {
             pokeBounceTimer -= (float) gameTime.ElapsedGameTime.TotalSeconds;
             barBounceTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -294,13 +215,6 @@ namespace PokemonFireRedClone
             PlayerPokemonAssets.MaxHP.SetY(pokeHPOriginalY);
         }
 
-        void resetPokeball()
-        {
-            Pokeball.Alpha = 0;
-            Pokeball.Position = new Vector2(156, 352);
-        }
-
-
         public void LoadContent()
         {
             // TODO: Load Background based on what environment the battle is in
@@ -309,12 +223,12 @@ namespace PokemonFireRedClone
             loadBattleContent(BattleLogic.Battle.PlayerPokemon.Pokemon, BattleLogic.Battle.EnemyPokemon.Pokemon);
             if (FromMenu)
             {
-                state = BattleState.BATTLE_MENU;
+                State = BattleState.BATTLE_MENU;
                 BattleScreen.TextBox.NextPage = 4;
                 BattleScreen.TextBox.UpdateDialogue = true;
                 BattleScreen.TextBox.IsTransitioning = true;
                 PlayerPokemon.LoadContent();
-                setDefaultBattleImagePositions(BattleScreen.TextBox);
+                SetDefaultBattleImagePositions(BattleScreen.TextBox);
             }
             else
             {
@@ -322,8 +236,8 @@ namespace PokemonFireRedClone
                 PlayerSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(5, 1);
                 PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
 
-                state = BattleState.INTRO;
-                animation = new IntroAnimation();
+                State = BattleState.INTRO;
+                Animation = new IntroAnimation();
                 if (BattleLogic.Battle.IsWild)
                     EnemyPokemon.Tint = Color.LightGray;
 
@@ -339,7 +253,7 @@ namespace PokemonFireRedClone
                 FromMenu = true;
             }
 
-            setAssetPositions();
+            SetAssetPositions();
         }
 
         public void UnloadContent()
@@ -362,9 +276,9 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Transition(gameTime);
-            if (state == BattleState.INTRO || state == BattleState.WILD_POKEMON_FADE_IN || state == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && state == BattleState.POKEMON_SEND_OUT))
+            if (State == BattleState.INTRO || State == BattleState.WILD_POKEMON_FADE_IN || State == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && State == BattleState.POKEMON_SEND_OUT))
                 PlayerSprite.Update(gameTime);
-            if (state == BattleState.BATTLE_MENU)
+            if (State == BattleState.BATTLE_MENU)
                 animateBattleMenu(gameTime);
 
         }
@@ -374,14 +288,11 @@ namespace PokemonFireRedClone
             Background.Draw(spriteBatch);
             PlayerPlatform.Draw(spriteBatch);
             EnemyPlatform.Draw(spriteBatch);
-            //if ((state == BattleState.PLAYER_SEND_POKEMON && PlayerSprite.SpriteSheetEffect.CurrentFrame.X == 4) || state == BattleState.POKEMON_SWITCH)
-            if ((state == BattleState.POKEMON_SWITCH || state == BattleState.POKEMON_SEND_OUT) && animation != null)
-            {
-                //whiteBackground.Draw(spriteBatch);
-                animation.Draw(spriteBatch);
-            }
+            if ((State == BattleState.POKEMON_SWITCH || State == BattleState.POKEMON_SEND_OUT) && Animation != null)
+                Animation.Draw(spriteBatch);
+            
             PlayerHPBarBackground.Draw(spriteBatch);
-            if (state == BattleState.LEVEL_UP_ANIMATION)
+            if (State == BattleState.LEVEL_UP_ANIMATION)
                 PlayerHPBarLevelUp.Draw(spriteBatch);
             EnemyHPBarBackground.Draw(spriteBatch);
 
@@ -389,7 +300,7 @@ namespace PokemonFireRedClone
             EnemyPokemonAssets.Draw(spriteBatch);
             EXPBar.Draw(spriteBatch);
 
-            if (state == BattleState.INTRO || state == BattleState.WILD_POKEMON_FADE_IN || state == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && state == BattleState.POKEMON_SEND_OUT))
+            if (State == BattleState.INTRO || State == BattleState.WILD_POKEMON_FADE_IN || State == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && State == BattleState.POKEMON_SEND_OUT))
                 PlayerSprite.Draw(spriteBatch);
 
             PlayerPokemon.Draw(spriteBatch);
@@ -397,17 +308,15 @@ namespace PokemonFireRedClone
 
             EnemyPokemon.Draw(spriteBatch);
 
-            if (state == BattleState.STATUS_ANIMATION)
+            if (State == BattleState.STATUS_ANIMATION)
             {
                 StatChangeAnimationImage1.Draw(spriteBatch);
                 StatChangeAnimationImage2.Draw(spriteBatch);
             }
 
-            //if ((state == BattleState.PLAYER_SEND_POKEMON && PlayerSprite.SpriteSheetEffect.CurrentFrame.X == 4) || state == BattleState.POKEMON_SWITCH && Pokeball.IsLoaded)
-            if (state == BattleState.POKEMON_SEND_OUT)
-            {
+            if (State == BattleState.POKEMON_SEND_OUT)
                 Pokeball.Draw(spriteBatch);
-            }
+            
         }
 
         void loadSprites()
@@ -448,7 +357,6 @@ namespace PokemonFireRedClone
             EnemyPlatform.LoadContent();
             EnemyPokemon.LoadContent();
             PlayerPlatform.LoadContent();
-            //Pokeball.LoadContent();
             PlayerHPBarBackground.LoadContent();
             EnemyHPBarBackground.LoadContent();
             PlayerHPBarLevelUp.LoadContent();
@@ -477,7 +385,7 @@ namespace PokemonFireRedClone
             /* END POKEBALL TRANSITION CODE */
         }
 
-        private void setIntroBattleImagePositions(TextBox textBox)
+        void setIntroBattleImagePositions(TextBox textBox)
         {
             // set battle image positions
             EnemyPlatform.Position = new Vector2(-EnemyPlatform.SourceRect.Width, 192);
@@ -489,7 +397,7 @@ namespace PokemonFireRedClone
             PlayerHPBarLevelUp.Position = new Vector2(ScreenManager.Instance.Dimensions.X - PlayerHPBarBackground.SourceRect.Width - 40, PlayerHPBarBackground.Position.Y);
         }
 
-        public void setDefaultBattleImagePositions(TextBox textBox)
+        public void SetDefaultBattleImagePositions(TextBox textBox)
         {
             EnemyPlatform.Position = new Vector2(ScreenManager.Instance.Dimensions.X - EnemyPlatform.SourceRect.Width, 192);
             EnemyPokemon.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemyPokemon.SourceRect.Width / 2, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemyPokemon.SourceRect.Height);
@@ -502,7 +410,7 @@ namespace PokemonFireRedClone
             barOriginalY = PlayerHPBarBackground.Position.Y;
         }
 
-        public void setAssetPositions()
+        public void SetAssetPositions()
         {
             StatChangeAnimationImage1.Position = new Vector2(ScreenManager.Instance.Dimensions.X - StatChangeAnimationImage1.SourceRect.Width, 0);
             StatChangeAnimationImage2.Position = new Vector2(ScreenManager.Instance.Dimensions.X - StatChangeAnimationImage2.SourceRect.Width, 0);
@@ -526,24 +434,6 @@ namespace PokemonFireRedClone
                 EnemyPokemonAssets.Gender.SetPosition(new Vector2(EnemyPokemonAssets.Name.Position.X + EnemyPokemonAssets.Name.SourceRect.Width, EnemyPokemonAssets.Name.Position.Y));
             EnemyPokemonAssets.Level.SetPosition(new Vector2(EnemyHPBarBackground.Position.X + EnemyHPBarBackground.SourceRect.Width - 56 - EnemyPokemonAssets.Level.SourceRect.Width, EnemyPokemonAssets.Name.Position.Y));
             EnemyPokemonAssets.HPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyPokemonAssets.HPBar.Scale.X) / 2 * EnemyPokemonAssets.HPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
-        }
-
-        void endFightSequence(BattleScreen BattleScreen)
-        {
-            BattleScreen.menuManager.menuName = "BattleMenu";
-            BattleScreen.menuManager.menu.ID = "Load/Menus/BattleMenu.xml";
-            BattleScreen.TextBox.NextPage = 4;
-            BattleScreen.TextBox.IsTransitioning = true;
-            BattleScreen.BattleLogic.EnemyHasMoved = false;
-            BattleScreen.BattleLogic.PlayerHasMoved = false;
-            BattleScreen.BattleLogic.PlayerMoveUsed = false;
-            BattleScreen.BattleLogic.StatStageIncrease = false;
-            BattleScreen.BattleLogic.Stat = "";
-            BattleScreen.BattleLogic.SharplyStat = false;
-            BattleScreen.BattleLogic.PlayerMoveExecuted = false;
-            BattleScreen.BattleLogic.EnemyMoveExecuted = false;
-            BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
-            state = BattleState.BATTLE_MENU;
         }
 
     }

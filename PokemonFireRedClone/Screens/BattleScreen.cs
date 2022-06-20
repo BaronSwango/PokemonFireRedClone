@@ -78,7 +78,7 @@ namespace PokemonFireRedClone
                 if (TextBox.Page == 4 && !menuManager.IsLoaded)
                 {
                     menuManager.LoadContent("Load/Menus/BattleMenu.xml");
-                    BattleAnimations.state = BattleAnimations.BattleState.BATTLE_MENU;
+                    BattleAnimations.State = BattleAnimations.BattleState.BATTLE_MENU;
                 }
                 else if (TextBox.Page != 4 && menuManager.IsLoaded)
                     menuManager.UnloadContent();
@@ -95,10 +95,10 @@ namespace PokemonFireRedClone
                     TextBox.BattleLevelUp.NextPage();
 
                 if ((!BattleAnimations.IsTransitioning && !TextBox.BattleLevelUp.IsActive && (!ScreenManager.Instance.IsTransitioning || TextBox.NextPage == 4))
-                    || BattleAnimations.state == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN
-                    || BattleAnimations.state == BattleAnimations.BattleState.DAMAGE_ANIMATION
-                    || BattleAnimations.state == BattleAnimations.BattleState.STATUS_ANIMATION
-                    || (BattleAnimations.state == BattleAnimations.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))
+                    || BattleAnimations.State == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN
+                    || BattleAnimations.State == BattleAnimations.BattleState.DAMAGE_ANIMATION
+                    || BattleAnimations.State == BattleAnimations.BattleState.STATUS_ANIMATION
+                    || (BattleAnimations.State == BattleAnimations.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))
                     TextBox.Update(gameTime);
 
 

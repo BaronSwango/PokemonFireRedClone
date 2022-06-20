@@ -22,13 +22,17 @@ namespace PokemonFireRedClone
             {
                 BattleAnimations.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 4;
                 BattleAnimations.Pokeball.LoadContent();
+
+                BattleAnimations.State = BattleAnimations.BattleState.POKEMON_SEND_OUT;
+                BattleAnimations.Animation = new PokemonSendOut();
+                resetPokeball();
+
                 return true;
 
             }
 
             if (!(BattleAnimations.PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || BattleAnimations.Pokeball.Position.Y < BattleScreen.TextBox.Border.Position.Y)
                 BattleAnimations.PlayerSprite.Position.X -= (int)playerSpeed;
-            
 
             return false;
         }

@@ -67,7 +67,7 @@ namespace PokemonFireRedClone
                     image.UnloadContent();
             }
             IsActive = false;
-            battleScreen.BattleAnimations.state = BattleAnimations.BattleState.EXP_ANIMATION;
+            battleScreen.BattleAnimations.State = BattleAnimations.BattleState.EXP_ANIMATION;
             battleScreen.BattleAnimations.IsTransitioning = true;
         }
 

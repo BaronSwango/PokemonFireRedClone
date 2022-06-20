@@ -315,7 +315,7 @@ namespace PokemonFireRedClone
                         IsTransitioning = true;
                         break;
                     case 16:
-                        battleScreen.BattleAnimations.state = BattleAnimations.BattleState.EXP_ANIMATION;
+                        battleScreen.BattleAnimations.State = BattleAnimations.BattleState.EXP_ANIMATION;
                         battleScreen.BattleAnimations.IsTransitioning = true;
                         break;
                     case 17:

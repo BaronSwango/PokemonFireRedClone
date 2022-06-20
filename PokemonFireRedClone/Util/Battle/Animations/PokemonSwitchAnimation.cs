@@ -91,9 +91,9 @@ namespace PokemonFireRedClone
                         BattleAnimations.PlayerPokemonAssets = new PokemonAssets(BattleLogic.Battle.PlayerPokemon.Pokemon, true);
                         BattleAnimations.PlayerPokemonAssets.ScaleEXPBar(BattleAnimations.EXPBar);
                         BattleAnimations.PlayerPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
-                        BattleAnimations.setDefaultBattleImagePositions(BattleScreen.TextBox);
+                        BattleAnimations.SetDefaultBattleImagePositions(BattleScreen.TextBox);
                         BattleAnimations.PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, BattleScreen.TextBox.Border.Position.Y - BattleAnimations.PlayerHPBarBackground.SourceRect.Height - 4);
-                        BattleAnimations.setAssetPositions();
+                        BattleAnimations.SetAssetPositions();
                     }
 
                     if (counter < 100.0f)
@@ -110,10 +110,9 @@ namespace PokemonFireRedClone
                 }
                 else
                 {
-                    BattleAnimations.state = BattleAnimations.BattleState.POKEMON_SEND_OUT;
+                    BattleAnimations.State = BattleAnimations.BattleState.POKEMON_SEND_OUT;
                     BattleAnimations.Pokeball.LoadContent();
-                    BattleAnimations.Pokeball.Alpha = 0;
-                    BattleAnimations.Pokeball.Position = new Vector2(156, 352);
+                    resetPokeball();
                 }
                 return true;
             }

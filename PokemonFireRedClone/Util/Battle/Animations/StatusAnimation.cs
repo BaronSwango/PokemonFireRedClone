@@ -31,6 +31,12 @@ namespace PokemonFireRedClone
                 BattleAnimations.StatChangeAnimationImage1.Position = new Vector2(-BattleAnimations.StatChangeAnimationImage1.SourceRect.Width, 0);
                 BattleAnimations.StatChangeAnimationImage2.Position = new Vector2(-BattleAnimations.StatChangeAnimationImage2.SourceRect.Width, 0);
                 BattleAnimations.IsTransitioning = false;
+
+                if (BattleScreen.BattleLogic.EnemyHasMoved && BattleScreen.BattleLogic.PlayerHasMoved)
+                    endFightSequence();
+
+                BattleAnimations.Animation = null;
+
                 return true;
             }
 

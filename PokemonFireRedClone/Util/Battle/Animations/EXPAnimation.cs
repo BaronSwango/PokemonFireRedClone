@@ -23,7 +23,7 @@ namespace PokemonFireRedClone
             {
                 BattleAnimations.EXPBar.Scale.X = 1;
                 BattleAnimations.EXPBar.Position = new Vector2(BattleAnimations.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAnimations.EXPBar.Scale.X) / 2 * BattleAnimations.EXPBar.SourceRect.Width), BattleAnimations.PlayerHPBarBackground.Position.Y + BattleAnimations.PlayerHPBarBackground.SourceRect.Height - 16);
-                BattleAnimations.state = BattleAnimations.BattleState.LEVEL_UP_ANIMATION;
+                BattleAnimations.State = BattleAnimations.BattleState.LEVEL_UP_ANIMATION;
                 return false;
             }
             else

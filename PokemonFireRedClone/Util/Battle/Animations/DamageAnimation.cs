@@ -132,6 +132,48 @@ namespace PokemonFireRedClone
                 return false;
             }
 
+            BattleAnimations.Animation = null;
+
+            if (player)
+                BattleScreen.BattleLogic.EnemyHasMoved = true;
+            else
+                BattleScreen.BattleLogic.PlayerHasMoved = true;
+
+            if (BattleScreen.BattleLogic.EnemyHasMoved && BattleScreen.BattleLogic.PlayerHasMoved)
+                endFightSequence();
+
+
+            if (player)
+            {
+                if (BattleLogic.Battle.PlayerPokemon.Pokemon.CurrentHP == 0)
+                {
+                    BattleAnimations.State = BattleAnimations.BattleState.POKEMON_FAINT;
+                    BattleScreen.BattleLogic.State = BattleLogic.FightState.PLAYER_FAINT;
+                    BattleAnimations.IsTransitioning = true;
+                    BattleScreen.BattleLogic.PokemonFainted = true;
+                }
+                else
+                {
+                    BattleAnimations.IsTransitioning = false;
+                    BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                }
+            }
+            else
+            {
+                if (BattleLogic.Battle.EnemyPokemon.Pokemon.CurrentHP == 0)
+                {
+                    BattleAnimations.State = BattleAnimations.BattleState.POKEMON_FAINT;
+                    BattleScreen.BattleLogic.State = BattleLogic.FightState.ENEMY_FAINT;
+                    BattleAnimations.IsTransitioning = true;
+                    BattleScreen.BattleLogic.PokemonFainted = true;
+                }
+                else
+                {
+                    BattleAnimations.IsTransitioning = false;
+                    BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                }
+            }
+
             return true;
         }
 

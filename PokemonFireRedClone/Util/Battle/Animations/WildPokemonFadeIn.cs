@@ -33,6 +33,13 @@ namespace PokemonFireRedClone
                 BattleAnimations.EnemyPokemonAssets.Gender.SetPosition(new Vector2(BattleAnimations.EnemyPokemonAssets.Name.Position.X + BattleAnimations.EnemyPokemonAssets.Name.SourceRect.Width, BattleAnimations.EnemyPokemonAssets.Name.Position.Y));
             BattleAnimations.EnemyPokemonAssets.Level.SetPosition(new Vector2(BattleAnimations.EnemyHPBarBackground.Position.X + BattleAnimations.EnemyHPBarBackground.SourceRect.Width - 56 - BattleAnimations.EnemyPokemonAssets.Level.SourceRect.Width, BattleAnimations.EnemyPokemonAssets.Name.Position.Y));
             BattleAnimations.EnemyPokemonAssets.HPBar.Position = new Vector2(BattleAnimations.EnemyHPBarBackground.Position.X + 156 - ((1 - BattleAnimations.EnemyPokemonAssets.HPBar.Scale.X) / 2 * BattleAnimations.EnemyPokemonAssets.HPBar.SourceRect.Width), BattleAnimations.EnemyHPBarBackground.Position.Y + 68);
+
+            if (BattleScreen.TextBox.Page == 3 && !BattleScreen.TextBox.IsTransitioning)
+            {
+                BattleAnimations.State = BattleAnimations.BattleState.PLAYER_SEND_POKEMON;
+                BattleAnimations.Animation = new PlayerSendPokemon();
+            }
+
             return true;
         }
 

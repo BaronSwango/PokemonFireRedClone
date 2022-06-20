@@ -19,7 +19,7 @@ namespace PokemonFireRedClone
             ENEMY_FAINT
         }
 
-        public static Battle Battle;
+        static Battle battle;
 
         public static bool PlayerShift;
         public static int ShiftNumber;
@@ -54,10 +54,16 @@ namespace PokemonFireRedClone
             set { }
         }
 
+        public static Battle Battle
+        {
+            get { return battle; }
+            private set { }
+        }
+
         public BattleLogic()
         {
             if (!Battle.InBattle)
-                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 6));
+                battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 68));
 
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
@@ -84,7 +90,7 @@ namespace PokemonFireRedClone
                 BattleMenu.SavedItemNumber = 0;
                 MoveMenu.SavedItemNumber = 0;
                 Battle.SwapPokemonInBattle(ShiftNumber);
-                battleScreen.BattleAnimations.state = BattleAnimations.BattleState.POKEMON_SWITCH;
+                battleScreen.BattleAnimations.State = BattleAnimations.BattleState.POKEMON_SWITCH;
                 battleScreen.BattleAnimations.IsTransitioning = true;
                 battleScreen.TextBox.NextPage = 19;
                 battleScreen.TextBox.IsTransitioning = true;
@@ -105,7 +111,7 @@ namespace PokemonFireRedClone
                         if (!EnemyMoveExecuted)
                         {
                             enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
-                            battleScreen.BattleAnimations.state = EnemyMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.State = EnemyMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
@@ -118,7 +124,7 @@ namespace PokemonFireRedClone
                         if (!PlayerMoveExecuted)
                         {
                             useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
-                            battleScreen.BattleAnimations.state = PlayerMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.State = PlayerMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.ENEMY_DEFEND;
                             PlayerMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
@@ -132,7 +138,7 @@ namespace PokemonFireRedClone
                         if (!PlayerMoveExecuted)
                         {
                             useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
-                            battleScreen.BattleAnimations.state = PlayerMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.State = PlayerMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.ENEMY_DEFEND;
                             PlayerMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
@@ -145,7 +151,7 @@ namespace PokemonFireRedClone
                         if (!EnemyMoveExecuted)
                         {
                             enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
-                            battleScreen.BattleAnimations.state = EnemyMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
+                            battleScreen.BattleAnimations.State = EnemyMoveOption.Category == "Status" ? BattleAnimations.BattleState.STATUS_ANIMATION : BattleAnimations.BattleState.DAMAGE_ANIMATION;
                             State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
                             battleScreen.BattleAnimations.IsTransitioning = true;
@@ -315,7 +321,6 @@ namespace PokemonFireRedClone
         private bool moveMissed(int moveAccuracy, BattlePokemon attacker, BattlePokemon defender)
         {
             int accuracyStage = attacker.AccuracyStage - defender.EvasionStage;
-
 
             Random random = new Random();
              

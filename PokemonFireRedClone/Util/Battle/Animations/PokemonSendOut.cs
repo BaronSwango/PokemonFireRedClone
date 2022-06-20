@@ -18,7 +18,6 @@ namespace PokemonFireRedClone
             {
                 Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, BattleAnimations.Background.SourceRect.Width, BattleAnimations.Background.SourceRect.Height)
             };
-            //whiteBackground.LoadContent();
             Color[] data = new Color[BattleAnimations.Background.SourceRect.Width * BattleAnimations.Background.SourceRect.Height];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             whiteBackground.Texture.SetData(data);
@@ -140,7 +139,18 @@ namespace PokemonFireRedClone
 
             whiteBackground.Alpha = 0;
             whiteBackground.UnloadContent();
-            
+
+            resetPokeball();
+            BattleAnimations.Pokeball.UnloadContent();
+            BattleAnimations.IsTransitioning = false;
+
+            if (BattleAnimations.PlayerSprite != null)
+            {
+                BattleScreen.TextBox.NextPage = 4;
+                BattleScreen.TextBox.IsTransitioning = true;
+            }
+            else
+                BattleScreen.BattleLogic.PlayerHasMoved = true;
 
             return true;
         }
