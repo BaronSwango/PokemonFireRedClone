@@ -12,24 +12,25 @@ namespace PokemonFireRedClone
             float goalEXPScale = (float)BattleLogic.Battle.PlayerPokemon.Pokemon.EXPTowardsLevelUp / BattleLogic.Battle.PlayerPokemon.Pokemon.EXPNeededToLevelUp;
             counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (BattleAnimations.EXPBar.Scale.X + 0.01f < goalEXPScale || (BattleAnimations.EXPBar.Scale.X + 0.01f < 1 && int.Parse(BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]) < goalLevel))
+            if (BattleAssets.EXPBar.Scale.X + 0.01f < goalEXPScale || (BattleAssets.EXPBar.Scale.X + 0.01f < 1 && int.Parse(BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]) < goalLevel))
             {
-                BattleAnimations.EXPBar.Scale.X += 0.01f;
-                BattleAnimations.EXPBar.Position = new Vector2(BattleAnimations.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAnimations.EXPBar.Scale.X) / 2 * BattleAnimations.EXPBar.SourceRect.Width), BattleAnimations.PlayerHPBarBackground.Position.Y + BattleAnimations.PlayerHPBarBackground.SourceRect.Height - 16);
+                BattleAssets.EXPBar.Scale.X += 0.01f;
+                BattleAssets.EXPBar.Position = new Vector2(BattleAssets.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAssets.EXPBar.Scale.X) / 2 * BattleAssets.EXPBar.SourceRect.Width), BattleAssets.PlayerHPBarBackground.Position.Y + BattleAssets.PlayerHPBarBackground.SourceRect.Height - 16);
                 return false;
             }
 
-            if (BattleAnimations.EXPBar.Scale.X + 0.01f >= 1)
+            if (BattleAssets.EXPBar.Scale.X + 0.01f >= 1)
             {
-                BattleAnimations.EXPBar.Scale.X = 1;
-                BattleAnimations.EXPBar.Position = new Vector2(BattleAnimations.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAnimations.EXPBar.Scale.X) / 2 * BattleAnimations.EXPBar.SourceRect.Width), BattleAnimations.PlayerHPBarBackground.Position.Y + BattleAnimations.PlayerHPBarBackground.SourceRect.Height - 16);
-                BattleAnimations.State = BattleAnimations.BattleState.LEVEL_UP_ANIMATION;
+                BattleAssets.EXPBar.Scale.X = 1;
+                BattleAssets.EXPBar.Position = new Vector2(BattleAssets.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAssets.EXPBar.Scale.X) / 2 * BattleAssets.EXPBar.SourceRect.Width), BattleAssets.PlayerHPBarBackground.Position.Y + BattleAssets.PlayerHPBarBackground.SourceRect.Height - 16);
+                BattleAssets.State = BattleAssets.BattleState.LEVEL_UP_ANIMATION;
+                BattleAssets.Animation = new LevelUpAnimation();
                 return false;
             }
             else
             {
-                BattleAnimations.EXPBar.Scale.X = goalEXPScale;
-                BattleAnimations.EXPBar.Position = new Vector2(BattleAnimations.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAnimations.EXPBar.Scale.X) / 2 * BattleAnimations.EXPBar.SourceRect.Width), BattleAnimations.PlayerHPBarBackground.Position.Y + BattleAnimations.PlayerHPBarBackground.SourceRect.Height - 16);
+                BattleAssets.EXPBar.Scale.X = goalEXPScale;
+                BattleAssets.EXPBar.Position = new Vector2(BattleAssets.PlayerHPBarBackground.Position.X + 128 - ((1 - BattleAssets.EXPBar.Scale.X) / 2 * BattleAssets.EXPBar.SourceRect.Width), BattleAssets.PlayerHPBarBackground.Position.Y + BattleAssets.PlayerHPBarBackground.SourceRect.Height - 16);
             }
 
             if (counter < 1000.0f)
@@ -44,7 +45,7 @@ namespace PokemonFireRedClone
                 BattleLogic.EndBattle();
             }
             BattleScreen.BattleLogic.LevelUp = false;
-            BattleAnimations.IsTransitioning = false;
+            BattleAssets.IsTransitioning = false;
             return true;
         }
 

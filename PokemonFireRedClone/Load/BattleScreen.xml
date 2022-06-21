@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <BattleScreen>
-    <BattleAnimations>
+    <BattleAssets>
         <Pokeball>
             <Path>BattleScreen/Pokeball</Path>
         </Pokeball>
@@ -25,7 +25,7 @@
             <Path>BattleScreen/PlayerHPBarLevelUp</Path>
         </PlayerHPBarLevelUp>
 
-    </BattleAnimations>
+    </BattleAssets>
 
     <TextBox>
         <TotalPages>19</TotalPages>

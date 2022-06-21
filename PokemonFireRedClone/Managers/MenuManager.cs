@@ -96,7 +96,7 @@ namespace PokemonFireRedClone
                         ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveOption = MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text);
                         UnloadContent();
 
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAnimations.Reset();
+                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAssets.Reset();
                         ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveUsed = true;
                         ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.StartSequence = true;
                         ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 5;

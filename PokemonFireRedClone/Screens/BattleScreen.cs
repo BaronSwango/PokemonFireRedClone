@@ -11,7 +11,7 @@ namespace PokemonFireRedClone
     {
 
         public BattleTextBox TextBox;
-        public BattleAnimations BattleAnimations;
+        public BattleAssets BattleAssets;
         [XmlIgnore]
         public BattleLogic BattleLogic;
         [XmlIgnore]
@@ -49,14 +49,14 @@ namespace PokemonFireRedClone
             // TODO: Load Background based on what environment the battle is in
             BattleLogic = new BattleLogic();
             TextBox.LoadContent(BattleLogic.Battle.EnemyPokemon.Pokemon);
-            BattleAnimations.LoadContent();
+            BattleAssets.LoadContent();
             base.LoadContent();
         }
 
         public override void UnloadContent()
         {
             
-            BattleAnimations.UnloadContent();
+            BattleAssets.UnloadContent();
             TextBox.UnloadContent();
             if (menuManager.IsLoaded)
                 menuManager.UnloadContent();
@@ -69,16 +69,16 @@ namespace PokemonFireRedClone
             
             if (menuManager.menuName != "PokemonMenu")
             {
-                BattleAnimations.Update(gameTime);
+                BattleAssets.Update(gameTime);
                 BattleLogic.Update(gameTime);
 
-                if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAnimations.IsTransitioning)
+                if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAssets.IsTransitioning)
                     ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
                 if (TextBox.Page == 4 && !menuManager.IsLoaded)
                 {
                     menuManager.LoadContent("Load/Menus/BattleMenu.xml");
-                    BattleAnimations.State = BattleAnimations.BattleState.BATTLE_MENU;
+                    BattleAssets.State = BattleAssets.BattleState.BATTLE_MENU;
                 }
                 else if (TextBox.Page != 4 && menuManager.IsLoaded)
                     menuManager.UnloadContent();
@@ -94,11 +94,11 @@ namespace PokemonFireRedClone
                 if (InputManager.Instance.KeyPressed(Keys.E) && TextBox.BattleLevelUp.IsActive)
                     TextBox.BattleLevelUp.NextPage();
 
-                if ((!BattleAnimations.IsTransitioning && !TextBox.BattleLevelUp.IsActive && (!ScreenManager.Instance.IsTransitioning || TextBox.NextPage == 4))
-                    || BattleAnimations.State == BattleAnimations.BattleState.WILD_POKEMON_FADE_IN
-                    || BattleAnimations.State == BattleAnimations.BattleState.DAMAGE_ANIMATION
-                    || BattleAnimations.State == BattleAnimations.BattleState.STATUS_ANIMATION
-                    || (BattleAnimations.State == BattleAnimations.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))
+                if ((!BattleAssets.IsTransitioning && !TextBox.BattleLevelUp.IsActive && (!ScreenManager.Instance.IsTransitioning || TextBox.NextPage == 4))
+                    || BattleAssets.State == BattleAssets.BattleState.WILD_POKEMON_FADE_IN
+                    || BattleAssets.State == BattleAssets.BattleState.DAMAGE_ANIMATION
+                    || BattleAssets.State == BattleAssets.BattleState.STATUS_ANIMATION
+                    || (BattleAssets.State == BattleAssets.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))
                     TextBox.Update(gameTime);
 
 
@@ -112,7 +112,7 @@ namespace PokemonFireRedClone
             
             if (menuManager.menuName != "PokemonMenu")
             {
-                BattleAnimations.Draw(spriteBatch);
+                BattleAssets.Draw(spriteBatch);
 
                 TextBox.Draw(spriteBatch);
 

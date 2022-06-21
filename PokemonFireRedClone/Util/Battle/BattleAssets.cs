@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
-    public class BattleAnimations
+    public class BattleAssets
     {
         // TODO: Add sounds to all Animations
 
@@ -22,14 +22,10 @@ namespace PokemonFireRedClone
             PLAYER_SEND_POKEMON,
             ENEMY_SEND_POKEMON,
             BATTLE_MENU,
-            MOVE_EXCHANGE,
             DAMAGE_ANIMATION,
             STATUS_ANIMATION,
-            FADE_TRANSITION,
             POKEMON_SWITCH,
             POKEMON_SEND_OUT,
-            PLAYER_POKEMON_FAINT,
-            ENEMY_POKEMON_FAINT,
             POKEMON_FAINT,
             EXP_ANIMATION,
             LEVEL_UP_ANIMATION
@@ -60,102 +56,7 @@ namespace PokemonFireRedClone
         public PokemonAssets EnemyPokemonAssets;
         public Image EXPBar;
 
-        // ---------- Animation TEST ----------
         public BattleAnimation Animation;
-
-        Image whiteBackground;
-
-        private void Transition(GameTime gameTime)
-        {
-            if (IsTransitioning && !ScreenManager.Instance.IsTransitioning)
-            {
-                switch (State)
-                {
-                    case BattleState.INTRO:
-
-                        if (!Animation.Animate(gameTime)) 
-                            break;
-
-                        break;
-                    case BattleState.WILD_POKEMON_FADE_IN:
-
-                        if (!Animation.Animate(gameTime))
-                            break;
-
-                        break;
-                    case BattleState.PLAYER_SEND_POKEMON:
-
-                        if (!Animation.Animate(gameTime))
-                            break;
-
-                        break;
-                    case BattleState.POKEMON_SEND_OUT:
-
-                        if (!(Animation is PokemonSendOut))
-                            Animation = new PokemonSendOut();
-
-                        if (!Animation.Animate(gameTime)) break;
-
-                        break;
-                    case BattleState.DAMAGE_ANIMATION:
-                        if (!BattleScreen.TextBox.IsTransitioning)
-                        {
-                            if (!(Animation is DamageAnimation))
-                                Animation = new DamageAnimation();
-
-                            if (!Animation.Animate(gameTime)) break;
-
-                        }
-                        break;
-                    case BattleState.STATUS_ANIMATION:
-                        if (!BattleScreen.TextBox.IsTransitioning)
-                        { 
-                            if (!(Animation is StatusAnimation))
-                                Animation = new StatusAnimation();
-
-                            if (!Animation.Animate(gameTime)) break;
-                        }
-                        break;
-                    case BattleState.POKEMON_FAINT:
-
-                        if (!(Animation is PokemonFaint))
-                            Animation = new PokemonFaint();
-
-                        if (!Animation.Animate(gameTime)) break;
-
-                        //TODO: REPLACE WITH SOUND ENDING TO TRIGGER INSTEAD OF COUNTER
-                        // TODO: TEXTBOX FAINT MESSAGE WITH ARROW (CHECK WILD VS TRAINER FOR SPECIFIC MESSAGE)
-                        // - AFTER CLICKING PAST ARROW, GO TO GAMEPLAY SCREEN
-                        break;
-                    case BattleState.EXP_ANIMATION:
-
-                        if (!(Animation is EXPAnimation))
-                            Animation = new EXPAnimation();
-
-                        if (!Animation.Animate(gameTime)) break;
-
-                        break;
-                    case BattleState.LEVEL_UP_ANIMATION:
-
-                        if (!(Animation is LevelUpAnimation))
-                            Animation = new LevelUpAnimation();
-
-                        if (!Animation.Animate(gameTime)) break;
-
-                        break;
-                    case BattleState.POKEMON_SWITCH:
-
-                        if (!(Animation is PokemonSwitchAnimation))
-                            Animation = new PokemonSwitchAnimation();
-
-                        if (!Animation.Animate(gameTime)) break;
-
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
 
         bool barBounce;
         float pokeBounceTimer = 0.2f;
@@ -166,54 +67,6 @@ namespace PokemonFireRedClone
         float pokeHPOriginalY;
         float pokeHealthBarOriginalY;
         float pokeEXPOriginalY;
-
-
-        void animateBattleMenu(GameTime gameTime)
-        {
-            pokeBounceTimer -= (float) gameTime.ElapsedGameTime.TotalSeconds;
-            barBounceTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (barBounceTimer < 0)
-            {
-                barBounce = !barBounce;
-                float yOffset = barBounce ? 4 : -4;
-                PlayerHPBarBackground.Position.Y += yOffset;
-                PlayerPokemonAssets.Name.OffsetY(yOffset);
-                if (PlayerPokemonAssets.Gender != null)
-                    PlayerPokemonAssets.Gender.OffsetY(yOffset);
-                PlayerPokemonAssets.Level.OffsetY(yOffset);
-                PlayerPokemonAssets.MaxHP.OffsetY(yOffset);
-                PlayerPokemonAssets.CurrentHP.OffsetY(yOffset);
-                PlayerPokemonAssets.HPBar.Position.Y += yOffset;
-                EXPBar.Position.Y += yOffset;
-                barBounceTimer = 0.3f;
-            }
-
-            if (pokeBounceTimer < 0)
-            {
-                PlayerPokemon.Position.Y += barBounce ? -4 : 4;
-                pokeBounceTimer = 0.3f;
-            }
-
-        }
-
-        // when battle menu option is selected
-        public void Reset()
-        {
-            barBounce = false;
-            barBounceTimer = 0.3f;
-            pokeBounceTimer = 0.2f;
-            PlayerPokemon.Position.Y = PokeOriginalY;
-            PlayerHPBarBackground.Position.Y = barOriginalY;
-            PlayerPokemonAssets.HPBar.Position.Y = pokeHealthBarOriginalY;
-            PlayerPokemonAssets.Name.SetY(pokeNameOriginalY);
-            PlayerPokemonAssets.Level.SetY(pokeNameOriginalY);
-            if (PlayerPokemonAssets.Gender != null)
-                PlayerPokemonAssets.Gender.SetY(pokeNameOriginalY);
-            EXPBar.Position.Y = pokeEXPOriginalY;
-            PlayerPokemonAssets.CurrentHP.SetY(pokeHPOriginalY);
-            PlayerPokemonAssets.MaxHP.SetY(pokeHPOriginalY);
-        }
 
         public void LoadContent()
         {
@@ -274,8 +127,10 @@ namespace PokemonFireRedClone
         }
 
         public void Update(GameTime gameTime)
-        {
-            Transition(gameTime);
+        {            
+            if (Animation != null && IsTransitioning && !ScreenManager.Instance.IsTransitioning)
+                Animation.Animate(gameTime);
+            
             if (State == BattleState.INTRO || State == BattleState.WILD_POKEMON_FADE_IN || State == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && State == BattleState.POKEMON_SEND_OUT))
                 PlayerSprite.Update(gameTime);
             if (State == BattleState.BATTLE_MENU)
@@ -317,6 +172,35 @@ namespace PokemonFireRedClone
             if (State == BattleState.POKEMON_SEND_OUT)
                 Pokeball.Draw(spriteBatch);
             
+        }
+
+        void animateBattleMenu(GameTime gameTime)
+        {
+            pokeBounceTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            barBounceTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (barBounceTimer < 0)
+            {
+                barBounce = !barBounce;
+                float yOffset = barBounce ? 4 : -4;
+                PlayerHPBarBackground.Position.Y += yOffset;
+                PlayerPokemonAssets.Name.OffsetY(yOffset);
+                if (PlayerPokemonAssets.Gender != null)
+                    PlayerPokemonAssets.Gender.OffsetY(yOffset);
+                PlayerPokemonAssets.Level.OffsetY(yOffset);
+                PlayerPokemonAssets.MaxHP.OffsetY(yOffset);
+                PlayerPokemonAssets.CurrentHP.OffsetY(yOffset);
+                PlayerPokemonAssets.HPBar.Position.Y += yOffset;
+                EXPBar.Position.Y += yOffset;
+                barBounceTimer = 0.3f;
+            }
+
+            if (pokeBounceTimer < 0)
+            {
+                PlayerPokemon.Position.Y += barBounce ? -4 : 4;
+                pokeBounceTimer = 0.3f;
+            }
+
         }
 
         void loadSprites()
@@ -370,19 +254,6 @@ namespace PokemonFireRedClone
             PlayerPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
             EnemyPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
             EXPBar.LoadContent();
-
-
-            /* POKEBALL TRANSITION CODE */
-            whiteBackground = new Image
-            {
-                Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, Background.SourceRect.Width, Background.SourceRect.Height)
-            };
-            //whiteBackground.LoadContent();
-            Color[] data = new Color[Background.SourceRect.Width * Background.SourceRect.Height];
-            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
-            whiteBackground.Texture.SetData(data);
-            whiteBackground.Alpha = 0;
-            /* END POKEBALL TRANSITION CODE */
         }
 
         void setIntroBattleImagePositions(TextBox textBox)
@@ -395,6 +266,24 @@ namespace PokemonFireRedClone
             EnemyHPBarBackground.Position = new Vector2(-EnemyHPBarBackground.SourceRect.Width, EnemyPlatform.Position.Y - EnemyHPBarBackground.SourceRect.Height - 12);
             PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, textBox.Border.Position.Y - PlayerHPBarBackground.SourceRect.Height - 4);
             PlayerHPBarLevelUp.Position = new Vector2(ScreenManager.Instance.Dimensions.X - PlayerHPBarBackground.SourceRect.Width - 40, PlayerHPBarBackground.Position.Y);
+        }
+
+        // when battle menu option is selected
+        public void Reset()
+        {
+            barBounce = false;
+            barBounceTimer = 0.3f;
+            pokeBounceTimer = 0.2f;
+            PlayerPokemon.Position.Y = PokeOriginalY;
+            PlayerHPBarBackground.Position.Y = barOriginalY;
+            PlayerPokemonAssets.HPBar.Position.Y = pokeHealthBarOriginalY;
+            PlayerPokemonAssets.Name.SetY(pokeNameOriginalY);
+            PlayerPokemonAssets.Level.SetY(pokeNameOriginalY);
+            if (PlayerPokemonAssets.Gender != null)
+                PlayerPokemonAssets.Gender.SetY(pokeNameOriginalY);
+            EXPBar.Position.Y = pokeEXPOriginalY;
+            PlayerPokemonAssets.CurrentHP.SetY(pokeHPOriginalY);
+            PlayerPokemonAssets.MaxHP.SetY(pokeHPOriginalY);
         }
 
         public void SetDefaultBattleImagePositions(TextBox textBox)

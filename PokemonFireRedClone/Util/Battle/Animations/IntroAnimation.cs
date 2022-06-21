@@ -11,31 +11,31 @@ namespace PokemonFireRedClone
         {
             float enemySpeed = (float)(0.596 * gameTime.ElapsedGameTime.TotalMilliseconds);
             float playerSpeed = (float)(0.807 * gameTime.ElapsedGameTime.TotalMilliseconds);
-            float enemyPlatformDestinationX = ScreenManager.Instance.Dimensions.X - BattleAnimations.EnemyPlatform.SourceRect.Width;
+            float enemyPlatformDestinationX = ScreenManager.Instance.Dimensions.X - BattleAssets.EnemyPlatform.SourceRect.Width;
             float playerPlatformDestinationX = 16;
 
-            if (!(BattleAnimations.PlayerPlatform.Position.X - playerSpeed < playerPlatformDestinationX) && !(BattleAnimations.EnemyPlatform.Position.X + enemySpeed > enemyPlatformDestinationX))
+            if (!(BattleAssets.PlayerPlatform.Position.X - playerSpeed < playerPlatformDestinationX) && !(BattleAssets.EnemyPlatform.Position.X + enemySpeed > enemyPlatformDestinationX))
             {
-                BattleAnimations.PlayerPlatform.Position.X -= playerSpeed;
-                BattleAnimations.PlayerSprite.Position.X -= playerSpeed;
-                BattleAnimations.EnemyPlatform.Position.X += enemySpeed;
-                BattleAnimations.EnemyPokemon.Position.X += enemySpeed;
+                BattleAssets.PlayerPlatform.Position.X -= playerSpeed;
+                BattleAssets.PlayerSprite.Position.X -= playerSpeed;
+                BattleAssets.EnemyPlatform.Position.X += enemySpeed;
+                BattleAssets.EnemyPokemon.Position.X += enemySpeed;
                 return false;
             }
 
-            BattleAnimations.PlayerPlatform.Position.X = playerPlatformDestinationX;
-            BattleAnimations.PlayerSprite.Position.X = BattleAnimations.PlayerPlatform.Position.X + BattleAnimations.PlayerPlatform.SourceRect.Width / 2 - 48;
-            BattleAnimations.EnemyPlatform.Position.X = enemyPlatformDestinationX;
-            BattleAnimations.EnemyPokemon.Position.X = BattleAnimations.EnemyPlatform.Position.X + BattleAnimations.EnemyPlatform.SourceRect.Width / 2 - BattleAnimations.EnemyPokemon.SourceRect.Width / 2;
+            BattleAssets.PlayerPlatform.Position.X = playerPlatformDestinationX;
+            BattleAssets.PlayerSprite.Position.X = BattleAssets.PlayerPlatform.Position.X + BattleAssets.PlayerPlatform.SourceRect.Width / 2 - 48;
+            BattleAssets.EnemyPlatform.Position.X = enemyPlatformDestinationX;
+            BattleAssets.EnemyPokemon.Position.X = BattleAssets.EnemyPlatform.Position.X + BattleAssets.EnemyPlatform.SourceRect.Width / 2 - BattleAssets.EnemyPokemon.SourceRect.Width / 2;
 
 
             if (BattleLogic.Battle.IsWild)
             {
-                BattleAnimations.State = BattleAnimations.BattleState.WILD_POKEMON_FADE_IN;
-                BattleAnimations.Animation = new WildPokemonFadeIn();
+                BattleAssets.State = BattleAssets.BattleState.WILD_POKEMON_FADE_IN;
+                BattleAssets.Animation = new WildPokemonFadeIn();
             }
             else
-                BattleAnimations.IsTransitioning = false;
+                BattleAssets.IsTransitioning = false;
             return true;
         }
 

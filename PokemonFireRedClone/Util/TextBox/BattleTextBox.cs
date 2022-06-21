@@ -121,7 +121,7 @@ namespace PokemonFireRedClone
                                         image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   grew   to";
 
                                     else if (currentDialogue[1] == image)
-                                        image.Text = "LV.   " + battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]+ " !";
+                                        image.Text = "LV.   " + battleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]+ " !";
                                     break;
                                 case 18:
                                     if (currentDialogue[0] == image)
@@ -220,7 +220,7 @@ namespace PokemonFireRedClone
                 {
                     if (!image.Skippable && !image.Arrow)
                     {
-                        if (!battleScreen.BattleAnimations.IsTransitioning)
+                        if (!battleScreen.BattleAssets.IsTransitioning)
                         {
                             switch (Page)
                             {
@@ -315,11 +315,12 @@ namespace PokemonFireRedClone
                         IsTransitioning = true;
                         break;
                     case 16:
-                        battleScreen.BattleAnimations.State = BattleAnimations.BattleState.EXP_ANIMATION;
-                        battleScreen.BattleAnimations.IsTransitioning = true;
+                        battleScreen.BattleAssets.State = BattleAssets.BattleState.EXP_ANIMATION;
+                        battleScreen.BattleAssets.Animation = new EXPAnimation();
+                        battleScreen.BattleAssets.IsTransitioning = true;
                         break;
                     case 17:
-                        BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(battleScreen.BattleAnimations.PlayerPokemonAssets.Level.Text.Text[2..]));
+                        BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(battleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]));
                         break;
                     default:
                         break;

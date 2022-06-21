@@ -14,10 +14,10 @@ namespace PokemonFireRedClone
         {
             whiteBackground = new Image
             {
-                Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, BattleAnimations.Background.SourceRect.Width, BattleAnimations.Background.SourceRect.Height)
+                Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, BattleAssets.Background.SourceRect.Width, BattleAssets.Background.SourceRect.Height)
             };
             //whiteBackground.LoadContent();
-            Color[] data = new Color[BattleAnimations.Background.SourceRect.Width * BattleAnimations.Background.SourceRect.Height];
+            Color[] data = new Color[BattleAssets.Background.SourceRect.Width * BattleAssets.Background.SourceRect.Height];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             whiteBackground.Texture.SetData(data);
             whiteBackground.Alpha = 0;
@@ -36,13 +36,13 @@ namespace PokemonFireRedClone
                     if (!whiteBackground.IsLoaded)
                         whiteBackground.LoadContent();
 
-                    if (BattleAnimations.PlayerPokemon.Tint != Color.Red)
+                    if (BattleAssets.PlayerPokemon.Tint != Color.Red)
                     {
-                        BattleAnimations.PlayerPokemon.Tint = new Color(BattleAnimations.PlayerPokemon.Tint.R, BattleAnimations.PlayerPokemon.Tint.G - 20, BattleAnimations.PlayerPokemon.B - 20, 255);
+                        BattleAssets.PlayerPokemon.Tint = new Color(BattleAssets.PlayerPokemon.Tint.R, BattleAssets.PlayerPokemon.Tint.G - 20, BattleAssets.PlayerPokemon.B - 20, 255);
                         whiteBackground.Alpha += 0.0784f;
                         return false;
                     }
-                    BattleAnimations.PlayerPokemon.Tint = Color.Red;
+                    BattleAssets.PlayerPokemon.Tint = Color.Red;
 
                     if (whiteBackground.Alpha < 1 && !whiteBackgroundTransitioned)
                     {
@@ -51,14 +51,14 @@ namespace PokemonFireRedClone
                     }
                     whiteBackgroundTransitioned = true;
 
-                    if (BattleAnimations.PlayerPokemon.Scale.X - 0.05f > 0 && BattleAnimations.PlayerPokemon.Scale.Y - 0.05f > 0)
+                    if (BattleAssets.PlayerPokemon.Scale.X - 0.05f > 0 && BattleAssets.PlayerPokemon.Scale.Y - 0.05f > 0)
                     {
                         whiteBackground.Alpha -= 0.05f;
 
-                        if (BattleAnimations.PlayerPokemon.Scale.X - 0.05f > 0 && BattleAnimations.PlayerPokemon.Scale.Y - 0.05f > 0)
+                        if (BattleAssets.PlayerPokemon.Scale.X - 0.05f > 0 && BattleAssets.PlayerPokemon.Scale.Y - 0.05f > 0)
                         {
-                            BattleAnimations.PlayerPokemon.Scale = new Vector2(BattleAnimations.PlayerPokemon.Scale.X - 0.05f, BattleAnimations.PlayerPokemon.Scale.Y - 0.05f);
-                            BattleAnimations.PlayerPokemon.Position = new Vector2(BattleAnimations.PlayerPlatform.Position.X + BattleAnimations.PlayerPlatform.SourceRect.Width * 0.55f - BattleAnimations.PlayerPokemon.SourceRect.Width / 2, BattleAnimations.PlayerPlatform.Position.Y + BattleAnimations.PlayerPlatform.SourceRect.Height - (int)(BattleAnimations.PlayerPokemon.SourceRect.Height * BattleAnimations.PlayerPokemon.Scale.Y));
+                            BattleAssets.PlayerPokemon.Scale = new Vector2(BattleAssets.PlayerPokemon.Scale.X - 0.05f, BattleAssets.PlayerPokemon.Scale.Y - 0.05f);
+                            BattleAssets.PlayerPokemon.Position = new Vector2(BattleAssets.PlayerPlatform.Position.X + BattleAssets.PlayerPlatform.SourceRect.Width * 0.55f - BattleAssets.PlayerPokemon.SourceRect.Width / 2, BattleAssets.PlayerPlatform.Position.Y + BattleAssets.PlayerPlatform.SourceRect.Height - (int)(BattleAssets.PlayerPokemon.SourceRect.Height * BattleAssets.PlayerPokemon.Scale.Y));
                         }
                         return false;
                     }
@@ -73,27 +73,27 @@ namespace PokemonFireRedClone
 
 
 
-                    if (BattleAnimations.PlayerPokemon.Scale != Vector2.Zero)
+                    if (BattleAssets.PlayerPokemon.Scale != Vector2.Zero)
                     {
                         BattleLogic.Battle.UpdatePlayerPokemon();
 
-                        BattleAnimations.PlayerPokemon.Scale = Vector2.Zero;
-                        BattleAnimations.PlayerPokemon.Position = new Vector2(BattleAnimations.PlayerPlatform.Position.X + BattleAnimations.PlayerPlatform.SourceRect.Width * 0.55f - BattleAnimations.PlayerPokemon.SourceRect.Width / 2, BattleAnimations.PlayerPlatform.Position.Y + BattleAnimations.PlayerPlatform.SourceRect.Height - BattleAnimations.PlayerPokemon.SourceRect.Height);
-                        BattleAnimations.PokeOriginalY = BattleAnimations.PlayerPokemon.Position.Y;
-                        BattleAnimations.PlayerPokemon.UnloadContent();
+                        BattleAssets.PlayerPokemon.Scale = Vector2.Zero;
+                        BattleAssets.PlayerPokemon.Position = new Vector2(BattleAssets.PlayerPlatform.Position.X + BattleAssets.PlayerPlatform.SourceRect.Width * 0.55f - BattleAssets.PlayerPokemon.SourceRect.Width / 2, BattleAssets.PlayerPlatform.Position.Y + BattleAssets.PlayerPlatform.SourceRect.Height - BattleAssets.PlayerPokemon.SourceRect.Height);
+                        BattleAssets.PokeOriginalY = BattleAssets.PlayerPokemon.Position.Y;
+                        BattleAssets.PlayerPokemon.UnloadContent();
 
-                        BattleAnimations.PlayerPokemon = BattleLogic.Battle.PlayerPokemon.Pokemon.Pokemon.Back;
-                        BattleAnimations.PlayerPokemon.Scale = Vector2.Zero;
-                        BattleAnimations.PlayerPokemon.LoadContent();
-                        BattleAnimations.PlayerPokemon.Tint = Color.Red;
+                        BattleAssets.PlayerPokemon = BattleLogic.Battle.PlayerPokemon.Pokemon.Pokemon.Back;
+                        BattleAssets.PlayerPokemon.Scale = Vector2.Zero;
+                        BattleAssets.PlayerPokemon.LoadContent();
+                        BattleAssets.PlayerPokemon.Tint = Color.Red;
 
-                        BattleAnimations.PlayerPokemonAssets.UnloadContent();
-                        BattleAnimations.PlayerPokemonAssets = new PokemonAssets(BattleLogic.Battle.PlayerPokemon.Pokemon, true);
-                        BattleAnimations.PlayerPokemonAssets.ScaleEXPBar(BattleAnimations.EXPBar);
-                        BattleAnimations.PlayerPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
-                        BattleAnimations.SetDefaultBattleImagePositions(BattleScreen.TextBox);
-                        BattleAnimations.PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, BattleScreen.TextBox.Border.Position.Y - BattleAnimations.PlayerHPBarBackground.SourceRect.Height - 4);
-                        BattleAnimations.SetAssetPositions();
+                        BattleAssets.PlayerPokemonAssets.UnloadContent();
+                        BattleAssets.PlayerPokemonAssets = new PokemonAssets(BattleLogic.Battle.PlayerPokemon.Pokemon, true);
+                        BattleAssets.PlayerPokemonAssets.ScaleEXPBar(BattleAssets.EXPBar);
+                        BattleAssets.PlayerPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
+                        BattleAssets.SetDefaultBattleImagePositions(BattleScreen.TextBox);
+                        BattleAssets.PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X, BattleScreen.TextBox.Border.Position.Y - BattleAssets.PlayerHPBarBackground.SourceRect.Height - 4);
+                        BattleAssets.SetAssetPositions();
                     }
 
                     if (counter < 100.0f)
@@ -110,8 +110,9 @@ namespace PokemonFireRedClone
                 }
                 else
                 {
-                    BattleAnimations.State = BattleAnimations.BattleState.POKEMON_SEND_OUT;
-                    BattleAnimations.Pokeball.LoadContent();
+                    BattleAssets.State = BattleAssets.BattleState.POKEMON_SEND_OUT;
+                    BattleAssets.Animation = new PokemonSendOut();
+                    BattleAssets.Pokeball.LoadContent();
                     resetPokeball();
                 }
                 return true;

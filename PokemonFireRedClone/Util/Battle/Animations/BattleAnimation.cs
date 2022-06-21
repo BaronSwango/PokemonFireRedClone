@@ -13,9 +13,9 @@ namespace PokemonFireRedClone
             set { }
         }
 
-        protected BattleAnimations BattleAnimations
+        protected BattleAssets BattleAssets
         {
-            get { return BattleScreen.BattleAnimations; }
+            get { return BattleScreen.BattleAssets; }
             set { }
         }
 
@@ -28,8 +28,8 @@ namespace PokemonFireRedClone
 
 
         protected void resetPokeball() {
-            BattleAnimations.Pokeball.Alpha = 0;
-            BattleAnimations.Pokeball.Position = new Vector2(156, 352);
+            BattleAssets.Pokeball.Alpha = 0;
+            BattleAssets.Pokeball.Position = new Vector2(156, 352);
         }
 
         protected void endFightSequence()
@@ -47,7 +47,7 @@ namespace PokemonFireRedClone
             BattleScreen.BattleLogic.PlayerMoveExecuted = false;
             BattleScreen.BattleLogic.EnemyMoveExecuted = false;
             BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
-            BattleAnimations.State = BattleAnimations.BattleState.BATTLE_MENU;
+            BattleAssets.State = BattleAssets.BattleState.BATTLE_MENU;
         }
 
 
