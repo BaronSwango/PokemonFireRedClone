@@ -592,6 +592,18 @@
         <Category>Special</Category>
     </Moves>
     <Moves>
+        <Name>Flash</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>70</Accuracy>
+        <PP>20</PP>
+        <Description>A blast of light that cuts the foe’s accuracy. It also illuminates caves.</Description>
+        <Category>Status</Category>
+        <Stat>ACC</Stat>
+        <Self>false</Self>
+        <StageChange>-1</StageChange>
+    </Moves>
+    <Moves>
         <Name>Growl</Name>
         <TypeName>Normal</TypeName>
         <Power>0</Power>

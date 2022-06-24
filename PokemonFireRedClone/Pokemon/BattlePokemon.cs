@@ -20,35 +20,35 @@ namespace PokemonFireRedClone
 
         public int TempAttack
         {
-            get { return (int) (Pokemon.Stats.Attack * StatStageMultiplier(AttackStage)); }
+            get { return (int)(Pokemon.Stats.Attack * StatStageMultiplier(AttackStage)); }
             private set { }
         }
 
         public int TempDefense
         {
-            get { return (int) (Pokemon.Stats.Defense * StatStageMultiplier(DefenseStage)); }
+            get { return (int)(Pokemon.Stats.Defense * StatStageMultiplier(DefenseStage)); }
             private set { }
         }
 
         public int TempSpecialAttack
         {
-            get { return (int) (Pokemon.Stats.SpecialAttack * StatStageMultiplier(SpecialAttackStage)); }
+            get { return (int)(Pokemon.Stats.SpecialAttack * StatStageMultiplier(SpecialAttackStage)); }
             private set { }
         }
 
         public int TempSpecialDefense
         {
-            get { return (int) (Pokemon.Stats.SpecialDefense * StatStageMultiplier(SpecialDefenseStage)); }
+            get { return (int)(Pokemon.Stats.SpecialDefense * StatStageMultiplier(SpecialDefenseStage)); }
             private set { }
         }
 
         public int TempSpeed
         {
-            get { return (int) (Pokemon.Stats.Speed * StatStageMultiplier(SpeedStage)); }
+            get { return (int)(Pokemon.Stats.Speed * StatStageMultiplier(SpeedStage)); }
             private set { }
         }
 
-        private float StatStageMultiplier(int stage)
+        public float StatStageMultiplier(int stage)
         {
             switch(stage)
             {

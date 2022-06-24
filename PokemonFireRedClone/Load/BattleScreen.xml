@@ -319,5 +319,23 @@
             <A>255</A>
             <Text></Text>
         </Dialogue>
+        <Dialogue>
+            <Page>20</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text></Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>20</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text></Text>
+        </Dialogue>
     </TextBox>
 </BattleScreen>

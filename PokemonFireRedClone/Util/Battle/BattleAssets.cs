@@ -78,8 +78,8 @@ namespace PokemonFireRedClone
             {
                 State = BattleState.BATTLE_MENU;
                 BattleScreen.TextBox.NextPage = 4;
-                BattleScreen.TextBox.UpdateDialogue = true;
                 BattleScreen.TextBox.IsTransitioning = true;
+                BattleScreen.TextBox.UpdateDialogue = true;
                 PlayerPokemon.LoadContent();
                 SetDefaultBattleImagePositions(BattleScreen.TextBox);
             }
@@ -203,17 +203,6 @@ namespace PokemonFireRedClone
 
         }
 
-        void loadSprites()
-        {
-            PlayerSprite = new Image
-            {
-                Path = Player.PlayerJsonObject.Gender == Gender.MALE ? "BattleScreen/BattleRedSpriteSheet" : "BattleScreen/BattleBackground1",
-                Effects = "SpriteSheetEffect"
-            };
-            PlayerSprite.LoadContent();
-        }
-
-
         void loadBattleContent(CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
         {
             // Battle assets
@@ -254,6 +243,16 @@ namespace PokemonFireRedClone
             PlayerPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
             EnemyPokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", new Color(81, 81, 81, 255), new Color(224, 219, 192, 255));
             EXPBar.LoadContent();
+        }
+
+        void loadSprites()
+        {
+            PlayerSprite = new Image
+            {
+                Path = Player.PlayerJsonObject.Gender == Gender.MALE ? "BattleScreen/BattleRedSpriteSheet" : "BattleScreen/BattleBackground1",
+                Effects = "SpriteSheetEffect"
+            };
+            PlayerSprite.LoadContent();
         }
 
         void setIntroBattleImagePositions(TextBox textBox)

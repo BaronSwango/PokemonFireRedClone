@@ -70,7 +70,8 @@ namespace PokemonFireRedClone
             if (menuManager.menuName != "PokemonMenu")
             {
                 BattleAssets.Update(gameTime);
-                BattleLogic.Update(gameTime);
+                if (!BattleAssets.IsTransitioning || BattleAssets.State == BattleAssets.BattleState.INTRO || BattleAssets.State == BattleAssets.BattleState.POKEMON_FAINT || BattleAssets.State == BattleAssets.BattleState.BATTLE_MENU)
+                    BattleLogic.Update(gameTime);
 
                 if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAssets.IsTransitioning)
                     ScreenManager.Instance.ChangeScreens("GameplayScreen");

@@ -16,7 +16,7 @@ namespace PokemonFireRedClone
             {
                 counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                if (BattleScreen.TextBox.Page == 18)
+                if (BattleScreen.TextBox.Page == 18 || BattleScreen.TextBox.Page == 20)
                 {
                     if (counter < 1000.0f)
                     {
@@ -40,6 +40,20 @@ namespace PokemonFireRedClone
                     BattleAssets.Animation = null;
 
                     return true;
+                }
+
+                if (!BattleScreen.BattleLogic.MoveHit)
+                {
+                    if (counter < 1000.0f)
+                    {
+                        counter += counterSpeed;
+                        return false;
+                    }
+
+                    counter = 0;
+                    BattleScreen.TextBox.NextPage = 20;
+                    BattleScreen.TextBox.IsTransitioning = true;
+                    return false;
                 }
 
                 if (BattleScreen.BattleLogic.StageMaxed)

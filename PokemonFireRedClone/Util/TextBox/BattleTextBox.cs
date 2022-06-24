@@ -153,14 +153,29 @@ namespace PokemonFireRedClone
                                     break;
                                 case 19:
                                     if (currentDialogue[0] == image)
-                                    {
                                         image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " ,   that`s   enough !";
+                                    
+                                    else if (currentDialogue[1] == image)
+                                        image.Text = "Come   back !";
+                                    
+                                    break;
+                                case 20:
+                                    if (currentDialogue[0] == image)
+                                    {
+                                        if (battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND || battleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
+                                        {
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "`s";
+                                            battleScreen.BattleLogic.PlayerHasMoved = true;
+                                        }
+                                        else if (battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND || battleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
+                                        {
+                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "`s";
+                                            battleScreen.BattleLogic.EnemyHasMoved = true;
+                                        }
                                     }
                                     else if (currentDialogue[1] == image)
-                                    {
-                                        image.Text = "Come   back !";
-                                    }
-
+                                        image.Text = "attack   missed !";
 
                                     break;
                             }

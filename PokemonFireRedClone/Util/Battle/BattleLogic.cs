@@ -40,7 +40,7 @@ namespace PokemonFireRedClone
         public bool StartSequence;
         public bool EXPGainApplied;
         public bool LevelUp;
-        public bool MoveMiss;
+        public bool MoveHit;
         public bool SharplyStat;
         public bool StatStageIncrease;
         public bool StageMaxed;
@@ -72,6 +72,7 @@ namespace PokemonFireRedClone
             SuperEffective = false;
             NotVeryEffective = false;
             NoEffect = false;
+            MoveHit = true;
             StartSequence = false;
             playerFirst = false;
             PokemonFainted = false;
@@ -102,7 +103,7 @@ namespace PokemonFireRedClone
                 StartSequence = false;
             }
 
-            // CHECK IF MOVE IS STATUS AND SET BATTLE ANIMATIONS STATE TO STATUS ANIMATION
+            // TODO: ADD MOVE ACCURACY TO STATUS MOVES
             if (!PokemonFainted && PlayerMoveUsed)
             {
                 if (playerFirst)
@@ -111,7 +112,7 @@ namespace PokemonFireRedClone
                     {
                         if (!EnemyMoveExecuted)
                         {
-                            enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
+                            MoveHit = enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
                             battleScreen.BattleAssets.State = EnemyMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
                             battleScreen.BattleAssets.Animation = EnemyMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.PLAYER_DEFEND;
@@ -125,7 +126,7 @@ namespace PokemonFireRedClone
                     {
                         if (!PlayerMoveExecuted)
                         {
-                            useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
+                            MoveHit = useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
                             battleScreen.BattleAssets.State = PlayerMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
                             battleScreen.BattleAssets.Animation = PlayerMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.ENEMY_DEFEND;
@@ -140,7 +141,7 @@ namespace PokemonFireRedClone
                     {
                         if (!PlayerMoveExecuted)
                         {
-                            useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
+                            MoveHit = useMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
                             battleScreen.BattleAssets.State = PlayerMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
                             battleScreen.BattleAssets.Animation = PlayerMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.ENEMY_DEFEND;
@@ -154,7 +155,7 @@ namespace PokemonFireRedClone
                     {
                         if (!EnemyMoveExecuted)
                         {
-                            enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
+                            MoveHit = enemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
                             battleScreen.BattleAssets.State = EnemyMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
                             battleScreen.BattleAssets.Animation = EnemyMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.PLAYER_DEFEND;
@@ -204,9 +205,11 @@ namespace PokemonFireRedClone
             return playerPokemon.TempSpeed > enemyPokemon.TempSpeed;
         }
 
-        void useMove(BattlePokemon user, BattlePokemon defender, Move move)
+        bool useMove(BattlePokemon user, BattlePokemon defender, Move move)
         {
             user.Pokemon.MoveNames[move.Name] -= 1;
+
+            if (!move.Self && !moveHit(move.Accuracy, user, defender)) return false;
 
             int damage = 0;
 
@@ -254,14 +257,15 @@ namespace PokemonFireRedClone
 
             defender.Pokemon.CurrentHP = defender.Pokemon.CurrentHP - damage > 0 ? defender.Pokemon.CurrentHP - damage : 0;
             Console.WriteLine("Defender HP: " + defender.Pokemon.CurrentHP);
+            return true;
         }
 
-        void enemyUseMove(BattlePokemon enemyPokemon, BattlePokemon playerPokemon)
+        bool enemyUseMove(BattlePokemon enemyPokemon, BattlePokemon playerPokemon)
         {
             Random random = new Random();
             Move move = MoveManager.Instance.GetMove(enemyPokemon.Pokemon.MoveNames.Keys.ElementAt(random.Next(enemyPokemon.Pokemon.MoveNames.Count)));
             EnemyMoveOption = move;
-            useMove(enemyPokemon, playerPokemon, move);
+            return useMove(enemyPokemon, playerPokemon, move);
         }
 
         int calculateDamage(int level, int power, int attack, int defense, List<Type> userTypes, Type moveType, List<Type> defenderTypes)
@@ -323,15 +327,17 @@ namespace PokemonFireRedClone
             return damage;
         }
 
-        bool moveMissed(int moveAccuracy, BattlePokemon attacker, BattlePokemon defender)
+        bool moveHit(int moveAccuracy, BattlePokemon attacker, BattlePokemon defender)
         {
             int accuracyStage = attacker.AccuracyStage - defender.EvasionStage;
 
             Random random = new Random();
              
             int moveHit = random.Next(100) + 1;
+
+            float accuracyModified = moveAccuracy * attacker.StatStageMultiplier(accuracyStage);
             
-            return false;
+            return moveHit <= accuracyModified;
         }
 
         // add exp share calculation
