@@ -93,15 +93,24 @@ namespace PokemonFireRedClone
                         ScreenManager.Instance.ChangeScreens(ScreenManager.Instance.PreviousScreen.Type.ToString().Replace("PokemonFireRedClone.", ""));
                         break;
                     case "Move":
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveOption = MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text);
-                        UnloadContent();
+                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames[MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text).Name] == 0)
+                        {
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 21;
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
+                        }
+                        else
+                        {
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveOption = MoveManager.Instance.GetMove(menu.Items[menu.ItemNumber].Image.Text);
 
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAssets.Reset();
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveUsed = true;
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.StartSequence = true;
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 5;
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
-                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.Update(gameTime);
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAssets.Reset();
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveUsed = true;
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.StartSequence = true;
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 5;
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.Update(gameTime);
+                        }
+
+                        UnloadContent();
                         break;
                     default:
                         break;

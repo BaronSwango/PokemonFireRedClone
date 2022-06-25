@@ -574,6 +574,18 @@
         <StageChange>1</StageChange>
     </Moves>
     <Moves>
+        <Name>Double Team</Name>
+        <TypeName>Normal</TypeName>
+        <Power>0</Power>
+        <Accuracy>0</Accuracy>
+        <PP>15</PP>
+        <Description>The user creates illusory copies of itself to raise its evasiveness.</Description>
+        <Category>Status</Category>
+        <Stat>EVAS</Stat>
+        <Self>true</Self>
+        <StageChange>1</StageChange>
+    </Moves>
+    <Moves>
         <Name>Ember</Name>
         <TypeName>Fire</TypeName>
         <Power>40</Power>

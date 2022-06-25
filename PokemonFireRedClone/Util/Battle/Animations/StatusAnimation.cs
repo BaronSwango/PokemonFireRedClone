@@ -211,7 +211,6 @@ namespace PokemonFireRedClone
         }
 
         public override void Draw(SpriteBatch spriteBatch)
-        {
-        }
+        { }
     }
 }

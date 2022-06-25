@@ -22,7 +22,7 @@ namespace PokemonFireRedClone
             BattlePokemonMenu = new List<CustomPokemon>(Player.PlayerJsonObject.PokemonInBag);
             PlayerPokemon = new BattlePokemon(BattlePokemonMenu[0]);
             EnemyPokemon.Pokemon.MoveNames.Add("Growl", 40);
-            EnemyPokemon.Pokemon.MoveNames.Add("Vine Whip", 35);
+            EnemyPokemon.Pokemon.MoveNames.Add("Double Team", 15);
         }
 
         public void SwapPokemonInBattle(int index)

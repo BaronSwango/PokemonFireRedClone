@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -22,12 +18,11 @@ namespace PokemonFireRedClone
             get; private set;
         }
 
-
         public GameplayScreen()
         {
             menuManager = new MenuManager("MainMenu");
             TextBoxManager = new TextBoxManager();
-            XmlManager<Player> playerLoader = new XmlManager<Player>();
+            XmlManager<Player> playerLoader = new();
             XmlManager<Map> mapLoader = new XmlManager<Map>();
             player = playerLoader.Load("Load/Gameplay/Player.xml");
             map = mapLoader.Load("Load/Gameplay/Map/PalletTown.xml");

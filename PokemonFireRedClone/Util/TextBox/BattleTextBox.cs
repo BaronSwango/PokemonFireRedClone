@@ -337,6 +337,12 @@ namespace PokemonFireRedClone
                     case 17:
                         BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(battleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]));
                         break;
+                    case 21:
+                        battleScreen.menuManager.LoadContent("Load/Menus/MoveMenu.xml");
+                        NextPage = 4;
+                        Page = 4;
+                        IsTransitioning = true;
+                        break;
                     default:
                         break;
                 }
@@ -377,7 +383,7 @@ namespace PokemonFireRedClone
             BattleLevelUp.Draw(spriteBatch);
         }
 
-        private void setArrowPosition()
+        void setArrowPosition()
         {
             foreach (TextBoxImage image in currentDialogue)
             {

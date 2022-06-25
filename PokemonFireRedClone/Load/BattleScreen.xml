@@ -337,5 +337,24 @@
             <A>255</A>
             <Text></Text>
         </Dialogue>
+        <Dialogue>
+            <Page>21</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>There`s   no   PP   left   for</Text>
+        </Dialogue>
+        <Dialogue>
+            <Page>21</Page>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <Text>this   move !</Text>
+            <Arrow>true</Arrow>
+        </Dialogue>
     </TextBox>
 </BattleScreen>
