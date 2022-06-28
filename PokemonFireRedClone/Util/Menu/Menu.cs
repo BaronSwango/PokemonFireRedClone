@@ -24,6 +24,7 @@ namespace PokemonFireRedClone
         public int ItemNumber;
         public string PrevMenuName;
         public bool ScreenMenu;
+        public string PrevScreen;
         public Vector2 Position;
         public bool BaseMenu;
 

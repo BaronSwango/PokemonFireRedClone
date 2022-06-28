@@ -12,11 +12,11 @@ namespace PokemonFireRedClone
             set { }
         }
 
-        public int ShiftNumber;
+        public int SelectedIndex;
 
         public override void LoadContent()
         {
-            string path = ShiftNumber == 0 && InBattle ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
+            string path = SelectedIndex == 0 && InBattle ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
             if (InBattle)
             {
                 if (Background.IsLoaded)
@@ -31,7 +31,7 @@ namespace PokemonFireRedClone
 
             base.LoadContent();
 
-            if (ShiftNumber == 0 && InBattle)
+            if (SelectedIndex == 0 && InBattle)
                 itemNumber = 1;
         }
 
@@ -46,7 +46,7 @@ namespace PokemonFireRedClone
                 else if (InputManager.Instance.KeyPressed(Keys.W))
                     itemNumber--;
                 else if (InputManager.Instance.KeyPressed(Keys.E)) {
-                    BattleLogic.ShiftNumber = ShiftNumber;
+                    PokemonMenu.SelectedIndex = SelectedIndex;
                     switch (itemNumber)
                     {
                         case 0:
@@ -56,7 +56,7 @@ namespace PokemonFireRedClone
                                 ScreenManager.Instance.ChangeScreens("BattleScreen");
                             } else
                             {
-
+                                ScreenManager.Instance.ChangeScreens("SummaryScreen");
                             }
                             break;
                         case 1:
@@ -85,7 +85,7 @@ namespace PokemonFireRedClone
                     }
                 }
 
-                int smallestIndex = ShiftNumber == 0 && InBattle ? 1 : 0;
+                int smallestIndex = SelectedIndex == 0 && InBattle ? 1 : 0;
                 if (itemNumber < smallestIndex)
                     itemNumber = Items.Count - 1;
                 else if (itemNumber > Items.Count - 1)
@@ -108,7 +108,7 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (ShiftNumber == 0 && InBattle && IsOpen)
+            if (SelectedIndex == 0 && InBattle && IsOpen)
             {
                 Background.Draw(spriteBatch);
                 Arrow.Draw(spriteBatch);

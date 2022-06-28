@@ -15,8 +15,7 @@ namespace PokemonFireRedClone
         public string Text, FontName, Path;
         public Vector2 Position, Scale;
         public Rectangle SourceRect;
-        public bool IsActive;
-        public bool IsLoaded;
+        public bool IsActive, IsLoaded;
 
         [XmlIgnore]
         public Texture2D Texture;
@@ -32,7 +31,8 @@ namespace PokemonFireRedClone
         public float Angle;
         public Color FontColor;
         public int R, G, B, A;
-        public bool UseFontColor;     
+        public bool UseFontColor;
+        public bool Flip;
 
         public FadeEffect FadeEffect;
         public SpriteSheetEffect SpriteSheetEffect;
@@ -265,8 +265,9 @@ namespace PokemonFireRedClone
         {
             origin = new Vector2(SourceRect.Width / 2,
                 SourceRect.Height / 2);
+            SpriteEffects s = Flip ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             spriteBatch.Draw(Texture, Position + origin, SourceRect, Tint * Alpha,
-                Angle, origin, Scale, SpriteEffects.None, 0.0f);
+                Angle, origin, Scale, s, 0.0f);
 
             foreach (var effect in EffectList)
             {

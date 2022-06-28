@@ -16,6 +16,9 @@ namespace PokemonFireRedClone
         public Image CancelUnselected;
         public ButtonOverlayMenu ButtonMenu;
 
+        // index of pokemon being switched to
+        public static int SelectedIndex;
+
         bool positioned;
 
         List<PokemonMenuInfoButton> buttons;
@@ -66,6 +69,8 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             ScreenMenu = true;
+
+            PrevScreen = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? "BattleScreen" : "GameplayScreen";
 
             buttons = new List<PokemonMenuInfoButton>();
             Background.LoadContent();
@@ -134,7 +139,7 @@ namespace PokemonFireRedClone
                 {
                     if (ItemNumber < Items.Count - 1)
                     {
-                        ButtonMenu.ShiftNumber = ItemNumber;
+                        ButtonMenu.SelectedIndex = ItemNumber;
                         ButtonMenu.LoadContent();
                         ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
                             Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));

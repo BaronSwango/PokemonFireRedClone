@@ -21,8 +21,8 @@ namespace PokemonFireRedClone
 
         static Battle battle;
 
+        // detects whether player is switching pokemon
         public static bool PlayerShift;
-        public static int ShiftNumber;
 
         public FightState State;
         public Move PlayerMoveOption;
@@ -54,6 +54,7 @@ namespace PokemonFireRedClone
             set { }
         }
 
+        // 
         public static Battle Battle
         {
             get { return battle; }
@@ -62,7 +63,7 @@ namespace PokemonFireRedClone
 
         public BattleLogic()
         {
-            if (!Battle.InBattle)
+            if (battle == null || !battle.InBattle)
                 battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 20));
 
             PlayerMoveUsed = false;
@@ -90,7 +91,7 @@ namespace PokemonFireRedClone
                 PlayerShift = false;
                 BattleMenu.SavedItemNumber = 0;
                 MoveMenu.SavedItemNumber = 0;
-                Battle.SwapPokemonInBattle(ShiftNumber);
+                Battle.SwapPokemon(PokemonMenu.SelectedIndex);
                 battleScreen.BattleAssets.State = BattleAssets.BattleState.POKEMON_SWITCH;
                 battleScreen.BattleAssets.Animation = new PokemonSwitchAnimation();
                 battleScreen.BattleAssets.IsTransitioning = true;
@@ -352,7 +353,6 @@ namespace PokemonFireRedClone
         public static void EndBattle()
         {
             Battle.InBattle = false;
-            BattleAssets.FromMenu = false;
             BattleMenu.SavedItemNumber = 0;
             MoveMenu.SavedItemNumber = 0;
         }

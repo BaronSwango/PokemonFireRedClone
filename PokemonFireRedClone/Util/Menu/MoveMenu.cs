@@ -136,6 +136,5 @@ namespace PokemonFireRedClone
             base.Draw(spriteBatch);
         }
     }
-
 }
 

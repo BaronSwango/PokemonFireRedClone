@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
@@ -7,7 +6,6 @@ namespace PokemonFireRedClone
 
 /*TODO: List of things to save in json object
  * 
- * Rival name
  * Area
  * Pokemon
  * Phase of game
@@ -22,6 +20,7 @@ namespace PokemonFireRedClone
         public Vector2 Position;
         public float Direction;
         public string Name;
+        public string TrainerID;
         public Gender Gender;
         public string RivalName;
         public double Time;
@@ -29,6 +28,7 @@ namespace PokemonFireRedClone
         public int Pokedex;
         public int Money;
         public List<CustomPokemon> PokemonInBag;
+        //public Dictionary<Pokemon, bool> PokemonInPokedex;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;
 
     }

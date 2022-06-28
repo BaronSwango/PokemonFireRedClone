@@ -466,6 +466,54 @@
 /processorParam:TextureFormat=Color
 /build:Menus/SaveMenu/SaveMenuInfoBackground.png
 
+#begin Menus/SummaryMenu/KnownMovesBackground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/SummaryMenu/KnownMovesBackground.png
+
+#begin Menus/SummaryMenu/Outline.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/SummaryMenu/Outline.png
+
+#begin Menus/SummaryMenu/PokemonInfoBackground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/SummaryMenu/PokemonInfoBackground.png
+
+#begin Menus/SummaryMenu/PokemonSkillsBackground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/SummaryMenu/PokemonSkillsBackground.png
+
 #begin Menus/TitleMenu/ContinueBox.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -2697,18 +2745,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Pokemon/MenuSprites/DoduoMenu.png
-
-#begin Pokemon/MenuSprites/DragonairMenu.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Pokemon/MenuSprites/DragonairMenu.png
 
 #begin Pokemon/MenuSprites/DragonairMenu.png
 /importer:TextureImporter

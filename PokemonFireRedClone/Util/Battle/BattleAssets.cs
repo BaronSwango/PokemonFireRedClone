@@ -47,7 +47,6 @@ namespace PokemonFireRedClone
         public Image StatChangeAnimationImage2;
         public bool IsTransitioning;
         public BattleState State;
-        public static bool FromMenu;
 
         // HP bar data
         [XmlIgnore]
@@ -74,7 +73,7 @@ namespace PokemonFireRedClone
 
             //Load battle images
             loadBattleContent(BattleLogic.Battle.PlayerPokemon.Pokemon, BattleLogic.Battle.EnemyPokemon.Pokemon);
-            if (FromMenu)
+            if (ScreenManager.Instance.PreviousScreen is PokemonScreen)
             {
                 State = BattleState.BATTLE_MENU;
                 BattleScreen.TextBox.NextPage = 4;
@@ -103,7 +102,6 @@ namespace PokemonFireRedClone
                 PlayerPokemon.Scale = new Vector2(0.0f, 0.0f);
                 PlayerPokemon.LoadContent();
                 PlayerPokemon.Tint = Color.Red;
-                FromMenu = true;
             }
 
             SetAssetPositions();

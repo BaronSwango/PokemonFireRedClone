@@ -11,7 +11,7 @@ namespace PokemonFireRedClone
         public List<CustomPokemon> BattlePokemonMenu;
 
         public bool IsWild;
-        public static bool InBattle;
+        public bool InBattle;
 
         public Battle(CustomPokemon enemyPokemon)
         {
@@ -25,7 +25,7 @@ namespace PokemonFireRedClone
             EnemyPokemon.Pokemon.MoveNames.Add("Double Team", 15);
         }
 
-        public void SwapPokemonInBattle(int index)
+        public void SwapPokemon(int index)
         {
             CustomPokemon temp = BattlePokemonMenu[0];
             BattlePokemonMenu[0] = BattlePokemonMenu[index];

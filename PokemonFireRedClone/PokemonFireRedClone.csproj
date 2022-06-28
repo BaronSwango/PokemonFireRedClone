@@ -52,7 +52,6 @@
     <None Remove="Util\Battle\" />
     <None Remove="Load\Menus\MoveMenu.xml" />
     <None Remove="Load\Menus\PokemonMenu.xml" />
-    <None Remove="Util\MenuButtons\" />
     <None Remove="Content\Menus\SaveMenu\" />
     <None Remove="Content\Menus\TitleMenu\" />
     <None Remove="Content\Menus\MainMenu\" />
@@ -63,6 +62,9 @@
     <None Remove="Load\Menus\PokemonInfoMenu.xml" />
     <None Remove="Util\Menu\OverlayMenu\" />
     <None Remove="Util\Battle\Animations\" />
+    <None Remove="Util\Menu\Summary\" />
+    <None Remove="Util\Menu\MenuButtons\" />
+    <None Remove="Content\Menus\SummaryMenu\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -140,7 +142,6 @@
     <Folder Include="Content\BattleScreen\" />
     <Folder Include="Content\Pokemon\" />
     <Folder Include="Util\Battle\" />
-    <Folder Include="Util\MenuButtons\" />
     <Folder Include="Content\Menus\SaveMenu\" />
     <Folder Include="Content\Menus\TitleMenu\" />
     <Folder Include="Content\Menus\MainMenu\" />
@@ -150,5 +151,8 @@
     <Folder Include="Content\Pokemon\MenuSprites\" />
     <Folder Include="Util\Menu\OverlayMenu\" />
     <Folder Include="Util\Battle\Animations\" />
+    <Folder Include="Util\Menu\Summary\" />
+    <Folder Include="Util\Menu\MenuButtons\" />
+    <Folder Include="Content\Menus\SummaryMenu\" />
   </ItemGroup>
 </Project>
