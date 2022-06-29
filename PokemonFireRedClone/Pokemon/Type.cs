@@ -57,6 +57,15 @@
             };
         }
 
+        public static Image ImageOf(Type type)
+        {
+            Image image = new()
+            {
+                Path = "Types/" + Name(type)
+            };
+            return image;
+        }
+
         public static float DamageMultiplier(Type attacker, Type defender)
         {
             switch(attacker)

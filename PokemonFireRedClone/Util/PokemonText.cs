@@ -6,8 +6,11 @@ namespace PokemonFireRedClone
 {
     public class PokemonText
     {
+        private readonly Image textShadowX;
+        private readonly Image textShadowY;
+        private readonly Image textShadowXY;
+
         public Image Text;
-        public Image TextShadow;
 
         [XmlIgnore]
         public Vector2 Position
@@ -34,52 +37,74 @@ namespace PokemonFireRedClone
                 UseFontColor = true,
                 FontColor = textColor
             };
-            TextShadow = new Image
+            textShadowX = new Image
             {
                 FontName = fontName,
                 Text = text,
                 UseFontColor = true,
                 FontColor = shadowColor
             };
-
+            textShadowY = new Image
+            {
+                FontName = fontName,
+                Text = text,
+                UseFontColor = true,
+                FontColor = shadowColor
+            };
+            textShadowXY = new Image
+            {
+                FontName = fontName,
+                Text = text,
+                UseFontColor = true,
+                FontColor = shadowColor
+            };
         }
 
         public void LoadContent()
         {
-            if (!TextShadow.Text.Equals(Text.Text))
+            if (!textShadowX.Text.Equals(Text.Text))
             {
-                TextShadow.Text = Text.Text;
-                TextShadow.FontName = Text.FontName;
+                textShadowX.Text = textShadowY.Text = textShadowXY.Text = Text.Text;
+                textShadowX.FontName = textShadowY.FontName = textShadowXY.FontName = Text.FontName;
             }
 
             Text.LoadContent();
-            TextShadow.LoadContent();
+            textShadowX.LoadContent();
+            textShadowY.LoadContent();
+            textShadowXY.LoadContent();
         }
 
         public void UnloadContent()
         {
             Text.UnloadContent();
-            TextShadow.UnloadContent();
+            textShadowX.UnloadContent();
+            textShadowY.UnloadContent();
+            textShadowXY.UnloadContent();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            TextShadow.Draw(spriteBatch);
+            textShadowX.Draw(spriteBatch);
+            textShadowY.Draw(spriteBatch);
+            textShadowXY.Draw(spriteBatch);
             Text.Draw(spriteBatch);
         }
 
         public void UpdateText(string text)
         {
-            Text.Text = text;
-            TextShadow.Text = text;
+            Text.Text = textShadowX.Text = textShadowY.Text = textShadowXY.Text = text;
             Text.ReloadText();
-            TextShadow.ReloadText();
+            textShadowX.ReloadText();
+            textShadowY.ReloadText();
+            textShadowXY.ReloadText();
         }
 
         public void SetPosition(Vector2 position)
         {
             Text.Position = position;
-            TextShadow.Position = new Vector2(Text.Position.X + 2, Text.Position.Y + 2);
+            textShadowX.Position = new Vector2(Text.Position.X + 4, Text.Position.Y);
+            textShadowY.Position = new Vector2(Text.Position.X, Text.Position.Y + 4);
+            textShadowXY.Position = new Vector2(Text.Position.X + 4, Text.Position.Y + 4);
         }
 
         public void OffsetX(float value)
@@ -94,20 +119,19 @@ namespace PokemonFireRedClone
 
         public void SetX(float coord)
         {
-            Text.Position.X = coord;
-            TextShadow.Position.X = coord + 2;
+            Text.Position.X = textShadowY.Position.X = coord; 
+            textShadowX.Position.X = textShadowXY.Position.X = coord + 4;
         }
 
         public void SetY(float coord)
         {
-            Text.Position.Y = coord;
-            TextShadow.Position.Y = coord + 2;
+            Text.Position.Y = textShadowX.Position.Y = coord;
+            textShadowY.Position.Y = textShadowXY.Position.Y = coord + 4;
         }
 
         public void SetAlpha(float alpha)
         {
-            Text.Alpha = alpha;
-            TextShadow.Alpha = alpha;
+            Text.Alpha = textShadowX.Alpha = textShadowY.Alpha = textShadowXY.Alpha = alpha;
         }
 
     }

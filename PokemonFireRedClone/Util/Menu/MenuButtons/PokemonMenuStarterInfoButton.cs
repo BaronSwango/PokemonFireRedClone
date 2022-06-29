@@ -14,7 +14,7 @@ namespace PokemonFireRedClone
 
         public override void UpdateInfoPositions(GameTime gameTime)
         {
-            PokemonAssets.Name.SetPosition(new Vector2(BackgroundInUse.Position.X + 120, BackgroundInUse.Position.Y + 84));
+            PokemonAssets.Name.SetPosition(new Vector2(BackgroundInUse.Position.X + 112, BackgroundInUse.Position.Y + 84));
             PokemonAssets.Level.SetPosition(new Vector2(PokemonAssets.Name.Position.X + 32, PokemonAssets.Name.Position.Y + PokemonAssets.Name.SourceRect.Height + 8)); 
             if (PokemonAssets.Gender != null)
                 PokemonAssets.Gender.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 28 - PokemonAssets.Gender.SourceRect.Width, PokemonAssets.Level.Position.Y));

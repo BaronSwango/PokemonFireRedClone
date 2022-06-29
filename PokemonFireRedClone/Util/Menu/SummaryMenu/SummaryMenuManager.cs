@@ -28,20 +28,13 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.ChangeScreens("PokemonScreen");
             else if (InputManager.Instance.KeyPressed(Keys.D) && !(currentPage is KnownMoves))
             {
-                if (currentPage is PokemonInfo)
-                    currentPage = new PokemonSkills(currentPage.Pokemon);
-                
-                else if (currentPage is PokemonSkills)
-                    currentPage = new KnownMoves(currentPage.Pokemon);
-
+                currentPage.UnloadContent();
+                currentPage = currentPage is PokemonInfo ? new PokemonSkills(currentPage.Pokemon) : new KnownMoves(currentPage.Pokemon);
                 currentPage.LoadContent();
             } else if (InputManager.Instance.KeyPressed(Keys.A) && !(currentPage is PokemonInfo))
             {
-                if (currentPage is PokemonSkills)
-                    currentPage = new PokemonInfo(currentPage.Pokemon);
-                else if (currentPage is KnownMoves)
-                    currentPage = new PokemonSkills(currentPage.Pokemon);
-
+                currentPage.UnloadContent();
+                currentPage = currentPage is PokemonSkills ? new PokemonInfo(currentPage.Pokemon) : new PokemonSkills(currentPage.Pokemon);
                 currentPage.LoadContent();
             }
 
