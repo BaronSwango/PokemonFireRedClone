@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
@@ -11,21 +10,22 @@ namespace PokemonFireRedClone
 {
     public class Image
     {
+
+        private Vector2 origin;
+        private ContentManager content;
+        private SpriteFont font;
+
+        [XmlIgnore]
+        public Texture2D Texture;
+        [XmlIgnore]
+        public RenderTarget2D RenderTarget;
+        [XmlIgnore]
+        public Dictionary<string, ImageEffect> EffectList;
         public float Alpha;
         public string Text, FontName, Path;
         public Vector2 Position, Scale;
         public Rectangle SourceRect;
         public bool IsActive, IsLoaded;
-
-        [XmlIgnore]
-        public Texture2D Texture;
-        Vector2 origin;
-        ContentManager content;
-        [XmlIgnore]
-        public RenderTarget2D RenderTarget;
-        SpriteFont font;
-        [XmlIgnore]
-        public Dictionary<string, ImageEffect> EffectList;
         public string Effects;
         public Color Tint;
         public float Angle;

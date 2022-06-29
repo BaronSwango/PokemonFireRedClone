@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
 {
@@ -17,9 +13,9 @@ namespace PokemonFireRedClone
             Increase = false;
         }
 
-        public override void LoadContent(ref Image Image)
+        public override void LoadContent(ref Image image)
         {
-            base.LoadContent(ref Image);
+            base.LoadContent(ref image);
         }
 
         public override void UnloadContent()
@@ -30,26 +26,26 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (image.IsActive)
+            if (Image.IsActive)
             {
                 if (!Increase)
-                    image.Alpha -= FadeSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Image.Alpha -= FadeSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 else
-                    image.Alpha += FadeSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Image.Alpha += FadeSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-                if (image.Alpha < 0.0f)
+                if (Image.Alpha < 0.0f)
                 {
                     Increase = true;
-                    image.Alpha = 0.0f;
+                    Image.Alpha = 0.0f;
                 }
-                else if (image.Alpha > 1.0f)
+                else if (Image.Alpha > 1.0f)
                 {
                     Increase = false;
-                    image.Alpha = 1.0f;
+                    Image.Alpha = 1.0f;
                 }
             }
             else
-                image.Alpha = 1.0f;
+                Image.Alpha = 1.0f;
         }
 
 

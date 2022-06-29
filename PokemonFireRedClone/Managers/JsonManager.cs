@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Newtonsoft.Json;
 
 
@@ -33,8 +32,8 @@ namespace PokemonFireRedClone
 
             var jsonToWrite = JsonConvert.SerializeObject(obj, Formatting.Indented);
 
-            using (var writer = new StreamWriter(path))
-                writer.Write(jsonToWrite);
+            using var writer = new StreamWriter(path);
+            writer.Write(jsonToWrite);
 
         }
 

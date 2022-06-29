@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -7,52 +6,51 @@ namespace PokemonFireRedClone
 {
     public class BattleLevelUp
     {
+
+        private int page;
+        private Image levelUpBorder;
+        private List<List<Image>> levelUpPages;
+
         public bool IsActive;
-
-        int Page;
-        Image LevelUpBorder;
-        List<List<Image>> LevelUpPages;
-
-        BattleScreen battleScreen
-        {
-            get { return (BattleScreen) ScreenManager.Instance.CurrentScreen; }
-            set { }
-        }
 
         public void LoadContent(CustomPokemon pokemon, int level)
         {
             IsActive = true;
-            Page = 1;
-            LevelUpBorder = new Image();
-            LevelUpBorder.Path = "BattleScreen/LevelUpBorder";
-            LevelUpPages = new List<List<Image>>(2);
-            LevelUpPages.Add(new List<Image>());
-            LevelUpPages.Add(new List<Image>());
+            page = 1;
+            levelUpBorder = new Image
+            {
+                Path = "BattleScreen/levelUpBorder"
+            };
+            levelUpPages = new List<List<Image>>(2)
+            {
+                new List<Image>(),
+                new List<Image>()
+            };
 
             for (int i = 0; i < 6; i++)
             {
-                LevelUpPages[0].Add(new Image());
-                LevelUpPages[0][i].FontName = "Fonts/PokemonFireRedDialogue";
-                LevelUpPages[0][i].R = LevelUpPages[0][i].G = LevelUpPages[0][i].B = 81;
-                LevelUpPages[0][i].Text = "+     ";
-                LevelUpPages[1].Add(new Image());
-                LevelUpPages[1][i].FontName = "Fonts/PokemonFireRedDialogue";
-                LevelUpPages[1][i].R = LevelUpPages[1][i].G = LevelUpPages[1][i].B = 81;
+                levelUpPages[0].Add(new Image());
+                levelUpPages[0][i].FontName = "Fonts/PokemonFireRedDialogue";
+                levelUpPages[0][i].R = levelUpPages[0][i].G = levelUpPages[0][i].B = 81;
+                levelUpPages[0][i].Text = "+     ";
+                levelUpPages[1].Add(new Image());
+                levelUpPages[1][i].FontName = "Fonts/PokemonFireRedDialogue";
+                levelUpPages[1][i].R = levelUpPages[1][i].G = levelUpPages[1][i].B = 81;
             }
 
-            loadLevelInfo(pokemon, level);
+            LoadLevelInfo(pokemon, level);
 
-            LevelUpBorder.LoadContent();
-            LevelUpBorder.Position = new Vector2(ScreenManager.Instance.Dimensions.X - LevelUpBorder.SourceRect.Width - 4,
-                ScreenManager.Instance.Dimensions.Y - LevelUpBorder.SourceRect.Height - 4);
+            levelUpBorder.LoadContent();
+            levelUpBorder.Position = new Vector2(ScreenManager.Instance.Dimensions.X - levelUpBorder.SourceRect.Width - 4,
+                ScreenManager.Instance.Dimensions.Y - levelUpBorder.SourceRect.Height - 4);
 
-            foreach (List<Image> images in LevelUpPages)
+            foreach (List<Image> images in levelUpPages)
             {
                 int dimensionY = 0;
                 foreach (Image image in images)
                 {
                     image.LoadContent();
-                    image.Position = new Vector2(LevelUpBorder.Position.X + 348 - image.SourceRect.Width, LevelUpBorder.Position.Y + 26 + dimensionY);
+                    image.Position = new Vector2(levelUpBorder.Position.X + 348 - image.SourceRect.Width, levelUpBorder.Position.Y + 26 + dimensionY);
                     dimensionY += 60;
                 }
             }
@@ -60,57 +58,57 @@ namespace PokemonFireRedClone
 
         void UnloadContent()
         {
-            LevelUpBorder.UnloadContent();
-            foreach (List<Image> images in LevelUpPages)
+            levelUpBorder.UnloadContent();
+            foreach (List<Image> images in levelUpPages)
             {
                 foreach (Image image in images)
                     image.UnloadContent();
             }
             IsActive = false;
-            battleScreen.BattleAssets.State = BattleAssets.BattleState.EXP_ANIMATION;
-            battleScreen.BattleAssets.Animation = new EXPAnimation();
-            battleScreen.BattleAssets.IsTransitioning = true;
-        }
-
-        public void NextPage()
-        {
-            if (IsActive)
-            {
-                if (Page == 2)
-                    UnloadContent();
-                else
-                    Page++;
-            }
+            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.EXP_ANIMATION;
+            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new EXPAnimation();
+            ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (IsActive)
             {
-                LevelUpBorder.Draw(spriteBatch);
-                foreach (Image image in LevelUpPages[Page - 1])
+                levelUpBorder.Draw(spriteBatch);
+                foreach (Image image in levelUpPages[page - 1])
                     image.Draw(spriteBatch);
             }
         }
 
-        void loadLevelInfo(CustomPokemon pokemon, int level)
+        private void LoadLevelInfo(CustomPokemon pokemon, int level)
         {
             StatList newStats = PokemonManager.Instance.StatsOfLevel(pokemon, level);
             StatList oldStats = PokemonManager.Instance.StatsOfLevel(pokemon, level - 1);
 
-            LevelUpPages[0][0].Text += newStats.HP - oldStats.HP;
-            LevelUpPages[0][1].Text += newStats.Attack - oldStats.Attack;
-            LevelUpPages[0][2].Text += newStats.Defense - oldStats.Defense;
-            LevelUpPages[0][3].Text += newStats.SpecialAttack - oldStats.SpecialAttack;
-            LevelUpPages[0][4].Text += newStats.SpecialDefense - oldStats.SpecialDefense;
-            LevelUpPages[0][5].Text += newStats.Speed - oldStats.Speed;
+            levelUpPages[0][0].Text += newStats.HP - oldStats.HP;
+            levelUpPages[0][1].Text += newStats.Attack - oldStats.Attack;
+            levelUpPages[0][2].Text += newStats.Defense - oldStats.Defense;
+            levelUpPages[0][3].Text += newStats.SpecialAttack - oldStats.SpecialAttack;
+            levelUpPages[0][4].Text += newStats.SpecialDefense - oldStats.SpecialDefense;
+            levelUpPages[0][5].Text += newStats.Speed - oldStats.Speed;
 
-            LevelUpPages[1][0].Text = newStats.HP.ToString();
-            LevelUpPages[1][1].Text = newStats.Attack.ToString();
-            LevelUpPages[1][2].Text = newStats.Defense.ToString();
-            LevelUpPages[1][3].Text = newStats.SpecialAttack.ToString();
-            LevelUpPages[1][4].Text = newStats.SpecialDefense.ToString();
-            LevelUpPages[1][5].Text = newStats.Speed.ToString();
+            levelUpPages[1][0].Text = newStats.HP.ToString();
+            levelUpPages[1][1].Text = newStats.Attack.ToString();
+            levelUpPages[1][2].Text = newStats.Defense.ToString();
+            levelUpPages[1][3].Text = newStats.SpecialAttack.ToString();
+            levelUpPages[1][4].Text = newStats.SpecialDefense.ToString();
+            levelUpPages[1][5].Text = newStats.Speed.ToString();
+        }
+
+        public void NextPage()
+        {
+            if (IsActive)
+            {
+                if (page == 2)
+                    UnloadContent();
+                else
+                    page++;
+            }
         }
 
     }

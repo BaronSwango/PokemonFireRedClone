@@ -6,6 +6,5 @@ namespace PokemonFireRedClone
         public int Page;
         public bool Arrow;
         public bool Skippable;
-
     }
 }

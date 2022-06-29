@@ -1,12 +1,11 @@
-﻿using System;
-namespace PokemonFireRedClone
+﻿namespace PokemonFireRedClone
 {
     public class PokemonSkills : SummaryPage
     {
         public PokemonSkills(CustomPokemon pokemon)
             :base(pokemon)
         {
-            background.Path = "Menus/SummaryMenu/PokemonSkillsBackground";
+            Background.Path = "Menus/SummaryMenu/PokemonSkillsBackground";
         }
     }
 }

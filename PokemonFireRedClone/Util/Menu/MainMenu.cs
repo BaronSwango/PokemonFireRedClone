@@ -8,15 +8,16 @@ namespace PokemonFireRedClone
 {
     public class MainMenu : Menu
     {
+
+        private static int itemNumber;
+
         public Image Arrow;
         public Image Background;
-
-        static int itemNumber;
 
         protected override void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
-            Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
+            Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player.Image.Position;
 
             Background.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2)+32,
                 playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2)+44);

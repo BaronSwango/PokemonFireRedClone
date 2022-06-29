@@ -1,92 +1,60 @@
-﻿using System;
-namespace PokemonFireRedClone
+﻿namespace PokemonFireRedClone
 {
+    public enum Type
+    {
+        FIRE, ICE, ELECTRIC, WATER, GRASS, PSYCHIC, DARK, GHOST, NORMAL, BUG, POISON, GROUND, ROCK, FLYING, DRAGON, STEEL, FIGHTING
+    }
+
     public static class TypeProperties
     {
         public static Type TypeFromName(string typeName)
         {
-            switch(typeName)
+            return typeName switch
             {
-                case "Fire":
-                    return Type.FIRE;
-                case "Ice":
-                    return Type.ICE;
-                case "Electric":
-                    return Type.ELECTRIC;
-                case "Water":
-                    return Type.WATER;
-                case "Grass":
-                    return Type.GRASS;
-                case "Psychic":
-                    return Type.PSYCHIC;
-                case "Dark":
-                    return Type.DARK;
-                case "Ghost":
-                    return Type.GHOST;
-                case "Normal":
-                    return Type.NORMAL;
-                case "Bug":
-                    return Type.BUG;
-                case "Poison":
-                    return Type.POISON;
-                case "Ground":
-                    return Type.GROUND;
-                case "Rock":
-                    return Type.ROCK;
-                case "Flying":
-                    return Type.FLYING;
-                case "Dragon":
-                    return Type.DRAGON;
-                case "Steel":
-                    return Type.STEEL;
-                case "Fighting":
-                    return Type.FIGHTING;
-                default:
-                    return 0;
-            }
+                "Fire" => Type.FIRE,
+                "Ice" => Type.ICE,
+                "Electric" => Type.ELECTRIC,
+                "Water" => Type.WATER,
+                "Grass" => Type.GRASS,
+                "Psychic" => Type.PSYCHIC,
+                "Dark" => Type.DARK,
+                "Ghost" => Type.GHOST,
+                "Normal" => Type.NORMAL,
+                "Bug" => Type.BUG,
+                "Poison" => Type.POISON,
+                "Ground" => Type.GROUND,
+                "Rock" => Type.ROCK,
+                "Flying" => Type.FLYING,
+                "Dragon" => Type.DRAGON,
+                "Steel" => Type.STEEL,
+                "Fighting" => Type.FIGHTING,
+                _ => 0,
+            };
         }
 
         public static string Name(Type type)
         {
-            switch (type)
+            return type switch
             {
-                case Type.FIRE:
-                    return "Fire";
-                case Type.ICE:
-                    return "Ice";
-                case Type.ELECTRIC:
-                    return "Electric";
-                case Type.WATER:
-                    return "Water";
-                case Type.GRASS:
-                    return "Grass";
-                case Type.PSYCHIC:
-                    return "Psychic";
-                case Type.DARK:
-                    return "Dark";
-                case Type.GHOST:
-                    return "Ghost";
-                case Type.NORMAL:
-                    return "Normal";
-                case Type.BUG:
-                    return "Bug";
-                case Type.POISON:
-                    return "Poison";
-                case Type.GROUND:
-                    return "Ground";
-                case Type.ROCK:
-                    return "Rock";
-                case Type.FLYING:
-                    return "Flying";
-                case Type.DRAGON:
-                    return "Dragon";
-                case Type.STEEL:
-                    return "Steel";
-                case Type.FIGHTING:
-                    return "Fighting";
-                default:
-                    return "";
-            }
+                Type.FIRE => "Fire",
+                Type.ICE => "Ice",
+                Type.ELECTRIC => "Electric",
+                Type.WATER => "Water",
+                Type.GRASS => "Grass",
+                Type.PSYCHIC => "Psychic",
+                Type.DARK => "Dark",
+                Type.GHOST => "Ghost",
+                Type.NORMAL => "Normal",
+                Type.BUG => "Bug",
+                Type.POISON => "Poison",
+                Type.GROUND => "Ground",
+                Type.ROCK => "Rock",
+                Type.FLYING => "Flying",
+                Type.DRAGON => "Dragon",
+                Type.STEEL => "Steel",
+                Type.FIGHTING => "Fighting",
+                _ => "",
+            };
         }
 
         public static float DamageMultiplier(Type attacker, Type defender)
@@ -529,10 +497,5 @@ namespace PokemonFireRedClone
             }
             return 1;
         }
-    }
-
-    public enum Type
-    {
-        FIRE, ICE, ELECTRIC, WATER, GRASS, PSYCHIC, DARK, GHOST, NORMAL, BUG, POISON, GROUND, ROCK, FLYING, DRAGON, STEEL, FIGHTING
     }
 }

@@ -6,6 +6,9 @@ namespace PokemonFireRedClone
 {
     public class CustomPokemon
     {
+
+        private Dictionary<Move, int> moves;
+
         public string Name;
         public string PokemonName;
         public Nature Nature;
@@ -29,9 +32,9 @@ namespace PokemonFireRedClone
             Moves = new Dictionary<Move, int>();
         }
 
-        private Dictionary<Move, int> moves;
         [JsonIgnore]
-        public Dictionary<Move, int> Moves {
+        public Dictionary<Move, int> Moves
+        {
 
             get
             {
@@ -75,18 +78,14 @@ namespace PokemonFireRedClone
         {
             get
             {
-                switch (PokemonManager.Instance.GetPokemon(PokemonName).EXPGroup)
+                return PokemonManager.Instance.GetPokemon(PokemonName).EXPGroup switch
                 {
-                    case "F":
-                        return (int)(4.0f * Math.Pow(Level, 3) / 5.0f);
-                    case "MF":
-                        return (int)Math.Pow(Level, 3);
-                    case "MS":
-                        return (int)((6.0f / 5.0f * Math.Pow(Level, 3)) - 15 * Math.Pow(Level, 2) + 100 * Level - 140);
-                    case "S":
-                        return (int)(5.0f * Math.Pow(Level, 3) / 4.0f);
-                }
-                return 0;
+                    "F" => (int)(4.0f * Math.Pow(Level, 3) / 5.0f),
+                    "MF" => (int)Math.Pow(Level, 3),
+                    "MS" => (int)((6.0f / 5.0f * Math.Pow(Level, 3)) - 15 * Math.Pow(Level, 2) + 100 * Level - 140),
+                    "S" => (int)(5.0f * Math.Pow(Level, 3) / 4.0f),
+                    _ => 0,
+                };
             }
             private set {  }
         }
@@ -97,18 +96,14 @@ namespace PokemonFireRedClone
         {
             get
             {
-                switch (PokemonManager.Instance.GetPokemon(PokemonName).EXPGroup)
+                return PokemonManager.Instance.GetPokemon(PokemonName).EXPGroup switch
                 {
-                    case "F":
-                        return (int) (4.0f * Math.Pow(Level + 1, 3) / 5.0f);
-                    case "MF":
-                        return (int)Math.Pow(Level + 1, 3);
-                    case "MS":
-                        return (int)((6.0f / 5.0f * Math.Pow(Level + 1, 3)) - 15 * Math.Pow(Level + 1, 2) + 100 * (Level + 1) - 140);
-                    case "S":
-                        return (int)(5.0f * Math.Pow(Level + 1, 3) / 4.0f);
-                }
-                return 0;
+                    "F" => (int)(4.0f * Math.Pow(Level + 1, 3) / 5.0f),
+                    "MF" => (int)Math.Pow(Level + 1, 3),
+                    "MS" => (int)((6.0f / 5.0f * Math.Pow(Level + 1, 3)) - 15 * Math.Pow(Level + 1, 2) + 100 * (Level + 1) - 140),
+                    "S" => (int)(5.0f * Math.Pow(Level + 1, 3) / 4.0f),
+                    _ => 0,
+                };
             }
 
             private set { } 

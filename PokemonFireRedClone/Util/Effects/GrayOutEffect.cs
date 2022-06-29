@@ -7,9 +7,9 @@ namespace PokemonFireRedClone
     public class GrayOutEffect : ImageEffect
     {
 
-        public override void LoadContent(ref Image Image)
+        public override void LoadContent(ref Image image)
         {
-            base.LoadContent(ref Image);
+            base.LoadContent(ref image);
         }
 
         public override void UnloadContent()
@@ -20,12 +20,12 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (image.IsActive)
+            if (Image.IsActive)
             {
-                image.Tint = Color.White;
+                Image.Tint = Color.White;
             }
             else
-                image.Tint = Color.Gray;
+                Image.Tint = Color.Gray;
         }
 
     }

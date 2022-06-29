@@ -1,21 +1,21 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
 
 namespace PokemonFireRedClone
 {
     public class Map
     {
+
+        private int solidID;
+
         [XmlElement("Layer")]
         public List<Layer> Layers;
         public List<Tile> Tiles;
         public List<Tile> SolidTiles;
         public Vector2 TileDimensions;
-        int solidID;
 
         public Map()
         {
@@ -53,10 +53,10 @@ namespace PokemonFireRedClone
                 l.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(ref Player player)
         {
             foreach (Layer l in Layers)
-                l.Update(gameTime, ref player);
+                l.Update(ref player);
         }
 
         public void Draw(SpriteBatch spriteBatch, string drawType)

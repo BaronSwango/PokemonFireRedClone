@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,13 +8,14 @@ namespace PokemonFireRedClone
     public class OverlayMenu
     {
 
+        protected int ItemNumber;
+
         public Image Background;
         public Image Arrow;
         [XmlElement("Items")]
         public List<MenuItem> Items;
         public bool IsOpen;
 
-        protected int itemNumber;
 
         public virtual void AlignMenuItems(Vector2 backgroundPos)
         {
@@ -41,7 +41,7 @@ namespace PokemonFireRedClone
                     i.Image.LoadContent();
             }
 
-            itemNumber = 0;
+            ItemNumber = 0;
             IsOpen = true;
         }
 

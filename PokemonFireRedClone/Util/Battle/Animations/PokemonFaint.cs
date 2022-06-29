@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
@@ -13,41 +12,41 @@ namespace PokemonFireRedClone
 
         public override bool Animate(GameTime gameTime)
         {
-            bool player = BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT;
-            counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            bool player = ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT;
+            CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (counter < 1000.0f)
+            if (Counter < 1000.0f)
             {
-                counter += counterSpeed;
+                Counter += CounterSpeed;
                 return false;
             }
 
             if (player)
             {
-                if (BattleAssets.PlayerPokemon.SourceRect.Height - 16 > 0)
+                if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Height - 16 > 0)
                 {
-                    BattleAssets.PlayerPokemon.SourceRect.Height -= 16;
-                    BattleAssets.PlayerPokemon.Position = new Vector2(BattleAssets.PlayerPlatform.Position.X + BattleAssets.PlayerPlatform.SourceRect.Width * 0.55f - BattleAssets.PlayerPokemon.SourceRect.Width / 2, BattleAssets.PlayerPlatform.Position.Y + BattleAssets.PlayerPlatform.SourceRect.Height - BattleAssets.PlayerPokemon.SourceRect.Height);
+                    ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Height -= 16;
+                    ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.Position.X + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.SourceRect.Width * 0.55f - ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Width / 2, ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.SourceRect.Height - ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Height);
                     return false;
                 }
-                BattleAssets.PlayerPokemon.SourceRect.Height = 0;
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Height = 0;
             }
             else
             {
-                if (BattleAssets.EnemyPokemon.SourceRect.Height - 12 > 0)
+                if (ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.SourceRect.Height - 12 > 0)
                 {
-                    BattleAssets.EnemyPokemon.SourceRect.Height -= 12;
-                    BattleAssets.EnemyPokemon.Position = new Vector2(BattleAssets.EnemyPlatform.Position.X + BattleAssets.EnemyPlatform.SourceRect.Width / 2 - BattleAssets.EnemyPokemon.SourceRect.Width / 2, BattleAssets.EnemyPlatform.Position.Y + BattleAssets.EnemyPlatform.SourceRect.Height * 0.75f - BattleAssets.EnemyPokemon.SourceRect.Height);
+                    ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.SourceRect.Height -= 12;
+                    ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPlatform.Position.X + ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPlatform.SourceRect.Width / 2 - ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.SourceRect.Width / 2, ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPlatform.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPlatform.SourceRect.Height * 0.75f - ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.SourceRect.Height);
                     return false;
                 }
-                BattleAssets.EnemyPokemon.SourceRect.Height = 0;
+                ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.SourceRect.Height = 0;
             }
 
 
-            BattleAssets.IsTransitioning = false;
+            ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = false;
 
-            BattleScreen.TextBox.NextPage = 9;
-            BattleScreen.TextBox.IsTransitioning = true;
+            ScreenManager.Instance.BattleScreen.TextBox.NextPage = 9;
+            ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
 
             return true;
 

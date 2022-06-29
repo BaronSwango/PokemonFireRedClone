@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
@@ -25,13 +24,14 @@ namespace PokemonFireRedClone
             }
         }
 
+        private readonly List<Tile> underlayTiles, overlayTiles;
+        private string state;
+
         [XmlElement("TileMap")]
         public TileMap Tile;
-        List<Tile> underlayTiles, overlayTiles;
         public List<Tile> Tiles;
         public string SolidTiles, OverlayTiles;
         public Image Image;
-        string state;
 
 
         public Layer()
@@ -57,15 +57,17 @@ namespace PokemonFireRedClone
                     if (s != string.Empty)
                     {
                         position.X += tileDimensions.X;
-                        if (!s.Contains("x"))
+                        if (!s.Contains('x'))
                         {
                             state = "Passive";
-                            Tile tile = new Tile();
-                            tile.ID = s + "]";
+                            Tile tile = new()
+                            {
+                                ID = s + "]"
+                            };
 
                             string str = s.Replace("[", string.Empty);
                             int value1 = int.Parse(str.Substring(0, str.IndexOf(':')));
-                            int value2 = int.Parse(str.Substring(str.IndexOf(':') + 1));
+                            int value2 = int.Parse(str[(str.IndexOf(':') + 1)..]);
 
                             if (SolidTiles.Contains(tile.ID))
                                 state = "Solid";
@@ -92,13 +94,13 @@ namespace PokemonFireRedClone
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(ref Player player)
         {
             foreach(Tile tile in underlayTiles)
-                tile.Update(gameTime, ref player);
+                tile.Update(ref player);
 
             foreach (Tile tile in overlayTiles)
-                tile.Update(gameTime, ref player);
+                tile.Update(ref player);
         }
 
         public void Draw(SpriteBatch spriteBatch, string drawType)

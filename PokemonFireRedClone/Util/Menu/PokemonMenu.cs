@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,6 +8,11 @@ namespace PokemonFireRedClone
 {
     public class PokemonMenu : Menu
     {
+
+        private bool positioned;
+        private List<PokemonMenuInfoButton> buttons;
+        private int prevItemNumber;
+
         public Image Background;
         [XmlElement("Text")]
         public List<Image> Text;
@@ -19,10 +23,6 @@ namespace PokemonFireRedClone
         // index of pokemon being switched to
         public static int SelectedIndex;
 
-        bool positioned;
-
-        List<PokemonMenuInfoButton> buttons;
-        int prevItemNumber;
 
         void AlignMenuItems(GameTime gameTime)
         {
@@ -46,7 +46,7 @@ namespace PokemonFireRedClone
             foreach (Image text in Text)
                 text.Position = new Vector2(Background.Position.X + 92, CancelUnselected.Position.Y + CancelUnselected.SourceRect.Height / 2 - Text[0].SourceRect.Height / 2);
             if (ScreenManager.Instance.PreviousScreen is SummaryScreen && !positioned)
-                openButtonBenu();
+                OpenButtonBenu();
             positioned = true;
         }
 
@@ -125,7 +125,7 @@ namespace PokemonFireRedClone
                 else if (InputManager.Instance.KeyPressed(Keys.E))
                 {
                     if (ItemNumber < Items.Count - 1)
-                        openButtonBenu();
+                        OpenButtonBenu();
                     
                 }
 
@@ -176,7 +176,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        void openButtonBenu()
+        private void OpenButtonBenu()
         {
             ButtonMenu.SelectedIndex = ItemNumber;
             ButtonMenu.LoadContent();

@@ -10,6 +10,8 @@ namespace PokemonFireRedClone
     public class Menu
     {
 
+        private string id;
+
         public event EventHandler OnMenuChange;
 
         [XmlIgnore]
@@ -27,8 +29,6 @@ namespace PokemonFireRedClone
         public string PrevScreen;
         public Vector2 Position;
         public bool BaseMenu;
-
-        string id;
 
         public string ID
         {

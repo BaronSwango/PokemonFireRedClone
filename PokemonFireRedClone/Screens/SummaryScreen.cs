@@ -7,7 +7,7 @@ namespace PokemonFireRedClone
     public class SummaryScreen : GameScreen
     {
 
-        readonly SummaryMenuManager menuManager;
+        private readonly SummaryMenuManager menuManager;
 
         public SummaryScreen()
         {

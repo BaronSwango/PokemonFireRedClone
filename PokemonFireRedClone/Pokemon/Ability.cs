@@ -1,7 +1,4 @@
-﻿using System;
-using System.Xml.Serialization;
-
-namespace PokemonFireRedClone
+﻿namespace PokemonFireRedClone
 {
     public class Ability
     {

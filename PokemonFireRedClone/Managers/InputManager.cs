@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
     public class InputManager
     {
-        KeyboardState currentKeyState, prevKeyState;
-
+        private KeyboardState currentKeyState, prevKeyState;
         private static InputManager instance;
 
         public static InputManager Instance

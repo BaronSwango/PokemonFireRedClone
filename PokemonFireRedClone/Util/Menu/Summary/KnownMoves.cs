@@ -6,7 +6,7 @@ namespace PokemonFireRedClone
         public KnownMoves(CustomPokemon pokemon)
             : base(pokemon)
         {
-            background.Path = "Menus/SummaryMenu/KnownMovesBackground";
+            Background.Path = "Menus/SummaryMenu/KnownMovesBackground";
         }
     }
 }

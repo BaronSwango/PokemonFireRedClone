@@ -9,10 +9,17 @@ namespace PokemonFireRedClone
 {
     public class TextBox
     {
-
         //TODO: Also add bouncing red triangle after text if applicable
 
         //public event EventHandler OnPageChange;
+
+        private int positionOffset;
+        private bool increase;
+
+        protected Image TransitionRect;
+        protected Image TransitionRect2;
+        protected List<TextBoxImage> CurrentDialogue;
+        protected float ArrowOriginalY;
 
         public string Type;
         [XmlElement("Dialogue")]
@@ -30,17 +37,19 @@ namespace PokemonFireRedClone
 
         public Image Arrow;
         public float ArrowOffset;
-        protected bool increase;
-        protected float arrowOriginalY;
 
-        int positionOffset;
         public int DialogueOffsetX;
         public int DialogueOffsetY;
 
         public bool UpdateDialogue;
-        protected Image transitionRect;
-        protected Image transitionRect2;
-        protected List<TextBoxImage> currentDialogue;
+
+        public TextBox()
+        {
+            Dialogue = new List<TextBoxImage>();
+            CurrentDialogue = new List<TextBoxImage>();
+            Page = 1;
+            Menu = false;
+        }
 
         private void Transition(GameTime gameTime)
         {
@@ -54,32 +63,32 @@ namespace PokemonFireRedClone
                         if (!Menu)
                             Arrow.IsActive = false;
                         Page++;
-                        currentDialogue.Clear();
+                        CurrentDialogue.Clear();
                         foreach (TextBoxImage image in Dialogue)
                         {
                             if (image.Page == Page)
-                                currentDialogue.Add(image);
+                                CurrentDialogue.Add(image);
                         }
 
-                        currentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
+                        CurrentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
 
-                        transitionRect.Scale = new Vector2(currentDialogue[0].SourceRect.Width, currentDialogue[0].SourceRect.Height);
-                        transitionRect.Position = new Vector2(currentDialogue[0].Position.X, currentDialogue[0].Position.Y);
+                        TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].SourceRect.Height);
+                        TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
 
-                        if (currentDialogue.Count == 2)
+                        if (CurrentDialogue.Count == 2)
                         {
-                            currentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
+                            CurrentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
 
-                            if (transitionRect2 == null)
+                            if (TransitionRect2 == null)
                             {
-                                transitionRect2 = new Image
+                                TransitionRect2 = new Image
                                 {
                                     Path = "TextBoxes/TextBoxEffectPixel"
                                 };
-                                transitionRect2.LoadContent();
+                                TransitionRect2.LoadContent();
                             }
-                            transitionRect2.Scale = new Vector2(currentDialogue[1].SourceRect.Width, currentDialogue[1].SourceRect.Height);
-                            transitionRect2.Position = new Vector2(currentDialogue[1].Position.X, currentDialogue[1].Position.Y);
+                            TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].SourceRect.Height);
+                            TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                         }
                     }
 
@@ -91,17 +100,17 @@ namespace PokemonFireRedClone
 
                 float speed = (float)(1.35 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
-                if (transitionRect.Scale.X > 1)
+                if (TransitionRect.Scale.X > 1)
                 {
-                    transitionRect.Scale = new Vector2(transitionRect.Scale.X - speed, transitionRect.Scale.Y);
-                    transitionRect.Position = new Vector2(transitionRect.Position.X + speed, transitionRect.Position.Y);
+                    TransitionRect.Scale = new Vector2(TransitionRect.Scale.X - speed, TransitionRect.Scale.Y);
+                    TransitionRect.Position = new Vector2(TransitionRect.Position.X + speed, TransitionRect.Position.Y);
                 }
                 else
                 {
-                    if (currentDialogue.Count == 2 && transitionRect2.Scale.X > 1)
+                    if (CurrentDialogue.Count == 2 && TransitionRect2.Scale.X > 1)
                     {
-                        transitionRect2.Scale = new Vector2(transitionRect2.Scale.X - speed, transitionRect2.Scale.Y);
-                        transitionRect2.Position = new Vector2(transitionRect2.Position.X + speed, transitionRect2.Position.Y);
+                        TransitionRect2.Scale = new Vector2(TransitionRect2.Scale.X - speed, TransitionRect2.Scale.Y);
+                        TransitionRect2.Position = new Vector2(TransitionRect2.Position.X + speed, TransitionRect2.Position.Y);
                         return;
                     }
 
@@ -109,33 +118,6 @@ namespace PokemonFireRedClone
                     UpdateDialogue = true;
                 }
             }
-        }
-
-        protected void animateRedArrow(GameTime gameTime)
-        {
-            float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
-
-            if (ArrowOffset >= 8)
-                increase = false;
-            else if (ArrowOffset <= 0)
-                increase = true;
-
-            if (increase)
-                ArrowOffset += speed;
-            else
-                ArrowOffset -= speed;
-
-            if (ArrowOffset % 4 < 0.1)
-                Arrow.Position = new Vector2(Arrow.Position.X, arrowOriginalY + ArrowOffset);
-        }
-
-
-        public TextBox()
-        {
-            Dialogue = new List<TextBoxImage>();
-            currentDialogue = new List<TextBoxImage>();
-            Page = 1;
-            Menu = false;
         }
 
         public void LoadContent(ref Player player)
@@ -192,59 +174,68 @@ namespace PokemonFireRedClone
             foreach (TextBoxImage image in Dialogue)
             {
                 if (image.Page == 1)
-                    currentDialogue.Add(image);
+                    CurrentDialogue.Add(image);
             }
 
 
 
-            currentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
+            CurrentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
 
             //TRANSITION
-            if (currentDialogue.Count >= 1)
+            if (CurrentDialogue.Count >= 1)
             {
-                transitionRect = new Image
+                TransitionRect = new Image
                 {
                     Path = "TextBoxes/TextBoxEffectPixel"
                 };
-                transitionRect.LoadContent();
-                transitionRect.Scale = new Vector2(currentDialogue[0].SourceRect.Width, currentDialogue[0].SourceRect.Height);
-                transitionRect.Position = new Vector2(currentDialogue[0].Position.X, currentDialogue[0].Position.Y);
+                TransitionRect.LoadContent();
+                TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].SourceRect.Height);
+                TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
                 if (TotalPages > 1 && !Menu)
                 {
-                    Arrow.Position = new Vector2(currentDialogue[0].Position.X + currentDialogue[0].SourceRect.Width, currentDialogue[0].Position.Y + 12);
-                    arrowOriginalY = Arrow.Position.Y;
+                    Arrow.Position = new Vector2(CurrentDialogue[0].Position.X + CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].Position.Y + 12);
+                    ArrowOriginalY = Arrow.Position.Y;
                 }
             }
-            if (currentDialogue.Count == 2)
+            if (CurrentDialogue.Count == 2)
             {
-                currentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
-                transitionRect2 = new Image
+                CurrentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
+                TransitionRect2 = new Image
                 {
                     Path = "TextBoxes/TextBoxEffectPixel"
                 };
-                transitionRect2.LoadContent();
-                transitionRect2.Scale = new Vector2(currentDialogue[1].SourceRect.Width, currentDialogue[1].SourceRect.Height);
-                transitionRect2.Position = new Vector2(currentDialogue[1].Position.X, currentDialogue[1].Position.Y);
+                TransitionRect2.LoadContent();
+                TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].SourceRect.Height);
+                TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                 if (TotalPages > 1 && !Menu)
                 {
-                    Arrow.Position = new Vector2(currentDialogue[1].Position.X + currentDialogue[1].SourceRect.Width, currentDialogue[1].Position.Y + 12);
-                    arrowOriginalY = Arrow.Position.Y;
+                    Arrow.Position = new Vector2(CurrentDialogue[1].Position.X + CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].Position.Y + 12);
+                    ArrowOriginalY = Arrow.Position.Y;
                 }
             }
 
             //END TRANSITION
         }
 
-        public void UnloadContent(ref Player player)
+        public void UnloadContent()
         {
             IsDisplayed = false;
-            player.CanUpdate = true;
             Border.UnloadContent();
             foreach (Image image in Dialogue)
                 image.UnloadContent();
 
             if (TotalPages > 1 && !Menu)
                 Arrow.UnloadContent();
+
+            TransitionRect.UnloadContent();
+            if (TransitionRect2 != null)
+                TransitionRect2.UnloadContent();
+        }
+
+        public void UnloadContent(ref Player player)
+        {
+            UnloadContent();
+            player.CanUpdate = true;
         }
 
         public virtual void Update(GameTime gameTime)
@@ -258,7 +249,7 @@ namespace PokemonFireRedClone
 
                 Transition(gameTime);
                 if (!Menu && TotalPages > 1 && Arrow.IsActive)
-                    animateRedArrow(gameTime);
+                    AnimateRedArrow(gameTime);
             }
         }
 
@@ -267,16 +258,16 @@ namespace PokemonFireRedClone
             if (IsDisplayed)
             {
                 Border.Draw(spriteBatch);
-                foreach (TextBoxImage image in currentDialogue)
+                foreach (TextBoxImage image in CurrentDialogue)
                 {
                     image.Draw(spriteBatch);
                 }
 
                 if (IsTransitioning)
                 {
-                    transitionRect.Draw(spriteBatch);
-                    if (currentDialogue.Count == 2)
-                        transitionRect2.Draw(spriteBatch);
+                    TransitionRect.Draw(spriteBatch);
+                    if (CurrentDialogue.Count == 2)
+                        TransitionRect2.Draw(spriteBatch);
                 }
                 else if (!Menu && TotalPages > 1 && Page < TotalPages)
                 {
@@ -286,6 +277,24 @@ namespace PokemonFireRedClone
                 }
 
             }
+        }
+
+        protected void AnimateRedArrow(GameTime gameTime)
+        {
+            float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
+
+            if (ArrowOffset >= 8)
+                increase = false;
+            else if (ArrowOffset <= 0)
+                increase = true;
+
+            if (increase)
+                ArrowOffset += speed;
+            else
+                ArrowOffset -= speed;
+
+            if (ArrowOffset % 4 < 0.1)
+                Arrow.Position = new Vector2(Arrow.Position.X, ArrowOriginalY + ArrowOffset);
         }
 
     }

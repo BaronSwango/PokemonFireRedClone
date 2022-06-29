@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
 {
@@ -10,50 +9,50 @@ namespace PokemonFireRedClone
             : base(pokemon)
         {
             State = ButtonState.SELECTED;
-            bounce = true;
+            Bounce = true;
         }
 
         public override void UpdateInfoPositions(GameTime gameTime)
         {
-            pokemonAssets.Name.SetPosition(new Vector2(BackgroundInUse.Position.X + 120, BackgroundInUse.Position.Y + 84));
-            pokemonAssets.Level.SetPosition(new Vector2(pokemonAssets.Name.Position.X + 32, pokemonAssets.Name.Position.Y + pokemonAssets.Name.SourceRect.Height + 8)); 
-            if (pokemonAssets.Gender != null)
-                pokemonAssets.Gender.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 28 - pokemonAssets.Gender.SourceRect.Width, pokemonAssets.Level.Position.Y));
-            pokemonAssets.MaxHP.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 21 - pokemonAssets.MaxHP.SourceRect.Width, BackgroundInUse.Position.Y + BackgroundInUse.SourceRect.Height - 16 - pokemonAssets.MaxHP.SourceRect.Height));
-            pokemonAssets.CurrentHP.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 101 - pokemonAssets.CurrentHP.SourceRect.Width, pokemonAssets.MaxHP.Position.Y));
-            pokemonAssets.HPBar.Position = new Vector2(BackgroundInUse.Position.X + 120 - ((1 - pokemonAssets.HPBar.Scale.X) / 2 * pokemonAssets.HPBar.SourceRect.Width), BackgroundInUse.Position.Y + 164);
-            if (!spritePositioned)
+            PokemonAssets.Name.SetPosition(new Vector2(BackgroundInUse.Position.X + 120, BackgroundInUse.Position.Y + 84));
+            PokemonAssets.Level.SetPosition(new Vector2(PokemonAssets.Name.Position.X + 32, PokemonAssets.Name.Position.Y + PokemonAssets.Name.SourceRect.Height + 8)); 
+            if (PokemonAssets.Gender != null)
+                PokemonAssets.Gender.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 28 - PokemonAssets.Gender.SourceRect.Width, PokemonAssets.Level.Position.Y));
+            PokemonAssets.MaxHP.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 21 - PokemonAssets.MaxHP.SourceRect.Width, BackgroundInUse.Position.Y + BackgroundInUse.SourceRect.Height - 16 - PokemonAssets.MaxHP.SourceRect.Height));
+            PokemonAssets.CurrentHP.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 101 - PokemonAssets.CurrentHP.SourceRect.Width, PokemonAssets.MaxHP.Position.Y));
+            PokemonAssets.HPBar.Position = new Vector2(BackgroundInUse.Position.X + 120 - ((1 - PokemonAssets.HPBar.Scale.X) / 2 * PokemonAssets.HPBar.SourceRect.Width), BackgroundInUse.Position.Y + 164);
+            if (!SpritePositioned)
             {
-                menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
-                spritePositioned = true;
+                MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
+                SpritePositioned = true;
             }
             if (State == ButtonState.SELECTED)
             {
-                menuSprite.IsActive = false;
-                float counterSpeed = (float)(gameTime.ElapsedGameTime.TotalMilliseconds * 8);
-                counter += counterSpeed;
-                if (counter > 1000)
+                MenuSprite.IsActive = false;
+                float CounterSpeed = (float)(gameTime.ElapsedGameTime.TotalMilliseconds * 8);
+                Counter += CounterSpeed;
+                if (Counter > 1000)
                 {
-                    if (bounce)
+                    if (Bounce)
                     {
-                        menuSprite.SpriteSheetEffect.CurrentFrame.X = 0;
-                        menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 72);
-                        bounce = false;
+                        MenuSprite.SpriteSheetEffect.CurrentFrame.X = 0;
+                        MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 72);
+                        Bounce = false;
                     }
                     else
                     {
-                        menuSprite.SpriteSheetEffect.CurrentFrame.X = 1;
-                        menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
-                        bounce = true;
+                        MenuSprite.SpriteSheetEffect.CurrentFrame.X = 1;
+                        MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
+                        Bounce = true;
                     }
-                    counter = 0;
+                    Counter = 0;
                 }
             }
             else
             {
-                menuSprite.IsActive = true;
-                bounce = true;
-                menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
+                MenuSprite.IsActive = true;
+                Bounce = true;
+                MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
             }
         }
 

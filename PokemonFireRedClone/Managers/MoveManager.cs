@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace PokemonFireRedClone
@@ -8,6 +7,7 @@ namespace PokemonFireRedClone
     {
 
         private static MoveManager instance;
+
         [XmlElement("Moves")]
         public List<Move> Moves;
 
@@ -15,7 +15,7 @@ namespace PokemonFireRedClone
         {
             get
             {
-                XmlManager<MoveManager> xml = new XmlManager<MoveManager>();
+                XmlManager<MoveManager> xml = new();
                 instance = xml.Load("Load/Pokemon/MoveManager.xml");
 
                 return instance;

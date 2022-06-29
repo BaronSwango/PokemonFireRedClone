@@ -1,5 +1,4 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -9,11 +8,15 @@ namespace PokemonFireRedClone
     {
         // TODO: Add sounds to all Animations
 
-        BattleScreen BattleScreen
-        {
-            get { return (BattleScreen)ScreenManager.Instance.CurrentScreen; }
-            set { }
-        }
+        // Battle menu animation
+        private float barOriginalY;
+        private float pokeNameOriginalY;
+        private float pokeHPOriginalY;
+        private float pokeHealthBarOriginalY;
+        private float pokeEXPOriginalY;
+        private float pokeBounceTimer = 0.2f;
+        private float barBounceTimer = 0.3f;
+        private bool barBounce;
 
         public enum BattleState
         {
@@ -57,34 +60,27 @@ namespace PokemonFireRedClone
 
         public BattleAnimation Animation;
 
-        bool barBounce;
-        float pokeBounceTimer = 0.2f;
-        float barBounceTimer = 0.3f;
         public float PokeOriginalY;
-        float barOriginalY;
-        float pokeNameOriginalY;
-        float pokeHPOriginalY;
-        float pokeHealthBarOriginalY;
-        float pokeEXPOriginalY;
+
 
         public void LoadContent()
         {
             // TODO: Load Background based on what environment the battle is in
 
             //Load battle images
-            loadBattleContent(BattleLogic.Battle.PlayerPokemon.Pokemon, BattleLogic.Battle.EnemyPokemon.Pokemon);
+            LoadBattleContent(BattleLogic.Battle.PlayerPokemon.Pokemon, BattleLogic.Battle.EnemyPokemon.Pokemon);
             if (ScreenManager.Instance.PreviousScreen is PokemonScreen)
             {
                 State = BattleState.BATTLE_MENU;
-                BattleScreen.TextBox.NextPage = 4;
-                BattleScreen.TextBox.IsTransitioning = true;
-                BattleScreen.TextBox.UpdateDialogue = true;
+                ScreenManager.Instance.BattleScreen.TextBox.NextPage = 4;
+                ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
+                ScreenManager.Instance.BattleScreen.TextBox.UpdateDialogue = true;
                 PlayerPokemon.LoadContent();
-                SetDefaultBattleImagePositions(BattleScreen.TextBox);
+                SetDefaultBattleImagePositions(ScreenManager.Instance.BattleScreen.TextBox);
             }
             else
             {
-                loadSprites();
+                LoadSprites();
                 PlayerSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(5, 1);
                 PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
 
@@ -93,7 +89,7 @@ namespace PokemonFireRedClone
                 if (BattleLogic.Battle.IsWild)
                     EnemyPokemon.Tint = Color.LightGray;
 
-                setIntroBattleImagePositions(BattleScreen.TextBox);
+                SetIntroBattleImagePositions(ScreenManager.Instance.BattleScreen.TextBox);
 
 
                 barOriginalY = PlayerHPBarBackground.Position.Y;
@@ -132,7 +128,7 @@ namespace PokemonFireRedClone
             if (State == BattleState.INTRO || State == BattleState.WILD_POKEMON_FADE_IN || State == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && State == BattleState.POKEMON_SEND_OUT))
                 PlayerSprite.Update(gameTime);
             if (State == BattleState.BATTLE_MENU)
-                animateBattleMenu(gameTime);
+                AnimateBattleMenu(gameTime);
 
         }
 
@@ -172,7 +168,7 @@ namespace PokemonFireRedClone
             
         }
 
-        void animateBattleMenu(GameTime gameTime)
+        private void AnimateBattleMenu(GameTime gameTime)
         {
             pokeBounceTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             barBounceTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -201,7 +197,7 @@ namespace PokemonFireRedClone
 
         }
 
-        void loadBattleContent(CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
+        private void LoadBattleContent(CustomPokemon playerPokemon, CustomPokemon enemyPokemon)
         {
             // Battle assets
             Background = new Image();
@@ -243,7 +239,7 @@ namespace PokemonFireRedClone
             EXPBar.LoadContent();
         }
 
-        void loadSprites()
+        private void LoadSprites()
         {
             PlayerSprite = new Image
             {
@@ -253,7 +249,7 @@ namespace PokemonFireRedClone
             PlayerSprite.LoadContent();
         }
 
-        void setIntroBattleImagePositions(TextBox textBox)
+        private void SetIntroBattleImagePositions(TextBox textBox)
         {
             // set battle image positions
             EnemyPlatform.Position = new Vector2(-EnemyPlatform.SourceRect.Width, 192);

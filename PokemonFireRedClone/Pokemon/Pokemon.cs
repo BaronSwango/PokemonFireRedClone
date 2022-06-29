@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace PokemonFireRedClone
 {
     public class Pokemon
     {
+
+        private List<Type> types;
+        private Dictionary<Move, int> moveLearnset;
+        private KeyValuePair<int, Pokemon> evolution;
 
         public string Name;
         public int Index;
@@ -30,7 +33,6 @@ namespace PokemonFireRedClone
         public int BaseSpecialDefense;
         public int BaseSpeed;
 
-        private List<Type> types;
         [XmlIgnore]
         public List<Type> Types
         {
@@ -44,7 +46,6 @@ namespace PokemonFireRedClone
             }
         }
 
-        private Dictionary<Move, int> moveLearnset;
         [XmlIgnore]
         public Dictionary<Move, int> MoveLearnset
         {
@@ -79,7 +80,6 @@ namespace PokemonFireRedClone
             }
         }
 
-        private KeyValuePair<int, Pokemon> evolution;
         [XmlIgnore]
         public KeyValuePair<int, Pokemon> Evolution
         {
@@ -113,15 +113,10 @@ namespace PokemonFireRedClone
             private set { }
         }
 
-        public void loadInfo()
+        public void LoadInfo()
         {
-            MoveLearnset = new Dictionary<Move, int>();
+            moveLearnset = new Dictionary<Move, int>();
             Types = new List<Type>();
-        }
-
-        public Pokemon()
-        {
-            
         }
 
 
@@ -140,7 +135,7 @@ namespace PokemonFireRedClone
          *   Weight (string)
          *   Experience group (fast, medium fast, medium slow, slow)
          *   Experience yield (int)
-         *   Evolution 
+         *   evolution 
          *    - Level
          *    - Which pokemon it evolves to
          *   Natures (for choosing specific stats)

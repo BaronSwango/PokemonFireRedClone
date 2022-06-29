@@ -1,15 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PokemonFireRedClone
 {
-    
     public class TitleScreen : GameScreen
     {
-        MenuManager menuManager;        
+
+        private readonly MenuManager menuManager;        
 
         public TitleScreen()
         {

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using System.IO;
-using System.Windows;
 
 namespace PokemonFireRedClone
 {
@@ -23,7 +19,7 @@ namespace PokemonFireRedClone
             using (TextReader reader = new StreamReader(path))
             {
 
-                XmlSerializer xml = new XmlSerializer(Type);
+                XmlSerializer xml = new(Type);
                 instance = (T)xml.Deserialize(reader);
 
             }
@@ -33,11 +29,9 @@ namespace PokemonFireRedClone
         // using a text writer in order to write and save and object to an xml file 
         public void Save(string path, object obj)
         {
-            using (TextWriter writer = new StreamWriter(path))
-            {
-                XmlSerializer xml = new XmlSerializer(Type);
-                xml.Serialize(writer, obj);
-            }
+            using TextWriter writer = new StreamWriter(path);
+            XmlSerializer xml = new(Type);
+            xml.Serialize(writer, obj);
         }
     }
 }

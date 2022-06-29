@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
@@ -8,31 +7,31 @@ namespace PokemonFireRedClone
     {
         public override bool Animate(GameTime gameTime)
         {
-            float playerSpriteDestinationX = -BattleAssets.PlayerSprite.SourceRect.Width - 8;
+            float playerSpriteDestinationX = -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SourceRect.Width - 8;
 
             float playerSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
-            if (BattleAssets.PlayerSprite.Position.X > 0)
-                BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 1;
-            else if (BattleAssets.PlayerSprite.Position.X <= 0 && BattleAssets.PlayerSprite.Position.X > -BattleAssets.PlayerSprite.SourceRect.Width / 6)
-                BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 2;
-            else if (BattleAssets.PlayerSprite.Position.X <= -BattleAssets.PlayerSprite.SourceRect.Width / 6 && BattleAssets.PlayerSprite.Position.X > -BattleAssets.PlayerSprite.SourceRect.Width / 3)
-                BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 3;
+            if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X > 0)
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 1;
+            else if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X <= 0 && ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X > -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SourceRect.Width / 6)
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 2;
+            else if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X <= -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SourceRect.Width / 6 && ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X > -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SourceRect.Width / 3)
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 3;
             else
             {
-                BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 4;
-                BattleAssets.Pokeball.LoadContent();
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 4;
+                ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.LoadContent();
 
-                BattleAssets.State = BattleAssets.BattleState.POKEMON_SEND_OUT;
-                BattleAssets.Animation = new PokemonSendOut();
-                resetPokeball();
+                ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.POKEMON_SEND_OUT;
+                ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new PokemonSendOut();
+                ResetPokeball();
 
                 return true;
 
             }
 
-            if (!(BattleAssets.PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || BattleAssets.Pokeball.Position.Y < BattleScreen.TextBox.Border.Position.Y)
-                BattleAssets.PlayerSprite.Position.X -= (int)playerSpeed;
+            if (!(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y)
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X -= (int)playerSpeed;
 
             return false;
         }

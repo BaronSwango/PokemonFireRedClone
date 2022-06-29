@@ -12,6 +12,9 @@ namespace PokemonFireRedClone
     public class SaveMenu : Menu
     {
 
+        private bool exited;
+        private double exitCounter;
+
         public Image InfoTitlesBackground;
         public Image SaveRegion;
         [XmlElement("Info")]
@@ -20,8 +23,6 @@ namespace PokemonFireRedClone
         public Image Arrow;
         public TextBox SaveDialogue;
 
-        bool done;
-        double exitCounter;
 
 
         /* InfoTitles:
@@ -59,7 +60,7 @@ namespace PokemonFireRedClone
         protected override void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
-            Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Image.Position;
+            Vector2 playerPos = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player.Image.Position;
 
             InfoTitlesBackground.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 40,
                 playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 52);
@@ -88,7 +89,7 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            done = false;
+            exited = false;
             exitCounter = 0;
             InfoTitlesBackground.LoadContent();
             SaveRegion.LoadContent();
@@ -96,7 +97,7 @@ namespace PokemonFireRedClone
 
             MenuBackground.LoadContent();
 
-            Player player = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player;
+            Player player = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player;
             SaveDialogue.Dialogue[3].Text = Player.PlayerJsonObject.Name + "   saved   the   game.";
             SaveDialogue.LoadContent(ref player);
 
@@ -122,7 +123,7 @@ namespace PokemonFireRedClone
             foreach (Image image in InfoTitles)
                 image.UnloadContent();
             MenuBackground.UnloadContent();
-            SaveDialogue.UnloadContent(ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player);
+            SaveDialogue.UnloadContent(ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
             base.UnloadContent();
         }
 
@@ -131,16 +132,16 @@ namespace PokemonFireRedClone
             SaveDialogue.Update(gameTime);
             if (SaveDialogue.Page == 3)
             {
-                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).player.Save();
-                done = true;
+                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player.Save();
+                exited = true;
                 exitCounter += gameTime.ElapsedGameTime.TotalSeconds;
                 if (exitCounter >= 2)
                 {
-                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).menuManager.menuName = "MainMenu";
-                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).menuManager.UnloadContent();
+                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).MenuManager.MenuName = "MainMenu";
+                    ((GameplayScreen)ScreenManager.Instance.CurrentScreen).MenuManager.UnloadContent();
                 }
             }
-            if (!SaveDialogue.IsTransitioning && !done)
+            if (!SaveDialogue.IsTransitioning && !exited)
             {
                 AlignMenuItems();
                 if (InputManager.Instance.KeyPressed(Keys.S))
@@ -177,7 +178,7 @@ namespace PokemonFireRedClone
             foreach (Image image in InfoTitles)
                 image.Draw(spriteBatch);
             
-            if (!SaveDialogue.IsTransitioning && !done)
+            if (!SaveDialogue.IsTransitioning && !exited)
             {
                 MenuBackground.Draw(spriteBatch);
                 Arrow.Draw(spriteBatch);

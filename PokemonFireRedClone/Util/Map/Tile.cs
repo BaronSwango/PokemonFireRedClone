@@ -1,78 +1,52 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
     public class Tile
     {
 
-        Vector2 position;
-        Rectangle sourceRect;
         public string State;
         public string ID;
-
-        public Rectangle SourceRect
-        {
-            get { return sourceRect; }
-        }
-
-        public Vector2 Position
-        {
-            get { return position; }
-        }
-
-
-        public Tile()
-        {
-        }
+        [XmlIgnore]
+        public Rectangle SourceRect { get; private set; }
+        [XmlIgnore]
+        public Vector2 Position{ get; private set; }
 
         public void LoadContent(Vector2 position, Rectangle sourceRect, string State)
         {
-            this.position = position;
-            this.sourceRect = sourceRect;
+            Position = position;
+            SourceRect = sourceRect;
             this.State = State;
-        }
-
-        public void UnloadContent()
-        {
-
         }
 
         //TODO: Play sound when colliding
         //TODO: 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(ref Player player)
         {
             if (State == "Solid")
             {
-                Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,
-                    sourceRect.Width, sourceRect.Height - 20);
-                Rectangle playerRect = new Rectangle((int)player.Image.Position.X, (int)player.Image.Position.Y,
+                Rectangle tileRect = new((int)Position.X, (int)Position.Y,
+                    SourceRect.Width, SourceRect.Height - 20);
+                Rectangle playerRect = new((int)player.Image.Position.X, (int)player.Image.Position.Y,
                     player.Image.SourceRect.Width, player.Image.SourceRect.Height);
 
                 if (playerRect.Intersects(tileRect))
                 {
-                    if (player.state == Player.State.MoveLeft)
+                    if (player.State == Player.PlayerState.MoveLeft)
                         player.Image.Position.X = tileRect.Right;
-                    else if (player.state == Player.State.MoveRight)
+                    else if (player.State == Player.PlayerState.MoveRight)
                         player.Image.Position.X = tileRect.Left - player.Image.SourceRect.Width;
-                    else if (player.state == Player.State.MoveUp)
+                    else if (player.State == Player.PlayerState.MoveUp)
                         player.Image.Position.Y = tileRect.Bottom;
                     else
                         player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
 
-                    player.state = Player.State.Idle;
+                    player.State = Player.PlayerState.Idle;
                     player.Colliding = true;
                 }
             }
-
-
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
         }
 
     }

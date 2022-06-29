@@ -1,14 +1,11 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-
 
 namespace PokemonFireRedClone
 {
     public class PokemonScreen : GameScreen
     {
-        MenuManager menuManager;
+        private readonly MenuManager menuManager;
 
         public PokemonScreen()
         {
@@ -19,7 +16,6 @@ namespace PokemonFireRedClone
         {
             base.LoadContent();
             menuManager.LoadContent("Load/Menus/PokemonMenu.xml");
-
         }
 
         public override void UnloadContent()

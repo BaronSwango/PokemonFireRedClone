@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,10 +8,11 @@ namespace PokemonFireRedClone
 {
     public class GameScreen
     {
-        protected ContentManager content;
+
+        protected ContentManager Content;
+
         [XmlIgnore]
         public System.Type Type;
-
         public string XmlPath;
 
         public GameScreen()
@@ -24,13 +22,13 @@ namespace PokemonFireRedClone
         }
         public virtual void LoadContent()
         {
-            content = new ContentManager(
+            Content = new ContentManager(
                 ScreenManager.Instance.Content.ServiceProvider, "Content");
         }
 
         public virtual void UnloadContent()
         {
-            content.Unload();
+            Content.Unload();
         }
 
         public virtual void Update(GameTime gameTime)

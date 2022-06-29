@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
@@ -7,47 +6,48 @@ namespace PokemonFireRedClone
     public abstract class BattleAnimation
     {
 
-        protected BattleScreen BattleScreen
-        {
-            get { return (BattleScreen)ScreenManager.Instance.CurrentScreen; }
-            set { }
-        }
-
-        protected BattleAssets BattleAssets
-        {
-            get { return BattleScreen.BattleAssets; }
-            set { }
-        }
-
-        protected float counter;
-        protected float counterSpeed;
+        protected float Counter;
+        protected float CounterSpeed;
+        protected Image WhiteEffect;
+        protected bool WhiteEffectTransitioned;
 
         public abstract bool Animate(GameTime gameTime);
-
         public abstract void Draw(SpriteBatch spriteBatch);
 
-
-        protected void resetPokeball() {
-            BattleAssets.Pokeball.Alpha = 0;
-            BattleAssets.Pokeball.Position = new Vector2(156, 352);
+        protected void CreateWhiteEffect()
+        {
+            WhiteEffect = new Image
+            {
+                Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, ScreenManager.Instance.BattleScreen.BattleAssets.Background.SourceRect.Width, ScreenManager.Instance.BattleScreen.BattleAssets.Background.SourceRect.Height)
+            };
+            Color[] data = new Color[ScreenManager.Instance.BattleScreen.BattleAssets.Background.SourceRect.Width * ScreenManager.Instance.BattleScreen.BattleAssets.Background.SourceRect.Height];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            WhiteEffect.Texture.SetData(data);
+            WhiteEffect.Alpha = 0;
+            WhiteEffect.LoadContent();
         }
 
-        protected void endFightSequence()
+        protected void ResetPokeball() {
+            ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Alpha = 0;
+            ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position = new Vector2(156, 352);
+        }
+
+        protected void EndFightSequence()
         {
-            BattleScreen.menuManager.menuName = "BattleMenu";
-            BattleScreen.menuManager.menu.ID = "Load/Menus/BattleMenu.xml";
-            BattleScreen.TextBox.NextPage = 4;
-            BattleScreen.TextBox.IsTransitioning = true;
-            BattleScreen.BattleLogic.EnemyHasMoved = false;
-            BattleScreen.BattleLogic.PlayerHasMoved = false;
-            BattleScreen.BattleLogic.PlayerMoveUsed = false;
-            BattleScreen.BattleLogic.StatStageIncrease = false;
-            BattleScreen.BattleLogic.Stat = "";
-            BattleScreen.BattleLogic.SharplyStat = false;
-            BattleScreen.BattleLogic.PlayerMoveExecuted = false;
-            BattleScreen.BattleLogic.EnemyMoveExecuted = false;
-            BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
-            BattleAssets.State = BattleAssets.BattleState.BATTLE_MENU;
+            ScreenManager.Instance.BattleScreen.MenuManager.MenuName = "BattleMenu";
+            ScreenManager.Instance.BattleScreen.MenuManager.Menu.ID = "Load/Menus/BattleMenu.xml";
+            ScreenManager.Instance.BattleScreen.TextBox.NextPage = 4;
+            ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
+            ScreenManager.Instance.BattleScreen.BattleLogic.EnemyHasMoved = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerHasMoved = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveUsed = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.Stat = "";
+            ScreenManager.Instance.BattleScreen.BattleLogic.SharplyStat = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveExecuted = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveExecuted = false;
+            ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.BATTLE_MENU;
         }
 
 

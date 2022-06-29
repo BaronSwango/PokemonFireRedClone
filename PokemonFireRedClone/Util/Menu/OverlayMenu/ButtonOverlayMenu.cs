@@ -6,10 +6,9 @@ namespace PokemonFireRedClone
 {
     public class ButtonOverlayMenu : OverlayMenu
     {
-        bool inBattle
+        private bool inBattle
         {
             get { return BattleLogic.Battle != null && BattleLogic.Battle.InBattle; }
-            set { }
         }
 
         public int SelectedIndex;
@@ -32,7 +31,7 @@ namespace PokemonFireRedClone
             base.LoadContent();
 
             if (SelectedIndex == 0 && inBattle)
-                itemNumber = 1;
+                ItemNumber = 1;
         }
 
         public void Update()
@@ -42,12 +41,12 @@ namespace PokemonFireRedClone
                 if (InputManager.Instance.KeyPressed(Keys.Q))
                     UnloadContent();
                 else if (InputManager.Instance.KeyPressed(Keys.S))
-                    itemNumber++;
+                    ItemNumber++;
                 else if (InputManager.Instance.KeyPressed(Keys.W))
-                    itemNumber--;
+                    ItemNumber--;
                 else if (InputManager.Instance.KeyPressed(Keys.E)) {
                     PokemonMenu.SelectedIndex = SelectedIndex;
-                    switch (itemNumber)
+                    switch (ItemNumber)
                     {
                         case 0:
                             if (inBattle)
@@ -83,14 +82,14 @@ namespace PokemonFireRedClone
                 }
 
                 int smallestIndex = SelectedIndex == 0 && inBattle ? 1 : 0;
-                if (itemNumber < smallestIndex)
-                    itemNumber = Items.Count - 1;
-                else if (itemNumber > Items.Count - 1)
-                    itemNumber = smallestIndex;
+                if (ItemNumber < smallestIndex)
+                    ItemNumber = Items.Count - 1;
+                else if (ItemNumber > Items.Count - 1)
+                    ItemNumber = smallestIndex;
 
                 for (int i = smallestIndex; i < Items.Count; i++)
                 {
-                    if (i == itemNumber)
+                    if (i == ItemNumber)
                     {
                         Items[i].Image.IsActive = true;
                         Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width,

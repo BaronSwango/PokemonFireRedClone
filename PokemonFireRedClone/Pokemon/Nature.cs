@@ -1,5 +1,4 @@
-﻿using System;
-namespace PokemonFireRedClone
+﻿namespace PokemonFireRedClone
 {
     public enum Nature
     {

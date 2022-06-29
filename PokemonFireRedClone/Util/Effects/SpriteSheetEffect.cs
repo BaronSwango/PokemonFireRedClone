@@ -4,19 +4,20 @@ namespace PokemonFireRedClone
 {
     public class SpriteSheetEffect : ImageEffect
     {
+        private bool wasActive;
+
         public int FrameCounter;
         public int SwitchFrame;
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
-        bool wasActive;
         public bool Player;
 
         public int FrameWidth
         {
             get
             {
-                if (image.Texture != null)
-                    return image.Texture.Width / (int) AmountOfFrames.X;
+                if (Image.Texture != null)
+                    return Image.Texture.Width / (int) AmountOfFrames.X;
                 return 0;
             }
         }
@@ -25,8 +26,8 @@ namespace PokemonFireRedClone
         {
             get
             {
-                if (image.Texture != null)
-                    return image.Texture.Height / (int)AmountOfFrames.Y;
+                if (Image.Texture != null)
+                    return Image.Texture.Height / (int)AmountOfFrames.Y;
                 return 0;
             }
         }
@@ -39,9 +40,9 @@ namespace PokemonFireRedClone
             SwitchFrame = 130;
             FrameCounter = 0;
         }
-        public override void LoadContent(ref Image Image)
+        public override void LoadContent(ref Image image)
         {
-            base.LoadContent(ref Image);
+            base.LoadContent(ref image);
         }
 
         public override void UnloadContent()
@@ -52,7 +53,7 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (image.IsActive)
+            if (Image.IsActive)
             {
                 FrameCounter += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
                 if (FrameCounter >= SwitchFrame)
@@ -60,7 +61,7 @@ namespace PokemonFireRedClone
                     FrameCounter = 0;
                     CurrentFrame.X++;
 
-                    if (CurrentFrame.X * FrameWidth >= image.Texture.Width)
+                    if (CurrentFrame.X * FrameWidth >= Image.Texture.Width)
                         CurrentFrame.X = 0;
 
                     if (!wasActive)
@@ -83,7 +84,7 @@ namespace PokemonFireRedClone
                 }
             }
             
-            image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
+            Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
                 (int) CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
         }
     }

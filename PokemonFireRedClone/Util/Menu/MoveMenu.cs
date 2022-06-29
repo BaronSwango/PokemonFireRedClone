@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -78,23 +76,23 @@ namespace PokemonFireRedClone
         {
             Background.Update(gameTime);
 
-            if (InputManager.Instance.KeyPressed(Keys.A) && ItemNumber - 1 >= 0 && !Items[ItemNumber - 1].Image.Text.Contains("-"))
+            if (InputManager.Instance.KeyPressed(Keys.A) && ItemNumber - 1 >= 0 && !Items[ItemNumber - 1].Image.Text.Contains('-'))
             {
                 if (ItemNumber == 1 || ItemNumber == 3)
                     ItemNumber--;
             }
-            else if (InputManager.Instance.KeyPressed(Keys.D) && ItemNumber + 1 <= Items.Count - 1 && !Items[ItemNumber + 1].Image.Text.Contains("-"))
+            else if (InputManager.Instance.KeyPressed(Keys.D) && ItemNumber + 1 <= Items.Count - 1 && !Items[ItemNumber + 1].Image.Text.Contains('-'))
             {
                 if (ItemNumber == 0 || ItemNumber == 2)
                     ItemNumber++;
             }
 
-            else if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber - 2 >= 0 && !Items[ItemNumber - 2].Image.Text.Contains("-"))
+            else if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber - 2 >= 0 && !Items[ItemNumber - 2].Image.Text.Contains('-'))
             {
                 if (ItemNumber == 2 || ItemNumber == 3)
                     ItemNumber -= 2;
             }
-            else if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber + 2 <= Items.Count - 1 && !Items[ItemNumber + 2].Image.Text.Contains("-"))
+            else if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber + 2 <= Items.Count - 1 && !Items[ItemNumber + 2].Image.Text.Contains('-'))
             {
                 if (ItemNumber == 0 || ItemNumber == 1)
                     ItemNumber += 2;

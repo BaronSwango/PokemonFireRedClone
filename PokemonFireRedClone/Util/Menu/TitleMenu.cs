@@ -9,7 +9,8 @@ namespace PokemonFireRedClone
     //TODO: Display player stats (Name [string], time [int -> string], amount of pokemon in pokedex [int], gym badges[int])
     public class TitleMenu : Menu
     {
-        PlayerJsonObject playerJsonObject;
+
+        private PlayerJsonObject playerJsonObject;
 
         public override void Transition(float alpha)
         {

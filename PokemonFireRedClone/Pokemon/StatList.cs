@@ -1,5 +1,4 @@
-﻿using System;
-namespace PokemonFireRedClone
+﻿namespace PokemonFireRedClone
 {
     public class StatList
     {
@@ -13,21 +12,15 @@ namespace PokemonFireRedClone
 
         public int GetStat(string stat)
         {
-            switch(stat)
+            return stat switch
             {
-                case "A":
-                    return Attack;
-                case "D":
-                    return Defense;
-                case "SA":
-                    return SpecialAttack;
-                case "SD":
-                    return SpecialDefense;
-                case "S":
-                    return Speed;
-                default:
-                    return 0;
-            }
+                "A" => Attack,
+                "D" => Defense,
+                "SA" => SpecialAttack,
+                "SD" => SpecialDefense,
+                "S" => Speed,
+                _ => 0,
+            };
         }
 
     }

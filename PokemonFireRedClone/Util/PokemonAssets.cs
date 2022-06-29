@@ -1,12 +1,14 @@
-﻿using System;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
     public class PokemonAssets
     {
+
+        private readonly bool player;
+        private bool hpLoaded;
+
         public PokemonText Name;
         public PokemonText Gender;
         public PokemonText CurrentHP;
@@ -15,8 +17,6 @@ namespace PokemonFireRedClone
         public PokemonText Level;
         public CustomPokemon Pokemon;
 
-        readonly bool player;
-        bool HPLoaded;
 
         public PokemonAssets(CustomPokemon pokemon, bool player)
         {
@@ -26,7 +26,7 @@ namespace PokemonFireRedClone
 
         public void LoadContent(string font, Color fontColor, Color shadowColor)
         {
-            initializeImages(font, fontColor, shadowColor);
+            InitializeImages(font, fontColor, shadowColor);
 
             Name.LoadContent();
             if (Gender != null)
@@ -40,7 +40,7 @@ namespace PokemonFireRedClone
                 CurrentHP.LoadContent();
                 MaxHP.LoadContent();
             }
-            HPLoaded = true;
+            hpLoaded = true;
         }
 
         public void UnloadContent()
@@ -74,7 +74,7 @@ namespace PokemonFireRedClone
 
         }
 
-        void initializeImages(string font, Color fontColor, Color shadowColor)
+        private void InitializeImages(string font, Color fontColor, Color shadowColor)
         {
             Name = new PokemonText(Pokemon.Name, font, fontColor, shadowColor);
 
@@ -139,7 +139,7 @@ namespace PokemonFireRedClone
                 HPBar.Alpha = 0.4f;
             }
 
-            if (HPLoaded)
+            if (hpLoaded)
                 HPBar.ReloadTexture();
 
         }

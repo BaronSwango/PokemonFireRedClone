@@ -1,15 +1,14 @@
-﻿using System;
-namespace PokemonFireRedClone
+﻿namespace PokemonFireRedClone
 {
     public class BattlePokemon
     {
         public CustomPokemon Pokemon;
+
         public int AttackStage;
         public int DefenseStage;
         public int SpecialAttackStage;
         public int SpecialDefenseStage;
         public int SpeedStage;
-
         public int AccuracyStage;
         public int EvasionStage;
 
@@ -50,61 +49,38 @@ namespace PokemonFireRedClone
 
         public float StatStageMultiplier(int stage)
         {
-            switch(stage)
+            return stage switch
             {
-                case -6:
-                    return 2f / 8f;
-                case -5:
-                    return 2f / 7f;
-                case -4:
-                    return 2f / 6f;
-                case -3:
-                    return 2f / 5f;
-                case -2:
-                    return 2f / 4f;
-                case -1:
-                    return 2f / 3f;
-                case 0:
-                    return 1;
-                case 1:
-                    return 3f / 2f;
-                case 2:
-                    return 4f / 2f;
-                case 3:
-                    return 5f / 2f;
-                case 4:
-                    return 6f / 2f;
-                case 5:
-                    return 7f / 2f;
-                case 6:
-                    return 8f / 2f;
-                default:
-                    return 1;
-            }
-
+                -6 => 2f / 8f,
+                -5 => 2f / 7f,
+                -4 => 2f / 6f,
+                -3 => 2f / 5f,
+                -2 => 2f / 4f,
+                -1 => 2f / 3f,
+                0 => 1,
+                1 => 3f / 2f,
+                2 => 4f / 2f,
+                3 => 5f / 2f,
+                4 => 6f / 2f,
+                5 => 7f / 2f,
+                6 => 8f / 2f,
+                _ => 1,
+            };
         }
 
         public int GetStat(string stat)
         {
-            switch(stat)
+            return stat switch
             {
-                case "A":
-                    return AttackStage;
-                case "D":
-                    return DefenseStage;
-                case "SA":
-                    return SpecialAttackStage;
-                case "SD":
-                    return SpecialDefenseStage;
-                case "S":
-                    return SpeedStage;
-                case "ACC":
-                    return AccuracyStage;
-                case "EVAS":
-                    return EvasionStage;
-                default:
-                    return 0;
-            }
+                "A" => AttackStage,
+                "D" => DefenseStage,
+                "SA" => SpecialAttackStage,
+                "SD" => SpecialDefenseStage,
+                "S" => SpeedStage,
+                "ACC" => AccuracyStage,
+                "EVAS" => EvasionStage,
+                _ => 0,
+            };
         }
 
         public string AdjustTempStat(string stat, int adjustment)

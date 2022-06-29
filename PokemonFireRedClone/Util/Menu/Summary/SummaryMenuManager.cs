@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,25 +7,13 @@ namespace PokemonFireRedClone
     public class SummaryMenuManager
     {
 
-        SummaryPage currentPage;
-        bool isTransitioning;
-
-        void TransitionForward()
-        {
-
-        }
-
-        void TransitionBackward()
-        {
-
-        }
+        private SummaryPage currentPage;
+        private bool isTransitioning;
 
         public void LoadContent(CustomPokemon pokemon)
         {
             currentPage = new PokemonInfo(pokemon);
             currentPage.LoadContent();
-            
-
         }
 
         public void UnloadContent()
@@ -63,6 +50,16 @@ namespace PokemonFireRedClone
         public void Draw(SpriteBatch spriteBatch)
         {
             currentPage.Draw(spriteBatch);
+        }
+
+        private void TransitionForward()
+        {
+
+        }
+
+        private void TransitionBackward()
+        {
+
         }
     }
 }

@@ -1,21 +1,22 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 
 namespace PokemonFireRedClone
 {
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        RenderTarget2D renderTarget;
-        Rectangle sourceRect;
+
+        private readonly GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private RenderTarget2D renderTarget;
+        private Rectangle sourceRect;
+
         //For the eventual multiple options of scaling the window partially without full screen
         //int scaled
-        bool scaled;
+        private bool scaled;
+        private int defaultWidth, defaultHeight;
 
-        int defaultWidth, defaultHeight;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
