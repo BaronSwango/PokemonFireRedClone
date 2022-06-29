@@ -6,8 +6,6 @@ namespace PokemonFireRedClone
     public class PokemonMenuStarterInfoButton : PokemonMenuInfoButton
     {
 
-        bool spritePositioned;
-
         public PokemonMenuStarterInfoButton(CustomPokemon pokemon)
             : base(pokemon)
         {

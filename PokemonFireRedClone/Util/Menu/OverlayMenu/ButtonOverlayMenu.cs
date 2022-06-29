@@ -6,9 +6,9 @@ namespace PokemonFireRedClone
 {
     public class ButtonOverlayMenu : OverlayMenu
     {
-        bool InBattle
+        bool inBattle
         {
-            get { return ScreenManager.Instance.PreviousScreen is BattleScreen; }
+            get { return BattleLogic.Battle != null && BattleLogic.Battle.InBattle; }
             set { }
         }
 
@@ -16,8 +16,8 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            string path = SelectedIndex == 0 && InBattle ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
-            if (InBattle)
+            string path = SelectedIndex == 0 && inBattle ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
+            if (inBattle)
             {
                 if (Background.IsLoaded)
                    Background.ReloadTexture(path);
@@ -31,7 +31,7 @@ namespace PokemonFireRedClone
 
             base.LoadContent();
 
-            if (SelectedIndex == 0 && InBattle)
+            if (SelectedIndex == 0 && inBattle)
                 itemNumber = 1;
         }
 
@@ -50,27 +50,24 @@ namespace PokemonFireRedClone
                     switch (itemNumber)
                     {
                         case 0:
-                            if (InBattle)
+                            if (inBattle)
                             {
                                 BattleLogic.PlayerShift = true;
                                 ScreenManager.Instance.ChangeScreens("BattleScreen");
                             } else
-                            {
                                 ScreenManager.Instance.ChangeScreens("SummaryScreen");
-                            }
+                            
                             break;
                         case 1:
-                            if (InBattle)
-                            {
-
-                            }
+                            if (inBattle)
+                                ScreenManager.Instance.ChangeScreens("SummaryScreen");
                             else
                             {
 
                             }
                             break;
                         case 2:
-                            if (InBattle)
+                            if (inBattle)
                                 UnloadContent();
                             else
                             {
@@ -85,7 +82,7 @@ namespace PokemonFireRedClone
                     }
                 }
 
-                int smallestIndex = SelectedIndex == 0 && InBattle ? 1 : 0;
+                int smallestIndex = SelectedIndex == 0 && inBattle ? 1 : 0;
                 if (itemNumber < smallestIndex)
                     itemNumber = Items.Count - 1;
                 else if (itemNumber > Items.Count - 1)
@@ -108,7 +105,7 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (SelectedIndex == 0 && InBattle && IsOpen)
+            if (SelectedIndex == 0 && inBattle && IsOpen)
             {
                 Background.Draw(spriteBatch);
                 Arrow.Draw(spriteBatch);

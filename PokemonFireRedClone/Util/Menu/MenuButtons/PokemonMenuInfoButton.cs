@@ -23,6 +23,7 @@ namespace PokemonFireRedClone
 
         protected float counter;
         protected bool bounce;
+        protected bool spritePositioned;
 
         public Image BackgroundInUse
         {
@@ -96,7 +97,11 @@ namespace PokemonFireRedClone
             pokemonAssets.MaxHP.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 21 - pokemonAssets.MaxHP.SourceRect.Width, pokemonAssets.Level.Position.Y));
             pokemonAssets.CurrentHP.SetPosition(new Vector2(BackgroundInUse.Position.X + BackgroundInUse.SourceRect.Width - 101 - pokemonAssets.CurrentHP.SourceRect.Width, pokemonAssets.Level.Position.Y));
             pokemonAssets.HPBar.Position = new Vector2(BackgroundInUse.Position.X + 384 - ((1 - pokemonAssets.HPBar.Scale.X) / 2 * pokemonAssets.HPBar.SourceRect.Width), BackgroundInUse.Position.Y + 36);
-
+            if (!spritePositioned)
+            {
+                menuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (menuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 48 - (menuSprite.SourceRect.Height / 2));
+                spritePositioned = true;
+            }
             if (State == ButtonState.SELECTED)
             {
                 menuSprite.IsActive = false;

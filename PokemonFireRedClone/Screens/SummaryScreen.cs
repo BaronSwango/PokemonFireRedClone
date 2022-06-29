@@ -17,8 +17,9 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             base.LoadContent();
-            menuManager.LoadContent(Player.PlayerJsonObject.PokemonInBag[PokemonMenu.SelectedIndex]);
-
+            CustomPokemon pokemon = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonMenu[PokemonMenu.SelectedIndex]
+                : Player.PlayerJsonObject.PokemonInBag[PokemonMenu.SelectedIndex];
+            menuManager.LoadContent(pokemon);
         }
 
         public override void UnloadContent()

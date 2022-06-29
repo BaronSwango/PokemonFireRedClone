@@ -24,24 +24,6 @@ namespace PokemonFireRedClone
         List<PokemonMenuInfoButton> buttons;
         int prevItemNumber;
 
-        bool inBattle
-        {
-            get { return ScreenManager.Instance.PreviousScreen is BattleScreen; }
-            set { }
-        }
-
-        protected override void AlignMenuItems()
-        {
-            if (ScreenManager.Instance.CurrentScreen is GameplayScreen screen)
-            {
-                Vector2 playerPos = screen.player.Image.Position;
-
-                Background.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 32,
-                    playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 40);
-                Position = new Vector2(Background.Position.X, Background.Position.Y + 2);
-            }
-        }
-
         void AlignMenuItems(GameTime gameTime)
         {
 
@@ -63,6 +45,8 @@ namespace PokemonFireRedClone
             CancelSelected.Position = new Vector2(CancelUnselected.Position.X, CancelUnselected.Position.Y - 8);
             foreach (Image text in Text)
                 text.Position = new Vector2(Background.Position.X + 92, CancelUnselected.Position.Y + CancelUnselected.SourceRect.Height / 2 - Text[0].SourceRect.Height / 2);
+            if (ScreenManager.Instance.PreviousScreen is SummaryScreen && !positioned)
+                openButtonBenu();
             positioned = true;
         }
 
@@ -75,7 +59,7 @@ namespace PokemonFireRedClone
             buttons = new List<PokemonMenuInfoButton>();
             Background.LoadContent();
 
-            List<CustomPokemon> menuList = inBattle ? BattleLogic.Battle.BattlePokemonMenu : Player.PlayerJsonObject.PokemonInBag;
+            List<CustomPokemon> menuList = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonMenu : Player.PlayerJsonObject.PokemonInBag;
 
             buttons.Add(new PokemonMenuStarterInfoButton(menuList[0]));
             for (int i = 1; i < Player.PlayerJsonObject.PokemonInBag.Count; i++)
@@ -96,6 +80,9 @@ namespace PokemonFireRedClone
                 i.LoadContent();
 
             base.LoadContent();
+
+            if (ScreenManager.Instance.PreviousScreen is SummaryScreen)
+                ItemNumber = SelectedIndex;
         }
 
         public override void UnloadContent()
@@ -138,13 +125,8 @@ namespace PokemonFireRedClone
                 else if (InputManager.Instance.KeyPressed(Keys.E))
                 {
                     if (ItemNumber < Items.Count - 1)
-                    {
-                        ButtonMenu.SelectedIndex = ItemNumber;
-                        ButtonMenu.LoadContent();
-                        ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
-                            Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));
-                        BaseMenu = false;
-                    }
+                        openButtonBenu();
+                    
                 }
 
                 if (ItemNumber < 0)
@@ -193,5 +175,15 @@ namespace PokemonFireRedClone
                     Text[0].Draw(spriteBatch);
             }
         }
+
+        void openButtonBenu()
+        {
+            ButtonMenu.SelectedIndex = ItemNumber;
+            ButtonMenu.LoadContent();
+            ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
+                Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));
+            BaseMenu = false;
+        }
+
     }
 }
