@@ -299,6 +299,17 @@ namespace PokemonFireRedClone
             TransitionRect2.LoadContent();
         }
 
+        public override void UnloadContent()
+        {
+            Border.UnloadContent();
+            Arrow.UnloadContent();
+            foreach (Image image in CurrentDialogue)
+                image.UnloadContent();
+
+            TransitionRect.UnloadContent();
+            TransitionRect2.UnloadContent();
+        }
+
         public override void Update(GameTime gameTime)
         {
             Transition(gameTime);

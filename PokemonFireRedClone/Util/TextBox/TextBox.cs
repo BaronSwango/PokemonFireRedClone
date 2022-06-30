@@ -217,7 +217,7 @@ namespace PokemonFireRedClone
             //END TRANSITION
         }
 
-        public void UnloadContent()
+        public virtual void UnloadContent()
         {
             IsDisplayed = false;
             Border.UnloadContent();

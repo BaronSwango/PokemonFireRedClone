@@ -13,6 +13,7 @@ namespace PokemonFireRedClone
 
         private readonly XmlManager<GameScreen> xmlGameScreenManager;
         private GameScreen newScreen;
+        private float counter;
         private static ScreenManager instance;
 
         public Vector2 Dimensions;
@@ -101,6 +102,16 @@ namespace PokemonFireRedClone
                 Image.Update(gameTime);
                 if (Image.Alpha == 1.0f)
                 {
+                    counter = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? counter + (float) gameTime.ElapsedGameTime.TotalMilliseconds : 500;
+                    if (counter < 500)
+                    {
+                        Image.IsActive = false;
+                        return;
+                    }
+
+                    if (!Image.IsActive)
+                        Image.IsActive = true;
+
                     CurrentScreen.UnloadContent();
                     PreviousScreen = CurrentScreen;
                     CurrentScreen = newScreen;
@@ -116,6 +127,8 @@ namespace PokemonFireRedClone
                     }
                     else
                         Image.Position = Vector2.Zero;
+
+                    counter = 0;
                 }
                 else if (Image.Alpha == 0.0f)
                 {
@@ -142,7 +155,7 @@ namespace PokemonFireRedClone
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
             IsTransitioning = true;
-            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 4f : 1;
+            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 3.5f : 1;
         }
 
     }

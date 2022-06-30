@@ -48,19 +48,20 @@ namespace PokemonFireRedClone
             pokedexNum.SetPosition(new Vector2(668,80));
             pokemonName.LoadContent();
             pokemonName.SetPosition(new Vector2(pokedexNum.Position.X, pokedexNum.Position.Y + pokedexNum.SourceRect.Height));
-
+            int dimensionX = 0;
             foreach (Image image in types)
             {
                 image.LoadContent();
-                image.Position = new Vector2(pokemonName.Position.X, pokemonName.Position.Y + pokemonName.SourceRect.Height + 12);
+                image.Position = new Vector2(pokemonName.Position.X + dimensionX, pokemonName.Position.Y + pokemonName.SourceRect.Height + 12);
+                dimensionX += image.SourceRect.Width + 16;
             }
-
             playerName.LoadContent();
             playerName.SetPosition(new Vector2(types[0].Position.X, types[0].Position.Y + types[0].SourceRect.Height + 4));
             trainerID.LoadContent();
             trainerID.SetPosition(new Vector2(playerName.Position.X, playerName.Position.Y + pokemonName.SourceRect.Height + 4));
             heldItem.LoadContent();
             heldItem.SetPosition(new Vector2(trainerID.Position.X, trainerID.Position.Y + trainerID.SourceRect.Height + 4));
+
             nature.LoadContent();
             nature.SetPosition(new Vector2(32, 520));
             meeting.LoadContent();
