@@ -14,6 +14,7 @@ namespace PokemonFireRedClone
         
         public CustomPokemon Pokemon;
 
+
         public SummaryPage(CustomPokemon pokemon)
         {
             Pokemon = pokemon;

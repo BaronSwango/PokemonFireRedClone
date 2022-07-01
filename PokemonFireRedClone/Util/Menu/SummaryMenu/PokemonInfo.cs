@@ -7,14 +7,9 @@ namespace PokemonFireRedClone
     public class PokemonInfo : SummaryPage
     {
 
-        private readonly PokemonText pokedexNum;
-        private readonly PokemonText pokemonName;
+        private readonly PokemonText pokedexNum,
+            pokemonName, playerName, trainerID, heldItem, nature, meeting;
         private readonly List<Image> types;
-        private readonly PokemonText playerName;
-        private readonly PokemonText trainerID;
-        private readonly PokemonText heldItem;
-        private readonly PokemonText nature;
-        private readonly PokemonText meeting;
 
         public PokemonInfo(CustomPokemon pokemon)
             : base(pokemon)
