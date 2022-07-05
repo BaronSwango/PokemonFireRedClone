@@ -8,7 +8,87 @@
         <Arrow>
             <Path>Menus/MenuArrow</Path>
         </Arrow>
+        <Items>
+            <PokemonText>
+                <Image>
+                    <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                    <R>113</R>
+                    <G>113</G>
+                    <B>113</B>
+                    <A>255</A>
+                    <Text>SUMMARY</Text>
+                </Image>
+                <R>218</R>
+                <G>218</G>
+                <B>212</B>
+            </PokemonText>
+        </Items>
+        <Items>
+            <PokemonText>
+                <Image>
+                    <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                    <R>113</R>
+                    <G>113</G>
+                    <B>113</B>
+                    <A>255</A>
+                    <Text>SWITCH</Text>
+                </Image>
+                <R>218</R>
+                <G>218</G>
+                <B>212</B>
+            </PokemonText>
+        </Items>
+        <Items>
+            <PokemonText>
+                <Image>
+                    <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                    <R>113</R>
+                    <G>113</G>
+                    <B>113</B>
+                    <A>255</A>
+                    <Text>ITEM</Text>
+                </Image>
+                <R>218</R>
+                <G>218</G>
+                <B>212</B>
+            </PokemonText>
+        </Items>
+        <Items>
+            <PokemonText>
+                <Image>
+                    <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                    <R>113</R>
+                    <G>113</G>
+                    <B>113</B>
+                    <A>255</A>
+                    <Text>CANCEL</Text>
+                </Image>
+                <R>218</R>
+                <G>218</G>
+                <B>212</B>
+            </PokemonText>
+        </Items>
+    </ButtonMenu>
 
+    <Background>
+        <Path>Menus/PokemonMenu/PokemonMenuBackground</Path>
+    </Background>
+
+    <CancelUnselected>
+        <Path>Menus/PokemonMenu/PokemonMenuCancelButton</Path>
+    </CancelUnselected>
+    <CancelSelected>
+        <Path>Menus/PokemonMenu/PokemonMenuCancelButtonSelected</Path>
+    </CancelSelected>
+
+    <Text>
+        <Path>Menus/PokemonMenu/ChooseAPokemon</Path>
+    </Text>
+    <Text>
+        <Path>Menus/PokemonMenu/DoWhatWithThisPokemon</Path>
+    </Text>
+</PokemonMenu>
+<!--
         <Items>
             <Image>
                 <FontName>Fonts/PokemonFireRedDialogue</FontName>
@@ -49,24 +129,4 @@
                 <Text>CANCEL</Text>
             </Image>
         </Items>
-
-    </ButtonMenu>
-
-    <Background>
-        <Path>Menus/PokemonMenu/PokemonMenuBackground</Path>
-    </Background>
-
-    <CancelUnselected>
-        <Path>Menus/PokemonMenu/PokemonMenuCancelButton</Path>
-    </CancelUnselected>
-    <CancelSelected>
-        <Path>Menus/PokemonMenu/PokemonMenuCancelButtonSelected</Path>
-    </CancelSelected>
-
-    <Text>
-        <Path>Menus/PokemonMenu/ChooseAPokemon</Path>
-    </Text>
-    <Text>
-        <Path>Menus/PokemonMenu/DoWhatWithThisPokemon</Path>
-    </Text>
-</PokemonMenu>
+        -->

@@ -31,16 +31,16 @@ namespace PokemonFireRedClone
                     {
 
                         Page = NextPage;
-                        foreach (TextBoxImage image in CurrentDialogue)
+                        foreach (TextBoxText image in CurrentDialogue)
                             image.UnloadContent();
                         CurrentDialogue.Clear();
-                        foreach (TextBoxImage image in Dialogue)
+                        foreach (TextBoxText image in Dialogue)
                         {
                             if (image.Page == Page)
                                 CurrentDialogue.Add(image);
                         }
                         
-                        foreach (TextBoxImage image in CurrentDialogue)
+                        foreach (TextBoxText image in CurrentDialogue)
                         {
                             switch (Page)
                             {
@@ -113,7 +113,7 @@ namespace PokemonFireRedClone
                                         image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   grew   to";
 
                                     else if (CurrentDialogue[1] == image)
-                                        image.Text = "LV.   " + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]+ " !";
+                                        image.Text = "LV.   " + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]+ " !";
                                     break;
                                 case 18:
                                     if (CurrentDialogue[0] == image)
@@ -172,22 +172,22 @@ namespace PokemonFireRedClone
                                     break;
                             }
 
-                            if (image.EffectList.Count == 0)
+                            if (!image.IsLoaded)
                                 image.LoadContent();
                             else
                                 image.ReloadText();
                         }
 
-                        CurrentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
+                        CurrentDialogue[0].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY));
 
-                        TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].SourceRect.Height);
+                        TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width+4, CurrentDialogue[0].SourceRect.Height+4);
                         TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
 
                         if (CurrentDialogue.Count == 2)
                         {
-                            CurrentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 64);
+                            CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 64));
 
-                            TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].SourceRect.Height);
+                            TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width+4, CurrentDialogue[1].SourceRect.Height+4);
                             TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                         }
                     }
@@ -223,7 +223,7 @@ namespace PokemonFireRedClone
                 UpdateDialogue = true;
             } else
             {
-                foreach (TextBoxImage image in CurrentDialogue)
+                foreach (TextBoxText image in CurrentDialogue)
                 {
                     if (!image.Skippable && !image.Arrow)
                     {
@@ -258,7 +258,7 @@ namespace PokemonFireRedClone
             Border.Position = new Vector2(ScreenManager.Instance.Dimensions.X - Border.SourceRect.Width, ScreenManager.Instance.Dimensions.Y - Border.SourceRect.Height);
 
 
-            foreach (TextBoxImage image in Dialogue)
+            foreach (TextBoxText image in Dialogue)
             {
                 if (image.Page == 1)
                 {
@@ -280,7 +280,7 @@ namespace PokemonFireRedClone
 
             }
 
-            CurrentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
+            CurrentDialogue[0].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY));
 
             SetArrowPosition();
 
@@ -289,7 +289,7 @@ namespace PokemonFireRedClone
                 Path = "TextBoxes/TextBoxEffectPixelBattle"
             };
             TransitionRect.LoadContent();
-            TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].SourceRect.Height);
+            TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width+4, CurrentDialogue[0].SourceRect.Height+4);
             TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
 
             TransitionRect2 = new Image
@@ -303,7 +303,7 @@ namespace PokemonFireRedClone
         {
             Border.UnloadContent();
             Arrow.UnloadContent();
-            foreach (Image image in CurrentDialogue)
+            foreach (TextBoxText image in CurrentDialogue)
                 image.UnloadContent();
 
             TransitionRect.UnloadContent();
@@ -335,7 +335,7 @@ namespace PokemonFireRedClone
                         ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
                         break;
                     case 17:
-                        BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]));
+                        BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]));
                         break;
                     case 21:
                         ScreenManager.Instance.BattleScreen.MenuManager.LoadContent("Load/Menus/MoveMenu.xml");
@@ -364,7 +364,7 @@ namespace PokemonFireRedClone
         {
             Border.Draw(spriteBatch);
 
-            foreach (TextBoxImage image in CurrentDialogue)
+            foreach (TextBoxText image in CurrentDialogue)
             {
                 image.Draw(spriteBatch);
                 if (image.Arrow && !IsTransitioning)
@@ -385,7 +385,7 @@ namespace PokemonFireRedClone
 
         private void SetArrowPosition()
         {
-            foreach (TextBoxImage image in CurrentDialogue)
+            foreach (TextBoxText image in CurrentDialogue)
             {
                 if (image.Arrow && Arrow.Position.X != image.Position.X + image.SourceRect.Width + 8)
                 {

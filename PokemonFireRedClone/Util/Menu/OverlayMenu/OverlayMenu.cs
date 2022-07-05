@@ -25,8 +25,8 @@ namespace PokemonFireRedClone
 
             for (int i = Items.Count - 1; i >= 0; i--)
             {
-                Items[i].Image.Position = new Vector2(Background.Position.X + 60, dimensionY);
-                dimensionY -= Items[i].Image.SourceRect.Height + 8;
+                Items[i].PokemonText.SetPosition(new Vector2(Background.Position.X + 60, dimensionY));
+                dimensionY -= Items[i].PokemonText.SourceRect.Height + 8;
             }
         }
 
@@ -38,7 +38,7 @@ namespace PokemonFireRedClone
                 Arrow.LoadContent();
 
                 foreach (MenuItem i in Items)
-                    i.Image.LoadContent();
+                    i.PokemonText.LoadContent();
             }
 
             ItemNumber = 0;
@@ -51,7 +51,7 @@ namespace PokemonFireRedClone
             Arrow.UnloadContent();
 
             foreach (MenuItem i in Items)
-                i.Image.UnloadContent();
+                i.PokemonText.UnloadContent();
 
             IsOpen = false;
         }
@@ -63,7 +63,7 @@ namespace PokemonFireRedClone
                 Background.Draw(spriteBatch);
                 Arrow.Draw(spriteBatch);
                 foreach (MenuItem i in Items)
-                    i.Image.Draw(spriteBatch);
+                    i.PokemonText.Draw(spriteBatch);
             }
         }
 

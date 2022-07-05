@@ -16,14 +16,12 @@ namespace PokemonFireRedClone
         private double exitCounter;
 
         public Image InfoTitlesBackground;
-        public Image SaveRegion;
+        public PokemonText SaveRegion;
         [XmlElement("Info")]
-        public List<Image> InfoTitles;
+        public List<PokemonText> InfoTitles;
         public Image MenuBackground;
         public Image Arrow;
         public TextBox SaveDialogue;
-
-
 
         /* InfoTitles:
          * In front of InfoTitlesBackground:
@@ -65,23 +63,23 @@ namespace PokemonFireRedClone
             InfoTitlesBackground.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 40,
                 playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 52);
 
-            SaveRegion.Position = new Vector2(InfoTitlesBackground.Position.X + 116, InfoTitlesBackground.Position.Y + 20);
+            SaveRegion.SetPosition(new Vector2(InfoTitlesBackground.Position.X + 116, InfoTitlesBackground.Position.Y + 20));
 
-            InfoTitles[0].Position = new Vector2(InfoTitlesBackground.Position.X + 264, InfoTitlesBackground.Position.Y + 76);
-            InfoTitles[1].Position = new Vector2(InfoTitles[0].Position.X, InfoTitles[0].Position.Y + 76);
+            InfoTitles[0].SetPosition(new Vector2(InfoTitlesBackground.Position.X + 264, InfoTitlesBackground.Position.Y + 76));
+            InfoTitles[1].SetPosition(new Vector2(InfoTitles[0].Position.X, InfoTitles[0].Position.Y + 76));
             for (int i = 2; i < InfoTitles.Count; i++)
             {
-                InfoTitles[i].Position = new Vector2(InfoTitles[0].Position.X, InfoTitles[i-1].Position.Y + 56);
+                InfoTitles[i].SetPosition(new Vector2(InfoTitles[0].Position.X, InfoTitles[i-1].Position.Y + 56));
             }
 
             MenuBackground.Position = new Vector2(playerPos.X + 200, playerPos.Y + 20);
 
             foreach (MenuItem item in Items)
             {
-                item.Image.Position = new Vector2(MenuBackground.Position.X + 60, MenuBackground.Position.Y + dimensions.Y + 32);
+                item.PokemonText.SetPosition(new Vector2(MenuBackground.Position.X + 60, MenuBackground.Position.Y + dimensions.Y + 32));
 
-                dimensions += new Vector2(item.Image.SourceRect.Width,
-                    item.Image.SourceRect.Height);
+                dimensions += new Vector2(item.PokemonText.SourceRect.Width,
+                    item.PokemonText.SourceRect.Height);
             }
 
         }
@@ -98,18 +96,18 @@ namespace PokemonFireRedClone
             MenuBackground.LoadContent();
 
             Player player = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player;
-            SaveDialogue.Dialogue[3].Text = Player.PlayerJsonObject.Name + "   saved   the   game.";
+            SaveDialogue.Dialogue[3].Image.Text = Player.PlayerJsonObject.Name + "   saved   the   game.";
             SaveDialogue.LoadContent(ref player);
 
             // format time to include days to hours
             var tsTime = TimeSpan.FromHours(Player.PlayerJsonObject.Time + Player.ElapsedTime);
 
-            InfoTitles[0].Text = Player.PlayerJsonObject.Name;
-            InfoTitles[1].Text = Player.PlayerJsonObject.Badges.ToString();
-            InfoTitles[2].Text = Player.PlayerJsonObject.Pokedex.ToString();
-            InfoTitles[3].Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
+            InfoTitles[0].Image.Text = Player.PlayerJsonObject.Name;
+            InfoTitles[1].Image.Text = Player.PlayerJsonObject.Badges.ToString();
+            InfoTitles[2].Image.Text = Player.PlayerJsonObject.Pokedex.ToString();
+            InfoTitles[3].Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
 
-            foreach (Image image in InfoTitles)
+            foreach (PokemonText image in InfoTitles)
                 image.LoadContent();
 
             base.LoadContent();
@@ -120,7 +118,7 @@ namespace PokemonFireRedClone
             InfoTitlesBackground.UnloadContent();
             SaveRegion.UnloadContent();
             Arrow.UnloadContent();
-            foreach (Image image in InfoTitles)
+            foreach (PokemonText image in InfoTitles)
                 image.UnloadContent();
             MenuBackground.UnloadContent();
             SaveDialogue.UnloadContent(ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
@@ -158,12 +156,12 @@ namespace PokemonFireRedClone
                 {
                     if (i == ItemNumber)
                     {
-                        Items[i].Image.IsActive = true;
-                        Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width,
-                            Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4) - 2);
+                        Items[i].PokemonText.Image.IsActive = true;
+                        Arrow.Position = new Vector2(Items[i].PokemonText.Position.X - Arrow.SourceRect.Width,
+                            Items[i].PokemonText.Position.Y + (Items[i].PokemonText.SourceRect.Height / 4) - 2);
                     }
                     else
-                        Items[i].Image.IsActive = false;
+                        Items[i].PokemonText.Image.IsActive = false;
 
                 }
                 base.Update(gameTime);
@@ -175,7 +173,7 @@ namespace PokemonFireRedClone
             SaveDialogue.Draw(spriteBatch);
             InfoTitlesBackground.Draw(spriteBatch);
             SaveRegion.Draw(spriteBatch);
-            foreach (Image image in InfoTitles)
+            foreach (PokemonText image in InfoTitles)
                 image.Draw(spriteBatch);
             
             if (!SaveDialogue.IsTransitioning && !exited)

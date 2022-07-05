@@ -26,10 +26,10 @@ namespace PokemonFireRedClone
 
             ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha = 0;
 
-            ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.UpdateText("Lv" + (int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]) + 1).ToString());
+            ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.UpdateText("Lv" + (int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]) + 1).ToString());
 
-            int level = int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Text.Text[2..]);
-            int newCurrentHP = int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.CurrentHP.Text.Text) + (PokemonManager.Instance.StatsOfLevel(BattleLogic.Battle.PlayerPokemon.Pokemon, level).HP - PokemonManager.Instance.StatsOfLevel(BattleLogic.Battle.PlayerPokemon.Pokemon, level - 1).HP);
+            int level = int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]);
+            int newCurrentHP = int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.CurrentHP.Image.Text) + (PokemonManager.Instance.StatsOfLevel(BattleLogic.Battle.PlayerPokemon.Pokemon, level).HP - PokemonManager.Instance.StatsOfLevel(BattleLogic.Battle.PlayerPokemon.Pokemon, level - 1).HP);
             ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.CurrentHP.UpdateText(newCurrentHP.ToString());
             ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.MaxHP.UpdateText(PokemonManager.Instance.StatsOfLevel(BattleLogic.Battle.PlayerPokemon.Pokemon, level).HP.ToString());
 

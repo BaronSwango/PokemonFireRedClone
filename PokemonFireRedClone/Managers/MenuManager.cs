@@ -34,8 +34,15 @@ namespace PokemonFireRedClone
 
             foreach (MenuItem item in Menu.Items)
             {
-                item.Image.StoreEffects();
-                item.Image.ActivateEffect("FadeEffect");
+                if (item.Image != null)
+                {
+                    item.Image.StoreEffects();
+                    item.Image.ActivateEffect("FadeEffect");
+                } else if (item.PokemonText != null)
+                {
+                    item.PokemonText.StoreEffects();
+                    item.PokemonText.ActivateEffect("FadeEffect");
+                }
             }
 
 
@@ -59,7 +66,12 @@ namespace PokemonFireRedClone
             if (!ScreenManager.Instance.IsTransitioning)
             {
                 foreach (MenuItem item in Menu.Items)
-                    item.Image.RestoreEffects();
+                {
+                    if (item.Image != null)
+                        item.Image.RestoreEffects();
+                    else if (item.PokemonText != null)
+                        item.PokemonText.RestoreEffects();
+                }
             }
 
             Menu.Update(gameTime);
@@ -93,14 +105,14 @@ namespace PokemonFireRedClone
                         ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
                         break;
                     case "Move":
-                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames[MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].Image.Text).Name] == 0)
+                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames[MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].PokemonText.Image.Text).Name] == 0)
                         {
                             ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 21;
                             ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;
                         }
                         else
                         {
-                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveOption = MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].Image.Text);
+                            ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveOption = MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].PokemonText.Image.Text);
 
                             ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleAssets.Reset();
                             ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.PlayerMoveUsed = true;

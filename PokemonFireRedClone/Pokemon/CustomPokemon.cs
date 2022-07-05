@@ -38,8 +38,11 @@ namespace PokemonFireRedClone
 
             get
             {
-                foreach (string name in MoveNames.Keys)
-                    moves.Add(MoveManager.Instance.GetMove(name), MoveNames[name]);
+                if (moves.Count == 0)
+                {
+                    foreach (string name in MoveNames.Keys)
+                        moves.Add(MoveManager.Instance.GetMove(name), MoveNames[name]);
+                }
                 return moves;
             }
             private set

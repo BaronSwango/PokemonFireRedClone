@@ -63,9 +63,18 @@ namespace PokemonFireRedClone
             string[] split = Effects.Split(':');
             foreach (MenuItem item in Items)
             {
-                item.Image.LoadContent();
-                foreach (string s in split)
-                    item.Image.ActivateEffect(s);
+                if (item.Image != null)
+                {
+                    item.Image.LoadContent();
+                    foreach (string s in split)
+                        item.Image.ActivateEffect(s);
+                }
+                else if (item.PokemonText != null)
+                {
+                    item.PokemonText.LoadContent();
+                    foreach (string s in split)
+                        item.PokemonText.ActivateEffect(s);
+                }
             }
             AlignMenuItems();
         }
@@ -73,20 +82,36 @@ namespace PokemonFireRedClone
         public virtual void UnloadContent()
         {
             foreach (MenuItem item in Items)
-                item.Image.UnloadContent();
+            {
+                if (item.Image != null)
+                    item.Image.UnloadContent();
+                else if (item.PokemonText != null)
+                    item.PokemonText.UnloadContent();
+            }
         }
 
         public virtual void Update(GameTime gameTime)
         {
             foreach (MenuItem item in Items)
-                item.Image.Update(gameTime);
+            {
+                if (item.Image != null)
+                    item.Image.Update(gameTime);
+                else if (item.PokemonText != null)
+                    item.PokemonText.Update(gameTime);
+            }
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             foreach (MenuItem item in Items)
-                item.Image.Draw(spriteBatch);
+            {
+                if (item.Image != null)
+                    item.Image.Draw(spriteBatch);
+                else if (item.PokemonText != null)
+                    item.PokemonText.Draw(spriteBatch);
+            }
         }
 
     }
 }
+

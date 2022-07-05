@@ -18,12 +18,12 @@ namespace PokemonFireRedClone
 
         protected Image TransitionRect;
         protected Image TransitionRect2;
-        protected List<TextBoxImage> CurrentDialogue;
+        protected List<TextBoxText> CurrentDialogue;
         protected float ArrowOriginalY;
 
         public string Type;
         [XmlElement("Dialogue")]
-        public List<TextBoxImage> Dialogue;
+        public List<TextBoxText> Dialogue;
         public string ID;
         [XmlIgnore]
         public int Page;
@@ -45,8 +45,8 @@ namespace PokemonFireRedClone
 
         public TextBox()
         {
-            Dialogue = new List<TextBoxImage>();
-            CurrentDialogue = new List<TextBoxImage>();
+            Dialogue = new List<TextBoxText>();
+            CurrentDialogue = new List<TextBoxText>();
             Page = 1;
             Menu = false;
         }
@@ -64,20 +64,20 @@ namespace PokemonFireRedClone
                             Arrow.IsActive = false;
                         Page++;
                         CurrentDialogue.Clear();
-                        foreach (TextBoxImage image in Dialogue)
+                        foreach (TextBoxText image in Dialogue)
                         {
                             if (image.Page == Page)
                                 CurrentDialogue.Add(image);
                         }
 
-                        CurrentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
+                        CurrentDialogue[0].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY));
 
-                        TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].SourceRect.Height);
+                        TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width+4, CurrentDialogue[0].SourceRect.Height+4);
                         TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
 
                         if (CurrentDialogue.Count == 2)
                         {
-                            CurrentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
+                            CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60));
 
                             if (TransitionRect2 == null)
                             {
@@ -87,7 +87,7 @@ namespace PokemonFireRedClone
                                 };
                                 TransitionRect2.LoadContent();
                             }
-                            TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].SourceRect.Height);
+                            TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width+4, CurrentDialogue[1].SourceRect.Height+4);
                             TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                         }
                     }
@@ -161,7 +161,7 @@ namespace PokemonFireRedClone
             Border.LoadContent();
             Border.Position = new Vector2(player.Image.Position.X - (ScreenManager.Instance.Dimensions.X -
                 Border.SourceRect.Width) - 64, player.Image.Position.Y + positionOffset);
-            foreach (Image image in Dialogue)
+            foreach (TextBoxText image in Dialogue)
             {
                 if (Type == "TilePlayer")
                     image.Text = Player.PlayerJsonObject.Name + "`s   house";
@@ -171,7 +171,7 @@ namespace PokemonFireRedClone
 
             }
 
-            foreach (TextBoxImage image in Dialogue)
+            foreach (TextBoxText image in Dialogue)
             {
                 if (image.Page == 1)
                     CurrentDialogue.Add(image);
@@ -179,7 +179,7 @@ namespace PokemonFireRedClone
 
 
 
-            CurrentDialogue[0].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY);
+            CurrentDialogue[0].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY));
 
             //TRANSITION
             if (CurrentDialogue.Count >= 1)
@@ -189,7 +189,7 @@ namespace PokemonFireRedClone
                     Path = "TextBoxes/TextBoxEffectPixel"
                 };
                 TransitionRect.LoadContent();
-                TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].SourceRect.Height);
+                TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width+4, CurrentDialogue[0].SourceRect.Height+4);
                 TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
                 if (TotalPages > 1 && !Menu)
                 {
@@ -199,13 +199,13 @@ namespace PokemonFireRedClone
             }
             if (CurrentDialogue.Count == 2)
             {
-                CurrentDialogue[1].Position = new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60);
+                CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60));
                 TransitionRect2 = new Image
                 {
                     Path = "TextBoxes/TextBoxEffectPixel"
                 };
                 TransitionRect2.LoadContent();
-                TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].SourceRect.Height);
+                TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width+4, CurrentDialogue[1].SourceRect.Height+4);
                 TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                 if (TotalPages > 1 && !Menu)
                 {
@@ -221,7 +221,7 @@ namespace PokemonFireRedClone
         {
             IsDisplayed = false;
             Border.UnloadContent();
-            foreach (Image image in Dialogue)
+            foreach (PokemonText image in Dialogue)
                 image.UnloadContent();
 
             if (TotalPages > 1 && !Menu)
@@ -243,7 +243,7 @@ namespace PokemonFireRedClone
             if (IsDisplayed)
             {
                 Border.Update(gameTime);
-                foreach (Image image in Dialogue)
+                foreach (PokemonText image in Dialogue)
                     image.Update(gameTime);
 
 
@@ -258,7 +258,7 @@ namespace PokemonFireRedClone
             if (IsDisplayed)
             {
                 Border.Draw(spriteBatch);
-                foreach (TextBoxImage image in CurrentDialogue)
+                foreach (TextBoxText image in CurrentDialogue)
                 {
                     image.Draw(spriteBatch);
                 }

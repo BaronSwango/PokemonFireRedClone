@@ -22,8 +22,8 @@ namespace PokemonFireRedClone
                    Background.ReloadTexture(path);
                 else
                     Background.Path = path;
-                Items[1].Image.Text = Items[0].Image.Text;
-                Items[0].Image.Text = "SHIFT";
+                Items[1].PokemonText.Image.Text = Items[0].PokemonText.Image.Text;
+                Items[0].PokemonText.Image.Text = "SHIFT";
                 for (int i = 2; i < Items.Count - 1; i++)
                     Items.RemoveAt(i);
             }
@@ -91,12 +91,12 @@ namespace PokemonFireRedClone
                 {
                     if (i == ItemNumber)
                     {
-                        Items[i].Image.IsActive = true;
-                        Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width,
-                            Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4) - 2);
+                        Items[i].PokemonText.Image.IsActive = true;
+                        Arrow.Position = new Vector2(Items[i].PokemonText.Position.X - Arrow.SourceRect.Width,
+                            Items[i].PokemonText.Position.Y + (Items[i].PokemonText.SourceRect.Height / 4) - 2);
                     }
                     else
-                        Items[i].Image.IsActive = false;
+                        Items[i].PokemonText.Image.IsActive = false;
 
                 }
             }
@@ -109,7 +109,7 @@ namespace PokemonFireRedClone
                 Background.Draw(spriteBatch);
                 Arrow.Draw(spriteBatch);
                 for (int i = 1; i < Items.Count; i++)
-                    Items[i].Image.Draw(spriteBatch);
+                    Items[i].PokemonText.Draw(spriteBatch);
             }
             else
                 base.Draw(spriteBatch);

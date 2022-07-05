@@ -10,45 +10,65 @@
         <LinkType>Menu</LinkType>
         <LinkID>Load/Menus/MoveMenu.xml</LinkID>
         <MenuName>MoveMenu</MenuName>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>89</R>
-            <G>89</G>
-            <B>89</B>
-            <A>255</A>
-            <Text>FIGHT</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>89</R>
+                <G>89</G>
+                <B>89</B>
+                <A>255</A>
+                <Text>FIGHT</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
         <LinkType>Screen</LinkType>
         <LinkID>PokemonScreen</LinkID>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>89</R>
-            <G>89</G>
-            <B>89</B>
-            <A>255</A>
-            <Text>POKéMON</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>89</R>
+                <G>89</G>
+                <B>89</B>
+                <A>255</A>
+                <Text>POKéMON</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>89</R>
-            <G>89</G>
-            <B>89</B>
-            <A>255</A>
-            <Text>BAG</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>89</R>
+                <G>89</G>
+                <B>89</B>
+                <A>255</A>
+                <Text>BAG</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>89</R>
-            <G>89</G>
-            <B>89</B>
-            <A>255</A>
-            <Text>RUN</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>89</R>
+                <G>89</G>
+                <B>89</B>
+                <A>255</A>
+                <Text>RUN</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
 </BattleMenu>

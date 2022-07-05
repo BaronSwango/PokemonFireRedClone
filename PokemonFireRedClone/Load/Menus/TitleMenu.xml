@@ -16,39 +16,59 @@
         </Image>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>75</R>
-            <G>145</G>
-            <B>247</B>
-            <A>255</A>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>75</R>
+                <G>145</G>
+                <B>247</B>
+                <A>255</A>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>75</R>
-            <G>145</G>
-            <B>247</B>
-            <A>255</A>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>75</R>
+                <G>145</G>
+                <B>247</B>
+                <A>255</A>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>75</R>
-            <G>145</G>
-            <B>247</B>
-            <A>255</A>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>75</R>
+                <G>145</G>
+                <B>247</B>
+                <A>255</A>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>75</R>
-            <G>145</G>
-            <B>247</B>
-            <A>255</A>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>75</R>
+                <G>145</G>
+                <B>247</B>
+                <A>255</A>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
 </TitleMenu>

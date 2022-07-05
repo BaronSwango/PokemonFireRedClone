@@ -18,10 +18,10 @@ namespace PokemonFireRedClone
             Background.Position = new Vector2(ScreenManager.Instance.Dimensions.X - Background.SourceRect.Width,
                 ScreenManager.Instance.Dimensions.Y - Background.SourceRect.Height);
 
-            Items[0].Image.Position = new Vector2(Background.Position.X + 64, Background.Position.Y + 36);
-            Items[1].Image.Position = new Vector2(Items[0].Image.Position.X, Items[0].Image.Position.Y + 64);
-            Items[2].Image.Position = new Vector2(Items[0].Image.Position.X + 224, Items[0].Image.Position.Y);
-            Items[3].Image.Position = new Vector2(Items[2].Image.Position.X, Items[1].Image.Position.Y);
+            Items[0].PokemonText.SetPosition(new Vector2(Background.Position.X + 64, Background.Position.Y + 36));
+            Items[1].PokemonText.SetPosition(new Vector2(Items[0].PokemonText.Position.X, Items[0].PokemonText.Position.Y + 64));
+            Items[2].PokemonText.SetPosition(new Vector2(Items[0].PokemonText.Position.X + 224, Items[0].PokemonText.Position.Y));
+            Items[3].PokemonText.SetPosition(new Vector2(Items[2].PokemonText.Position.X, Items[1].PokemonText.Position.Y));
 
         }
 
@@ -74,13 +74,13 @@ namespace PokemonFireRedClone
             {
                 if (i == ItemNumber)
                 {
-                    Items[i].Image.IsActive = true;
-                    Arrow.Position = new Vector2(Items[i].Image.Position.X - Arrow.SourceRect.Width - 4,
-                        Items[i].Image.Position.Y + (Items[i].Image.SourceRect.Height / 4) - 2);
+                    Items[i].PokemonText.Image.IsActive = true;
+                    Arrow.Position = new Vector2(Items[i].PokemonText.Position.X - Arrow.SourceRect.Width - 4,
+                        Items[i].PokemonText.Position.Y + (Items[i].PokemonText.SourceRect.Height / 4) - 2);
 
                 }
                 else
-                    Items[i].Image.IsActive = false;
+                    Items[i].PokemonText.Image.IsActive = false;
   
             }
         }

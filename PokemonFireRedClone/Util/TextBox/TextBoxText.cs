@@ -1,10 +1,11 @@
-﻿
+﻿using System;
 namespace PokemonFireRedClone
 {
-    public class TextBoxImage : Image
+    public class TextBoxText : PokemonText
     {
         public int Page;
         public bool Arrow;
         public bool Skippable;
+
     }
 }

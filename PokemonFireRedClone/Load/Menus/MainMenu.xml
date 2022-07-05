@@ -8,140 +8,210 @@
         <Path>Menus/MenuArrow</Path>
     </Arrow>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>POKéDEX</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
+        <Description>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>A   device   that   records   POKéMON   secrets   upon   meeting   or
+catching   them.</Text>
+            </Image>
             <R>113</R>
             <G>113</G>
             <B>113</B>
-            <A>255</A>
-            <Text>POKéDEX</Text>
-        </Image>
-        <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
-            <Text>A   device   that   records   POKéMON   secrets   upon   meeting   or
-catching   them.</Text>
         </Description>
     </Item>
     <Item>
         <LinkType>Screen</LinkType>
         <LinkID>PokemonScreen</LinkID>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>POKéMON</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>POKéMON</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
         <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
-            <Text>Check   and   organize   POKéMON   that   are   traveling   with
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>Check   and   organize   POKéMON   that   are   traveling   with
 you   in   your   party.</Text>
-        </Description>
-    </Item>
-    <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            </Image>
             <R>113</R>
             <G>113</G>
             <B>113</B>
-            <A>255</A>
-            <Text>BAG</Text>
-        </Image>
+        </Description>
+    </Item>
+    <Item>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>BAG</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
         <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
-            <Text>Equipped   with   pockets   for   storing   items   you   bought,
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>Equipped   with   pockets   for   storing   items   you   bought,
 received,   or   found.</Text>
-        </Description>
-    </Item>
-    <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            </Image>
             <R>113</R>
             <G>113</G>
             <B>113</B>
-            <A>255</A>
-            <Text>PlayerName</Text>
-        </Image>
+        </Description>
+    </Item>
+    <Item>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>PlayerName</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
         <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
             <Text>Check   your   money   and   other   game   data.</Text>
+            </Image>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
         </Description>
     </Item>
     <Item>
         <LinkType>Menu</LinkType>
         <LinkID>Load/Menus/SaveMenu.xml</LinkID>
         <MenuName>SaveMenu</MenuName>
-        <Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>SAVE</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
+        <Description>
+            <Image>
             <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>Save   your   game   with   a   complete   record   of   your
+progress   to   take   a   break.</Text>
+            </Image>
             <R>113</R>
             <G>113</G>
             <B>113</B>
-            <A>255</A>
-            <Text>SAVE</Text>
-        </Image>
-        <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
-            <Text>Save   your   game   with   a   complete   record   of   your
-progress   to   take   a   break.</Text>
         </Description>
     </Item>
     <Item>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>OPTION</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
+        <Description>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>Adjust   various   game   settings   such   as   text   speed,   game
+rules,   etc.</Text>
+            </Image>
             <R>113</R>
             <G>113</G>
             <B>113</B>
-            <A>255</A>
-            <Text>OPTION</Text>
-        </Image>
-        <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
-            <Text>Adjust   various   game   settings   such   as   text   speed,   game
-rules,   etc.</Text>
         </Description>
     </Item>
     <Item>
         <LinkType>Exit</LinkType>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>EXIT</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
+        <Description>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>Close   this   MENU   window.</Text>
+            </Image>
             <R>113</R>
             <G>113</G>
             <B>113</B>
-            <A>255</A>
-            <Text>EXIT</Text>
-        </Image>
-        <Description>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>255</R>
-            <G>255</G>
-            <B>255</B>
-            <A>255</A>
-            <Text>Close   this   MENU   window.</Text>
         </Description>
     </Item>
 </MainMenu>

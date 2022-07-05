@@ -17,12 +17,23 @@ namespace PokemonFireRedClone
             
             foreach (MenuItem item in Items)
             {
-                item.Image.IsActive = true;
-                item.Image.Alpha = alpha;
-                if (alpha == 0.0f)
-                    item.Image.FadeEffect.Increase = true;
-                else
-                    item.Image.FadeEffect.Increase = false;
+                if (item.Image != null)
+                {
+                    item.Image.IsActive = true;
+                    item.Image.Alpha = alpha;
+                    if (alpha == 0.0f)
+                        item.Image.FadeEffect.Increase = true;
+                    else
+                        item.Image.FadeEffect.Increase = false;
+                } else if (item.PokemonText != null)
+                {
+                    item.PokemonText.SetActive(true);
+                    item.PokemonText.SetAlpha(alpha);
+                    if (alpha == 0.0f)
+                        item.PokemonText.SetFadeEffectIncrease(true);
+                    else
+                        item.PokemonText.SetFadeEffectIncrease(false);
+                }
             }
             
         }
@@ -46,9 +57,9 @@ namespace PokemonFireRedClone
 
             for (int i = 2; i < Items.Count; i++)
             {
-                Items[i].Image.Position = new Vector2(ScreenManager.Instance.Dimensions.X / 2 - 136 , dimensions.Y+100);
-                dimensions += new Vector2(Items[i].Image.SourceRect.Width,
-                    Items[i].Image.SourceRect.Height + 8);
+                Items[i].PokemonText.SetPosition(new Vector2(ScreenManager.Instance.Dimensions.X / 2 - 136 , dimensions.Y+100));
+                dimensions += new Vector2(Items[i].PokemonText.SourceRect.Width,
+                    Items[i].PokemonText.SourceRect.Height + 8);
             }
 
         }
@@ -63,10 +74,10 @@ namespace PokemonFireRedClone
             // format time to include days to hours
             var tsTime = TimeSpan.FromHours(playerJsonObject.Time);
 
-            Items[2].Image.Text = playerJsonObject.Name;
-            Items[3].Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
-            Items[4].Image.Text = playerJsonObject.Pokedex.ToString();
-            Items[5].Image.Text = playerJsonObject.Badges.ToString();
+            Items[2].PokemonText.Image.Text = playerJsonObject.Name;
+            Items[3].PokemonText.Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
+            Items[4].PokemonText.Image.Text = playerJsonObject.Pokedex.ToString();
+            Items[5].PokemonText.Image.Text = playerJsonObject.Badges.ToString();
 
             base.LoadContent();
         }
@@ -89,7 +100,7 @@ namespace PokemonFireRedClone
                     {
                         Items[i].Image.IsActive = true;
                         for (int j = 2; j < Items.Count; j++)
-                            Items[j].Image.IsActive = i == 0;
+                            Items[j].PokemonText.SetActive(i == 0);
                     }
                     else
                         Items[i].Image.IsActive = false;

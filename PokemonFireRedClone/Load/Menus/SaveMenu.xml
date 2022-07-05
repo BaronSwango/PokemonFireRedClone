@@ -14,41 +14,66 @@
     </Arrow>
 
     <SaveRegion>
-        <FontName>Fonts/PokemonFireRedDialogue</FontName>
-        <R>72</R>
-        <G>96</G>
-        <B>204</B>
-        <A>255</A>
-        <Text>PALLET   TOWN</Text>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>72</R>
+            <G>96</G>
+            <B>204</B>
+            <A>255</A>
+            <Text>PALLET   TOWN</Text>
+        </Image>
+        <R>180</R>
+        <G>203</G>
+        <B>244</B>
     </SaveRegion>
 
     <Info>
-        <FontName>Fonts/PokemonFireRedDialogue</FontName>
-        <R>113</R>
-        <G>113</G>
-        <B>113</B>
-        <A>255</A>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+        </Image>
+        <R>218</R>
+        <G>218</G>
+        <B>212</B>
     </Info>
     <Info>
-        <FontName>Fonts/PokemonFireRedSmall</FontName>
-        <R>113</R>
-        <G>113</G>
-        <B>113</B>
-        <A>255</A>
+        <Image>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+        </Image>
+        <R>218</R>
+        <G>218</G>
+        <B>212</B>
     </Info>
     <Info>
-        <FontName>Fonts/PokemonFireRedSmall</FontName>
-        <R>113</R>
-        <G>113</G>
-        <B>113</B>
-        <A>255</A>
+        <Image>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+        </Image>
+        <R>218</R>
+        <G>218</G>
+        <B>212</B>
     </Info>
     <Info>
-        <FontName>Fonts/PokemonFireRedSmall</FontName>
-        <R>113</R>
-        <G>113</G>
-        <B>113</B>
-        <A>255</A>
+        <Image>
+            <FontName>Fonts/PokemonFireRedSmall</FontName>
+            <R>113</R>
+            <G>113</G>
+            <B>113</B>
+            <A>255</A>
+        </Image>
+        <R>218</R>
+        <G>218</G>
+        <B>212</B>
     </Info>
 
     <SaveDialogue>
@@ -57,61 +82,91 @@
         <Menu>true</Menu>
         <Dialogue>
             <Page>1</Page>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>Would   you   like   to   save   the   game?</Text>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>Would   you   like   to   save   the   game?</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
         </Dialogue>
         <Dialogue>
             <Page>2</Page>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>There   is   already   a   saved   file.</Text>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>There   is   already   a   saved   file.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
         </Dialogue>
         <Dialogue>
             <Page>2</Page>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>Is   it   okay   to   overwrite   it?</Text>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>Is   it   okay   to   overwrite   it?</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
         </Dialogue>
         <Dialogue>
             <Page>3</Page>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
         </Dialogue>
     </SaveDialogue>
 
     <Item>
         <LinkType>Yes</LinkType>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>YES</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>YES</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
     <Item>
         <LinkType>Exit</LinkType>
-        <Image>
-            <FontName>Fonts/PokemonFireRedDialogue</FontName>
-            <R>113</R>
-            <G>113</G>
-            <B>113</B>
-            <A>255</A>
-            <Text>NO</Text>
-        </Image>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>NO</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </PokemonText>
     </Item>
 </SaveMenu>
