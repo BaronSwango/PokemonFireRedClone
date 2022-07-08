@@ -207,11 +207,5 @@ namespace PokemonFireRedClone
             textShadowY.RestoreEffects();
             textShadowXY.RestoreEffects();
         }
-
-        public void SetFadeEffectIncrease(bool increase)
-        {
-            Image.FadeEffect.Increase = textShadowX.FadeEffect.Increase = textShadowY.FadeEffect.Increase = textShadowXY.FadeEffect.Increase = increase;
-        }
-
     }
 }

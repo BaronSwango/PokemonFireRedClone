@@ -13,7 +13,7 @@ namespace PokemonFireRedClone
 
         private readonly XmlManager<GameScreen> xmlGameScreenManager;
         private GameScreen newScreen;
-        private float counter;
+        private double counter;
         private static ScreenManager instance;
 
         public Vector2 Dimensions;
@@ -59,7 +59,7 @@ namespace PokemonFireRedClone
         {
             Content = new ContentManager(content.ServiceProvider, "Content");
             CurrentScreen.LoadContent();
-            LoadFadeImage();
+            LoadWhiteScreen();
         }
 
         public void UnloadContent()
@@ -84,12 +84,20 @@ namespace PokemonFireRedClone
 
         private void LoadFadeImage()
         {
+            Color[] data = new Color[Image.Texture.Width * Image.Texture.Height];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.Black;
+            Image.Texture.SetData(data);
+            Image.ReloadTexture();
+        }
+
+        private void LoadWhiteScreen()
+        {
             Image = new Image
             {
                 Texture = new Texture2D(GraphicsDevice, (int)Dimensions.X + 8, (int)Dimensions.Y + 8)
             };
             Color[] data = new Color[Image.Texture.Width * Image.Texture.Height];
-            for (int i = 0; i < data.Length; ++i) data[i] = Color.Black;
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             Image.Texture.SetData(data);
             Image.Effects = "FadeEffect";
             Image.LoadContent();
@@ -102,9 +110,9 @@ namespace PokemonFireRedClone
                 Image.Update(gameTime);
                 if (Image.Alpha == 1.0f)
                 {
-                    counter = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? counter + (float) gameTime.ElapsedGameTime.TotalMilliseconds : 500;
                     if (counter < 500)
                     {
+                        counter += gameTime.ElapsedGameTime.TotalMilliseconds;
                         Image.IsActive = false;
                         return;
                     }
@@ -151,11 +159,13 @@ namespace PokemonFireRedClone
         public void ChangeScreens(string screenName)
         {
             newScreen = (GameScreen)Activator.CreateInstance(System.Type.GetType("PokemonFireRedClone." + screenName));
+            if (!(newScreen is TitleScreen) && !Image.IsReloaded)
+                LoadFadeImage();
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
             IsTransitioning = true;
-            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 3.5f : 1;
+            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 3.5f : 1.5f;
         }
 
     }

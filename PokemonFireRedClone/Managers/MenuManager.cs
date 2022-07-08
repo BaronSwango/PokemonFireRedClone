@@ -30,21 +30,15 @@ namespace PokemonFireRedClone
             Menu = xmlMenuManager.Load(Menu.ID);
             Menu.LoadContent();
             Menu.OnMenuChange += Menu_OnMenuChange;
-            Menu.Transition(0.0f);
-
+            
             foreach (MenuItem item in Menu.Items)
             {
                 if (item.Image != null)
-                {
                     item.Image.StoreEffects();
-                    item.Image.ActivateEffect("FadeEffect");
-                } else if (item.PokemonText != null)
-                {
+                else if (item.PokemonText != null)
                     item.PokemonText.StoreEffects();
-                    item.PokemonText.ActivateEffect("FadeEffect");
-                }
             }
-
+            
 
         }
 
@@ -87,7 +81,6 @@ namespace PokemonFireRedClone
                     case "Menu":
                         MenuName = Menu.Items[Menu.ItemNumber].MenuName;
                         Menu.ID = Menu.Items[Menu.ItemNumber].LinkID;
-                        Menu.Transition(1.0f);
                         break;
                     case "Yes":
                         Menu.Yes();

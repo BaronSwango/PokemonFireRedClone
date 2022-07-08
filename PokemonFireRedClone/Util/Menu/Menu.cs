@@ -40,9 +40,6 @@ namespace PokemonFireRedClone
             }
         }
 
-        // transitioning from menu to screen or menu to other menu through link ID
-        public virtual void Transition(float alpha) { }
-
         protected virtual void AlignMenuItems() { }
 
         public virtual void Yes() { }

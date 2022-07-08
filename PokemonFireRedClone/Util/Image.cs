@@ -25,7 +25,7 @@ namespace PokemonFireRedClone
         public string Text, FontName, Path;
         public Vector2 Position, Scale;
         public Rectangle SourceRect;
-        public bool IsActive, IsLoaded;
+        public bool IsActive, IsLoaded, IsReloaded;
         public string Effects;
         public Color Tint;
         public float Angle;
@@ -109,6 +109,7 @@ namespace PokemonFireRedClone
 
         public void ReloadText()
         {
+            content.Unload();
             font = content.Load<SpriteFont>(FontName);
             if (!UseFontColor)
                 FontColor = new Color(R, G, B, A);
@@ -131,10 +132,12 @@ namespace PokemonFireRedClone
             Texture = RenderTarget;
 
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
+            IsReloaded = true;
         }
 
         public void ReloadTexture()
         {
+            content.Unload();
             if (Path != string.Empty)
                 Texture = content.Load<Texture2D>(Path);
             
@@ -160,10 +163,12 @@ namespace PokemonFireRedClone
             Texture = RenderTarget;
 
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
+            IsReloaded = true;
         }
 
         public void ReloadTexture(string newPath)
         {
+            content.Unload();
             if (newPath != string.Empty)
                 Texture = content.Load<Texture2D>(newPath);
 
@@ -189,6 +194,7 @@ namespace PokemonFireRedClone
             Texture = RenderTarget;
 
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
+            IsReloaded = true;
         }
 
         public void LoadContent()

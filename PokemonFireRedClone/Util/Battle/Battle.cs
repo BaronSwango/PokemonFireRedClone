@@ -22,6 +22,7 @@ namespace PokemonFireRedClone
             PlayerPokemon = new BattlePokemon(BattlePokemonMenu[0]);
             EnemyPokemon.Pokemon.MoveNames.Add("Growl", 40);
             EnemyPokemon.Pokemon.MoveNames.Add("Double Team", 15);
+            EnemyPokemon.Pokemon.MoveNames.Add("Water Gun", 20);
         }
 
         public void SwapPokemon(int index)

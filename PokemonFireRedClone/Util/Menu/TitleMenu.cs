@@ -12,32 +12,6 @@ namespace PokemonFireRedClone
 
         private PlayerJsonObject playerJsonObject;
 
-        public override void Transition(float alpha)
-        {
-            
-            foreach (MenuItem item in Items)
-            {
-                if (item.Image != null)
-                {
-                    item.Image.IsActive = true;
-                    item.Image.Alpha = alpha;
-                    if (alpha == 0.0f)
-                        item.Image.FadeEffect.Increase = true;
-                    else
-                        item.Image.FadeEffect.Increase = false;
-                } else if (item.PokemonText != null)
-                {
-                    item.PokemonText.SetActive(true);
-                    item.PokemonText.SetAlpha(alpha);
-                    if (alpha == 0.0f)
-                        item.PokemonText.SetFadeEffectIncrease(true);
-                    else
-                        item.PokemonText.SetFadeEffectIncrease(false);
-                }
-            }
-            
-        }
-
         protected override void AlignMenuItems()
         {
             Vector2 dimensions = Vector2.Zero;
@@ -79,7 +53,9 @@ namespace PokemonFireRedClone
             Items[4].PokemonText.Image.Text = playerJsonObject.Pokedex.ToString();
             Items[5].PokemonText.Image.Text = playerJsonObject.Badges.ToString();
 
+                
             base.LoadContent();
+
         }
 
         public override void Update(GameTime gameTime)
