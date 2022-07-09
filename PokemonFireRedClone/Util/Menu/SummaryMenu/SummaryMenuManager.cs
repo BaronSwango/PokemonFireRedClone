@@ -7,52 +7,52 @@ namespace PokemonFireRedClone
     public class SummaryMenuManager
     {
 
-        private SummaryPage currentPage;
-        private bool isTransitioning;
+        private IntroBounceAnimation animation;
+        private bool isAnimating;
+
+        public SummaryPage CurrentPage;
 
         public void LoadContent(CustomPokemon pokemon)
         {
-            currentPage = new PokemonInfo(pokemon);
-            currentPage.LoadContent();
+            CurrentPage = new PokemonInfo(pokemon);
+            CurrentPage.LoadContent();
+            animation = new IntroBounceAnimation(CurrentPage.PokeImage.Position.Y);
+            isAnimating = true;
         }
 
         public void UnloadContent()
         {
-            currentPage.UnloadContent();
+            CurrentPage.UnloadContent();
         }
 
         public void Update(GameTime gameTime)
         {
+            if (isAnimating)
+            {
+                isAnimating = animation.Animate(gameTime);
+                return;
+            }
             //handle input to change pages
             if (InputManager.Instance.KeyPressed(Keys.Q))
                 ScreenManager.Instance.ChangeScreens("PokemonScreen");
-            else if (InputManager.Instance.KeyPressed(Keys.D) && !(currentPage is KnownMoves))
+            else if (InputManager.Instance.KeyPressed(Keys.D) && !(CurrentPage is KnownMoves))
             {
-                currentPage.UnloadContent();
-                currentPage = currentPage is PokemonInfo ? new PokemonSkills(currentPage.Pokemon) : new KnownMoves(currentPage.Pokemon);
-                currentPage.LoadContent();
-            } else if (InputManager.Instance.KeyPressed(Keys.A) && !(currentPage is PokemonInfo))
+                CurrentPage.UnloadContent();
+                CurrentPage = CurrentPage is PokemonInfo ? new PokemonSkills(CurrentPage.Pokemon) : new KnownMoves(CurrentPage.Pokemon);
+                CurrentPage.LoadContent();
+            } else if (InputManager.Instance.KeyPressed(Keys.A) && !(CurrentPage is PokemonInfo))
             {
-                currentPage.UnloadContent();
-                currentPage = currentPage is PokemonSkills ? new PokemonInfo(currentPage.Pokemon) : new PokemonSkills(currentPage.Pokemon);
-                currentPage.LoadContent();
+                CurrentPage.UnloadContent();
+                CurrentPage = CurrentPage is PokemonSkills ? new PokemonInfo(CurrentPage.Pokemon) : new PokemonSkills(CurrentPage.Pokemon);
+                CurrentPage.LoadContent();
             }
+
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            currentPage.Draw(spriteBatch);
-        }
-
-        private void TransitionForward()
-        {
-
-        }
-
-        private void TransitionBackward()
-        {
-
+            CurrentPage.Draw(spriteBatch);
         }
     }
 }

@@ -8,10 +8,10 @@ namespace PokemonFireRedClone
         private readonly Image outline;
         private readonly Image pokeball;
 
-        protected Image Background;
-        protected Image PokeImage;
         protected PokemonAssets PokemonAssets;
         
+        public Image PokeImage;
+        public Image Background;
         public CustomPokemon Pokemon;
 
 
@@ -65,12 +65,12 @@ namespace PokemonFireRedClone
             outline.Draw(spriteBatch);
             Background.Draw(spriteBatch);
 
-            PokeImage.Draw(spriteBatch);
             PokemonAssets.Name.Draw(spriteBatch);
             if (PokemonAssets.Gender != null)
                 PokemonAssets.Gender.Draw(spriteBatch);
             PokemonAssets.Level.Draw(spriteBatch);
             pokeball.Draw(spriteBatch);
+            PokeImage.Draw(spriteBatch);
         }
         
     }

@@ -7,11 +7,11 @@ namespace PokemonFireRedClone
     public class SummaryScreen : GameScreen
     {
 
-        private readonly SummaryMenuManager menuManager;
+        public SummaryMenuManager MenuManager;
 
         public SummaryScreen()
         {
-            menuManager = new SummaryMenuManager();
+            MenuManager = new SummaryMenuManager();
         }
 
         public override void LoadContent()
@@ -19,26 +19,26 @@ namespace PokemonFireRedClone
             base.LoadContent();
             CustomPokemon pokemon = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonMenu[PokemonMenu.SelectedIndex]
                 : Player.PlayerJsonObject.PokemonInBag[PokemonMenu.SelectedIndex];
-            menuManager.LoadContent(pokemon);
+            MenuManager.LoadContent(pokemon);
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
-            menuManager.UnloadContent();
+            MenuManager.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            menuManager.Update(gameTime);
+            MenuManager.Update(gameTime);
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            menuManager.Draw(spriteBatch);
+            MenuManager.Draw(spriteBatch);
         }
 
     }

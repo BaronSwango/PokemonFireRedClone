@@ -294,7 +294,7 @@ namespace PokemonFireRedClone
                 ArrowOffset -= speed;
 
             if (ArrowOffset % 4 < 0.1)
-                Arrow.Position = new Vector2(Arrow.Position.X, ArrowOriginalY + ArrowOffset);
+                Arrow.Position.Y = ArrowOriginalY + ArrowOffset;
         }
 
     }
