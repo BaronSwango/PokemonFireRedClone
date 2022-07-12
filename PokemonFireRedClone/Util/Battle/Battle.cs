@@ -7,7 +7,7 @@ namespace PokemonFireRedClone
 
         public BattlePokemon EnemyPokemon;
         public BattlePokemon PlayerPokemon;
-        public List<CustomPokemon> BattlePokemonMenu;
+        public List<CustomPokemon> BattlePokemonInBag;
 
         public bool IsWild;
         public bool InBattle;
@@ -18,8 +18,8 @@ namespace PokemonFireRedClone
             InBattle = true;
             EnemyPokemon = new BattlePokemon(enemyPokemon);
             EnemyPokemon.Pokemon.CurrentHP = EnemyPokemon.Pokemon.Stats.HP;
-            BattlePokemonMenu = new List<CustomPokemon>(Player.PlayerJsonObject.PokemonInBag);
-            PlayerPokemon = new BattlePokemon(BattlePokemonMenu[0]);
+            BattlePokemonInBag = new List<CustomPokemon>(Player.PlayerJsonObject.PokemonInBag);
+            PlayerPokemon = new BattlePokemon(BattlePokemonInBag[0]);
             EnemyPokemon.Pokemon.MoveNames.Add("Growl", 40);
             EnemyPokemon.Pokemon.MoveNames.Add("Double Team", 15);
             EnemyPokemon.Pokemon.MoveNames.Add("Water Gun", 20);
@@ -27,14 +27,14 @@ namespace PokemonFireRedClone
 
         public void SwapPokemon(int index)
         {
-            CustomPokemon temp = BattlePokemonMenu[0];
-            BattlePokemonMenu[0] = BattlePokemonMenu[index];
-            BattlePokemonMenu[index] = temp;
+            CustomPokemon temp = BattlePokemonInBag[0];
+            BattlePokemonInBag[0] = BattlePokemonInBag[index];
+            BattlePokemonInBag[index] = temp;
         }
 
         public void UpdatePlayerPokemon()
         {
-            PlayerPokemon = new BattlePokemon(BattlePokemonMenu[0]);
+            PlayerPokemon = new BattlePokemon(BattlePokemonInBag[0]);
         }
 
         /*

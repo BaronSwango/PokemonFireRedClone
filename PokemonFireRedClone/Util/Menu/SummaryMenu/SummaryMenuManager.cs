@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -27,12 +29,31 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime)
         {
+
             if (isAnimating)
             {
                 isAnimating = animation.Animate(gameTime);
                 return;
             }
+
+            if (InputManager.Instance.KeyPressed(Keys.W) || InputManager.Instance.KeyPressed(Keys.S))
+            {
+                List<CustomPokemon> pokemon = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonInBag : Player.PlayerJsonObject.PokemonInBag;
+                bool inBounds = InputManager.Instance.KeyPressed(Keys.W) ? pokemon.IndexOf(CurrentPage.Pokemon) > 0 : pokemon.IndexOf(CurrentPage.Pokemon) < pokemon.Count - 1;
+                if (inBounds)
+                {
+                    int index = InputManager.Instance.KeyPressed(Keys.W) ? pokemon.IndexOf(CurrentPage.Pokemon) - 1 : pokemon.IndexOf(CurrentPage.Pokemon) + 1;
+                    CurrentPage.UnloadContent();
+                    CurrentPage = (SummaryPage)Activator.CreateInstance(CurrentPage.GetType(), pokemon[index]);
+                    CurrentPage.LoadContent();
+                    PokemonMenu.SelectedIndex = index;
+                    animation = new IntroBounceAnimation(CurrentPage.PokeImage.Position.Y);
+                    isAnimating = true;
+                }
+            }
+
             //handle input to change pages
+
             if (InputManager.Instance.KeyPressed(Keys.Q))
                 ScreenManager.Instance.ChangeScreens("PokemonScreen");
             else if (InputManager.Instance.KeyPressed(Keys.D) && !(CurrentPage is KnownMoves))

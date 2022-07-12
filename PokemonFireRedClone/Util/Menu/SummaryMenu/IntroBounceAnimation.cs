@@ -17,7 +17,7 @@ namespace PokemonFireRedClone
         {
             this.spriteHeight = spriteHeight;
             bounceUp = true;
-            speedMultiplier = 2;
+            speedMultiplier = 5;
         }
 
         public bool Animate(GameTime gameTime)
@@ -33,8 +33,9 @@ namespace PokemonFireRedClone
                 {
                     offset -= 4;
                     counter = 0;
-                    if (offset <= -24)
-                        speedMultiplier *= 0.4;
+                    speedMultiplier *= 0.7;
+                    if (offset == -24)
+                        speedMultiplier *= 0.7;
                 }
             }
             else
@@ -43,8 +44,9 @@ namespace PokemonFireRedClone
                 {
                     offset += 4;
                     counter = 0;
-                    if (offset <= -20)
-                        speedMultiplier /= 0.4;
+                    speedMultiplier /= 0.7;
+                    if (offset == -20)
+                        speedMultiplier /= 0.7;
                 }
             }
 

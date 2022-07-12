@@ -59,7 +59,7 @@ namespace PokemonFireRedClone
             buttons = new List<PokemonMenuInfoButton>();
             Background.LoadContent();
 
-            List<CustomPokemon> menuList = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonMenu : Player.PlayerJsonObject.PokemonInBag;
+            List<CustomPokemon> menuList = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonInBag : Player.PlayerJsonObject.PokemonInBag;
 
             buttons.Add(new PokemonMenuStarterInfoButton(menuList[0]));
             for (int i = 1; i < Player.PlayerJsonObject.PokemonInBag.Count; i++)
