@@ -13,6 +13,11 @@ namespace PokemonFireRedClone
         private List<PokemonMenuInfoButton> buttons;
         private int prevItemNumber;
 
+        private bool switchState;
+        private int originalSwitchIndex;
+        private bool isSwitching;
+        //private MenuSwitchAnimation switchAnimation;
+
         public Image Background;
         [XmlElement("Text")]
         public List<Image> Text;
@@ -97,10 +102,30 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
+
+            if (isSwitching)
+            {
+                //isSwitching = switchAnimation.Animate(gameTime);
+                //if (switchAnimation.Switched)
+                    //ResetButtons();
+                return;
+            }
+
             if (!ButtonMenu.IsOpen)
             {
-                if (!BaseMenu)
-                    BaseMenu = true;
+                if (!BaseMenu && !switchState)
+                {
+
+                    if (ButtonMenu.ItemNumber == 1)
+                    {
+                        switchState = true;
+                        originalSwitchIndex = SelectedIndex;
+                    }
+                    else
+                        BaseMenu = true;
+
+                    ButtonMenu.ItemNumber = 0;
+                }
 
                 if (InputManager.Instance.KeyPressed(Keys.A))
                 {
@@ -122,12 +147,29 @@ namespace PokemonFireRedClone
                     ItemNumber++;
                 else if (InputManager.Instance.KeyPressed(Keys.W))
                     ItemNumber--;
-                else if (InputManager.Instance.KeyPressed(Keys.E))
+                else if (InputManager.Instance.KeyPressed(Keys.E) || isSwitching)
                 {
-                    if (ItemNumber < Items.Count - 1)
-                        OpenButtonBenu();
+
+                    if (switchState || isSwitching)
+                    {
+                        if (ItemNumber != originalSwitchIndex && ItemNumber != Items.Count - 1)
+                        {
+                            CustomPokemon temp = Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex];
+                            Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex] = Player.PlayerJsonObject.PokemonInBag[ItemNumber];
+                            Player.PlayerJsonObject.PokemonInBag[ItemNumber] = temp;
+                            //isSwitching = true;
+                            ResetButtons();
+                        }
+
+                        switchState = false;
+                    }
+                    else if (ItemNumber < Items.Count - 1)
+                            OpenButtonBenu();
                     
+
                 }
+                else if (InputManager.Instance.KeyPressed(Keys.Q) && switchState)
+                    switchState = false;
 
                 if (ItemNumber < 0)
                     ItemNumber = Items.Count - 1;
@@ -183,6 +225,22 @@ namespace PokemonFireRedClone
             ButtonMenu.AlignMenuItems(new Vector2(Background.Position.X + Background.SourceRect.Width - ButtonMenu.Background.SourceRect.Width - 12,
                 Text[1].Position.Y + Text[1].SourceRect.Height - ButtonMenu.Background.SourceRect.Height));
             BaseMenu = false;
+        }
+
+        private void ResetButtons()
+        {
+            List<CustomPokemon> menuList = Player.PlayerJsonObject.PokemonInBag; // never gets called in a battle
+
+            buttons[originalSwitchIndex].UnloadContent();
+            buttons[ItemNumber].UnloadContent();
+
+            buttons[originalSwitchIndex] = buttons[originalSwitchIndex] is PokemonMenuStarterInfoButton ?
+                new PokemonMenuStarterInfoButton(menuList[originalSwitchIndex]) : new PokemonMenuInfoButton(menuList[originalSwitchIndex]);
+            buttons[ItemNumber] = buttons[ItemNumber] is PokemonMenuStarterInfoButton ?
+                new PokemonMenuStarterInfoButton(menuList[ItemNumber]) : new PokemonMenuInfoButton(menuList[ItemNumber]);
+
+            buttons[originalSwitchIndex].LoadContent();
+            buttons[ItemNumber].LoadContent();
         }
 
     }

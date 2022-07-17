@@ -81,12 +81,19 @@ namespace PokemonFireRedClone
             if (Pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !Pokemon.Name.Contains("Nidoran"))
             {
                 Color genderFontColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(119, 208, 250, 255) : new Color(242, 170, 161, 255);
+
                 string genderText;
                 if (font.Contains("Dialogue"))
                     genderText = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "£" : "¬";
                 else
                     genderText = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "♂" : "♀";
-                Color genderShadowColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(48, 111, 154, 255) : new Color(155, 86, 76, 255);
+
+                Color genderShadowColor;
+                if (ScreenManager.Instance.CurrentScreen is BattleScreen)
+                    genderShadowColor = shadowColor;
+                else
+                    genderShadowColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(48, 111, 154, 255) : new Color(155, 86, 76, 255);
+
                 Gender = new PokemonText(genderText, font, genderFontColor, genderShadowColor);
             }
 

@@ -61,9 +61,7 @@ namespace PokemonFireRedClone
                             if (inBattle)
                                 ScreenManager.Instance.ChangeScreens("SummaryScreen");
                             else
-                            {
-
-                            }
+                                UnloadContent();
                             break;
                         case 2:
                             if (inBattle)

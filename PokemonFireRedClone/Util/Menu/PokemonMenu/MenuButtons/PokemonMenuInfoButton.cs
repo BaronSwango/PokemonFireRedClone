@@ -82,6 +82,12 @@ namespace PokemonFireRedClone
             MenuSprite.Draw(spriteBatch);
         }
 
+        public void Reload()
+        {
+
+            MenuSprite.ReloadTexture();
+        }
+
         protected virtual void LoadBackground()
         {
             BackgroundSelected = new Image

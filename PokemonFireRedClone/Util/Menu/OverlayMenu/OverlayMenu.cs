@@ -8,8 +8,7 @@ namespace PokemonFireRedClone
     public class OverlayMenu
     {
 
-        protected int ItemNumber;
-
+        public int ItemNumber;
         public Image Background;
         public Image Arrow;
         [XmlElement("Items")]

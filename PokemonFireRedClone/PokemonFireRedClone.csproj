@@ -63,9 +63,10 @@
     <None Remove="Util\Menu\OverlayMenu\" />
     <None Remove="Util\Battle\Animations\" />
     <None Remove="Util\Menu\Summary\" />
-    <None Remove="Util\Menu\MenuButtons\" />
     <None Remove="Content\Menus\SummaryMenu\" />
     <None Remove="Content\Type\" />
+    <None Remove="Util\Menu\PokemonMenu\" />
+    <None Remove="Util\Menu\PokemonMenu\MenuButtons\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -153,8 +154,9 @@
     <Folder Include="Util\Menu\OverlayMenu\" />
     <Folder Include="Util\Battle\Animations\" />
     <Folder Include="Util\Menu\SummaryMenu\" />
-    <Folder Include="Util\Menu\MenuButtons\" />
     <Folder Include="Content\Menus\SummaryMenu\" />
     <Folder Include="Content\Types\" />
+    <Folder Include="Util\Menu\PokemonMenu\" />
+    <Folder Include="Util\Menu\PokemonMenu\MenuButtons\" />
   </ItemGroup>
 </Project>

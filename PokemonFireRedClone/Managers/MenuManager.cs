@@ -95,7 +95,8 @@ namespace PokemonFireRedClone
                         
                         break;
                     case "ExitToScreen":
-                        ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
+                        if (Menu.BaseMenu)
+                            ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
                         break;
                     case "Move":
                         if (BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames[MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].PokemonText.Image.Text).Name] == 0)

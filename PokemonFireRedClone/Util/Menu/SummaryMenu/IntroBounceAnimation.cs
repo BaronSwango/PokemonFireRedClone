@@ -69,9 +69,6 @@ namespace PokemonFireRedClone
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-
-        }
+        public void Draw(SpriteBatch spriteBatch){}
     }
 }
