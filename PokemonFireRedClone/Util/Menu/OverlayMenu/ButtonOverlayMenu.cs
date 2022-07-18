@@ -16,6 +16,16 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
+
+            if (Player.PlayerJsonObject.PokemonInBag.Count == 1 && !inBattle && !Background.IsLoaded)
+            {
+                Background.Path = "Menus/PokemonMenu/OnlyStarterButtonMenu";
+                Items[0].PokemonText.Image.Text = "SUMMARY";
+                Items[1].PokemonText.Image.Text = "ITEM";
+                Items[2].PokemonText.Image.Text = "CANCEL";
+                Items.RemoveAt(3);
+            }
+            
             string path = SelectedIndex == 0 && inBattle ? "Menus/PokemonMenu/StarterBattleButtonMenu" : "Menus/PokemonMenu/BattleButtonMenu";
             if (inBattle)
             {
@@ -69,8 +79,15 @@ namespace PokemonFireRedClone
                                 ScreenManager.Instance.ChangeScreens("SummaryScreen");
                             else
                             {
-                                UnloadContent();
-                                Switch = true;
+                                if (Player.PlayerJsonObject.PokemonInBag.Count == 1)
+                                {
+                                    // Item menu
+                                }
+                                else
+                                {
+                                    UnloadContent();
+                                    Switch = true;
+                                }
                             }
                             break;
                         case 2:
@@ -78,7 +95,12 @@ namespace PokemonFireRedClone
                                 UnloadContent();
                             else
                             {
-
+                                if (Player.PlayerJsonObject.PokemonInBag.Count == 1)
+                                    UnloadContent();
+                                else
+                                {
+                                    // Item menu
+                                }
                             }
                             break;
                         case 3:

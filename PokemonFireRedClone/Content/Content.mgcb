@@ -382,6 +382,18 @@
 /processorParam:TextureFormat=Color
 /build:Menus/PokemonMenu/MoveToWhere.png
 
+#begin Menus/PokemonMenu/OnlyStarterButtonMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/OnlyStarterButtonMenu.png
+
 #begin Menus/PokemonMenu/PokemonMenuBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor
