@@ -5,7 +5,7 @@ namespace PokemonFireRedClone
 {
     public class PokemonMenuInfoButton
     {
-        public enum ButtonState { UNSELECTED, SELECTED, SWITCH_UNSELECTED, SWITCH_SELECTED, FAINT_UNSELECETED, FAINT_SELECTED }
+        public enum ButtonState { UNSELECTED, SELECTED, SWITCH_ORIGINAL, SWITCH_SELECTED, FAINT_UNSELECETED, FAINT_SELECTED }
 
         protected Image MenuSprite;
         protected Vector2 OriginalMenuSpritePos;
@@ -19,7 +19,7 @@ namespace PokemonFireRedClone
         public Image BackgroundSelected;
         public Image BackgroundUnselected;
         public Image BackgroundSwitchSelected;
-        public Image BackgroundSwitchUnselected;
+        public Image BackgroundSwitchOriginal;
         public Image BackgroundFaintSelected;
         public Image BackgroundFaintUnselected;
         public ButtonState State;
@@ -34,7 +34,7 @@ namespace PokemonFireRedClone
                     ButtonState.UNSELECTED => BackgroundUnselected,
                     ButtonState.SELECTED => BackgroundSelected,
                     ButtonState.SWITCH_SELECTED => BackgroundSwitchSelected,
-                    ButtonState.SWITCH_UNSELECTED => BackgroundSwitchUnselected,
+                    ButtonState.SWITCH_ORIGINAL => BackgroundSwitchOriginal,
                     ButtonState.FAINT_UNSELECETED => BackgroundFaintUnselected,
                     _ => BackgroundFaintSelected,
                 };
@@ -66,7 +66,7 @@ namespace PokemonFireRedClone
 
         public void UnloadContent()
         {
-            BackgroundUnselected.UnloadContent();
+            BackgroundInUse.UnloadContent();
             PokemonAssets.UnloadContent();
             MenuSprite.UnloadContent();
         }
@@ -82,12 +82,6 @@ namespace PokemonFireRedClone
             MenuSprite.Draw(spriteBatch);
         }
 
-        public void Reload()
-        {
-
-            MenuSprite.ReloadTexture();
-        }
-
         protected virtual void LoadBackground()
         {
             BackgroundSelected = new Image
@@ -98,8 +92,21 @@ namespace PokemonFireRedClone
             {
                 Path = "Menus/PokemonMenu/PokemonMenuButton"
             };
-            BackgroundSwitchSelected = new Image();
-            BackgroundSwitchUnselected = new Image();
+            BackgroundSwitchSelected = new Image
+            {
+                Path = "Menus/PokemonMenu/PokemonMenuButtonSwitchSelected"
+            };
+            BackgroundSwitchOriginal = new Image
+            {
+                Path = "Menus/PokemonMenu/PokemonMenuButtonSwitchOriginal"
+            };
+        }
+
+        public void OffsetX(int offset, GameTime gameTime)
+        {
+            BackgroundInUse.Position.X += offset;
+            UpdateInfoPositions(gameTime);
+            MenuSprite.Position.X = BackgroundInUse.Position.X + 36 - (MenuSprite.SourceRect.Width / 4);
         }
 
         public virtual void UpdateInfoPositions(GameTime gameTime)
@@ -116,7 +123,7 @@ namespace PokemonFireRedClone
                 MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 48 - (MenuSprite.SourceRect.Height / 2));
                 SpritePositioned = true;
             }
-            if (State == ButtonState.SELECTED)
+            if (State == ButtonState.SELECTED || State == ButtonState.SWITCH_SELECTED)
             {
                 MenuSprite.IsActive = false;
                 float counterSpeed = (float) (gameTime.ElapsedGameTime.TotalMilliseconds * 8);

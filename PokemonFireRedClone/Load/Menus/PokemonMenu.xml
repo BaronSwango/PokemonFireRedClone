@@ -87,46 +87,7 @@
     <Text>
         <Path>Menus/PokemonMenu/DoWhatWithThisPokemon</Path>
     </Text>
+    <Text>
+        <Path>Menus/PokemonMenu/MoveToWhere</Path>
+    </Text>
 </PokemonMenu>
-<!--
-        <Items>
-            <Image>
-                <FontName>Fonts/PokemonFireRedDialogue</FontName>
-                <R>113</R>
-                <G>113</G>
-                <B>113</B>
-                <A>255</A>
-                <Text>SUMMARY</Text>
-            </Image>
-        </Items>
-        <Items>
-            <Image>
-                <FontName>Fonts/PokemonFireRedDialogue</FontName>
-                <R>113</R>
-                <G>113</G>
-                <B>113</B>
-                <A>255</A>
-                <Text>SWITCH</Text>
-            </Image>
-        </Items>
-        <Items>
-            <Image>
-                <FontName>Fonts/PokemonFireRedDialogue</FontName>
-                <R>113</R>
-                <G>113</G>
-                <B>113</B>
-                <A>255</A>
-                <Text>ITEM</Text>
-            </Image>
-        </Items>
-        <Items>
-            <Image>
-                <FontName>Fonts/PokemonFireRedDialogue</FontName>
-                <R>113</R>
-                <G>113</G>
-                <B>113</B>
-                <A>255</A>
-                <Text>CANCEL</Text>
-            </Image>
-        </Items>
-        -->

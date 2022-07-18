@@ -5,29 +5,29 @@ namespace PokemonFireRedClone
 {
     public class PokemonScreen : GameScreen
     {
-        private readonly MenuManager menuManager;
+        public readonly MenuManager MenuManager;
 
         public PokemonScreen()
         {
-            menuManager = new MenuManager("PokemonMenu");
+            MenuManager = new MenuManager("PokemonMenu");
         }
 
         public override void LoadContent()
         {
             base.LoadContent();
-            menuManager.LoadContent("Load/Menus/PokemonMenu.xml");
+            MenuManager.LoadContent("Load/Menus/PokemonMenu.xml");
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
-            menuManager.UnloadContent();
+            MenuManager.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            menuManager.Update(gameTime);
+            MenuManager.Update(gameTime);
             Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
             //if (InputManager.Instance.KeyPressed(Keys.Q))
                 //ScreenManager.Instance.ChangeScreens(ScreenManager.Instance.PreviousScreen.Type.ToString().Replace("PokemonFireRedClone.", ""));
@@ -36,7 +36,7 @@ namespace PokemonFireRedClone
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            menuManager.Draw(spriteBatch);
+            MenuManager.Draw(spriteBatch);
         }
 
     }

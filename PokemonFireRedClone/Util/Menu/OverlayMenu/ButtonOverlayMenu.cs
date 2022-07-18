@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
         }
 
         public int SelectedIndex;
+        public bool Switch;
 
         public override void LoadContent()
         {
@@ -32,6 +33,12 @@ namespace PokemonFireRedClone
 
             if (SelectedIndex == 0 && inBattle)
                 ItemNumber = 1;
+        }
+
+        public override void UnloadContent()
+        {
+            base.UnloadContent();
+            
         }
 
         public void Update()
@@ -61,7 +68,10 @@ namespace PokemonFireRedClone
                             if (inBattle)
                                 ScreenManager.Instance.ChangeScreens("SummaryScreen");
                             else
+                            {
                                 UnloadContent();
+                                Switch = true;
+                            }
                             break;
                         case 2:
                             if (inBattle)

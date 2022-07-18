@@ -11,12 +11,13 @@ namespace PokemonFireRedClone
 
         private bool positioned;
         private List<PokemonMenuInfoButton> buttons;
+        private List<Image> emptyButtons;
         private int prevItemNumber;
 
         private bool switchState;
         private int originalSwitchIndex;
         private bool isSwitching;
-        //private MenuSwitchAnimation switchAnimation;
+        private bool switchedButtons;
 
         public Image Background;
         [XmlElement("Text")]
@@ -34,12 +35,19 @@ namespace PokemonFireRedClone
 
             Items[0].Image.Position = new Vector2(Background.Position.X + 100, Background.Position.Y + 116);
 
+            float originalX = Items[0].Image.Position.X + Items[0].Image.SourceRect.Width + 148;
             float dimensionY = Background.Position.Y + 52;
 
-            for (int i = 1; i < Items.Count; i++)
+            for (int i = 1; i < Items.Count - 1; i++)
             {
-                Items[i].Image.Position = new Vector2(Items[0].Image.Position.X + Items[0].Image.SourceRect.Width + 148, dimensionY);
+                Items[i].Image.Position = new Vector2(originalX, dimensionY);
                 dimensionY += Items[i].Image.SourceRect.Height + 16;
+            }
+
+            foreach (Image i in emptyButtons)
+            {
+                i.Position = new Vector2(originalX, dimensionY);
+                dimensionY += i.SourceRect.Height + 16;
             }
 
             foreach (var button in buttons)
@@ -62,6 +70,7 @@ namespace PokemonFireRedClone
             PrevScreen = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? "BattleScreen" : "GameplayScreen";
 
             buttons = new List<PokemonMenuInfoButton>();
+            emptyButtons = new List<Image>();
             Background.LoadContent();
 
             List<CustomPokemon> menuList = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonInBag : Player.PlayerJsonObject.PokemonInBag;
@@ -75,6 +84,12 @@ namespace PokemonFireRedClone
                 buttons[i].LoadContent();
                 Items.Add(new MenuItem());
                 Items[i].Image = buttons[i].BackgroundInUse;
+            }
+
+            for (int i = buttons.Count; i < 6; i++)
+            {
+                emptyButtons.Add(new Image { Path = "Menus/PokemonMenu/EmptyButton" });
+                emptyButtons[i - buttons.Count].LoadContent();
             }
 
             Items.Add(new MenuItem());
@@ -98,33 +113,36 @@ namespace PokemonFireRedClone
                 i.UnloadContent();
             if (ButtonMenu.IsOpen)
                 ButtonMenu.UnloadContent();
+            foreach (Image i in emptyButtons)
+                i.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
 
-            if (isSwitching)
-            {
-                //isSwitching = switchAnimation.Animate(gameTime);
-                //if (switchAnimation.Switched)
-                    //ResetButtons();
-                return;
-            }
+            foreach (var button in buttons)
+                button.Update(gameTime);
 
             if (!ButtonMenu.IsOpen)
             {
+
+                if (isSwitching)
+                {
+                    AnimateSwitchingButtons(gameTime);
+                    return;
+                }
+
                 if (!BaseMenu && !switchState)
                 {
 
-                    if (ButtonMenu.ItemNumber == 1)
+                    if ((BattleLogic.Battle == null || !BattleLogic.Battle.InBattle) && ButtonMenu.Switch)
                     {
                         switchState = true;
                         originalSwitchIndex = SelectedIndex;
+                        ButtonMenu.Switch = false;
                     }
                     else
                         BaseMenu = true;
-
-                    ButtonMenu.ItemNumber = 0;
                 }
 
                 if (InputManager.Instance.KeyPressed(Keys.A))
@@ -147,18 +165,17 @@ namespace PokemonFireRedClone
                     ItemNumber++;
                 else if (InputManager.Instance.KeyPressed(Keys.W))
                     ItemNumber--;
-                else if (InputManager.Instance.KeyPressed(Keys.E) || isSwitching)
+                else if (InputManager.Instance.KeyPressed(Keys.E))
                 {
 
-                    if (switchState || isSwitching)
+                    if (switchState)
                     {
                         if (ItemNumber != originalSwitchIndex && ItemNumber != Items.Count - 1)
                         {
                             CustomPokemon temp = Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex];
                             Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex] = Player.PlayerJsonObject.PokemonInBag[ItemNumber];
                             Player.PlayerJsonObject.PokemonInBag[ItemNumber] = temp;
-                            //isSwitching = true;
-                            ResetButtons();
+                            isSwitching = true;
                         }
 
                         switchState = false;
@@ -180,7 +197,14 @@ namespace PokemonFireRedClone
                 {
                     if (i < buttons.Count)
                     {
-                        buttons[i].State = ItemNumber == i ? PokemonMenuInfoButton.ButtonState.SELECTED : PokemonMenuInfoButton.ButtonState.UNSELECTED;
+                        if (switchState || isSwitching)
+                        {
+                            if (ItemNumber == i)
+                                buttons[i].State = isSwitching ? PokemonMenuInfoButton.ButtonState.SWITCH_ORIGINAL : PokemonMenuInfoButton.ButtonState.SWITCH_SELECTED;
+                            else
+                                buttons[i].State = i == originalSwitchIndex ? PokemonMenuInfoButton.ButtonState.SWITCH_ORIGINAL : PokemonMenuInfoButton.ButtonState.UNSELECTED;
+                        } else
+                            buttons[i].State = ItemNumber == i ? PokemonMenuInfoButton.ButtonState.SELECTED : PokemonMenuInfoButton.ButtonState.UNSELECTED;
                         Items[i].Image = buttons[i].BackgroundInUse;
                     }
                     else
@@ -193,9 +217,6 @@ namespace PokemonFireRedClone
             }
             else
                 ButtonMenu.Update();
-
-            foreach (var button in buttons)
-                button.Update(gameTime);
             
             AlignMenuItems(gameTime);
         }
@@ -208,11 +229,15 @@ namespace PokemonFireRedClone
                 base.Draw(spriteBatch);
                 foreach (var button in buttons)
                     button.Draw(spriteBatch);
+                foreach (Image i in emptyButtons)
+                    i.Draw(spriteBatch);
                 if (ButtonMenu.IsOpen)
                 {
                     Text[1].Draw(spriteBatch);
                     ButtonMenu.Draw(spriteBatch);
                 }
+                else if (ButtonMenu.Switch || switchState || isSwitching)
+                    Text[2].Draw(spriteBatch);
                 else
                     Text[0].Draw(spriteBatch);
             }
@@ -227,9 +252,16 @@ namespace PokemonFireRedClone
             BaseMenu = false;
         }
 
-        private void ResetButtons()
+        private void ResetButtons(GameTime gameTime)
         {
             List<CustomPokemon> menuList = Player.PlayerJsonObject.PokemonInBag; // never gets called in a battle
+            float goalX = buttons[originalSwitchIndex] is PokemonMenuStarterInfoButton ?
+                584 + buttons[ItemNumber].BackgroundInUse.SourceRect.Width + 300 : 584 + buttons[originalSwitchIndex].BackgroundInUse.SourceRect.Width + 300;
+            float originalButtonY = buttons[originalSwitchIndex].BackgroundInUse.Position.Y;
+            float newButtonY = buttons[ItemNumber].BackgroundInUse.Position.Y;
+
+            float originalButtonX = buttons[originalSwitchIndex].BackgroundInUse.Position.X;
+            float newButtonX = buttons[ItemNumber].BackgroundInUse.Position.X;
 
             buttons[originalSwitchIndex].UnloadContent();
             buttons[ItemNumber].UnloadContent();
@@ -241,6 +273,54 @@ namespace PokemonFireRedClone
 
             buttons[originalSwitchIndex].LoadContent();
             buttons[ItemNumber].LoadContent();
+
+            buttons[originalSwitchIndex].State = PokemonMenuInfoButton.ButtonState.SWITCH_ORIGINAL;
+            buttons[ItemNumber].State = PokemonMenuInfoButton.ButtonState.SWITCH_ORIGINAL;
+            Items[originalSwitchIndex].Image = buttons[originalSwitchIndex].BackgroundInUse;
+            Items[ItemNumber].Image = buttons[ItemNumber].BackgroundInUse;
+            Items[originalSwitchIndex].Image.LoadContent();
+            Items[ItemNumber].Image.LoadContent();
+
+            buttons[originalSwitchIndex].BackgroundInUse.Position.X = buttons[originalSwitchIndex] is PokemonMenuStarterInfoButton ? originalButtonX : goalX;
+            buttons[originalSwitchIndex].BackgroundInUse.Position.Y = originalButtonY;
+            buttons[ItemNumber].BackgroundInUse.Position.X = buttons[ItemNumber] is PokemonMenuStarterInfoButton ? newButtonX : goalX;
+            buttons[ItemNumber].BackgroundInUse.Position.Y = newButtonY;
+
+            buttons[originalSwitchIndex].UpdateInfoPositions(gameTime);
+            buttons[ItemNumber].UpdateInfoPositions(gameTime);
+
+            switchedButtons = true;
+        }
+
+        private void AnimateSwitchingButtons(GameTime gameTime)
+        {
+            const float originalX = 584;
+            int index = buttons[originalSwitchIndex] is PokemonMenuStarterInfoButton ? ItemNumber : originalSwitchIndex;
+            float goalX = originalX + buttons[index].BackgroundInUse.SourceRect.Width + 300;
+            int speed = (int)(2.0f * gameTime.ElapsedGameTime.TotalMilliseconds);
+            int originalButtonSpeed = buttons[originalSwitchIndex] is PokemonMenuStarterInfoButton ? -speed : speed;
+            int newButtonSpeed = buttons[ItemNumber] is PokemonMenuStarterInfoButton ? -speed : speed;
+
+            if (buttons[index].BackgroundInUse.Position.X < goalX && !switchedButtons)
+            {
+                buttons[originalSwitchIndex].OffsetX(originalButtonSpeed, gameTime);
+                buttons[ItemNumber].OffsetX(newButtonSpeed, gameTime);
+
+                if (buttons[index].BackgroundInUse.Position.X >= goalX)
+                    ResetButtons(gameTime);
+
+            } else if (buttons[index].BackgroundInUse.Position.X > originalX && switchedButtons)
+            {
+                buttons[originalSwitchIndex].OffsetX(-originalButtonSpeed, gameTime);
+                buttons[ItemNumber].OffsetX(-newButtonSpeed, gameTime);
+
+                if (buttons[index].BackgroundInUse.Position.X - speed <= originalX)
+                {
+                    buttons[index].BackgroundInUse.Position.X = originalX;
+                    isSwitching = false;
+                    switchedButtons = false;
+                }
+            }
         }
 
     }

@@ -26,7 +26,7 @@ namespace PokemonFireRedClone
                 MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
                 SpritePositioned = true;
             }
-            if (State == ButtonState.SELECTED)
+            if (State == ButtonState.SELECTED || State == ButtonState.SWITCH_SELECTED)
             {
                 MenuSprite.IsActive = false;
                 float CounterSpeed = (float)(gameTime.ElapsedGameTime.TotalMilliseconds * 8);
@@ -61,6 +61,8 @@ namespace PokemonFireRedClone
             base.LoadBackground();
             BackgroundUnselected.Path = "Menus/PokemonMenu/PokemonMenuMainButton";
             BackgroundSelected.Path = "Menus/PokemonMenu/PokemonMenuMainButtonSelected";
+            BackgroundSwitchOriginal.Path = "Menus/PokemonMenu/PokemonMenuMainButtonSwitchOriginal";
+            BackgroundSwitchSelected.Path = "Menus/PokemonMenu/PokemonMenuMainButtonSwitchSelected";
         }
     }
 }

@@ -12,17 +12,18 @@ namespace PokemonFireRedClone
         private int bounces;
         private bool bounceUp;
         private int offset;
+        private Image pokeImage;
 
-        public IntroBounceAnimation(float spriteHeight)
+        public IntroBounceAnimation(Image pokeImage)
         {
-            this.spriteHeight = spriteHeight;
+            spriteHeight = pokeImage.Position.Y;
             bounceUp = true;
             speedMultiplier = 5;
+            this.pokeImage = pokeImage;
         }
 
         public bool Animate(GameTime gameTime)
         {
-            ref Image sprite = ref ((SummaryScreen)ScreenManager.Instance.CurrentScreen).MenuManager.CurrentPage.PokeImage;
             double bounceSpeed = speedMultiplier*gameTime.ElapsedGameTime.TotalMilliseconds;
 
             counter += bounceSpeed;
@@ -59,12 +60,12 @@ namespace PokemonFireRedClone
                 bounces++;
                 if (bounces == 2)
                 {
-                    sprite.Position.Y = spriteHeight;
+                    pokeImage.Position.Y = spriteHeight;
                     return false;
                 }
             }
 
-            sprite.Position.Y = spriteHeight + offset;
+            pokeImage.Position.Y = spriteHeight + offset;
             return true;
 
         }

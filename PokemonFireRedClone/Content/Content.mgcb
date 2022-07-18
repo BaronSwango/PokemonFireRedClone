@@ -358,6 +358,30 @@
 /processorParam:TextureFormat=Color
 /build:Menus/PokemonMenu/DoWhatWithThisPokemon.png
 
+#begin Menus/PokemonMenu/EmptyButton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/EmptyButton.png
+
+#begin Menus/PokemonMenu/MoveToWhere.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/MoveToWhere.png
+
 #begin Menus/PokemonMenu/PokemonMenuBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -393,6 +417,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Menus/PokemonMenu/PokemonMenuButtonSelected.png
+
+#begin Menus/PokemonMenu/PokemonMenuButtonSwitchOriginal.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/PokemonMenuButtonSwitchOriginal.png
+
+#begin Menus/PokemonMenu/PokemonMenuButtonSwitchSelected.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/PokemonMenuButtonSwitchSelected.png
 
 #begin Menus/PokemonMenu/PokemonMenuCancelButton.png
 /importer:TextureImporter
@@ -441,6 +489,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Menus/PokemonMenu/PokemonMenuMainButtonSelected.png
+
+#begin Menus/PokemonMenu/PokemonMenuMainButtonSwitchOriginal.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/PokemonMenuMainButtonSwitchOriginal.png
+
+#begin Menus/PokemonMenu/PokemonMenuMainButtonSwitchSelected.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menus/PokemonMenu/PokemonMenuMainButtonSwitchSelected.png
 
 #begin Menus/PokemonMenu/StarterBattleButtonMenu.png
 /importer:TextureImporter
@@ -6165,18 +6237,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Types/Fighting.png
-
-#begin Types/Fire.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Types/Fire.png
 
 #begin Types/Fire.png
 /importer:TextureImporter

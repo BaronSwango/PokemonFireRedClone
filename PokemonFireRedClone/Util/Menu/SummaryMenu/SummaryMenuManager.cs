@@ -18,7 +18,7 @@ namespace PokemonFireRedClone
         {
             CurrentPage = new PokemonInfo(pokemon);
             CurrentPage.LoadContent();
-            animation = new IntroBounceAnimation(CurrentPage.PokeImage.Position.Y);
+            animation = new IntroBounceAnimation(CurrentPage.PokeImage);
             isAnimating = true;
         }
 
@@ -47,7 +47,7 @@ namespace PokemonFireRedClone
                     CurrentPage = (SummaryPage)Activator.CreateInstance(CurrentPage.GetType(), pokemon[index]);
                     CurrentPage.LoadContent();
                     PokemonMenu.SelectedIndex = index;
-                    animation = new IntroBounceAnimation(CurrentPage.PokeImage.Position.Y);
+                    animation = new IntroBounceAnimation(CurrentPage.PokeImage);
                     isAnimating = true;
                 }
             }
