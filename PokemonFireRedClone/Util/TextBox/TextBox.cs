@@ -123,10 +123,10 @@ namespace PokemonFireRedClone
         public void LoadContent(ref Player player)
         {
 
-            if (player.Image.SpriteSheetEffect.CurrentFrame.Y > 3)
-                player.Image.SpriteSheetEffect.CurrentFrame.Y -= 4;
-            player.Image.SpriteSheetEffect.CurrentFrame.X = 0;
-            player.Image.IsActive = false;
+            if (player.Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
+                player.Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
+            player.Sprite.SpriteSheetEffect.CurrentFrame.X = 0;
+            player.Sprite.IsActive = false;
             player.CanUpdate = false;
 
             IsDisplayed = true;
@@ -159,8 +159,8 @@ namespace PokemonFireRedClone
                 DialogueOffsetY = 20;
             }
             Border.LoadContent();
-            Border.Position = new Vector2(player.Image.Position.X - (ScreenManager.Instance.Dimensions.X -
-                Border.SourceRect.Width) - 64, player.Image.Position.Y + positionOffset);
+            Border.Position = new Vector2(player.Sprite.Position.X - (ScreenManager.Instance.Dimensions.X -
+                Border.SourceRect.Width) - 64, player.Sprite.Position.Y + positionOffset);
             foreach (TextBoxText image in Dialogue)
             {
                 if (Type == "TilePlayer")

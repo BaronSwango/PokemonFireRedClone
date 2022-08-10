@@ -42,7 +42,8 @@ namespace PokemonFireRedClone
 
             Background.LoadContent();
             PokeImage.LoadContent();
-            PokeImage.Position = new Vector2(240 - (PokeImage.SourceRect.Width / 2), 256-(PokeImage.SourceRect.Height/2));
+            PokeImage.Position = PokeImage.SourceRect.Height > 248 ? new Vector2(240 - (PokeImage.SourceRect.Width / 2), 388 - PokeImage.SourceRect.Height)
+                : new Vector2(240 - (PokeImage.SourceRect.Width / 2), 256-(PokeImage.SourceRect.Height/2));
             PokemonAssets.LoadContent("Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113));
             PokemonAssets.Name.SetPosition(new Vector2(160, 68));
             if (PokemonAssets.Gender != null)

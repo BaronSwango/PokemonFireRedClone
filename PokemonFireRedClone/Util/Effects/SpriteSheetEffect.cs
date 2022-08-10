@@ -10,7 +10,7 @@ namespace PokemonFireRedClone
         public int SwitchFrame;
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
-        public bool Player;
+        public bool Entity;
 
         public int FrameWidth
         {
@@ -70,7 +70,7 @@ namespace PokemonFireRedClone
             }
             else
             {
-                if (Player)
+                if (Entity)
                 {
                     if (CurrentFrame.Y > 3)
                         CurrentFrame.Y -= 4;

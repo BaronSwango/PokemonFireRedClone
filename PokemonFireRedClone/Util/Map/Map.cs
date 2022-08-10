@@ -15,15 +15,9 @@ namespace PokemonFireRedClone
         public List<Layer> Layers;
         public List<Tile> Tiles;
         public List<Tile> SolidTiles;
+        [XmlElement("NPC")]
+        public List<NPC> NPCs;
         public Vector2 TileDimensions;
-
-        public Map()
-        {
-            Layers = new List<Layer>();
-            Tiles = new List<Tile>();
-            SolidTiles = new List<Tile>();
-            TileDimensions = Vector2.Zero;
-        }
 
         public void LoadContent()
         {
@@ -45,18 +39,29 @@ namespace PokemonFireRedClone
                 }
 
             }
+
+            foreach (NPC npc in NPCs)
+                npc.LoadContent();
+            
+
         }
 
         public void UnloadContent()
         {
             foreach (Layer l in Layers)
                 l.UnloadContent();
+
+            foreach (NPC npc in NPCs)
+                npc.UnloadContent();
         }
 
-        public void Update(ref Player player)
+        public void Update(GameTime gameTime, ref Player player)
         {
             foreach (Layer l in Layers)
                 l.Update(ref player);
+
+            foreach (NPC npc in NPCs)
+                npc.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, string drawType)

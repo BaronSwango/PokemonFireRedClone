@@ -29,21 +29,21 @@ namespace PokemonFireRedClone
             {
                 Rectangle tileRect = new((int)Position.X, (int)Position.Y,
                     SourceRect.Width, SourceRect.Height - 20);
-                Rectangle playerRect = new((int)player.Image.Position.X, (int)player.Image.Position.Y,
-                    player.Image.SourceRect.Width, player.Image.SourceRect.Height);
+                Rectangle playerRect = new((int)player.Sprite.Position.X, (int)player.Sprite.Position.Y,
+                    player.Sprite.SourceRect.Width, player.Sprite.SourceRect.Height);
 
                 if (playerRect.Intersects(tileRect))
                 {
-                    if (player.State == Player.PlayerState.MoveLeft)
-                        player.Image.Position.X = tileRect.Right;
-                    else if (player.State == Player.PlayerState.MoveRight)
-                        player.Image.Position.X = tileRect.Left - player.Image.SourceRect.Width;
-                    else if (player.State == Player.PlayerState.MoveUp)
-                        player.Image.Position.Y = tileRect.Bottom;
+                    if (player.State == Entity.MoveState.Left)
+                        player.Sprite.Position.X = tileRect.Right;
+                    else if (player.State == Entity.MoveState.Right)
+                        player.Sprite.Position.X = tileRect.Left - player.Sprite.SourceRect.Width;
+                    else if (player.State == Entity.MoveState.Up)
+                        player.Sprite.Position.Y = tileRect.Bottom;
                     else
-                        player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
+                        player.Sprite.Position.Y = tileRect.Top - player.Sprite.SourceRect.Height;
 
-                    player.State = Player.PlayerState.Idle;
+                    player.State = Entity.MoveState.Idle;
                     player.Colliding = true;
                 }
             }
