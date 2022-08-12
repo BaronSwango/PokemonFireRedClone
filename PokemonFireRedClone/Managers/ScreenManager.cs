@@ -129,7 +129,7 @@ namespace PokemonFireRedClone
                     CurrentScreen.LoadContent();
                     if (CurrentScreen is GameplayScreen screen)
                     {
-                        Vector2 playerPos = screen.Player.Image.Position;
+                        Vector2 playerPos = screen.Player.Sprite.Position;
                         Image.Position = new Vector2(playerPos.X - (Dimensions.X / 2) + 32,
                         playerPos.Y - (Dimensions.Y / 2) + 40);
                     }
@@ -147,7 +147,7 @@ namespace PokemonFireRedClone
                 {
                     if (CurrentScreen is GameplayScreen screen)
                     {
-                        Vector2 playerPos = screen.Player.Image.Position;
+                        Vector2 playerPos = screen.Player.Sprite.Position;
                         Image.Position = new Vector2(playerPos.X - (Dimensions.X / 2) + 32,
                         playerPos.Y - (Dimensions.Y / 2) + 40);
                     }

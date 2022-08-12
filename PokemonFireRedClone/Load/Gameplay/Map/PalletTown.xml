@@ -95,7 +95,6 @@
 			[0:2][1:2][2:2][3:2][4:2][6:2][7:2][8:2][9:2][10:2][11:2][12:2]
 			[0:3][1:3][2:3][3:3][4:3][6:3][7:3][8:3][9:3][10:3][11:3][12:3]
 			[0:4][1:4][2:4][3:4][4:4][6:4][7:4][8:4][9:4][10:4][11:4][12:4]
-
 		</SolidTiles>
 		<TileMap>
 			<Row>[x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x]</Row>
@@ -131,7 +130,6 @@
 			<Row>[x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x]</Row>
         </TileMap>
     </Layer>
-<<<<<<< HEAD
 
 	<NPC>
 		<Sprite>
@@ -163,7 +161,4 @@
         </SpriteFrames>
 		<Direction>Down</Direction>
     </NPC>
-=======
-	
->>>>>>> parent of eee7c30 (Started work on NPCs)
 </Map>

@@ -10,12 +10,8 @@ namespace PokemonFireRedClone
         public int SwitchFrame;
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
-<<<<<<< HEAD
         public string SpriteType;
         public bool Entity;
-=======
-        public bool Player;
->>>>>>> parent of eee7c30 (Started work on NPCs)
 
         public int FrameWidth
         {
@@ -75,7 +71,7 @@ namespace PokemonFireRedClone
             }
             else
             {
-                if (Player)
+                if (Entity)
                 {
                     if (CurrentFrame.Y > 3)
                         CurrentFrame.Y -= 4;

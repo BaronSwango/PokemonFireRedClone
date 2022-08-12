@@ -32,6 +32,10 @@ namespace PokemonFireRedClone
             map.LoadContent();
             TextBoxManager.LoadXML();
             Player.Spawn(map);
+
+            foreach (NPC npc in map.NPCs)
+                npc.Spawn(map);
+
             Camera = new Camera();
         }
 
@@ -65,15 +69,15 @@ namespace PokemonFireRedClone
             else
             {
                 if (InputManager.Instance.KeyPressed(Keys.F)
-                    && Player.State == Player.PlayerState.Idle
-                    && (Player.Image.SpriteSheetEffect.CurrentFrame.X == 0 || Player.Image.SpriteSheetEffect.CurrentFrame.X == 2)
-                    && Player.Image.SpriteSheetEffect.CurrentFrame.Y < 4)
+                    && Player.State == Entity.MoveState.Idle
+                    && (Player.Sprite.SpriteSheetEffect.CurrentFrame.X == 0 || Player.Sprite.SpriteSheetEffect.CurrentFrame.X == 2)
+                    && Player.Sprite.SpriteSheetEffect.CurrentFrame.Y < 4)
                 {
                     if (!MenuManager.IsLoaded)
                     {
                         if (TextBoxManager.IsDisplayed)
                             TextBoxManager.UnloadContent(ref Player);
-                        Player.Image.IsActive = false;
+                        Player.Sprite.IsActive = false;
                         MenuManager.MenuName = "MainMenu";
                         MenuManager.LoadContent("Load/Menus/MainMenu.xml");
                     }
@@ -89,7 +93,7 @@ namespace PokemonFireRedClone
                 Player.CanUpdate = true;
 
             Player.Update(gameTime, ref map);
-            map.Update(ref Player);
+            map.Update(gameTime, ref Player);
             Camera.Follow(Player);
 
 
@@ -117,11 +121,8 @@ namespace PokemonFireRedClone
             foreach (NPC npc in map.NPCs)
                 npc.NPCSprite.Bottom.Draw(spriteBatch);
             Player.Draw(spriteBatch);
-<<<<<<< HEAD
             foreach (NPC npc in map.NPCs)
                 npc.NPCSprite.Top.Draw(spriteBatch);
-=======
->>>>>>> parent of eee7c30 (Started work on NPCs)
             map.Draw(spriteBatch, "Overlay");
             if (MenuManager.IsLoaded)
                 MenuManager.Draw(spriteBatch);
