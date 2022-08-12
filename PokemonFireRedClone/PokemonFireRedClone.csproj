@@ -67,7 +67,6 @@
     <None Remove="Content\Type\" />
     <None Remove="Util\Menu\PokemonMenu\" />
     <None Remove="Util\Menu\PokemonMenu\MenuButtons\" />
-    <None Remove="Entity\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -159,6 +158,5 @@
     <Folder Include="Content\Types\" />
     <Folder Include="Util\Menu\PokemonMenu\" />
     <Folder Include="Util\Menu\PokemonMenu\MenuButtons\" />
-    <Folder Include="Entity\" />
   </ItemGroup>
 </Project>

@@ -28,6 +28,7 @@ namespace PokemonFireRedClone
         public MoveState State;
         public Vector2 SpriteFrames;
         public float MoveSpeed;
+        public bool Colliding;
 
         public Entity()
         {
@@ -39,7 +40,6 @@ namespace PokemonFireRedClone
         public virtual void LoadContent()
         {
             Sprite.LoadContent();
-            Sprite.IsActive = true;
             Sprite.SpriteSheetEffect.AmountOfFrames = SpriteFrames;
             Sprite.SpriteSheetEffect.Entity = true;
             Sprite.Position = SpawnLocation;
@@ -63,14 +63,30 @@ namespace PokemonFireRedClone
             Sprite.Draw(spriteBatch);
         }
 
-        public void Spawn(Map map)
+        public virtual void Spawn(Map map)
         {
-            if (TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y) != null)
+            Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y);
+            if (currentTile != null)
             {
-                Vector2 centerTile = new(TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y).Position.X,
-                TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y).Position.Y - 84);
+                Vector2 centerTile = new(currentTile.Position.X,
+                currentTile.Position.Y - 84);
                 Sprite.Position = centerTile;
             }
+        }
+
+        public void Collide(Rectangle rect)
+        {
+            if (State == MoveState.Left)
+                Sprite.Position.X = rect.Right;
+            else if (State == MoveState.Right)
+                Sprite.Position.X = rect.Left - Sprite.SourceRect.Width;
+            else if (State == MoveState.Up)
+                Sprite.Position.Y = rect.Bottom;
+            else
+                Sprite.Position.Y = rect.Top - Sprite.SourceRect.Height;
+
+            State = MoveState.Idle;
+            Colliding = true;
         }
 
     }

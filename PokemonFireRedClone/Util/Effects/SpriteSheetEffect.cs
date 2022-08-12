@@ -10,7 +10,12 @@ namespace PokemonFireRedClone
         public int SwitchFrame;
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
+<<<<<<< HEAD
+        public string SpriteType;
         public bool Entity;
+=======
+        public bool Player;
+>>>>>>> parent of eee7c30 (Started work on NPCs)
 
         public int FrameWidth
         {
@@ -70,7 +75,7 @@ namespace PokemonFireRedClone
             }
             else
             {
-                if (Entity)
+                if (Player)
                 {
                     if (CurrentFrame.Y > 3)
                         CurrentFrame.Y -= 4;
@@ -83,9 +88,20 @@ namespace PokemonFireRedClone
                     }
                 }
             }
-            
-            Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
-                (int) CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
+
+
+            if (SpriteType == "NPCTop")
+                Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
+                    (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight / 2);
+            else if (SpriteType == "NPCBottom")
+            {
+                Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
+                    (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight / 2);
+                Image.SourceRect.Y += Image.SourceRect.Height;
+            } else
+                Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
+                        (int) CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
+           
         }
     }
 }

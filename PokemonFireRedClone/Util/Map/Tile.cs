@@ -9,6 +9,7 @@ namespace PokemonFireRedClone
 
         public string State;
         public string ID;
+        public bool ContainsEntity;
         [XmlIgnore]
         public Rectangle SourceRect { get; private set; }
         [XmlIgnore]
@@ -22,30 +23,34 @@ namespace PokemonFireRedClone
         }
 
         //TODO: Play sound when colliding
-        //TODO: 
         public void Update(ref Player player)
         {
-            if (State == "Solid")
+            if (State == "Solid" || ContainsEntity)
             {
                 Rectangle tileRect = new((int)Position.X, (int)Position.Y,
                     SourceRect.Width, SourceRect.Height - 20);
-                Rectangle playerRect = new((int)player.Sprite.Position.X, (int)player.Sprite.Position.Y,
-                    player.Sprite.SourceRect.Width, player.Sprite.SourceRect.Height);
+                Rectangle playerRect = new((int)player.Image.Position.X, (int)player.Image.Position.Y,
+                    player.Image.SourceRect.Width, player.Image.SourceRect.Height);
 
                 if (playerRect.Intersects(tileRect))
+<<<<<<< HEAD
+                    player.Collide(tileRect);
+                
+=======
                 {
-                    if (player.State == Entity.MoveState.Left)
-                        player.Sprite.Position.X = tileRect.Right;
-                    else if (player.State == Entity.MoveState.Right)
-                        player.Sprite.Position.X = tileRect.Left - player.Sprite.SourceRect.Width;
-                    else if (player.State == Entity.MoveState.Up)
-                        player.Sprite.Position.Y = tileRect.Bottom;
+                    if (player.State == Player.PlayerState.MoveLeft)
+                        player.Image.Position.X = tileRect.Right;
+                    else if (player.State == Player.PlayerState.MoveRight)
+                        player.Image.Position.X = tileRect.Left - player.Image.SourceRect.Width;
+                    else if (player.State == Player.PlayerState.MoveUp)
+                        player.Image.Position.Y = tileRect.Bottom;
                     else
-                        player.Sprite.Position.Y = tileRect.Top - player.Sprite.SourceRect.Height;
+                        player.Image.Position.Y = tileRect.Top - player.Image.SourceRect.Height;
 
-                    player.State = Entity.MoveState.Idle;
+                    player.State = Player.PlayerState.Idle;
                     player.Colliding = true;
                 }
+>>>>>>> parent of eee7c30 (Started work on NPCs)
             }
         }
 

@@ -190,7 +190,8 @@
 /processorParam:TextureFormat=Color
 /build:Gameplay/Carson.png
 
-#begin Gameplay/FatNPC.png
+<<<<<<< HEAD
+#begin Gameplay/NPC1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -200,8 +201,22 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Gameplay/FatNPC.png
+/build:Gameplay/NPC1.png
 
+#begin Gameplay/NPC2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Gameplay/NPC2.png
+
+=======
+>>>>>>> parent of eee7c30 (Started work on NPCs)
 #begin Gameplay/Player.png
 /importer:TextureImporter
 /processor:TextureProcessor

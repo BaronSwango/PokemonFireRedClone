@@ -28,7 +28,6 @@ namespace PokemonFireRedClone
         public static PlayerJsonObject PlayerJsonObject;
         public static double ElapsedTime;
         public bool Running;
-        public bool Colliding;
         public bool CanUpdate;
         [XmlIgnore]
         public List<CustomPokemon> Pokemon;
@@ -76,7 +75,7 @@ namespace PokemonFireRedClone
             {
                 Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height);
 
-                if (currentTile != null) // TODO: check if tile contains entity (NPC, Trainer, ETC)
+                if (currentTile != null)
                 {
                     if ((TileManager.UpTile(map, currentTile) != null && TileManager.UpTile(map, currentTile).State == "Solid" && Direction == EntityDirection.Up)
                         || (TileManager.DownTile(map, currentTile) != null && TileManager.DownTile(map, currentTile).State == "Solid" && Direction == EntityDirection.Down)

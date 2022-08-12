@@ -2,18 +2,34 @@
 
 namespace PokemonFireRedClone
 {
-    public static class TileManager
+    public class TileManager
     {
 
-        public static Tile GetCurrentTile(Map map, Image image, int offsetX, int offSetY)
+        private static TileManager instance;
+
+        public static TileManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new TileManager();
+                }
+
+                return instance;
+            }
+        }
+
+
+        public Tile GetCurrentTile(Map map, Image image, int offsetX, int offSetY)
         {
 
-            Rectangle playerRect = new((int)image.Position.X, (int)image.Position.Y,
+            Rectangle playerRect = new Rectangle((int)image.Position.X, (int)image.Position.Y,
                 image.SourceRect.Width, image.SourceRect.Height);
 
             foreach (Tile tile in map.Tiles)
             {
-                Rectangle tileRect = new((int)tile.Position.X + 4, (int)tile.Position.Y,
+                Rectangle tileRect = new Rectangle((int)tile.Position.X + 4, (int)tile.Position.Y,
                     tile.SourceRect.Width - 8, tile.SourceRect.Height - 20);
 
                 if (tileRect.Contains(new Vector2(playerRect.Location.X + offsetX, playerRect.Location.Y + offSetY)))
@@ -22,7 +38,7 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        public static Tile LeftTile(Map map, Tile currentTile)
+        public Tile LeftTile(Map map, Tile currentTile)
         {
             foreach (Tile tile in map.SolidTiles)
             {
@@ -32,7 +48,7 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        public static Tile RightTile(Map map, Tile currentTile)
+        public Tile RightTile(Map map, Tile currentTile)
         {
             foreach (Tile tile in map.SolidTiles)
             {
@@ -42,7 +58,7 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        public static Tile UpTile(Map map, Tile currentTile)
+        public Tile UpTile(Map map, Tile currentTile)
         {
             foreach (Tile tile in map.SolidTiles)
             {
@@ -52,7 +68,7 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        public static Tile DownTile(Map map, Tile currentTile)
+        public Tile DownTile(Map map, Tile currentTile)
         {
             foreach (Tile tile in map.SolidTiles)
             {
@@ -62,7 +78,7 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        public static bool IsTextBoxTile(GameplayScreen gameplayScreen, Tile tile)
+        public bool IsTextBoxTile(GameplayScreen gameplayScreen, Tile tile)
         {
             foreach (TextBox textBox in gameplayScreen.TextBoxManager.TextBoxes)
             {

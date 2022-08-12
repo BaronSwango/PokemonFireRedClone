@@ -50,7 +50,7 @@ namespace PokemonFireRedClone
         public BattleLogic()
         {
             if (Battle == null || !Battle.InBattle)
-                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Venusaur"), 69));
+                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Mew"), 5));
 
             PlayerMoveUsed = false;
             PlayerHasMoved = false;

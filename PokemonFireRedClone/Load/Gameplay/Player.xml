@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Player>
-	<Sprite>
+	<Image>
 		<Path>Gameplay/Player</Path>
 		<Effects>SpriteSheetEffect</Effects>
-	</Sprite>
-	<SpriteFrames>
-		<X>4</X>
-		<Y>8</Y>
-    </SpriteFrames>
+	</Image>
+	<MoveSpeed>0.26</MoveSpeed>
 </Player>
