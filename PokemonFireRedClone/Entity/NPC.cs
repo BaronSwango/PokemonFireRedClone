@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
@@ -7,8 +6,7 @@ namespace PokemonFireRedClone
     public class NPC : Entity
     {
 
-        [XmlElement("TextBoxes")]
-        public List<TextBox> TextBoxes;
+        public string ID;
         [XmlIgnore]
         public Sprite NPCSprite;
 
@@ -30,9 +28,9 @@ namespace PokemonFireRedClone
             NPCSprite.Update(gameTime);
         }
 
-        public override void Spawn(Map map)
+        public override void Spawn(ref Map map)
         {
-            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Top, NPCSprite.Top.SourceRect.Width / 8, NPCSprite.Top.SourceRect.Height / (int)NPCSprite.Top.SpriteSheetEffect.AmountOfFrames.Y); ;
+            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width / 8, NPCSprite.Bottom.SourceRect.Height / (int)NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
             if (currentTile != null)
             {
                 Vector2 centerTile = new(currentTile.Position.X,

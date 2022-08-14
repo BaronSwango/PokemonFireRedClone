@@ -9,7 +9,7 @@ namespace PokemonFireRedClone
 
         public string State;
         public string ID;
-        public bool ContainsEntity;
+        public Entity Entity;
         [XmlIgnore]
         public Rectangle SourceRect { get; private set; }
         [XmlIgnore]
@@ -25,7 +25,7 @@ namespace PokemonFireRedClone
         //TODO: Play sound when colliding
         public void Update(ref Player player)
         {
-            if (State == "Solid" || ContainsEntity)
+            if (State == "Solid" || Entity != null)
             {
                 Rectangle tileRect = new((int)Position.X, (int)Position.Y,
                     SourceRect.Width, SourceRect.Height - 20);

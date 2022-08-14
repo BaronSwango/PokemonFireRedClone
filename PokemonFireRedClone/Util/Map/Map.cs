@@ -3,6 +3,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using System;
 
 namespace PokemonFireRedClone
 {
@@ -15,6 +16,7 @@ namespace PokemonFireRedClone
         public List<Layer> Layers;
         public List<Tile> Tiles;
         public List<Tile> SolidTiles;
+        public List<Tile> NPCTiles;
         [XmlElement("NPC")]
         public List<NPC> NPCs;
         public Vector2 TileDimensions;
@@ -61,11 +63,12 @@ namespace PokemonFireRedClone
             foreach (NPC npc in NPCs)
             {
                 npc.Update(gameTime);
-                //Tile currentTile = TileManager.GetCurrentTile(this, npc.Sprite, npc.Sprite.SourceRect.Width / 8,
-                //npc.Sprite.SourceRect.Height / (int)npc.Sprite.SpriteSheetEffect.AmountOfFrames.Y);
                 Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / 8,
                     npc.NPCSprite.Bottom.SourceRect.Height / (int)npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
-                currentTile.ContainsEntity = true;
+                //Console.WriteLine("ContainsEntity: " + currentTile.Position.X + "," + currentTile.Position.Y);
+                currentTile.Entity = npc;
+                if (!NPCTiles.Contains(currentTile))
+                    NPCTiles.Add(currentTile);
             }
         }
 

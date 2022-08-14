@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -63,7 +64,7 @@ namespace PokemonFireRedClone
             Sprite.Draw(spriteBatch);
         }
 
-        public virtual void Spawn(Map map)
+        public virtual void Spawn(ref Map map)
         {
             Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y);
             if (currentTile != null)

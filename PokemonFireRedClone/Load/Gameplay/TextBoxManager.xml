@@ -121,4 +121,98 @@
             <B>212</B>
         </Dialogue>
     </TextBoxes>
+    <TextBoxes>
+        <TotalPages>2</TotalPages>
+        <Type>NPC</Type>
+        <ID>NPC1</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Technology   is   incredible ! </Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>You   can   now   store   and   recall   items</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>and   POKéMON   as   data   via   PC.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC2</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+				<G>52</G>
+				<B>40</B>
+				<A>255</A>
+                <Text>I`m   raising   POKéMON ,   too.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+		<Dialogue>
+			<Page>2</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+				<G>52</G>
+                <B>40</B>
+				<A>255</A>
+				<Text>When   they   get   strong ,   they   can</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+		<Dialogue>
+            <Page>2</Page>
+			<Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+                <G>52</G>
+				<B>40</B>
+				<A>255</A>
+				<Text>protect   me.</Text>
+			</Image>
+            <R>218</R>
+			<G>218</G>
+			<B>212</B>
+		</Dialogue>
+    </TextBoxes>
 </TextBoxManager>

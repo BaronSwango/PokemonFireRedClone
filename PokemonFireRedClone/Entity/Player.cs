@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -74,14 +75,14 @@ namespace PokemonFireRedClone
                 || (Direction == EntityDirection.Right && !InputManager.Instance.KeyDown(Keys.W, Keys.S, Keys.A)))
             {
                 Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height);
-
                 if (currentTile != null)
                 {
-                    if ((TileManager.UpTile(map, currentTile) != null && TileManager.UpTile(map, currentTile).State == "Solid" && Direction == EntityDirection.Up)
-                        || (TileManager.DownTile(map, currentTile) != null && TileManager.DownTile(map, currentTile).State == "Solid" && Direction == EntityDirection.Down)
-                        || (TileManager.LeftTile(map, currentTile) != null && TileManager.LeftTile(map, currentTile).State == "Solid" && Direction == EntityDirection.Left)
-                        || (TileManager.RightTile(map, currentTile) != null && TileManager.RightTile(map, currentTile).State == "Solid" && Direction == EntityDirection.Right))
+                    if ((TileManager.UpTile(map, currentTile) != null && (TileManager.UpTile(map, currentTile).State == "Solid" || TileManager.UpTile(map, currentTile).Entity != null) && Direction == EntityDirection.Up)
+                        || (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).State == "Solid" || TileManager.DownTile(map, currentTile).Entity != null) && Direction == EntityDirection.Down)
+                        || (TileManager.LeftTile(map, currentTile) != null && (TileManager.LeftTile(map, currentTile).State == "Solid" || TileManager.LeftTile(map, currentTile).Entity != null) && Direction == EntityDirection.Left)
+                        || (TileManager.RightTile(map, currentTile) != null && (TileManager.RightTile(map, currentTile).State == "Solid" || TileManager.RightTile(map, currentTile).Entity != null) && Direction == EntityDirection.Right))
                     {
+
                         if (!Colliding)
                         {
                             if (changeDirection)
@@ -94,9 +95,9 @@ namespace PokemonFireRedClone
                             && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed)
                         {
                             if (Direction == EntityDirection.Up && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
-                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
+                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
                             else if (Direction == EntityDirection.Down && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
-                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
+                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
 
                         }
                     }

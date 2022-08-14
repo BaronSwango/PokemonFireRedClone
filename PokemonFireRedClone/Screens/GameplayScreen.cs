@@ -31,10 +31,10 @@ namespace PokemonFireRedClone
             Player.LoadContent();
             map.LoadContent();
             TextBoxManager.LoadXML();
-            Player.Spawn(map);
+            Player.Spawn(ref map);
 
             foreach (NPC npc in map.NPCs)
-                npc.Spawn(map);
+                npc.Spawn(ref map);
 
             Camera = new Camera();
         }

@@ -26,9 +26,16 @@ namespace PokemonFireRedClone
         {
             foreach (Tile tile in map.SolidTiles)
             {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X-64, currentTile.Position.Y-64)))
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64)))
                     return tile;
             }
+
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64)))
+                    return tile;
+            }
+
             return null;
         }
 
@@ -39,6 +46,13 @@ namespace PokemonFireRedClone
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X+64, currentTile.Position.Y-64)))
                     return tile;
             }
+
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + 64, currentTile.Position.Y - 64)))
+                    return tile;
+            }
+
             return null;
         }
 
@@ -49,6 +63,13 @@ namespace PokemonFireRedClone
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128)))
                     return tile;
             }
+
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128)))
+                    return tile;
+            }
+
             return null;
         }
 
@@ -59,6 +80,13 @@ namespace PokemonFireRedClone
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
                     return tile;
             }
+
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
+                    return tile;
+            }
+
             return null;
         }
 

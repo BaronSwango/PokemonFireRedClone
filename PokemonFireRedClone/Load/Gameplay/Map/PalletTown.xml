@@ -145,6 +145,7 @@
 			<Y>4</Y>
         </SpriteFrames>
 		<Direction>Down</Direction>
+		<ID>NPC1</ID>
     </NPC>
 	<NPC>
 		<Sprite>
@@ -160,5 +161,6 @@
 			<Y>4</Y>
         </SpriteFrames>
 		<Direction>Down</Direction>
+		<ID>NPC2</ID>
     </NPC>
 </Map>

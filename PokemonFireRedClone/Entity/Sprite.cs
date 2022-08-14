@@ -35,11 +35,6 @@ namespace PokemonFireRedClone
             Bottom.SpriteSheetEffect.SpriteType = "NPCBottom";
         }
 
-        public void SetPosition(Vector2 position)
-        {
-            Top.Position = position;
-            Bottom.Position = new Vector2(Top.Position.X, Top.Position.Y + (Top.SourceRect.Height / 8));
-        }
 
         public void UnloadContent()
         {
@@ -52,6 +47,18 @@ namespace PokemonFireRedClone
             Top.Update(gameTime);
             
             Bottom.Update(gameTime);
+        }
+
+        public void SetDirection(int direction)
+        {
+            Top.SpriteSheetEffect.CurrentFrame.Y = direction;
+            Bottom.SpriteSheetEffect.CurrentFrame.Y = direction;
+        }
+
+        public void SetPosition(Vector2 position)
+        {
+            Top.Position = position;
+            Bottom.Position = new Vector2(Top.Position.X, Top.Position.Y + (Top.SourceRect.Height / 8));
         }
 
     }
