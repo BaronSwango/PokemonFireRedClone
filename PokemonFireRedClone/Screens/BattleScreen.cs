@@ -10,6 +10,8 @@ namespace PokemonFireRedClone
     {
 
         public BattleTextBox TextBox;
+        [XmlIgnore]
+        public Trainer Trainer;
         public BattleAssets BattleAssets;
         [XmlIgnore]
         public BattleLogic BattleLogic;
@@ -45,7 +47,7 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             // TODO: Load Background based on what environment the battle is in
-            BattleLogic = new BattleLogic();
+            BattleLogic = new BattleLogic(Trainer);
             TextBox.LoadContent(BattleLogic.Battle.EnemyPokemon.Pokemon);
             BattleAssets.LoadContent();
             base.LoadContent();
@@ -64,7 +66,7 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
-            
+
             if (MenuManager.MenuName != "PokemonMenu")
             {
                 BattleAssets.Update(gameTime);
@@ -94,7 +96,9 @@ namespace PokemonFireRedClone
                     TextBox.BattleLevelUp.NextPage();
 
                 if ((!BattleAssets.IsTransitioning && !TextBox.BattleLevelUp.IsActive && (!ScreenManager.Instance.IsTransitioning || TextBox.NextPage == 4))
+                    || BattleAssets.State == BattleAssets.BattleState.TRAINER_BALL_BAR
                     || BattleAssets.State == BattleAssets.BattleState.WILD_POKEMON_FADE_IN
+                    || BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON
                     || BattleAssets.State == BattleAssets.BattleState.DAMAGE_ANIMATION
                     || BattleAssets.State == BattleAssets.BattleState.STATUS_ANIMATION
                     || (BattleAssets.State == BattleAssets.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))

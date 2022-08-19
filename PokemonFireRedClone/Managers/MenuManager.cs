@@ -99,7 +99,7 @@ namespace PokemonFireRedClone
                             ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
                         break;
                     case "Move":
-                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.MoveNames[MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].PokemonText.Image.Text).Name] == 0)
+                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.MovePP[MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].PokemonText.Image.Text).Name] == 0)
                         {
                             ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.NextPage = 21;
                             ((BattleScreen)ScreenManager.Instance.CurrentScreen).TextBox.IsTransitioning = true;

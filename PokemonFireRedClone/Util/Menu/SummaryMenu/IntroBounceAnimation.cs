@@ -12,7 +12,7 @@ namespace PokemonFireRedClone
         private int bounces;
         private bool bounceUp;
         private int offset;
-        private Image pokeImage;
+        private readonly Image pokeImage;
 
         public IntroBounceAnimation(Image pokeImage)
         {

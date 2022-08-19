@@ -44,6 +44,12 @@ namespace PokemonFireRedClone
                         {
                             switch (Page)
                             {
+                                case 2:
+                                    if (CurrentDialogue[0] == image)
+                                        image.Text = ScreenManager.Instance.BattleScreen.Trainer.Name + "   sent";
+                                    else if (CurrentDialogue[1] == image)
+                                        image.Text = "out   " + BattleLogic.Battle.EnemyPokemon.Pokemon.PokemonName.ToUpper() + " ! "; 
+                                    break;
                                 case 3:
                                     image.Text = "Go !   " + BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " !";
                                     break;
@@ -268,11 +274,16 @@ namespace PokemonFireRedClone
                         NextPage = 3;
                         CurrentDialogue.Add(image);
                         image.LoadContent();
+                        image.Arrow = true;
                         break;
                     }
                     else
                     {
-                        // TRAINER NAME AND STUFF
+                        if (CurrentDialogue.Count == 0)
+                        {
+                            image.Text = ScreenManager.Instance.BattleScreen.Trainer.Name;
+                            NextPage = 2;
+                        }
                         CurrentDialogue.Add(image);
                         image.LoadContent();
                     }
@@ -297,6 +308,14 @@ namespace PokemonFireRedClone
                 Path = "TextBoxes/TextBoxEffectPixelBattle"
             };
             TransitionRect2.LoadContent();
+
+            if (CurrentDialogue.Count == 2)
+            {
+                CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 64));
+
+                TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width + 4, CurrentDialogue[1].SourceRect.Height + 4);
+                TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
+            }
         }
 
         public override void UnloadContent()
@@ -347,13 +366,6 @@ namespace PokemonFireRedClone
                         break;
                 }
 
-                /*
-                foreach (TextBoxImage image in CurrentDialogue)
-                {
-                    if (image.Skippable || image.Arrow)
-                        IsTransitioning = true;
-                }
-                */
             }
 
             SetArrowPosition();

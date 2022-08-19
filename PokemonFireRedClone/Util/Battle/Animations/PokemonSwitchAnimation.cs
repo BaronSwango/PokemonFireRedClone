@@ -110,7 +110,6 @@ namespace PokemonFireRedClone
                 {
                     ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.POKEMON_SEND_OUT;
                     ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new PokemonSendOut();
-                    ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.LoadContent();
                     ResetPokeball();
                 }
                 return true;

@@ -12,9 +12,8 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            //base.LoadContent();
             NPCSprite = new Sprite(Sprite);
-            NPCSprite.LoadContent();
+            NPCSprite.LoadContent(SpriteFrames, Direction);
             NPCSprite.SetPosition(SpawnLocation);
         }
 
@@ -30,7 +29,8 @@ namespace PokemonFireRedClone
 
         public override void Spawn(ref Map map)
         {
-            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width / 8, NPCSprite.Bottom.SourceRect.Height / (int)NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
+            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width / ((int)NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.X * 2),
+                NPCSprite.Bottom.SourceRect.Height / (int)NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
             if (currentTile != null)
             {
                 Vector2 centerTile = new(currentTile.Position.X,

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PokemonFireRedClone
 {
@@ -12,17 +13,19 @@ namespace PokemonFireRedClone
         public bool IsWild;
         public bool InBattle;
 
-        public Battle(CustomPokemon enemyPokemon)
+        public Battle(params CustomPokemon[] enemyPokemon)
         {
-            IsWild = true;
+
+            foreach (CustomPokemon pokemon in enemyPokemon)
+                Console.WriteLine(pokemon.PokemonName.ToUpper() + ": " + pokemon.CurrentHP);
             InBattle = true;
-            EnemyPokemon = new BattlePokemon(enemyPokemon);
+            EnemyPokemon = new BattlePokemon(enemyPokemon[0]);
             EnemyPokemon.Pokemon.CurrentHP = EnemyPokemon.Pokemon.Stats.HP;
             BattlePokemonInBag = new List<CustomPokemon>(Player.PlayerJsonObject.PokemonInBag);
             PlayerPokemon = new BattlePokemon(BattlePokemonInBag[0]);
-            EnemyPokemon.Pokemon.MoveNames.Add("Growl", 40);
-            EnemyPokemon.Pokemon.MoveNames.Add("Double Team", 15);
-            EnemyPokemon.Pokemon.MoveNames.Add("Water Gun", 20);
+            //EnemyPokemon.Pokemon.MovePP.Add("Growl", 40);
+            //EnemyPokemon.Pokemon.MovePP.Add("Double Team", 15);
+            //EnemyPokemon.Pokemon.MovePP.Add("Water Gun", 20);
         }
 
         public void SwapPokemon(int index)

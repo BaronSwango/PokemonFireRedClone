@@ -23,6 +23,7 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.Level.OffsetX(enemySpeed);
                     ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.HPBar.Position.X += enemySpeed;
                 }
+
                 if (ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.Tint != Color.White)
                     ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.Tint = new Color(ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.Tint.R + 3, ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.Tint.G + 3, ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.Tint.B + 3, 255);
                 return false;

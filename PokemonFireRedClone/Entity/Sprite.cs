@@ -9,29 +9,33 @@ namespace PokemonFireRedClone
 
         public Sprite(Image image)
         {
-            Top = new Image();
-            Top.Path = image.Path;
-            Top.Effects = image.Effects;
+            Top = new Image
+            {
+                Path = image.Path,
+                Effects = image.Effects
+            };
 
-            Bottom = new Image();
-            Bottom.Path = image.Path;
-            Bottom.Effects = image.Effects;
+            Bottom = new Image
+            {
+                Path = image.Path,
+                Effects = image.Effects
+            };
         }
 
-        public void LoadContent()
+        public void LoadContent(Vector2 spriteFrames, Entity.EntityDirection direction)
         {
             Top.LoadContent();
             Top.SpriteSheetEffect.IsActive = true;
             Top.SpriteSheetEffect.Entity = true;
-            Top.SpriteSheetEffect.AmountOfFrames = new Vector2(4, 4);
-            Top.SpriteSheetEffect.CurrentFrame.Y = 2;
+            Top.SpriteSheetEffect.AmountOfFrames = spriteFrames;
+            Top.SpriteSheetEffect.CurrentFrame.Y = (int) direction;
             Top.SpriteSheetEffect.SpriteType = "NPCTop";
 
             Bottom.LoadContent();
             Bottom.SpriteSheetEffect.IsActive = true;
             Bottom.SpriteSheetEffect.Entity = true;
-            Bottom.SpriteSheetEffect.AmountOfFrames = new Vector2(4, 4);
-            Bottom.SpriteSheetEffect.CurrentFrame.Y = 2;
+            Bottom.SpriteSheetEffect.AmountOfFrames = spriteFrames;
+            Bottom.SpriteSheetEffect.CurrentFrame.Y = (int) direction;
             Bottom.SpriteSheetEffect.SpriteType = "NPCBottom";
         }
 
@@ -45,7 +49,6 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime)
         {
             Top.Update(gameTime);
-            
             Bottom.Update(gameTime);
         }
 
@@ -58,7 +61,8 @@ namespace PokemonFireRedClone
         public void SetPosition(Vector2 position)
         {
             Top.Position = position;
-            Bottom.Position = new Vector2(Top.Position.X, Top.Position.Y + (Top.SourceRect.Height / 8));
+            Bottom.Position = new Vector2(Top.Position.X,
+                Top.Position.Y + (Top.SourceRect.Height / ((int) Top.SpriteSheetEffect.AmountOfFrames.Y * 2)));
         }
 
     }

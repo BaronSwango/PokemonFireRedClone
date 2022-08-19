@@ -1,30 +1,35 @@
 ﻿using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace PokemonFireRedClone
 {
     public class CustomPokemon
     {
 
-        private Dictionary<Move, int> moves;
+        private readonly Dictionary<Move, int> moves;
 
         public string Name;
         public string PokemonName;
+        [XmlIgnore]
         public Nature Nature;
         public Gender Gender;
-        public Dictionary<string, int> MoveNames;
+        public List<string> MoveNames;
+        [XmlIgnore]
+        public Dictionary<string, int> MovePP;
         public int Level;
         public int CurrentEXP;
         public int CurrentHP;
         public StatList Stats;
 
-        public CustomPokemon(string pokemonName, Nature nature, Gender gender, Dictionary<string, int> moveNames, int level, StatList stats)
+        public CustomPokemon() { moves = new Dictionary<Move, int>(); Stats = new StatList(); }
+        public CustomPokemon(string pokemonName, Nature nature, Gender gender, Dictionary<string, int> movePP, int level, StatList stats)
         {
             PokemonName = pokemonName;
             Nature = nature;
             Gender = gender;
-            MoveNames = moveNames;
+            MovePP = movePP;
             Level = level;
             Stats = stats;
             CurrentHP = Stats.HP;
@@ -32,26 +37,23 @@ namespace PokemonFireRedClone
             Moves = new Dictionary<Move, int>();
         }
 
+        [XmlIgnore]
         [JsonIgnore]
         public Dictionary<Move, int> Moves
         {
-
             get
             {
                 if (moves.Count == 0)
                 {
-                    foreach (string name in MoveNames.Keys)
-                        moves.Add(MoveManager.Instance.GetMove(name), MoveNames[name]);
+                    foreach (string name in MovePP.Keys)
+                        moves.Add(MoveManager.Instance.GetMove(name), MovePP[name]);
                 }
                 return moves;
             }
-            private set
-            {
-                moves = value;
-
-            }
+            private set { }
         }
 
+        [XmlIgnore]
         [JsonIgnore]
         public Pokemon Pokemon
         {
@@ -60,6 +62,7 @@ namespace PokemonFireRedClone
             private set { }
         }
 
+        [XmlIgnore]
         [JsonIgnore]
         public int EXPTowardsLevelUp
         {
@@ -68,6 +71,7 @@ namespace PokemonFireRedClone
             private set { }
         }
 
+        [XmlIgnore]
         [JsonIgnore]
         public int EXPNeededToLevelUp
         {
@@ -76,6 +80,7 @@ namespace PokemonFireRedClone
             private set {  }
         }
 
+        [XmlIgnore]
         [JsonIgnore]
         public int CurrentLevelEXP
         {
@@ -93,7 +98,7 @@ namespace PokemonFireRedClone
             private set {  }
         }
 
-
+        [XmlIgnore]
         [JsonIgnore]
         public int NextLevelEXP
         {
@@ -112,6 +117,24 @@ namespace PokemonFireRedClone
             private set { } 
         }
 
+
+        public void Create()
+        {
+
+            Name = PokemonName.ToUpper();
+            Random random = new();
+
+            Nature = (Nature)random.Next(25);
+            moves.Add(MoveManager.Instance.GetMove("Water Gun"), MoveManager.Instance.GetMove("Water Gun").PP);
+
+            Stats = PokemonManager.Instance.GenerateStatList(this);
+
+            CurrentHP = Stats.HP;
+            /*
+            foreach (string name in MoveNames)
+                moves.Add(MoveManager.Instance.GetMove(name), MoveManager.Instance.GetMove(name).PP);
+            */
+        }
 
     }
 }

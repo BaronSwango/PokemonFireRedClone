@@ -47,12 +47,11 @@
                 <G>255</G>
                 <B>255</B>
                 <A>255</A>
-                <Text>Wi ld   RATTATA   appeared ! or Trainer battle text</Text>
+                <Text>Trainer text</Text>
             </Image>
             <R>118</R>
             <G>105</G>
             <B>126</B>
-            <Arrow>true</Arrow>
         </Dialogue>
         <Dialogue>
             <Page>1</Page>
@@ -62,7 +61,7 @@
                 <G>255</G>
                 <B>255</B>
                 <A>255</A>
-                <Text>Trainer battle text</Text>
+                <Text>would   like   to   battle ! </Text>
             </Image>
             <R>118</R>
             <G>105</G>

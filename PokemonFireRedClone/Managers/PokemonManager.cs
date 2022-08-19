@@ -140,7 +140,6 @@ namespace PokemonFireRedClone
             return null;
         }
 
-
         // Level ranges and pokemon from specific area of map
         public CustomPokemon CreatePokemon(Pokemon pokemon, int level)
         {

@@ -126,6 +126,9 @@ namespace PokemonFireRedClone
                     xmlGameScreenManager.Type = CurrentScreen.Type;
                     if (File.Exists(CurrentScreen.XmlPath))
                         CurrentScreen = xmlGameScreenManager.Load(CurrentScreen.XmlPath);
+
+                    if (CurrentScreen is BattleScreen battleScreen)
+                        battleScreen.Trainer = ((BattleScreen)newScreen).Trainer;
                     CurrentScreen.LoadContent();
                     if (CurrentScreen is GameplayScreen screen)
                     {
@@ -156,9 +159,11 @@ namespace PokemonFireRedClone
             }
         }
 
-        public void ChangeScreens(string screenName)
+        public void ChangeScreens(string screenName, params Trainer[] members)
         {
             newScreen = (GameScreen)Activator.CreateInstance(System.Type.GetType("PokemonFireRedClone." + screenName));
+            if (newScreen is BattleScreen screen && members.Length > 0)
+                screen.Trainer = members[0];
             if (!(newScreen is TitleScreen) && !Image.IsReloaded)
                 LoadFadeImage();
             Image.IsActive = true;

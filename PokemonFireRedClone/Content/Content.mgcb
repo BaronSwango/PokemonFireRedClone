@@ -61,6 +61,30 @@
 /processorParam:TextureFormat=Color
 /build:BattleScreen/BattleRedSpriteSheet.png
 
+#begin BattleScreen/BattleSprites/BrockBattle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/BattleSprites/BrockBattle.png
+
+#begin BattleScreen/EmptyTrainerBall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/EmptyTrainerBall.png
+
 #begin BattleScreen/EnemyHPBar.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -84,6 +108,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:BattleScreen/EXPBar.png
+
+#begin BattleScreen/FaintedTrainerBall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/FaintedTrainerBall.png
 
 #begin BattleScreen/HPBar.png
 /importer:TextureImporter
@@ -145,6 +181,18 @@
 /processorParam:TextureFormat=Color
 /build:BattleScreen/Pokeball.png
 
+#begin BattleScreen/PokeballSpriteSheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/PokeballSpriteSheet.png
+
 #begin BattleScreen/StatAnimation.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -156,6 +204,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:BattleScreen/StatAnimation.png
+
+#begin BattleScreen/TrainerPokemonBall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/TrainerPokemonBall.png
+
+#begin BattleScreen/TrainerPokemonBar.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:BattleScreen/TrainerPokemonBar.png
 
 #begin Fonts/Arial.spritefont
 /importer:FontDescriptionImporter
@@ -177,6 +249,18 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Fonts/PokemonFireRedSmall.spritefont
+
+#begin Gameplay/Brock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Gameplay/Brock.png
 
 #begin Gameplay/Carson.png
 /importer:TextureImporter

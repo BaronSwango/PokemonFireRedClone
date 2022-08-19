@@ -215,4 +215,51 @@
 			<B>212</B>
 		</Dialogue>
     </TextBoxes>
+    <TextBoxes>
+        <TotalPages>3</TotalPages>
+        <Type>NPC</Type>
+        <ID>TrainerBrock</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Yo,   let`s   fight.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>You   scared?</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Hand   over   your   lunch   money,   kid.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
 </TextBoxManager>

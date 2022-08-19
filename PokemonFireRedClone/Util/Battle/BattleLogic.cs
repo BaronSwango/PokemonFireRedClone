@@ -47,10 +47,14 @@ namespace PokemonFireRedClone
         public static bool PlayerShift;
         public static Battle Battle { get; private set; }
 
-        public BattleLogic()
+        public BattleLogic(Trainer trainer)
         {
             if (Battle == null || !Battle.InBattle)
-                Battle = new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Venusaur"), 69));
+            {
+                Battle = trainer != null ? new Battle(trainer.Pokemon.ToArray())
+                    : new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Geodude"), 69));
+                Battle.IsWild = trainer == null;
+            }
 
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
@@ -194,7 +198,7 @@ namespace PokemonFireRedClone
 
         private bool UseMove(BattlePokemon user, BattlePokemon defender, Move move)
         {
-            user.Pokemon.MoveNames[move.Name] -= 1;
+            user.Pokemon.MovePP[move.Name] -= 1;
 
             if (!move.Self && !MoveHit(move.Accuracy, user, defender)) return false;
 
@@ -250,7 +254,7 @@ namespace PokemonFireRedClone
         private bool EnemyUseMove(BattlePokemon enemyPokemon, BattlePokemon playerPokemon)
         {
             Random random = new();
-            Move move = MoveManager.Instance.GetMove(enemyPokemon.Pokemon.MoveNames.Keys.ElementAt(random.Next(enemyPokemon.Pokemon.MoveNames.Count)));
+            Move move = MoveManager.Instance.GetMove(enemyPokemon.Pokemon.MovePP.Keys.ElementAt(random.Next(enemyPokemon.Pokemon.MovePP.Count)));
             EnemyMoveOption = move;
             return UseMove(enemyPokemon, playerPokemon, move);
         }

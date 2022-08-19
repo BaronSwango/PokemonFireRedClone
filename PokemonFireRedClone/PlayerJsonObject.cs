@@ -28,6 +28,7 @@ namespace PokemonFireRedClone
         public int Pokedex;
         public int Money;
         public List<CustomPokemon> PokemonInBag;
+        public List<string> TrainersDefeated;
         //public Dictionary<Pokemon, bool> PokemonInPokedex;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;
 

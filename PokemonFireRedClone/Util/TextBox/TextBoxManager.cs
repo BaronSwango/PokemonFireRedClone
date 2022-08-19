@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -12,6 +13,7 @@ namespace PokemonFireRedClone
         // fix when opening pokemon menu in front of sign
 
         private TextBox textBox;
+        private NPC npc;
 
         [XmlElement("TextBoxes")]
         public List<TextBox> TextBoxes;
@@ -58,6 +60,7 @@ namespace PokemonFireRedClone
         {
             textBox.UnloadContent(ref player);
             textBox = null;
+            npc = null;
         }
 
         public void Update(GameTime gameTime, ref Map map, ref Player player)
@@ -78,6 +81,14 @@ namespace PokemonFireRedClone
                         if (InputManager.Instance.KeyPressed(Keys.E) && textBox.Page != textBox.TotalPages)
                         {
                             textBox.IsTransitioning = true;
+                            return;
+                        }
+
+                        if (npc != null && npc is Trainer trainer)
+                        {
+                            foreach (CustomPokemon pokemon in trainer.Pokemon)
+                                pokemon.Create();
+                            ScreenManager.Instance.ChangeScreens("BattleScreen", trainer);
                             return;
                         }
 
@@ -102,6 +113,7 @@ namespace PokemonFireRedClone
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
+                                this.npc = npc;
                             }
                             
                         }
@@ -114,6 +126,7 @@ namespace PokemonFireRedClone
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
+                                this.npc = npc;
                             }
                         }
 
@@ -125,6 +138,7 @@ namespace PokemonFireRedClone
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
+                                this.npc = npc;
                             }
                         }
 
@@ -136,6 +150,7 @@ namespace PokemonFireRedClone
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);
+                                this.npc = npc;
                             }
                         }
                     }

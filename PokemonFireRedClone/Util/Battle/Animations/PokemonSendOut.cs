@@ -37,12 +37,12 @@ namespace PokemonFireRedClone
             }
             else
             {
-                if (ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y)
+                if (ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y + 4)
                 {
                     ballSpeedX = (float)(0.1 * gameTime.ElapsedGameTime.TotalMilliseconds);
                     ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Angle += 0.7f;
                     ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y += pokeballSpeedY;
-                    pokeballSpeedY *= 1.2f;
+                    pokeballSpeedY *= 1.1f;
                 }
             }
 
@@ -52,7 +52,7 @@ namespace PokemonFireRedClone
             {
                 playerSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
                 float playerSpriteDestinationX = -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SourceRect.Width - 8;
-                if (!(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y)
+                if (!(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X - playerSpeed < playerSpriteDestinationX) || ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y + 4)
                 {
                     ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X -= (int)playerSpeed;
                     return false; ;
@@ -61,7 +61,7 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.UnloadContent();
             }
 
-            if (ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y) return false;
+            if (ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position.Y < ScreenManager.Instance.BattleScreen.TextBox.Border.Position.Y + 4) return false;
 
             if ((ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.X + 0.05f < 1 && ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.Y + 0.05f < 1) || !WhiteEffectTransitioned)
             {
@@ -73,7 +73,8 @@ namespace PokemonFireRedClone
                 if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.X + 0.05f < 1 && ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.Y + 0.05f < 1)
                 {
                     ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.X + 0.05f, ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.Y + 0.05f);
-                    ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.Position.X + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.SourceRect.Width * 0.55f - ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Width / 2, ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.SourceRect.Height - (int)(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Height * ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.Y));
+                    ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.Position.X + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.SourceRect.Width * 0.55f - ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Width / 2,
+                        ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPlatform.SourceRect.Height - (int)(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.SourceRect.Height * ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemon.Scale.Y));
                 }
                 return false;
             }
@@ -123,15 +124,19 @@ namespace PokemonFireRedClone
                     return false;
                 }
 
-                Counter = 0;
-
+            } else
+            {
+                if (Counter < 200)
+                {
+                    Counter += CounterSpeed;
+                    return false;
+                }
             }
 
-            WhiteEffect.Alpha = 0;
             WhiteEffect.UnloadContent();
 
             ResetPokeball();
-            ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.UnloadContent();
+
             ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = false;
 
             if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite != null)

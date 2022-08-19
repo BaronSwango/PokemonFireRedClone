@@ -91,6 +91,8 @@ namespace PokemonFireRedClone
                             TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                         }
                     }
+                    if (TotalPages > 1 && !Menu)
+                        SetArrowPosition();
 
                     UpdateDialogue = false;
 
@@ -191,12 +193,29 @@ namespace PokemonFireRedClone
                 TransitionRect.LoadContent();
                 TransitionRect.Scale = new Vector2(CurrentDialogue[0].SourceRect.Width+4, CurrentDialogue[0].SourceRect.Height+4);
                 TransitionRect.Position = new Vector2(CurrentDialogue[0].Position.X, CurrentDialogue[0].Position.Y);
+
+                if (CurrentDialogue.Count == 2)
+                {
+                    CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60));
+                    TransitionRect2 = new Image
+                    {
+                        Path = "TextBoxes/TextBoxEffectPixel"
+                    };
+                    TransitionRect2.LoadContent();
+                    TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width + 4, CurrentDialogue[1].SourceRect.Height + 4);
+                    TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
+                }
+
                 if (TotalPages > 1 && !Menu)
                 {
+                    /*
                     Arrow.Position = new Vector2(CurrentDialogue[0].Position.X + CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].Position.Y + 12);
                     ArrowOriginalY = Arrow.Position.Y;
+                    */
+                    SetArrowPosition();
                 }
             }
+            /*
             if (CurrentDialogue.Count == 2)
             {
                 CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60));
@@ -213,6 +232,7 @@ namespace PokemonFireRedClone
                     ArrowOriginalY = Arrow.Position.Y;
                 }
             }
+            */
 
             //END TRANSITION
         }
@@ -295,6 +315,13 @@ namespace PokemonFireRedClone
 
             if (ArrowOffset % 4 < 0.1)
                 Arrow.Position.Y = ArrowOriginalY + ArrowOffset;
+        }
+
+        private void SetArrowPosition()
+        {
+            int index = CurrentDialogue.Count == 2 ? 1 : 0;
+            Arrow.Position = new Vector2(CurrentDialogue[index].Position.X + CurrentDialogue[index].SourceRect.Width, CurrentDialogue[index].Position.Y + 12);
+            ArrowOriginalY = Arrow.Position.Y;
         }
 
     }
