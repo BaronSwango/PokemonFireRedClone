@@ -33,16 +33,37 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.Position.X + 128 - ((1 - ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Scale.X) / 2 * ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.SourceRect.Width), ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.SourceRect.Height - 16);
             }
 
-            if (Counter < 1000.0f)
-            {
-                Counter += CounterSpeed;
-                return false;
-            }
-
             if (BattleLogic.Battle.IsWild)
             {
+                if (Counter < 1000)
+                {
+                    Counter += CounterSpeed;
+                    return false;
+                }
+
                 ScreenManager.Instance.ChangeScreens("GameplayScreen");
                 BattleLogic.EndBattle();
+            } else
+            {
+                if (Counter < 500)
+                {
+                    Counter += CounterSpeed;
+                    return false;
+                }
+
+                if (BattleLogic.Battle.IsEnded)
+                {
+                    ScreenManager.Instance.BattleScreen.TextBox.NextPage = 22;
+                    ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
+                    BattleAssets.IsTransitioning = false;
+                }
+                else
+                {
+                    ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.OPPONENT_SEND_POKEMON;
+                    ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new TrainerBallBarAnimation();
+                }
+                return true;
+
             }
             ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp = false;
             ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = false;

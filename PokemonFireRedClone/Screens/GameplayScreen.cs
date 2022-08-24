@@ -51,6 +51,9 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
+
+            float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
+
             base.Update(gameTime);
 
             if (InputManager.Instance.KeyPressed(Keys.K))

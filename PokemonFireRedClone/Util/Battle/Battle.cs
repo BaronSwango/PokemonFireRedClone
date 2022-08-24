@@ -6,24 +6,47 @@ namespace PokemonFireRedClone
     public class Battle
     {
 
+        public Trainer Trainer;
         public BattlePokemon EnemyPokemon;
         public BattlePokemon PlayerPokemon;
         public List<CustomPokemon> BattlePokemonInBag;
+        public List<CustomPokemon> OpponentPokemon;
 
-        public bool IsWild;
+        public bool IsWild { get; private set; }
         public bool InBattle;
 
-        public Battle(params CustomPokemon[] enemyPokemon)
+        public bool IsEnded
         {
+            get
+            {
+                foreach (CustomPokemon pokemon in OpponentPokemon)
+                {
+                    if (pokemon.CurrentHP > 0)
+                        return false;
+                }
+
+                return true;
+            }
+
+            private set { }
+        }
+
+        public Battle(Trainer trainer, params CustomPokemon[] enemyPokemon)
+        {
+            Trainer = trainer;
+
+            IsWild = trainer == null;
 
             foreach (CustomPokemon pokemon in enemyPokemon)
                 Console.WriteLine(pokemon.PokemonName.ToUpper() + ": " + pokemon.CurrentHP);
             InBattle = true;
             EnemyPokemon = new BattlePokemon(enemyPokemon[0]);
             EnemyPokemon.Pokemon.CurrentHP = EnemyPokemon.Pokemon.Stats.HP;
+            OpponentPokemon = new List<CustomPokemon>(enemyPokemon);
+
             BattlePokemonInBag = new List<CustomPokemon>(Player.PlayerJsonObject.PokemonInBag);
             PlayerPokemon = new BattlePokemon(BattlePokemonInBag[0]);
-            //EnemyPokemon.Pokemon.MovePP.Add("Growl", 40);
+            EnemyPokemon.Pokemon.MovePP.Add("Growl", 40);
             //EnemyPokemon.Pokemon.MovePP.Add("Double Team", 15);
             //EnemyPokemon.Pokemon.MovePP.Add("Water Gun", 20);
         }
@@ -33,6 +56,22 @@ namespace PokemonFireRedClone
             CustomPokemon temp = BattlePokemonInBag[0];
             BattlePokemonInBag[0] = BattlePokemonInBag[index];
             BattlePokemonInBag[index] = temp;
+        }
+
+        public void ChooseNewOpponentPokemon()
+        {
+            List<int> pokemonAliveIndices = new();
+
+            foreach (CustomPokemon pokemon in OpponentPokemon)
+            {
+                if (pokemon.CurrentHP > 0)
+                    pokemonAliveIndices.Add(OpponentPokemon.IndexOf(pokemon));
+            }
+
+            Random random = new();
+
+            int index = random.Next(pokemonAliveIndices.Count);
+            EnemyPokemon = new BattlePokemon(OpponentPokemon[pokemonAliveIndices[index]]);
         }
 
         public void UpdatePlayerPokemon()

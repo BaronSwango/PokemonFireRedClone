@@ -28,7 +28,7 @@
     </BattleAssets>
 
     <TextBox>
-        <TotalPages>21</TotalPages>
+        <TotalPages>22</TotalPages>
         <Border>
             <Path>TextBoxes/BattleTextBox</Path>
         </Border>
@@ -519,6 +519,35 @@
                 <B>255</B>
                 <A>255</A>
                 <Text>this   move !</Text>
+            </Image>
+            <Arrow>true</Arrow>
+            <R>118</R>
+            <G>105</G>
+            <B>126</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>22</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text>   defeated</Text>
+            </Image>
+            <R>118</R>
+            <G>105</G>
+            <B>126</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>22</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>255</R>
+                <G>255</G>
+                <B>255</B>
+                <A>255</A>
+                <Text> ! </Text>
             </Image>
             <Arrow>true</Arrow>
             <R>118</R>

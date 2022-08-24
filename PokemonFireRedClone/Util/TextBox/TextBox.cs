@@ -9,8 +9,6 @@ namespace PokemonFireRedClone
 {
     public class TextBox
     {
-        //TODO: Also add bouncing red triangle after text if applicable
-
         //public event EventHandler OnPageChange;
 
         private int positionOffset;
@@ -53,7 +51,6 @@ namespace PokemonFireRedClone
 
         private void Transition(GameTime gameTime)
         {
-            //TODO: Add text animation slide animation with two white rectangles getting smaller through the update function
             if (IsTransitioning)
             {
                 if (UpdateDialogue)
@@ -207,32 +204,9 @@ namespace PokemonFireRedClone
                 }
 
                 if (TotalPages > 1 && !Menu)
-                {
-                    /*
-                    Arrow.Position = new Vector2(CurrentDialogue[0].Position.X + CurrentDialogue[0].SourceRect.Width, CurrentDialogue[0].Position.Y + 12);
-                    ArrowOriginalY = Arrow.Position.Y;
-                    */
                     SetArrowPosition();
-                }
+                
             }
-            /*
-            if (CurrentDialogue.Count == 2)
-            {
-                CurrentDialogue[1].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY + 60));
-                TransitionRect2 = new Image
-                {
-                    Path = "TextBoxes/TextBoxEffectPixel"
-                };
-                TransitionRect2.LoadContent();
-                TransitionRect2.Scale = new Vector2(CurrentDialogue[1].SourceRect.Width+4, CurrentDialogue[1].SourceRect.Height+4);
-                TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
-                if (TotalPages > 1 && !Menu)
-                {
-                    Arrow.Position = new Vector2(CurrentDialogue[1].Position.X + CurrentDialogue[1].SourceRect.Width, CurrentDialogue[1].Position.Y + 12);
-                    ArrowOriginalY = Arrow.Position.Y;
-                }
-            }
-            */
 
             //END TRANSITION
         }
@@ -301,7 +275,7 @@ namespace PokemonFireRedClone
 
         protected void AnimateRedArrow(GameTime gameTime)
         {
-            float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
+            float speed = (float)(32 * gameTime.ElapsedGameTime.TotalSeconds);
 
             if (ArrowOffset >= 8)
                 increase = false;
@@ -313,8 +287,8 @@ namespace PokemonFireRedClone
             else
                 ArrowOffset -= speed;
 
-            if (ArrowOffset % 4 < 0.1)
-                Arrow.Position.Y = ArrowOriginalY + ArrowOffset;
+            if (ArrowOffset % 4 < 1)
+                Arrow.Position.Y = ArrowOriginalY + (int) ArrowOffset;
         }
 
         private void SetArrowPosition()

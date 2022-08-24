@@ -11,6 +11,12 @@ namespace PokemonFireRedClone
         protected Image WhiteEffect;
         protected bool WhiteEffectTransitioned;
 
+        public BattleAssets BattleAssets
+        {
+            get { return ScreenManager.Instance.BattleScreen.BattleAssets; }
+            private set { }
+        }
+
         public abstract bool Animate(GameTime gameTime);
         public abstract void Draw(SpriteBatch spriteBatch);
 
@@ -28,8 +34,8 @@ namespace PokemonFireRedClone
         }
 
         protected void ResetPokeball() {
-            ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Alpha = 0;
-            ScreenManager.Instance.BattleScreen.BattleAssets.Pokeball.Position = new Vector2(156, 352);
+            BattleAssets.Pokeball.Alpha = 0;
+            BattleAssets.Pokeball.Position = new Vector2(156, 352);
         }
 
         protected void EndFightSequence()

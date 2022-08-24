@@ -46,7 +46,7 @@ namespace PokemonFireRedClone
                             {
                                 case 2:
                                     if (CurrentDialogue[0] == image)
-                                        image.Text = ScreenManager.Instance.BattleScreen.Trainer.Name + "   sent";
+                                        image.Text = BattleLogic.Battle.Trainer.Name + "   sent";
                                     else if (CurrentDialogue[1] == image)
                                         image.Text = "out   " + BattleLogic.Battle.EnemyPokemon.Pokemon.PokemonName.ToUpper() + " ! "; 
                                     break;
@@ -97,21 +97,21 @@ namespace PokemonFireRedClone
                                         else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT)
                                         {
                                             string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name;
+                                            image.Text = encounter + ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.Name.Text;
 
                                             if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100 || ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp)
                                                 NextPage = 16;
-                                            ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                                            //ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
                                         }
                                     }
                                     break;
                                 case 16:
 
                                     if (CurrentDialogue[0] == image)
-                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + image.Text;
+                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   gained";
 
                                     else if (CurrentDialogue[1] == image)
-                                        image.Text = ScreenManager.Instance.BattleScreen.BattleLogic.GainedEXP + image.Text;
+                                        image.Text = ScreenManager.Instance.BattleScreen.BattleLogic.GainedEXP + "   EXP.   Points !";
 
                                     break;
                                 case 17:
@@ -175,6 +175,13 @@ namespace PokemonFireRedClone
                                     else if (CurrentDialogue[1] == image)
                                         image.Text = "attack   missed !";
 
+                                    break;
+                                case 22:
+                                    if (CurrentDialogue[0] == image)
+                                        image.Text = Player.PlayerJsonObject.Name + image.Text;
+                                    else if (CurrentDialogue[1] == image)
+                                        image.Text = BattleLogic.Battle.Trainer.Name + image.Text;
+                                    
                                     break;
                             }
 
@@ -281,7 +288,7 @@ namespace PokemonFireRedClone
                     {
                         if (CurrentDialogue.Count == 0)
                         {
-                            image.Text = ScreenManager.Instance.BattleScreen.Trainer.Name;
+                            image.Text = BattleLogic.Battle.Trainer.Name;
                             NextPage = 2;
                         }
                         CurrentDialogue.Add(image);
@@ -341,12 +348,24 @@ namespace PokemonFireRedClone
                         IsTransitioning = true;
                         break;
                     case 9:
-                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp)) {
+                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp && BattleLogic.Battle.IsWild)) {
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
                             BattleLogic.EndBattle();
                             return;
                         }
-                        IsTransitioning = true;
+
+                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT && !BattleLogic.Battle.IsEnded && BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100)
+                        {
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.OPPONENT_SEND_POKEMON;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new TrainerBallBarAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
+                        }
+
+                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100)
+                            IsTransitioning = true;
+
+                        ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                        ScreenManager.Instance.BattleScreen.BattleLogic.EXPGainApplied = false;
                         break;
                     case 16:
                         ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.EXP_ANIMATION;
@@ -362,6 +381,11 @@ namespace PokemonFireRedClone
                         Page = 4;
                         IsTransitioning = true;
                         break;
+                    case 22:
+                        //TODO: Handle trainer post-battle text and $ earnings
+                        ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                        BattleLogic.EndBattle();
+                        break;
                     default:
                         break;
                 }
@@ -369,7 +393,8 @@ namespace PokemonFireRedClone
             }
 
             SetArrowPosition();
-            AnimateRedArrow(gameTime);
+            if (ScreenManager.Instance.BattleScreen.BattleAssets.State != BattleAssets.BattleState.OPPONENT_SEND_POKEMON)
+                AnimateRedArrow(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

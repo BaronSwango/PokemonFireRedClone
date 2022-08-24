@@ -99,6 +99,7 @@ namespace PokemonFireRedClone
                     || BattleAssets.State == BattleAssets.BattleState.TRAINER_BALL_BAR
                     || BattleAssets.State == BattleAssets.BattleState.WILD_POKEMON_FADE_IN
                     || BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON
+                    || BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON
                     || BattleAssets.State == BattleAssets.BattleState.DAMAGE_ANIMATION
                     || BattleAssets.State == BattleAssets.BattleState.STATUS_ANIMATION
                     || (BattleAssets.State == BattleAssets.BattleState.POKEMON_SWITCH && !ScreenManager.Instance.IsTransitioning))

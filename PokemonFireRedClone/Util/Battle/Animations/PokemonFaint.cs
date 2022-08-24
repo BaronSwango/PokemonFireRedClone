@@ -40,6 +40,11 @@ namespace PokemonFireRedClone
                     return false;
                 }
                 ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemon.SourceRect.Height = 0;
+
+                ScreenManager.Instance.BattleScreen.BattleAssets.EnemyHPBarBackground.Alpha = 0;
+                ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.SetAlpha(0);
+                if (!BattleLogic.Battle.IsWild)
+                    ScreenManager.Instance.BattleScreen.BattleAssets.RefreshTrainerBalls();
             }
 
 

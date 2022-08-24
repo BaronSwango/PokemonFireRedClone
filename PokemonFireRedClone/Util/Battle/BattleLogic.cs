@@ -31,10 +31,10 @@ namespace PokemonFireRedClone
         public bool SuperEffective;
         public bool NotVeryEffective;
         public bool NoEffect;
+        public bool EXPGainApplied;
         public bool Crit;
         public bool PokemonFainted;
         public bool StartSequence;
-        public bool EXPGainApplied;
         public bool LevelUp;
         public bool MoveLanded;
         public bool SharplyStat;
@@ -50,11 +50,9 @@ namespace PokemonFireRedClone
         public BattleLogic(Trainer trainer)
         {
             if (Battle == null || !Battle.InBattle)
-            {
-                Battle = trainer != null ? new Battle(trainer.Pokemon.ToArray())
-                    : new Battle(PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Geodude"), 69));
-                Battle.IsWild = trainer == null;
-            }
+                Battle = trainer != null ? new Battle(trainer, trainer.Pokemon.ToArray())
+                    : new Battle(trainer, PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Geodude"), 69));
+            
 
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
@@ -155,12 +153,13 @@ namespace PokemonFireRedClone
                         }
                     }
                 }
-            } else if (PokemonFainted && State == FightState.ENEMY_FAINT && Battle.PlayerPokemon.Pokemon.Level < 100)
+            } else if (PokemonFainted && State == FightState.ENEMY_FAINT)
             {
-                if (!EXPGainApplied)
+
+                if (Battle.PlayerPokemon.Pokemon.Level < 100 && !EXPGainApplied)
                 {
                     
-                    GainedEXP = CalcualteEXP(Battle.EnemyPokemon.Pokemon, Battle.IsWild, false, 1) * 100;
+                    GainedEXP = CalcualteEXP(Battle.EnemyPokemon.Pokemon, Battle.IsWild, false, 1);
                     Battle.PlayerPokemon.Pokemon.CurrentEXP += GainedEXP;
                     int oldMaxHP = Battle.PlayerPokemon.Pokemon.Stats.HP;
                     while (Battle.PlayerPokemon.Pokemon.CurrentEXP >= Battle.PlayerPokemon.Pokemon.NextLevelEXP)
@@ -179,6 +178,10 @@ namespace PokemonFireRedClone
                     Battle.PlayerPokemon.Pokemon.CurrentHP += Battle.PlayerPokemon.Pokemon.Stats.HP - oldMaxHP;
                     EXPGainApplied = true;
                 }
+
+                if (!Battle.IsEnded)
+                    Battle.ChooseNewOpponentPokemon();
+
             }
 
 

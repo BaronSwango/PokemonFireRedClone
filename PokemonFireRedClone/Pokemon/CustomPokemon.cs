@@ -15,6 +15,7 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public Nature Nature;
         public Gender Gender;
+        [JsonIgnore]
         public List<string> MoveNames;
         [XmlIgnore]
         public Dictionary<string, int> MovePP;
@@ -120,20 +121,20 @@ namespace PokemonFireRedClone
 
         public void Create()
         {
-
             Name = PokemonName.ToUpper();
             Random random = new();
 
             Nature = (Nature)random.Next(25);
-            moves.Add(MoveManager.Instance.GetMove("Water Gun"), MoveManager.Instance.GetMove("Water Gun").PP);
+
+            MovePP = new Dictionary<string, int>
+            {
+                { "Water Gun", MoveManager.Instance.GetMove("Water Gun").PP }
+            };
 
             Stats = PokemonManager.Instance.GenerateStatList(this);
 
             CurrentHP = Stats.HP;
-            /*
-            foreach (string name in MoveNames)
-                moves.Add(MoveManager.Instance.GetMove(name), MoveManager.Instance.GetMove(name).PP);
-            */
+
         }
 
     }
