@@ -26,17 +26,21 @@ namespace PokemonFireRedClone
         {
             Top.LoadContent();
             Top.SpriteSheetEffect.IsActive = true;
+            Top.SpriteSheetEffect.SwitchManual = true;
             Top.SpriteSheetEffect.Entity = true;
             Top.SpriteSheetEffect.AmountOfFrames = spriteFrames;
             Top.SpriteSheetEffect.CurrentFrame.Y = (int) direction;
             Top.SpriteSheetEffect.SpriteType = "NPCTop";
+            Top.SpriteSheetEffect.SetupSourceRects();
 
             Bottom.LoadContent();
             Bottom.SpriteSheetEffect.IsActive = true;
+            Bottom.SpriteSheetEffect.SwitchManual = true;
             Bottom.SpriteSheetEffect.Entity = true;
             Bottom.SpriteSheetEffect.AmountOfFrames = spriteFrames;
             Bottom.SpriteSheetEffect.CurrentFrame.Y = (int) direction;
             Bottom.SpriteSheetEffect.SpriteType = "NPCBottom";
+            Bottom.SpriteSheetEffect.SetupSourceRects();
         }
 
 
@@ -58,12 +62,18 @@ namespace PokemonFireRedClone
             Bottom.SpriteSheetEffect.CurrentFrame.Y = direction;
         }
 
+        public void SetFrame(int frame)
+        {
+            Top.SpriteSheetEffect.CurrentFrame.X = frame;
+            Bottom.SpriteSheetEffect.CurrentFrame.X = frame;
+        }
+
         public void SetPosition(Vector2 position)
         {
             Top.Position = position;
-            Bottom.Position = new Vector2(Top.Position.X,
-                Top.Position.Y + (Top.SourceRect.Height / ((int) Top.SpriteSheetEffect.AmountOfFrames.Y * 2)));
+            Bottom.Position = new Vector2(Top.Position.X, Top.Position.Y + Top.SourceRect.Height);
         }
+    
 
     }
 }

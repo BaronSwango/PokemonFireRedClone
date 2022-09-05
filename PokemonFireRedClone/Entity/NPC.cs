@@ -6,12 +6,30 @@ namespace PokemonFireRedClone
     public class NPC : Entity
     {
 
+        public enum MovementType
+        {
+            [XmlEnum("Still")]
+            STILL,
+            [XmlEnum("Rotate")]
+            ROTATE,
+            [XmlEnum("Zoned")]
+            ZONED,
+            [XmlEnum("SetPath")]
+            SET_PATH
+        }
+
         public string ID;
         [XmlIgnore]
         public Sprite NPCSprite;
+        [XmlIgnore]
+        public NPCMovementManager movementManager;
+        public MovementType MoveType;
+        public bool UpdateMovement;
 
         public override void LoadContent()
         {
+            UpdateMovement = MoveType != MovementType.STILL;
+            movementManager = new NPCMovementManager(this);
             NPCSprite = new Sprite(Sprite);
             NPCSprite.LoadContent(SpriteFrames, Direction);
             NPCSprite.SetPosition(SpawnLocation);
@@ -25,12 +43,14 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
             NPCSprite.Update(gameTime);
+            if (UpdateMovement)
+                movementManager.Update(gameTime);
         }
 
         public override void Spawn(ref Map map)
         {
-            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width / ((int)NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.X * 2),
-                NPCSprite.Bottom.SourceRect.Height / (int)NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
+            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width,
+                NPCSprite.Bottom.SourceRect.Height);
             if (currentTile != null)
             {
                 Vector2 centerTile = new(currentTile.Position.X,

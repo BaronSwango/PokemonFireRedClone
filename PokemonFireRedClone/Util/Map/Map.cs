@@ -3,6 +3,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using System;
 
 namespace PokemonFireRedClone
 {
@@ -44,7 +45,9 @@ namespace PokemonFireRedClone
             }
 
             foreach (Trainer trainer in Trainers)
+            {
                 NPCs.Add(trainer);
+            }
 
             foreach (NPC npc in NPCs)
                 npc.LoadContent();
@@ -67,12 +70,32 @@ namespace PokemonFireRedClone
             foreach (NPC npc in NPCs)
             {
                 npc.Update(gameTime);
-                Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / ((int) npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.X * 2),
+
+                Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / 2,
                     npc.NPCSprite.Bottom.SourceRect.Height / (int)npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
-                currentTile.Entity = npc;
-                if (!NPCTiles.Contains(currentTile))
-                    NPCTiles.Add(currentTile);
+
+                if (currentTile != null)
+                {
+                    currentTile.Entity = npc;
+                    if (!NPCTiles.Contains(currentTile))
+                        NPCTiles.Add(currentTile);
+
+                }
             }
+
+            foreach (Tile tile in NPCTiles)
+            {
+                if (tile.Entity != null && tile.Entity is NPC npc)
+                {
+                    Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / 2,
+                        npc.NPCSprite.Bottom.SourceRect.Height / (int)npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
+
+                    if (currentTile != null && currentTile != tile)
+                        tile.Entity = null;
+
+                }
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, string drawType)

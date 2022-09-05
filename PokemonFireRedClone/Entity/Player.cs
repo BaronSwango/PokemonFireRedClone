@@ -132,6 +132,10 @@ namespace PokemonFireRedClone
             {
                 Sprite.IsActive = true;
                 // TILE BASED MOVEMENT START
+
+                if ((State == MoveState.Right || State == MoveState.Left || State == MoveState.Up || State == MoveState.Down) && Colliding)
+                    Colliding = false;
+
                 switch (State)
                 {
                     case MoveState.Idle:
@@ -165,7 +169,7 @@ namespace PokemonFireRedClone
                                     break;
                                 }
 
-
+                                Sprite.SpriteSheetEffect.FrameCounter = 0;
                                 Destination.Y -= 64;
                                 Sprite.IsActive = true;
                                 State = MoveState.Up;
@@ -181,6 +185,7 @@ namespace PokemonFireRedClone
                                     changeDirection = true;
                                     break;
                                 }
+                                Sprite.SpriteSheetEffect.FrameCounter = 0;
                                 Destination.Y += 64;
                                 Sprite.IsActive = true;
                                 State = MoveState.Down;
@@ -196,6 +201,7 @@ namespace PokemonFireRedClone
                                     changeDirection = true;
                                     break;
                                 }
+                                Sprite.SpriteSheetEffect.FrameCounter = 0;
                                 Destination.X -= 64;
                                 Sprite.IsActive = true;
                                 State = MoveState.Left;
@@ -211,6 +217,7 @@ namespace PokemonFireRedClone
                                     changeDirection = true;
                                     break;
                                 }
+                                Sprite.SpriteSheetEffect.FrameCounter = 0;
                                 Destination.X += 64;
                                 Sprite.IsActive = true;
                                 State = MoveState.Right;
@@ -261,10 +268,8 @@ namespace PokemonFireRedClone
                             }
                         }
                         else
-                        {
                             Sprite.Position.Y += speed;
-                        }
-
+                        
                         break;
                     case MoveState.Left:
 
@@ -283,9 +288,8 @@ namespace PokemonFireRedClone
                             }
                         }
                         else
-                        {
                             Sprite.Position.X -= speed;
-                        }
+
                         break;
                     case MoveState.Right:
 
@@ -304,9 +308,8 @@ namespace PokemonFireRedClone
                             }
                         }
                         else
-                        {
                             Sprite.Position.X += speed;
-                        }
+                        
                         break;
                     default:
                         break;

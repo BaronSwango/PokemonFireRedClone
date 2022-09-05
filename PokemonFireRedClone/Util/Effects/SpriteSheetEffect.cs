@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
         public Vector2 AmountOfFrames;
         public string SpriteType;
         public bool Entity;
+        public bool SwitchManual;
 
         public int FrameWidth
         {
@@ -41,6 +42,7 @@ namespace PokemonFireRedClone
             SwitchFrame = 130;
             FrameCounter = 0;
         }
+
         public override void LoadContent(ref Image image)
         {
             base.LoadContent(ref image);
@@ -69,7 +71,7 @@ namespace PokemonFireRedClone
                         wasActive = true;
                 }
             }
-            else
+            else if (!SwitchManual)
             {
                 if (Entity)
                 {
@@ -85,7 +87,12 @@ namespace PokemonFireRedClone
                 }
             }
 
+            SetupSourceRects();
+           
+        }
 
+        public void SetupSourceRects()
+        {
             if (SpriteType == "NPCTop")
                 Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
                     (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight / 2);
@@ -94,10 +101,11 @@ namespace PokemonFireRedClone
                 Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
                     (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight / 2);
                 Image.SourceRect.Y += Image.SourceRect.Height;
-            } else
+            }
+            else
                 Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
-                        (int) CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
-           
+                        (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
         }
+
     }
 }

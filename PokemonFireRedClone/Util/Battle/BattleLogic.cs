@@ -348,6 +348,11 @@ namespace PokemonFireRedClone
             Battle.InBattle = false;
             BattleMenu.SavedItemNumber = 0;
             MoveMenu.SavedItemNumber = 0;
+            if (!Battle.IsWild)
+            {
+                Player.PlayerJsonObject.Money += Battle.Trainer.Reward;
+                Player.PlayerJsonObject.TrainersDefeated.Add(Battle.Trainer.ID);
+            }
         }
 
     }

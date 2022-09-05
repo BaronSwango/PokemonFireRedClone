@@ -11,7 +11,8 @@ namespace PokemonFireRedClone
         public int NextPage;
         [XmlIgnore]
         public BattleLevelUp BattleLevelUp;
-        
+        bool PageSkipped;
+
         /*
          * 
          * Very dynamic textbox
@@ -29,162 +30,191 @@ namespace PokemonFireRedClone
                 {
                     if (Page != 10 && Page != 14)
                     {
-
+                        PageSkipped = false;
                         Page = NextPage;
+
                         foreach (TextBoxText image in CurrentDialogue)
                             image.UnloadContent();
                         CurrentDialogue.Clear();
-                        foreach (TextBoxText image in Dialogue)
+
+                        if (ScreenManager.Instance.BattleScreen.BattleAssets.State == BattleAssets.BattleState.TRAINER_BATTLE_VICTORY)
                         {
-                            if (image.Page == Page)
-                                CurrentDialogue.Add(image);
+                            foreach (TextBoxText image in BattleLogic.Battle.Trainer.BattleText)
+                            {
+                                if (image.Page == Page) { 
+                                    CurrentDialogue.Add(image);
+                                }
+                            }
+
+                            if (Page < BattleLogic.Battle.Trainer.TotalBattleTextPages)
+                            {
+                                int index = CurrentDialogue.Count == 2 ? 1 : 0;
+                                CurrentDialogue[index].Arrow = true;
+                                SetArrowPosition();
+                            }
+                        }
+                        else
+                        {
+                            foreach (TextBoxText image in Dialogue)
+                            {
+                                if (image.Page == Page)
+                                    CurrentDialogue.Add(image);
+                            }
                         }
                         
                         foreach (TextBoxText image in CurrentDialogue)
                         {
-                            switch (Page)
+
+                            if (ScreenManager.Instance.BattleScreen.BattleAssets.State != BattleAssets.BattleState.TRAINER_BATTLE_VICTORY)
                             {
-                                case 2:
-                                    if (CurrentDialogue[0] == image)
-                                        image.Text = BattleLogic.Battle.Trainer.Name + "   sent";
-                                    else if (CurrentDialogue[1] == image)
-                                        image.Text = "out   " + BattleLogic.Battle.EnemyPokemon.Pokemon.PokemonName.ToUpper() + " ! "; 
-                                    break;
-                                case 3:
-                                    image.Text = "Go !   " + BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " !";
-                                    break;
-                                case 4:
-                                    if (image == CurrentDialogue[1])
-                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   do?";
-                                    break;
-                                case 5:
-                                    
-                                    if (CurrentDialogue[0] == image)
-                                    {
-                                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
-                                        {
-                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "   used";
-                                        } else 
-                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   used";
+                                switch (Page)
+                                {
+                                    case 2:
+                                        if (CurrentDialogue[0] == image)
+                                            image.Text = BattleLogic.Battle.Trainer.Name + "   sent";
+                                        else if (CurrentDialogue[1] == image)
+                                            image.Text = "out   " + BattleLogic.Battle.EnemyPokemon.Pokemon.PokemonName.ToUpper() + " ! ";
+                                        break;
+                                    case 3:
+                                        image.Text = "Go !   " + BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " !";
+                                        break;
+                                    case 4:
+                                        if (image == CurrentDialogue[1])
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   do?";
+                                        break;
+                                    case 5:
 
-                                    }
-                                    
-                                    else if (CurrentDialogue[1] == image)
-                                    {
-                                        image.Text = ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND ? ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !"
-                                            : ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + " !";
+                                        if (CurrentDialogue[0] == image)
+                                        {
+                                            if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
+                                            {
+                                                string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                                image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "   used";
+                                            }
+                                            else
+                                                image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   used";
 
-                                        if (ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption != null && ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
-                                        {
-                                            ScreenManager.Instance.BattleScreen.BattleLogic.State = ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption.Self ? BattleLogic.FightState.ENEMY_STATUS : BattleLogic.FightState.PLAYER_STATUS;
-                                            NextPage = 18;
-                                        } else if (ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption != null && ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND)
-                                        {
-                                            ScreenManager.Instance.BattleScreen.BattleLogic.State = ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption.Self ? BattleLogic.FightState.PLAYER_STATUS : BattleLogic.FightState.ENEMY_STATUS;
-                                            NextPage = 18;
                                         }
 
-                                    }
-
-                                    break;
-                                case 9:
-                                    if (CurrentDialogue[0] == image)
-                                    {
-                                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT)
-                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name;
-
-                                        else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT)
+                                        else if (CurrentDialogue[1] == image)
                                         {
-                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.Name.Text;
+                                            image.Text = ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND ? ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption.Name.ToUpper() + " !"
+                                                : ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption.Name.ToUpper() + " !";
 
-                                            if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100 || ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp)
-                                                NextPage = 16;
-                                            //ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                                            if (ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption != null && ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption.Category == "Status" && ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND)
+                                            {
+                                                ScreenManager.Instance.BattleScreen.BattleLogic.State = ScreenManager.Instance.BattleScreen.BattleLogic.EnemyMoveOption.Self ? BattleLogic.FightState.ENEMY_STATUS : BattleLogic.FightState.PLAYER_STATUS;
+                                                NextPage = 18;
+                                            }
+                                            else if (ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption != null && ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption.Category == "Status" && ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND)
+                                            {
+                                                ScreenManager.Instance.BattleScreen.BattleLogic.State = ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveOption.Self ? BattleLogic.FightState.PLAYER_STATUS : BattleLogic.FightState.ENEMY_STATUS;
+                                                NextPage = 18;
+                                            }
+
                                         }
-                                    }
-                                    break;
-                                case 16:
 
-                                    if (CurrentDialogue[0] == image)
-                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   gained";
-
-                                    else if (CurrentDialogue[1] == image)
-                                        image.Text = ScreenManager.Instance.BattleScreen.BattleLogic.GainedEXP + "   EXP.   Points !";
-
-                                    break;
-                                case 17:
-                                    if (CurrentDialogue[0] == image)
-                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   grew   to";
-
-                                    else if (CurrentDialogue[1] == image)
-                                        image.Text = "LV.   " + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]+ " !";
-                                    break;
-                                case 18:
-                                    if (CurrentDialogue[0] == image)
-                                    {
-                                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
-                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "`s   " + ScreenManager.Instance.BattleScreen.BattleLogic.Stat;
-                                        else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
+                                        break;
+                                    case 9:
+                                        if (CurrentDialogue[0] == image)
                                         {
-                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "`s   " + ScreenManager.Instance.BattleScreen.BattleLogic.Stat;
-                                        }
-                                    }
+                                            if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT)
+                                                image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name;
 
-                                    else if (CurrentDialogue[1] == image)
-                                    {
-                                        if (ScreenManager.Instance.BattleScreen.BattleLogic.StageMaxed)
-                                        {
-                                            string change = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? "higher" : "lower";
-                                            image.Text = "won`t   go   " + change + " !";
-                                        }
-                                        else
-                                        {
-                                            string sharply = ScreenManager.Instance.BattleScreen.BattleLogic.SharplyStat ? "sharply   " : "";
-                                            string change = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? "rose" : "fell";
-                                            image.Text = sharply + change + " !";
-                                        }
-                                    }
-                                        
-                                    break;
-                                case 19:
-                                    if (CurrentDialogue[0] == image)
-                                        image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " ,   that`s   enough !";
-                                    
-                                    else if (CurrentDialogue[1] == image)
-                                        image.Text = "Come   back !";
-                                    
-                                    break;
-                                case 20:
-                                    if (CurrentDialogue[0] == image)
-                                    {
-                                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND || ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
-                                        {
-                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "`s";
-                                            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerHasMoved = true;
-                                        }
-                                        else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND || ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
-                                        {
-                                            string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
-                                            image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "`s";
-                                            ScreenManager.Instance.BattleScreen.BattleLogic.EnemyHasMoved = true;
-                                        }
-                                    }
-                                    else if (CurrentDialogue[1] == image)
-                                        image.Text = "attack   missed !";
+                                            else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT)
+                                            {
+                                                string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                                image.Text = encounter + ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.Name.Text;
 
-                                    break;
-                                case 22:
-                                    if (CurrentDialogue[0] == image)
-                                        image.Text = Player.PlayerJsonObject.Name + image.Text;
-                                    else if (CurrentDialogue[1] == image)
-                                        image.Text = BattleLogic.Battle.Trainer.Name + image.Text;
-                                    
-                                    break;
+                                                if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100 || ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp)
+                                                    NextPage = 16;
+                                            }
+                                        }
+                                        break;
+                                    case 16:
+
+                                        if (CurrentDialogue[0] == image)
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   gained";
+
+                                        else if (CurrentDialogue[1] == image)
+                                            image.Text = ScreenManager.Instance.BattleScreen.BattleLogic.GainedEXP + "   EXP.   Points !";
+
+                                        break;
+                                    case 17:
+                                        if (CurrentDialogue[0] == image)
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "   grew   to";
+
+                                        else if (CurrentDialogue[1] == image)
+                                            image.Text = "LV.   " + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..] + " !";
+                                        break;
+                                    case 18:
+                                        if (CurrentDialogue[0] == image)
+                                        {
+                                            if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
+                                                image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "`s   " + ScreenManager.Instance.BattleScreen.BattleLogic.Stat;
+                                            else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
+                                            {
+                                                string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                                image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "`s   " + ScreenManager.Instance.BattleScreen.BattleLogic.Stat;
+                                            }
+                                        }
+
+                                        else if (CurrentDialogue[1] == image)
+                                        {
+                                            if (ScreenManager.Instance.BattleScreen.BattleLogic.StageMaxed)
+                                            {
+                                                string change = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? "higher" : "lower";
+                                                image.Text = "won`t   go   " + change + " !";
+                                            }
+                                            else
+                                            {
+                                                string sharply = ScreenManager.Instance.BattleScreen.BattleLogic.SharplyStat ? "sharply   " : "";
+                                                string change = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? "rose" : "fell";
+                                                image.Text = sharply + change + " !";
+                                            }
+                                        }
+
+                                        break;
+                                    case 19:
+                                        if (CurrentDialogue[0] == image)
+                                            image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + " ,   that`s   enough !";
+
+                                        else if (CurrentDialogue[1] == image)
+                                            image.Text = "Come   back !";
+
+                                        break;
+                                    case 20:
+                                        if (CurrentDialogue[0] == image)
+                                        {
+                                            if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_DEFEND || ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_STATUS)
+                                            {
+                                                image.Text = BattleLogic.Battle.PlayerPokemon.Pokemon.Name + "`s";
+                                                ScreenManager.Instance.BattleScreen.BattleLogic.PlayerHasMoved = true;
+                                            }
+                                            else if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND || ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_STATUS)
+                                            {
+                                                string encounter = BattleLogic.Battle.IsWild ? "Wild   " : "Foe   ";
+                                                image.Text = encounter + BattleLogic.Battle.EnemyPokemon.Pokemon.Name + "`s";
+                                                ScreenManager.Instance.BattleScreen.BattleLogic.EnemyHasMoved = true;
+                                            }
+                                        }
+                                        else if (CurrentDialogue[1] == image)
+                                            image.Text = "attack   missed !";
+
+                                        break;
+                                    case 22:
+                                        if (CurrentDialogue[0] == image)
+                                            image.Text = Player.PlayerJsonObject.Name + image.Text;
+                                        else if (CurrentDialogue[1] == image)
+                                            image.Text = BattleLogic.Battle.Trainer.Name + image.Text;
+
+                                        break;
+                                    case 23:
+                                        if (CurrentDialogue[0] == image)
+                                            image.Text = Player.PlayerJsonObject.Name + "   got   " + "$" + BattleLogic.Battle.Trainer.Reward;
+                                        break;
+                                }
                             }
-
                             if (!image.IsLoaded)
                                 image.LoadContent();
                             else
@@ -210,9 +240,8 @@ namespace PokemonFireRedClone
                 }
 
 
-
                 float speed = (float)(1.35 * gameTime.ElapsedGameTime.TotalMilliseconds);
-                if (Page != 4)
+                if (Page != 4 || ScreenManager.Instance.BattleScreen.BattleAssets.State == BattleAssets.BattleState.TRAINER_BATTLE_VICTORY)
                 {
                     if (TransitionRect.Scale.X > 1)
                     {
@@ -234,28 +263,6 @@ namespace PokemonFireRedClone
                 }
                 IsTransitioning = false;
                 UpdateDialogue = true;
-            } else
-            {
-                foreach (TextBoxText image in CurrentDialogue)
-                {
-                    if (!image.Skippable && !image.Arrow)
-                    {
-                        if (!ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning)
-                        {
-                            switch (Page)
-                            {
-                                case 3:
-                                    //NextPage = 4;
-                                    //IsTransitioning = true;
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                    }
-                       
-                }
-
             }
         }
 
@@ -270,9 +277,26 @@ namespace PokemonFireRedClone
 
             Border.Position = new Vector2(ScreenManager.Instance.Dimensions.X - Border.SourceRect.Width, ScreenManager.Instance.Dimensions.Y - Border.SourceRect.Height);
 
+            if (!BattleLogic.Battle.IsWild)
+            {
+                foreach (TextBoxText image in BattleLogic.Battle.Trainer.BattleText)
+                {
+                    image.Image.FontName = "Fonts/PokemonFireRedDialogue";
+                    image.Image.R = image.Image.G = image.Image.B = 255;
+                    image.R = 118;
+                    image.G = 105;
+                    image.B = 126;
+                }
+            }
 
             foreach (TextBoxText image in Dialogue)
             {
+                image.Image.FontName = "Fonts/PokemonFireRedDialogue";
+                image.Image.R = image.Image.G = image.Image.B = 255;
+                image.R = 118;
+                image.G = 105;
+                image.B = 126;
+
                 if (image.Page == 1)
                 {
                     if (BattleLogic.Battle.IsWild)
@@ -340,56 +364,84 @@ namespace PokemonFireRedClone
         {
             Transition(gameTime);
 
-            if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning)
+            if (InputManager.Instance.KeyPressed(Keys.E) && !IsTransitioning && !PageSkipped)
             {
-                switch (Page)
+                if (ScreenManager.Instance.BattleScreen.BattleAssets.State == BattleAssets.BattleState.TRAINER_BATTLE_VICTORY)
                 {
-                    case 1:
-                        IsTransitioning = true;
-                        break;
-                    case 9:
-                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp && BattleLogic.Battle.IsWild)) {
+                    NextPage = Page < BattleLogic.Battle.Trainer.TotalBattleTextPages ? NextPage + 1 : 23;
+                    if (Page == BattleLogic.Battle.Trainer.TotalBattleTextPages)
+                        ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.END_TRAINER_BATTLE;
+                    IsTransitioning = true;
+                }
+                else
+                {
+                    switch (Page)
+                    {
+                        case 1:
+                            IsTransitioning = true;
+                            break;
+                        case 9:
+                            if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT || (BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100 && !ScreenManager.Instance.BattleScreen.BattleLogic.LevelUp && BattleLogic.Battle.IsWild))
+                            {
+                                ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                                BattleLogic.EndBattle();
+                                return;
+                            }
+
+                            if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT && BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100)
+                            {
+                                if (!BattleLogic.Battle.IsEnded)
+                                {
+                                    ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.OPPONENT_SEND_POKEMON;
+                                    ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new TrainerBallBarAnimation();
+                                    ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
+                                }
+                                else if (!BattleLogic.Battle.IsWild)
+                                {
+                                    NextPage = 22;
+                                    IsTransitioning = true;
+                                }
+                            }
+
+                            if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100)
+                                IsTransitioning = true;
+
+                            ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
+                            ScreenManager.Instance.BattleScreen.BattleLogic.EXPGainApplied = false;
+                            break;
+                        case 16:
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.EXP_ANIMATION;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new EXPAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
+                            break;
+                        case 17:
+                            BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]));
+                            break;
+                        case 21:
+                            ScreenManager.Instance.BattleScreen.MenuManager.LoadContent("Load/Menus/MoveMenu.xml");
+                            NextPage = 4;
+                            Page = 4;
+                            IsTransitioning = true;
+                            break;
+                        case 22:
+                            //TODO: Handle trainer post-battle text and $ earnings
+                            /*
+                            ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                            BattleLogic.EndBattle();
+                            */
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.TRAINER_BATTLE_VICTORY;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new TrainerVictoryAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
+                            break;
+                        case 23:
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
                             BattleLogic.EndBattle();
                             return;
-                        }
-
-                        if (ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.ENEMY_FAINT && !BattleLogic.Battle.IsEnded && BattleLogic.Battle.PlayerPokemon.Pokemon.Level == 100)
-                        {
-                            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.OPPONENT_SEND_POKEMON;
-                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new TrainerBallBarAnimation();
-                            ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
-                        }
-
-                        if (BattleLogic.Battle.PlayerPokemon.Pokemon.Level < 100)
-                            IsTransitioning = true;
-
-                        ScreenManager.Instance.BattleScreen.BattleLogic.State = BattleLogic.FightState.NONE;
-                        ScreenManager.Instance.BattleScreen.BattleLogic.EXPGainApplied = false;
-                        break;
-                    case 16:
-                        ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.EXP_ANIMATION;
-                        ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new EXPAnimation();
-                        ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
-                        break;
-                    case 17:
-                        BattleLevelUp.LoadContent(BattleLogic.Battle.PlayerPokemon.Pokemon, int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]));
-                        break;
-                    case 21:
-                        ScreenManager.Instance.BattleScreen.MenuManager.LoadContent("Load/Menus/MoveMenu.xml");
-                        NextPage = 4;
-                        Page = 4;
-                        IsTransitioning = true;
-                        break;
-                    case 22:
-                        //TODO: Handle trainer post-battle text and $ earnings
-                        ScreenManager.Instance.ChangeScreens("GameplayScreen");
-                        BattleLogic.EndBattle();
-                        break;
-                    default:
-                        break;
+                        default:
+                            break;
+                    }
                 }
-
+                PageSkipped = true;
             }
 
             SetArrowPosition();
@@ -409,7 +461,7 @@ namespace PokemonFireRedClone
             }
 
 
-            if (IsTransitioning && Page != 4)
+            if (IsTransitioning && (Page != 4 || ScreenManager.Instance.BattleScreen.BattleAssets.State == BattleAssets.BattleState.TRAINER_BATTLE_VICTORY))
             {
                 TransitionRect.Draw(spriteBatch);
                 if (CurrentDialogue.Count == 2)

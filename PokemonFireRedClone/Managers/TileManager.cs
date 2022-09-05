@@ -36,6 +36,12 @@ namespace PokemonFireRedClone
                     return tile;
             }
 
+            foreach (Tile tile in map.Layers[0].Tiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64)))
+                    return tile;
+            }
+
             return null;
         }
 
@@ -48,6 +54,12 @@ namespace PokemonFireRedClone
             }
 
             foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + 64, currentTile.Position.Y - 64)))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.Layers[0].Tiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X + 64, currentTile.Position.Y - 64)))
                     return tile;
@@ -70,6 +82,12 @@ namespace PokemonFireRedClone
                     return tile;
             }
 
+            foreach (Tile tile in map.Layers[0].Tiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128)))
+                    return tile;
+            }
+
             return null;
         }
 
@@ -82,6 +100,12 @@ namespace PokemonFireRedClone
             }
 
             foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.Layers[0].Tiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
                     return tile;
@@ -101,6 +125,33 @@ namespace PokemonFireRedClone
                 }
             }
             return false;
+        }
+
+        public static Tile GetTile(Map map, Tile currentTile, int offsetX, int offsetY)
+        {
+            offsetX *= 64;
+            offsetY *= 64;
+
+            foreach (Tile tile in map.SolidTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + offsetX, currentTile.Position.Y + offsetY)))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + offsetX, currentTile.Position.Y + offsetY)))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.Layers[0].Tiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + offsetX, currentTile.Position.Y + offsetY)))
+                    return tile;
+            }
+
+            return null;
+
         }
 
     }

@@ -76,7 +76,7 @@ namespace PokemonFireRedClone
                 if (InputManager.Instance.KeyPressed(Keys.K) && !BattleAssets.IsTransitioning)
                     ScreenManager.Instance.ChangeScreens("GameplayScreen");
 
-                if (TextBox.Page == 4 && !MenuManager.IsLoaded)
+                if (TextBox.Page == 4 && BattleAssets.State != BattleAssets.BattleState.TRAINER_BATTLE_VICTORY && !MenuManager.IsLoaded)
                 {
                     MenuManager.LoadContent("Load/Menus/BattleMenu.xml");
                     BattleAssets.State = BattleAssets.BattleState.BATTLE_MENU;

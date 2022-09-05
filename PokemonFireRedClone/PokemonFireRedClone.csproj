@@ -69,6 +69,7 @@
     <None Remove="Util\Menu\PokemonMenu\MenuButtons\" />
     <None Remove="Entity\" />
     <None Remove="Content\BattleScreen\BattleSprites\" />
+    <None Remove="Entity\Movement\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -162,5 +163,6 @@
     <Folder Include="Util\Menu\PokemonMenu\MenuButtons\" />
     <Folder Include="Entity\" />
     <Folder Include="Content\BattleScreen\BattleSprites\" />
+    <Folder Include="Entity\Movement\" />
   </ItemGroup>
 </Project>

@@ -60,7 +60,12 @@ namespace PokemonFireRedClone
         {
             textBox.UnloadContent(ref player);
             textBox = null;
-            npc = null;
+
+            if (npc != null)
+            {
+                npc.UpdateMovement = true;
+                npc = null;
+            }
         }
 
         public void Update(GameTime gameTime, ref Map map, ref Player player)
@@ -114,6 +119,7 @@ namespace PokemonFireRedClone
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
                                 this.npc = npc;
+                                npc.UpdateMovement = false;
                             }
                             
                         }
@@ -127,6 +133,7 @@ namespace PokemonFireRedClone
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
                                 this.npc = npc;
+                                npc.UpdateMovement = false;
                             }
                         }
 
@@ -139,6 +146,7 @@ namespace PokemonFireRedClone
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
                                 this.npc = npc;
+                                npc.UpdateMovement = false;
                             }
                         }
 
@@ -151,6 +159,7 @@ namespace PokemonFireRedClone
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);
                                 this.npc = npc;
+                                npc.UpdateMovement = false;
                             }
                         }
                     }

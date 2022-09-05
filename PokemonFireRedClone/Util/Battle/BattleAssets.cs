@@ -35,7 +35,9 @@ namespace PokemonFireRedClone
             OPPONENT_SEND_POKEMON,
             POKEMON_FAINT,
             EXP_ANIMATION,
-            LEVEL_UP_ANIMATION
+            LEVEL_UP_ANIMATION,
+            TRAINER_BATTLE_VICTORY,
+            END_TRAINER_BATTLE
         }
 
         // General battle screen data
@@ -91,8 +93,6 @@ namespace PokemonFireRedClone
             else
             {
                 LoadSprites();
-                PlayerSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(5, 1);
-                PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
 
                 State = BattleState.INTRO;
                 Animation = new IntroAnimation();
@@ -357,6 +357,9 @@ namespace PokemonFireRedClone
                 Effects = "SpriteSheetEffect"
             };
             PlayerSprite.LoadContent();
+            PlayerSprite.SpriteSheetEffect.AmountOfFrames = new Vector2(5, 1);
+            PlayerSprite.SpriteSheetEffect.CurrentFrame = Vector2.Zero;
+            PlayerSprite.SpriteSheetEffect.SetupSourceRects();
         }
 
         private void SetIntroBattleImagePositions(TextBox textBox)
