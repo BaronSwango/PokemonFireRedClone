@@ -87,7 +87,7 @@ namespace PokemonFireRedClone
                 Sprite.Position.Y = rect.Top - Sprite.SourceRect.Height;
 
             State = MoveState.Idle;
-            Colliding = true;
+            //Colliding = true;
         }
 
     }

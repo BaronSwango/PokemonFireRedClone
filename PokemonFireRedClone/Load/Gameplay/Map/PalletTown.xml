@@ -137,8 +137,8 @@
 			<Effects>SpriteSheetEffect</Effects>
         </Sprite>
 		<SpawnLocation>
-			<X>1344</X>
-			<Y>1452</Y>
+			<X>960</X>
+			<Y>1260</Y>
         </SpawnLocation>
 		<SpriteFrames>
 			<X>4</X>

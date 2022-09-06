@@ -41,6 +41,8 @@ namespace PokemonFireRedClone
             Bottom.SpriteSheetEffect.CurrentFrame.Y = (int) direction;
             Bottom.SpriteSheetEffect.SpriteType = "NPCBottom";
             Bottom.SpriteSheetEffect.SetupSourceRects();
+
+            Bottom.SpriteSheetEffect.SwitchManual = Top.SpriteSheetEffect.SwitchManual = true;
         }
 
 

@@ -20,7 +20,7 @@ namespace PokemonFireRedClone
             if (npc.MoveType != NPC.MovementType.STILL)
             {
                 randomGenerator = new Random();
-                counterLimit = randomGenerator.Next(7500) + 500;
+                counterLimit = randomGenerator.Next(1500) + 500;
             }
             destination = Vector2.Zero;
         }
@@ -70,7 +70,7 @@ namespace PokemonFireRedClone
                             break;
                     }
 
-                    counterLimit = randomGenerator.Next(7500) + 500;
+                    counterLimit = randomGenerator.Next(1500) + 500;
                     counter = 0;
                     updateCounter = false;
                 }
@@ -101,6 +101,9 @@ namespace PokemonFireRedClone
                                     npc.Direction = Entity.EntityDirection.Left;
                                     break;
                             }
+
+
+                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
                         }
                     }
                 }
@@ -119,8 +122,8 @@ namespace PokemonFireRedClone
 
             npc.NPCSprite.SetFrame(frame);
             */
-            npc.NPCSprite.Top.IsActive = true;
-            npc.NPCSprite.Bottom.IsActive = true;
+            //npc.NPCSprite.Top.IsActive = true;
+            //npc.NPCSprite.Bottom.IsActive = true;
 
             switch (npc.Direction)
             {
@@ -128,6 +131,9 @@ namespace PokemonFireRedClone
                     if (npc.NPCSprite.Top.Position.X - speed > destination.X)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X - speed, npc.NPCSprite.Top.Position.Y));
+
+                        if (Math.Abs(npc.NPCSprite.Top.Position.X - destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
                         return false;
                     }
                     else
@@ -137,6 +143,10 @@ namespace PokemonFireRedClone
                     if (npc.NPCSprite.Top.Position.X + speed < destination.X)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X + speed, npc.NPCSprite.Top.Position.Y));
+
+                        if (Math.Abs(npc.NPCSprite.Top.Position.X - destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+
                         return false;
                     }
                     else
@@ -146,6 +156,10 @@ namespace PokemonFireRedClone
                     if (npc.NPCSprite.Top.Position.Y - speed > destination.Y)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - speed));
+
+                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+
                         return false;
                     }
                     else
@@ -155,6 +169,10 @@ namespace PokemonFireRedClone
                     if (npc.NPCSprite.Top.Position.Y + speed < destination.Y)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + speed));
+
+                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+
                         return false;
                     }
                     else
@@ -164,9 +182,9 @@ namespace PokemonFireRedClone
 
             if (npc.NPCSprite.Top.Position == destination)
             {
-                //frame = frame == 1 ? 2 : 0;
+                int frame = npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 2 : 0;
 
-                //npc.NPCSprite.SetFrame(frame);
+                npc.NPCSprite.SetFrame(frame);
                 npc.NPCSprite.Top.SpriteSheetEffect.FrameCounter = 0;
                 npc.NPCSprite.Bottom.SpriteSheetEffect.FrameCounter = 0;
                 npc.NPCSprite.Top.IsActive = false;
