@@ -102,8 +102,10 @@ namespace PokemonFireRedClone
                         if (!EnemyMoveExecuted)
                         {
                             MoveLanded = EnemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
-                            ScreenManager.Instance.BattleScreen.BattleAssets.State = EnemyMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
-                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = EnemyMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = EnemyMoveOption.Category == "Status"
+                                ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = EnemyMoveOption.Category == "Status"
+                                ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
                             ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
@@ -116,8 +118,10 @@ namespace PokemonFireRedClone
                         if (!PlayerMoveExecuted)
                         {
                             MoveLanded = UseMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
-                            ScreenManager.Instance.BattleScreen.BattleAssets.State = PlayerMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
-                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = PlayerMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = PlayerMoveOption.Category == "Status"
+                                ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = PlayerMoveOption.Category == "Status"
+                                ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.ENEMY_DEFEND;
                             PlayerMoveExecuted = true;
                             ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
@@ -131,8 +135,10 @@ namespace PokemonFireRedClone
                         if (!PlayerMoveExecuted)
                         {
                             MoveLanded = UseMove(Battle.PlayerPokemon, Battle.EnemyPokemon, PlayerMoveOption);
-                            ScreenManager.Instance.BattleScreen.BattleAssets.State = PlayerMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
-                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = PlayerMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = PlayerMoveOption.Category == "Status"
+                                ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = PlayerMoveOption.Category == "Status"
+                                ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.ENEMY_DEFEND;
                             PlayerMoveExecuted = true;
                             ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;
@@ -145,8 +151,10 @@ namespace PokemonFireRedClone
                         if (!EnemyMoveExecuted)
                         {
                             MoveLanded = EnemyUseMove(Battle.EnemyPokemon, Battle.PlayerPokemon);
-                            ScreenManager.Instance.BattleScreen.BattleAssets.State = EnemyMoveOption.Category == "Status" ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
-                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = EnemyMoveOption.Category == "Status" ? new StatusAnimation() : new DamageAnimation();
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = EnemyMoveOption.Category == "Status"
+                                ? BattleAssets.BattleState.STATUS_ANIMATION : BattleAssets.BattleState.DAMAGE_ANIMATION;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.Animation = EnemyMoveOption.Category == "Status"
+                                ? new StatusAnimation() : new DamageAnimation();
                             State = FightState.PLAYER_DEFEND;
                             EnemyMoveExecuted = true;
                             ScreenManager.Instance.BattleScreen.BattleAssets.IsTransitioning = true;

@@ -47,7 +47,9 @@ namespace PokemonFireRedClone
                     counter = 0;
                     speedMultiplier /= 0.7;
                     if (offset == -20)
+                    {
                         speedMultiplier /= 0.7;
+                    }
                 }
             }
 

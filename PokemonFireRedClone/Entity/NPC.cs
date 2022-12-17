@@ -22,14 +22,14 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public Sprite NPCSprite;
         [XmlIgnore]
-        public NPCMovementManager movementManager;
+        public NPCMovementManager MovementManager;
         public MovementType MoveType;
         public bool UpdateMovement;
 
         public override void LoadContent()
         {
             UpdateMovement = MoveType != MovementType.STILL;
-            movementManager = new NPCMovementManager(this);
+            MovementManager = new NPCMovementManager(this);
             NPCSprite = new Sprite(Sprite);
             NPCSprite.LoadContent(SpriteFrames, Direction);
             NPCSprite.SetPosition(SpawnLocation);
@@ -44,7 +44,7 @@ namespace PokemonFireRedClone
         {
             NPCSprite.Update(gameTime);
             if (UpdateMovement)
-                movementManager.Update(gameTime);
+                MovementManager.Update(gameTime);
         }
 
         public override void Spawn(ref Map map)

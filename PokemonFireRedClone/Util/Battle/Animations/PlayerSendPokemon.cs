@@ -28,9 +28,13 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new PokemonSendOut();
                 ResetPokeball();
 
-                BattleAssets.PlayerBallBar.Alpha = 0;
-                foreach (Image image in BattleAssets.PlayerBarBalls)
-                    image.Alpha = 0;
+                if (!BattleLogic.Battle.IsWild)
+                {
+                    BattleAssets.PlayerBallBar.Alpha = 0;
+                    foreach (Image image in BattleAssets.PlayerBarBalls)
+                        image.Alpha = 0;
+                }
+
 
                 return true;
 

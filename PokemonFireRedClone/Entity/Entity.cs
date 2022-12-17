@@ -23,7 +23,7 @@ namespace PokemonFireRedClone
 
         public Image Sprite;
 
-        protected Vector2 Destination;
+        public Vector2 Destination;
         public Vector2 SpawnLocation;
         public EntityDirection Direction;
         public MoveState State;
@@ -54,7 +54,8 @@ namespace PokemonFireRedClone
 
         public virtual void Update(GameTime gameTime)
         {
-            Direction = Sprite.SpriteSheetEffect.CurrentFrame.Y > 3 ? (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y - 4 : (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y;
+            Direction = Sprite.SpriteSheetEffect.CurrentFrame.Y > 3
+                ? (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y - 4 : (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y;
 
             Sprite.Update(gameTime);
         }
@@ -66,7 +67,8 @@ namespace PokemonFireRedClone
 
         public virtual void Spawn(ref Map map)
         {
-            Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y);
+            Tile currentTile =
+                TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y);
             if (currentTile != null)
             {
                 Vector2 centerTile = new(currentTile.Position.X,

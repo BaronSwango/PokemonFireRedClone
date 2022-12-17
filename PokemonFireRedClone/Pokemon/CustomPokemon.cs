@@ -67,7 +67,7 @@ namespace PokemonFireRedClone
         [JsonIgnore]
         public int EXPTowardsLevelUp
         {
-            get { return CurrentEXP - CurrentLevelEXP; }
+            get { return Level == 100 ? 0 : CurrentEXP - CurrentLevelEXP; }
 
             private set { }
         }
@@ -76,7 +76,7 @@ namespace PokemonFireRedClone
         [JsonIgnore]
         public int EXPNeededToLevelUp
         {
-            get { return NextLevelEXP - CurrentLevelEXP; }
+            get { return Level == 100 ? 0 : NextLevelEXP - CurrentLevelEXP; }
 
             private set {  }
         }
@@ -105,7 +105,7 @@ namespace PokemonFireRedClone
         {
             get
             {
-                return PokemonManager.Instance.GetPokemon(PokemonName).EXPGroup switch
+                return Level == 100 ? 0 : PokemonManager.Instance.GetPokemon(PokemonName).EXPGroup switch
                 {
                     "F" => (int)(4.0f * Math.Pow(Level + 1, 3) / 5.0f),
                     "MF" => (int)Math.Pow(Level + 1, 3),

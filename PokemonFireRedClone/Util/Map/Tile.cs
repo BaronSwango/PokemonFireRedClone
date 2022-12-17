@@ -34,6 +34,15 @@ namespace PokemonFireRedClone
 
                 if (playerRect.Intersects(tileRect))
                     player.Collide(tileRect);
+
+                /*
+                 * TODO: Animation of player collision (goes through walking cycle slowly, can't move until it's done)
+                 * TODO: handle when player collides with NPC and NPC moves (continue to play collision animation but also not allowed to move until animation is complete)
+                 * TODO: Cancel sprinting when player collides
+                 * TODO: handle sign and textbox interaction (interacting with sign/npc cancels collision animation)
+                 * TODO: Opening menu cancels collision animation
+                 * TODO: WATCH SCREEN RECORDING ON EXACT LOGISTICS OF COLLISION ANIMATION
+                 */
                 
             }
         }

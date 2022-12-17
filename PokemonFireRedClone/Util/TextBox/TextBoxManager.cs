@@ -114,7 +114,7 @@ namespace PokemonFireRedClone
                         {
                             LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref player);
 
-                            if (TileManager.UpTile(map, currentTile).Entity != null && TileManager.UpTile(map, currentTile).Entity is NPC npc)
+                            if (TileManager.UpTile(map, currentTile).Entity != null && TileManager.UpTile(map, currentTile).Entity is NPC npc && !npc.MovementManager.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
@@ -128,7 +128,7 @@ namespace PokemonFireRedClone
                         {
                             LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref player);
 
-                            if (TileManager.DownTile(map, currentTile).Entity != null && TileManager.DownTile(map, currentTile).Entity is NPC npc)
+                            if (TileManager.DownTile(map, currentTile).Entity != null && TileManager.DownTile(map, currentTile).Entity is NPC npc && !npc.MovementManager.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
@@ -141,7 +141,7 @@ namespace PokemonFireRedClone
                         {
                             LoadContent(TileManager.LeftTile(map, currentTile).ID, ref map, ref player);
 
-                            if (TileManager.LeftTile(map, currentTile).Entity != null && TileManager.LeftTile(map, currentTile).Entity is NPC npc)
+                            if (TileManager.LeftTile(map, currentTile).Entity != null && TileManager.LeftTile(map, currentTile).Entity is NPC npc && !npc.MovementManager.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
@@ -154,7 +154,7 @@ namespace PokemonFireRedClone
                         {
                             LoadContent(TileManager.RightTile(map, currentTile).ID, ref map, ref player);
 
-                            if (TileManager.RightTile(map, currentTile).Entity != null && TileManager.RightTile(map, currentTile).Entity is NPC npc)
+                            if (TileManager.RightTile(map, currentTile).Entity != null && TileManager.RightTile(map, currentTile).Entity is NPC npc && !npc.MovementManager.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);

@@ -12,7 +12,8 @@ namespace PokemonFireRedClone
         private int counterLimit;
         private bool updateCounter;
         private readonly Random randomGenerator;
-        private Vector2 destination;
+
+        public bool IsMoving;
 
         public NPCMovementManager(NPC npc)
         {
@@ -22,7 +23,7 @@ namespace PokemonFireRedClone
                 randomGenerator = new Random();
                 counterLimit = randomGenerator.Next(1500) + 500;
             }
-            destination = Vector2.Zero;
+            npc.Destination = Vector2.Zero;
         }
 
         public void Update(GameTime gameTime)
@@ -42,28 +43,28 @@ namespace PokemonFireRedClone
                         case NPC.MovementType.SET_PATH:
                             if (npc.Direction == Entity.EntityDirection.Up)
                             { 
-                                if (destination == Vector2.Zero)
-                                    destination = new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64);
+                                if (npc.Destination == Vector2.Zero)
+                                    npc.Destination = new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64);
 
                                 if (!Move(gameTime)) return;
                             }
                             else if (npc.Direction == Entity.EntityDirection.Right)
                             {
-                                if (destination == Vector2.Zero)
-                                    destination = new Vector2(npc.NPCSprite.Top.Position.X + 64, npc.NPCSprite.Top.Position.Y);
+                                if (npc.Destination == Vector2.Zero)
+                                    npc.Destination = new Vector2(npc.NPCSprite.Top.Position.X + 64, npc.NPCSprite.Top.Position.Y);
 
                                 if (!Move(gameTime)) return;
                             }
                             else if (npc.Direction == Entity.EntityDirection.Down)
                             {
-                                if (destination == Vector2.Zero)
-                                    destination = new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + 64);
+                                if (npc.Destination == Vector2.Zero)
+                                    npc.Destination = new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + 64);
 
                                 if (!Move(gameTime)) return;
                             } else
                             {
-                                if (destination == Vector2.Zero)
-                                    destination = new Vector2(npc.NPCSprite.Top.Position.X - 64, npc.NPCSprite.Top.Position.Y);
+                                if (npc.Destination == Vector2.Zero)
+                                    npc.Destination = new Vector2(npc.NPCSprite.Top.Position.X - 64, npc.NPCSprite.Top.Position.Y);
 
                                 if (!Move(gameTime)) return;
                             }
@@ -73,6 +74,7 @@ namespace PokemonFireRedClone
                     counterLimit = randomGenerator.Next(1500) + 500;
                     counter = 0;
                     updateCounter = false;
+                    IsMoving = false;
                 }
                 else
                 {
@@ -104,6 +106,7 @@ namespace PokemonFireRedClone
 
 
                             npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
+                            IsMoving = true;
                         }
                     }
                 }
@@ -114,7 +117,7 @@ namespace PokemonFireRedClone
         public bool Move(GameTime gameTime)
         {
 
-            int speed = (int)(gameTime.ElapsedGameTime.TotalMilliseconds * npc.MoveSpeed);
+            int speed = (int)(gameTime.ElapsedGameTime.TotalMilliseconds * npc.MoveSpeed * 1.1);
 
             /*
             int frame = npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 0 && npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X != 1
@@ -128,59 +131,63 @@ namespace PokemonFireRedClone
             switch (npc.Direction)
             {
                 case Entity.EntityDirection.Left:
-                    if (npc.NPCSprite.Top.Position.X - speed > destination.X)
+                    if (npc.NPCSprite.Top.Position.X - speed > npc.Destination.X)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X - speed, npc.NPCSprite.Top.Position.Y));
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.X - destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                        if (Math.Abs(npc.NPCSprite.Top.Position.X - npc.Destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
                             npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
                         return false;
                     }
                     else
-                        npc.NPCSprite.SetPosition(destination);
+                        npc.NPCSprite.SetPosition(npc.Destination);
                     break;
                 case Entity.EntityDirection.Right:
-                    if (npc.NPCSprite.Top.Position.X + speed < destination.X)
+                    if (npc.NPCSprite.Top.Position.X + speed < npc.Destination.X)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X + speed, npc.NPCSprite.Top.Position.Y));
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.X - destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                        if (Math.Abs(npc.NPCSprite.Top.Position.X - npc.Destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
                             npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
 
                         return false;
                     }
                     else
-                        npc.NPCSprite.SetPosition(destination);
+                        npc.NPCSprite.SetPosition(npc.Destination);
                     break;
                 case Entity.EntityDirection.Up:
-                    if (npc.NPCSprite.Top.Position.Y - speed > destination.Y)
+                    if (npc.NPCSprite.Top.Position.Y - speed > npc.Destination.Y)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - speed));
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - npc.Destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
                             npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
 
                         return false;
                     }
                     else
-                        npc.NPCSprite.SetPosition(destination);
+                        npc.NPCSprite.SetPosition(npc.Destination);
                     break;
                 case Entity.EntityDirection.Down:
-                    if (npc.NPCSprite.Top.Position.Y + speed < destination.Y)
+                    if (npc.NPCSprite.Top.Position.Y + speed < npc.Destination.Y)
                     {
                         npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + speed));
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1 || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
+                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - npc.Destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
                             npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
 
                         return false;
                     }
                     else
-                        npc.NPCSprite.SetPosition(destination);
+                        npc.NPCSprite.SetPosition(npc.Destination);
                     break;
             }
 
-            if (npc.NPCSprite.Top.Position == destination)
+            if (npc.NPCSprite.Top.Position == npc.Destination)
             {
                 int frame = npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 2 : 0;
 
@@ -189,7 +196,7 @@ namespace PokemonFireRedClone
                 npc.NPCSprite.Bottom.SpriteSheetEffect.FrameCounter = 0;
                 npc.NPCSprite.Top.IsActive = false;
                 npc.NPCSprite.Bottom.IsActive = false;
-                destination = Vector2.Zero;
+                npc.Destination = Vector2.Zero;
                 return true;
             }
 

@@ -39,7 +39,7 @@ namespace PokemonFireRedClone
         {
             AmountOfFrames = new Vector2(4, 8);
             CurrentFrame = new Vector2(0, 0);
-            SwitchFrame = 130;
+            SwitchFrame = 250;
             FrameCounter = 0;
         }
 

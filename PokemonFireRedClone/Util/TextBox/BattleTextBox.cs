@@ -298,28 +298,22 @@ namespace PokemonFireRedClone
                 image.B = 126;
 
                 if (image.Page == 1)
-                {
-                    if (BattleLogic.Battle.IsWild)
+                { 
+                    if (CurrentDialogue.Count == 0)
                     {
-                        image.Text = "Wild   " + enemyPokemon.Name + "   appeared !";
-                        NextPage = 3;
-                        CurrentDialogue.Add(image);
-                        image.LoadContent();
-                        image.Arrow = true;
-                        break;
-                    }
-                    else
-                    {
-                        if (CurrentDialogue.Count == 0)
-                        {
-                            image.Text = BattleLogic.Battle.Trainer.Name;
-                            NextPage = 2;
-                        }
-                        CurrentDialogue.Add(image);
-                        image.LoadContent();
-                    }
-                }
+                        image.Text = BattleLogic.Battle.IsWild ? "Wild   " + enemyPokemon.Name + "   appeared !" : BattleLogic.Battle.Trainer.Name;
+                        NextPage = BattleLogic.Battle.IsWild ? 3 : 2;
 
+                        if (BattleLogic.Battle.IsWild)
+                            image.Arrow = true;
+
+                        CurrentDialogue.Add(image);
+                    }
+                    else if (!BattleLogic.Battle.IsWild)
+                        CurrentDialogue.Add(image);
+
+                    image.LoadContent();
+                }
             }
 
             CurrentDialogue[0].SetPosition(new Vector2(Border.Position.X + DialogueOffsetX, Border.Position.Y + DialogueOffsetY));

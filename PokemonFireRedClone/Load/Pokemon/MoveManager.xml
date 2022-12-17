@@ -672,5 +672,1192 @@
         <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
         <Category>Special</Category>
     </Moves>
-
+    <Moves>
+        <Name>Waterfall</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Swift</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Strength</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Surf</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Rock Smash</Name>
+        <TypeName>Rock</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Dive</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Grass Knot</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Fire Blast</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Thunderwave</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Water Gun</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Mirror</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Mud Slap</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Rock Tail</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Rock Throw</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Earthquake</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Hydro Pump</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Gyroball</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Fly</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Dig</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Wing Attack</Name>
+        <TypeName>Flying</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Smokescreen</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Lick</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Shadow Ball</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
+    <Moves>
+        <Name>Thundershock</Name>
+        <TypeName>Water</TypeName>
+        <Power>40</Power>
+        <Accuracy>100</Accuracy>
+        <PP>25</PP>
+        <Description>The foe is struck with a lot of water expelled forcibly from the mouth.</Description>
+        <Category>Special</Category>
+    </Moves>
 </MoveManager>

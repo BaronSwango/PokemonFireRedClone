@@ -25,12 +25,8 @@
     <None Remove="Load\Gameplay\Map\Map1.xml" />
     <None Remove="Content\Gameplay\TileSheets\" />
     <None Remove="Content\Content.mgcb" />
-    <None Remove="Screens\" />
     <None Remove="Managers\" />
     <None Remove="Util\" />
-    <None Remove="Util\Effects\" />
-    <None Remove="Util\Map\" />
-    <None Remove="Util\Menu\" />
     <None Remove="Content\Menus\" />
     <None Remove="Load\Menus\" />
     <None Remove="Load\Menus\TitleMenu.xml" />
@@ -38,7 +34,6 @@
     <None Remove="Load\Menus\MainMenu.xml" />
     <None Remove="Content\TextBoxes\" />
     <None Remove="Load\Gameplay\TextBoxes.xml" />
-    <None Remove="Util\TextBox\" />
     <None Remove="Load\Gameplay\TextBoxManager.xml" />
     <None Remove="Load\Menus\SaveMenu.xml" />
     <None Remove="Pokemon\" />
@@ -49,7 +44,6 @@
     <None Remove="Load\BattleScreen.xml" />
     <None Remove="Load\Menus\BattleMenu.xml" />
     <None Remove="Content\Pokemon\" />
-    <None Remove="Util\Battle\" />
     <None Remove="Load\Menus\MoveMenu.xml" />
     <None Remove="Load\Menus\PokemonMenu.xml" />
     <None Remove="Content\Menus\SaveMenu\" />
@@ -60,16 +54,14 @@
     <None Remove="Content\Menus\MoveMenu\" />
     <None Remove="Content\Pokemon\MenuSprites\" />
     <None Remove="Load\Menus\PokemonInfoMenu.xml" />
-    <None Remove="Util\Menu\OverlayMenu\" />
-    <None Remove="Util\Battle\Animations\" />
     <None Remove="Util\Menu\Summary\" />
     <None Remove="Content\Menus\SummaryMenu\" />
     <None Remove="Content\Type\" />
-    <None Remove="Util\Menu\PokemonMenu\" />
-    <None Remove="Util\Menu\PokemonMenu\MenuButtons\" />
     <None Remove="Entity\" />
     <None Remove="Content\BattleScreen\BattleSprites\" />
     <None Remove="Entity\Movement\" />
+    <None Remove="Entity\Player\" />
+    <None Remove="Screens\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -132,21 +124,14 @@
     <Folder Include="Content\ScreenManager\" />
     <Folder Include="Load\Gameplay\Map\" />
     <Folder Include="Content\Gameplay\TileSheets\" />
-    <Folder Include="Screens\" />
     <Folder Include="Managers\" />
-    <Folder Include="Util\" />
-    <Folder Include="Util\Effects\" />
-    <Folder Include="Util\Map\" />
-    <Folder Include="Util\Menu\" />
     <Folder Include="Content\Menus\" />
     <Folder Include="Load\Menus\" />
     <Folder Include="Content\TextBoxes\" />
-    <Folder Include="Util\TextBox\" />
     <Folder Include="Pokemon\" />
     <Folder Include="Load\Pokemon\" />
     <Folder Include="Content\BattleScreen\" />
     <Folder Include="Content\Pokemon\" />
-    <Folder Include="Util\Battle\" />
     <Folder Include="Content\Menus\SaveMenu\" />
     <Folder Include="Content\Menus\TitleMenu\" />
     <Folder Include="Content\Menus\MainMenu\" />
@@ -154,15 +139,13 @@
     <Folder Include="Content\Menus\BattleMenu\" />
     <Folder Include="Content\Menus\MoveMenu\" />
     <Folder Include="Content\Pokemon\MenuSprites\" />
-    <Folder Include="Util\Menu\OverlayMenu\" />
-    <Folder Include="Util\Battle\Animations\" />
-    <Folder Include="Util\Menu\SummaryMenu\" />
     <Folder Include="Content\Menus\SummaryMenu\" />
     <Folder Include="Content\Types\" />
-    <Folder Include="Util\Menu\PokemonMenu\" />
-    <Folder Include="Util\Menu\PokemonMenu\MenuButtons\" />
     <Folder Include="Entity\" />
     <Folder Include="Content\BattleScreen\BattleSprites\" />
     <Folder Include="Entity\Movement\" />
+    <Folder Include="Entity\Player\" />
+    <Folder Include="Screens\" />
+    <Folder Include="Util\" />
   </ItemGroup>
 </Project>
