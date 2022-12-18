@@ -53,6 +53,7 @@ namespace PokemonFireRedClone
                 NPCSprite.Bottom.SourceRect.Height);
             if (currentTile != null)
             {
+                Destination = new(currentTile.Position.X, currentTile.Position.Y - 84);
                 Vector2 centerTile = new(currentTile.Position.X,
                 currentTile.Position.Y - 84);
                 NPCSprite.SetPosition(centerTile);

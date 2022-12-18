@@ -33,6 +33,11 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public List<CustomPokemon> Pokemon;
 
+        private static GameplayScreen CurrentScreen
+        {
+            get { return (GameplayScreen)ScreenManager.Instance.CurrentScreen; }
+        }
+
         public Player()
         {
             changeDirection = false;
@@ -40,6 +45,7 @@ namespace PokemonFireRedClone
             waitToMove = 0;
             Colliding = false;
             CanUpdate = true;
+            PreviousTile = Vector2.Zero;
         }
 
         public override void LoadContent()
@@ -69,6 +75,7 @@ namespace PokemonFireRedClone
             Direction = Sprite.SpriteSheetEffect.CurrentFrame.Y > 3 ? (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y - 4 : (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y;
 
             // COLLISION DETECTION START
+
             if (State == MoveState.Idle
                 && Direction == EntityDirection.Up && !InputManager.Instance.KeyDown(Keys.A, Keys.S, Keys.D)
                 || (Direction == EntityDirection.Down && !InputManager.Instance.KeyDown(Keys.W, Keys.A, Keys.D))
@@ -84,35 +91,53 @@ namespace PokemonFireRedClone
                         || (TileManager.RightTile(map, currentTile) != null && (TileManager.RightTile(map, currentTile).State == "Solid" || TileManager.RightTile(map, currentTile).Entity != null) && Direction == EntityDirection.Right))
                     {
                         
-                        if (!Colliding && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
+                        if (!Colliding && !CurrentScreen.TextBoxManager.IsDisplayed)
                         {
                             if (changeDirection)
                                 changeDirection = false;
                             Colliding = true;
+
                         }
 
-                        if (((TileManager.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up)
-                            || (TileManager.IsTextBoxTile((GameplayScreen)ScreenManager.Instance.CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down))
-                            && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed)
+                        if (((TileManager.IsTextBoxTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up)
+                            || (TileManager.IsTextBoxTile(CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down))
+                            && !CurrentScreen.TextBoxManager.Closed)
                         {
-                            Colliding = false;
-                            Sprite.SpriteSheetEffect.FrameCounter = 0;
-
-                            if (Direction == EntityDirection.Up && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
-                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
-                            else if (Direction == EntityDirection.Down && !((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.IsDisplayed)
-                                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
+                            
+                            if (Direction == EntityDirection.Up && !CurrentScreen.TextBoxManager.IsDisplayed)
+                                CurrentScreen.TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref CurrentScreen.Player);
+                            else if (Direction == EntityDirection.Down && !CurrentScreen.TextBoxManager.IsDisplayed)
+                                CurrentScreen.TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref CurrentScreen.Player);
 
                         }
+                    } else
+                    {
+                        Colliding = false;
+                        Sprite.SpriteSheetEffect.SwitchManual = true;
+                        Sprite.IsActive = false;
                     }
 
                 }
             }
-            // COLLISION DETECTION END
 
             
-           if (!Colliding && ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed)
-                ((GameplayScreen)ScreenManager.Instance.CurrentScreen).TextBoxManager.Closed = false;
+            foreach (NPC npc in map.NPCs)
+            {
+                if (npc.IsMoving && Destination == npc.Destination)
+                {
+                    Colliding = true;
+                    Sprite.SpriteSheetEffect.SwitchManual = false;
+                    Sprite.IsActive = true;
+                    return;
+                }
+            }
+            
+
+            // COLLISION DETECTION END
+
+
+            if (!Colliding && CurrentScreen.TextBoxManager.Closed)
+                CurrentScreen.TextBoxManager.Closed = false;
             
            //TODO: handle collision with improved player movement
 
@@ -120,18 +145,10 @@ namespace PokemonFireRedClone
             
             if (Colliding)
             {
-                //Sprite.SpriteSheetEffect.SwitchFrame = 250;
                 if (Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
                     Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
                 Sprite.SpriteSheetEffect.SwitchManual = false;
             }
-            
-            /*
-            else if (Running)
-                Sprite.SpriteSheetEffect.SwitchFrame = 60;
-            else
-                Sprite.SpriteSheetEffect.SwitchFrame = 130;
-            */
 
             
             if (changeDirection && Colliding)
@@ -146,7 +163,6 @@ namespace PokemonFireRedClone
 
             if (CanUpdate)
             {
-                //Sprite.IsActive = true;
                 // TILE BASED MOVEMENT START
 
                 if ((State == MoveState.Right || State == MoveState.Left || State == MoveState.Up || State == MoveState.Down) && Colliding && changeDirection)
@@ -160,6 +176,8 @@ namespace PokemonFireRedClone
                 {
                     case MoveState.Idle:
                         Destination = Sprite.Position;
+                        PreviousTile = Destination;
+                        IsMoving = false;
                         Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
                         // causes a change in Direction but no movement unless key is held down more than 4 iterations of the Update method
@@ -181,86 +199,77 @@ namespace PokemonFireRedClone
 
                         if (InputManager.Instance.KeyDown(Keys.W))
                         {
-                            //if (Sprite.IsActive)
-                            //{
-                                if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 3 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 7)
-                                {
-                                    Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 7 : 3;
-                                    changeDirection = true;
-                                    break;
-                                }
+                            if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 3 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 7)
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 7 : 3;
+                                changeDirection = true;
+                                break;
+                            }
 
-                                Destination.Y -= 64;
+                            Destination.Y -= 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
-                                Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
-                                
-                            
-
-                            State = MoveState.Up;
-                            //}
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;                             
+                                State = MoveState.Up;
+                            }
                         }
                         else if (InputManager.Instance.KeyDown(Keys.S))
                         {
-                            //if (Sprite.IsActive)
-                            //{
-                                if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 2 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 6)
-                                {
-                                    Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 6 : 2;
-                                    changeDirection = true;
-                                    break;
-                                }
-                                Destination.Y += 64;
+                            if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 2 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 6)
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 6 : 2;
+                                changeDirection = true;
+                                break;
+                            }
+
+                            Destination.Y += 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
-                            
+                            {
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
-                            State = MoveState.Down;
-                            //}
+                                State = MoveState.Down;
+                            }
                         }
                         else if (InputManager.Instance.KeyDown(Keys.A))
                         {
-                            //if (Sprite.IsActive)
-                            //{
-                                if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 0 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 4)
-                                {
-                                    Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 4 : 0;
-                                    changeDirection = true;
-                                    break;
-                                }
-                                Destination.X -= 64;
+                            if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 0 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 4)
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 4 : 0;
+                                changeDirection = true;
+                                break;
+                            }
+                            Destination.X -= 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
-                            
+                            {
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
-                            State = MoveState.Left;
-                            //}
+                                State = MoveState.Left;
+                            }
                         }
                         else if (InputManager.Instance.KeyDown(Keys.D))
                         {
-                            //if (Sprite.IsActive)
-                            //{
-                                if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 1 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 5)
-                                {
-                                    Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 5 : 1;
-                                    changeDirection = true;
-                                    break;
-                                }
-                                Destination.X += 64;
+                            if (Sprite.SpriteSheetEffect.CurrentFrame.Y != 1 && Sprite.SpriteSheetEffect.CurrentFrame.Y != 5)
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 5 : 1;
+                                changeDirection = true;
+                                break;
+                            }
+                            Destination.X += 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
-                            
+                            {
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
-                            State = MoveState.Right;
-                            //}
+                                State = MoveState.Right;
+                            }
                         }
                         else
                         {
@@ -268,6 +277,9 @@ namespace PokemonFireRedClone
                                 Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
                             Sprite.IsActive = false;
                         }
+
+                        if (State != MoveState.Idle)
+                            IsMoving = true;
 
                         wasMoving = false;
                         break;
@@ -277,6 +289,7 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.Y - speed < (int)Destination.Y)
                         {
                             Sprite.Position.Y = (int)Destination.Y;
+                            PreviousTile = Destination;
                             Destination.Y -= 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
@@ -305,6 +318,7 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.Y + speed > (int)Destination.Y)
                         {
                             Sprite.Position.Y = (int)Destination.Y;
+                            PreviousTile = Destination;
                             Destination.Y += 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
@@ -332,6 +346,7 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.X - speed < Destination.X)
                         {
                             Sprite.Position.X = (int)Destination.X;
+                            PreviousTile = Destination;
                             Destination.X -= 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 
@@ -360,6 +375,7 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.X + speed > Destination.X)
                         {
                             Sprite.Position.X = (int)Destination.X;
+                            PreviousTile = Destination;
                             Destination.X += 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
 

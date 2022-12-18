@@ -105,8 +105,8 @@ namespace PokemonFireRedClone
 
         public static Tile GetTile(Map map, Tile currentTile, int offsetX, int offsetY)
         {
-            offsetX *= 64;
-            offsetY *= 64;
+            //offsetX *= 64;
+            //offsetY *= 64;
 
             foreach (Tile tile in map.SolidTiles)
             {

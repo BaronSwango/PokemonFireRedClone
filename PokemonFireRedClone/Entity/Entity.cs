@@ -23,12 +23,14 @@ namespace PokemonFireRedClone
 
         public Image Sprite;
 
+        public Vector2 PreviousTile;
         public Vector2 Destination;
         public Vector2 SpawnLocation;
         public EntityDirection Direction;
         public MoveState State;
         public Vector2 SpriteFrames;
         public float MoveSpeed;
+        public bool IsMoving;
         public bool Colliding;
 
         public Entity()
@@ -89,7 +91,7 @@ namespace PokemonFireRedClone
                 Sprite.Position.Y = rect.Top - Sprite.SourceRect.Height;
 
             State = MoveState.Idle;
-            //Colliding = true;
+            Colliding = true;
         }
 
     }
