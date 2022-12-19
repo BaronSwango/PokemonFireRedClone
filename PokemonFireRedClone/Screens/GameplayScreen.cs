@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -52,12 +53,22 @@ namespace PokemonFireRedClone
         public override void Update(GameTime gameTime)
         {
 
-            float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
+            //float speed = (float)(30 * gameTime.ElapsedGameTime.TotalSeconds);
 
             base.Update(gameTime);
 
+            // example wild battle
             if (InputManager.Instance.KeyPressed(Keys.K))
                 ScreenManager.Instance.ChangeScreens("BattleScreen");
+
+            // print player's current tile to console
+            if (InputManager.Instance.KeyPressed(Keys.M))
+            {
+                Tile currentTile = TileManager.GetCurrentTile(map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height);
+                if (currentTile != null)
+                    Console.WriteLine($"({currentTile.Position.X}, {currentTile.Position.Y})");
+            }
+
 
             if (MenuManager.WasLoaded)
                 MenuManager.WasLoaded = false;

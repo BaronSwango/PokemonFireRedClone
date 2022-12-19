@@ -80,18 +80,6 @@ namespace PokemonFireRedClone
                     if (!NPCTiles.Contains(currentTile))
                         NPCTiles.Add(currentTile);
 
-                    /*
-                    Tile desinationTile = TileManager.GetTile(this,
-                        currentTile,
-                        (int)(npc.Destination.X - currentTile.Position.X), (int)(npc.Destination.Y + 20 - currentTile.Position.Y));
-
-                    if (desinationTile != null)
-                    {
-                        desinationTile.Entity = npc;
-                        if (!NPCTiles.Contains(desinationTile))
-                            NPCTiles.Add(desinationTile);
-                    }
-                    */
                 }
             }
 

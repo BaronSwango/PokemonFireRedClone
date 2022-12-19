@@ -206,12 +206,13 @@ namespace PokemonFireRedClone
                                 break;
                             }
 
-                            Destination.Y -= 64;
+                            //Destination.Y -= 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
                             {
+                                Destination.Y -= 64;
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;                             
                                 State = MoveState.Up;
                             }
@@ -225,12 +226,13 @@ namespace PokemonFireRedClone
                                 break;
                             }
 
-                            Destination.Y += 64;
+                            //Destination.Y += 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
                             {
+                                Destination.Y += 64;
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
                                 State = MoveState.Down;
                             }
@@ -243,12 +245,14 @@ namespace PokemonFireRedClone
                                 changeDirection = true;
                                 break;
                             }
-                            Destination.X -= 64;
+
+                            //Destination.X -= 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
                             {
+                                Destination.X -= 64;
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
                                 State = MoveState.Left;
                             }
@@ -261,12 +265,14 @@ namespace PokemonFireRedClone
                                 changeDirection = true;
                                 break;
                             }
-                            Destination.X += 64;
+
+                            //Destination.X += 64;
                             
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
                             {
+                                Destination.X += 64;
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
                                 State = MoveState.Right;
                             }

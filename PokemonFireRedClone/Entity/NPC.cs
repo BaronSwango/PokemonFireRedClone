@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
@@ -18,6 +19,14 @@ namespace PokemonFireRedClone
             SET_PATH
         }
 
+        // SETPATHMOVEMANAGER ONLY
+        [XmlElement("PathCoords")]
+        public List<string> PathCoordsXML;
+
+        // ZONEDMOVEMENTMANAGER ONLY
+        [XmlElement("Zone")]
+        public List<string> Zone;
+
         public string ID;
         [XmlIgnore]
         public Sprite NPCSprite;
@@ -29,10 +38,26 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             UpdateMovement = MoveType != MovementType.STILL;
-            MovementManager = new NPCMovementManager(this);
+
             NPCSprite = new Sprite(Sprite);
             NPCSprite.LoadContent(SpriteFrames, Direction);
             NPCSprite.SetPosition(SpawnLocation);
+
+            switch(MoveType)
+            {
+                case MovementType.ROTATE:
+                    MovementManager = new RotatingMovementManager(this);
+                    break;
+                case MovementType.SET_PATH:
+                    MovementManager = new SetPathMovementManager(this);
+                    MovementManager.LoadContent();
+                    break;
+                case MovementType.ZONED:
+                    MovementManager = new ZonedMovementManager(this);
+                    break;
+            }
+
+
         }
 
         public override void UnloadContent()
@@ -45,6 +70,8 @@ namespace PokemonFireRedClone
             NPCSprite.Update(gameTime);
             if (UpdateMovement)
                 MovementManager.Update(gameTime);
+            else
+                IsMoving = false;
         }
 
         public override void Spawn(ref Map map)
