@@ -103,6 +103,30 @@ namespace PokemonFireRedClone
             return false;
         }
 
+        public static Tile GetTile(Map map, Vector2 location)
+        {
+            foreach (Tile tile in map.SolidTiles)
+            {
+                if (tile.Position.Equals(location))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(location))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.Layers[0].Tiles)
+            {
+                if (tile.Position.Equals(location))
+                    return tile;
+            }
+
+            return null;
+        }
+
+
         public static Tile GetTile(Map map, Tile currentTile, int offsetX, int offsetY)
         {
             //offsetX *= 64;

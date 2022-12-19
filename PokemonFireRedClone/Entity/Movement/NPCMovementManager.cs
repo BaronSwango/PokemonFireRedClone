@@ -35,7 +35,7 @@ namespace PokemonFireRedClone
 
         public virtual void LoadContent() { }
 
-        public virtual void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime, Map map)
         {
             /*
             float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -176,6 +176,17 @@ namespace PokemonFireRedClone
             */
         }
 
+        protected Vector2 CalculateDestination()
+        {
+            return npc.Direction switch
+            {
+                Entity.EntityDirection.Left => new(npc.NPCSprite.Top.Position.X - 64, npc.NPCSprite.Top.Position.Y),
+                Entity.EntityDirection.Right => new(npc.NPCSprite.Top.Position.X + 64, npc.NPCSprite.Top.Position.Y),
+                Entity.EntityDirection.Down => new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + 64),
+                Entity.EntityDirection.Up => new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64),
+                _ => new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64),
+            };
+        }
 
         protected bool Move(GameTime gameTime)
         {

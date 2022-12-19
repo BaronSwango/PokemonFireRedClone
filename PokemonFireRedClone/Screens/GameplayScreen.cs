@@ -36,7 +36,7 @@ namespace PokemonFireRedClone
 
             foreach (NPC npc in map.NPCs)
                 npc.Spawn(ref map);
-
+            
             Camera = new Camera();
         }
 
@@ -67,6 +67,7 @@ namespace PokemonFireRedClone
                 Tile currentTile = TileManager.GetCurrentTile(map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height);
                 if (currentTile != null)
                     Console.WriteLine($"({currentTile.Position.X}, {currentTile.Position.Y})");
+                
             }
 
 

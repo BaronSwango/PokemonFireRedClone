@@ -137,22 +137,18 @@
 			<Effects>SpriteSheetEffect</Effects>
         </Sprite>
 		<SpawnLocation>
-			<X>756</X>
-			<Y>1004</Y>
+			<X>1344</X>
+			<Y>1452</Y>
         </SpawnLocation>
 		<SpriteFrames>
 			<X>4</X>
 			<Y>4</Y>
         </SpriteFrames>
-		<Direction>Left</Direction>
-		<MoveType>SetPath</MoveType>
+		<Direction>Down</Direction>
+		<MoveType>Zoned</MoveType>
 		<ID>NPC1</ID>
-		<PathCoords>768,1004</PathCoords>
-		<PathCoords>1280,1004</PathCoords>
-		<PathCoords>1280,556</PathCoords>
-		<PathCoords>1792,556</PathCoords>
-		<PathCoords>1792,1324</PathCoords>
-		<PathCoords>768,1324</PathCoords>
+		<Zone>960,1324</Zone>
+		<Zone>1856,1580</Zone>
     </NPC>
 	<NPC>
 		<Sprite>
@@ -168,8 +164,10 @@
 			<Y>4</Y>
         </SpriteFrames>
 		<Direction>Down</Direction>
-		<MoveType>Rotate</MoveType>
+		<MoveType>Zoned</MoveType>
 		<ID>NPC2</ID>
+		<Zone>640,492</Zone>
+		<Zone>768,1388</Zone>
     </NPC>
 	<Trainer>
 		<Sprite>

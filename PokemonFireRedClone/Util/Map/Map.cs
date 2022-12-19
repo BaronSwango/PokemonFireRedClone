@@ -69,7 +69,7 @@ namespace PokemonFireRedClone
 
             foreach (NPC npc in NPCs)
             {
-                npc.Update(gameTime);
+                npc.Update(gameTime, this);
 
                 Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / 2,
                     npc.NPCSprite.Bottom.SourceRect.Height / (int)npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);

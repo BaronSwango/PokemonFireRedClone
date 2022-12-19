@@ -9,7 +9,6 @@ namespace PokemonFireRedClone
         private readonly Random randomGenerator;
         private float counter;
         private int counterLimit;
-        private bool updateCounter;
 
         public RotatingMovementManager(NPC npc) : base(npc)
         {
@@ -17,29 +16,20 @@ namespace PokemonFireRedClone
             counterLimit = randomGenerator.Next(3960) + 250;
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, Map map)
         {
             float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (updateCounter)
+            counter += counterSpeed;
+
+            if (counter >= counterLimit)
             {
                 npc.NPCSprite.SetDirection(randomGenerator.Next(4));
 
                 counterLimit = randomGenerator.Next(3960) + 250;
                 counter = 0;
-                updateCounter = false;
-                npc.IsMoving = false;
-            }
-            else
-            {
-                counter += counterSpeed;
-
-                if (counter >= counterLimit)
-                    updateCounter = true;
             }
 
         }
-
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 
@@ -54,9 +55,9 @@ namespace PokemonFireRedClone
                     break;
                 case MovementType.ZONED:
                     MovementManager = new ZonedMovementManager(this);
+                    MovementManager.LoadContent();
                     break;
             }
-
 
         }
 
@@ -65,11 +66,11 @@ namespace PokemonFireRedClone
             NPCSprite.UnloadContent();
         }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Map map)
         {
             NPCSprite.Update(gameTime);
             if (UpdateMovement)
-                MovementManager.Update(gameTime);
+                MovementManager.Update(gameTime, map);
             else
                 IsMoving = false;
         }
@@ -84,6 +85,7 @@ namespace PokemonFireRedClone
                 Vector2 centerTile = new(currentTile.Position.X,
                 currentTile.Position.Y - 84);
                 NPCSprite.SetPosition(centerTile);
+
             }
         }
 
