@@ -29,6 +29,7 @@ namespace PokemonFireRedClone
 
         [XmlElement("TileMap")]
         public TileMap Tile;
+        [XmlIgnore]
         public List<Tile> Tiles;
         public string SolidTiles, OverlayTiles;
         public Image Image;

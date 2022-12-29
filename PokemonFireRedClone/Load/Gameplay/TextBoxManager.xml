@@ -3,7 +3,125 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:2]</ID>
+        <ID>[4:0:0]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>ROUTE   2</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>VIRIDIAN   CITY   -   PEWTER   CITY</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>1</TotalPages>
+        <Type>Tile</Type>
+        <ID>[0:13:2]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>VIRIDIAN   CITY   POKéMON   GYM</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>1</TotalPages>
+        <Type>Tile</Type>
+        <ID>[4:0:3]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>VIRIDIAN   CITY</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>The   Eternally   Green   Paradise</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>1</TotalPages>
+        <Type>Tile</Type>
+        <ID>[4:0:5]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>ROUTE   1</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>PALLET   TOWN   -   VIRIDIAN   CITY</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>1</TotalPages>
+        <Type>Tile</Type>
+        <ID>[4:0:8]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -36,7 +154,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:4]</ID>
+        <ID>[4:0:10]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -53,9 +171,159 @@
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
+        <TotalPages>3</TotalPages>
+        <Type>Tile</Type>
+        <ID>[4:1:4]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>TRAINER   TIPS</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>The   battle   moves   of   POKéMON   are</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>limited   by   their   POWER   POINTS ,   PP .</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>To   replenish   PP ,   rest   your   tired</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>POKéMON   at   a   POKéMON   CENTER .</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>3</TotalPages>
+        <Type>Tile</Type>
+        <ID>[4:1:1]</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>TRAINER   TIPS</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>Catch   POKéMON   and   expand   your</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>collection .</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>The   more   you   have ,   the   easier   it</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>is   to   battle .</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
         <TotalPages>2</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:1:3]</ID>
+        <ID>[4:1:9]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -88,7 +356,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>TilePlayer</Type>
-        <ID>[3:2:0]</ID>
+        <ID>[3:2:6]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -106,7 +374,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>TileRival</Type>
-        <ID>[3:2:1]</ID>
+        <ID>[3:2:7]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>

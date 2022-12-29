@@ -23,14 +23,20 @@ namespace PokemonFireRedClone
 
         public Image Sprite;
 
+        [XmlIgnore]
         public Vector2 PreviousTile;
+        [XmlIgnore]
         public Vector2 Destination;
         public Vector2 SpawnLocation;
         public EntityDirection Direction;
+        [XmlIgnore]
         public MoveState State;
         public Vector2 SpriteFrames;
+        [XmlIgnore]
         public float MoveSpeed;
+        [XmlIgnore]
         public bool IsMoving;
+        [XmlIgnore]
         public bool Colliding;
 
         public Entity()

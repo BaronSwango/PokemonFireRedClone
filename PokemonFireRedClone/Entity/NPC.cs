@@ -34,6 +34,7 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public NPCMovementManager MovementManager;
         public MovementType MoveType;
+        [XmlIgnore]
         public bool UpdateMovement;
 
         public override void LoadContent()

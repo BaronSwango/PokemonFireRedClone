@@ -14,8 +14,11 @@ namespace PokemonFireRedClone
 
         [XmlElement("Layer")]
         public List<Layer> Layers;
+        [XmlIgnore]
         public List<Tile> Tiles;
+        [XmlIgnore]
         public List<Tile> SolidTiles;
+        [XmlIgnore]
         public List<Tile> NPCTiles;
         [XmlElement("NPC")]
         public List<NPC> NPCs;
@@ -25,6 +28,10 @@ namespace PokemonFireRedClone
 
         public void LoadContent()
         {
+            Tiles = new List<Tile>();
+            SolidTiles = new List<Tile>();
+            NPCTiles = new List<Tile>();
+
             foreach (Layer l in Layers)
             {
                 l.LoadContent(TileDimensions);
@@ -33,9 +40,10 @@ namespace PokemonFireRedClone
                     if (tile.State == "Solid")
                     {
                         SolidTiles.Add(tile);
-                        if ((tile.ID == "[4:0]" || tile.ID == "[4:1]" || tile.ID == "[3:2]") && l.Image.Path.Contains("Ground"))
+                        if ((tile.ID == "[4:0]" || tile.ID == "[4:1]" || tile.ID == "[3:2]" || tile.ID == "[0:13]") && l.Image.Path.Contains("Ground"))
                         {
                             tile.ID = tile.ID.Replace(']', ':') + solidID + "]";
+                            Console.WriteLine($"{tile.ID}: {solidID}");
                             solidID++;
                         }
                     }
