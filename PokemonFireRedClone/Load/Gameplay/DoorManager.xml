@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<DoorManager>
+    <Doors>
+        <ID>[1:4:0:PalletTownArea]</ID>
+        <MapName>PlayerHomeFirstFloor</MapName>
+        <SpawnCoords>256,492</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[3:26:0:PlayerHomeFirstFloor]</ID>
+        <MapName>PalletTown</MapName>
+        <SpawnCoords>1344,8172</SpawnCoords>
+    </Doors>
+</DoorManager>

@@ -10,8 +10,11 @@ namespace PokemonFireRedClone
     public class Map
     {
 
-        private int solidID;
+        private int signID;
+        private int doorID;
 
+        public string Name;
+        public bool Inside;
         [XmlElement("Layer")]
         public List<Layer> Layers;
         [XmlIgnore]
@@ -24,6 +27,8 @@ namespace PokemonFireRedClone
         public List<NPC> NPCs;
         [XmlElement("Trainer")]
         public List<Trainer> Trainers;
+        [XmlElement("Area")]
+        public List<Area> Areas;
         public Vector2 TileDimensions;
 
         public void LoadContent()
@@ -42,15 +47,22 @@ namespace PokemonFireRedClone
                         SolidTiles.Add(tile);
                         if ((tile.ID == "[4:0]" || tile.ID == "[4:1]" || tile.ID == "[3:2]" || tile.ID == "[0:13]") && l.Image.Path.Contains("Ground"))
                         {
-                            tile.ID = tile.ID.Replace(']', ':') + solidID + "]";
-                            Console.WriteLine($"{tile.ID}: {solidID}");
-                            solidID++;
+                            tile.ID = tile.ID.Replace(']', ':') + signID + ":" + Name + "]";
+                            signID++;
+                        }
+                        else if (((tile.ID == "[1:4]") && l.Image.Path.Contains("Buildings")) || (tile.ID == "[3:26]") && l.Image.Path.Contains("Interior"))
+                        {
+                            tile.ID = tile.ID.Replace(']', ':') + doorID + ":" + Name + "]";
+                            doorID++;
                         }
                     }
                     Tiles.Add(tile);
                 }
 
             }
+
+            foreach (Area area in Areas)
+                area.LoadContent();
 
             foreach (Trainer trainer in Trainers)
             {

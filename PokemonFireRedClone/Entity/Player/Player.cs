@@ -29,6 +29,7 @@ namespace PokemonFireRedClone
         public static PlayerJsonObject PlayerJsonObject;
         public static double ElapsedTime;
         public bool Running;
+        public Vector2 PreviousPos;
         public bool CanUpdate;
         [XmlIgnore]
         public List<CustomPokemon> Pokemon;
@@ -73,7 +74,7 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime, ref Map map)
         {
             Direction = Sprite.SpriteSheetEffect.CurrentFrame.Y > 3 ? (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y - 4 : (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y;
-
+            PreviousPos = Sprite.Position;
             // COLLISION DETECTION START
 
             if (State == MoveState.Idle
@@ -105,11 +106,44 @@ namespace PokemonFireRedClone
                         {
                             
                             if (Direction == EntityDirection.Up && !CurrentScreen.TextBoxManager.IsDisplayed)
-                                CurrentScreen.TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref CurrentScreen.Player);
+                                CurrentScreen.TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref CurrentScreen.Player);
                             else if (Direction == EntityDirection.Down && !CurrentScreen.TextBoxManager.IsDisplayed)
-                                CurrentScreen.TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref CurrentScreen.Player);
+                                CurrentScreen.TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref CurrentScreen.Player);
 
                         }
+
+                        if (((TileManager.IsDoorTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up)
+                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down)
+                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.LeftTile(map, currentTile)) && Direction == EntityDirection.Left)
+                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.RightTile(map, currentTile)) && Direction == EntityDirection.Right))
+                            && !CurrentScreen.DoorManager.IsTransitioning)
+                        {
+                            switch (Direction)
+                            {
+                                case EntityDirection.Up:
+                                    CurrentScreen.DoorManager.LoadContent(TileManager.UpTile(map, currentTile).ID);
+                                    break;
+                                case EntityDirection.Down:
+                                    CurrentScreen.DoorManager.LoadContent(TileManager.DownTile(map, currentTile).ID);
+                                    break;
+                                case EntityDirection.Right:
+                                    CurrentScreen.DoorManager.LoadContent(TileManager.RightTile(map, currentTile).ID);
+                                    break;
+                                case EntityDirection.Left:
+                                    CurrentScreen.DoorManager.LoadContent(TileManager.LeftTile(map, currentTile).ID);
+                                    break;
+                            }
+
+
+                            CurrentScreen.DoorManager.IsTransitioning = true;
+
+                            if (Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
+                            Sprite.SpriteSheetEffect.CurrentFrame.X = 0;
+                            Sprite.IsActive = false;
+                            CanUpdate = false;
+                        }
+
                     } else
                     {
                         Colliding = false;
@@ -178,7 +212,7 @@ namespace PokemonFireRedClone
                         Destination = Sprite.Position;
                         PreviousTile = Destination;
                         IsMoving = false;
-                        Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+                        Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
 
                         // causes a change in Direction but no movement unless key is held down more than 4 iterations of the Update method
 
@@ -297,7 +331,7 @@ namespace PokemonFireRedClone
                             Sprite.Position.Y = (int)Destination.Y;
                             PreviousTile = Destination;
                             Destination.Y -= 64;
-                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
 
                             if (!InputManager.Instance.KeyDown(Keys.W))
                             {
@@ -326,7 +360,7 @@ namespace PokemonFireRedClone
                             Sprite.Position.Y = (int)Destination.Y;
                             PreviousTile = Destination;
                             Destination.Y += 64;
-                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
 
                             if (!InputManager.Instance.KeyDown(Keys.S))
                             {
@@ -354,7 +388,7 @@ namespace PokemonFireRedClone
                             Sprite.Position.X = (int)Destination.X;
                             PreviousTile = Destination;
                             Destination.X -= 64;
-                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
 
                             if (!InputManager.Instance.KeyDown(Keys.A))
                             {
@@ -383,7 +417,7 @@ namespace PokemonFireRedClone
                             Sprite.Position.X = (int)Destination.X;
                             PreviousTile = Destination;
                             Destination.X += 64;
-                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding;
+                            Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
 
                             if (!InputManager.Instance.KeyDown(Keys.D))
                             {

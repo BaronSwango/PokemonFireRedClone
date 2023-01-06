@@ -3,7 +3,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:0]</ID>
+        <ID>[4:0:0:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -36,7 +36,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[0:13:2]</ID>
+        <ID>[0:13:2:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -55,7 +55,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:3]</ID>
+        <ID>[4:0:3:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -88,7 +88,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:5]</ID>
+        <ID>[4:0:5:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -121,7 +121,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:8]</ID>
+        <ID>[4:0:8:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -154,7 +154,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:0:10]</ID>
+        <ID>[4:0:10:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -173,7 +173,7 @@
     <TextBoxes>
         <TotalPages>3</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:1:4]</ID>
+        <ID>[4:1:4:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -210,7 +210,7 @@
                 <G>113</G>
                 <B>113</B>
                 <A>255</A>
-                <Text>limited   by   their   POWER   POINTS ,   PP .</Text>
+                <Text>limited   by   their   POWER   POINTS ,   PP.</Text>
             </Image>
             <R>218</R>
             <G>218</G>
@@ -238,7 +238,7 @@
                 <G>113</G>
                 <B>113</B>
                 <A>255</A>
-                <Text>POKéMON   at   a   POKéMON   CENTER .</Text>
+                <Text>POKéMON   at   a   POKéMON   CENTER.</Text>
             </Image>
             <R>218</R>
             <G>218</G>
@@ -248,7 +248,7 @@
     <TextBoxes>
         <TotalPages>3</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:1:1]</ID>
+        <ID>[4:1:1:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -285,7 +285,7 @@
                 <G>113</G>
                 <B>113</B>
                 <A>255</A>
-                <Text>collection .</Text>
+                <Text>collection.</Text>
             </Image>
             <R>218</R>
             <G>218</G>
@@ -313,7 +313,7 @@
                 <G>113</G>
                 <B>113</B>
                 <A>255</A>
-                <Text>is   to   battle .</Text>
+                <Text>is   to   battle.</Text>
             </Image>
             <R>218</R>
             <G>218</G>
@@ -323,7 +323,7 @@
     <TextBoxes>
         <TotalPages>2</TotalPages>
         <Type>Tile</Type>
-        <ID>[4:1:9]</ID>
+        <ID>[4:1:9:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -356,7 +356,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>TilePlayer</Type>
-        <ID>[3:2:6]</ID>
+        <ID>[3:2:6:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -374,7 +374,7 @@
     <TextBoxes>
         <TotalPages>1</TotalPages>
         <Type>TileRival</Type>
-        <ID>[3:2:7]</ID>
+        <ID>[3:2:7:PalletTownArea]</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -482,6 +482,321 @@
 			<G>218</G>
 			<B>212</B>
 		</Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC3</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Please   come   see   us   if   you   need</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>POKé   BALLS   for   catching   POKéMON.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>3</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC4</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>See   those   ledges   along   the   road?</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+		<Dialogue>
+			<Page>2</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>It`s   a   bit   scary ,   but   you   can   jump</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+		<Dialogue>
+            <Page>2</Page>
+			<Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>from   them.</Text>
+			</Image>
+            <R>218</R>
+			<G>218</G>
+			<B>212</B>
+		</Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>You   can   get   back   to   PALLET   TOWN</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+		<Dialogue>
+            <Page>3</Page>
+			<Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>quicker   that   way.</Text>
+			</Image>
+            <R>218</R>
+			<G>218</G>
+			<B>212</B>
+		</Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC6</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Those   POKé   BALLS   at   your   waist !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+		<Dialogue>
+			<Page>1</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>You   have   POKéMON ,   don`t   you?</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+		<Dialogue>
+            <Page>2</Page>
+			<Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>It`s   great   that   you   can   carry   and</Text>
+			</Image>
+            <R>218</R>
+			<G>218</G>
+			<B>212</B>
+		</Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>use   POKéMON   anytime ,   anywhere.</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC7</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+				<G>52</G>
+				<B>40</B>
+				<A>255</A>
+                <Text>I   go   shopping   in   PEWTER   CITY</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+		<Dialogue>
+			<Page>1</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+				<G>52</G>
+                <B>40</B>
+				<A>255</A>
+				<Text>occasionally.</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+		<Dialogue>
+            <Page>2</Page>
+			<Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+                <G>52</G>
+				<B>40</B>
+				<A>255</A>
+				<Text>I   have   to   take   the   winding   trail   in</Text>
+			</Image>
+            <R>218</R>
+			<G>218</G>
+			<B>212</B>
+		</Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+			<Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+                <G>52</G>
+				<B>40</B>
+				<A>255</A>
+				<Text>VIRIDIAN   FOREST   when   I   go.</Text>
+			</Image>
+            <R>218</R>
+			<G>218</G>
+			<B>212</B>
+		</Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC8</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>You   want   to   know   about   the   two</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+		<Dialogue>
+			<Page>1</Page>
+            <Image>
+				<FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+				<Text>kinds   of   caterpillar   POKéMON?   [YES/NO:PalletTownArea]</Text>
+			</Image>
+			<R>218</R>
+            <G>218</G>
+			<B>212</B>
+		</Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC9</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>WILL   TWYFORD</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC10</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>This   POKéMON   GYM   is   always   closed.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>I   wonder   who   the   LEADER   is?</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
     </TextBoxes>
     <TextBoxes>
         <TotalPages>3</TotalPages>

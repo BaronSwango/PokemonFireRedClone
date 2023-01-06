@@ -7,47 +7,54 @@ namespace PokemonFireRedClone
 {
     public class GameplayScreen : GameScreen
     {
-
-        private Map map;
         private static bool menuWasLoaded;
+        private readonly XmlManager<Map> mapLoader;
 
+        public Map Map;
         public Player Player;
+        public readonly AreaManager AreaManager;
         public MenuManager MenuManager;
         public TextBoxManager TextBoxManager;
+        public DoorManager DoorManager;
         public Camera Camera { get; private set; }
 
         public GameplayScreen()
         {
             MenuManager = new MenuManager("MainMenu");
-            TextBoxManager = new TextBoxManager();
-            XmlManager<Player> PlayerLoader = new();
-            XmlManager<Map> mapLoader = new();
-            Player = PlayerLoader.Load("Load/Gameplay/Player.xml");
-            map = mapLoader.Load("Load/Gameplay/Map/PalletTown.xml");
+            TextBoxManager = new();
+            XmlManager<Player> playerLoader = new();
+            XmlManager<DoorManager> doorLoader = new();
+            mapLoader = new();
+            Player = playerLoader.Load("Load/Gameplay/Player.xml");
+            DoorManager = doorLoader.Load("Load/Gameplay/DoorManager.xml");
+            AreaManager = new();
         }
 
         public override void LoadContent()
         {
             base.LoadContent();
             Player.LoadContent();
-            map.LoadContent();
+            Map = mapLoader.Load($"Load/Gameplay/Map/{Player.PlayerJsonObject.MapName}.xml");
+            Map.LoadContent();
             TextBoxManager.LoadXML();
-            Player.Spawn(ref map);
+            Player.Spawn(ref Map);
 
-            foreach (NPC npc in map.NPCs)
-                npc.Spawn(ref map);
+            foreach (NPC npc in Map.NPCs)
+                npc.Spawn(ref Map);
             
             Camera = new Camera();
+            AreaManager.LoadContent(Map.Areas, Player);
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
             Player.UnloadContent();
-            map.UnloadContent();
+            Map.UnloadContent();
             menuWasLoaded = MenuManager.IsLoaded;
             if (MenuManager.IsLoaded)
                 MenuManager.UnloadContent();
+            AreaManager.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
@@ -64,7 +71,7 @@ namespace PokemonFireRedClone
             // print player's current tile to console
             if (InputManager.Instance.KeyPressed(Keys.M))
             {
-                Tile currentTile = TileManager.GetCurrentTile(map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height);
+                Tile currentTile = TileManager.GetCurrentTile(Map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height);
                 if (currentTile != null)
                     Console.WriteLine($"({currentTile.Position.X}, {currentTile.Position.Y})");
                 
@@ -86,7 +93,8 @@ namespace PokemonFireRedClone
                 if (InputManager.Instance.KeyPressed(Keys.F)
                     && Player.State == Entity.MoveState.Idle
                     && (Player.Sprite.SpriteSheetEffect.CurrentFrame.X == 0 || Player.Sprite.SpriteSheetEffect.CurrentFrame.X == 2)
-                    && Player.Sprite.SpriteSheetEffect.CurrentFrame.Y < 4)
+                    && Player.Sprite.SpriteSheetEffect.CurrentFrame.Y < 4
+                    && !DoorManager.IsTransitioning)
                 {
                     if (!MenuManager.IsLoaded)
                     {
@@ -102,14 +110,16 @@ namespace PokemonFireRedClone
                 }
             }
 
-            if ((MenuManager.IsLoaded || TextBoxManager.IsDisplayed) && Player.CanUpdate)
+            if ((MenuManager.IsLoaded || TextBoxManager.IsDisplayed || DoorManager.IsTransitioning) && Player.CanUpdate)
                 Player.CanUpdate = false;
-            else if (!MenuManager.IsLoaded && !TextBoxManager.IsDisplayed && !Player.CanUpdate)
+            else if (!MenuManager.IsLoaded && !TextBoxManager.IsDisplayed && !DoorManager.IsTransitioning && !Player.CanUpdate)
                 Player.CanUpdate = true;
 
-            Player.Update(gameTime, ref map);
-            map.Update(gameTime, ref Player);
+            DoorManager.Update(gameTime, this, mapLoader);
+            Player.Update(gameTime, ref Map);
+            Map.Update(gameTime, ref Player);
             Camera.Follow(Player);
+            AreaManager.Update(gameTime, Map.Areas, Player);
 
 
             // COUNTS AND ADDS TIME TO Player'S TOTAL GAME TIME
@@ -125,26 +135,25 @@ namespace PokemonFireRedClone
                 MenuManager.Update(gameTime);
             }
             if (!MenuManager.WasLoaded && !MenuManager.IsLoaded)
-                TextBoxManager.Update(gameTime, ref map, ref Player);
+                TextBoxManager.Update(gameTime, ref Map, ref Player);
 
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Draw(spriteBatch);
-            map.Draw(spriteBatch, "Underlay");
-            foreach (NPC npc in map.NPCs)
+            Map.Draw(spriteBatch, "Underlay");
+            foreach (NPC npc in Map.NPCs)
                 npc.NPCSprite.Bottom.Draw(spriteBatch);
             Player.Draw(spriteBatch);
-            foreach (NPC npc in map.NPCs)
+            foreach (NPC npc in Map.NPCs)
                 npc.NPCSprite.Top.Draw(spriteBatch);
-            map.Draw(spriteBatch, "Overlay");
+            Map.Draw(spriteBatch, "Overlay");
             if (MenuManager.IsLoaded)
                 MenuManager.Draw(spriteBatch);
             TextBoxManager.Draw(spriteBatch);
+            AreaManager.Draw(spriteBatch);
+            DoorManager.Draw(spriteBatch);
         }
 
-
-        
     }
 }

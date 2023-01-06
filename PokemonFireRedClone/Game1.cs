@@ -76,7 +76,7 @@ namespace PokemonFireRedClone
         {
             GraphicsDevice.SetRenderTarget(renderTarget);
 
-            if (ScreenManager.Instance.Image.Alpha == 1)
+            if (ScreenManager.Instance.Image.Alpha == 1 || ScreenManager.Instance.CurrentScreen.Type.Name == "GameplayScreen")
                 GraphicsDevice.Clear(Color.Black);
             else
                 GraphicsDevice.Clear(new Color(94, 99, 150));

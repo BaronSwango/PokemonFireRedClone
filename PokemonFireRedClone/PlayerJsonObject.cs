@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Newtonsoft.Json;
 
 namespace PokemonFireRedClone
 {
@@ -19,6 +20,7 @@ namespace PokemonFireRedClone
     {
         public Vector2 Position;
         public float Direction;
+        public string MapName;
         public string Name;
         public string TrainerID;
         public Gender Gender;
@@ -29,6 +31,8 @@ namespace PokemonFireRedClone
         public int Money;
         public List<CustomPokemon> PokemonInBag;
         public List<string> TrainersDefeated;
+        [JsonIgnore]
+        public Area CurrentArea;
         //public Dictionary<Pokemon, bool> PokemonInPokedex;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;
 

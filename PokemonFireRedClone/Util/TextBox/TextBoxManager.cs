@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -40,7 +39,7 @@ namespace PokemonFireRedClone
             TextBoxes = textBoxLoader.Load("Load/Gameplay/TextBoxManager.xml").TextBoxes;
         }
 
-        public void LoadContent(string ID, ref Map map, ref Player player)
+        public void LoadContent(string ID, ref Player player)
         {
             LoadXML();
 
@@ -50,7 +49,7 @@ namespace PokemonFireRedClone
                 {
                     this.textBox = textBox;
                     this.textBox.LoadContent(ref player);
-                    break;
+                    return;
                 }
             }
 
@@ -63,7 +62,7 @@ namespace PokemonFireRedClone
 
             if (npc != null)
             {
-                npc.UpdateMovement = true;
+                npc.UpdateMovement = npc.MoveType != NPC.MovementType.STILL;
                 npc = null;
             }
         }
@@ -112,11 +111,11 @@ namespace PokemonFireRedClone
                     {
                         if (TileManager.UpTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Up)
                         {
-                            LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref player);
+                            LoadContent(TileManager.UpTile(map, currentTile).ID, ref player);
 
                             if (TileManager.UpTile(map, currentTile).Entity != null && TileManager.UpTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
+                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
@@ -126,11 +125,11 @@ namespace PokemonFireRedClone
 
                         if (TileManager.DownTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Down)
                         {
-                            LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref player);
+                            LoadContent(TileManager.DownTile(map, currentTile).ID, ref player);
 
                             if (TileManager.DownTile(map, currentTile).Entity != null && TileManager.DownTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
+                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
@@ -139,11 +138,11 @@ namespace PokemonFireRedClone
 
                         if (TileManager.LeftTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Left)
                         {
-                            LoadContent(TileManager.LeftTile(map, currentTile).ID, ref map, ref player);
+                            LoadContent(TileManager.LeftTile(map, currentTile).ID, ref player);
 
                             if (TileManager.LeftTile(map, currentTile).Entity != null && TileManager.LeftTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
+                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
@@ -152,11 +151,11 @@ namespace PokemonFireRedClone
 
                         if (TileManager.RightTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Right)
                         {
-                            LoadContent(TileManager.RightTile(map, currentTile).ID, ref map, ref player);
+                            LoadContent(TileManager.RightTile(map, currentTile).ID, ref player);
 
                             if (TileManager.RightTile(map, currentTile).Entity != null && TileManager.RightTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref map, ref player);
+                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
                                 map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
@@ -164,10 +163,10 @@ namespace PokemonFireRedClone
                         }
                     }
                     else if (currentTile != null && InputManager.Instance.KeyPressed(Keys.W) && TileManager.UpTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Up)
-                        LoadContent(TileManager.UpTile(map, currentTile).ID, ref map, ref player);
+                        LoadContent(TileManager.UpTile(map, currentTile).ID, ref player);
 
                     else if (currentTile != null && InputManager.Instance.KeyPressed(Keys.S) && TileManager.DownTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Down)
-                        LoadContent(TileManager.DownTile(map, currentTile).ID, ref map, ref player);
+                        LoadContent(TileManager.DownTile(map, currentTile).ID, ref player);
 
                 }
             }

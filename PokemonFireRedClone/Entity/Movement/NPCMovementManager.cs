@@ -6,7 +6,6 @@ namespace PokemonFireRedClone
     public class NPCMovementManager
     {
 
-
         protected readonly NPC npc;
         protected Player Player
         {
@@ -15,166 +14,15 @@ namespace PokemonFireRedClone
                 return ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player;
             }
         }
-        //private float counter;
-        //private int counterLimit;
-        //private bool updateCounter;
-        //private readonly Random randomGenerator;
-        //private Entity.EntityDirection nextDirection;
 
         public NPCMovementManager(NPC npc)
         {
             this.npc = npc;
-            /*
-            if (npc.MoveType != NPC.MovementType.STILL)
-            {
-                randomGenerator = new Random();
-                counterLimit = randomGenerator.Next(3960) + 250;
-            }
-            */
         }
 
         public virtual void LoadContent() { }
 
-        public virtual void Update(GameTime gameTime, Map map)
-        {
-            /*
-            float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (updateCounter)
-            {
-
-                switch (npc.MoveType)
-                {
-                    case NPC.MovementType.SET_PATH:
-                        if (npc.Direction == Entity.EntityDirection.Up)
-                        {
-                            Vector2 destination = new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64);
-
-                            if (Player.Sprite.Position == destination || Player.Destination == destination || Player.PreviousTile == destination)
-                                break;
-
-                            if (!npc.IsMoving)
-                            {
-                                npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
-                                npc.IsMoving = true;
-                            }
-
-                            if (npc.Destination == npc.NPCSprite.Top.Position)
-                                npc.Destination = destination;
-
-                            if (!Move(gameTime)) return;
-
-                            nextDirection = Entity.EntityDirection.Right;
-                        }
-                        else if (npc.Direction == Entity.EntityDirection.Right)
-                        {
-                            Vector2 destination = new(npc.NPCSprite.Top.Position.X + 64, npc.NPCSprite.Top.Position.Y);
-
-                            if (Player.Sprite.Position == destination || Player.Destination == destination || Player.PreviousTile == destination)
-                                break;
-
-                            if (!npc.IsMoving)
-                            {
-                                npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
-                                npc.IsMoving = true;
-                            }
-
-                            if (npc.Destination == npc.NPCSprite.Top.Position)
-                                npc.Destination = destination;
-
-
-                            if (!Move(gameTime)) return;
-
-                            nextDirection = Entity.EntityDirection.Down;
-                        }
-                        else if (npc.Direction == Entity.EntityDirection.Down)
-                        {
-                            Vector2 destination = new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + 64);
-
-                            if (Player.Sprite.Position == destination || Player.Destination == destination || Player.PreviousTile == destination)
-                                break;
-
-                            if (!npc.IsMoving)
-                            {
-                                npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
-                                npc.IsMoving = true;
-                            }
-
-                            if (npc.Destination == npc.NPCSprite.Top.Position)
-                                npc.Destination = destination;
-
-
-                            if (!Move(gameTime)) return;
-
-                            nextDirection = Entity.EntityDirection.Left;
-                        }
-                        else
-                        {
-                            Vector2 destination = new(npc.NPCSprite.Top.Position.X - 64, npc.NPCSprite.Top.Position.Y);
-
-                            if (Player.Sprite.Position == destination || Player.Destination == destination || Player.PreviousTile == destination)
-                                break;
-
-                            if (!npc.IsMoving)
-                            {
-                                npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
-                                npc.IsMoving = true;
-                            }
-
-                            if (npc.Destination == npc.NPCSprite.Top.Position)
-                                npc.Destination = destination;
-
-
-                            if (!Move(gameTime)) return;
-
-                            nextDirection = Entity.EntityDirection.Up;
-                        }
-                        break;
-                }
-
-                counterLimit = randomGenerator.Next(3960) + 250;
-                counter = 0;
-                updateCounter = false;
-                npc.IsMoving = false;
-            }
-            else
-            {
-                counter += counterSpeed;
-                if (counter >= counterLimit)
-                {
-
-                    if (npc.MoveType == NPC.MovementType.SET_PATH)
-                    {
-                        switch (nextDirection)
-                        {
-                            case Entity.EntityDirection.Left:
-                                if (npc.Direction != Entity.EntityDirection.Left)
-                                    npc.Direction = Entity.EntityDirection.Left;
-                                npc.NPCSprite.SetDirection(0);
-                                break;
-                            case Entity.EntityDirection.Right:
-                                if (npc.Direction != Entity.EntityDirection.Right)
-                                    npc.Direction = Entity.EntityDirection.Right;
-                                npc.NPCSprite.SetDirection(1);
-                                break;
-                            case Entity.EntityDirection.Up:
-                                if (npc.Direction != Entity.EntityDirection.Up)
-                                    npc.Direction = Entity.EntityDirection.Up;
-                                npc.NPCSprite.SetDirection(3);
-                                break;
-                            case Entity.EntityDirection.Down:
-                                if (npc.Direction != Entity.EntityDirection.Down)
-                                    npc.Direction = Entity.EntityDirection.Down;
-                                npc.NPCSprite.SetDirection(2);
-                                break;
-                        }
-
-                    }
-
-                    updateCounter = true;
-                }
-            }
-            */
-        }
+        public virtual void Update(GameTime gameTime, Map map) { }
 
         protected Vector2 CalculateDestination()
         {

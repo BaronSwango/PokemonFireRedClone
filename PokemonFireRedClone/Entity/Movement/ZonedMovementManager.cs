@@ -88,7 +88,17 @@ namespace PokemonFireRedClone
                 counter += counterSpeed;
                 if (counter >= counterLimit)
                 {
-                    Entity.EntityDirection newDirection = (Entity.EntityDirection) randomGenerator.Next(4);
+                    Entity.EntityDirection newDirection;
+                    if (zoneBounds.Key.Value == zoneBounds.Value.Value)
+                    {
+                        newDirection = (Entity.EntityDirection)randomGenerator.Next(2);
+                    }
+                    else if (zoneBounds.Key.Key == zoneBounds.Value.Key)
+                    {
+                        newDirection = (Entity.EntityDirection)randomGenerator.Next(2) + 2;
+                    }
+                    else
+                        newDirection = (Entity.EntityDirection) randomGenerator.Next(4);
 
                     if (npc.Direction != newDirection)
                         npc.Direction = newDirection;

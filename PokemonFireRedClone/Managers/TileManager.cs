@@ -103,6 +103,19 @@ namespace PokemonFireRedClone
             return false;
         }
 
+        public static bool IsDoorTile(GameplayScreen gameplayScreen, Tile tile)
+        {
+            foreach (Door door in gameplayScreen.DoorManager.Doors)
+            {
+                if (tile != null)
+                {
+                    if (door.ID == tile.ID)
+                        return true;
+                }
+            }
+            return false;
+        }
+
         public static Tile GetTile(Map map, Vector2 location)
         {
             foreach (Tile tile in map.SolidTiles)
