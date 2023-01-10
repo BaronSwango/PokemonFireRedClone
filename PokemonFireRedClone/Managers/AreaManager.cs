@@ -36,10 +36,13 @@ namespace PokemonFireRedClone
                 if (area.Contains(player.Sprite.Position))
                 {
                     Player.PlayerJsonObject.CurrentArea = area;
+                    Player.PlayerJsonObject.AreaName = area.Name;
                     break;
                 }
             }
 
+            areaText = new PokemonText(Player.PlayerJsonObject.AreaName, "Fonts/PokemonFireRedDialogue", new(113, 113, 113), new(218, 218, 212));
+            areaText.LoadContent();
         }
 
         public void UnloadContent()
@@ -71,6 +74,7 @@ namespace PokemonFireRedClone
                     }
 
                     Player.PlayerJsonObject.CurrentArea = area;
+                    Player.PlayerJsonObject.AreaName = area.Name;
                     Console.WriteLine(area.Name);
                 }
             }
@@ -86,6 +90,23 @@ namespace PokemonFireRedClone
             {
                 background.Draw(spriteBatch);
                 areaText.Draw(spriteBatch);
+            }
+        }
+
+        public void Reset()
+        {
+            IsTransitioning = false;
+            imageOffset = 0;
+            dropdown = true;
+            counter = 0;
+            areaText.UnloadContent();
+
+            if (newArea != null)
+            {
+                IsTransitioning = true;
+                areaText = new PokemonText(newArea.Name, "Fonts/PokemonFireRedDialogue", new(113, 113, 113), new(218, 218, 212));
+                areaText.LoadContent();
+                newArea = null;
             }
         }
 
@@ -117,19 +138,7 @@ namespace PokemonFireRedClone
 
             if (!dropdown && imageOffset <= 0)
             {
-                IsTransitioning = false;
-                imageOffset = 0;
-                dropdown = true;
-                counter = 0;
-                areaText.UnloadContent();
-
-                if (newArea != null)
-                {
-                    IsTransitioning = true;
-                    areaText = new PokemonText(newArea.Name, "Fonts/PokemonFireRedDialogue", new(113, 113, 113), new(218, 218, 212));
-                    areaText.LoadContent();
-                    newArea = null;
-                }
+                Reset();
             }
         }
     }

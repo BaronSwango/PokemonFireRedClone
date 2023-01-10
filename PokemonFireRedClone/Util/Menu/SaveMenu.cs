@@ -25,7 +25,7 @@ namespace PokemonFireRedClone
 
         /* InfoTitles:
          * In front of InfoTitlesBackground:
-         *        Town name
+         *        Area name
          * - Player      PlayerName
          * - Badges      # Badges
          * - PokeDex     # Pokedex
@@ -63,7 +63,7 @@ namespace PokemonFireRedClone
             InfoTitlesBackground.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 40,
                 playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 52);
 
-            SaveRegion.SetPosition(new Vector2(InfoTitlesBackground.Position.X + 116, InfoTitlesBackground.Position.Y + 20));
+            SaveRegion.SetPosition(new Vector2(InfoTitlesBackground.Position.X + 244 - (SaveRegion.SourceRect.Width / 2), InfoTitlesBackground.Position.Y + 20));
 
             InfoTitles[0].SetPosition(new Vector2(InfoTitlesBackground.Position.X + 264, InfoTitlesBackground.Position.Y + 76));
             InfoTitles[1].SetPosition(new Vector2(InfoTitles[0].Position.X, InfoTitles[0].Position.Y + 76));
@@ -90,7 +90,6 @@ namespace PokemonFireRedClone
             exited = false;
             exitCounter = 0;
             InfoTitlesBackground.LoadContent();
-            SaveRegion.LoadContent();
             Arrow.LoadContent();
 
             MenuBackground.LoadContent();
@@ -98,6 +97,9 @@ namespace PokemonFireRedClone
             Player player = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player;
             SaveDialogue.Dialogue[3].Image.Text = Player.PlayerJsonObject.Name + "   saved   the   game.";
             SaveDialogue.LoadContent(ref player);
+
+            SaveRegion.Text = Player.PlayerJsonObject.AreaName;
+            SaveRegion.LoadContent();
 
             // format time to include days to hours
             var tsTime = TimeSpan.FromHours(Player.PlayerJsonObject.Time + Player.ElapsedTime);

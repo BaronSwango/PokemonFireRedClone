@@ -103,6 +103,7 @@ namespace PokemonFireRedClone
                         Player.Sprite.IsActive = false;
                         MenuManager.MenuName = "MainMenu";
                         MenuManager.LoadContent("Load/Menus/MainMenu.xml");
+                        AreaManager.Reset();
                     }
                     else
                         MenuManager.UnloadContent();
@@ -119,8 +120,12 @@ namespace PokemonFireRedClone
             Player.Update(gameTime, ref Map);
             Map.Update(gameTime, ref Player);
             Camera.Follow(Player);
-            AreaManager.Update(gameTime, Map.Areas, Player);
 
+            if (TextBoxManager.IsDisplayed && AreaManager.IsTransitioning)
+                AreaManager.Reset();
+
+            if (!Map.Inside && !DoorManager.IsTransitioning)
+                AreaManager.Update(gameTime, Map.Areas, Player);
 
             // COUNTS AND ADDS TIME TO Player'S TOTAL GAME TIME
             if (!(MenuManager.Menu is SaveMenu))
@@ -151,7 +156,8 @@ namespace PokemonFireRedClone
             if (MenuManager.IsLoaded)
                 MenuManager.Draw(spriteBatch);
             TextBoxManager.Draw(spriteBatch);
-            AreaManager.Draw(spriteBatch);
+            if (!DoorManager.IsTransitioning)
+                AreaManager.Draw(spriteBatch);
             DoorManager.Draw(spriteBatch);
         }
 

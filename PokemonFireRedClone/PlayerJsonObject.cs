@@ -31,6 +31,7 @@ namespace PokemonFireRedClone
         public int Money;
         public List<CustomPokemon> PokemonInBag;
         public List<string> TrainersDefeated;
+        public string AreaName;
         [JsonIgnore]
         public Area CurrentArea;
         //public Dictionary<Pokemon, bool> PokemonInPokedex;

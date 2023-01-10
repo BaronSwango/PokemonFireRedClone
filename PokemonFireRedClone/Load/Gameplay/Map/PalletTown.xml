@@ -716,7 +716,7 @@
 			<X>4</X>
 			<Y>4</Y>
         </SpriteFrames>
-		<Direction>Down</Direction>
+		<Direction>Left</Direction>
 		<MoveType>Zoned</MoveType>
 		<ID>NPC4</ID>
 		<Zone>2112,6124</Zone>
@@ -828,78 +828,4 @@
 		<MoveType>Still</MoveType>
 		<ID>NPC10</ID>
     </NPC>
-	<Trainer>
-		<Sprite>
-			<Path>Gameplay/Brock</Path>
-			<Effects>SpriteSheetEffect</Effects>
-        </Sprite>
-		<SpawnLocation>
-			<X>2496</X>
-			<Y>3244</Y>
-        </SpawnLocation>
-		<SpriteFrames>
-			<X>1</X>
-			<Y>4</Y>
-        </SpriteFrames>
-		<Direction>Down</Direction>
-		<ID>TrainerBrock</ID>
-		<Name>LEADER   BROCK</Name>
-		<Reward>1300</Reward>
-		<BattleText>
-			<Page>1</Page>
-			<Image>
-				<Text>Argh !   You   beat   me !</Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>1</Page>
-			<Image>
-				<Text>I   went   easy,   stupid   kid.</Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>2</Page>
-			<Image>
-				<Text>Here...   Take   this   badge.</Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>3</Page>
-			<Image>
-				<Text>Hello? </Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>4</Page>
-			<Image>
-				<Text>Can   you   take   the   badge   please? </Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>5</Page>
-			<Image>
-				<Text>Received   the   BOULDER   BADGE ! </Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>6</Page>
-			<Image>
-				<Text>Finally...   Jeez.</Text>
-            </Image>
-        </BattleText>
-		<BattleText>
-			<Page>6</Page>
-			<Image>
-				<Text>Get   out   of   my   sight,   kid.</Text>
-            </Image>
-        </BattleText>
-		<Pokemon>
-			<PokemonName>Geodude</PokemonName>
-			<Level>12</Level>
-			<Gender>Male</Gender>
-        </Pokemon>
-		<BattleSprite>
-			<Path>BattleScreen/BattleSprites/BrockBattle</Path>
-        </BattleSprite>
-    </Trainer>
 </Map>

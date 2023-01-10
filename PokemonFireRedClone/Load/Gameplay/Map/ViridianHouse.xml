@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Map>
-    <Name>PlayerHomeFirstFloor</Name>
+    <Name>ViridianHouse</Name>
     <Inside>true</Inside>
     <Layer>
       <TileMap>
-         <Row>[x:x][6:2][6:2][6:2][6:2][6:2][6:2][7:6][8:6][6:2][6:2][6:2][6:2][x:x]</Row>
-         <Row>[x:x][6:3][6:3][6:3][6:3][6:3][6:3][7:7][8:7][6:3][6:3][6:3][6:3][0:0]</Row>
-         <Row>[0:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][0:0][0:0][0:0]</Row>
-         <Row>[0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][6:0][6:0][0:0]</Row>
-         <Row>[0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
-         <Row>[0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
-         <Row>[0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
-         <Row>[0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
-         <Row>[0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
-         <Row>[x:x][0:0][0:0][0:0][x:x][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][x:x]</Row>
+         <Row>[x:x][x:x][6:2][6:2][6:2][6:2][6:2][6:2][6:2][6:2][6:2][7:6][8:6]</Row>
+         <Row>[x:x][0:0][6:3][6:3][6:3][6:3][6:3][6:3][6:3][6:3][6:3][7:7][8:7]</Row>
+         <Row>[x:x][0:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][6:0][0:0]</Row>
+         <Row>[x:x][0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
+         <Row>[x:x][0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
+         <Row>[x:x][0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
+         <Row>[x:x][0:0][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][0:0]</Row>
+         <Row>[x:x][x:x][6:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0][5:0]</Row>
+         <Row>[x:x][x:x][x:x][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
       </TileMap>
-      <SolidTiles>[6:2][6:3][7:7][8:7][8:6][7:6][0:0]</SolidTiles>
+      <SolidTiles>[6:3][7:7][8:7][0:0]</SolidTiles>
       <OverlayTiles />
       <Image>
          <Alpha>1</Alpha>
@@ -23,8 +22,8 @@
          <FontName>Fonts/Arial</FontName>
          <Path>Gameplay/TileSheets/Interior</Path>
          <Position>
-            <X>768</X>
-            <Y>576</Y>
+            <X>704</X>
+            <Y>512</Y>
          </Position>
          <Scale>
             <X>1</X>
@@ -73,18 +72,17 @@
    </Layer>
    <Layer>
       <TileMap>
-         <Row>[x:x][x:x][x:x][7:10][8:10][x:x][6:10]</Row>
-         <Row>[x:x][4:10][5:10][7:11][8:11][x:x][6:11][x:x][x:x][x:x][x:x][7:25][8:25]</Row>
-         <Row>[x:x][4:11][5:11][7:12][8:12][x:x][6:12][x:x][x:x][x:x][9:15][7:26][8:26]</Row>
-         <Row>[x:x][x:x][x:x][x:x][0:2][0:1][0:1][0:1][0:1][1:1][9:16][9:26][9:25]</Row>
-         <Row>[x:x][x:x][x:x][x:x][1:4][0:4][0:4][0:4][0:4][1:0]</Row>
-         <Row>[x:x][x:x][x:x][x:x][1:4][0:4][0:4][0:4][0:4][1:0]</Row>
-         <Row>[x:x][9:6][x:x][x:x][1:2][0:3][0:3][0:3][0:3][1:3][x:x][x:x][9:6]</Row>
-         <Row>[x:x][9:7][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][x:x][9:7]</Row>
-         <Row>[x:x][x:x][x:x][2:25][3:25][4:25]</Row>
-         <Row>[x:x][x:x][x:x][2:26][3:26][4:26]</Row>
+         <Row>[x:x][x:x][x:x][x:x][7:10][8:10][x:x][6:10][x:x][6:4][x:x][x:x][x:x]</Row>
+         <Row>[x:x][x:x][4:10][5:10][7:11][8:11][x:x][6:11][x:x][6:5][x:x][x:x][x:x]</Row>
+         <Row>[x:x][x:x][4:11][5:11][7:12][8:12][x:x][6:12]</Row>
+         <Row>[x:x][x:x][x:x][x:x][x:x][0:2][0:1][0:1][0:1][0:1][1:1]</Row>
+         <Row>[x:x][x:x][x:x][x:x][x:x][1:4][0:4][0:4][0:4][0:4][1:0]</Row>
+         <Row>[x:x][x:x][x:x][x:x][x:x][1:4][0:4][0:4][0:4][0:4][1:0]</Row>
+         <Row>[x:x][x:x][9:6][x:x][x:x][1:2][0:3][0:3][0:3][0:3][1:3][x:x][9:6]</Row>
+         <Row>[x:x][x:x][9:7][x:x][x:x][2:25][3:25][4:25][x:x][x:x][x:x][x:x][9:7]</Row>
+         <Row>[x:x][x:x][x:x][x:x][x:x][2:26][3:26][4:26]</Row>
       </TileMap>
-      <SolidTiles>[9:7][8:26][7:26][2:26][3:26][4:26]</SolidTiles>
+      <SolidTiles>[9:7][3:26]</SolidTiles>
       <OverlayTiles>[9:6]</OverlayTiles>
       <Image>
          <Alpha>1</Alpha>
@@ -142,15 +140,16 @@
    </Layer>
    <Layer>
       <TileMap>
-         <Row>[x:x]</Row>
-         <Row>[x:x]</Row>
-         <Row>[x:x]</Row>
+         <Row />
+         <Row />
+         <Row>[x:x][x:x]</Row>
          <Row>[x:x][x:x][x:x]</Row>
-         <Row>[x:x][x:x][x:x][x:x][x:x][7:32][7:8][8:8][8:32]</Row>
-         <Row>[x:x][x:x][x:x][x:x][x:x][7:32][7:9][8:9][8:32]</Row>
+         <Row>[x:x][x:x][x:x][x:x][x:x][x:x][7:32][7:8][8:8][8:32]</Row>
+         <Row>[x:x][x:x][x:x][x:x][x:x][x:x][7:32][7:9][8:9][8:32]</Row>
+         <Row>[x:x][x:x][x:x]</Row>
          <Row>[x:x][x:x][x:x][x:x]</Row>
       </TileMap>
-      <SolidTiles>[8:8][7:8][7:9][8:9]</SolidTiles>
+      <SolidTiles>[7:9][8:9][8:8][7:8]</SolidTiles>
       <OverlayTiles />
       <Image>
          <Alpha>1</Alpha>
@@ -158,7 +157,7 @@
          <FontName>Fonts/Arial</FontName>
          <Path>Gameplay/TileSheets/Interior</Path>
          <Position>
-            <X>512</X>
+            <X>576</X>
             <Y>320</Y>
          </Position>
          <Scale>
@@ -212,18 +211,57 @@
    </TileDimensions>
    <NPC>
        <Sprite>
-           <Path>Gameplay/Mom</Path>
+           <Path>Gameplay/NPC14</Path>
 		   <Effects>SpriteSheetEffect</Effects>
        </Sprite>
        <SpawnLocation>
-			<X>512</X>
+			<X>576</X>
 			<Y>236</Y>
         </SpawnLocation>
 		<SpriteFrames>
-			<X>1</X>
+			<X>4</X>
 			<Y>4</Y>
         </SpriteFrames>
 		<Direction>Left</Direction>
 		<MoveType>Still</MoveType>
+        <ID>NPC21</ID>
+   </NPC>
+   <NPC>
+       <Sprite>
+           <Path>Gameplay/NPC13</Path>
+		   <Effects>SpriteSheetEffect</Effects>
+       </Sprite>
+       <SpawnLocation>
+			<X>256</X>
+			<Y>300</Y>
+        </SpawnLocation>
+		<SpriteFrames>
+			<X>4</X>
+			<Y>4</Y>
+        </SpriteFrames>
+		<Direction>Up</Direction>
+		<MoveType>Zoned</MoveType>
+        <Zone>192,148</Zone>
+        <Zone>256,448</Zone>
+        <ID>NPC22</ID>
+   </NPC>
+   <NPC>
+       <Sprite>
+           <Path>Gameplay/Pidgey</Path>
+		   <Effects>SpriteSheetEffect</Effects>
+       </Sprite>
+       <SpawnLocation>
+			<X>512</X>
+			<Y>364</Y>
+        </SpawnLocation>
+		<SpriteFrames>
+			<X>4</X>
+			<Y>4</Y>
+        </SpriteFrames>
+		<Direction>Left</Direction>
+		<MoveType>Zoned</MoveType>
+        <Zone>320,364</Zone>
+        <Zone>768,364</Zone>
+        <ID>Pidgey</ID>
    </NPC>
 </Map>

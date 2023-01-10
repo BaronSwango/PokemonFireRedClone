@@ -26,6 +26,13 @@ namespace PokemonFireRedClone
         {
             foreach (Tile tile in map.SolidTiles)
             {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64))
+                    && tile.ID.Contains(map.Name))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.SolidTiles)
+            {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64)))
                     return tile;
             }
@@ -41,6 +48,13 @@ namespace PokemonFireRedClone
 
         public static Tile RightTile(Map map, Tile currentTile)
         {
+            foreach (Tile tile in map.SolidTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + 64, currentTile.Position.Y - 64))
+                    && tile.ID.Contains(map.Name))
+                    return tile;
+            }
+
             foreach (Tile tile in map.SolidTiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X+64, currentTile.Position.Y-64)))
@@ -60,6 +74,13 @@ namespace PokemonFireRedClone
         {
             foreach (Tile tile in map.SolidTiles)
             {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128))
+                    && tile.ID.Contains(map.Name))
+                    return tile;
+            }
+
+            foreach (Tile tile in map.SolidTiles)
+            {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128)))
                     return tile;
             }
@@ -75,6 +96,13 @@ namespace PokemonFireRedClone
 
         public static Tile DownTile(Map map, Tile currentTile)
         {
+            foreach (Tile tile in map.SolidTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y))
+                    && tile.ID.Contains(map.Name))
+                    return tile;
+            }
+
             foreach (Tile tile in map.SolidTiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))

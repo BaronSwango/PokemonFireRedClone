@@ -112,10 +112,10 @@ namespace PokemonFireRedClone
 
                         }
 
-                        if (((TileManager.IsDoorTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up)
-                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down)
-                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.LeftTile(map, currentTile)) && Direction == EntityDirection.Left)
-                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.RightTile(map, currentTile)) && Direction == EntityDirection.Right))
+                        if (((TileManager.IsDoorTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up && InputManager.Instance.KeyDown(Keys.W))
+                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(Keys.S))
+                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.LeftTile(map, currentTile)) && Direction == EntityDirection.Left && InputManager.Instance.KeyDown(Keys.A))
+                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.RightTile(map, currentTile)) && Direction == EntityDirection.Right && InputManager.Instance.KeyDown(Keys.D)))
                             && !CurrentScreen.DoorManager.IsTransitioning)
                         {
                             switch (Direction)
@@ -142,6 +142,9 @@ namespace PokemonFireRedClone
                             Sprite.SpriteSheetEffect.CurrentFrame.X = 0;
                             Sprite.IsActive = false;
                             CanUpdate = false;
+
+                            if (CurrentScreen.AreaManager.IsTransitioning)
+                                CurrentScreen.AreaManager.Reset();
                         }
 
                     } else
