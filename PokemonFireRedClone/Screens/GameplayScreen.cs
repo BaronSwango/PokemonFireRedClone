@@ -111,9 +111,9 @@ namespace PokemonFireRedClone
                 }
             }
 
-            if ((MenuManager.IsLoaded || TextBoxManager.IsDisplayed || DoorManager.IsTransitioning) && Player.CanUpdate)
+            if ((MenuManager.IsLoaded || TextBoxManager.IsDisplayed || DoorManager.IsTransitioning || ScreenManager.Instance.IsTransitioning) && Player.CanUpdate)
                 Player.CanUpdate = false;
-            else if (!MenuManager.IsLoaded && !TextBoxManager.IsDisplayed && !DoorManager.IsTransitioning && !Player.CanUpdate)
+            else if (!MenuManager.IsLoaded && !TextBoxManager.IsDisplayed && !DoorManager.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !Player.CanUpdate)
                 Player.CanUpdate = true;
 
             DoorManager.Update(gameTime, this, mapLoader);

@@ -332,6 +332,13 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.Y - speed < (int)Destination.Y)
                         {
                             Sprite.Position.Y = (int)Destination.Y;
+
+                            if (HasWildEncounter(map))
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = 3;
+                                return;
+                            }
+
                             PreviousTile = Destination;
                             Destination.Y -= 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
@@ -361,6 +368,13 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.Y + speed > (int)Destination.Y)
                         {
                             Sprite.Position.Y = (int)Destination.Y;
+
+                            if (HasWildEncounter(map))
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = 2;
+                                return;
+                            }
+
                             PreviousTile = Destination;
                             Destination.Y += 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
@@ -389,6 +403,13 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.X - speed < Destination.X)
                         {
                             Sprite.Position.X = (int)Destination.X;
+
+                            if (HasWildEncounter(map))
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = 0;
+                                return;
+                            }
+
                             PreviousTile = Destination;
                             Destination.X -= 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
@@ -418,6 +439,13 @@ namespace PokemonFireRedClone
                         if (Sprite.Position.X + speed > Destination.X)
                         {
                             Sprite.Position.X = (int)Destination.X;
+
+                            if (HasWildEncounter(map))
+                            {
+                                Sprite.SpriteSheetEffect.CurrentFrame.Y = 1;
+                                return;
+                            }
+
                             PreviousTile = Destination;
                             Destination.X += 64;
                             Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
@@ -483,6 +511,27 @@ namespace PokemonFireRedClone
         {
             Sprite.Position = PlayerJsonObject.Position;
             Sprite.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
+        }
+
+        public bool HasWildEncounter(Map map)
+        {
+            Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height - 32);
+
+            if (currentTile.ID == "[2:1]" && map.Layers[0].Tiles.Contains(currentTile))
+            {
+                Random random = new();
+
+                int encounter = random.Next(2879);
+
+                if (encounter < PlayerJsonObject.CurrentArea.WildRate)
+                {
+                    ScreenManager.Instance.ChangeScreens("BattleScreen");
+                    CanUpdate = false;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
     }

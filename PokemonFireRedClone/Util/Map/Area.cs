@@ -1,19 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
     public class Area
     {
+        public class PokemonRange
+        {
+            public string PokemonName;
+            [XmlElement("Levels")]
+            public List<int> Levels;
+            public float EncounterRate;
+        }
+
         private KeyValuePair<KeyValuePair<int, int>, KeyValuePair<int, int>> zoneBounds;
         private Rectangle zoneRect;
 
         public string Name;
         [XmlElement("Zone")]
         public List<string> Zone;
+        [XmlElement("PokemonRange")]
+        public List<PokemonRange> Ranges;
+        public int WildRate;
 
         public void LoadContent()
         {

@@ -635,6 +635,22 @@
 		<Name>ROUTE   1</Name>
 		<Zone>1088,5056</Zone>
 		<Zone>2368,7616</Zone>
+		<WildRate>320</WildRate>
+		<PokemonRange>
+			<PokemonName>Rattata</PokemonName>
+			<Levels>2</Levels>
+			<Levels>3</Levels>
+			<Levels>4</Levels>
+			<EncounterRate>50</EncounterRate>
+        </PokemonRange>
+		<PokemonRange>
+			<PokemonName>Pidgey</PokemonName>
+			<Levels>2</Levels>
+			<Levels>3</Levels>
+			<Levels>4</Levels>
+			<Levels>5</Levels>
+			<EncounterRate>50</EncounterRate>
+        </PokemonRange>
     </Area>
 	<Area>
 		<Name>VIRIDIAN   CITY</Name>
@@ -645,6 +661,35 @@
 		<Name>ROUTE   2</Name>
 		<Zone>1024,320</Zone>
 		<Zone>2368,2496</Zone>
+		<WildRate>320</WildRate>
+		<PokemonRange>
+			<PokemonName>Rattata</PokemonName>
+			<Levels>2</Levels>
+			<Levels>3</Levels>
+			<Levels>4</Levels>
+			<Levels>5</Levels>
+			<EncounterRate>45</EncounterRate>
+        </PokemonRange>
+		<PokemonRange>
+			<PokemonName>Pidgey</PokemonName>
+			<Levels>2</Levels>
+			<Levels>3</Levels>
+			<Levels>4</Levels>
+			<Levels>5</Levels>
+			<EncounterRate>45</EncounterRate>
+        </PokemonRange>
+		<PokemonRange>
+			<PokemonName>Caterpie</PokemonName>
+			<Levels>4</Levels>
+			<Levels>5</Levels>
+			<EncounterRate>5</EncounterRate>
+        </PokemonRange>
+		<PokemonRange>
+			<PokemonName>Weedle</PokemonName>
+			<Levels>4</Levels>
+			<Levels>5</Levels>
+			<EncounterRate>5</EncounterRate>
+        </PokemonRange>
     </Area>
 	<NPC>
 		<Sprite>

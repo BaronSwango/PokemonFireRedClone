@@ -51,7 +51,7 @@ namespace PokemonFireRedClone
         {
             if (Battle == null || !Battle.InBattle)
                 Battle = trainer != null ? new Battle(trainer, trainer.Pokemon.ToArray())
-                    : new Battle(trainer, PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon("Geodude"), 69));
+                    : new Battle(trainer, GenerateWildPokemon());
             
 
             PlayerMoveUsed = false;
@@ -192,7 +192,29 @@ namespace PokemonFireRedClone
 
             }
 
+        }
 
+        private CustomPokemon GenerateWildPokemon()
+        {
+            Random random = new();
+
+            int pokemonIndex = 0;
+            int num = random.Next(100);
+            float curr = 0;
+
+            foreach (Area.PokemonRange range in Player.PlayerJsonObject.CurrentArea.Ranges)
+            {
+                if (num < (float) (range.EncounterRate + curr))
+                {
+                    pokemonIndex = Player.PlayerJsonObject.CurrentArea.Ranges.IndexOf(range);
+                    break;
+                }
+
+                curr += range.EncounterRate;
+            }
+
+            return PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon(Player.PlayerJsonObject.CurrentArea.Ranges[pokemonIndex].PokemonName),
+                Player.PlayerJsonObject.CurrentArea.Ranges[pokemonIndex].Levels[random.Next(Player.PlayerJsonObject.CurrentArea.Ranges[pokemonIndex].Levels.Count)]);
         }
 
         private bool PlayerFirstMover(BattlePokemon playerPokemon, BattlePokemon enemyPokemon)

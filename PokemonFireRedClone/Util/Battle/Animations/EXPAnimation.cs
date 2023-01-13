@@ -23,9 +23,13 @@ namespace PokemonFireRedClone
             {
                 ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Scale.X = 1;
                 ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.Position.X + 128 - ((1 - ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Scale.X) / 2 * ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.SourceRect.Width), ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.SourceRect.Height - 16);
-                ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.LEVEL_UP_ANIMATION;
-                ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new LevelUpAnimation();
-                return false;
+
+                if (int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]) < goalLevel)
+                {
+                    ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.LEVEL_UP_ANIMATION;
+                    ScreenManager.Instance.BattleScreen.BattleAssets.Animation = new LevelUpAnimation();
+                    return false;
+                }
             }
             else
             {
