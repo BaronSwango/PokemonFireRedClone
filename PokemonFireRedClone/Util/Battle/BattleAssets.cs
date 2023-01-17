@@ -37,7 +37,8 @@ namespace PokemonFireRedClone
             EXP_ANIMATION,
             LEVEL_UP_ANIMATION,
             TRAINER_BATTLE_VICTORY,
-            END_TRAINER_BATTLE
+            END_TRAINER_BATTLE,
+            WILD_BATTLE_ESCAPE
         }
 
         // General battle screen data

@@ -119,6 +119,10 @@ namespace PokemonFireRedClone
 
                         UnloadContent();
                         break;
+                    case "Run":
+                        ((BattleScreen)ScreenManager.Instance.CurrentScreen).BattleLogic.EscapeWildBattle = true;
+                        UnloadContent();
+                        break;
                     default:
                         break;
                 }

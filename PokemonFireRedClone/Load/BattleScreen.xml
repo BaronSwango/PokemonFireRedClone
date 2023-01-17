@@ -28,7 +28,7 @@
     </BattleAssets>
 
     <TextBox>
-        <TotalPages>23</TotalPages>
+        <TotalPages>26</TotalPages>
         <Border>
             <Path>TextBoxes/BattleTextBox</Path>
         </Border>
@@ -276,6 +276,33 @@
             <Page>23</Page>
             <Image>
                 <Text>for   winning ! </Text>
+            </Image>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>24</Page>
+            <Image>
+                <Text>Can`t   escape !</Text>
+            </Image>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>25</Page>
+            <Image>
+                <Text>Got   away   safely !</Text>
+            </Image>
+            <Arrow>true</Arrow>
+        </Dialogue>
+        <Dialogue>
+            <Page>26</Page>
+            <Image>
+                <Text>No !   There`s   no   running</Text>
+            </Image>
+        </Dialogue>
+        <Dialogue>
+            <Page>26</Page>
+            <Image>
+                <Text>from   a   TRAINER   battle !</Text>
             </Image>
             <Arrow>true</Arrow>
         </Dialogue>

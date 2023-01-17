@@ -19,6 +19,7 @@ namespace PokemonFireRedClone
         }
 
         private bool playerFirst;
+        private int escapeAttempts;
 
         public FightState State;
         public Move PlayerMoveOption;
@@ -42,6 +43,7 @@ namespace PokemonFireRedClone
         public bool StageMaxed;
         public bool PlayerMoveExecuted;
         public bool EnemyMoveExecuted;
+        public bool EscapeWildBattle;
 
         // detects whether player is switching pokemon
         public static bool PlayerShift;
@@ -53,7 +55,7 @@ namespace PokemonFireRedClone
                 Battle = trainer != null ? new Battle(trainer, trainer.Pokemon.ToArray())
                     : new Battle(trainer, GenerateWildPokemon());
             
-
+            
             PlayerMoveUsed = false;
             PlayerHasMoved = false;
             EnemyHasMoved = false;
@@ -71,6 +73,23 @@ namespace PokemonFireRedClone
 
         public void Update()
         {
+            if (EscapeWildBattle)
+            {
+                if (Battle.IsWild)
+                {
+                    ScreenManager.Instance.BattleScreen.TextBox.NextPage = Escape(Battle.PlayerPokemon, Battle.EnemyPokemon) ? 25 : 24;
+                }
+                else
+                {
+                    ScreenManager.Instance.BattleScreen.TextBox.NextPage = 26;
+                }
+
+                ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
+                ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.WILD_BATTLE_ESCAPE;
+                ScreenManager.Instance.BattleScreen.BattleAssets.Reset();
+                EscapeWildBattle = false;
+            }
+
             if (PlayerShift)
             {
                 playerFirst = true;
@@ -215,6 +234,21 @@ namespace PokemonFireRedClone
 
             return PokemonManager.Instance.CreatePokemon(PokemonManager.Instance.GetPokemon(Player.PlayerJsonObject.CurrentArea.Ranges[pokemonIndex].PokemonName),
                 Player.PlayerJsonObject.CurrentArea.Ranges[pokemonIndex].Levels[random.Next(Player.PlayerJsonObject.CurrentArea.Ranges[pokemonIndex].Levels.Count)]);
+        }
+
+        private bool Escape(BattlePokemon playerPokemon, BattlePokemon enemyPokemon)
+        {
+            Random random = new();
+
+            int escapeVal = (playerPokemon.Pokemon.Stats.Speed * 128 / enemyPokemon.Pokemon.Stats.Speed) + (30 * ++escapeAttempts);
+
+            if (escapeVal > 255)
+                return true;
+
+            int oddsEscape = escapeVal % 256;
+            int randomNum = random.Next(256);
+
+            return randomNum < oddsEscape;
         }
 
         private bool PlayerFirstMover(BattlePokemon playerPokemon, BattlePokemon enemyPokemon)

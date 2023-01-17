@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Threading;
+using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -431,6 +432,24 @@ namespace PokemonFireRedClone
                             ScreenManager.Instance.ChangeScreens("GameplayScreen");
                             BattleLogic.EndBattle();
                             return;
+                        case 24:
+                            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveUsed = true;
+                            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerHasMoved = true;
+                            ScreenManager.Instance.BattleScreen.BattleLogic.PlayerMoveExecuted = true;
+                            ScreenManager.Instance.BattleScreen.TextBox.NextPage = 5;
+                            ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
+                            break;
+                        case 25:
+                            ScreenManager.Instance.ChangeScreens("GameplayScreen");
+                            BattleLogic.EndBattle();
+                            return;
+                        case 26:
+                            ScreenManager.Instance.BattleScreen.MenuManager.LoadContent("Load/Menus/BattleMenu.xml");
+                            NextPage = 4;
+                            Page = 4;
+                            ScreenManager.Instance.BattleScreen.BattleAssets.State = BattleAssets.BattleState.BATTLE_MENU;
+                            IsTransitioning = true;
+                            break;
                         default:
                             break;
                     }

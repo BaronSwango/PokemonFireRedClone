@@ -57,6 +57,7 @@
         </PokemonText>
     </Item>
     <Item>
+        <LinkType>Run</LinkType>
         <PokemonText>
             <Image>
                 <FontName>Fonts/PokemonFireRedDialogue</FontName>
