@@ -35,7 +35,6 @@ namespace PokemonFireRedClone
                         image.Alpha = 0;
                 }
 
-
                 return true;
 
             }

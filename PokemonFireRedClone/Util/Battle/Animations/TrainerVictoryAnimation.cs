@@ -19,11 +19,6 @@ namespace PokemonFireRedClone
 
             BattleAssets.EnemySprite.Position.X = trainerDestinationX;
 
-            /*
-            ScreenManager.Instance.ChangeScreens("GameplayScreen");
-            BattleLogic.EndBattle();
-            */
-
             ScreenManager.Instance.BattleScreen.TextBox.NextPage = 1;
             ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
             BattleAssets.IsTransitioning = false;

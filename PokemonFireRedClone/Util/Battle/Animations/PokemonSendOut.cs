@@ -17,7 +17,7 @@ namespace PokemonFireRedClone
 
         public override bool Animate(GameTime gameTime)
         {
-            CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (BattleAssets.Pokeball.Alpha == 0)
                 BattleAssets.Pokeball.Alpha = 1;
@@ -118,17 +118,27 @@ namespace PokemonFireRedClone
 
             if (BattleAssets.PlayerSprite== null)
             {
-                if (Counter < 500)
+                if (Counter == null)
+                    Counter = new Counter(500);
+
+                //if (Counter < 500)
+                if (!Counter.Finished)
                 {
-                    Counter += CounterSpeed;
+                    //Counter += CounterSpeed;
+                    Counter.Update(gameTime);
                     return false;
                 }
 
             } else
             {
-                if (Counter < 200)
+                if (Counter == null)
+                    Counter = new Counter(500);
+
+                //if (Counter < 200)
+                if (!Counter.Finished)
                 {
-                    Counter += CounterSpeed;
+                    //Counter += CounterSpeed;
+                    Counter.Update(gameTime);
                     return false;
                 }
             }

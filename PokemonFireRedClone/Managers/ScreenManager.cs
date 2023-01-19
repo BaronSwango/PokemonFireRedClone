@@ -13,7 +13,8 @@ namespace PokemonFireRedClone
 
         private readonly XmlManager<GameScreen> xmlGameScreenManager;
         private GameScreen newScreen;
-        private double counter;
+        //private double counter;
+        private readonly Counter counter;
         private static ScreenManager instance;
 
         public Vector2 Dimensions;
@@ -53,6 +54,7 @@ namespace PokemonFireRedClone
                 Type = CurrentScreen.Type
             };
             CurrentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
+            counter = new Counter(500);
         }
 
         public void LoadContent(ContentManager content)
@@ -110,9 +112,11 @@ namespace PokemonFireRedClone
                 Image.Update(gameTime);
                 if (Image.Alpha == 1.0f)
                 {
-                    if (counter < 500)
+                    //if (counter < 500)
+                    if (!counter.Finished)
                     {
-                        counter += gameTime.ElapsedGameTime.TotalMilliseconds;
+                        //counter += gameTime.ElapsedGameTime.TotalMilliseconds;
+                        counter.Update(gameTime);
                         Image.IsActive = false;
                         return;
                     }
@@ -139,7 +143,8 @@ namespace PokemonFireRedClone
                     else
                         Image.Position = Vector2.Zero;
 
-                    counter = 0;
+                    //counter = 0;
+                    counter.Reset();
                 }
                 else if (Image.Alpha == 0.0f)
                 {

@@ -11,10 +11,11 @@ namespace PokemonFireRedClone
         private readonly Image background;
         private PokemonText areaText;
         private int imageOffset;
-        private int counter;
+        private readonly Counter counter;
+        //private int counter;
         private bool dropdown;
         private Area newArea;
-        private const int COUNTER_LIMIT = 1000;
+        //private const int COUNTER_LIMIT = 1000;
 
         public bool IsTransitioning;
 
@@ -25,6 +26,7 @@ namespace PokemonFireRedClone
                 Path = "Gameplay/NewArea"
             };
             dropdown = true;
+            counter = new Counter(1820);
         }
 
         public void LoadContent(List<Area> areas, Player player)
@@ -63,7 +65,8 @@ namespace PokemonFireRedClone
                             dropdown = false;
                         }
 
-                        counter = COUNTER_LIMIT;
+                        //counter = COUNTER_LIMIT;
+                        counter.Finish();
                         newArea = area;
                     }
                     else
@@ -98,7 +101,8 @@ namespace PokemonFireRedClone
             IsTransitioning = false;
             imageOffset = 0;
             dropdown = true;
-            counter = 0;
+            //counter = 0;
+            counter.Reset();
             areaText.UnloadContent();
 
             if (newArea != null)
@@ -126,12 +130,15 @@ namespace PokemonFireRedClone
             else if (dropdown)
                 imageOffset += speed;
 
-            if (!dropdown && counter < COUNTER_LIMIT)
+            //if (!dropdown && counter < COUNTER_LIMIT)
+            if (!dropdown && !counter.Finished)
             {
-                counter += speed;
+                //counter += speed;
+                counter.Update(gameTime);
             }
 
-            if (!dropdown && counter >= COUNTER_LIMIT)
+            //if (!dropdown && counter >= COUNTER_LIMIT)
+            if (!dropdown && counter.Finished)
             {
                 imageOffset -= speed;
             }

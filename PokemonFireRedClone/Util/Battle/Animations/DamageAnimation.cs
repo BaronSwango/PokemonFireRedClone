@@ -17,14 +17,18 @@ namespace PokemonFireRedClone
             if (!ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning)
             {
                 bool player = ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_DEFEND;
-                CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                //CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 //FIX MOVE HIT
                 if (ScreenManager.Instance.BattleScreen.BattleLogic.MoveLanded && ScreenManager.Instance.BattleScreen.TextBox.Page != 20)
                 {
                     if (blinkCounter < 4)
                     {
-                        if (Counter > 60)
+                        if (Counter == null)
+                            Counter = new Counter(60);
+
+                        //if (Counter > 60)
+                        if (Counter.Finished)
                         {
                             if (player)
                             {
@@ -46,10 +50,16 @@ namespace PokemonFireRedClone
                                     blinkCounter++;
                                 }
                             }
-                            Counter = 0;
-                            if (blinkCounter == 4) return false;
+                            //Counter = 0;
+                            Counter.Reset();
+                            if (blinkCounter == 4)
+                            {
+                                Counter.Reset(1000);
+                                return false;
+                            }
                         }
-                        Counter += CounterSpeed;
+                        //Counter += CounterSpeed;
+                        Counter.Update(gameTime);
                         return false;
                     }
 
@@ -101,12 +111,15 @@ namespace PokemonFireRedClone
                         ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.CalculateHealthBarColor(goalScale);
                         ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.HPBar.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.EnemyHPBarBackground.Position.X + 156 - ((1 - ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.HPBar.Scale.X) / 2 * ScreenManager.Instance.BattleScreen.BattleAssets.EnemyPokemonAssets.HPBar.SourceRect.Width), ScreenManager.Instance.BattleScreen.BattleAssets.EnemyHPBarBackground.Position.Y + 68);
                     }
+
                 }
 
 
-                if (Counter < 1000.0f)
+                //if (Counter < 1000.0f)
+                if (!Counter.Finished)
                 {
-                    Counter += CounterSpeed;
+                    //Counter += CounterSpeed;
+                    Counter.Update(gameTime);
                     return false;
                 }
 
@@ -115,7 +128,8 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.BattleScreen.TextBox.NextPage = 20;
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
                     ScreenManager.Instance.BattleScreen.BattleLogic.MoveLanded = true;
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                     return false;
                 }
 
@@ -124,7 +138,8 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.BattleScreen.TextBox.NextPage = 15;
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
                     ScreenManager.Instance.BattleScreen.BattleLogic.Crit = false;
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                     return false;
                 }
 
@@ -133,7 +148,8 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.BattleScreen.TextBox.NextPage = 7;
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
                     ScreenManager.Instance.BattleScreen.BattleLogic.SuperEffective = false;
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                     return false;
                 }
                 else if (ScreenManager.Instance.BattleScreen.BattleLogic.NotVeryEffective)
@@ -141,7 +157,8 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.BattleScreen.TextBox.NextPage = 8;
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
                     ScreenManager.Instance.BattleScreen.BattleLogic.NotVeryEffective = false;
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                     return false;
                 }
 

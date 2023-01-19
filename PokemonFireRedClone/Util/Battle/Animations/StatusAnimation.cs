@@ -8,19 +8,24 @@ namespace PokemonFireRedClone
 
         private bool increase;
         private int reveal;
-        private float spinCounter;
+        private Counter spinCounter;
 
         public override bool Animate(GameTime gameTime)
         {
             if (!ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning)
             {
-                CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                //CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 if (ScreenManager.Instance.BattleScreen.TextBox.Page == 18 || ScreenManager.Instance.BattleScreen.TextBox.Page == 20)
                 {
-                    if (Counter < 1000.0f)
+                    if (Counter == null)
+                        Counter = new Counter(1000);
+
+                    //if (Counter < 1000.0f)
+                    if (!Counter.Finished)
                     {
-                        Counter += CounterSpeed;
+                        //Counter += CounterSpeed;
+                        Counter.Update(gameTime);
                         return false;
                     }
 
@@ -44,13 +49,19 @@ namespace PokemonFireRedClone
 
                 if (!ScreenManager.Instance.BattleScreen.BattleLogic.MoveLanded)
                 {
-                    if (Counter < 1000.0f)
+                    if (Counter == null)
+                        Counter = new Counter(1000);
+
+                    //if (Counter < 1000.0f)
+                    if (!Counter.Finished)
                     {
-                        Counter += CounterSpeed;
+                        //Counter += CounterSpeed;
+                        Counter.Update(gameTime);
                         return false;
                     }
 
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                     ScreenManager.Instance.BattleScreen.TextBox.NextPage = 20;
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
                     return false;
@@ -58,13 +69,19 @@ namespace PokemonFireRedClone
 
                 if (ScreenManager.Instance.BattleScreen.BattleLogic.StageMaxed)
                 {
-                    if (Counter < 1000.0f)
+                    if (Counter == null)
+                        Counter = new Counter(1000);
+
+                    //if (Counter < 1000.0f)
+                    if (!Counter.Finished)
                     {
-                        Counter += CounterSpeed;
+                        //Counter += CounterSpeed;
+                        Counter.Update(gameTime);
                         return false;
                     }
 
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
                     return false;
                 }
@@ -88,7 +105,11 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Alpha = 0.00001f;
                     ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Alpha = 0.00001f;
                     reveal = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? pokeSourceRect.Height : 0;
-                    spinCounter = 0;
+                    //spinCounter = 0;
+                    if (spinCounter == null)
+                        spinCounter = new Counter(1000);
+                    else
+                        spinCounter.Reset(1000);
                     increase = false;
                     ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Tint = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? Color.OrangeRed : Color.LightBlue;
                     ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage2.Tint = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? Color.OrangeRed : Color.LightBlue;
@@ -99,8 +120,10 @@ namespace PokemonFireRedClone
 
                 if (ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Alpha > 0)
                 {
-
-                    if (spinCounter < 1000)
+                    if (spinCounter == null)
+                        spinCounter = new Counter(1000);
+                    //if (spinCounter < 1000)
+                    if (!spinCounter.Finished)
                     {
                         if (ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Alpha + alphaSpeed < 0.5f)
                         {
@@ -182,9 +205,11 @@ namespace PokemonFireRedClone
                         reveal = ScreenManager.Instance.BattleScreen.BattleLogic.StatStageIncrease ? pokeSourceRect.Height : 0;
                     }
 
-                    spinCounter += CounterSpeed;
+                    //spinCounter += CounterSpeed;
+                    spinCounter.Update(gameTime);
 
-                    if (spinCounter > 1000)
+                    //if (spinCounter > 1000)
+                    if (spinCounter.Finished)
                     {
                         if (ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Alpha - alphaSpeed > 0)
                         {
@@ -201,7 +226,8 @@ namespace PokemonFireRedClone
                     return false;
                 }
 
-                spinCounter = 0;
+                //spinCounter = 0;
+                spinCounter.Reset(1000);
 
                 ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;
 

@@ -19,10 +19,14 @@ namespace PokemonFireRedClone
                 ? (float)(0.9 * gameTime.ElapsedGameTime.TotalMilliseconds) : (float)(1.8 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
             const float BarDestination = -292;
-            CounterSpeed = (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+            //CounterSpeed = (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (Counter == null)
+                Counter = new Counter(1000);
 
             if (BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON
-                && Counter < 1000)
+                //&& Counter < 1000)
+                && !Counter.Finished)
             {
 
                 if (BattleAssets.TrainerBallBar.Position.X + barSpeed < BarDestination)
@@ -48,8 +52,10 @@ namespace PokemonFireRedClone
                 BattleAssets.Pokeball.Position = new Vector2(BattleAssets.EnemyPlatform.Position.X + BattleAssets.EnemyPlatform.SourceRect.Width / 2 - BattleAssets.Pokeball.SourceRect.Width / 6,
                     BattleAssets.EnemyPlatform.Position.Y + BattleAssets.EnemyPlatform.SourceRect.Height * 0.75f - BattleAssets.Pokeball.SourceRect.Height);
 
-                Counter += CounterSpeed;
-                if (Counter < 1000)
+                //Counter += CounterSpeed;
+                Counter.Update(gameTime);
+                //if (Counter < 1000)
+                if (!Counter.Finished)
                     return false;
 
                 ScreenManager.Instance.BattleScreen.TextBox.NextPage = 2;

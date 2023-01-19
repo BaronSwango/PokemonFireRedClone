@@ -10,7 +10,7 @@ namespace PokemonFireRedClone
         {
             int goalLevel = BattleLogic.Battle.PlayerPokemon.Pokemon.Level;
             float goalEXPScale = (float)BattleLogic.Battle.PlayerPokemon.Pokemon.EXPTowardsLevelUp / BattleLogic.Battle.PlayerPokemon.Pokemon.EXPNeededToLevelUp;
-            CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Scale.X + 0.01f < goalEXPScale || (ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Scale.X + 0.01f < 1 && int.Parse(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerPokemonAssets.Level.Image.Text[2..]) < goalLevel))
             {
@@ -37,11 +37,16 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Position = new Vector2(ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.Position.X + 128 - ((1 - ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.Scale.X) / 2 * ScreenManager.Instance.BattleScreen.BattleAssets.EXPBar.SourceRect.Width), ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.Position.Y + ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarBackground.SourceRect.Height - 16);
             }
 
+            if (Counter == null)
+                Counter = BattleLogic.Battle.IsWild ? new Counter(1000) : new Counter(500);
+
             if (BattleLogic.Battle.IsWild)
             {
-                if (Counter < 1000)
+                //if (Counter < 1000)
+                if (!Counter.Finished)
                 {
-                    Counter += CounterSpeed;
+                    //Counter += CounterSpeed;
+                    Counter.Update(gameTime);
                     return false;
                 }
 
@@ -49,9 +54,11 @@ namespace PokemonFireRedClone
                 BattleLogic.EndBattle();
             } else
             {
-                if (Counter < 500)
+                //if (Counter < 500)
+                if (!Counter.Finished)
                 {
-                    Counter += CounterSpeed;
+                    //Counter += CounterSpeed;
+                    Counter.Update(gameTime);
                     return false;
                 }
 

@@ -13,11 +13,22 @@ namespace PokemonFireRedClone
         public override bool Animate(GameTime gameTime)
         {
             bool player = ScreenManager.Instance.BattleScreen.BattleLogic.State == BattleLogic.FightState.PLAYER_FAINT;
-            CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            if (Counter == null)
+                Counter = new Counter(1000);
+
+            /*
             if (Counter < 1000.0f)
             {
                 Counter += CounterSpeed;
+                return false;
+            }
+            */
+
+            if (!Counter.Finished)
+            {
+                Counter.Update(gameTime);
                 return false;
             }
 

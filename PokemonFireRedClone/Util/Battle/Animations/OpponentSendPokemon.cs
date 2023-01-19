@@ -6,8 +6,9 @@ namespace PokemonFireRedClone
     public class OpponentSendPokemon : BattleAnimation
     {
 
-        int trainerBallIndex;
-        
+        private int trainerBallIndex;
+        private float counter;
+        private float counterSpeed;
 
         public OpponentSendPokemon()
         {
@@ -27,17 +28,17 @@ namespace PokemonFireRedClone
 
             const float EnemyHPDestinationX = 52;
 
-            CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (Counter < 1000 && BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON)
+            if (counter < 1000 && BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON)
             {
-                Counter += CounterSpeed;
+                counter += counterSpeed;
                 return false;
             }
-            else if (Counter < 1000 && BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON)
-                Counter = 1000;
+            else if (counter < 1000 && BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON)
+                counter = 1000;
 
-            if (Counter < 2000)
+            if (counter < 2000)
             {
 
                 if (BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON)
@@ -90,8 +91,8 @@ namespace PokemonFireRedClone
                         BattleAssets.EnemyPokemonAssets.Level.SetPosition(new Vector2(BattleAssets.EnemyHPBarBackground.Position.X + BattleAssets.EnemyHPBarBackground.SourceRect.Width - 56 - BattleAssets.EnemyPokemonAssets.Level.SourceRect.Width, BattleAssets.EnemyPokemonAssets.Name.Position.Y));
                         BattleAssets.EnemyPokemonAssets.HPBar.Position = new Vector2(BattleAssets.EnemyHPBarBackground.Position.X + 156 - ((1 - BattleAssets.EnemyPokemonAssets.HPBar.Scale.X) / 2 * BattleAssets.EnemyPokemonAssets.HPBar.SourceRect.Width), BattleAssets.EnemyHPBarBackground.Position.Y + 68);
 
-                        Counter += CounterSpeed;
-                        if (Counter < 2000)
+                        counter += counterSpeed;
+                        if (counter < 2000)
                             return false;
 
                         if (BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON)
@@ -103,27 +104,27 @@ namespace PokemonFireRedClone
                 }
 
 
-                if (Counter < 1017)
+                if (counter < 1017)
                 {
-                    Counter += CounterSpeed;
+                    counter += counterSpeed;
                     return false;
                 }
 
-                if (Counter < 1450)
+                if (counter < 1450)
                     BattleAssets.Pokeball.Alpha = 1;
 
-                if (Counter < 1300)
+                if (counter < 1300)
                 {
-                    Counter += CounterSpeed;
+                    counter += counterSpeed;
                     return false;
                 }
 
                 if (BattleAssets.Pokeball.SpriteSheetEffect.CurrentFrame.X == 0)
                     BattleAssets.Pokeball.SpriteSheetEffect.CurrentFrame.X = 1;
 
-                if (Counter < 1350)
+                if (counter < 1350)
                 {
-                    Counter += CounterSpeed;
+                    counter += counterSpeed;
                     return false;
                 }
 
@@ -148,9 +149,9 @@ namespace PokemonFireRedClone
                     }
                 } else
                 {
-                    if (Counter < 1525)
+                    if (counter < 1525)
                     {
-                        Counter += CounterSpeed;
+                        counter += counterSpeed;
                         return false;
                     }
 
@@ -163,18 +164,18 @@ namespace PokemonFireRedClone
                     }
                 }
 
-                if (Counter < 1400)
+                if (counter < 1400)
                 {
-                    Counter += CounterSpeed;
+                    counter += counterSpeed;
                     return false;
                 }
 
                 if (BattleAssets.Pokeball.SpriteSheetEffect.CurrentFrame.X == 1)
                     BattleAssets.Pokeball.SpriteSheetEffect.CurrentFrame.X = 2;
 
-                if (Counter < 1450)
+                if (counter < 1450)
                 {
-                    Counter += CounterSpeed;
+                    counter += counterSpeed;
                     return false;
                 }
 

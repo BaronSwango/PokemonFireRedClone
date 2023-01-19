@@ -29,9 +29,11 @@ namespace PokemonFireRedClone
             if (State == ButtonState.SELECTED || State == ButtonState.SWITCH_SELECTED)
             {
                 MenuSprite.IsActive = false;
-                float CounterSpeed = (float)(gameTime.ElapsedGameTime.TotalMilliseconds * 8);
-                Counter += CounterSpeed;
-                if (Counter > 1000)
+                //float CounterSpeed = (float)(gameTime.ElapsedGameTime.TotalMilliseconds * 8);
+                //Counter += CounterSpeed;
+                Counter.Update(gameTime);
+                //if (Counter > 1000)
+                if (Counter.Finished)
                 {
                     if (Bounce)
                     {
@@ -45,7 +47,8 @@ namespace PokemonFireRedClone
                         MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 24 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 56);
                         Bounce = true;
                     }
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                 }
             }
             else

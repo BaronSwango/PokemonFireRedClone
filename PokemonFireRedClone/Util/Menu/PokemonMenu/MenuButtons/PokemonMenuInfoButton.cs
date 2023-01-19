@@ -12,7 +12,8 @@ namespace PokemonFireRedClone
         protected PokemonAssets PokemonAssets;
         protected CustomPokemon Pokemon;
 
-        protected float Counter;
+        //protected float Counter;
+        protected Counter Counter;
         protected bool Bounce;
         protected bool SpritePositioned;
 
@@ -55,6 +56,7 @@ namespace PokemonFireRedClone
             LoadBackground();
             PokemonAssets.LoadContent("Fonts/PokemonFireRedSmall", Color.White, Color.Gray);
 
+            Counter = new Counter(125);
             MenuSprite = Pokemon.Pokemon.MenuSprite;
             MenuSprite.Effects = "SpriteSheetEffect";
             MenuSprite.LoadContent();
@@ -126,9 +128,11 @@ namespace PokemonFireRedClone
             if (State == ButtonState.SELECTED || State == ButtonState.SWITCH_SELECTED)
             {
                 MenuSprite.IsActive = false;
-                float counterSpeed = (float) (gameTime.ElapsedGameTime.TotalMilliseconds * 8);
-                Counter += counterSpeed;
-                if (Counter > 1000)
+                //float counterSpeed = (float) (gameTime.ElapsedGameTime.TotalMilliseconds * 8);
+                //Counter += counterSpeed;
+                Counter.Update(gameTime);
+                //if (Counter > 1000)
+                if (Counter.Finished)
                 {
                     if (Bounce)
                     {
@@ -142,7 +146,8 @@ namespace PokemonFireRedClone
                         MenuSprite.Position = new Vector2(BackgroundInUse.Position.X + 36 - (MenuSprite.SourceRect.Width / 4), BackgroundInUse.Position.Y + 48 - (MenuSprite.SourceRect.Height / 2));
                         Bounce = true;
                     }
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
                 }
             } else
             {

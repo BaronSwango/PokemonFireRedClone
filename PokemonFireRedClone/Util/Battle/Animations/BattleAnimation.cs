@@ -6,8 +6,9 @@ namespace PokemonFireRedClone
     public abstract class BattleAnimation
     {
 
-        protected float Counter;
-        protected float CounterSpeed;
+        //protected float Counter;
+        //protected float CounterSpeed;
+        protected Counter Counter;
         protected Image WhiteEffect;
         protected bool WhiteEffectTransitioned;
 

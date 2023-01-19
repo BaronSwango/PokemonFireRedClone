@@ -8,7 +8,8 @@ namespace PokemonFireRedClone
     public class DoorManager
     {
         private Door door;
-        private double counter;
+        //private double counter;
+        private Counter counter;
 
         [XmlElement("Doors")]
         public List<Door> Doors;
@@ -30,6 +31,8 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.Image.FadeEffect.Increase = true;
             ScreenManager.Instance.Image.FadeEffect.FadeSpeed = 3.5f;
             ScreenManager.Instance.Image.Alpha = 0.0f;
+
+            counter = new Counter(500);
         }
 
         public void Update(GameTime gameTime, GameplayScreen screen, XmlManager<Map> mapLoader)
@@ -50,9 +53,11 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.Image.Update(gameTime);
                 if (ScreenManager.Instance.Image.Alpha == 1.0f)
                 {
-                    if (counter < 500)
+                    //if (counter < 500)
+                    if (!counter.Finished)
                     {
-                        counter += gameTime.ElapsedGameTime.TotalMilliseconds;
+                        //counter += gameTime.ElapsedGameTime.TotalMilliseconds;
+                        counter.Update(gameTime);
                         ScreenManager.Instance.Image.IsActive = false;
                         return;
                     }
@@ -82,7 +87,8 @@ namespace PokemonFireRedClone
                     ScreenManager.Instance.Image.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 32,
                     playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 40);
 
-                    counter = 0;
+                    //counter = 0;
+                    counter.Reset();
                 }
                 else if (ScreenManager.Instance.Image.Alpha == 0.0f)
                 {

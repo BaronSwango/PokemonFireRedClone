@@ -16,7 +16,7 @@ namespace PokemonFireRedClone
 
         public override bool Animate(GameTime gameTime)
         {
-            CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //CounterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (!ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning)
             {
@@ -70,13 +70,19 @@ namespace PokemonFireRedClone
                     if (BattleAssets.PlayerPokemon.Scale != Vector2.Zero)
                         BattleAssets.UpdatePlayerPokemon();
 
-                    if (Counter < 100.0f)
+                    if (Counter == null)
+                        Counter = new Counter(100);
+
+                    //if (Counter < 100.0f)
+                    if (!Counter.Finished)
                     {
-                        Counter += CounterSpeed;
+                        //Counter += CounterSpeed;
+                        Counter.Update(gameTime);
                         return false;
                     }
 
-                    Counter = 0;
+                    //Counter = 0;
+                    Counter.Reset();
 
                     ScreenManager.Instance.BattleScreen.TextBox.NextPage = 3;
                     ScreenManager.Instance.BattleScreen.TextBox.IsTransitioning = true;

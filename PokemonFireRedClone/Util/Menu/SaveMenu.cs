@@ -13,7 +13,8 @@ namespace PokemonFireRedClone
     {
 
         private bool exited;
-        private double exitCounter;
+        //private double exitCounter;
+        private Counter exitCounter;
 
         public Image InfoTitlesBackground;
         public PokemonText SaveRegion;
@@ -88,7 +89,8 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             exited = false;
-            exitCounter = 0;
+            //exitCounter = 0;
+            exitCounter = new Counter(2000);
             InfoTitlesBackground.LoadContent();
             Arrow.LoadContent();
 
@@ -134,8 +136,10 @@ namespace PokemonFireRedClone
             {
                 ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player.Save();
                 exited = true;
-                exitCounter += gameTime.ElapsedGameTime.TotalSeconds;
-                if (exitCounter >= 2)
+                //exitCounter += gameTime.ElapsedGameTime.TotalSeconds;
+                exitCounter.Update(gameTime);
+                //if (exitCounter >= 2)
+                if (exitCounter.Finished)
                 {
                     ((GameplayScreen)ScreenManager.Instance.CurrentScreen).MenuManager.MenuName = "MainMenu";
                     ((GameplayScreen)ScreenManager.Instance.CurrentScreen).MenuManager.UnloadContent();
