@@ -149,6 +149,7 @@ namespace PokemonFireRedClone
             Map.Draw(spriteBatch, "Overlay");
             if (MenuManager.IsLoaded)
                 MenuManager.Draw(spriteBatch);
+            TextBoxManager.Draw(spriteBatch);
             if (!Map.Inside && !DoorManager.IsTransitioning)
                 AreaManager.Draw(spriteBatch);
             DoorManager.Draw(spriteBatch);
