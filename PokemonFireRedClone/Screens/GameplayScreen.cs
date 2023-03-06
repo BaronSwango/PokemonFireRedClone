@@ -75,7 +75,6 @@ namespace PokemonFireRedClone
 
             if (MenuManager.WasLoaded)
                 MenuManager.WasLoaded = false;
-
             if (menuWasLoaded)
             {
                 MenuManager.MenuName = "MainMenu";
@@ -149,6 +148,7 @@ namespace PokemonFireRedClone
                 npc.NPCSprite.Top.Draw(spriteBatch);
             Map.Draw(spriteBatch, "Overlay");
             if (MenuManager.IsLoaded)
+                MenuManager.Draw(spriteBatch);
             if (!Map.Inside && !DoorManager.IsTransitioning)
                 AreaManager.Draw(spriteBatch);
             DoorManager.Draw(spriteBatch);
