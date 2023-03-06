@@ -5,8 +5,7 @@ namespace PokemonFireRedClone
     public class AnimatedTile : Tile
     {
         private int totalFrames;
-        //private int currentFrame;
-        private Counter counter;
+        private readonly Counter counter;
 
         public AnimatedTile()
         {
@@ -16,12 +15,6 @@ namespace PokemonFireRedClone
         public void LoadContent(int totalFrames)
         {
             this.totalFrames = totalFrames;
-
-            if (totalFrames == 8)
-            {
-                totalFrames = 8;
-            }
-
         }
 
         public void Animate(GameTime gameTime, Vector2 tileDimensions)

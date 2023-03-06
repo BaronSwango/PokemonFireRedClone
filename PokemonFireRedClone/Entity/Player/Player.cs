@@ -517,7 +517,7 @@ namespace PokemonFireRedClone
         {
             Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height - 32);
 
-            if (currentTile.ID == "[2:1]" && map.Layers[0].Tiles.Contains(currentTile))
+            if (currentTile.ID == "[16:16]" && map.Layers[0].Tiles.Contains(currentTile))
             {
                 Random random = new();
 
