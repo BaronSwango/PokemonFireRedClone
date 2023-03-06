@@ -64,7 +64,7 @@ namespace PokemonFireRedClone
                         {
                             state = "Passive";
                             Tile tile;
-                            if (AnimatedTiles.Contains(s + ":"))
+                            if (AnimatedTiles != null && AnimatedTiles.Contains(s + ":"))
                             {
                                 tile = new AnimatedTile()
                                 {

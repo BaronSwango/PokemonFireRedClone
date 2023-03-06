@@ -22,6 +22,23 @@ namespace PokemonFireRedClone
             return null;
         }
 
+        public static Tile GetCurrentTile(Map map, Image image, int offsetX, int offSetY, int layerIndex)
+        {
+
+            Rectangle playerRect = new((int)image.Position.X, (int)image.Position.Y,
+                image.SourceRect.Width, image.SourceRect.Height);
+
+            foreach (Tile tile in map.Layers[layerIndex].Tiles)
+            {
+                Rectangle tileRect = new((int)tile.Position.X + 4, (int)tile.Position.Y,
+                    tile.SourceRect.Width - 8, tile.SourceRect.Height - 20);
+
+                if (tileRect.Contains(new Vector2(playerRect.Location.X + offsetX, playerRect.Location.Y + offSetY)))
+                    return tile;
+            }
+            return null;
+        }
+
         public static Tile LeftTile(Map map, Tile currentTile)
         {
             foreach (Tile tile in map.SolidTiles)
@@ -167,11 +184,19 @@ namespace PokemonFireRedClone
             return null;
         }
 
+        public static Tile GetTile(Map map, Vector2 location, int layerIndex)
+        { 
+            foreach (Tile tile in map.Layers[layerIndex].Tiles)
+            {
+                if (tile.Position.Equals(location))
+                    return tile;
+            }
+
+            return null;
+        }
 
         public static Tile GetTile(Map map, Tile currentTile, int offsetX, int offsetY)
         {
-            //offsetX *= 64;
-            //offsetY *= 64;
 
             foreach (Tile tile in map.SolidTiles)
             {
