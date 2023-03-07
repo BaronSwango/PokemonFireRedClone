@@ -137,7 +137,7 @@ namespace PokemonFireRedClone
                     MenuName = Menu.PrevMenuName;
                     Menu.ID = "Load/Menus/" + Menu.PrevMenuName + ".xml";
                 }
-                else if (Menu.ScreenMenu)
+                else if (Menu.PrevScreen.Length > 0)
                     ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
                 
             }

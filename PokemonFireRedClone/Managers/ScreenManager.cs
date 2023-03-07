@@ -13,7 +13,6 @@ namespace PokemonFireRedClone
 
         private readonly XmlManager<GameScreen> xmlGameScreenManager;
         private GameScreen newScreen;
-        //private double counter;
         private readonly Counter counter;
         private static ScreenManager instance;
 
@@ -169,13 +168,14 @@ namespace PokemonFireRedClone
             newScreen = (GameScreen)Activator.CreateInstance(System.Type.GetType("PokemonFireRedClone." + screenName));
             if (newScreen is BattleScreen screen && members.Length > 0)
                 screen.Trainer = members[0];
-            if (!(newScreen is TitleScreen) && !Image.IsReloaded)
+            if (newScreen is not TitleScreen && !Image.IsReloaded)
                 LoadFadeImage();
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
             IsTransitioning = true;
-            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ? 3.5f : 1.5f;
+            Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ||
+                CurrentScreen is PokedexScreen || newScreen is PokedexScreen ? 3.5f : 1.5f;
         }
 
     }

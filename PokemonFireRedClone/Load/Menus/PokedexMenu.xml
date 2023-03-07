@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<PokedexMenu>
+    <PrevScreen>GameplayScreen</PrevScreen>
+
+    <PokedexMenuBackground>
+        <Path>Menus/PokedexMenu/PokedexMenuBackground</Path>
+    </PokedexMenuBackground>
+
+    <Arrow>
+        <Path>Menus/BlackBigMenuArrow</Path>
+    </Arrow>
+
+    <Item>
+        <PokemonText>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>0</R>
+                <G>0</G>
+                <B>0</B>
+                <A>255</A>
+                <Text>NUMERICAL   MODE</Text>
+            </Image>
+            <R>224</R>
+            <G>216</G>
+            <B>192</B>
+        </PokemonText>
+    </Item>
+
+</PokedexMenu>

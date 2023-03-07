@@ -65,8 +65,6 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            ScreenMenu = true;
-
             PrevScreen = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? "BattleScreen" : "GameplayScreen";
 
             buttons = new List<PokemonMenuInfoButton>();

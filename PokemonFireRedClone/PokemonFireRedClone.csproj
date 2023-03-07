@@ -72,6 +72,8 @@
     <None Remove="Load\Gameplay\Map\ViridianSchool.xml" />
     <None Remove="Load\Gameplay\Map\ViridianHouse.xml" />
     <None Remove="Load\Gameplay\Map\ViridianGym.xml" />
+    <None Remove="Util\Menu\PokedexMenu\" />
+    <None Remove="Load\Menus\PokedexMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -158,6 +160,9 @@
     <Content Include="Load\Gameplay\Map\ViridianGym.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Menus\PokedexMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
@@ -187,5 +192,6 @@
     <Folder Include="Entity\Player\" />
     <Folder Include="Screens\" />
     <Folder Include="Util\" />
+    <Folder Include="Util\Menu\PokedexMenu\" />
   </ItemGroup>
 </Project>

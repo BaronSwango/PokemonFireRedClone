@@ -13,7 +13,6 @@ namespace PokemonFireRedClone
     {
 
         private bool exited;
-        //private double exitCounter;
         private Counter exitCounter;
 
         public Image InfoTitlesBackground;
@@ -89,7 +88,6 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             exited = false;
-            //exitCounter = 0;
             exitCounter = new Counter(2000);
             InfoTitlesBackground.LoadContent();
             Arrow.LoadContent();

@@ -8,6 +8,8 @@
         <Path>Menus/MenuArrow</Path>
     </Arrow>
     <Item>
+        <LinkType>Screen</LinkType>
+        <LinkID>PokedexScreen</LinkID>
         <PokemonText>
             <Image>
                 <FontName>Fonts/PokemonFireRedDialogue</FontName>
