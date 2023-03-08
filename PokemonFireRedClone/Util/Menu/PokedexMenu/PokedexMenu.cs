@@ -20,13 +20,27 @@ namespace PokemonFireRedClone
         {
             PokedexMenuBackground.LoadContent();
             Arrow.LoadContent();
+
+            Seen.Image.Text = Player.PlayerJsonObject.PokemonSeen.Count.ToString();
+            Owned.Image.Text = Player.PlayerJsonObject.PokemonOwned.Count.ToString();
+
+            Seen.LoadContent();
+            Owned.LoadContent();
+
             base.LoadContent();
+
+            Seen.SetPosition(new(PokedexMenuBackground.SourceRect.Width - Seen.SourceRect.Width - 100, 144));
+            Owned.SetPosition(new(Seen.Position.X, Seen.Position.Y + Owned.SourceRect.Height + 60));
         }
 
         public override void UnloadContent()
         {
             PokedexMenuBackground.UnloadContent();
             Arrow.UnloadContent();
+
+            Seen.UnloadContent();
+            Owned.UnloadContent();
+
             base.UnloadContent();
         }
 
@@ -63,6 +77,10 @@ namespace PokemonFireRedClone
         {
             PokedexMenuBackground.Draw(spriteBatch);
             Arrow.Draw(spriteBatch);
+
+            Seen.Draw(spriteBatch);
+            Owned.Draw(spriteBatch);
+
             base.Draw(spriteBatch);
         }
     }

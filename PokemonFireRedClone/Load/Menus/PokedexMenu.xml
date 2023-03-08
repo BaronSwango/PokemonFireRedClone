@@ -10,6 +10,31 @@
         <Path>Menus/BlackBigMenuArrow</Path>
     </Arrow>
 
+    <Seen>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>241</R>
+            <G>156</G>
+            <B>89</B>
+            <A>255</A>
+        </Image>
+        <R>196</R>
+        <G>90</G>
+        <B>78</B>
+    </Seen>
+    <Owned>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>241</R>
+            <G>156</G>
+            <B>89</B>
+            <A>255</A>
+        </Image>
+        <R>196</R>
+        <G>90</G>
+        <B>78</B>
+    </Owned>
+
     <Item>
         <LinkType>Menu</LinkType>
         <LinkID>Load/Menus/PokemonListMenu.xml</LinkID>
