@@ -11,6 +11,9 @@
     </Arrow>
 
     <Item>
+        <LinkType>Menu</LinkType>
+        <LinkID>Load/Menus/PokemonListMenu.xml</LinkID>
+        <MenuName>PokemonListMenu</MenuName>
         <PokemonText>
             <Image>
                 <FontName>Fonts/PokemonFireRedDialogue</FontName>

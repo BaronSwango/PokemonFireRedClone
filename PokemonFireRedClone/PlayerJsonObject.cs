@@ -34,7 +34,8 @@ namespace PokemonFireRedClone
         public string AreaName;
         [JsonIgnore]
         public Area CurrentArea;
-        //public Dictionary<Pokemon, bool> PokemonInPokedex;
+        public List<string> PokemonSeen;
+        public List<string> PokemonOwned;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;
 
     }

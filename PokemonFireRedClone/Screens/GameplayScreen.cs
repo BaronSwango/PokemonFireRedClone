@@ -20,7 +20,7 @@ namespace PokemonFireRedClone
 
         public GameplayScreen()
         {
-            MenuManager = new MenuManager("MainMenu");
+            MenuManager = new("MainMenu");
             TextBoxManager = new();
             XmlManager<Player> playerLoader = new();
             XmlManager<DoorManager> doorLoader = new();

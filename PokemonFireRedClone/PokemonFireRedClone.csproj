@@ -74,6 +74,7 @@
     <None Remove="Load\Gameplay\Map\ViridianGym.xml" />
     <None Remove="Util\Menu\PokedexMenu\" />
     <None Remove="Load\Menus\PokedexMenu.xml" />
+    <None Remove="Load\Menus\PokemonListMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -161,6 +162,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Menus\PokedexMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Menus\PokemonListMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
