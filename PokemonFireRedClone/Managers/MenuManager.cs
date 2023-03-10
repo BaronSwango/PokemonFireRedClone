@@ -33,9 +33,9 @@ namespace PokemonFireRedClone
             
             foreach (MenuItem item in Menu.Items)
             {
-                if (item.Image != null)
+                if (item.Image != null && item.Image.IsLoaded)
                     item.Image.StoreEffects();
-                else if (item.PokemonText != null)
+                else if (item.PokemonText != null && item.PokemonText.IsLoaded)
                     item.PokemonText.StoreEffects();
             }
             
@@ -61,9 +61,9 @@ namespace PokemonFireRedClone
             {
                 foreach (MenuItem item in Menu.Items)
                 {
-                    if (item.Image != null)
+                    if (item.Image != null && item.Image.IsLoaded)
                         item.Image.RestoreEffects();
-                    else if (item.PokemonText != null)
+                    else if (item.PokemonText != null && item.PokemonText.IsLoaded)
                         item.PokemonText.RestoreEffects();
                 }
             }

@@ -13,5 +13,14 @@ namespace PokemonFireRedClone
         [XmlElement("Description")]
         public List<PokemonText> Description;
         public bool HasTransition;
+
+        public MenuItem() { }
+
+        public MenuItem(string linkType, PokemonText text)
+        {
+            LinkType = linkType;
+            PokemonText = text;
+        }
+
     }
 }

@@ -131,7 +131,7 @@ namespace PokemonFireRedClone
         {
             foreach (Pokemon pokemon in Pokemon)
             {
-                if (pokemon.Name == name)
+                if (pokemon.Name.ToLower() == name.ToLower())
                 {
                     pokemon.LoadInfo();
                     return pokemon;

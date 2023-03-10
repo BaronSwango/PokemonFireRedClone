@@ -5,6 +5,8 @@
         <Path>Menus/PokedexMenu/PokemonListMenuBackground</Path>
     </PokemonListBackground>
 
-
+    <Arrow>
+        <Path>Menus/BlackBigMenuArrow</Path>
+    </Arrow>
 
 </PokemonListMenu>

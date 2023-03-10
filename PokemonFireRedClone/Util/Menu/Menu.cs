@@ -104,8 +104,8 @@ namespace PokemonFireRedClone
             {
                 if (item.Image != null)
                     item.Image.Draw(spriteBatch);
-                else if (item.PokemonText != null)
-                    item.PokemonText.Draw(spriteBatch);
+                else
+                    item.PokemonText?.Draw(spriteBatch);
             }
         }
 
