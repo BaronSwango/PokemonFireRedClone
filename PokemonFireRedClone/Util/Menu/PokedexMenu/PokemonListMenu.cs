@@ -2,14 +2,14 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace PokemonFireRedClone
 {
 	public class PokemonListMenu : Menu
 	{
-        private readonly List<Pokemon> pokemon;
         private readonly Dictionary<int, PokemonText> pokemonNames;
-        private readonly Dictionary<string, List<Image>> ownedPokemon;
+        private readonly Dictionary<int, List<Image>> pokemonOwned;
         private readonly List<int> currentShownIndices;
         public Image Arrow;
 		public Image PokemonListBackground;
@@ -17,9 +17,8 @@ namespace PokemonFireRedClone
 
         public PokemonListMenu()
         {
-            pokemon = new();
             pokemonNames = new();
-            ownedPokemon = new();
+            pokemonOwned = new();
             currentShownIndices = new();
         }
 
@@ -29,13 +28,24 @@ namespace PokemonFireRedClone
 
             foreach (int i in currentShownIndices)
             {
-                Items[i-1].PokemonText.SetPosition(new Vector2(PokemonListBackground.Position.X + 176, PokemonListBackground.Position.Y + dimensionY + 88));
-                dimensionY += Items[i-1].PokemonText.SourceRect.Height + 30;
+                Items[i - 1].PokemonText.SetPosition(new Vector2(PokemonListBackground.Position.X + 176, PokemonListBackground.Position.Y + dimensionY + 88));
+                dimensionY += Items[i - 1].PokemonText.SourceRect.Height + 30;
 
-                if (pokemonNames.ContainsKey(i))
+                pokemonNames[i].SetPosition(new(Items[i - 1].PokemonText.Position.X + Items[i - 1].PokemonText.SourceRect.Width + 84,
+                        Items[i - 1].PokemonText.Position.Y - 20));
+
+                if (pokemonOwned.ContainsKey(i))
                 {
-                    pokemonNames[i].SetPosition(new (Items[i-1].PokemonText.Position.X + Items[i-1].PokemonText.SourceRect.Width + 72,
-                        Items[i-1].PokemonText.Position.Y - 20));
+                    pokemonOwned[i][0].Position = new(Items[i - 1].PokemonText.Position.X + Items[i - 1].PokemonText.SourceRect.Width + 18,
+                        pokemonNames[i].Position.Y + 4);
+
+                    int dimensionX = 0;
+
+                    for (int j = 1; j < pokemonOwned[i].Count; j++)
+                    {
+                        pokemonOwned[i][j].Position = new(pokemonNames[i].Position.X + 256 + dimensionX, pokemonNames[i].Position.Y + 4);
+                        dimensionX += pokemonOwned[i][j].SourceRect.Width;
+                    }
                 }
             }
         }
@@ -61,6 +71,14 @@ namespace PokemonFireRedClone
             {
                 Items[i - 1].PokemonText.UnloadContent();
                 pokemonNames[i].UnloadContent();
+
+                if (pokemonOwned.ContainsKey(i))
+                {
+                    foreach (Image image in pokemonOwned[i])
+                    {
+                        image.UnloadContent();
+                    }
+                }
             }
         }
 
@@ -74,6 +92,14 @@ namespace PokemonFireRedClone
 
                 Items[delIndex - 1].PokemonText.UnloadContent();
                 pokemonNames[delIndex].UnloadContent();
+
+                if (pokemonOwned.ContainsKey(delIndex))
+                {
+                    foreach (Image image in pokemonOwned[delIndex])
+                    {
+                        image.UnloadContent();
+                    }
+                }
 
                 for (int i = 0; i < currentShownIndices.Count; i++)
                 {
@@ -93,11 +119,27 @@ namespace PokemonFireRedClone
                 {
                     Items[createIndex - 1].PokemonText.ReloadText();
                     pokemonNames[createIndex].ReloadText();
+
+                    if (pokemonOwned.ContainsKey(createIndex))
+                    {
+                        foreach (Image image in pokemonOwned[createIndex])
+                        {
+                            image.ReloadTexture();
+                        }
+                    }
                 }
                 else
                 {
                     Items[createIndex - 1].PokemonText.LoadContent();
                     pokemonNames[createIndex].LoadContent();
+
+                    if (pokemonOwned.ContainsKey(createIndex))
+                    {
+                        foreach (Image image in pokemonOwned[createIndex])
+                        {
+                            image.LoadContent();
+                        }
+                    }
                 }
 
                 AlignMenuItems();
@@ -135,6 +177,14 @@ namespace PokemonFireRedClone
             {
                 Items[i - 1].PokemonText.Draw(spriteBatch);
                 pokemonNames[i].Draw(spriteBatch);
+
+                if (pokemonOwned.ContainsKey(i))
+                {
+                    foreach (Image image in pokemonOwned[i])
+                    {
+                        image.Draw(spriteBatch);
+                    }
+                }
             }
         }
 
@@ -147,8 +197,24 @@ namespace PokemonFireRedClone
             {
                 Pokemon mon = PokemonManager.Instance.GetPokemon(s);
 
-                pokemon.Add(mon);
                 pokemonNames.Add(mon.Index, new PokemonText(mon.Name.ToUpper(), "Fonts/PokemonFireRedDialogue", new Color(0,0,0), new Color(224, 216, 192)));
+
+                if (Player.PlayerJsonObject.PokemonOwned.Contains(s))
+                {
+                    List<Image> types = new();
+
+                    Image pokeball = new()
+                    {
+                        Path = "Menus/PokedexMenu/OwnedPokeball"
+                    };
+
+                    types.Add(pokeball);
+
+                    foreach (Type type in mon.Types)
+                        types.Add(TypeProperties.ImageOf(type));
+
+                    pokemonOwned.Add(mon.Index, types);
+                }
 
                 if (mon.Index > maxIndexNo)
                 {
@@ -171,6 +237,14 @@ namespace PokemonFireRedClone
                     currentShownIndices.Add(i);
                     Items[i - 1].PokemonText.LoadContent();
                     pokemonNames[i].LoadContent();
+
+                    if (pokemonOwned.ContainsKey(i))
+                    {
+                        foreach (Image image in pokemonOwned[i])
+                        {
+                            image.LoadContent();
+                        }
+                    }
                 }
             }
         }
