@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using System;
 
 namespace PokemonFireRedClone
 {
@@ -13,8 +12,15 @@ namespace PokemonFireRedClone
         private readonly List<int> currentShownIndices;
         public Image Arrow;
 		public Image PokemonListBackground;
-        
 
+        public Image ArrowUp;
+        public Image ArrowDown;
+        private float arrowDownOriginalY;
+        private float arrowUpOriginalY;
+        private float arrowOffset;
+        private bool increase;
+
+        
         public PokemonListMenu()
         {
             pokemonNames = new();
@@ -54,12 +60,26 @@ namespace PokemonFireRedClone
         {
             PokemonListBackground.LoadContent();
             Arrow.LoadContent();
+
+
             InitializePokemonList();
+
+            if (Items.Count > 10)
+            {
+                ArrowDown.LoadContent();
+            }
 
             AlignMenuItems();
 
             Arrow.Position = new Vector2(Items[0].PokemonText.Position.X - Arrow.SourceRect.Width,
                                     Items[0].PokemonText.Position.Y - 8);
+            if (ArrowDown.IsLoaded)
+            {
+                arrowUpOriginalY = 44;
+                arrowDownOriginalY = ScreenManager.Instance.Dimensions.Y - ArrowDown.SourceRect.Height - 44;
+                ArrowDown.Position = new(ScreenManager.Instance.Dimensions.X - ArrowDown.SourceRect.Width - 124, arrowDownOriginalY);
+            }
+
         }
 
         public override void UnloadContent()
@@ -79,6 +99,16 @@ namespace PokemonFireRedClone
                         image.UnloadContent();
                     }
                 }
+            }
+
+            if (ArrowUp.IsLoaded)
+            {
+                ArrowUp.UnloadContent();
+            }
+
+            if (ArrowDown.IsLoaded)
+            {
+                ArrowDown.UnloadContent();
             }
         }
 
@@ -166,6 +196,17 @@ namespace PokemonFireRedClone
                 }
 
             }
+
+            if (currentShownIndices[ItemNumber] > 7)
+            {
+                if (!ArrowUp.IsLoaded)
+                {
+                   ArrowUp.LoadContent();
+                   ArrowUp.Position = new(ArrowDown.Position.X, arrowUpOriginalY);
+                }
+            }
+
+            AnimateArrows(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -186,12 +227,22 @@ namespace PokemonFireRedClone
                     }
                 }
             }
+
+            if (currentShownIndices[ItemNumber] > 7 || !currentShownIndices.Contains(1))
+            {
+                ArrowUp.Draw(spriteBatch);
+            }
+
+            if (currentShownIndices[ItemNumber] < Items.Count - 3 && !currentShownIndices.Contains(Items.Count))
+            { 
+                ArrowDown.Draw(spriteBatch);
+            }
         }
 
 
         private void InitializePokemonList()
         {
-            int maxIndexNo = 0;
+            int maxIndexNum = 0;
 
             foreach (string s in Player.PlayerJsonObject.PokemonSeen)
             {
@@ -216,13 +267,13 @@ namespace PokemonFireRedClone
                     pokemonOwned.Add(mon.Index, types);
                 }
 
-                if (mon.Index > maxIndexNo)
+                if (mon.Index > maxIndexNum)
                 {
-                    maxIndexNo = mon.Index;
+                    maxIndexNum = mon.Index;
                 }
             }
 
-            for (int i = 1; i <= maxIndexNo; i++)
+            for (int i = 1; i <= maxIndexNum; i++)
             {
                 Items.Add(new MenuItem("PokedexEntry", new PokemonText("No" + i.ToString().PadLeft(3, '0'), "Fonts/PokemonFireRedSmall",
                     new Color(0, 0, 0), new Color(224, 216, 192))));
@@ -246,6 +297,31 @@ namespace PokemonFireRedClone
                         }
                     }
                 }
+            }
+        }
+
+        private void AnimateArrows(GameTime gameTime)
+        {
+            float speed = (float)(48 * gameTime.ElapsedGameTime.TotalSeconds);
+
+            if (arrowOffset >= 12)
+                increase = false;
+            else if (arrowOffset <= 0)
+                increase = true;
+
+            if (increase)
+                arrowOffset += speed;
+            else
+                arrowOffset -= speed;
+
+            if (arrowOffset % 4 < 1)
+            {
+                if (ArrowUp.IsLoaded)
+                {
+                    ArrowUp.Position.Y = arrowUpOriginalY + (int)arrowOffset;
+
+                }
+                ArrowDown.Position.Y = arrowDownOriginalY - (int)arrowOffset;
             }
         }
     }

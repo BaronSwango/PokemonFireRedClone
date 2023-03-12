@@ -174,8 +174,7 @@ namespace PokemonFireRedClone
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (textBox != null)
-                textBox.Draw(spriteBatch);
+            textBox?.Draw(spriteBatch);
         }
 
     }

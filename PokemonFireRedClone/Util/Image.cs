@@ -101,6 +101,7 @@ namespace PokemonFireRedClone
             Alpha = 1.0f;
             SourceRect = Rectangle.Empty;
             EffectList = new Dictionary<string, ImageEffect>();
+            IsLoaded = false;
             Tint = Color.White;
             Angle = 0;
             FontColor = Color.Black;

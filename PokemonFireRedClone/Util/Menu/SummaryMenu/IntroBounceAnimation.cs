@@ -7,7 +7,6 @@ namespace PokemonFireRedClone
     public class IntroBounceAnimation : IAnimation
     {
         private double speedMultiplier;
-        //private double counter;
         private readonly Counter counter;
         private readonly float spriteHeight;
         private int bounces;
@@ -26,18 +25,13 @@ namespace PokemonFireRedClone
 
         public bool Animate(GameTime gameTime)
         {
-            //double bounceSpeed = speedMultiplier*gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            //counter += bounceSpeed;
             counter.Update(gameTime);
 
             if (bounceUp)
             {
-                //if (counter > 10)
                 if (counter.Finished)
                 {
                     offset -= 4;
-                    //counter = 0;
                     speedMultiplier *= 0.7;
                     if (offset == -24)
                         speedMultiplier *= 0.7;
@@ -46,11 +40,9 @@ namespace PokemonFireRedClone
             }
             else
             {
-                //if (counter > 10)
                 if (counter.Finished)
                 {
                     offset += 4;
-                    //counter = 0;
                     speedMultiplier /= 0.7;
                     if (offset == -20)
                     {

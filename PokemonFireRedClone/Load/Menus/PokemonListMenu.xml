@@ -9,4 +9,12 @@
         <Path>Menus/BlackBigMenuArrow</Path>
     </Arrow>
 
+    <ArrowUp>
+        <Path>Menus/PokedexMenu/ArrowUp</Path>
+    </ArrowUp>
+
+    <ArrowDown>
+        <Path>Menus/PokedexMenu/ArrowDown</Path>
+    </ArrowDown>
+
 </PokemonListMenu>
