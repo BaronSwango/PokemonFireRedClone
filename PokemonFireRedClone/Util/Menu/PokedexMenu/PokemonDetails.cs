@@ -5,6 +5,7 @@ namespace PokemonFireRedClone
 {
 	public class PokemonDetails
 	{
+		public Pokemon Pokemon;
 		public PokemonText Index;
 		public PokemonText Name;
 		public PokemonText Classification;
@@ -16,15 +17,17 @@ namespace PokemonFireRedClone
 
 		public PokemonDetails(Pokemon pokemon, bool owned)
 		{
-			Index = new("No" + pokemon.Index.ToString().PadLeft(3, '0'), "Fonts/PokemonFireRedSmall",
+			Pokemon = pokemon;
+
+			Index = new(pokemon.Index.ToString().PadLeft(3, '0'), "Fonts/PokemonFireRedSmall",
 					new Color(0, 0, 0), new Color(224, 216, 192));
 
-            Name = new(pokemon.Name.ToUpper(), "Fonts/PokemonFireRedSmall",
+            Name = new(pokemon.Name.ToUpper(), "Fonts/PokemonFireRedDialogue",
                     new Color(0, 0, 0), new Color(224, 216, 192));
 
 			string classification = owned ? pokemon.Classification.ToUpper() : "???????????";
 
-            Classification = new(classification + "   POKéMON", "Fonts/PokemonFireRedSmall",
+            Classification = new(classification + "  POKeMON", "Fonts/PokemonFireRedSmall",
                     new Color(0, 0, 0), new Color(224, 216, 192));
 
             string height = owned ? pokemon.Height : "??`??\"";
@@ -34,7 +37,7 @@ namespace PokemonFireRedClone
 
 			string weight = owned ? pokemon.Weight : "????.?";
 
-            Weight = new(weight + "   lbs.", "Fonts/PokemonFireRedSmall",
+            Weight = new(weight + "  lbs.", "Fonts/PokemonFireRedSmall",
                     new Color(0, 0, 0), new Color(224, 216, 192));
 
 			if (owned)

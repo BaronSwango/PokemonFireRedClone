@@ -17,9 +17,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SEED POKéMON</Classification>
-        <Height>2'04"</Height>
-        <Weight>15.2 lbs</Weight>
+        <Classification>SEED</Classification>
+        <Height>2`04"</Height>
+        <Weight>15.2</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>64</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -30,7 +30,7 @@
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Overgrow</Ability>
-        <Description>There is a plant seed on its back right from the day this POKéMON is born. The seed slowly grows larger.</Description>
+        <Description>There is a plant seed on its back right from the day this is born. The seed slowly grows larger.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Ivysaur</Name>
@@ -49,9 +49,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SEED POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>28.7 lbs</Weight>
+        <Classification>SEED</Classification>
+        <Height>3`03"</Height>
+        <Weight>28.7</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>141</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -81,9 +81,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SEED POKéMON</Classification>
-        <Height>6'07"</Height>
-        <Weight>220.5 lbs</Weight>
+        <Classification>SEED</Classification>
+        <Height>6`07"</Height>
+        <Weight>220.5</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>208</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -112,9 +112,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>LIZARD POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>18.7 lbs</Weight>
+        <Classification>LIZARD</Classification>
+        <Height>2`00"</Height>
+        <Weight>18.7</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>65</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -125,7 +125,7 @@
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Blaze</Ability>
-        <Description>From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.</Description>
+        <Description>From   the   time   it   is   born,   a   flame   burns\nat   the   tip   of   its   tail.   Its   life   would   end\nif   the   flame   were   to   go   out.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Charmeleon</Name>
@@ -143,9 +143,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLAME POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>41.9 lbs</Weight>
+        <Classification>FLAME</Classification>
+        <Height>3`07"</Height>
+        <Weight>41.9</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>142</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -175,9 +175,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLAME POKéMON</Classification>
-        <Height>5'07"</Height>
-        <Weight>199.5 lbs</Weight>
+        <Classification>FLAME</Classification>
+        <Height>5`07"</Height>
+        <Weight>199.5</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>209</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -188,7 +188,7 @@
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Blaze</Ability>
-        <Description>Its wings can carry this POKéMON close to an altitude of 4,600 feet. It blows out fire at very high temperatures.</Description>
+        <Description>Its wings can carry this POKeMON close to an altitude of 4,600 feet. It blows out fire at very high temperatures.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Squirtle</Name>
@@ -206,9 +206,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TINY TURTLE POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>19.8 lbs</Weight>
+        <Classification>TINY  TURTLE</Classification>
+        <Height>1`08"</Height>
+        <Weight>19.8</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>66</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -219,7 +219,8 @@
         <BaseSpecialDefense>64</BaseSpecialDefense>
         <BaseSpeed>43</BaseSpeed>
         <Ability>Torrent</Ability>
-        <Description>When it retracts its long neck into its shell, it squirts out water with vigorous force.</Description>
+        <Description>When   it   retracts   its   long   neck   into   its   shell,
+it   squirts   out   water   with   vigorous   force.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Wartortle</Name>
@@ -237,9 +238,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TURTLE POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>49.6 lbs</Weight>
+        <Classification>TURTLE</Classification>
+        <Height>3`03"</Height>
+        <Weight>49.6</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>143</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -250,7 +251,7 @@
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>58</BaseSpeed>
         <Ability>Torrent</Ability>
-        <Description>This POKéMON is very popular as a pet. Its fur-covered tail is a symbol of its longevity.</Description>
+        <Description>This is very popular as a pet. Its fur-covered tail is a symbol of its longevity.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Blastoise</Name>
@@ -268,9 +269,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SHELLFISH POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>188.5 lbs</Weight>
+        <Classification>SHELLFISH</Classification>
+        <Height>5`03"</Height>
+        <Weight>188.5</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>210</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -281,7 +282,7 @@
         <BaseSpecialDefense>105</BaseSpecialDefense>
         <BaseSpeed>78</BaseSpeed>
         <Ability>Torrent</Ability>
-        <Description>It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.</Description>
+        <Description>It   crushes   its   foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Caterpie</Name>
@@ -299,9 +300,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>WORM POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>6.4 lbs</Weight>
+        <Classification>WORM</Classification>
+        <Height>1`00"</Height>
+        <Weight>6.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>53</EXPYield>
         <PercentMale>50</PercentMale>
@@ -330,9 +331,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>COCOON POKéMON</Classification>
-        <Height>2'04"</Height>
-        <Weight>21.8 lbs</Weight>
+        <Classification>COCOON</Classification>
+        <Height>2`04"</Height>
+        <Weight>21.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>72</EXPYield>
         <PercentMale>50</PercentMale>
@@ -362,9 +363,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BUTTERFLY POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>70.5 lbs</Weight>
+        <Classification>BUTTERFLY</Classification>
+        <Height>3`07"</Height>
+        <Weight>70.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>160</EXPYield>
         <PercentMale>50</PercentMale>
@@ -375,7 +376,7 @@
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Compound Eyes</Ability>
-        <Description>The wings are protected by rain-repellent dust. As a result, this POKéMON can fly about even in rain.</Description>
+        <Description>The wings are protected by rain-repellent dust. As a result, this can fly about even in rain.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Weedle</Name>
@@ -395,9 +396,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>HAIRY BUG POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>7.1 lbs</Weight>
+        <Classification>HAIRY  BUG</Classification>
+        <Height>1`00"</Height>
+        <Weight>7.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>52</EXPYield>
         <PercentMale>50</PercentMale>
@@ -427,9 +428,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>COCOON POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>22.0 lbs</Weight>
+        <Classification>COCOON</Classification>
+        <Height>2`00"</Height>
+        <Weight>22.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>71</EXPYield>
         <PercentMale>50</PercentMale>
@@ -440,7 +441,7 @@
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Shed Skin</Ability>
-        <Description>This POKéMON is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
+        <Description>This is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Beedrill</Name>
@@ -459,9 +460,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON BEE POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>65.0 lbs</Weight>
+        <Classification>POISON  BEE</Classification>
+        <Height>3`03"</Height>
+        <Weight>65.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>159</EXPYield>
         <PercentMale>50</PercentMale>
@@ -472,7 +473,7 @@
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>75</BaseSpeed>
         <Ability>Swarm</Ability>
-        <Description>This POKéMON is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
+        <Description>This is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Pidgey</Name>
@@ -491,9 +492,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TINY BIRD POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>4.0 lbs</Weight>
+        <Classification>TINY  BIRD</Classification>
+        <Height>1`00"</Height>
+        <Weight>4.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>55</EXPYield>
         <PercentMale>50</PercentMale>
@@ -523,9 +524,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BIRD POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>BIRD</Classification>
+        <Height>3`07"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>113</EXPYield>
         <PercentMale>50</PercentMale>
@@ -555,9 +556,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BIRD POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>87.1 lbs</Weight>
+        <Classification>BIRD</Classification>
+        <Height>4`11"</Height>
+        <Weight>87.1</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>172</EXPYield>
         <PercentMale>50</PercentMale>
@@ -586,9 +587,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>7.7 lbs</Weight>
+        <Classification>MOUSE</Classification>
+        <Height>1`00"</Height>
+        <Weight>7.7</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>57</EXPYield>
         <PercentMale>50</PercentMale>
@@ -617,9 +618,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKéMON</Classification>
-        <Height>2'04"</Height>
-        <Weight>40.8 lbs</Weight>
+        <Classification>MOUSE</Classification>
+        <Height>2`04"</Height>
+        <Weight>40.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>116</EXPYield>
         <PercentMale>50</PercentMale>
@@ -649,9 +650,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TINY BIRD POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>4.4 lbs</Weight>
+        <Classification>TINY  BIRD</Classification>
+        <Height>1`00"</Height>
+        <Weight>4.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>58</EXPYield>
         <PercentMale>50</PercentMale>
@@ -681,9 +682,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BEAK POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>83.8 lbs</Weight>
+        <Classification>BEAK</Classification>
+        <Height>3`11"</Height>
+        <Weight>83.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>162</EXPYield>
         <PercentMale>50</PercentMale>
@@ -712,9 +713,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SNAKE POKéMON</Classification>
-        <Height>6'07"</Height>
-        <Weight>15.2 lbs</Weight>
+        <Classification>SNAKE</Classification>
+        <Height>6`07"</Height>
+        <Weight>15.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>62</EXPYield>
         <PercentMale>50</PercentMale>
@@ -743,9 +744,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SNAKE POKéMON</Classification>
-        <Height>11'06"</Height>
-        <Weight>143.3 lbs</Weight>
+        <Classification>SNAKE</Classification>
+        <Height>11`06"</Height>
+        <Weight>143.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>147</EXPYield>
         <PercentMale>50</PercentMale>
@@ -774,9 +775,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>13.2 lbs</Weight>
+        <Classification>MOUSE</Classification>
+        <Height>1`04"</Height>
+        <Weight>13.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>82</EXPYield>
         <PercentMale>50</PercentMale>
@@ -805,9 +806,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>MOUSE</Classification>
+        <Height>2`07"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>122</EXPYield>
         <PercentMale>50</PercentMale>
@@ -836,9 +837,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>26.5 lbs</Weight>
+        <Classification>MOUSE</Classification>
+        <Height>2`00"</Height>
+        <Weight>26.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>93</EXPYield>
         <PercentMale>50</PercentMale>
@@ -867,9 +868,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOUSE POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>65.0 lbs</Weight>
+        <Classification>MOUSE</Classification>
+        <Height>3`03"</Height>
+        <Weight>65.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>163</EXPYield>
         <PercentMale>50</PercentMale>
@@ -898,9 +899,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>15.4 lbs</Weight>
+        <Classification>POISON  PIN</Classification>
+        <Height>1`04"</Height>
+        <Weight>15.4</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>59</EXPYield>
         <PercentMale>0</PercentMale>
@@ -929,9 +930,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>44.1 lbs</Weight>
+        <Classification>POISON  PIN</Classification>
+        <Height>2`07"</Height>
+        <Weight>44.1</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>117</EXPYield>
         <PercentMale>0</PercentMale>
@@ -961,9 +962,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRILL POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>132.3 lbs</Weight>
+        <Classification>DRILL</Classification>
+        <Height>4`03"</Height>
+        <Weight>132.3</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>194</EXPYield>
         <PercentMale>0</PercentMale>
@@ -992,9 +993,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>19.8 lbs</Weight>
+        <Classification>POISON  PIN</Classification>
+        <Height>1`08"</Height>
+        <Weight>19.8</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>60</EXPYield>
         <PercentMale>100</PercentMale>
@@ -1023,9 +1024,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON PIN POKéMON</Classification>
-        <Height>2'11"</Height>
-        <Weight>43.0 lbs</Weight>
+        <Classification>POISON  PIN</Classification>
+        <Height>2`11"</Height>
+        <Weight>43.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>118</EXPYield>
         <PercentMale>100</PercentMale>
@@ -1055,9 +1056,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRILL POKéMON</Classification>
-        <Height>4'07"</Height>
-        <Weight>136.7 lbs</Weight>
+        <Classification>DRILL</Classification>
+        <Height>4`07"</Height>
+        <Weight>136.7</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>195</EXPYield>
         <PercentMale>100</PercentMale>
@@ -1086,9 +1087,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FAIRY POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>16.5 lbs</Weight>
+        <Classification>FAIRY</Classification>
+        <Height>2`00"</Height>
+        <Weight>16.5</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>68</EXPYield>
         <PercentMale>25</PercentMale>
@@ -1117,9 +1118,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FAIRY POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>88.2 lbs</Weight>
+        <Classification>FAIRY</Classification>
+        <Height>4`03"</Height>
+        <Weight>88.2</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>129</EXPYield>
         <PercentMale>25</PercentMale>
@@ -1148,9 +1149,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FOX POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>21.8 lbs</Weight>
+        <Classification>FOX</Classification>
+        <Height>2`00"</Height>
+        <Weight>21.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>63</EXPYield>
         <PercentMale>25</PercentMale>
@@ -1179,9 +1180,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FOX POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>43.9 lbs</Weight>
+        <Classification>FOX</Classification>
+        <Height>3`07"</Height>
+        <Weight>43.9</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>178</EXPYield>
         <PercentMale>25</PercentMale>
@@ -1210,9 +1211,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BALLOON POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>12.1 lbs</Weight>
+        <Classification>BALLOON</Classification>
+        <Height>1`08"</Height>
+        <Weight>12.1</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>76</EXPYield>
         <PercentMale>25</PercentMale>
@@ -1241,9 +1242,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BALLOON POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>26.5 lbs</Weight>
+        <Classification>BALLOON</Classification>
+        <Height>3`03"</Height>
+        <Weight>26.5</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>109</EXPYield>
         <PercentMale>25</PercentMale>
@@ -1273,9 +1274,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BAT POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>16.5 lbs</Weight>
+        <Classification>BAT</Classification>
+        <Height>2`07"</Height>
+        <Weight>16.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>54</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1305,9 +1306,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BAT POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>121.3 lbs</Weight>
+        <Classification>BAT</Classification>
+        <Height>5`03"</Height>
+        <Weight>121.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>171</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1337,9 +1338,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>WEED POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>11.9 lbs</Weight>
+        <Classification>WEED</Classification>
+        <Height>1`08"</Height>
+        <Weight>11.9</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>78</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1369,9 +1370,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>WEED POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>19.0 lbs</Weight>
+        <Classification>WEED</Classification>
+        <Height>2`07"</Height>
+        <Weight>19.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>132</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1401,9 +1402,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLOWER POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>41.0 lbs</Weight>
+        <Classification>FLOWER</Classification>
+        <Height>3`11"</Height>
+        <Weight>41.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>184</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1433,9 +1434,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MUSHROOM POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>11.9 lbs</Weight>
+        <Classification>MUSHROOM</Classification>
+        <Height>1`00"</Height>
+        <Weight>11.9</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>70</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1465,9 +1466,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MUSHROOM POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>65.0 lbs</Weight>
+        <Classification>MUSHROOM</Classification>
+        <Height>3`03"</Height>
+        <Weight>65.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>128</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1497,9 +1498,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>INSECT POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>INSECT</Classification>
+        <Height>3`03"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>75</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1529,9 +1530,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON MOTH POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>27.6 lbs</Weight>
+        <Classification>POISON  MOTH</Classification>
+        <Height>4`11"</Height>
+        <Weight>27.6</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>138</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1560,9 +1561,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOLE POKéMON</Classification>
-        <Height>0'08"</Height>
-        <Weight>1.8 lbs</Weight>
+        <Classification>MOLE</Classification>
+        <Height>0`08"</Height>
+        <Weight>1.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>81</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1591,9 +1592,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MOLE POKéMON</Classification>
-        <Height>2'04"</Height>
-        <Weight>73.4 lbs</Weight>
+        <Classification>MOLE</Classification>
+        <Height>2`04"</Height>
+        <Weight>73.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>153</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1622,9 +1623,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SCRATCH CAT POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>9.3 lbs</Weight>
+        <Classification>SCRATCH  CAT</Classification>
+        <Height>1`04"</Height>
+        <Weight>9.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>69</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1653,9 +1654,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>CLASSY CAT POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>70.5 lbs</Weight>
+        <Classification>CLASSY  CAT</Classification>
+        <Height>3`03"</Height>
+        <Weight>70.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>148</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1684,9 +1685,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DUCK POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>43.2 lbs</Weight>
+        <Classification>DUCK</Classification>
+        <Height>2`07"</Height>
+        <Weight>43.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>80</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1715,9 +1716,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DUCK POKéMON</Classification>
-        <Height>5'07"</Height>
-        <Weight>168.9 lbs</Weight>
+        <Classification>DUCK</Classification>
+        <Height>5`07"</Height>
+        <Weight>168.9</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>174</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1746,9 +1747,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PIG MONKEY POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>61.7 lbs</Weight>
+        <Classification>PIG  MONKEY</Classification>
+        <Height>1`08"</Height>
+        <Weight>61.7</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>74</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1777,9 +1778,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PIG MONKEY POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>70.5 lbs</Weight>
+        <Classification>PIG  MONKEY</Classification>
+        <Height>3`03"</Height>
+        <Weight>70.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>149</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1808,9 +1809,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PUPPY POKéMON</Classification>
-        <Height>2'04"</Height>
-        <Weight>41.9 lbs</Weight>
+        <Classification>PUPPY</Classification>
+        <Height>2`04"</Height>
+        <Weight>41.9</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>91</EXPYield>
         <PercentMale>75</PercentMale>
@@ -1839,9 +1840,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>LEGENDARY POKéMON</Classification>
-        <Height>6'03"</Height>
-        <Weight>341.7 lbs</Weight>
+        <Classification>LEGENDARY</Classification>
+        <Height>6`03"</Height>
+        <Weight>341.7</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>213</EXPYield>
         <PercentMale>75</PercentMale>
@@ -1852,7 +1853,7 @@
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>95</BaseSpeed>
         <Ability>Intimidate:Flash Fire</Ability>
-        <Description>A POKéMON that is described in Chinese legends. It is said to race at an unbelievable speed.</Description>
+        <Description>A that is described in Chinese legends. It is said to race at an unbelievable speed.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Poliwag</Name>
@@ -1870,9 +1871,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TADPOLE POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>27.3 lbs</Weight>
+        <Classification>TADPOLE</Classification>
+        <Height>2`00"</Height>
+        <Weight>27.3</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>77</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1901,9 +1902,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TADPOLE POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>44.1 lbs</Weight>
+        <Classification>TADPOLE</Classification>
+        <Height>3`03"</Height>
+        <Weight>44.1</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>131</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1933,9 +1934,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TADPOLE POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>119.0 lbs</Weight>
+        <Classification>TADPOLE</Classification>
+        <Height>4`03"</Height>
+        <Weight>119.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>185</EXPYield>
         <PercentMale>50</PercentMale>
@@ -1964,9 +1965,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PSI POKéMON</Classification>
-        <Height>2'11"</Height>
-        <Weight>43.0 lbs</Weight>
+        <Classification>PSI</Classification>
+        <Height>2`11"</Height>
+        <Weight>43.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>73</EXPYield>
         <PercentMale>75</PercentMale>
@@ -1995,9 +1996,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PSI POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>124.6 lbs</Weight>
+        <Classification>PSI</Classification>
+        <Height>4`03"</Height>
+        <Weight>124.6</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>145</EXPYield>
         <PercentMale>75</PercentMale>
@@ -2026,9 +2027,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PSI POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>105.8 lbs</Weight>
+        <Classification>PSI</Classification>
+        <Height>4`11"</Height>
+        <Weight>105.8</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>186</EXPYield>
         <PercentMale>75</PercentMale>
@@ -2057,9 +2058,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SUPERPOWER POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>43.0 lbs</Weight>
+        <Classification>SUPERPOWER</Classification>
+        <Height>2`07"</Height>
+        <Weight>43.0</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>88</EXPYield>
         <PercentMale>75</PercentMale>
@@ -2088,9 +2089,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SUPERPOWER POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>155.4 lbs</Weight>
+        <Classification>SUPERPOWER</Classification>
+        <Height>4`11"</Height>
+        <Weight>155.4</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>146</EXPYield>
         <PercentMale>75</PercentMale>
@@ -2119,9 +2120,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SUPERPOWER POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>286.6 lbs</Weight>
+        <Classification>SUPERPOWER</Classification>
+        <Height>5`03"</Height>
+        <Weight>286.6</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>193</EXPYield>
         <PercentMale>75</PercentMale>
@@ -2151,9 +2152,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLOWER POKéMON</Classification>
-        <Height>2'04"</Height>
-        <Weight>8.8 lbs</Weight>
+        <Classification>FLOWER</Classification>
+        <Height>2`04"</Height>
+        <Weight>8.8</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>84</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2183,9 +2184,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLYCATCHER POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>14.1 lbs</Weight>
+        <Classification>FLYCATCHER</Classification>
+        <Height>3`03"</Height>
+        <Weight>14.1</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>151</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2215,9 +2216,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLYCATCHER POKéMON</Classification>
-        <Height>5'07"</Height>
-        <Weight>34.2 lbs</Weight>
+        <Classification>FLYCATCHER</Classification>
+        <Height>5`07"</Height>
+        <Weight>34.2</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>191</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2247,9 +2248,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>JELLYFISH POKéMON</Classification>
-        <Height>2'11"</Height>
-        <Weight>100.3 lbs</Weight>
+        <Classification>JELLYFISH</Classification>
+        <Height>2`11"</Height>
+        <Weight>100.3</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>191</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2279,9 +2280,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>JELLYFISH POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>121.3 lbs</Weight>
+        <Classification>JELLYFISH</Classification>
+        <Height>5`03"</Height>
+        <Weight>121.3</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>205</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2311,9 +2312,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>ROCK POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>44.1 lbs</Weight>
+        <Classification>ROCK</Classification>
+        <Height>1`04"</Height>
+        <Weight>44.1</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>86</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2343,9 +2344,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>ROCK POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>231.5 lbs</Weight>
+        <Classification>ROCK</Classification>
+        <Height>3`03"</Height>
+        <Weight>231.5</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>134</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2375,9 +2376,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MEGATON POKéMON</Classification>
-        <Height>4'07"</Height>
-        <Weight>661.4 lbs</Weight>
+        <Classification>MEGATON</Classification>
+        <Height>4`07"</Height>
+        <Weight>661.4</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>177</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2406,9 +2407,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FIRE HORSE POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>FIRE  HORSE</Classification>
+        <Height>3`03"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>152</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2437,9 +2438,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FIRE HORSE POKéMON</Classification>
-        <Height>5'07"</Height>
-        <Weight>209.4 lbs</Weight>
+        <Classification>FIRE  HORSE</Classification>
+        <Height>5`07"</Height>
+        <Weight>209.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>192</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2469,9 +2470,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DOPEY POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>79.4 lbs</Weight>
+        <Classification>DOPEY</Classification>
+        <Height>3`11"</Height>
+        <Weight>79.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>99</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2501,9 +2502,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>HERMIT CRAB POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>173.1 lbs</Weight>
+        <Classification>HERMIT  CRAB</Classification>
+        <Height>5`03"</Height>
+        <Weight>173.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>164</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2533,9 +2534,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MAGNET POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>13.2 lbs</Weight>
+        <Classification>MAGNET</Classification>
+        <Height>1`00"</Height>
+        <Weight>13.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>89</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -2565,9 +2566,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MAGNET POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>132.3 lbs</Weight>
+        <Classification>MAGNET</Classification>
+        <Height>3`03"</Height>
+        <Weight>132.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>161</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -2597,9 +2598,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>WILD DUCK POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>33.1 lbs</Weight>
+        <Classification>WILD  DUCK</Classification>
+        <Height>2`07"</Height>
+        <Weight>33.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>94</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2629,9 +2630,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TWIN BIRD POKéMON</Classification>
-        <Height>4'07"</Height>
-        <Weight>86.4 lbs</Weight>
+        <Classification>TWIN  BIRD</Classification>
+        <Height>4`07"</Height>
+        <Weight>86.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>96</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2642,7 +2643,7 @@
         <BaseSpecialDefense>35</BaseSpecialDefense>
         <BaseSpeed>75</BaseSpeed>
         <Ability>Run Away:Early Bird</Ability>
-        <Description>A two-headed POKéMON that was discovered as a sudden mutation. It runs at a pace of over 60 miles per hour.</Description>
+        <Description>A two-headed that was discovered as a sudden mutation. It runs at a pace of over 60 miles per hour.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dodrio</Name>
@@ -2661,9 +2662,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TRIPLE BIRD POKéMON</Classification>
-        <Height>5'11"</Height>
-        <Weight>187.8 lbs</Weight>
+        <Classification>TRIPLE  BIRD</Classification>
+        <Height>5`11"</Height>
+        <Weight>187.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>158</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2692,9 +2693,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SEA LION POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>198.4 lbs</Weight>
+        <Classification>SEA  LION</Classification>
+        <Height>3`07"</Height>
+        <Weight>198.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>100</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2724,9 +2725,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SEA LION POKéMON</Classification>
-        <Height>5'07"</Height>
-        <Weight>264.6 lbs</Weight>
+        <Classification>SEA  LION</Classification>
+        <Height>5`07"</Height>
+        <Weight>264.6</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>176</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2755,9 +2756,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SLUDGE POKéMON</Classification>
-        <Height>2'11"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>SLUDGE</Classification>
+        <Height>2`11"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>90</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2786,9 +2787,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SLUDGE POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>SLUDGE</Classification>
+        <Height>3`11"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>157</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2817,9 +2818,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BIVALVE POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>8.8 lbs</Weight>
+        <Classification>BIVALVE</Classification>
+        <Height>1`00"</Height>
+        <Weight>8.8</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>97</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2849,9 +2850,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BIVALVE POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>292.1 lbs</Weight>
+        <Classification>BIVALVE</Classification>
+        <Height>4`11"</Height>
+        <Weight>292.1</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>203</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2881,9 +2882,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>GAS POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>0.2 lbs</Weight>
+        <Classification>GAS</Classification>
+        <Height>4`03"</Height>
+        <Weight>0.2</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>95</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2913,9 +2914,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>GAS POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>0.2 lbs</Weight>
+        <Classification>GAS</Classification>
+        <Height>5`03"</Height>
+        <Weight>0.2</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>126</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2945,9 +2946,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SHADOW POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>89.3 lbs</Weight>
+        <Classification>SHADOW</Classification>
+        <Height>4`11"</Height>
+        <Weight>89.3</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>190</EXPYield>
         <PercentMale>50</PercentMale>
@@ -2977,9 +2978,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>ROCK SNAKE POKéMON</Classification>
-        <Height>28'10"</Height>
-        <Weight>463.0 lbs</Weight>
+        <Classification>ROCK  SNAKE</Classification>
+        <Height>28`10"</Height>
+        <Weight>463.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>108</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3008,9 +3009,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>HYPNOSIS POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>71.4 lbs</Weight>
+        <Classification>HYPNOSIS</Classification>
+        <Height>3`03"</Height>
+        <Weight>71.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>102</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3039,9 +3040,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>HYPNOSIS POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>166.7 lbs</Weight>
+        <Classification>HYPNOSIS</Classification>
+        <Height>5`03"</Height>
+        <Weight>166.7</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>165</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3070,9 +3071,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>RIVER CRAB POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>14.3 lbs</Weight>
+        <Classification>RIVER  CRAB</Classification>
+        <Height>1`04"</Height>
+        <Weight>14.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>115</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3101,9 +3102,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PINCER POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>132.3 lbs</Weight>
+        <Classification>PINCER</Classification>
+        <Height>4`03"</Height>
+        <Weight>132.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>206</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3132,9 +3133,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BALL POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>22.9 lbs</Weight>
+        <Classification>BALL</Classification>
+        <Height>1`08"</Height>
+        <Weight>22.9</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>103</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -3163,9 +3164,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BALL POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>146.8 lbs</Weight>
+        <Classification>BALL</Classification>
+        <Height>3`11"</Height>
+        <Weight>146.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>150</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -3195,9 +3196,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>EGG POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>5.5 lbs</Weight>
+        <Classification>EGG</Classification>
+        <Height>1`04"</Height>
+        <Weight>5.5</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>98</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3227,9 +3228,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>COCONUT POKéMON</Classification>
-        <Height>6'07"</Height>
-        <Weight>264.6 lbs</Weight>
+        <Classification>COCONUT</Classification>
+        <Height>6`07"</Height>
+        <Weight>264.6</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>212</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3258,9 +3259,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>LONELY POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>14.3 lbs</Weight>
+        <Classification>LONELY</Classification>
+        <Height>1`04"</Height>
+        <Weight>14.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>87</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3289,9 +3290,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BONE KEEPER POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>99.2 lbs</Weight>
+        <Classification>BONE  KEEPER</Classification>
+        <Height>3`03"</Height>
+        <Weight>99.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>124</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3320,9 +3321,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>KICKING POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>109.8 lbs</Weight>
+        <Classification>KICKING</Classification>
+        <Height>4`11"</Height>
+        <Weight>109.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>139</EXPYield>
         <PercentMale>100</PercentMale>
@@ -3351,9 +3352,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PUNCHING POKéMON</Classification>
-        <Height>4'07"</Height>
-        <Weight>110.7 lbs</Weight>
+        <Classification>PUNCHING</Classification>
+        <Height>4`07"</Height>
+        <Weight>110.7</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>140</EXPYield>
         <PercentMale>100</PercentMale>
@@ -3364,7 +3365,7 @@
         <BaseSpecialDefense>110</BaseSpecialDefense>
         <BaseSpeed>76</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>The spirit of a pro boxer has infused this POKéMON. It throws punches that are faster than a bullet train.</Description>
+        <Description>The spirit of a pro boxer has infused this. It throws punches that are faster than a bullet train.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Lickitung</Name>
@@ -3382,9 +3383,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>LICKING POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>144.4 lbs</Weight>
+        <Classification>LICKING</Classification>
+        <Height>3`11"</Height>
+        <Weight>144.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>127</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3413,9 +3414,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON GAS POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>2.2 lbs</Weight>
+        <Classification>POISON  GAS</Classification>
+        <Height>2`00"</Height>
+        <Weight>2.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>114</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3444,9 +3445,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>POISON GAS POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>20.9 lbs</Weight>
+        <Classification>POISON  GAS</Classification>
+        <Height>3`11"</Height>
+        <Weight>20.9</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>173</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3476,9 +3477,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SPIKES POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>253.5 lbs</Weight>
+        <Classification>SPIKES</Classification>
+        <Height>3`03"</Height>
+        <Weight>253.5</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>135</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3489,7 +3490,7 @@
         <BaseSpecialDefense>30</BaseSpecialDefense>
         <BaseSpeed>25</BaseSpeed>
         <Ability>Lightning Rod:Rock Head</Ability>
-        <Description>Strong, but not too bright, this POKéMON can shatter even a skyscraper with its charging TACKLES.</Description>
+        <Description>Strong, but not too bright, this can shatter even a skyscraper with its charging TACKLES.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Rhydon</Name>
@@ -3508,9 +3509,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRILL POKéMON</Classification>
-        <Height>6'03"</Height>
-        <Weight>264.6 lbs</Weight>
+        <Classification>DRILL</Classification>
+        <Height>6`03"</Height>
+        <Weight>264.6</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>204</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3539,9 +3540,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>EGG POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>76.3 lbs</Weight>
+        <Classification>EGG</Classification>
+        <Height>3`07"</Height>
+        <Weight>76.3</Weight>
         <EXPGroup>F</EXPGroup>
         <EXPYield>255</EXPYield>
         <PercentMale>0</PercentMale>
@@ -3570,9 +3571,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>VINE POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>77.2 lbs</Weight>
+        <Classification>VINE</Classification>
+        <Height>3`03"</Height>
+        <Weight>77.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>166</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3583,7 +3584,7 @@
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Blue plant vines cloak the POKéMON’s identity in a tangled mass. It entangles anything that gets close.</Description>
+        <Description>Blue plant vines cloak the’s identity in a tangled mass. It entangles anything that gets close.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kangaskhan</Name>
@@ -3601,9 +3602,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>PARENT POKéMON</Classification>
-        <Height>7'03"</Height>
-        <Weight>176.4 lbs</Weight>
+        <Classification>PARENT</Classification>
+        <Height>7`03"</Height>
+        <Weight>176.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>175</EXPYield>
         <PercentMale>0</PercentMale>
@@ -3632,9 +3633,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRAGON POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>17.6 lbs</Weight>
+        <Classification>DRAGON</Classification>
+        <Height>1`04"</Height>
+        <Weight>17.6</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>83</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3663,9 +3664,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRAGON POKéMON</Classification>
-        <Height>3'11"</Height>
-        <Weight>55.1 lbs</Weight>
+        <Classification>DRAGON</Classification>
+        <Height>3`11"</Height>
+        <Weight>55.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>155</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3694,9 +3695,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>GOLDFISH POKéMON</Classification>
-        <Height>2'00"</Height>
-        <Weight>33.1 lbs</Weight>
+        <Classification>GOLDFISH</Classification>
+        <Height>2`00"</Height>
+        <Weight>33.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>111</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3725,9 +3726,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>GOLDFISH POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>86.0 lbs</Weight>
+        <Classification>GOLDFISH</Classification>
+        <Height>4`03"</Height>
+        <Weight>86.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>170</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3756,9 +3757,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>STAR SHAPE POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>76.1 lbs</Weight>
+        <Classification>STAR  SHAPE</Classification>
+        <Height>2`07"</Height>
+        <Weight>76.1</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>106</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -3788,9 +3789,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MYSTERIOUS POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>176.4 lbs</Weight>
+        <Classification>MYSTERIOUS</Classification>
+        <Height>3`07"</Height>
+        <Weight>176.4</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>207</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -3801,7 +3802,7 @@
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>115</BaseSpeed>
         <Ability>Illuminate:Natural Cure</Ability>
-        <Description>This POKéMON has a geometric body. Because of its body, the locals suspect that it is an alien creature.</Description>
+        <Description>This has a geometric body. Because of its body, the locals suspect that it is an alien creature.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Mr.  Mime</Name>
@@ -3819,9 +3820,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BARRIER POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>120.2 lbs</Weight>
+        <Classification>BARRIER</Classification>
+        <Height>4`03"</Height>
+        <Weight>120.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>136</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3851,9 +3852,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>MANTIS POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>123.5 lbs</Weight>
+        <Classification>MANTIS</Classification>
+        <Height>4`11"</Height>
+        <Weight>123.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>187</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3883,9 +3884,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>HUMAN SHAPE POKéMON</Classification>
-        <Height>4'07"</Height>
-        <Weight>89.5 lbs</Weight>
+        <Classification>HUMAN  SHAPE</Classification>
+        <Height>4`07"</Height>
+        <Weight>89.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>137</EXPYield>
         <PercentMale>0</PercentMale>
@@ -3914,9 +3915,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>ELECTRIC POKéMON</Classification>
-        <Height>3'07"</Height>
-        <Weight>66.1 lbs</Weight>
+        <Classification>ELECTRIC</Classification>
+        <Height>3`07"</Height>
+        <Weight>66.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>156</EXPYield>
         <PercentMale>75</PercentMale>
@@ -3945,9 +3946,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SPITFIRE POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>98.1 lbs</Weight>
+        <Classification>SPITFIRE</Classification>
+        <Height>4`03"</Height>
+        <Weight>98.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>167</EXPYield>
         <PercentMale>75</PercentMale>
@@ -3976,9 +3977,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>STAG BEETLE POKéMON</Classification>
-        <Height>4'11"</Height>
-        <Weight>121.3 lbs</Weight>
+        <Classification>STAG  BEETLE</Classification>
+        <Height>4`11"</Height>
+        <Weight>121.3</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>200</EXPYield>
         <PercentMale>50</PercentMale>
@@ -3989,7 +3990,7 @@
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Hyper Cutter</Ability>
-        <Description>Its two long pincer horns are powerful. Once they grip an enemy, they won’t release until the foe is torn.</Description>
+        <Description>Its two long pincer horns are powerful. Once they grip an enemy, they won`t release until the foe is torn.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Tauros</Name>
@@ -4007,9 +4008,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>WILD BULL POKéMON</Classification>
-        <Height>4'07"</Height>
-        <Weight>194.9 lbs</Weight>
+        <Classification>WILD  BULL</Classification>
+        <Height>4`07"</Height>
+        <Weight>194.9</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>211</EXPYield>
         <PercentMale>100</PercentMale>
@@ -4038,9 +4039,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FISH POKéMON</Classification>
-        <Height>2'11"</Height>
-        <Weight>22.0 lbs</Weight>
+        <Classification>FISH</Classification>
+        <Height>2`11"</Height>
+        <Weight>22.0</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>20</EXPYield>
         <PercentMale>50</PercentMale>
@@ -4051,7 +4052,7 @@
         <BaseSpecialDefense>20</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Swift Swim</Ability>
-        <Description>It is virtually worthless in terms of both power and speed. It is the most weak and pathetic POKéMON in the world.</Description>
+        <Description>It is virtually worthless in terms of both power and speed. It is the most weak and pathetic in the world.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Gyarados</Name>
@@ -4070,9 +4071,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>ATROCIOUS POKéMON</Classification>
-        <Height>21'04"</Height>
-        <Weight>518.1 lbs</Weight>
+        <Classification>ATROCIOUS</Classification>
+        <Height>21`04"</Height>
+        <Weight>518.1</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>214</EXPYield>
         <PercentMale>50</PercentMale>
@@ -4102,9 +4103,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TRANSPORT POKéMON</Classification>
-        <Height>8'02"</Height>
-        <Weight>485.0 lbs</Weight>
+        <Classification>TRANSPORT</Classification>
+        <Height>8`02"</Height>
+        <Weight>485.0</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>219</EXPYield>
         <PercentMale>50</PercentMale>
@@ -4133,9 +4134,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>TRANSFORM POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>8.8 lbs</Weight>
+        <Classification>TRANSFORM</Classification>
+        <Height>1`00"</Height>
+        <Weight>8.8</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>61</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4164,9 +4165,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>EVOLUTION POKéMON</Classification>
-        <Height>1'00"</Height>
-        <Weight>14.3 lbs</Weight>
+        <Classification>EVOLUTION</Classification>
+        <Height>1`00"</Height>
+        <Weight>14.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>92</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4177,7 +4178,7 @@
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Run Away</Ability>
-        <Description>An extremely rare POKéMON that may evolve in a number of different ways depending on stimuli.</Description>
+        <Description>An extremely rare that may evolve in a number of different ways depending on stimuli.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Vaporeon</Name>
@@ -4195,9 +4196,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>BUBBLE JET POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>63.9 lbs</Weight>
+        <Classification>BUBBLE  JET</Classification>
+        <Height>3`03"</Height>
+        <Weight>63.9</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>196</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4226,9 +4227,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>LIGHTNING POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>54.0 lbs</Weight>
+        <Classification>LIGHTNING</Classification>
+        <Height>2`07"</Height>
+        <Weight>54.0</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>197</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4257,9 +4258,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLAME POKéMON</Classification>
-        <Height>2'11"</Height>
-        <Weight>55.1 lbs</Weight>
+        <Classification>FLAME</Classification>
+        <Height>2`11"</Height>
+        <Weight>55.1</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>198</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4288,9 +4289,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>VIRTUAL POKéMON</Classification>
-        <Height>2'07"</Height>
-        <Weight>80.5 lbs</Weight>
+        <Classification>VIRTUAL</Classification>
+        <Height>2`07"</Height>
+        <Weight>80.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>130</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4301,7 +4302,7 @@
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Trace</Ability>
-        <Description>Using the most advanced technologies, scientists finally succeeded in making the first artificial POKéMON.</Description>
+        <Description>Using the most advanced technologies, scientists finally succeeded in making the first artificial.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Omanyte</Name>
@@ -4320,9 +4321,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SPIRAL POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>16.5 lbs</Weight>
+        <Classification>SPIRAL</Classification>
+        <Height>1`04"</Height>
+        <Weight>16.5</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>120</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4333,7 +4334,7 @@
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Swift Swim:Shell Armor</Ability>
-        <Description>A prehistoric POKéMON that lived in the primordial sea, it swims by twisting its 10 tentacles about.</Description>
+        <Description>A prehistoric that lived in the primordial sea, it swims by twisting its 10 tentacles about.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Omastar</Name>
@@ -4352,9 +4353,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SPIRAL POKéMON</Classification>
-        <Height>3'03"</Height>
-        <Weight>77.2 lbs</Weight>
+        <Classification>SPIRAL</Classification>
+        <Height>3`03"</Height>
+        <Weight>77.2</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>199</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4384,9 +4385,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SHELLFISH POKéMON</Classification>
-        <Height>1'08"</Height>
-        <Weight>25.4 lbs</Weight>
+        <Classification>SHELLFISH</Classification>
+        <Height>1`08"</Height>
+        <Weight>25.4</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>119</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4397,7 +4398,7 @@
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Swift Swim:Battle Armor</Ability>
-        <Description>This POKéMON was regenerated from the fossil of an ancient creature. It protects itself with a hard shell.</Description>
+        <Description>This was regenerated from the fossil of an ancient creature. It protects itself with a hard shell.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kabutops</Name>
@@ -4416,9 +4417,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SHELLFISH POKéMON</Classification>
-        <Height>4'03"</Height>
-        <Weight>89.3 lbs</Weight>
+        <Classification>SHELLFISH</Classification>
+        <Height>4`03"</Height>
+        <Weight>89.3</Weight>
         <EXPGroup>MF</EXPGroup>
         <EXPYield>201</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4448,9 +4449,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FOSSIL POKéMON</Classification>
-        <Height>5'11"</Height>
-        <Weight>130.1 lbs</Weight>
+        <Classification>FOSSIL</Classification>
+        <Height>5`11"</Height>
+        <Weight>130.1</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>202</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4479,9 +4480,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>SLEEPING POKéMON</Classification>
-        <Height>6'11"</Height>
-        <Weight>1014.1 lbs</Weight>
+        <Classification>SLEEPING</Classification>
+        <Height>6`11"</Height>
+        <Weight>1014.1</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>154</EXPYield>
         <PercentMale>87.5</PercentMale>
@@ -4511,9 +4512,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FREEZE POKéMON</Classification>
-        <Height>5'07"</Height>
-        <Weight>122.1 lbs</Weight>
+        <Classification>FREEZE</Classification>
+        <Height>5`07"</Height>
+        <Weight>122.1</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>215</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4524,7 +4525,7 @@
         <BaseSpecialDefense>125</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>One of the legendary bird POKéMON. With its long tail trailing behind, its flying form is magnificent.</Description>
+        <Description>One of the legendary bird. With its long tail trailing behind, its flying form is magnificent.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Zapdos</Name>
@@ -4543,9 +4544,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>ELECTRIC POKéMON</Classification>
-        <Height>5'03"</Height>
-        <Weight>116.0 lbs</Weight>
+        <Classification>ELECTRIC</Classification>
+        <Height>5`03"</Height>
+        <Weight>116.0</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>216</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4556,7 +4557,7 @@
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>One of the legendary bird POKéMON. While it is flying, it makes crackling and snapping sounds.</Description>
+        <Description>One of the legendary bird. While it is flying, it makes crackling and snapping sounds.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Moltres</Name>
@@ -4575,9 +4576,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>FLAME POKéMON</Classification>
-        <Height>6'07"</Height>
-        <Weight>132.3 lbs</Weight>
+        <Classification>FLAME</Classification>
+        <Height>6`07"</Height>
+        <Weight>132.3</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>217</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4588,7 +4589,7 @@
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>One of the legendary bird POKéMON. Those seeing it are overwhelmed by its orange wings that seem to be on fire.</Description>
+        <Description>One of the legendary bird. Those seeing it are overwhelmed by its orange wings that seem to be on fire.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dratini</Name>
@@ -4606,9 +4607,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRAGON POKéMON</Classification>
-        <Height>5'11"</Height>
-        <Weight>7.3 lbs</Weight>
+        <Classification>DRAGON</Classification>
+        <Height>5`11"</Height>
+        <Weight>7.3</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>67</EXPYield>
         <PercentMale>50</PercentMale>
@@ -4637,9 +4638,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRAGON POKéMON</Classification>
-        <Height>13'11"</Height>
-        <Weight>36.4 lbs</Weight>
+        <Classification>DRAGON</Classification>
+        <Height>13`11"</Height>
+        <Weight>36.4</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>144</EXPYield>
         <PercentMale>50</PercentMale>
@@ -4669,9 +4670,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>DRAGON POKéMON</Classification>
-        <Height>7'03"</Height>
-        <Weight>463.0 lbs</Weight>
+        <Classification>DRAGON</Classification>
+        <Height>7`03"</Height>
+        <Weight>463.0</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>218</EXPYield>
         <PercentMale>50</PercentMale>
@@ -4700,9 +4701,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>GENETIC POKéMON</Classification>
-        <Height>6'07"</Height>
-        <Weight>269.0 lbs</Weight>
+        <Classification>GENETIC</Classification>
+        <Height>6`07"</Height>
+        <Weight>269.0</Weight>
         <EXPGroup>S</EXPGroup>
         <EXPYield>220</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4713,7 +4714,7 @@
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>130</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>A POKéMON whose genetic code was repeatedly recombined for research. It turned vicious as a result.</Description>
+        <Description>A whose genetic code was repeatedly recombined for research. It turned vicious as a result.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Mew</Name>
@@ -4731,9 +4732,9 @@
         <Footprint>
             <Path></Path>
         </Footprint>
-        <Classification>NEW SPECIES POKéMON</Classification>
-        <Height>1'04"</Height>
-        <Weight>8.8 lbs</Weight>
+        <Classification>NEW  SPECIES</Classification>
+        <Height>1`04"</Height>
+        <Weight>8.8</Weight>
         <EXPGroup>MS</EXPGroup>
         <EXPYield>64</EXPYield>
         <PercentMale>-1</PercentMale>
@@ -4744,6 +4745,6 @@
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Synchronize</Ability>
-        <Description>A POKéMON of South America that was thought to have been extinct. It is very intelligent and learns any move.</Description>
+        <Description>A of South America that was thought to have been extinct. It is very intelligent and learns any move.</Description>
     </Pokemon>
 </PokemonManager>

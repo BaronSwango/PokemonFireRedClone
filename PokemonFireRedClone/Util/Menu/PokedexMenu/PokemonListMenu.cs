@@ -12,6 +12,7 @@ namespace PokemonFireRedClone
         private readonly List<int> currentShownIndices;
         public Image Arrow;
 		public Image PokemonListBackground;
+        public static int SelectedIndex;
 
         public Image ArrowUp;
         public Image ArrowDown;
@@ -110,6 +111,8 @@ namespace PokemonFireRedClone
             {
                 ArrowDown.UnloadContent();
             }
+
+            SelectedIndex = currentShownIndices[ItemNumber];
         }
 
         public override void Update(GameTime gameTime)
@@ -281,6 +284,11 @@ namespace PokemonFireRedClone
                 if (!pokemonNames.ContainsKey(i))
                 {
                     pokemonNames.Add(i, new PokemonText("-----", "Fonts/PokemonFireRedDialogue", new Color(0, 0, 0), new Color(224, 216, 192)));
+                } else
+                {
+                    Items[i - 1].LinkType = "Menu";
+                    Items[i - 1].LinkID = "Load/Menus/PokemonDetailsMenu.xml";
+                    Items[i - 1].MenuName = "PokemonDetailsMenu";
                 }
 
                 if (currentShownIndices.Count < 10)

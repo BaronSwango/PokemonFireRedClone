@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<PokemonDetailsMenu>
+    <PrevMenuName>PokemonListMenu</PrevMenuName>
+    <PokemonDetailsBackground>
+        <Path>Menus/PokedexMenu/PokemonDetailsBackground</Path>
+    </PokemonDetailsBackground>
+
+
+</PokemonDetailsMenu>
