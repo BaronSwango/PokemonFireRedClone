@@ -72,7 +72,6 @@ namespace PokemonFireRedClone
             
             if (InputManager.Instance.KeyPressed(Keys.E) && Menu.Items.Count > 0)
             {
-
                 switch (Menu.Items[Menu.ItemNumber].LinkType)
                 {
                     case "Screen":

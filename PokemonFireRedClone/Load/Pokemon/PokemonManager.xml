@@ -30,7 +30,8 @@
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Overgrow</Ability>
-        <Description>There is a plant seed on its back right from the day this is born. The seed slowly grows larger.</Description>
+        <Description>There   is   a   plant   seed   on   its   back   right   from   the   day   this
+POKéMON   is   born.   The   seed   slowly   grows   larger.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Ivysaur</Name>
@@ -62,7 +63,8 @@
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Overgrow</Ability>
-        <Description>There is a plant bulb on its back. When it absorbs nutrients, the bulb is said to blossom into a large flower.</Description>
+        <Description>There   is   a   plant   bulb   on   its   back.   When   it   absorbs
+nutrients ,   the   bulb   is   said   to   blossom   into   a   large   flower.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Venusaur</Name>
@@ -94,7 +96,8 @@
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Overgrow</Ability>
-        <Description>A bewitching aroma wafts from its flower. The fragrance becalms those engaged in a battle.</Description>
+        <Description>A   bewitching   aroma   wafts   from   its   flower.   The   fragrance
+becalms   those   engaged   in   a   battle.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Charmander</Name>
@@ -125,7 +128,8 @@
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Blaze</Ability>
-        <Description>From   the   time   it   is   born,   a   flame   burns\nat   the   tip   of   its   tail.   Its   life   would   end\nif   the   flame   were   to   go   out.</Description>
+        <Description>From   the   time   it   is   born,   a   flame   burns   at   the   tip   of   its
+tail.   Its   life   would   end   if   the   flame   were   to   go   out.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Charmeleon</Name>
@@ -156,7 +160,8 @@
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Blaze</Ability>
-        <Description>It lashes about with its tail to knock down its foe. It then tears up the fallen opponent with sharp claws.</Description>
+        <Description>It   lashes   about   with   its   tail   to   knock   down   its   foe.   It
+then   tears   up   the   fallen   opponent   with   sharp   claws.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Charizard</Name>
@@ -188,7 +193,8 @@
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Blaze</Ability>
-        <Description>Its wings can carry this POKeMON close to an altitude of 4,600 feet. It blows out fire at very high temperatures.</Description>
+        <Description>Its   wings   can   carry   this   POKéMON   close   to   an   altitude   of
+4,600   feet.   It   blows   out   fire   at   very   high   temperatures.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Squirtle</Name>
@@ -219,8 +225,8 @@
         <BaseSpecialDefense>64</BaseSpecialDefense>
         <BaseSpeed>43</BaseSpeed>
         <Ability>Torrent</Ability>
-        <Description>When   it   retracts   its   long   neck   into   its   shell,
-it   squirts   out   water   with   vigorous   force.</Description>
+        <Description>When   it   retracts   its   long   neck   into   its   shell ,   it   squirts   out
+water   with   vigorous   force.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Wartortle</Name>
@@ -251,7 +257,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>58</BaseSpeed>
         <Ability>Torrent</Ability>
-        <Description>This is very popular as a pet. Its fur-covered tail is a symbol of its longevity.</Description>
+        <Description>This   POKéMON   is   very   popular   as   a   pet.   Its   fur-covered
+tail   is   a   symbol   of   its   longevity.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Blastoise</Name>
@@ -282,7 +289,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>105</BaseSpecialDefense>
         <BaseSpeed>78</BaseSpeed>
         <Ability>Torrent</Ability>
-        <Description>It   crushes   its   foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.</Description>
+        <Description>It   crushes   its   foe   under   its   heavy   body   to   cause
+fainting.   In   a   pinch ,   it   will   withdraw   inside   its   shell.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Caterpie</Name>
@@ -313,7 +321,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>20</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Shield Dust</Ability>
-        <Description>It is covered with a green skin. When it grows, it sheds the skin, covers itself with silk, and becomes a cocoon.</Description>
+        <Description>It   is   covered   with   a   green   skin.   When   it   grows,   it   sheds
+the   skin ,   covers   itself   with   silk ,   and   becomes   a   cocoon.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Metapod</Name>
@@ -344,7 +353,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Shed Skin</Ability>
-        <Description>Even though it is encased in a sturdy shell, the body inside is tender. It can’t withstand a harsh attack.</Description>
+        <Description>Even   though   it   is   encased   in   a   sturdy   shell ,   the   body
+inside   is   tender.   It   can`t   withstand   a   harsh   attack.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Butterfree</Name>
@@ -376,7 +386,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Compound Eyes</Ability>
-        <Description>The wings are protected by rain-repellent dust. As a result, this can fly about even in rain.</Description>
+        <Description>The   wings   are   protected   by   rain-repellent   dust.   As   a
+result ,   this   POKéMON   can   fly   about   even   in   rain.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Weedle</Name>
@@ -409,7 +420,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>20</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Shield Dust</Ability>
-        <Description>Often found in forests and grasslands. It has a sharp, toxic barb of around two inches on top of its head.</Description>
+        <Description>Often   found   in   forests   and   grasslands.   It   has   a   sharp ,
+toxic   barb   of   around   two   inches   on   top   of   its   head.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kakuna</Name>
@@ -441,7 +453,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Shed Skin</Ability>
-        <Description>This is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
+        <Description>This   POKéMON   is   in   a   temporary   stage   while   making   its
+body.   It   is   almost   completely   unable   to   move   on   its   own.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Beedrill</Name>
@@ -473,7 +486,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>75</BaseSpeed>
         <Ability>Swarm</Ability>
-        <Description>This is in a temporary stage while making its body. It is almost completely unable to move on its own.</Description>
+        <Description>May   appear   in   a   swarm.   Flies   at   violent   speeds ,   all   the
+while   stabbing   with   the   toxic   stinger   on   its   rear.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Pidgey</Name>
@@ -505,7 +519,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>35</BaseSpecialDefense>
         <BaseSpeed>56</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>Does not like to fight. It hides in tall grass and so on, foraging for food such as small bugs.</Description>
+        <Description>Does   not   like   to   fight.   It   hides   in   tall   grass   and   so   on ,
+foraging   for   food   such   as   small   bugs.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Pidgeotto</Name>
@@ -537,7 +552,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>71</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>The claws on its feet are well developed. It can carry prey such as an EXEGGCUTE to its nest over 60 miles away.</Description>
+        <Description>The   claws   on   its   feet   are   well   developed.   It   can   carry
+prey   such   as   an   EXEGGCUTE   to   its   nest   over   60   miles
+away.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Pidgeot</Name>
@@ -569,7 +586,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>91</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>The claws on its feet are well developed. It can carry prey such as an EXEGGCUTE to its nest over 60 miles away.</Description>
+        <Description>It   spreads   its   gorgeous   wings   widely   to   intimidate   enemies.
+It   races   through   the   skies   at   Mach-2   speed.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Rattata</Name>
@@ -600,7 +618,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>35</BaseSpecialDefense>
         <BaseSpeed>72</BaseSpeed>
         <Ability>Guts</Ability>
-        <Description>Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to wittle them down.</Description>
+        <Description>Its   fangs   are   long   and   very   sharp.   They   grow
+continuously ,   so   it   gnaws   on   hard   things   to   wittle   them
+down.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Raticate</Name>
@@ -631,7 +651,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>97</BaseSpeed>
         <Ability>Run Away:Guts</Ability>
-        <Description>Its rear feet have three toes each. They are webbed, enabling it to swim across rivers.</Description>
+        <Description>Its   rear   feet   have   three   toes   each.   They   are   webbed ,
+enabling   it   to   swim   across   rivers.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Spearow</Name>
@@ -663,7 +684,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>31</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>It busily flits around here and there. Even if it is frail, it can be a tough foe that uses MIRROR MOVE.</Description>
+        <Description>It   busily   flits   around   here   and   there.   Even   if   it   is   frail ,
+it   can   be   a   tough   foe   that   uses   MIRROR   MOVE.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Fearow</Name>
@@ -695,7 +717,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>61</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>Its huge and magnificent wings can keep it aloft in the sky. It can remain flying a whole day without landing.</Description>
+        <Description>Its   huge   and   magnificent   wings   can   keep   it   aloft   in   the
+sky.   It   can   remain   flying   a   whole   day   without   landing.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Ekans</Name>
@@ -726,7 +749,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>54</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Intimidate:Shed Skin</Ability>
-        <Description>A very common sight in grassland, etc. It flicks its tongue in and out to sense danger in its surroundings.</Description>
+        <Description>A   very   common   sight   in   grassland ,   etc.   It   flicks   its
+tongue   in   and   out   to   sense   danger   in   its   surroundings.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Arbok</Name>
@@ -757,7 +781,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>79</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Intimidate:Shed Skin</Ability>
-        <Description>The pattern on its belly appears to be a frightening face. Weak foes will flee just at the sight of the pattern.</Description>
+        <Description>The   pattern   on   its   belly   appears   to   be   a   frightening
+face.   Weak   foes   will   flee   just   at   the   sight   of   the
+pattern.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Pikachu</Name>
@@ -788,7 +814,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Static</Ability>
-        <Description>It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.</Description>
+        <Description>It   has   small   electric   sacs   on   both   its   cheeks.   If
+threatened ,   it   looses   electric   charges   from   the   sacs.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Raichu</Name>
@@ -819,7 +846,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Static</Ability>
-        <Description>It has small electric sacs on both its cheeks. If threatened, it looses electric charges from the sacs.</Description>
+        <Description>Its   electric   charges   can   reach   even   100,000   volts.
+Careless   contact   can   cause   even   an   Indian   elephant   to
+faint.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Sandshrew</Name>
@@ -850,7 +879,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>30</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Sand Veil</Ability>
-        <Description>It burrows and lives underground. If threatened, it curls itself up into a ball for protection.</Description>
+        <Description>It   burrows   and   lives   underground.   If   threatened ,   it   curls
+itself   up   into   a   ball   for   protection.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Sandslash</Name>
@@ -881,7 +911,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Sand Veil</Ability>
-        <Description>It is adept at attacking with the spines on its back and its sharp claws while quickly scurrying about.</Description>
+        <Description>It   is   adept   at   attacking   with   the   spines   on   its   back   and
+its   sharp   claws   while   quickly   scurrying   about.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Nidoran¬</Name>
@@ -912,7 +943,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>41</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>Though small, it must be treated with caution because of its powerfully toxic barbs. The female has smaller horns.</Description>
+        <Description>Though   small ,   it   must   be   treated   with   caution   because   of
+its   powerfully   toxic   barbs.   The   female   has   smaller   horns.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Nidorina</Name>
@@ -943,7 +975,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>56</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>The female has a gentle temperament. It emits ultrasonic cries that have the power to befuddle foes.</Description>
+        <Description>The   female   has   a   gentle   temperament.   It   emits   ultrasonic
+cries   that   have   the   power   to   befuddle   foes.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Nidoqueen</Name>
@@ -975,7 +1008,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>76</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>The body is covered by stiff, needle-like scales. If it becomes excited, the needles bristle outwards.</Description>
+        <Description>The   body   is   covered   by   stiff ,   needle-like   scales.   If   it
+becomes   excited ,   the   needles   bristle   outwards.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Nidoran£</Name>
@@ -1006,7 +1040,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>Its large ears are flapped like wings when it is listening to distant sounds. It extends toxic barbs when angered.</Description>
+        <Description>Its   large   ears   are   flapped   like   wings   when   it   is   listening
+to   distant   sounds.   It   extends   toxic   barbs   when   angered.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Nidorino</Name>
@@ -1037,7 +1072,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>It is easily angered. By swinging its well-developed horn wildly, it can even punch through diamond.</Description>
+        <Description>It   is   easily   angered.   By   swinging   its   well-developed   horn
+wildly ,   it   can   even   punch   through   diamond.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Nidoking</Name>
@@ -1069,7 +1105,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>It is recognized by its rock-hard hide and its extended horn. Be careful with the horn as it contains venom.</Description>
+        <Description>It   is   recognized   by   its   rock-hard   hide   and   its   extended
+horn.   Be   careful   with   the   horn   as   it   contains   venom.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Clefairy</Name>
@@ -1100,7 +1137,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Cute Charm</Ability>
-        <Description>Its adorable appearance makes it popular as a pet. However, it is rare and difficult to find.</Description>
+        <Description>Its   adorable   appearance   makes   it   popular   as   a   pet.
+However ,   it   is   rare   and   difficult   to   find.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Clefable</Name>
@@ -1131,7 +1169,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Cute Charm</Ability>
-        <Description>It has an acute sense of hearing. It can easily hear a pin being dropped nearly 1,100 yards away.</Description>
+        <Description>It   has   an   acute   sense   of   hearing.   It   can   easily   hear   a
+pin   being   dropped   nearly   1,100   yards   away.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Vulpix</Name>
@@ -1162,7 +1201,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Flash Fire</Ability>
-        <Description>While young, it has six gorgeous tails. When it grows, several new tails are sprouted.</Description>
+        <Description>While   young ,   it   has   six   gorgeous   tails.   When   it   grows ,
+several   new   tails   are   sprouted.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Ninetails</Name>
@@ -1193,7 +1233,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Flash Fire</Ability>
-        <Description>While young, it has six gorgeous tails. When it grows, several new tails are sprouted.</Description>
+        <Description>It   has   nine   long   tails   and   fur   that   gleams   gold.   It   is   said
+to   live   for   1,000   years.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Jigglypuff</Name>
@@ -1224,7 +1265,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>20</BaseSpeed>
         <Ability>Cute Charm</Ability>
-        <Description>It captivates foes with its huge, round eyes, then lulls them to sleep by singing a soothing melody.</Description>
+        <Description>It   captivates   foes   with   its   huge ,   round   eyes ,   then   lulls
+them   to   sleep   by   singing   a   soothing   melody.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Wigglytuff</Name>
@@ -1255,7 +1297,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Cute Charm</Ability>
-        <Description>Its fur is extremely fine, dense, and supple. The exquisitely pleasant fur conveys an image of luxury.</Description>
+        <Description>Its   fur   is   extremely   fine ,   dense ,   and   supple.   The
+exquisitely   pleasant   fur   conveys   an   image   of   luxury.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Zubat</Name>
@@ -1287,7 +1330,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Inner Focus</Ability>
-        <Description>It has no eyes. Instead, it relies on its ultrasonic cries for echo location to flit about in darkness.</Description>
+        <Description>It   has   no   eyes.   Instead ,   it   relies   on   its   ultrasonic   cries
+for   echo   location   to   flit   about   in   darkness.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Golbat</Name>
@@ -1319,7 +1363,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Inner Focus</Ability>
-        <Description>It clamps down on its prey with needle-sharp fangs and drains over 10 ounces of blood in one gulp.</Description>
+        <Description>It   clamps   down   on   its   prey   with   needle-sharp   fangs   and
+drains   over   10   ounces   of   blood   in   one   gulp.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Oddish</Name>
@@ -1351,7 +1396,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Its scientific name is “Oddium Wanderus.” At night, it is said to walk nearly 1,000 feet on its two roots.</Description>
+        <Description>Its   scientific   name   is   "Oddium   Wanderus."   At   night ,   it   is
+said   to   walk   nearly   1,000   feet   on   its   two   roots.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Gloom</Name>
@@ -1383,7 +1429,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Its pistils exude an incredibly foul odor. The horrid stench can cause fainting at a distance of 1.25 miles.</Description>
+        <Description>Its   pistils   exude   an   incredibly   foul   odor.   The   horrid
+stench   can   cause   fainting   at   a   distance   of   1.25   miles.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Vileplume</Name>
@@ -1415,7 +1462,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Its petals are the largest in the world. It fiendishly scatters allergy-causing pollen from its petals.</Description>
+        <Description>Its   petals   are   the   largest   in   the   world.   It   fiendishly
+scatters   allergy-causing   pollen   from   its   petals.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Paras</Name>
@@ -1447,7 +1495,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>25</BaseSpeed>
         <Ability>Effect Spore</Ability>
-        <Description>Growing out of the bug’s back are mushrooms called tochukaso. The mushrooms grow with the bug host.</Description>
+        <Description>Growing   out   of   the   bug`s   back   are   mushrooms   called
+tochukaso.   The   mushrooms   grow   with   the   bug   host.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Parasect</Name>
@@ -1479,7 +1528,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Effect Spore</Ability>
-        <Description>It scatters toxic spores from the mushroom cap. In China, the spores are used as herbal medicine.</Description>
+        <Description>It   scatters   toxic   spores   from   the   mushroom   cap.   In
+China ,   the   spores   are   used   as   herbal   medicine.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Venonat</Name>
@@ -1511,7 +1561,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Compound Eyes</Ability>
-        <Description>Its eyes act as radar, enabling it to be active in darkness. The eyes can also shoot powerful beams.</Description>
+        <Description>Its   eyes   act   as   radar ,   enabling   it   to   be   active   in
+darkness.   The   eyes   can   also   shoot   powerful   beams.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Venomoth</Name>
@@ -1543,7 +1594,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Shield Dust</Ability>
-        <Description>The wings are covered with dustlike scales. Every time it flaps its wings, it looses highly toxic dust.</Description>
+        <Description>The   wings   are   covered   with   dustlike   scales.   Every   time   it
+flaps   its   wings ,   it   looses   highly   toxic   dust.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Diglett</Name>
@@ -1574,7 +1626,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>95</BaseSpeed>
         <Ability>Sand Veil:Arena Trap</Ability>
-        <Description>It burrows through the ground at a shallow depth. It leaves raised earth in its wake, making it easy to spot.</Description>
+        <Description>It   burrows   through   the   ground   at   a   shallow   depth.   It
+leaves   raised   earth   in   its   wake ,   making   it   easy   to   spot.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dugtrio</Name>
@@ -1605,7 +1658,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>120</BaseSpeed>
         <Ability>Sand Veil:Arena Trap</Ability>
-        <Description>In battle, it digs through the ground and strikes the unsuspecting foe from an unexpected direction.</Description>
+        <Description>In   battle ,   it   digs   through   the   ground   and   strikes   the
+unsuspecting   foe   from   an   unexpected   direction.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Meowth</Name>
@@ -1636,7 +1690,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Pickup</Ability>
-        <Description>All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.</Description>
+        <Description>All   it   does   is   sleep   during   the   daytime.   At   night ,   it
+patrols   its   territory   with   its   eyes   aglow.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Persian</Name>
@@ -1667,7 +1722,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>115</BaseSpeed>
         <Ability>Limber</Ability>
-        <Description>Has a vicious temperament. Beware if it raises its tail straight up. It is a signal that it is about to pounce and bite.</Description>
+        <Description>Has   a   vicious   temperament.   Beware   if   it   raises   its   tail
+straight   up.   It   is   a   signal   that   it   is   about   to   pounce   and
+bite.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Psyduck</Name>
@@ -1698,7 +1755,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Damp:Cloud Nine</Ability>
-        <Description>It is constantly wracked by a headache. When the headache turns intense, it begins using mysterious powers.</Description>
+        <Description>It   is   constantly   wracked   by   a   headache.   When   the
+headache   turns   intense ,   it   begins   using   mysterious   powers.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Golduck</Name>
@@ -1729,7 +1787,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Damp:Cloud Nine</Ability>
-        <Description>The forelegs are webbed, helping to make it an adept swimmer. It can be seen swimming elegantly in lakes, etc.</Description>
+        <Description>The   forelegs   are   webbed ,   helping   to   make   it   an   adept
+swimmer.   It   can   be   seen   swimming   elegantly   in   lakes ,   etc.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Mankey</Name>
@@ -1760,7 +1819,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Vital Spirit</Ability>
-        <Description>Light and agile on its feet, and ferocious in temperament. When angered, it flies into an uncontrollable frenzy.</Description>
+        <Description>Light   and   agile   on   its   feet ,   and   ferocious   in   temperament.
+When   angered ,   it   flies   into   an   uncontrollable   frenzy.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Primeape</Name>
@@ -1791,7 +1851,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>95</BaseSpeed>
         <Ability>Vital Spirit</Ability>
-        <Description>It is always outrageously furious. If it gives chase, it will tenaciously track the target no matter how far.</Description>
+        <Description>It   is   always   outrageously   furious.   If   it   gives   chase ,   it
+will   tenaciously   track   the   target   no   matter   how   far.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Growlithe</Name>
@@ -1822,7 +1883,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Intimidate:Flash Fire</Ability>
-        <Description>Very friendly and faithful to people. It will try to repel enemies by barking and biting.</Description>
+        <Description>Very   friendly   and   faithful   to   people.   It   will   try   to   repel
+enemies   by   barking   and   biting.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Arcanine</Name>
@@ -1853,7 +1915,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>95</BaseSpeed>
         <Ability>Intimidate:Flash Fire</Ability>
-        <Description>A that is described in Chinese legends. It is said to race at an unbelievable speed.</Description>
+        <Description>A   POKéMON   that   is   described   in   Chinese   legends.   It   is   said
+to   race   at   an   unbelievable   speed.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Poliwag</Name>
@@ -1884,7 +1947,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Water Absorb:Damp</Ability>
-        <Description>Its slick black skin is thin and damp. A part of its internal organs can be seen through the skin as a spiral pattern.</Description>
+        <Description>Its   slick   black   skin   is   thin   and   damp.   A   part   of   its   internal
+organs   can   be   seen   through   the   skin   as   a   spiral   pattern.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Poliwhirl</Name>
@@ -1915,7 +1979,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Water Absorb:Damp</Ability>
-        <Description>Its two legs are well developed. Even though it can live on the ground, it prefers living in water.</Description>
+        <Description>Its   two   legs   are   well   developed.   Even   though   it   can   live
+on   the   ground ,   it   prefers   living   in   water.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Poliwrath</Name>
@@ -1947,7 +2012,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Water Absorb:Damp</Ability>
-        <Description>An adept swimmer, it knows the front crawl, butterfly, and more. It is faster than the best human swimmers.</Description>
+        <Description>An   adept   swimmer ,   it   knows   the   front   crawl ,   butterfly ,
+and   more.   It   is   faster   than   the   best   human   swimmers.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Abra</Name>
@@ -1978,7 +2044,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Synchronize:Inner Focus</Ability>
-        <Description>It sleeps for 18 hours a day. It uses a variety of extrasensory powers even while asleep.</Description>
+        <Description>It   sleeps   for   18   hours   a   day.   It   uses   a   variety   of
+extrasensory   powers   even   while   asleep.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kadabra</Name>
@@ -2009,7 +2076,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>105</BaseSpeed>
         <Ability>Synchronize:Inner Focus</Ability>
-        <Description>It happened one morning - a boy with extrasensory powers awoke in bed transformed into KADABRA.</Description>
+        <Description>It   happened   one   morning   -   a   boy   with   extrasensory
+powers   awoke   in   bed   transformed   into   KADABRA.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Alakazam</Name>
@@ -2040,7 +2108,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>120</BaseSpeed>
         <Ability>Synchronize:Inner Focus</Ability>
-        <Description>It does not like physical attacks very much. Instead, it freely uses extrasensory powers to defeat foes.</Description>
+        <Description>It   does   not   like   physical   attacks   very   much.   Instead ,   it
+freely   uses   extrasensory   powers   to   defeat   foes.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Machop</Name>
@@ -2071,7 +2140,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>35</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Guts</Ability>
-        <Description>Its whole body is composed of muscles. Even though it’s the size of a human child, it can hurl 100 grown-ups.</Description>
+        <Description>Its   whole   body   is   composed   of   muscles.   Even   though   it`s
+the   size   of   a   human   child ,   it   can   hurl   100   grown-ups.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Machoke</Name>
@@ -2102,7 +2172,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>60</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Guts</Ability>
-        <Description>Its formidable body never gets tired. It helps people by doing work such as the moving of heavy goods.</Description>
+        <Description>Its   formidable   body   never   gets   tired.   It   helps   people   by
+doing   work   such   as   the   moving   of   heavy   goods.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Machamp</Name>
@@ -2133,7 +2204,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Guts</Ability>
-        <Description>Its four ruggedly developed arms can launch a flurry of 1,000 punches in just two seconds.</Description>
+        <Description>Its   four   ruggedly   developed   arms   can   launch   a   flurry   of
+1,000   punches   in   just   two   seconds.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Bellsprout</Name>
@@ -2165,7 +2237,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>30</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Its bud looks like a human face. Because of the bud, it is rumored to be a type of legendary mandrake plant.</Description>
+        <Description>Its   bud   looks   like   a   human   face.   Because   of   the   bud ,   it
+is   rumored   to   be   a   type   of   legendary   mandrake   plant.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Weepinbell</Name>
@@ -2197,7 +2270,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>The leafy parts act as cutters for slashing foes. It spits a fluid that dissolves everything.</Description>
+        <Description>The   leafy   parts   act   as   cutters   for   slashing   foes.   It   spits
+a   fluid   that   dissolves   everything.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Victreebell</Name>
@@ -2229,7 +2303,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>60</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Lures prey into its mouth with a honeylike aroma. The helpless prey is melted with a dissolving fluid.</Description>
+        <Description>Lures   prey   into   its   mouth   with   a   honeylike   aroma.   The
+helpless   prey   is   melted   with   a   dissolving   fluid.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Tentacool</Name>
@@ -2261,7 +2336,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Clear Body:Liquid Ooze</Ability>
-        <Description>Its eyes are as transparent as crystals. From them, it shoots mysterious beams of light.</Description>
+        <Description>Its   eyes   are   as   transparent   as   crystals.   From   them ,   it
+shoots   mysterious   beams   of   light.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Tentacruel</Name>
@@ -2293,7 +2369,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>120</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Clear Body:Liquid Ooze</Ability>
-        <Description>It has 80 tentacles that move about freely. They can sting, causing poisoning and sharp, stabbing pain.</Description>
+        <Description>It   has   80   tentacles   that   move   about   freely.   They   can
+sting ,   causing   poisoning   and   sharp ,   stabbing   pain.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Geodude</Name>
@@ -2325,7 +2402,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>30</BaseSpecialDefense>
         <BaseSpeed>20</BaseSpeed>
         <Ability>Rock Head:Sturdy</Ability>
-        <Description>Its round form makes it easy to pick up. Some people have used them to hurl at each other in a snowball fight.</Description>
+        <Description>Its   round   form   makes   it   easy   to   pick   up.   Some   people
+have   used   them   to   hurl   at   each   other   in   a   snowball   fight.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Graveler</Name>
@@ -2357,8 +2435,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Rock Head:Sturdy</Ability>
-        <Description>Be careful while hiking on mountain trails. GRAVELER may come rolling down the path without slowing.</Description>
-    </Pokemon>
+        <Description>Be   careful   while   hiking   on   mountain   trails.   GRAVELER   may
+come   rolling   down   the   path   without   slowing.</Description>
+    </Pokemon> 
     <Pokemon>
         <Name>Golem</Name>
         <Index>76</Index>
@@ -2389,7 +2468,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Rock Head:Sturdy</Ability>
-        <Description>It is enclosed in a hard shell that is as rugged as slabs of rock. It sheds skin once a year to grow larger.</Description>
+        <Description>It   is   enclosed   in   a   hard   shell   that   is   as   rugged   as   slabs
+of   rock.   It   sheds   skin   once   a   year   to   grow   larger.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Ponyta</Name>
@@ -2420,7 +2500,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Run Away:Flash Fire</Ability>
-        <Description>Its body is light, and its legs are incredibly powerful. It can clear Ayers Rock in one leap.</Description>
+        <Description>Its   body   is   light ,   and   its   legs   are   incredibly   powerful.   It
+can   clear   Ayers   Rock   in   one   leap.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Rapidash</Name>
@@ -2451,7 +2532,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>105</BaseSpeed>
         <Ability>Run Away:Flash Fire</Ability>
-        <Description>It can gallop at a top speed of 150 miles per hour. It can race as fast as a bullet train while ablaze.</Description>
+        <Description>It   can   gallop   at   a   top   speed   of   150   miles   per   hour.   It
+can   race   as   fast   as   a   bullet   train   while   ablaze.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Slowpoke</Name>
@@ -2483,7 +2565,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>15</BaseSpeed>
         <Ability>Oblivious:Own Tempo</Ability>
-        <Description>It is always vacantly lost in thought, but no one knows what it is thinking about. It is good at fishing with its tail.</Description>
+        <Description>It   is   always   vacantly   lost   in   thought ,   but   no   one   knows
+what   it   is   thinking   about.   It   is   good   at   fishing   with   its   tail.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Slowbro</Name>
@@ -2515,7 +2598,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Oblivious:Own Tempo</Ability>
-        <Description>When a SLOWPOKE went hunting in the sea, its tail was bitten by a SHELLDER. That made it evolve into SLOWBRO.</Description>
+        <Description>When   a   SLOWPOKE   went   hunting   in   the   sea ,   its   tail   was
+bitten   by   a   SHELLDER.   That   made   it   evolve   into   SLOWBRO.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Magnemite</Name>
@@ -2547,7 +2631,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Magnet Pull:Sturdy</Ability>
-        <Description>It moves while constantly hovering. It discharges THUNDER WAVE and so on from the units at its sides.</Description>
+        <Description>It   moves   while   constantly   hovering.   It   discharges   THUNDER
+WAVE   and   so   on   from   the   units   at   its   sides.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Magneton</Name>
@@ -2579,7 +2664,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Magnet Pull:Sturdy</Ability>
-        <Description>A linked cluster formed of several MAGNEMITE. It discharges powerful magnetic waves at high voltage.</Description>
+        <Description>A   linked   cluster   formed   of   several   MAGNEMITE.   It
+discharges   powerful   magnetic   waves   at   high   voltage.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Farfetch`d</Name>
@@ -2611,7 +2697,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>62</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Keen Eye:Inner Focus</Ability>
-        <Description>It always walks about with a plant stalk clamped in its beak. The stalk is used for building its nest.</Description>
+        <Description>It   always   walks   about   with   a   plant   stalk   clamped   in   its
+beak.   The   stalk   is   used   for   building   its   nest.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Doduo</Name>
@@ -2643,7 +2730,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>35</BaseSpecialDefense>
         <BaseSpeed>75</BaseSpeed>
         <Ability>Run Away:Early Bird</Ability>
-        <Description>A two-headed that was discovered as a sudden mutation. It runs at a pace of over 60 miles per hour.</Description>
+        <Description>A   two-headed   POKéMON   that   was   discovered   as   a   sudden
+mutation.   It   runs   at   a   pace   of   over   60   miles   per   hour.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dodrio</Name>
@@ -2675,7 +2763,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>60</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Run Away:Early Bird</Ability>
-        <Description>An odd species that is rarely found. The three heads respectively represent joy, sadness, and anger.</Description>
+        <Description>An   odd   species   that   is   rarely   found.   The   three   heads
+respectively   represent   joy ,   sadness ,   and   anger.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Seel</Name>
@@ -2706,7 +2795,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Thick Fat</Ability>
-        <Description>Covered with light blue fur, its hide is thick and tough. It is active in bitter cold of minus 40 degrees Fahrenheit.</Description>
+        <Description>Covered   with   light   blue   fur ,   its   hide   is   thick   and   tough.
+It   is   active   in   bitter   cold   of   minus   40   degrees   Fahrenheit.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dewgong</Name>
@@ -2738,7 +2828,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>95</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Thick Fat</Ability>
-        <Description>Its body is covered with a pure white fur. The colder the weather, the more active it becomes.</Description>
+        <Description>Its   body   is   covered   with   a   pure   white   fur.   The   colder
+the   weather ,   the   more   active   it   becomes.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Grimer</Name>
@@ -2769,7 +2860,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>25</BaseSpeed>
         <Ability>Stench:Sticky Hold</Ability>
-        <Description>Sludge exposed to X rays from the moon transformed into GRIMER. It loves feeding on filthy things.</Description>
+        <Description>Sludge   exposed   to   X   rays   from   the   moon   transformed   into
+GRIMER.   It   loves   feeding   on   filthy   things.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Muk</Name>
@@ -2800,7 +2892,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Stench:Sticky Hold</Ability>
-        <Description>It is usually undetectable because it blends in with the ground. Touching it can cause terrible poisoning.</Description>
+        <Description>It   is   usually   undetectable   because   it   blends   in   with   the
+ground.   Touching   it   can   cause   terrible   poisoning.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Shellder</Name>
@@ -2831,7 +2924,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Shell Armor</Ability>
-        <Description>It is encased in a shell that is harder than diamond. Inside, however, it is surprisingly tender.</Description>
+        <Description>It   is   encased   in   a   shell   that   is   harder   than   diamond.
+Inside ,   however ,   it   is   surprisingly   tender.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Cloyster</Name>
@@ -2863,7 +2957,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Shell Armor</Ability>
-        <Description>Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.</Description>
+        <Description>Its   shell   is   extremely   hard.   It   cannot   be   shattered ,   even
+with   a   bomb.   The   shell   opens   only   when   it   is   attacking.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Gastly</Name>
@@ -2895,7 +2990,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>35</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Levitate</Ability>
-        <Description>A being that exists as a thin gas. It can topple an Indian elephant by enveloping the prey in two seconds.</Description>
+        <Description>A   being   that   exists   as   a   thin   gas.   It   can   topple   an   Indian
+elephant   by   enveloping   the   prey   in   two   seconds.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Haunter</Name>
@@ -2927,7 +3023,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>95</BaseSpeed>
         <Ability>Levitate</Ability>
-        <Description>If you get the feeling of being watched in darkness when nobody is around, HAUNTER is there.</Description>
+        <Description>If   you   get   the   feeling   of   being   watched   in   darkness   when
+nobody   is   around ,   HAUNTER   is   there.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Gengar</Name>
@@ -2959,7 +3056,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>110</BaseSpeed>
         <Ability>Levitate</Ability>
-        <Description>It is said to emerge from darkness to steal the lives of those who become lost in mountains.</Description>
+        <Description>It   is   said   to   emerge   from   darkness   to   steal   the   lives   of
+those   who   become   lost   in   mountains.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Onix</Name>
@@ -2991,7 +3089,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Rock Head:Sturdy</Ability>
-        <Description>It usually lives underground. It searches for food while boring its way through the ground at 50 miles per hour.</Description>
+        <Description>It   usually   lives   underground.   It   searches   for   food   while
+boring   its   way   through   the   ground   at   50   miles   per   hour.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Drowzee</Name>
@@ -3022,7 +3121,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>42</BaseSpeed>
         <Ability>Insomnia</Ability>
-        <Description>A descendent of the legendary animal baku, which is said to eat dreams. It is skilled at hypnotism.</Description>
+        <Description>A   descendent   of   the   legendary   animal   baku ,   which   is   said
+to   eat   dreams.   It   is   skilled   at   hypnotism.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Hypno</Name>
@@ -3053,7 +3153,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>115</BaseSpecialDefense>
         <BaseSpeed>67</BaseSpeed>
         <Ability>Insomnia</Ability>
-        <Description>It carries a pendulum-like device. There once was an incident in which it took away a child it hypnotized.</Description>
+        <Description>It   carries   a   pendulum-like   device.   There   once   was   an
+incident   in   which   it   took   away   a   child   it   hypnotized.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Krabby</Name>
@@ -3084,7 +3185,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Hyper Cutter:Shell Armor</Ability>
-        <Description>It can be found near the sea. The large pincers grow back if they are torn out of their sockets.</Description>
+        <Description>It   can   be   found   near   the   sea.   The   large   pincers   grow
+back   if   they   are   torn   out   of   their   sockets.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kingler</Name>
@@ -3115,7 +3217,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>75</BaseSpeed>
         <Ability>Hyper Cutter:Shell Armor</Ability>
-        <Description>Its large and hard pincer has 10,000-horsepower strength. However, being so big, it is unwieldy to move.</Description>
+        <Description>Its   large   and   hard   pincer   has   10,000-horsepower   strength.
+However ,   being   so   big ,   it   is   unwieldy   to   move.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Voltorb</Name>
@@ -3146,7 +3249,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Soundproof:Static</Ability>
-        <Description>A life-form whose identity is unknown. It is said to SCREECH or suddenly SELFDESTRUCT.</Description>
+        <Description>A   life-form   whose   identity   is   unknown.   It   is   said   to
+SCREECH   or  suddenly   SELFDESTRUCT.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Electrode</Name>
@@ -3177,7 +3281,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>140</BaseSpeed>
         <Ability>Soundproof:Static</Ability>
-        <Description>A life-form whose identity is unknown. It is said to SCREECH or suddenly SELFDESTRUCT.</Description>
+        <Description>It   explodes   in   response   to   even   minor   stimuli.   It   is
+feared ,   with   the   nickname   of   "The   Bomb   Ball."</Description>
     </Pokemon>
     <Pokemon>
         <Name>Exeggcute</Name>
@@ -3209,7 +3314,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Even though it appears to be eggs of some sort, it was discovered to be a life-form more like plant seeds.</Description>
+        <Description>Even   though   it   appears   to   be   eggs   of   some   sort ,   it   was
+discovered   to   be   a   life-form   more   like   plant   seeds.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Exeggutor</Name>
@@ -3241,7 +3347,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>It is called “The Walking Tropical Rainforest.” Each of the nuts has a face and a will of its own.</Description>
+        <Description>It   is   called   "The   Walking   Tropical   Rainforest."   Each   of   the
+nuts   has   a   face   and   a   will   of   its   own.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Cubone</Name>
@@ -3272,7 +3379,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Rock Head:Lightning Rod</Ability>
-        <Description>It wears the skull of its dead mother on its head. When it becomes lonesome, it is said to cry loudly.</Description>
+        <Description>It   wears   the   skull   of   its   dead   mother   on   its   head.   When
+it   becomes   lonesome ,   it   is   said   to   cry   loudly.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Marowak</Name>
@@ -3303,7 +3411,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>45</BaseSpeed>
         <Ability>Rock Head:Lightning Rod</Ability>
-        <Description>It is small and was originally very weak. Its temperament turned ferocious when it began using bones.</Description>
+        <Description>It   is   small   and   was   originally   very   weak.   Its   temperament
+turned   ferocious   when   it   began   using   bones.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Hitmonlee</Name>
@@ -3334,7 +3443,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>110</BaseSpecialDefense>
         <BaseSpeed>87</BaseSpeed>
         <Ability>Limber</Ability>
-        <Description>The legs freely contract and stretch. The stretchy legs allow it to hit a distant foe with a rising kick.</Description>
+        <Description>The   legs   freely   contract   and   stretch.   The   stretchy   legs
+allow   it   to   hit   a   distant   foe   with   a   rising   kick.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Hitmonchan</Name>
@@ -3365,7 +3475,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>110</BaseSpecialDefense>
         <BaseSpeed>76</BaseSpeed>
         <Ability>Keen Eye</Ability>
-        <Description>The spirit of a pro boxer has infused this. It throws punches that are faster than a bullet train.</Description>
+        <Description>The   spirit   of   a   pro   boxer   has   infused   this   POKéMON.   It
+throws   punches   that   are   faster   than   a   bullet   train.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Lickitung</Name>
@@ -3396,7 +3507,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Own Tempo:Oblivious</Ability>
-        <Description>Its tongue is twice the length of its body. It can be moved like an arm for grabbing food and attacking.</Description>
+        <Description>Its   tongue   is   twice   the   length   of   its   body.   It   can   be
+moved   like   an   arm   for   grabbing   food   and   attacking.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Koffing</Name>
@@ -3427,7 +3539,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Levitate:Neutralizing Gas</Ability>
-        <Description>Its thin, balloon-like body is inflated by horribly toxic gases. It reeks when it is nearby.</Description>
+        <Description>Its   thin ,   balloon-like   body   is   inflated   by   horribly   toxic
+gases.   It   reeks   when   it   is   nearby.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Weezing</Name>
@@ -3458,7 +3571,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Levitate:Neutralizing Gas</Ability>
-        <Description>Very rarely, a sudden mutation can result in two small KOFFING twins becoming conjoined as a WEEZING.</Description>
+        <Description>Very   rarely ,   a   sudden   mutation   can   result   in   two   small
+KOFFING   twins   becoming   conjoined   as   a   WEEZING.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Rhyhorn</Name>
@@ -3490,7 +3604,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>30</BaseSpecialDefense>
         <BaseSpeed>25</BaseSpeed>
         <Ability>Lightning Rod:Rock Head</Ability>
-        <Description>Strong, but not too bright, this can shatter even a skyscraper with its charging TACKLES.</Description>
+        <Description>Strong ,   but   not   too   bright ,   this   POKéMON   can   shatter
+even   a   skyscraper   with   its   charging   TACKLES.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Rhydon</Name>
@@ -3522,7 +3637,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Lightning Rod:Rock Head</Ability>
-        <Description>It begins walking on its hind legs after evolution. It can punch holes through boulders with its horn.</Description>
+        <Description>It   begins   walking   on   its   hind   legs   after   evolution.   It   can
+punch   holes   through   boulders   with   its   horn.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Chansey</Name>
@@ -3553,7 +3669,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>105</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Natural Cure:Serene Grace</Ability>
-        <Description>It lays several eggs a day. The eggs are apparently rich in nutrients and extremely delicious.</Description>
+        <Description>It   lays   several   eggs   a   day.   The   eggs   are   apparently   rich
+in   nutrients   and   extremely   delicious.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Tangela</Name>
@@ -3584,7 +3701,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>40</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Chlorophyll</Ability>
-        <Description>Blue plant vines cloak the’s identity in a tangled mass. It entangles anything that gets close.</Description>
+        <Description>Blue   plant   vines   cloak   the   POKéMON`s   identity   in   a   tangled
+mass.   It   entangles   anything   that   gets   close.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kangaskhan</Name>
@@ -3615,7 +3733,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Early Bird</Ability>
-        <Description>The female raises its offspring in a pouch on its belly. It is skilled at attacking using COMET PUNCH.</Description>
+        <Description>The   female   raises   its   offspring   in   a   pouch   on   its   belly.   It
+is   skilled   at   attacking   using   COMET   PUNCH.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Horsea</Name>
@@ -3646,7 +3765,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>25</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Swift Swim</Ability>
-        <Description>It maintains balance using its tail, which is wound up like a coil. It may spray ink from its mouth.</Description>
+        <Description>It   maintains   balance   using   its   tail ,   which   is   wound   up   like   a
+coil.   It   may   spray   ink   from   its   mouth.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Seadra</Name>
@@ -3677,7 +3797,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Poison Point</Ability>
-        <Description>Its body bristles with sharp spikes. Carelessly trying to touch it could cause fainting from the spikes.</Description>
+        <Description>Its   body   bristles   with   sharp   spikes.   Carelessly   trying   to
+touch   it   could   cause   fainting   from   the   spikes.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Goldeen</Name>
@@ -3708,7 +3829,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>63</BaseSpeed>
         <Ability>Swift Swim:Water Veil</Ability>
-        <Description>Its dorsal and pectoral fins are strongly developed like muscles. It can swim at a speed of five knots.</Description>
+        <Description>Its   dorsal   and   pectoral   fins   are   strongly   developed   like
+muscles.   It   can   swim   at   a   speed   of   five   knots.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Seaking</Name>
@@ -3739,7 +3861,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>68</BaseSpeed>
         <Ability>Swift Swim:Water Veil</Ability>
-        <Description>The horn on its head is sharp like a drill. It bores a hole in a boulder to make its nest.</Description>
+        <Description>The   horn   on   its   head   is   sharp   like   a   drill.   It   bores   a   hole
+in   a   boulder   to   make   its   nest.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Staryu</Name>
@@ -3770,7 +3893,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Illuminate:Natural Cure</Ability>
-        <Description>It appears in large numbers by seashores. At night, its central core flashes with a red light.</Description>
+        <Description>It   appears   in   large   numbers   by   seashores.   At   night ,   its
+central   core   flashes   with   a   red   light.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Starmie</Name>
@@ -3802,7 +3926,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>115</BaseSpeed>
         <Ability>Illuminate:Natural Cure</Ability>
-        <Description>This has a geometric body. Because of its body, the locals suspect that it is an alien creature.</Description>
+        <Description>This   POKéMON   has   a   geometric   body.   Because   of   its   body ,
+the   locals   suspect   that   it   is   an   alien   creature.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Mr.  Mime</Name>
@@ -3833,7 +3958,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>120</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Soundproof</Ability>
-        <Description>It is adept at conning people. It is said to be able to create walls out of thin air by miming.</Description>
+        <Description>It   is   adept   at   conning   people.   It   is   said   to   be   able   to
+create   walls   out   of   thin   air   by   miming.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Scyther</Name>
@@ -3865,7 +3991,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>80</BaseSpecialDefense>
         <BaseSpeed>105</BaseSpeed>
         <Ability>Swarm</Ability>
-        <Description>It tears and shreds prey with its wickedly sharp scythes. It very rarely spreads its wings to fly.</Description>
+        <Description>It   tears   and   shreds   prey   with   its   wickedly   sharp   scythes.
+It   very   rarely   spreads   its   wings   to   fly.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Jynx</Name>
@@ -3897,7 +4024,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>95</BaseSpecialDefense>
         <BaseSpeed>95</BaseSpeed>
         <Ability>Oblivious</Ability>
-        <Description>It speaks using a language that sounds human. Research is under way to determine what is being said.</Description>
+        <Description>It   speaks   using   a   language   that   sounds   human.   Research
+is   under   way   to   determine   what   is   being   said.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Electabuzz</Name>
@@ -3928,7 +4056,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>105</BaseSpeed>
         <Ability>Static</Ability>
-        <Description>It loves to feed on strong electricity. It occasionally appears around large power plants and so on.</Description>
+        <Description>It   loves   to   feed   on   strong   electricity.   It   occasionally
+appears   around   large   power   plants   and   so   on.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Magmar</Name>
@@ -3959,7 +4088,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>93</BaseSpeed>
         <Ability>Flame Body</Ability>
-        <Description>Found near the mouth of a volcano. This fire-breather’s body temperature is nearly 2,200 degrees Fahrenheit.</Description>
+        <Description>Found   near   the   mouth   of   a   volcano.   This   fire-breather`s
+body   temperature   is   nearly   2,200   degrees   Fahrenheit.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Pinsir</Name>
@@ -3990,7 +4120,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Hyper Cutter</Ability>
-        <Description>Its two long pincer horns are powerful. Once they grip an enemy, they won`t release until the foe is torn.</Description>
+        <Description>Its   two   long   pincer   horns   are   powerful.   Once   they   grip   an
+enemy ,   they   won`t   release   until   the   foe   is   torn.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Tauros</Name>
@@ -4021,8 +4152,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>110</BaseSpeed>
         <Ability>Intimidate</Ability>
-        <Description>When it is about to TACKLE, it whips its body repeatedly with its three long tails.</Description>
-    </Pokemon>
+        <Description>When   it   is   about   to   TACKLE ,   it   whips   its   body   repeatedly
+with   its   three   long   tails.</Description>
+    </Pokemon>  
     <Pokemon>
         <Name>Magikarp</Name>
         <Index>129</Index>
@@ -4052,7 +4184,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>20</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Swift Swim</Ability>
-        <Description>It is virtually worthless in terms of both power and speed. It is the most weak and pathetic in the world.</Description>
+        <Description>It   is   virtually   worthless   in   terms   of   both   power   and
+speed.   It   is   the   most   weak   and   pathetic   POKéMON   in   the
+world.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Gyarados</Name>
@@ -4084,7 +4218,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>81</BaseSpeed>
         <Ability>Intimidate</Ability>
-        <Description>It has an extremely aggressive nature. The HYPER BEAM it shoots from its mouth totally incinerates all targets.</Description>
+        <Description>It   has   an   extremely   aggressive   nature.   The   HYPER   BEAM   it
+shoots   from   its   mouth   totally   incinerates   all   targets.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Lapras</Name>
@@ -4116,7 +4251,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>95</BaseSpecialDefense>
         <BaseSpeed>60</BaseSpeed>
         <Ability>Water Absorb:Shell Armor</Ability>
-        <Description>Its high intelligence enables it to understand human speech. It likes to ferry people on its back.</Description>
+        <Description>Its   high   intelligence   enables   it   to   understand   human
+speech.   It   likes   to   ferry   people   on   its   back.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Ditto</Name>
@@ -4147,7 +4283,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>48</BaseSpecialDefense>
         <BaseSpeed>48</BaseSpeed>
         <Ability>Limber</Ability>
-        <Description>It can freely recombine its own cellular structure to transform into other life-forms.</Description>
+        <Description>It   can   freely   recombine   its   own   cellular   structure   to
+transform   into   other   life-forms.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Eevee</Name>
@@ -4178,7 +4315,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>65</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Run Away</Ability>
-        <Description>An extremely rare that may evolve in a number of different ways depending on stimuli.</Description>
+        <Description>An   extremely   rare   POKéMON   that   may   evolve   in   a   number
+of   different   ways   depending   on   stimuli.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Vaporeon</Name>
@@ -4209,7 +4347,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>95</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Water Absorb</Ability>
-        <Description>Its body’s cellular structure is similar to the molecular composition of water. It can melt invisibly in water.</Description>
+        <Description>Its   body`s   cellular   structure   is   similar   to   the   molecular
+composition   of   water.   It   can   melt   invisibly   in   water.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Jolteon</Name>
@@ -4240,7 +4379,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>95</BaseSpecialDefense>
         <BaseSpeed>130</BaseSpeed>
         <Ability>Volt Absorb</Ability>
-        <Description>If it is angered or startled, the fur all over its body bristles like sharp needles that pierce foes.</Description>
+        <Description>If   it   is   angered   or   startled ,   the   fur   all   over   its   body
+bristles   like   sharp   needles   that   pierce   foes.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Flareon</Name>
@@ -4271,7 +4411,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>95</BaseSpecialDefense>
         <BaseSpeed>65</BaseSpeed>
         <Ability>Flash Fire</Ability>
-        <Description>It has a flame bag inside its body. After inhaling deeply, it blows out flames of nearly 3,100 degrees Fahrenheit.</Description>
+        <Description>It   has   a   flame   bag   inside   its   body.   After   inhaling   deeply ,
+it   blows   out   flames   of   nearly   3,100   degrees   Fahrenheit.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Porygon</Name>
@@ -4302,7 +4443,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>40</BaseSpeed>
         <Ability>Trace</Ability>
-        <Description>Using the most advanced technologies, scientists finally succeeded in making the first artificial.</Description>
+        <Description>Using   the   most   advanced   technologies ,   scientists   finally
+succeeded   in   making   the   first   artificial   POKéMON.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Omanyte</Name>
@@ -4334,7 +4476,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>55</BaseSpecialDefense>
         <BaseSpeed>35</BaseSpeed>
         <Ability>Swift Swim:Shell Armor</Ability>
-        <Description>A prehistoric that lived in the primordial sea, it swims by twisting its 10 tentacles about.</Description>
+        <Description>A   prehistoric   POKéMON   that   lived   in   the   primordial   sea ,   it
+swims   by   twisting   its   10   tentacles   about.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Omastar</Name>
@@ -4366,7 +4509,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Swift Swim:Shell Armor</Ability>
-        <Description>Its tentacles are highly developed as if they are hands and feet. As soon as it ensnares prey, it bites.</Description>
+        <Description>Its   tentacles   are   highly   developed   as   if   they   are   hands
+and   feet.   As   soon   as   it   ensnares   prey ,   it   bites.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kabuto</Name>
@@ -4398,7 +4542,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>45</BaseSpecialDefense>
         <BaseSpeed>55</BaseSpeed>
         <Ability>Swift Swim:Battle Armor</Ability>
-        <Description>This was regenerated from the fossil of an ancient creature. It protects itself with a hard shell.</Description>
+        <Description>This   POKéMON   was   regenerated   from   the   fossil   of   an
+ancient   creature.   It   protects   itself   with   a   hard   shell.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Kabutops</Name>
@@ -4430,7 +4575,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Swift Swim:Battle Armor</Ability>
-        <Description>It swims freely through water. It catches prey with its scythe-like arms and drains the victim’s fluids.</Description>
+        <Description>It   swims   freely   through   water.   It   catches   prey   with   its
+scythe-like   arms   and   drains   the   victim`s   fluids.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Aerodactyl</Name>
@@ -4462,7 +4608,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>75</BaseSpecialDefense>
         <BaseSpeed>130</BaseSpeed>
         <Ability>Rock Head:Pressure</Ability>
-        <Description>It was regenerated from a dinosaur’s genetic matter that was found in amber. It flies with high-pitched cries.</Description>
+        <Description>It   was   regenerated   from   a   dinosaur`s   genetic   matter   that
+was   found   in   amber.   It   flies   with   high-pitched cries.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Snorlax</Name>
@@ -4493,7 +4640,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>110</BaseSpecialDefense>
         <BaseSpeed>30</BaseSpeed>
         <Ability>Immunity:Thick Fat</Ability>
-        <Description>It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.</Description>
+        <Description>It   is   not   satisfied   unless   it   eats   over   880   pounds   of   food
+every   day.   When   it   is   done   eating ,   it   goes   promptly   to
+sleep.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Articuno</Name>
@@ -4525,7 +4674,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>125</BaseSpecialDefense>
         <BaseSpeed>85</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>One of the legendary bird. With its long tail trailing behind, its flying form is magnificent.</Description>
+        <Description>One   of   the   legendary   bird   POKéMON.   With   its   long   tail
+trailing   behind ,   its   flying   form   is   magnificent.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Zapdos</Name>
@@ -4557,7 +4707,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>One of the legendary bird. While it is flying, it makes crackling and snapping sounds.</Description>
+        <Description>One   of   the   legendary   bird   POKéMON.   While   it   is   flying ,   it
+makes   crackling   and   snapping   sounds.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Moltres</Name>
@@ -4589,7 +4740,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>85</BaseSpecialDefense>
         <BaseSpeed>90</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>One of the legendary bird. Those seeing it are overwhelmed by its orange wings that seem to be on fire.</Description>
+        <Description>One   of   the   legendary   bird   POKéMON.   Those   seeing   it   are
+overwhelmed   by   its   orange   wings   that   seem   to be   on   fire.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dratini</Name>
@@ -4620,8 +4772,9 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>50</BaseSpecialDefense>
         <BaseSpeed>50</BaseSpeed>
         <Ability>Shed Skin</Ability>
-        <Description>Even the young can exceed 6.5 feet in length. It grows larger by repeatedly shedding skin.</Description>
-    </Pokemon>
+        <Description>Even   the   young   can   exceed   6.5   feet   in   length.   It   grows
+larger   by   repeatedly   shedding   skin.</Description>
+    </Pokemon> 
     <Pokemon>
         <Name>Dragonair</Name>
         <Index>148</Index>
@@ -4651,7 +4804,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>70</BaseSpecialDefense>
         <BaseSpeed>70</BaseSpeed>
         <Ability>Shed Skin</Ability>
-        <Description>It is said to live in seas and lakes. Even though it has no wings, it has been seen flying occasionally.</Description>
+        <Description>It   is   said   to   live   in   seas   and   lakes.   Even   though   it   has   no
+wings ,   it   has   been   seen   flying   occasionally.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Dragonite</Name>
@@ -4683,7 +4837,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>80</BaseSpeed>
         <Ability>Inner Focus</Ability>
-        <Description>It can fly in spite of its big and bulky physique. It circles the globe in just 16 hours.</Description>
+        <Description>It   can   fly   in   spite   of   its   big   and   bulky   physique.   It
+circles   the   globe   in   just   16   hours.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Mewtwo</Name>
@@ -4714,7 +4869,8 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>90</BaseSpecialDefense>
         <BaseSpeed>130</BaseSpeed>
         <Ability>Pressure</Ability>
-        <Description>A whose genetic code was repeatedly recombined for research. It turned vicious as a result.</Description>
+        <Description>A   POKéMON   whose   genetic   code   was   repeatedly   recombined
+for   research.   It   turned   vicious   as   a   result.</Description>
     </Pokemon>
     <Pokemon>
         <Name>Mew</Name>
@@ -4745,6 +4901,7 @@ it   squirts   out   water   with   vigorous   force.</Description>
         <BaseSpecialDefense>100</BaseSpecialDefense>
         <BaseSpeed>100</BaseSpeed>
         <Ability>Synchronize</Ability>
-        <Description>A of South America that was thought to have been extinct. It is very intelligent and learns any move.</Description>
+        <Description>A   POKéMON   of   South   America   that   was   thought   to   have
+been   extinct.   It   is   very   intelligent   and   learns   any   move.</Description>
     </Pokemon>
 </PokemonManager>

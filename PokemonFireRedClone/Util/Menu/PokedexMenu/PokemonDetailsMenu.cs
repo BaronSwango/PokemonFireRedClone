@@ -32,6 +32,7 @@ namespace PokemonFireRedClone
         {
             PokemonDetailsBackground.UnloadContent();
 			pokemonDetails[ItemNumber].UnloadContent();
+            PokemonMenu.SelectedIndex = ItemNumber;
         }
 
         public override void Update(GameTime gameTime)
@@ -63,6 +64,7 @@ namespace PokemonFireRedClone
                 {
                     pokemonDetails[ItemNumber].LoadContent();
                 }
+
                 InitializePositions();
             }
         }
@@ -107,7 +109,7 @@ namespace PokemonFireRedClone
                 pokemonDetails[ItemNumber].Classification.Position.Y + pokemonDetails[ItemNumber].Classification.SourceRect.Height + 20));
             pokemonDetails[ItemNumber].Weight.SetPosition(new(pokemonDetails[ItemNumber].Classification.Position.X + 352 - pokemonDetails[ItemNumber].Weight.SourceRect.Width,
                 pokemonDetails[ItemNumber].Height.Position.Y + pokemonDetails[ItemNumber].Height.SourceRect.Height + 20));
-            pokemonDetails[ItemNumber].Description?.SetPosition(new(124, 480));
+            pokemonDetails[ItemNumber].Description?.SetPosition(new(20, 420));
             pokemonDetails[ItemNumber].PokemonImage.Position = new(940 - (pokemonDetails[ItemNumber].PokemonImage.SourceRect.Width / 2), 260 - (pokemonDetails[ItemNumber].PokemonImage.SourceRect.Height / 2));
         }
 

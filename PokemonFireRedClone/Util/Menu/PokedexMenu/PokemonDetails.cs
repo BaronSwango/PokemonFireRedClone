@@ -42,8 +42,8 @@ namespace PokemonFireRedClone
 
 			if (owned)
 			{
-				Description = new(pokemon.Description, "Fonts/PokemonFireRedSmall",
-                    new Color(0, 0, 0), new Color(224, 216, 192));
+				Description = new(pokemon.Description, "Fonts/PokemonFireRedDialogue",
+                    new Color(0, 0, 0), new Color(201, 189, 155));
 			}
 
 			PokemonImage = pokemon.Front;

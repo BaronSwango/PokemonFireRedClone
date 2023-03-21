@@ -112,12 +112,11 @@ namespace PokemonFireRedClone
                 ArrowDown.UnloadContent();
             }
 
-            SelectedIndex = currentShownIndices[ItemNumber];
+            SelectedIndex = ItemNumber + 1;
         }
 
         public override void Update(GameTime gameTime)
         {
-
             if ((ItemNumber == 3 && InputManager.Instance.KeyPressed(Keys.W) && currentShownIndices[0] > 1)
                 || (ItemNumber == 6 && InputManager.Instance.KeyPressed(Keys.S) && currentShownIndices[^1] < Items.Count))
             {
@@ -210,6 +209,11 @@ namespace PokemonFireRedClone
             }
 
             AnimateArrows(gameTime);
+
+            if (InputManager.Instance.KeyPressed(Keys.E) && !string.IsNullOrEmpty(Items[currentShownIndices[ItemNumber] - 1].LinkType))
+            {
+                ItemNumber = currentShownIndices[ItemNumber] - 1;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -278,7 +282,7 @@ namespace PokemonFireRedClone
 
             for (int i = 1; i <= maxIndexNum; i++)
             {
-                Items.Add(new MenuItem("PokedexEntry", new PokemonText("No" + i.ToString().PadLeft(3, '0'), "Fonts/PokemonFireRedSmall",
+                Items.Add(new MenuItem("", new PokemonText("No" + i.ToString().PadLeft(3, '0'), "Fonts/PokemonFireRedSmall",
                     new Color(0, 0, 0), new Color(224, 216, 192))));
 
                 if (!pokemonNames.ContainsKey(i))
