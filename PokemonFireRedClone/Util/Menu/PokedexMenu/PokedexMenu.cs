@@ -7,6 +7,8 @@ namespace PokemonFireRedClone
 	public class PokedexMenu : Menu
 	{
 		public Image PokedexMenuBackground;
+        public Image PokedexBackground;
+        public Image TransitionBox;
         public Image Arrow;
         public PokemonText Seen;
         public PokemonText Owned;
@@ -19,7 +21,10 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             PokedexMenuBackground.LoadContent();
+            PokedexBackground.LoadContent();
             Arrow.LoadContent();
+
+            PokedexBackground.Position.Y = 64;
 
             Seen.Image.Text = Player.PlayerJsonObject.PokemonSeen.Count.ToString();
             Owned.Image.Text = Player.PlayerJsonObject.PokemonOwned.Count.ToString();
@@ -39,6 +44,7 @@ namespace PokemonFireRedClone
         {
             PokedexMenuBackground.UnloadContent();
             Arrow.UnloadContent();
+            PokedexBackground.UnloadContent();
 
             Seen.UnloadContent();
             Owned.UnloadContent();
@@ -78,6 +84,7 @@ namespace PokemonFireRedClone
         public override void Draw(SpriteBatch spriteBatch)
         {
             PokedexMenuBackground.Draw(spriteBatch);
+            PokedexBackground.Draw(spriteBatch);
             Arrow.Draw(spriteBatch);
 
             Seen.Draw(spriteBatch);

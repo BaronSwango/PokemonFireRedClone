@@ -80,7 +80,9 @@ namespace PokemonFireRedClone
         {
             CurrentScreen.Draw(spriteBatch);
             if (IsTransitioning)
+            {
                 Image.Draw(spriteBatch);
+            }
         }
 
         private void LoadFadeImage()
@@ -121,7 +123,9 @@ namespace PokemonFireRedClone
                     }
 
                     if (!Image.IsActive)
+                    {
                         Image.IsActive = true;
+                    }
 
                     CurrentScreen.UnloadContent();
                     PreviousScreen = CurrentScreen;
@@ -142,7 +146,6 @@ namespace PokemonFireRedClone
                     else
                         Image.Position = Vector2.Zero;
 
-                    //counter = 0;
                     counter.Reset();
                 }
                 else if (Image.Alpha == 0.0f)

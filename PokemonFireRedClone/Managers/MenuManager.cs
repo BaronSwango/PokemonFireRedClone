@@ -14,6 +14,10 @@ namespace PokemonFireRedClone
         public bool IsLoaded;
         public bool WasLoaded;
 
+        private bool isTransitioning;
+        private Counter counter;
+        private Image PokedexTransitionBox;
+
         public MenuManager(string MenuName)
         {
             this.MenuName = MenuName;
@@ -21,6 +25,37 @@ namespace PokemonFireRedClone
             Menu.OnMenuChange += Menu_OnMenuChange;
         }
 
+        private void Transition(GameTime gameTime)
+        {
+            if (isTransitioning)
+            {
+                PokedexTransitionBox.Update(gameTime);
+                if (PokedexTransitionBox.Alpha == 1.0f)
+                {
+                    if (!counter.Finished)
+                    {
+                        //counter += gameTime.ElapsedGameTime.TotalMilliseconds;
+                        counter.Update(gameTime);
+                        PokedexTransitionBox.IsActive = false;
+                        return;
+                    }
+
+                    if (!PokedexTransitionBox.IsActive)
+                    {
+                        PokedexTransitionBox.IsActive = true;
+                    }
+
+                    Menu.ID = "Load/Menus/" + MenuName + ".xml";
+                    counter.Reset();
+                }
+                else if (PokedexTransitionBox.Alpha == 0.0f)
+                {
+                    PokedexTransitionBox.IsActive = false;
+                    PokedexTransitionBox.UnloadContent();
+                    isTransitioning = false;
+                }
+            }    
+        }
 
         private void Menu_OnMenuChange(object sender, EventArgs e)
         {
@@ -34,12 +69,14 @@ namespace PokemonFireRedClone
             foreach (MenuItem item in Menu.Items)
             {
                 if (item.Image != null && item.Image.IsLoaded)
+                {
                     item.Image.StoreEffects();
+                }
                 else if (item.PokemonText != null && item.PokemonText.IsLoaded)
+                {
                     item.PokemonText.StoreEffects();
+                }
             }
-            
-
         }
 
         public void LoadContent(string MenuPath)
@@ -69,8 +106,9 @@ namespace PokemonFireRedClone
             }
 
             Menu.Update(gameTime);
+            Transition(gameTime);
             
-            if (InputManager.Instance.KeyPressed(Keys.E) && Menu.Items.Count > 0)
+            if (InputManager.Instance.KeyPressed(Keys.E) && Menu.Items.Count > 0 && !isTransitioning)
             {
                 switch (Menu.Items[Menu.ItemNumber].LinkType)
                 {
@@ -79,7 +117,17 @@ namespace PokemonFireRedClone
                         break;
                     case "Menu":
                         MenuName = Menu.Items[Menu.ItemNumber].MenuName;
-                        Menu.ID = Menu.Items[Menu.ItemNumber].LinkID;
+
+                        if (Menu.Items[Menu.ItemNumber].MenuName == "PokemonListMenu"
+                            || Menu.Items[Menu.ItemNumber].MenuName == "PokemonDetailsMenu")
+                        {
+                            StartPokedexTransition();
+                        }
+                        else
+                        {
+                            Menu.ID = Menu.Items[Menu.ItemNumber].LinkID;
+                        }
+
                         break;
                     case "Yes":
                         Menu.Yes();
@@ -125,7 +173,6 @@ namespace PokemonFireRedClone
                     default:
                         break;
                 }
-
                 WasLoaded = true;
             }
 
@@ -134,20 +181,66 @@ namespace PokemonFireRedClone
                 if (Menu.PrevMenuName != null)
                 {
                     MenuName = Menu.PrevMenuName;
-                    Menu.ID = "Load/Menus/" + Menu.PrevMenuName + ".xml";
+                    if (Menu.PrevMenuName == "PokedexMenu"
+                            || Menu.PrevMenuName == "PokemonListMenu")
+                    {
+                        StartPokedexTransition();
+                    }
+                    else
+                    {
+                        Menu.ID = "Load/Menus/" + Menu.PrevMenuName + ".xml";
+                    }
                 }
                 else if (Menu.PrevScreen != null)
+                {
                     ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
-                
+                }
             }
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             Menu.Draw(spriteBatch);
+
+            if (isTransitioning)
+            {
+                PokedexTransitionBox.Draw(spriteBatch);
+            }
         }
 
+        private void LoadPokedexTransitionImage()
+        {
+            PokedexTransitionBox = new Image
+            {
+                Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, ((PokedexMenu) Menu).PokedexBackground.SourceRect.Width, ((PokedexMenu)Menu).PokedexBackground.SourceRect.Height)
+            };
+            Color[] data = new Color[PokedexTransitionBox.Texture.Width * PokedexTransitionBox.Texture.Height];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            PokedexTransitionBox.Texture.SetData(data);
+            PokedexTransitionBox.Effects = "FadeEffect";
+            PokedexTransitionBox.LoadContent();
+            counter = new Counter(400);
+            PokedexTransitionBox.Position.Y = 64;
+        }
+
+        private void StartPokedexTransition()
+        {
+            isTransitioning = true;
+
+            if (PokedexTransitionBox == null)
+            {
+                LoadPokedexTransitionImage();
+            }
+            else
+            {
+                PokedexTransitionBox.ReloadTexture();
+            }
+
+            PokedexTransitionBox.IsActive = true;
+            PokedexTransitionBox.FadeEffect.Increase = true;
+            PokedexTransitionBox.Alpha = 0.0f;
+            PokedexTransitionBox.FadeEffect.FadeSpeed = 3.5f;
+        }
 
     }
 }

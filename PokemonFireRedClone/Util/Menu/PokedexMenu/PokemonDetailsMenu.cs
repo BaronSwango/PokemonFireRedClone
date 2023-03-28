@@ -10,16 +10,25 @@ namespace PokemonFireRedClone
 	public class PokemonDetailsMenu : Menu
 	{
 		private readonly List<PokemonDetails> pokemonDetails;
+        public Image PokemonDetailsBorder;
 		public Image PokemonDetailsBackground;
 
-		public PokemonDetailsMenu()
+        private static int SavedIndex
+        {
+            get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex; }
+            set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex = value; }
+        }
+
+        public PokemonDetailsMenu()
 		{
 			pokemonDetails = new();
 		}
 
         public override void LoadContent()
         {
+            PokemonDetailsBorder.LoadContent();
 			PokemonDetailsBackground.LoadContent();
+            PokemonDetailsBackground.Position.Y = 64;
 
 		    InitializePokemonOrder();
 
@@ -30,6 +39,7 @@ namespace PokemonFireRedClone
 
         public override void UnloadContent()
         {
+            PokemonDetailsBorder.UnloadContent();
             PokemonDetailsBackground.UnloadContent();
 			pokemonDetails[ItemNumber].UnloadContent();
             PokemonMenu.SelectedIndex = ItemNumber;
@@ -71,7 +81,8 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-			PokemonDetailsBackground.Draw(spriteBatch);
+            PokemonDetailsBorder.Draw(spriteBatch);
+            PokemonDetailsBackground.Draw(spriteBatch);
 			pokemonDetails[ItemNumber].Draw(spriteBatch);
         }
 
@@ -89,7 +100,7 @@ namespace PokemonFireRedClone
 
 			for (int i = 0; i < pokemonDetails.Count; i++)
 			{
-				if (pokemonDetails[i].Pokemon.Index == PokemonListMenu.SelectedIndex)
+				if (pokemonDetails[i].Pokemon.Index == SavedIndex)
 				{
 					ItemNumber = i;
 					return;

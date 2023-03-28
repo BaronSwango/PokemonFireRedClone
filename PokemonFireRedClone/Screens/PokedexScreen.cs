@@ -7,10 +7,12 @@ namespace PokemonFireRedClone
 	public class PokedexScreen : GameScreen
 	{
         public readonly MenuManager MenuManager;
+        public int SavedSearchIndex;
 
         public PokedexScreen()
 		{
 			MenuManager = new MenuManager("PokedexMenu");
+            SavedSearchIndex = 0;
 		}
 
         public override void LoadContent()

@@ -12,7 +12,7 @@ namespace PokemonFireRedClone
         private readonly List<int> currentShownIndices;
         public Image Arrow;
 		public Image PokemonListBackground;
-        public static int SelectedIndex;
+        public Image PokedexBackground;
 
         public Image ArrowUp;
         public Image ArrowDown;
@@ -21,6 +21,11 @@ namespace PokemonFireRedClone
         private float arrowOffset;
         private bool increase;
 
+        private static int SavedIndex
+        {
+            get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex; }
+            set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex = value; }
+        }
         
         public PokemonListMenu()
         {
@@ -60,8 +65,10 @@ namespace PokemonFireRedClone
         public override void LoadContent()
         {
             PokemonListBackground.LoadContent();
+            PokedexBackground.LoadContent();
             Arrow.LoadContent();
 
+            PokedexBackground.Position.Y = 64;
 
             InitializePokemonList();
 
@@ -85,6 +92,7 @@ namespace PokemonFireRedClone
 
         public override void UnloadContent()
         {
+            PokemonListBackground.UnloadContent();
             PokemonListBackground.UnloadContent();
             Arrow.UnloadContent();
 
@@ -111,8 +119,6 @@ namespace PokemonFireRedClone
             {
                 ArrowDown.UnloadContent();
             }
-
-            SelectedIndex = ItemNumber + 1;
         }
 
         public override void Update(GameTime gameTime)
@@ -213,12 +219,14 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.E) && !string.IsNullOrEmpty(Items[currentShownIndices[ItemNumber] - 1].LinkType))
             {
                 ItemNumber = currentShownIndices[ItemNumber] - 1;
+                SavedIndex = ItemNumber + 1;
             }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             PokemonListBackground.Draw(spriteBatch);
+            PokedexBackground.Draw(spriteBatch);
             Arrow.Draw(spriteBatch);
 
             foreach (int i in currentShownIndices)

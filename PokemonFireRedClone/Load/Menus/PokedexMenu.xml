@@ -6,6 +6,10 @@
         <Path>Menus/PokedexMenu/PokedexMenuBackground</Path>
     </PokedexMenuBackground>
 
+    <PokedexBackground>
+        <Path>Menus/PokedexMenu/PokedexBackground</Path>
+    </PokedexBackground>
+
     <Arrow>
         <Path>Menus/BlackBigMenuArrow</Path>
     </Arrow>

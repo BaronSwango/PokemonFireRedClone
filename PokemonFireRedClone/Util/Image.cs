@@ -165,6 +165,15 @@ namespace PokemonFireRedClone
 
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
             IsReloaded = true;
+
+            if (Effects != string.Empty)
+            {
+                string[] split = Effects.Split(':');
+                foreach (string item in split)
+                {
+                    EffectList[item].IsActive = true;
+                }
+            }
         }
 
         public void ReloadTexture(string newPath)
