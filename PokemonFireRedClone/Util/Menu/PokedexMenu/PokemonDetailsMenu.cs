@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,6 +13,9 @@ namespace PokemonFireRedClone
 		private readonly List<PokemonDetails> pokemonDetails;
         public Image PokemonDetailsBorder;
 		public Image PokemonDetailsBackground;
+
+        private Image pokedexTransitionBox;
+        private Counter counter;
 
         private static int SavedIndex
         {
@@ -122,6 +126,21 @@ namespace PokemonFireRedClone
                 pokemonDetails[ItemNumber].Height.Position.Y + pokemonDetails[ItemNumber].Height.SourceRect.Height + 20));
             pokemonDetails[ItemNumber].Description?.SetPosition(new(20, 420));
             pokemonDetails[ItemNumber].PokemonImage.Position = new(940 - (pokemonDetails[ItemNumber].PokemonImage.SourceRect.Width / 2), 260 - (pokemonDetails[ItemNumber].PokemonImage.SourceRect.Height / 2));
+        }
+
+        private void LoadPokedexTransitionImage()
+        {
+            pokedexTransitionBox = new Image
+            {
+                Texture = new Texture2D(ScreenManager.Instance.GraphicsDevice, PokemonDetailsBackground.SourceRect.Width, PokemonDetailsBackground.SourceRect.Height)
+            };
+            Color[] data = new Color[pokedexTransitionBox.Texture.Width * pokedexTransitionBox.Texture.Height];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            pokedexTransitionBox.Texture.SetData(data);
+            pokedexTransitionBox.Effects = "FadeEffect";
+            pokedexTransitionBox.LoadContent();
+            counter = new Counter(400);
+            pokedexTransitionBox.Position.Y = 64;
         }
 
     }

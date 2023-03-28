@@ -110,7 +110,9 @@ namespace PokemonFireRedClone
             InfoTitles[3].Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
 
             foreach (PokemonText image in InfoTitles)
+            {
                 image.LoadContent();
+            }
 
             base.LoadContent();
         }
@@ -121,7 +123,9 @@ namespace PokemonFireRedClone
             SaveRegion.UnloadContent();
             Arrow.UnloadContent();
             foreach (PokemonText image in InfoTitles)
+            {
                 image.UnloadContent();
+            }
             MenuBackground.UnloadContent();
             SaveDialogue.UnloadContent(ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
             base.UnloadContent();
@@ -134,9 +138,7 @@ namespace PokemonFireRedClone
             {
                 ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player.Save();
                 exited = true;
-                //exitCounter += gameTime.ElapsedGameTime.TotalSeconds;
                 exitCounter.Update(gameTime);
-                //if (exitCounter >= 2)
                 if (exitCounter.Finished)
                 {
                     ((GameplayScreen)ScreenManager.Instance.CurrentScreen).MenuManager.MenuName = "MainMenu";
@@ -147,14 +149,22 @@ namespace PokemonFireRedClone
             {
                 AlignMenuItems();
                 if (InputManager.Instance.KeyPressed(Keys.S))
+                {
                     ItemNumber++;
+                }
                 else if (InputManager.Instance.KeyPressed(Keys.W))
+                {
                     ItemNumber--;
+                }
 
                 if (ItemNumber < 0)
+                {
                     ItemNumber = 0;
+                }
                 else if (ItemNumber > 1)
+                {
                     ItemNumber = 1;
+                }
 
                 for (int i = 0; i < Items.Count; i++)
                 {
@@ -165,7 +175,9 @@ namespace PokemonFireRedClone
                             Items[i].PokemonText.Position.Y + (Items[i].PokemonText.SourceRect.Height / 4) - 2);
                     }
                     else
+                    {
                         Items[i].PokemonText.Image.IsActive = false;
+                    }
 
                 }
                 base.Update(gameTime);
@@ -178,7 +190,9 @@ namespace PokemonFireRedClone
             InfoTitlesBackground.Draw(spriteBatch);
             SaveRegion.Draw(spriteBatch);
             foreach (PokemonText image in InfoTitles)
+            {
                 image.Draw(spriteBatch);
+            }
             
             if (!SaveDialogue.IsTransitioning && !exited)
             {
@@ -193,10 +207,16 @@ namespace PokemonFireRedClone
             if (!SaveDialogue.IsTransitioning)
             {
                 if (!File.Exists("Load/Gameplay/Player.json"))
+                {
                     SaveDialogue.Page = 2;
+                }
+
                 SaveDialogue.IsTransitioning = true;
+
                 if (SaveDialogue.Page == 2)
+                {
                     Items.Clear();
+                }
             }
         }
 

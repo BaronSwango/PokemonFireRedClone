@@ -25,7 +25,6 @@ namespace PokemonFireRedClone
         public int FromTop; // indent from top of screen
         public int ItemNumber;
         public string PrevMenuName;
-        //public bool ScreenMenu;
         public string PrevScreen;
         public Vector2 Position;
         public bool BaseMenu;
