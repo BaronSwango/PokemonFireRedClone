@@ -16,6 +16,8 @@ namespace PokemonFireRedClone
 
         private Image pokedexTransitionBox;
         private Counter counter;
+        private bool isTransitioning;
+        private bool increase;
 
         private static int SavedIndex
         {
@@ -27,6 +29,52 @@ namespace PokemonFireRedClone
 		{
 			pokemonDetails = new();
 		}
+
+
+        private void Transition(GameTime gameTime)
+        {
+            if (isTransitioning)
+            {
+                pokedexTransitionBox.Update(gameTime);
+                if (pokedexTransitionBox.Alpha == 1.0f)
+                {
+                    if (!counter.Finished)
+                    {
+                        counter.Update(gameTime);
+                        pokedexTransitionBox.IsActive = false;
+                        return;
+                    }
+
+                    if (!pokedexTransitionBox.IsActive)
+                    {
+                        pokedexTransitionBox.IsActive = true;
+                    }
+
+                    pokemonDetails[ItemNumber].UnloadContent();
+
+                    ItemNumber = increase ? ItemNumber + 1 : ItemNumber - 1;
+
+                    if (pokemonDetails[ItemNumber].Index.IsLoaded)
+                    {
+                        pokemonDetails[ItemNumber].ReloadContent();
+                    }
+                    else
+                    {
+                        pokemonDetails[ItemNumber].LoadContent();
+                    }
+
+                    InitializePositions();
+
+                    counter.Reset();
+                }
+                else if (pokedexTransitionBox.Alpha == 0.0f)
+                {
+                    pokedexTransitionBox.IsActive = false;
+                    pokedexTransitionBox.UnloadContent();
+                    isTransitioning = false;
+                }
+            }
+        }
 
         public override void LoadContent()
         {
@@ -51,8 +99,17 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
+            Transition(gameTime);
+
+            if (!isTransitioning && ((InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0) || (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < pokemonDetails.Count - 1)))
+            {
+                StartPokedexTransition(InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < pokemonDetails.Count - 1);
+            }
+
+            /*
 			if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0)
 			{
+
                 pokemonDetails[ItemNumber--].UnloadContent();
 
 				if (pokemonDetails[ItemNumber].Index.IsLoaded)
@@ -81,6 +138,7 @@ namespace PokemonFireRedClone
 
                 InitializePositions();
             }
+            */
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -88,6 +146,11 @@ namespace PokemonFireRedClone
             PokemonDetailsBorder.Draw(spriteBatch);
             PokemonDetailsBackground.Draw(spriteBatch);
 			pokemonDetails[ItemNumber].Draw(spriteBatch);
+
+            if (isTransitioning)
+            {
+                pokedexTransitionBox.Draw(spriteBatch);
+            }
         }
 
         private void InitializePokemonOrder()
@@ -110,7 +173,6 @@ namespace PokemonFireRedClone
 					return;
 				}
 			}
-
         }
 
 		private void InitializePositions()
@@ -143,6 +205,26 @@ namespace PokemonFireRedClone
             pokedexTransitionBox.Position.Y = 64;
         }
 
+        private void StartPokedexTransition(bool increase)
+        {
+            isTransitioning = true;
+
+            if (pokedexTransitionBox == null)
+            {
+                LoadPokedexTransitionImage();
+            }
+            else
+            {
+                pokedexTransitionBox.ReloadTexture();
+            }
+
+            pokedexTransitionBox.IsActive = true;
+            pokedexTransitionBox.FadeEffect.Increase = true;
+            pokedexTransitionBox.Alpha = 0.0f;
+            pokedexTransitionBox.FadeEffect.FadeSpeed = 3.75f;
+
+            this.increase = increase;
+        }
     }
 }
 

@@ -13,6 +13,11 @@ namespace PokemonFireRedClone
         public PokemonText Seen;
         public PokemonText Owned;
 
+        // TEXT ON PAGE
+        public PokemonText PokemonList;
+        public PokemonText SeenText;
+        public PokemonText OwnedText;
+
         protected override void AlignMenuItems()
         {
             Items[0].PokemonText.SetPosition(new(PokedexMenuBackground.Position.X + 176, PokedexMenuBackground.Position.Y + 124));
@@ -20,6 +25,16 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
+            // TEXT ON PAGE
+            PokemonList.LoadContent();
+            SeenText.LoadContent();
+            OwnedText.LoadContent();
+
+            // POSITIONS
+            PokemonList.SetPosition(new(128, 68));
+            SeenText.SetPosition(new(992, 96));
+            OwnedText.SetPosition(new(992, 212));
+
             PokedexMenuBackground.LoadContent();
             PokedexBackground.LoadContent();
             Arrow.LoadContent();
@@ -42,6 +57,10 @@ namespace PokemonFireRedClone
 
         public override void UnloadContent()
         {
+            PokemonList.UnloadContent();
+            SeenText.UnloadContent();
+            OwnedText.UnloadContent();
+
             PokedexMenuBackground.UnloadContent();
             Arrow.UnloadContent();
             PokedexBackground.UnloadContent();
@@ -86,6 +105,10 @@ namespace PokemonFireRedClone
             PokedexMenuBackground.Draw(spriteBatch);
             PokedexBackground.Draw(spriteBatch);
             Arrow.Draw(spriteBatch);
+
+            PokemonList.Draw(spriteBatch);
+            SeenText.Draw(spriteBatch);
+            OwnedText.Draw(spriteBatch);
 
             Seen.Draw(spriteBatch);
             Owned.Draw(spriteBatch);

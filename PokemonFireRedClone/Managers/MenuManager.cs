@@ -14,9 +14,9 @@ namespace PokemonFireRedClone
         public bool IsLoaded;
         public bool WasLoaded;
 
-        private bool isTransitioning;
         private Counter counter;
         private Image pokedexTransitionBox;
+        public bool IsTransitioning;
 
         public MenuManager(string MenuName)
         {
@@ -27,14 +27,13 @@ namespace PokemonFireRedClone
 
         private void Transition(GameTime gameTime)
         {
-            if (isTransitioning)
+            if (IsTransitioning)
             {
                 pokedexTransitionBox.Update(gameTime);
                 if (pokedexTransitionBox.Alpha == 1.0f)
                 {
                     if (!counter.Finished)
                     {
-                        //counter += gameTime.ElapsedGameTime.TotalMilliseconds;
                         counter.Update(gameTime);
                         pokedexTransitionBox.IsActive = false;
                         return;
@@ -52,7 +51,7 @@ namespace PokemonFireRedClone
                 {
                     pokedexTransitionBox.IsActive = false;
                     pokedexTransitionBox.UnloadContent();
-                    isTransitioning = false;
+                    IsTransitioning = false;
                 }
             }    
         }
@@ -108,7 +107,7 @@ namespace PokemonFireRedClone
             Menu.Update(gameTime);
             Transition(gameTime);
             
-            if (InputManager.Instance.KeyPressed(Keys.E) && Menu.Items.Count > 0 && !isTransitioning)
+            if (InputManager.Instance.KeyPressed(Keys.E) && Menu.Items.Count > 0 && !IsTransitioning)
             {
                 switch (Menu.Items[Menu.ItemNumber].LinkType)
                 {
@@ -176,7 +175,7 @@ namespace PokemonFireRedClone
                 WasLoaded = true;
             }
 
-            if (InputManager.Instance.KeyPressed(Keys.Q) && Menu.BaseMenu && !isTransitioning && !(Menu is SaveMenu && ((SaveMenu)Menu).SaveDialogue.IsTransitioning))
+            if (InputManager.Instance.KeyPressed(Keys.Q) && Menu.BaseMenu && !IsTransitioning && !(Menu is SaveMenu && ((SaveMenu)Menu).SaveDialogue.IsTransitioning))
             {
                 if (Menu.PrevMenuName != null)
                 {
@@ -202,7 +201,7 @@ namespace PokemonFireRedClone
         {
             Menu.Draw(spriteBatch);
 
-            if (isTransitioning)
+            if (IsTransitioning)
             {
                 pokedexTransitionBox.Draw(spriteBatch);
             }
@@ -225,7 +224,7 @@ namespace PokemonFireRedClone
 
         private void StartPokedexTransition()
         {
-            isTransitioning = true;
+            IsTransitioning = true;
 
             if (pokedexTransitionBox == null)
             {
@@ -239,7 +238,7 @@ namespace PokemonFireRedClone
             pokedexTransitionBox.IsActive = true;
             pokedexTransitionBox.FadeEffect.Increase = true;
             pokedexTransitionBox.Alpha = 0.0f;
-            pokedexTransitionBox.FadeEffect.FadeSpeed = 3.5f;
+            pokedexTransitionBox.FadeEffect.FadeSpeed = 3.75f;
         }
 
     }

@@ -26,6 +26,12 @@ namespace PokemonFireRedClone
             get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex; }
             set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex = value; }
         }
+
+        private static bool IsTransitioning
+        {
+            get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).MenuManager.IsTransitioning; }
+            set { }
+        }
         
         public PokemonListMenu()
         {
@@ -243,12 +249,12 @@ namespace PokemonFireRedClone
                 }
             }
 
-            if (currentShownIndices[ItemNumber] > 7 || !currentShownIndices.Contains(1))
+            if ((currentShownIndices[ItemNumber] > 7 || !currentShownIndices.Contains(1)) && !IsTransitioning)
             {
                 ArrowUp.Draw(spriteBatch);
             }
 
-            if (currentShownIndices[ItemNumber] < Items.Count - 3 && !currentShownIndices.Contains(Items.Count))
+            if ((currentShownIndices[ItemNumber] < Items.Count - 3 && !currentShownIndices.Contains(Items.Count)) && !IsTransitioning)
             { 
                 ArrowDown.Draw(spriteBatch);
             }

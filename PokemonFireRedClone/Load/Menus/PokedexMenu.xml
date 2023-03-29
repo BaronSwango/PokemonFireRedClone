@@ -10,6 +10,48 @@
         <Path>Menus/PokedexMenu/PokedexBackground</Path>
     </PokedexBackground>
 
+    <PokemonList>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>241</R>
+            <G>156</G>
+            <B>89</B>
+            <A>255</A>
+            <Text>POKéMON   LIST</Text>
+        </Image>
+        <R>196</R>
+        <G>90</G>
+        <B>78</B>
+    </PokemonList>
+
+    <SeenText>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>Seen:</Text>
+        </Image>
+        <R>224</R>
+        <G>216</G>
+        <B>192</B>
+    </SeenText>
+
+    <OwnedText>
+        <Image>
+            <FontName>Fonts/PokemonFireRedDialogue</FontName>
+            <R>0</R>
+            <G>0</G>
+            <B>0</B>
+            <A>255</A>
+            <Text>Owned:</Text>
+        </Image>
+        <R>224</R>
+        <G>216</G>
+        <B>192</B>
+    </OwnedText>
+
     <Arrow>
         <Path>Menus/BlackBigMenuArrow</Path>
     </Arrow>
