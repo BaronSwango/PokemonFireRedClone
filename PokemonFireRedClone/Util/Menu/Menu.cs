@@ -65,7 +65,8 @@ namespace PokemonFireRedClone
                     foreach (string s in split)
                         item.Image.ActivateEffect(s);
                 }
-                else if (item.PokemonText != null)
+
+                if (item.PokemonText != null)
                 {
                     item.PokemonText.LoadContent();
                     foreach (string s in split)
@@ -79,10 +80,8 @@ namespace PokemonFireRedClone
         {
             foreach (MenuItem item in Items)
             {
-                if (item.Image != null)
-                    item.Image.UnloadContent();
-                else if (item.PokemonText != null)
-                    item.PokemonText.UnloadContent();
+                item.Image?.UnloadContent();
+                item.PokemonText?.UnloadContent();
             }
         }
 
@@ -90,10 +89,8 @@ namespace PokemonFireRedClone
         {
             foreach (MenuItem item in Items)
             {
-                if (item.Image != null)
-                    item.Image.Update(gameTime);
-                else if (item.PokemonText != null)
-                    item.PokemonText.Update(gameTime);
+                item.Image?.Update(gameTime);
+                item.PokemonText?.Update(gameTime);
             }
         }
 
@@ -101,10 +98,8 @@ namespace PokemonFireRedClone
         {
             foreach (MenuItem item in Items)
             {
-                if (item.Image != null)
-                    item.Image.Draw(spriteBatch);
-                else
-                    item.PokemonText?.Draw(spriteBatch);
+                item.Image?.Draw(spriteBatch);
+                item.PokemonText?.Draw(spriteBatch);
             }
         }
 

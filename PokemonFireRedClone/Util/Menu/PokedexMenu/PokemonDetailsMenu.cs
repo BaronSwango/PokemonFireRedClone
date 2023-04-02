@@ -25,6 +25,18 @@ namespace PokemonFireRedClone
             set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex = value; }
         }
 
+        private static int NumItemsBeforeSavedIndex
+        {
+            get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).NumItemsBeforeSavedIndex; }
+            set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).NumItemsBeforeSavedIndex = value; }
+        }
+
+        private static bool ScreenIsTransitioning
+        {
+            get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).MenuManager.IsTransitioning; }
+            set { }
+        }
+
         public PokemonDetailsMenu()
 		{
 			pokemonDetails = new();
@@ -94,51 +106,34 @@ namespace PokemonFireRedClone
             PokemonDetailsBorder.UnloadContent();
             PokemonDetailsBackground.UnloadContent();
 			pokemonDetails[ItemNumber].UnloadContent();
-            PokemonMenu.SelectedIndex = ItemNumber;
+
+            if (SavedIndex != pokemonDetails[ItemNumber].Pokemon.Index)
+            {
+                SavedIndex = pokemonDetails[ItemNumber].Pokemon.Index;
+
+                if (SavedIndex < 5)
+                {
+                    NumItemsBeforeSavedIndex = SavedIndex - 1;
+                }
+                else if (SavedIndex > pokemonDetails[pokemonDetails.Count - 1].Pokemon.Index - 5)
+                {
+                    NumItemsBeforeSavedIndex = 10 - (pokemonDetails[pokemonDetails.Count - 1].Pokemon.Index - SavedIndex + 1);
+                }
+                else
+                {
+                    NumItemsBeforeSavedIndex = 4;
+                }
+            }
         }
 
         public override void Update(GameTime gameTime)
         {
             Transition(gameTime);
 
-            if (!isTransitioning && ((InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0) || (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < pokemonDetails.Count - 1)))
+            if (!ScreenIsTransitioning && !isTransitioning && ((InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0) || (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < pokemonDetails.Count - 1)))
             {
                 StartPokedexTransition(InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < pokemonDetails.Count - 1);
             }
-
-            /*
-			if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0)
-			{
-
-                pokemonDetails[ItemNumber--].UnloadContent();
-
-				if (pokemonDetails[ItemNumber].Index.IsLoaded)
-				{
-                    pokemonDetails[ItemNumber].ReloadContent();
-                }
-                else
-				{
-					pokemonDetails[ItemNumber].LoadContent();
-				}
-
-                InitializePositions();
-            }
-            else if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < pokemonDetails.Count - 1)
-			{
-                pokemonDetails[ItemNumber++].UnloadContent();
-
-                if (pokemonDetails[ItemNumber].Index.IsLoaded)
-                {
-                    pokemonDetails[ItemNumber].ReloadContent();
-                }
-                else
-                {
-                    pokemonDetails[ItemNumber].LoadContent();
-                }
-
-                InitializePositions();
-            }
-            */
         }
 
         public override void Draw(SpriteBatch spriteBatch)

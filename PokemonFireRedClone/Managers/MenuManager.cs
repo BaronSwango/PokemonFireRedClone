@@ -8,7 +8,6 @@ namespace PokemonFireRedClone
 {
     public class MenuManager
     {
-
         public Menu Menu;
         public string MenuName;
         public bool IsLoaded;
@@ -99,7 +98,7 @@ namespace PokemonFireRedClone
                 {
                     if (item.Image != null && item.Image.IsLoaded)
                         item.Image.RestoreEffects();
-                    else if (item.PokemonText != null && item.PokemonText.IsLoaded)
+                    if (item.PokemonText != null && item.PokemonText.IsLoaded)
                         item.PokemonText.RestoreEffects();
                 }
             }

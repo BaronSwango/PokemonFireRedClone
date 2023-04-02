@@ -27,6 +27,12 @@ namespace PokemonFireRedClone
             set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex = value; }
         }
 
+        private static int NumItemsBeforeSavedIndex
+        {
+            get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).NumItemsBeforeSavedIndex; }
+            set { ((PokedexScreen)ScreenManager.Instance.CurrentScreen).NumItemsBeforeSavedIndex = value; }
+        }
+
         private static bool IsTransitioning
         {
             get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).MenuManager.IsTransitioning; }
@@ -85,8 +91,8 @@ namespace PokemonFireRedClone
 
             AlignMenuItems();
 
-            Arrow.Position = new Vector2(Items[0].PokemonText.Position.X - Arrow.SourceRect.Width,
-                                    Items[0].PokemonText.Position.Y - 8);
+            Arrow.Position = new Vector2(Items[currentShownIndices[ItemNumber] - 1].PokemonText.Position.X - Arrow.SourceRect.Width,
+                                    Items[currentShownIndices[ItemNumber] - 1].PokemonText.Position.Y - 8);
             if (ArrowDown.IsLoaded)
             {
                 arrowUpOriginalY = 44;
@@ -196,36 +202,40 @@ namespace PokemonFireRedClone
                     ItemNumber--;
             }
 
-            for (int i = 0; i < currentShownIndices.Count; i++)
+            if (!IsTransitioning)
             {
-                if (i == ItemNumber)
+                for (int i = 0; i < currentShownIndices.Count; i++)
                 {
-                    Items[currentShownIndices[i] - 1].PokemonText.Image.IsActive = true;
-                    Arrow.Position = new Vector2(Items[currentShownIndices[i] - 1].PokemonText.Position.X - Arrow.SourceRect.Width,
-                        Items[currentShownIndices[i] - 1].PokemonText.Position.Y - 8);
+                    if (i == ItemNumber)
+                    {
+                        Items[currentShownIndices[i] - 1].PokemonText.Image.IsActive = true;
+                        Arrow.Position = new Vector2(Items[currentShownIndices[i] - 1].PokemonText.Position.X - Arrow.SourceRect.Width,
+                            Items[currentShownIndices[i] - 1].PokemonText.Position.Y - 8);
+                    }
+                    else
+                    {
+                        Items[currentShownIndices[i] - 1].PokemonText.Image.IsActive = false;
+                    }
+
                 }
-                else
+
+                if (currentShownIndices[ItemNumber] > 7 || currentShownIndices[0] != 1)
                 {
-                    Items[currentShownIndices[i] - 1].PokemonText.Image.IsActive = false;
+                    if (!ArrowUp.IsLoaded)
+                    {
+                        ArrowUp.LoadContent();
+                        ArrowUp.Position = new(ArrowDown.Position.X, arrowUpOriginalY);
+                    }
                 }
 
-            }
+                AnimateArrows(gameTime);
 
-            if (currentShownIndices[ItemNumber] > 7)
-            {
-                if (!ArrowUp.IsLoaded)
+                if ((InputManager.Instance.KeyPressed(Keys.E) && !string.IsNullOrEmpty(Items[currentShownIndices[ItemNumber] - 1].LinkType)) || InputManager.Instance.KeyPressed(Keys.Q))
                 {
-                   ArrowUp.LoadContent();
-                   ArrowUp.Position = new(ArrowDown.Position.X, arrowUpOriginalY);
+                    NumItemsBeforeSavedIndex = ItemNumber;
+                    ItemNumber = currentShownIndices[ItemNumber] - 1;
+                    SavedIndex = ItemNumber + 1;
                 }
-            }
-
-            AnimateArrows(gameTime);
-
-            if (InputManager.Instance.KeyPressed(Keys.E) && !string.IsNullOrEmpty(Items[currentShownIndices[ItemNumber] - 1].LinkType))
-            {
-                ItemNumber = currentShownIndices[ItemNumber] - 1;
-                SavedIndex = ItemNumber + 1;
             }
         }
 
@@ -249,17 +259,16 @@ namespace PokemonFireRedClone
                 }
             }
 
-            if ((currentShownIndices[ItemNumber] > 7 || !currentShownIndices.Contains(1)) && !IsTransitioning)
+            if (!IsTransitioning && ArrowUp.IsLoaded && (currentShownIndices[ItemNumber] > 7 || !currentShownIndices.Contains(1)))
             {
                 ArrowUp.Draw(spriteBatch);
             }
 
-            if ((currentShownIndices[ItemNumber] < Items.Count - 3 && !currentShownIndices.Contains(Items.Count)) && !IsTransitioning)
+            if (!IsTransitioning && ArrowDown.IsLoaded && (currentShownIndices[ItemNumber] < Items.Count - 3 && !currentShownIndices.Contains(Items.Count)))
             { 
                 ArrowDown.Draw(spriteBatch);
             }
         }
-
 
         private void InitializePokemonList()
         {
@@ -308,19 +317,24 @@ namespace PokemonFireRedClone
                     Items[i - 1].LinkID = "Load/Menus/PokemonDetailsMenu.xml";
                     Items[i - 1].MenuName = "PokemonDetailsMenu";
                 }
+            }
 
-                if (currentShownIndices.Count < 10)
+            for (int i = SavedIndex - NumItemsBeforeSavedIndex; i <= maxIndexNum && currentShownIndices.Count < 10; i++)
+            {
+                currentShownIndices.Add(i);
+                Items[i - 1].PokemonText.LoadContent();
+                pokemonNames[i].LoadContent();
+
+                if (i == SavedIndex)
                 {
-                    currentShownIndices.Add(i);
-                    Items[i - 1].PokemonText.LoadContent();
-                    pokemonNames[i].LoadContent();
+                    ItemNumber = currentShownIndices.Count - 1;
+                }
 
-                    if (pokemonOwned.ContainsKey(i))
+                if (pokemonOwned.ContainsKey(i))
+                {
+                    foreach (Image image in pokemonOwned[i])
                     {
-                        foreach (Image image in pokemonOwned[i])
-                        {
-                            image.LoadContent();
-                        }
+                        image.LoadContent();
                     }
                 }
             }

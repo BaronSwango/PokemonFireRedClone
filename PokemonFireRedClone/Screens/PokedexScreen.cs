@@ -8,12 +8,14 @@ namespace PokemonFireRedClone
 	{
         public readonly MenuManager MenuManager;
         public int SavedSearchIndex;
+        public int NumItemsBeforeSavedIndex;
 
         public PokedexScreen()
 		{
 			MenuManager = new MenuManager("PokedexMenu");
-            SavedSearchIndex = 0;
-		}
+            SavedSearchIndex = 1;
+            NumItemsBeforeSavedIndex = 0;
+        }
 
         public override void LoadContent()
 		{

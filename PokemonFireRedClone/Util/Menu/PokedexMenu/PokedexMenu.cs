@@ -21,6 +21,7 @@ namespace PokemonFireRedClone
         protected override void AlignMenuItems()
         {
             Items[0].PokemonText.SetPosition(new(PokedexMenuBackground.Position.X + 176, PokedexMenuBackground.Position.Y + 124));
+            Items[0].Image.Position = new(980, 400);
         }
 
         public override void LoadContent()
@@ -51,8 +52,8 @@ namespace PokemonFireRedClone
 
             Arrow.Position = new Vector2(Items[0].PokemonText.Position.X - Arrow.SourceRect.Width,
                                     Items[0].PokemonText.Position.Y + (Items[0].PokemonText.SourceRect.Height / 4) - 2);
-            Seen.SetPosition(new(PokedexMenuBackground.SourceRect.Width - Seen.SourceRect.Width - 100, 144));
-            Owned.SetPosition(new(Seen.Position.X, Seen.Position.Y + Owned.SourceRect.Height + 60));
+            Seen.SetPosition(new(PokedexMenuBackground.SourceRect.Width - Seen.SourceRect.Width - 96, 144));
+            Owned.SetPosition(new(PokedexMenuBackground.SourceRect.Width - Owned.SourceRect.Width - 96, Seen.Position.Y + Owned.SourceRect.Height + 60));
         }
 
         public override void UnloadContent()
@@ -112,6 +113,8 @@ namespace PokemonFireRedClone
 
             Seen.Draw(spriteBatch);
             Owned.Draw(spriteBatch);
+
+            Items[ItemNumber].Image.Draw(spriteBatch);
 
             base.Draw(spriteBatch);
         }

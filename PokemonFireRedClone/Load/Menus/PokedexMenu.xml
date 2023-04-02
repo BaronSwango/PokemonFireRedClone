@@ -98,6 +98,9 @@
             <G>216</G>
             <B>192</B>
         </PokemonText>
+        <Image>
+            <Path>Menus/PokedexMenu/NumericalMode</Path>
+        </Image>
     </Item>
 
 </PokedexMenu>
