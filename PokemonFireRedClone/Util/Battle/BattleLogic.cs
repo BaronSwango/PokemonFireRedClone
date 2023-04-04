@@ -415,7 +415,10 @@ namespace PokemonFireRedClone
             if (!Battle.IsWild)
             {
                 Player.PlayerJsonObject.Money += Battle.Trainer.Reward;
-                Player.PlayerJsonObject.TrainersDefeated.Add(Battle.Trainer.ID);
+                if (!Player.PlayerJsonObject.TrainersDefeated.Contains(Battle.Trainer.ID))
+                {
+                    Player.PlayerJsonObject.TrainersDefeated.Add(Battle.Trainer.ID);
+                }
             }
         }
 

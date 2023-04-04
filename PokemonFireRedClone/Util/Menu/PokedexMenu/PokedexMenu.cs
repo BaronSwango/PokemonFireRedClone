@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
 
 namespace PokemonFireRedClone
 {
@@ -42,8 +43,10 @@ namespace PokemonFireRedClone
 
             PokedexBackground.Position.Y = 64;
 
-            Seen.Image.Text = Player.PlayerJsonObject.PokemonSeen.Count.ToString();
-            Owned.Image.Text = Player.PlayerJsonObject.PokemonOwned.Count.ToString();
+            Seen.Image.Text = Player.PlayerJsonObject.Pokedex.Count.ToString();
+
+
+            Owned.Image.Text = Player.PlayerJsonObject.Pokedex.Count(kv => kv.Value == true).ToString();
 
             Seen.LoadContent();
             Owned.LoadContent();

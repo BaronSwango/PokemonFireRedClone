@@ -274,13 +274,13 @@ namespace PokemonFireRedClone
         {
             int maxIndexNum = 0;
 
-            foreach (string s in Player.PlayerJsonObject.PokemonSeen)
+            foreach (string s in Player.PlayerJsonObject.Pokedex.Keys)
             {
                 Pokemon mon = PokemonManager.Instance.GetPokemon(s);
 
                 pokemonNames.Add(mon.Index, new PokemonText(mon.Name.ToUpper(), "Fonts/PokemonFireRedDialogue", new Color(0,0,0), new Color(224, 216, 192)));
 
-                if (Player.PlayerJsonObject.PokemonOwned.Contains(s))
+                if (Player.PlayerJsonObject.Pokedex[s])
                 {
                     List<Image> types = new();
 

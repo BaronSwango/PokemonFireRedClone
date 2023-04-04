@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -50,7 +51,7 @@ namespace PokemonFireRedClone
 
             Items[2].PokemonText.Image.Text = playerJsonObject.Name;
             Items[3].PokemonText.Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
-            Items[4].PokemonText.Image.Text = playerJsonObject.Pokedex.ToString();
+            Items[4].PokemonText.Image.Text = playerJsonObject.Pokedex.Count(kv => kv.Value == true).ToString();
             Items[5].PokemonText.Image.Text = playerJsonObject.Badges.ToString();
 
                 

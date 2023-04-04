@@ -150,9 +150,9 @@ namespace PokemonFireRedClone
 
         private void InitializePokemonOrder()
 		{
-			foreach (string s in Player.PlayerJsonObject.PokemonSeen)
+			foreach (string s in Player.PlayerJsonObject.Pokedex.Keys)
 			{
-				bool owned = Player.PlayerJsonObject.PokemonOwned.Contains(s);
+				bool owned = Player.PlayerJsonObject.Pokedex[s];
 				Pokemon pokemon = PokemonManager.Instance.GetPokemon(s);
 
 				pokemonDetails.Add(new(pokemon, owned));

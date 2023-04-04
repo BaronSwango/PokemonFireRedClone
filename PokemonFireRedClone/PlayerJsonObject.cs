@@ -27,15 +27,13 @@ namespace PokemonFireRedClone
         public string RivalName;
         public double Time;
         public int Badges;
-        public int Pokedex;
         public int Money;
         public List<CustomPokemon> PokemonInBag;
         public List<string> TrainersDefeated;
         public string AreaName;
+        public Dictionary<string, bool> Pokedex;
         [JsonIgnore]
         public Area CurrentArea;
-        public List<string> PokemonSeen;
-        public List<string> PokemonOwned;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;
 
     }

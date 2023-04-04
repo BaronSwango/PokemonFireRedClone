@@ -48,9 +48,9 @@ namespace PokemonFireRedClone
             PlayerPokemon = new BattlePokemon(BattlePokemonInBag[0]);
             EnemyPokemon.Pokemon.MovePP.Add("Growl", 40);
 
-            if (!Player.PlayerJsonObject.PokemonSeen.Contains(EnemyPokemon.Pokemon.Name))
+            if (!Player.PlayerJsonObject.Pokedex.ContainsKey(EnemyPokemon.Pokemon.Name))
             {
-                Player.PlayerJsonObject.PokemonSeen.Add(EnemyPokemon.Pokemon.Name);
+                Player.PlayerJsonObject.Pokedex.Add(EnemyPokemon.Pokemon.Name, false);
             }
             //EnemyPokemon.Pokemon.MovePP.Add("Double Team", 15);
             //EnemyPokemon.Pokemon.MovePP.Add("Water Gun", 20);
@@ -78,9 +78,9 @@ namespace PokemonFireRedClone
             int index = random.Next(pokemonAliveIndices.Count);
             EnemyPokemon = new BattlePokemon(OpponentPokemon[pokemonAliveIndices[index]]);
 
-            if (!Player.PlayerJsonObject.PokemonSeen.Contains(EnemyPokemon.Pokemon.Name))
+            if (!Player.PlayerJsonObject.Pokedex.ContainsKey(EnemyPokemon.Pokemon.Name))
             {
-                Player.PlayerJsonObject.PokemonSeen.Add(EnemyPokemon.Pokemon.Name);
+                Player.PlayerJsonObject.Pokedex.Add(EnemyPokemon.Pokemon.Name, false);
             }
         }
 

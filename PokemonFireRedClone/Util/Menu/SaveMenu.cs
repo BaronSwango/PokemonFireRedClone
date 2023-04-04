@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -106,7 +107,7 @@ namespace PokemonFireRedClone
 
             InfoTitles[0].Image.Text = Player.PlayerJsonObject.Name;
             InfoTitles[1].Image.Text = Player.PlayerJsonObject.Badges.ToString();
-            InfoTitles[2].Image.Text = Player.PlayerJsonObject.Pokedex.ToString();
+            InfoTitles[2].Image.Text = Player.PlayerJsonObject.Pokedex.Count(kv => kv.Value == true).ToString();
             InfoTitles[3].Image.Text = $"{tsTime.Hours + (tsTime.Days * 24):0}:{tsTime.Minutes:00}";
 
             foreach (PokemonText image in InfoTitles)
