@@ -98,7 +98,9 @@ namespace PokemonFireRedClone
                 State = BattleState.INTRO;
                 Animation = new IntroAnimation();
                 if (BattleLogic.Battle.IsWild)
+                {
                     EnemyPokemon.Tint = Color.LightGray;
+                }
                 else
                 {
                     EnemyPokemon.Scale = new Vector2(0.14f, 0.14f);
@@ -138,23 +140,33 @@ namespace PokemonFireRedClone
             EXPBar.UnloadContent();
             // REMOVE AFTER TESTING TRAINERS
             if (Pokeball.IsLoaded)
+            {
                 Pokeball.UnloadContent();
-            if (EnemySprite != null)
-                EnemySprite.UnloadContent();
+            }
+            EnemySprite?.UnloadContent();
         }
 
         public void Update(GameTime gameTime)
-        {            
+        {
             if (Animation != null && IsTransitioning && !ScreenManager.Instance.IsTransitioning)
+            {
                 Animation.Animate(gameTime);
+            }
 
             if (State == BattleState.POKEMON_SEND_OUT || State == BattleState.OPPONENT_INTRO_SEND_POKEMON || State == BattleState.OPPONENT_SEND_POKEMON)
+            {
                 Pokeball.Update(gameTime);
+            }
 
             if (State == BattleState.INTRO || State == BattleState.WILD_POKEMON_FADE_IN || State == BattleState.PLAYER_SEND_POKEMON || State == BattleState.OPPONENT_INTRO_SEND_POKEMON || (PlayerSprite != null && State == BattleState.OPPONENT_SEND_POKEMON) || (PlayerSprite != null && State == BattleState.POKEMON_SEND_OUT))
+            {
                 PlayerSprite.Update(gameTime);
+            }
+
             if (State == BattleState.BATTLE_MENU)
+            {
                 AnimateBattleMenu(gameTime);
+            }
 
         }
 
@@ -164,11 +176,15 @@ namespace PokemonFireRedClone
             PlayerPlatform.Draw(spriteBatch);
             EnemyPlatform.Draw(spriteBatch);
             if ((State == BattleState.POKEMON_SWITCH || State == BattleState.POKEMON_SEND_OUT || State == BattleState.OPPONENT_INTRO_SEND_POKEMON || State == BattleState.OPPONENT_SEND_POKEMON) && Animation != null)
+            {
                 Animation.Draw(spriteBatch);
+            }
             
             PlayerHPBarBackground.Draw(spriteBatch);
             if (State == BattleState.LEVEL_UP_ANIMATION)
+            {
                 PlayerHPBarLevelUp.Draw(spriteBatch);
+            }
             EnemyHPBarBackground.Draw(spriteBatch);
 
             PlayerPokemonAssets.Draw(spriteBatch);
@@ -176,29 +192,39 @@ namespace PokemonFireRedClone
             EXPBar.Draw(spriteBatch);
 
             if (State == BattleState.INTRO || State == BattleState.TRAINER_BALL_BAR || State == BattleState.OPPONENT_INTRO_SEND_POKEMON || State == BattleState.WILD_POKEMON_FADE_IN || State == BattleState.PLAYER_SEND_POKEMON || (PlayerSprite != null && State == BattleState.OPPONENT_SEND_POKEMON) || (PlayerSprite != null && State == BattleState.POKEMON_SEND_OUT))
+            {
                 PlayerSprite.Draw(spriteBatch);
+            }
 
             if (State == BattleState.TRAINER_BALL_BAR || State == BattleState.OPPONENT_INTRO_SEND_POKEMON || State == BattleState.OPPONENT_SEND_POKEMON || (State == BattleState.PLAYER_SEND_POKEMON && !BattleLogic.Battle.IsWild))
             {
                 TrainerBallBar.Draw(spriteBatch);
                 foreach (Image image in TrainerBarBalls)
+                {
                     image.Draw(spriteBatch);
+                }
 
                 if (PlayerBallBar != null)
                 {
                     PlayerBallBar.Draw(spriteBatch);
                     foreach (Image image in PlayerBarBalls)
+                    {
                         image.Draw(spriteBatch);
+                    }
                 }
             }
 
             PlayerPokemon.Draw(spriteBatch);
 
             if (!BattleLogic.Battle.IsWild)
+            {
                 EnemySprite.Draw(spriteBatch);
+            }
 
             if (State == BattleState.POKEMON_SEND_OUT || State == BattleState.OPPONENT_INTRO_SEND_POKEMON || State == BattleState.OPPONENT_SEND_POKEMON)
+            {
                 Pokeball.Draw(spriteBatch);
+            }
 
             EnemyPokemon.Draw(spriteBatch);
 
@@ -222,8 +248,7 @@ namespace PokemonFireRedClone
                 float yOffset = barBounce ? 4 : -4;
                 PlayerHPBarBackground.Position.Y += yOffset;
                 PlayerPokemonAssets.Name.OffsetY(yOffset);
-                if (PlayerPokemonAssets.Gender != null)
-                    PlayerPokemonAssets.Gender.OffsetY(yOffset);
+                PlayerPokemonAssets.Gender?.OffsetY(yOffset);
                 PlayerPokemonAssets.Level.OffsetY(yOffset);
                 PlayerPokemonAssets.MaxHP.OffsetY(yOffset);
                 PlayerPokemonAssets.CurrentHP.OffsetY(yOffset);
@@ -266,7 +291,9 @@ namespace PokemonFireRedClone
             Background.LoadContent();
             EnemyPlatform.LoadContent();
             if (BattleLogic.Battle.IsWild || ScreenManager.Instance.PreviousScreen is PokemonScreen)
+            {
                 EnemyPokemon.LoadContent();
+            }
             PlayerPlatform.LoadContent();
             PlayerHPBarBackground.LoadContent();
             EnemyHPBarBackground.LoadContent();
@@ -280,7 +307,9 @@ namespace PokemonFireRedClone
             }
             Pokeball.LoadContent();
             if (!BattleLogic.Battle.IsWild)
+            {
                 Pokeball.SpriteSheetEffect.AmountOfFrames = new Vector2(3, 1);
+            }
             PlayerHPBarLevelUp.Alpha = 0;
             StatChangeAnimationImage1.Alpha = 0;
             StatChangeAnimationImage2.Alpha = 0;
@@ -299,7 +328,9 @@ namespace PokemonFireRedClone
                 };
 
                 if (!EnemySprite.IsLoaded)
+                {
                     EnemySprite.LoadContent();
+                }
 
                 TrainerBallBar = new Image()
                 {
@@ -317,11 +348,15 @@ namespace PokemonFireRedClone
                 }
 
                 for (int i = TrainerBarBalls.Count; i < 6; i++)
+                {
                     TrainerBarBalls.Add(new Image() { Path = "BattleScreen/EmptyTrainerBall" });
+                }
 
                 TrainerBallBar.LoadContent();
                 foreach (Image image in TrainerBarBalls)
+                {
                     image.LoadContent();
+                }
 
                 if (ScreenManager.Instance.PreviousScreen is GameplayScreen)
                 {
@@ -340,11 +375,15 @@ namespace PokemonFireRedClone
                     }
 
                     for (int i = PlayerBarBalls.Count; i < 6; i++)
+                    {
                         PlayerBarBalls.Add(new Image() { Path = "BattleScreen/EmptyTrainerBall" });
+                    }
 
                     PlayerBallBar.LoadContent();
                     foreach (Image image in PlayerBarBalls)
+                    {
                         image.LoadContent();
+                    }
                 }
             }
 
@@ -410,8 +449,7 @@ namespace PokemonFireRedClone
             PlayerPokemonAssets.HPBar.Position.Y = pokeHealthBarOriginalY;
             PlayerPokemonAssets.Name.SetY(pokeNameOriginalY);
             PlayerPokemonAssets.Level.SetY(pokeNameOriginalY);
-            if (PlayerPokemonAssets.Gender != null)
-                PlayerPokemonAssets.Gender.SetY(pokeNameOriginalY);
+            PlayerPokemonAssets.Gender?.SetY(pokeNameOriginalY);
             EXPBar.Position.Y = pokeEXPOriginalY;
             PlayerPokemonAssets.CurrentHP.SetY(pokeHPOriginalY);
             PlayerPokemonAssets.MaxHP.SetY(pokeHPOriginalY);
@@ -422,7 +460,9 @@ namespace PokemonFireRedClone
             EnemyPlatform.Position = new Vector2(ScreenManager.Instance.Dimensions.X - EnemyPlatform.SourceRect.Width, 192);
             EnemyPokemon.Position = new Vector2(EnemyPlatform.Position.X + EnemyPlatform.SourceRect.Width / 2 - EnemyPokemon.SourceRect.Width / 2, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemyPokemon.SourceRect.Height);
             if (!BattleLogic.Battle.IsWild)
+            {
                 EnemySprite.Position = new Vector2(ScreenManager.Instance.Dimensions.X + 8, EnemyPlatform.Position.Y + EnemyPlatform.SourceRect.Height * 0.75f - EnemySprite.SourceRect.Height);
+            }
             PlayerPlatform.Position = new Vector2(16, textBox.Border.Position.Y - PlayerPlatform.SourceRect.Height);
             EnemyHPBarBackground.Position = new Vector2(52, EnemyPlatform.Position.Y - EnemyHPBarBackground.SourceRect.Height - 12);
             PlayerHPBarBackground.Position = new Vector2(ScreenManager.Instance.Dimensions.X - PlayerHPBarBackground.SourceRect.Width - 40, textBox.Border.Position.Y - PlayerHPBarBackground.SourceRect.Height - 4);
@@ -451,8 +491,7 @@ namespace PokemonFireRedClone
 
             // set hp bar image positions
             PlayerPokemonAssets.Name.SetPosition(new Vector2(PlayerHPBarBackground.Position.X + 64, PlayerHPBarBackground.Position.Y + 19));
-            if (PlayerPokemonAssets.Gender != null)
-                PlayerPokemonAssets.Gender.SetPosition(new Vector2(PlayerPokemonAssets.Name.Position.X + PlayerPokemonAssets.Name.SourceRect.Width, PlayerPokemonAssets.Name.Position.Y));
+            PlayerPokemonAssets.Gender?.SetPosition(new Vector2(PlayerPokemonAssets.Name.Position.X + PlayerPokemonAssets.Name.SourceRect.Width, PlayerPokemonAssets.Name.Position.Y));
             PlayerPokemonAssets.Level.SetPosition(new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 36 - PlayerPokemonAssets.Level.SourceRect.Width, PlayerPokemonAssets.Name.Position.Y));
             PlayerPokemonAssets.MaxHP.SetPosition(new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 36 - PlayerPokemonAssets.MaxHP.SourceRect.Width, PlayerHPBarBackground.Position.Y + 92));
             PlayerPokemonAssets.CurrentHP.SetPosition(new Vector2(PlayerHPBarBackground.Position.X + PlayerHPBarBackground.SourceRect.Width - 116 - PlayerPokemonAssets.CurrentHP.SourceRect.Width, PlayerPokemonAssets.MaxHP.Position.Y));
@@ -464,8 +503,7 @@ namespace PokemonFireRedClone
             pokeEXPOriginalY = EXPBar.Position.Y;
 
             EnemyPokemonAssets.Name.SetPosition(new Vector2(EnemyHPBarBackground.Position.X + 24, EnemyHPBarBackground.Position.Y + 19));
-            if (EnemyPokemonAssets.Gender != null)
-                EnemyPokemonAssets.Gender.SetPosition(new Vector2(EnemyPokemonAssets.Name.Position.X + EnemyPokemonAssets.Name.SourceRect.Width, EnemyPokemonAssets.Name.Position.Y));
+            EnemyPokemonAssets.Gender?.SetPosition(new Vector2(EnemyPokemonAssets.Name.Position.X + EnemyPokemonAssets.Name.SourceRect.Width, EnemyPokemonAssets.Name.Position.Y));
             EnemyPokemonAssets.Level.SetPosition(new Vector2(EnemyHPBarBackground.Position.X + EnemyHPBarBackground.SourceRect.Width - 56 - EnemyPokemonAssets.Level.SourceRect.Width, EnemyPokemonAssets.Name.Position.Y));
             EnemyPokemonAssets.HPBar.Position = new Vector2(EnemyHPBarBackground.Position.X + 156 - ((1 - EnemyPokemonAssets.HPBar.Scale.X) / 2 * EnemyPokemonAssets.HPBar.SourceRect.Width), EnemyHPBarBackground.Position.Y + 68);
         }
@@ -473,7 +511,9 @@ namespace PokemonFireRedClone
         public void RefreshTrainerBalls()
         {
             foreach (Image image in TrainerBarBalls)
+            {
                 image.UnloadContent();
+            }
 
             TrainerBarBalls.Clear();
 
@@ -486,10 +526,14 @@ namespace PokemonFireRedClone
             }
 
             for (int i = TrainerBarBalls.Count; i < 6; i++)
+            {
                 TrainerBarBalls.Add(new Image() { Path = "BattleScreen/EmptyTrainerBall" });
+            }
 
             foreach (Image image in TrainerBarBalls)
+            {
                 image.LoadContent();
+            }
 
             float padX = 0;
             foreach (Image image in TrainerBarBalls)

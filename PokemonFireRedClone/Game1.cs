@@ -77,14 +77,23 @@ namespace PokemonFireRedClone
             GraphicsDevice.SetRenderTarget(renderTarget);
 
             if (ScreenManager.Instance.Image.Alpha == 1 || ScreenManager.Instance.CurrentScreen.Type.Name == "GameplayScreen")
+            {
                 GraphicsDevice.Clear(Color.Black);
+            }
             else
+            {
                 GraphicsDevice.Clear(new Color(94, 99, 150));
+            }
 
             if (ScreenManager.Instance.CurrentScreen.Type.Name == "GameplayScreen")
+            {
                 spriteBatch.Begin(transformMatrix: ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Camera.Transform);
-            else 
+            }
+            else
+            {
                 spriteBatch.Begin();
+            }
+
             ScreenManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
 

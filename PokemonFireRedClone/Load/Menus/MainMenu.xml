@@ -70,6 +70,8 @@ you   in   your   party.</Text>
         </Description>
     </Item>
     <Item>
+        <LinkType>Screen</LinkType>
+        <LinkID>BagScreen</LinkID>
         <PokemonText>
             <Image>
                 <FontName>Fonts/PokemonFireRedDialogue</FontName>

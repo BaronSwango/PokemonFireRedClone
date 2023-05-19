@@ -70,7 +70,9 @@ namespace PokemonFireRedClone
         public void LoadContent()
         {
             if (fromXML)
+            {
                 shadowColor = new Color(R, G, B);
+            }
 
             textShadowX = new Image
             {

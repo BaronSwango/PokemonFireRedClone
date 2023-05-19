@@ -8,7 +8,6 @@ namespace PokemonFireRedClone
 {
     public class MainMenu : Menu
     {
-
         private static int itemNumber;
 
         public Image Arrow;

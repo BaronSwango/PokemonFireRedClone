@@ -40,7 +40,9 @@ namespace PokemonFireRedClone
             Player.Spawn(ref Map);
 
             foreach (NPC npc in Map.NPCs)
+            {
                 npc.Spawn(ref Map);
+            }
             
             Camera = new Camera();
             AreaManager.LoadContent(Map.Areas, Player);
@@ -51,9 +53,14 @@ namespace PokemonFireRedClone
             base.UnloadContent();
             Player.UnloadContent();
             Map.UnloadContent();
+
             menuWasLoaded = MenuManager.IsLoaded;
+
             if (MenuManager.IsLoaded)
+            {
                 MenuManager.UnloadContent();
+            }
+
             AreaManager.UnloadContent();
         }
 
@@ -68,13 +75,18 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.M))
             {
                 Tile currentTile = TileManager.GetCurrentTile(Map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height, 1);
+
                 if (currentTile != null)
+                {
                     Console.WriteLine($"({currentTile.Position.X}, {currentTile.Position.Y})");
-                
+                }
             }
 
             if (MenuManager.WasLoaded)
+            {
                 MenuManager.WasLoaded = false;
+            }
+
             if (menuWasLoaded)
             {
                 MenuManager.MenuName = "MainMenu";
@@ -93,22 +105,30 @@ namespace PokemonFireRedClone
                     if (!MenuManager.IsLoaded)
                     {
                         if (TextBoxManager.IsDisplayed)
+                        {
                             TextBoxManager.UnloadContent(ref Player);
+                        }
+
                         Player.Sprite.IsActive = false;
                         MenuManager.MenuName = "MainMenu";
                         MenuManager.LoadContent("Load/Menus/MainMenu.xml");
                         AreaManager.Reset();
                     }
                     else
+                    {
                         MenuManager.UnloadContent();
-                    
+                    }   
                 }
             }
 
             if ((MenuManager.IsLoaded || TextBoxManager.IsDisplayed || DoorManager.IsTransitioning || ScreenManager.Instance.IsTransitioning) && Player.CanUpdate)
+            {
                 Player.CanUpdate = false;
+            }
             else if (!MenuManager.IsLoaded && !TextBoxManager.IsDisplayed && !DoorManager.IsTransitioning && !ScreenManager.Instance.IsTransitioning && !Player.CanUpdate)
+            {
                 Player.CanUpdate = true;
+            }
 
             DoorManager.Update(gameTime, this, mapLoader);
             Player.Update(gameTime, ref Map);
@@ -116,14 +136,21 @@ namespace PokemonFireRedClone
             Camera.Follow(Player);
 
             if (TextBoxManager.IsDisplayed && AreaManager.IsTransitioning)
+            {
                 AreaManager.Reset();
+            }
 
             if (!Map.Inside && !DoorManager.IsTransitioning)
+            {
                 AreaManager.Update(gameTime, Map.Areas, Player);
+            }
 
             // COUNTS AND ADDS TIME TO Player'S TOTAL GAME TIME
             if (MenuManager.Menu is not SaveMenu)
+            {
                 Player.ElapsedTime += (double)gameTime.ElapsedGameTime.TotalSeconds / 3600;
+            }
+
             if (MenuManager.IsLoaded)
             {
                 if (TextBoxManager.IsDisplayed)
@@ -131,29 +158,47 @@ namespace PokemonFireRedClone
                     TextBoxManager.UnloadContent(ref Player);
                     TextBoxManager.Closed = true;
                 }
+
                 MenuManager.Update(gameTime);
             }
-            if (!MenuManager.WasLoaded && !MenuManager.IsLoaded)
-                TextBoxManager.Update(gameTime, ref Map, ref Player);
 
+            if (!MenuManager.WasLoaded && !MenuManager.IsLoaded)
+            {
+                TextBoxManager.Update(gameTime, ref Map, ref Player);
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             Map.Draw(spriteBatch, "Underlay");
+
             foreach (NPC npc in Map.NPCs)
+            {
                 npc.NPCSprite.Bottom.Draw(spriteBatch);
+            }
+
             Player.Draw(spriteBatch);
+
             foreach (NPC npc in Map.NPCs)
+            {
                 npc.NPCSprite.Top.Draw(spriteBatch);
+            }
+
             Map.Draw(spriteBatch, "Overlay");
+
             if (MenuManager.IsLoaded)
+            {
                 MenuManager.Draw(spriteBatch);
+            }
+
             TextBoxManager.Draw(spriteBatch);
+
             if (!Map.Inside && !DoorManager.IsTransitioning)
+            {
                 AreaManager.Draw(spriteBatch);
+            }
+
             DoorManager.Draw(spriteBatch);
         }
-
     }
 }

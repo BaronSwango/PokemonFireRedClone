@@ -21,6 +21,5 @@ namespace PokemonFireRedClone
             LinkType = linkType;
             PokemonText = text;
         }
-
     }
 }

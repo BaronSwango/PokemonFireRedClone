@@ -37,8 +37,7 @@ namespace PokemonFireRedClone
         {
             get
             {
-                if (instance == null)
-                    instance = new ScreenManager();
+                instance ??= new ScreenManager();
 
                 return instance;
             }
@@ -71,7 +70,6 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime)
         {
-
             CurrentScreen.Update(gameTime);
             Transition(gameTime);
         }
@@ -131,12 +129,19 @@ namespace PokemonFireRedClone
                     PreviousScreen = CurrentScreen;
                     CurrentScreen = newScreen;
                     xmlGameScreenManager.Type = CurrentScreen.Type;
+
                     if (File.Exists(CurrentScreen.XmlPath))
+                    {
                         CurrentScreen = xmlGameScreenManager.Load(CurrentScreen.XmlPath);
+                    }
 
                     if (CurrentScreen is BattleScreen battleScreen)
+                    {
                         battleScreen.Trainer = ((BattleScreen)newScreen).Trainer;
+                    }
+
                     CurrentScreen.LoadContent();
+
                     if (CurrentScreen is GameplayScreen screen)
                     {
                         Vector2 playerPos = screen.Player.Sprite.Position;
@@ -144,7 +149,9 @@ namespace PokemonFireRedClone
                         playerPos.Y - (Dimensions.Y / 2) + 40);
                     }
                     else
+                    {
                         Image.Position = Vector2.Zero;
+                    }
 
                     counter.Reset();
                 }
@@ -162,24 +169,30 @@ namespace PokemonFireRedClone
                         playerPos.Y - (Dimensions.Y / 2) + 40);
                     }
                 }
-
             }
         }
 
         public void ChangeScreens(string screenName, params Trainer[] members)
         {
             newScreen = (GameScreen)Activator.CreateInstance(System.Type.GetType("PokemonFireRedClone." + screenName));
+
             if (newScreen is BattleScreen screen && members.Length > 0)
+            {
                 screen.Trainer = members[0];
+            }
+
             if (newScreen is not TitleScreen && !Image.IsReloaded)
+            {
                 LoadFadeImage();
+            }
+
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
             IsTransitioning = true;
             Image.FadeEffect.FadeSpeed = CurrentScreen is PokemonScreen || newScreen is PokemonScreen ||
-                CurrentScreen is PokedexScreen || newScreen is PokedexScreen ? 3.5f : 1.5f;
+                CurrentScreen is PokedexScreen || newScreen is PokedexScreen ||
+                CurrentScreen is BagScreen || newScreen is BagScreen ? 3.5f : 1.5f;
         }
-
     }
 }

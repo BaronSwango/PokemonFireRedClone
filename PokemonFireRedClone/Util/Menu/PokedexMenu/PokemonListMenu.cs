@@ -21,6 +21,11 @@ namespace PokemonFireRedClone
         private float arrowOffset;
         private bool increase;
 
+        private bool autoScroll;
+        private const int scrollWaitTime = 300;
+        private const int autoScrollSpeed = 10;
+        private Counter scrollTimer;
+
         private static int SavedIndex
         {
             get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).SavedSearchIndex; }
@@ -197,9 +202,14 @@ namespace PokemonFireRedClone
             else
             {
                 if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < 9)
+                {
                     ItemNumber++;
+                }
                 else if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0)
+                {
                     ItemNumber--;
+                }
+                
             }
 
             if (!IsTransitioning)
@@ -292,7 +302,9 @@ namespace PokemonFireRedClone
                     types.Add(pokeball);
 
                     foreach (Type type in mon.Types)
+                    {
                         types.Add(TypeProperties.ImageOf(type));
+                    }
 
                     pokemonOwned.Add(mon.Index, types);
                 }
@@ -311,7 +323,8 @@ namespace PokemonFireRedClone
                 if (!pokemonNames.ContainsKey(i))
                 {
                     pokemonNames.Add(i, new PokemonText("-----", "Fonts/PokemonFireRedDialogue", new Color(0, 0, 0), new Color(224, 216, 192)));
-                } else
+                }
+                else
                 {
                     Items[i - 1].LinkType = "Menu";
                     Items[i - 1].LinkID = "Load/Menus/PokemonDetailsMenu.xml";
@@ -345,22 +358,30 @@ namespace PokemonFireRedClone
             float speed = (float)(48 * gameTime.ElapsedGameTime.TotalSeconds);
 
             if (arrowOffset >= 12)
+            {
                 increase = false;
+            }
             else if (arrowOffset <= 0)
+            {
                 increase = true;
+            }
 
             if (increase)
+            {
                 arrowOffset += speed;
+            }
             else
+            {
                 arrowOffset -= speed;
+            }
 
             if (arrowOffset % 4 < 1)
             {
                 if (ArrowUp.IsLoaded)
                 {
                     ArrowUp.Position.Y = arrowUpOriginalY + (int)arrowOffset;
-
                 }
+
                 ArrowDown.Position.Y = arrowDownOriginalY - (int)arrowOffset;
             }
         }

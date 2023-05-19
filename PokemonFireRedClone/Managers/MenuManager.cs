@@ -80,7 +80,10 @@ namespace PokemonFireRedClone
         public void LoadContent(string MenuPath)
         {
             if (MenuPath != string.Empty)
+            {
                 Menu.ID = MenuPath;
+            }
+
             IsLoaded = true;
         }
 
@@ -97,9 +100,14 @@ namespace PokemonFireRedClone
                 foreach (MenuItem item in Menu.Items)
                 {
                     if (item.Image != null && item.Image.IsLoaded)
+                    {
                         item.Image.RestoreEffects();
+                    }
+
                     if (item.PokemonText != null && item.PokemonText.IsLoaded)
+                    {
                         item.PokemonText.RestoreEffects();
+                    }
                 }
             }
 
@@ -135,13 +143,19 @@ namespace PokemonFireRedClone
                         {
                             MenuName = Menu.PrevMenuName;
                             Menu.ID = "Load/Menus/" + Menu.PrevMenuName + ".xml";
-                        } else 
+                        }
+                        else
+                        {
                             UnloadContent();
+                        }
                         
                         break;
                     case "ExitToScreen":
                         if (Menu.BaseMenu)
+                        {
                             ScreenManager.Instance.ChangeScreens(Menu.PrevScreen);
+                        }
+
                         break;
                     case "Move":
                         if (BattleLogic.Battle.PlayerPokemon.Pokemon.MovePP[MoveManager.Instance.GetMove(Menu.Items[Menu.ItemNumber].PokemonText.Image.Text).Name] == 0)
@@ -174,7 +188,7 @@ namespace PokemonFireRedClone
                 WasLoaded = true;
             }
 
-            if (InputManager.Instance.KeyPressed(Keys.Q) && Menu.BaseMenu && !IsTransitioning && !(Menu is SaveMenu && ((SaveMenu)Menu).SaveDialogue.IsTransitioning))
+            if (InputManager.Instance.KeyPressed(Keys.Q) && Menu.BaseMenu && !IsTransitioning && !(Menu is SaveMenu menu && menu.SaveDialogue.IsTransitioning))
             {
                 if (Menu.PrevMenuName != null)
                 {
@@ -239,6 +253,5 @@ namespace PokemonFireRedClone
             pokedexTransitionBox.Alpha = 0.0f;
             pokedexTransitionBox.FadeEffect.FadeSpeed = 3.75f;
         }
-
     }
 }

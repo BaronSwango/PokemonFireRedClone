@@ -29,7 +29,6 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime)
         {
-
             if (isAnimating)
             {
                 isAnimating = animation.Animate(gameTime);
@@ -55,13 +54,16 @@ namespace PokemonFireRedClone
             //handle input to change pages
 
             if (InputManager.Instance.KeyPressed(Keys.Q))
+            {
                 ScreenManager.Instance.ChangeScreens("PokemonScreen");
+            }
             else if (InputManager.Instance.KeyPressed(Keys.D) && CurrentPage is not KnownMoves)
             {
                 CurrentPage.UnloadContent();
                 CurrentPage = CurrentPage is PokemonInfo ? new PokemonSkills(CurrentPage.Pokemon) : new KnownMoves(CurrentPage.Pokemon);
                 CurrentPage.LoadContent();
-            } else if (InputManager.Instance.KeyPressed(Keys.A) && CurrentPage is not PokemonInfo)
+            }
+            else if (InputManager.Instance.KeyPressed(Keys.A) && CurrentPage is not PokemonInfo)
             {
                 CurrentPage.UnloadContent();
                 CurrentPage = CurrentPage is PokemonSkills ? new PokemonInfo(CurrentPage.Pokemon) : new PokemonSkills(CurrentPage.Pokemon);

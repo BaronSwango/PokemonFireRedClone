@@ -42,7 +42,9 @@ namespace PokemonFireRedClone
         void SetEffect<T>(ref T effect) where T:ImageEffect
         {
             if (effect == null)
+            {
                 effect = (T)Activator.CreateInstance(typeof(T));
+            }
             else
             {
                 effect.IsActive = true;
@@ -77,19 +79,29 @@ namespace PokemonFireRedClone
             foreach(var effect in EffectList)
             {
                 if (effect.Value.IsActive)
+                {
                     Effects += effect.Key + ":";
+                }
             }
             if (Effects != string.Empty)
-                Effects.TrimEnd(':');
+            {
+                _ = Effects.TrimEnd(':');
+            }
         }
 
         public void RestoreEffects()
         {
-            foreach(var effect in EffectList)
+            foreach (var effect in EffectList)
+            {
                 DeactivateEffect(effect.Key);
+            }
+
             string[] split = Effects.Split(':');
+
             foreach (string s in split)
+            {
                 ActivateEffect(s);
+            }
         }
 
         public Image()
@@ -113,7 +125,9 @@ namespace PokemonFireRedClone
             content.Unload();
             font = content.Load<SpriteFont>(FontName);
             if (!UseFontColor)
+            {
                 FontColor = new Color(R, G, B, A);
+            }
 
             Vector2 dimensions = Vector2.Zero;
             dimensions.Y = font.MeasureString(Text).Y;
@@ -140,7 +154,9 @@ namespace PokemonFireRedClone
         {
             content.Unload();
             if (Path != string.Empty)
+            {
                 Texture = content.Load<Texture2D>(Path);
+            }
             
             Vector2 dimensions = Vector2.Zero;
 
@@ -158,7 +174,9 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin();
             if (Texture != null)
+            {
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
+            }
             ScreenManager.Instance.SpriteBatch.End();
 
             Texture = RenderTarget;
@@ -180,7 +198,9 @@ namespace PokemonFireRedClone
         {
             content.Unload();
             if (newPath != string.Empty)
+            {
                 Texture = content.Load<Texture2D>(newPath);
+            }
 
             Vector2 dimensions = Vector2.Zero;
 
@@ -198,7 +218,9 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin();
             if (Texture != null)
+            {
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
+            }
             ScreenManager.Instance.SpriteBatch.End();
 
             Texture = RenderTarget;
@@ -213,11 +235,15 @@ namespace PokemonFireRedClone
                 ScreenManager.Instance.Content.ServiceProvider, "Content");
 
             if (Path != string.Empty)
+            {
                 Texture = content.Load<Texture2D>(Path);
+            }
 
             font = content.Load<SpriteFont>(FontName);
             if (!UseFontColor)
+            {
                 FontColor = new Color(R, G, B, A);
+            }
 
             Vector2 dimensions = Vector2.Zero;
 
@@ -227,11 +253,15 @@ namespace PokemonFireRedClone
                 dimensions.Y = Math.Max(Texture.Height, font.MeasureString(Text).Y);
             }
             else
+            {
                 dimensions.Y = font.MeasureString(Text).Y;
+            }
             dimensions.X += font.MeasureString(Text).X;
 
             if (SourceRect == Rectangle.Empty)
+            {
                 SourceRect = new Rectangle(0, 0, (int)dimensions.X, (int)dimensions.Y);
+            }
 
             RenderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice, 
                 (int) dimensions.X, (int) dimensions.Y);
@@ -239,7 +269,9 @@ namespace PokemonFireRedClone
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin();
             if (Texture != null)
+            {
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Tint);
+            }
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero,
                 FontColor);
             ScreenManager.Instance.SpriteBatch.End();
@@ -255,8 +287,10 @@ namespace PokemonFireRedClone
             if (Effects != string.Empty)
             {
                 string[] split = Effects.Split(':');
-                foreach(string item in split)
+                foreach (string item in split)
+                {
                     ActivateEffect(item);
+                }
             }
             IsLoaded = true;
         }
@@ -265,7 +299,9 @@ namespace PokemonFireRedClone
         {
             content.Unload();
             foreach (var effect in EffectList)
+            {
                 DeactivateEffect(effect.Key);
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -273,7 +309,9 @@ namespace PokemonFireRedClone
             foreach (var effect in EffectList)
             {
                 if (effect.Value.IsActive)
+                {
                     effect.Value.Update(gameTime);
+                }
             }
         }
 
@@ -288,7 +326,9 @@ namespace PokemonFireRedClone
             foreach (var effect in EffectList)
             {
                 if (effect.Value.IsActive)
+                {
                     effect.Value.Draw(spriteBatch);
+                }
             }
         }
 

@@ -51,15 +51,24 @@ namespace PokemonFireRedClone
             }
 
             foreach (var button in buttons)
+            {
                 button.UpdateInfoPositions(gameTime);
+            }
 
             CancelUnselected.Position = new Vector2(Background.Position.X + Background.SourceRect.Width - CancelUnselected.SourceRect.Width - 96,
                 Background.Position.Y + Background.SourceRect.Height - CancelUnselected.SourceRect.Height - 28);
             CancelSelected.Position = new Vector2(CancelUnselected.Position.X, CancelUnselected.Position.Y - 8);
+
             foreach (Image text in Text)
+            {
                 text.Position = new Vector2(Background.Position.X + 92, CancelUnselected.Position.Y + CancelUnselected.SourceRect.Height / 2 - Text[0].SourceRect.Height / 2);
+            }
+
             if (ScreenManager.Instance.PreviousScreen is SummaryScreen && !positioned)
+            {
                 OpenButtonBenu();
+            }
+
             positioned = true;
         }
 
@@ -74,8 +83,11 @@ namespace PokemonFireRedClone
             List<CustomPokemon> menuList = BattleLogic.Battle != null && BattleLogic.Battle.InBattle ? BattleLogic.Battle.BattlePokemonInBag : Player.PlayerJsonObject.PokemonInBag;
 
             buttons.Add(new PokemonMenuStarterInfoButton(menuList[0]));
+
             for (int i = 1; i < Player.PlayerJsonObject.PokemonInBag.Count; i++)
+            {
                 buttons.Add(new PokemonMenuInfoButton(menuList[i]));
+            }
 
             for (int i = 0; i < buttons.Count; i++)
             {
@@ -95,7 +107,9 @@ namespace PokemonFireRedClone
             Items[^1].Image = CancelUnselected;
 
             foreach (Image i in Text)
+            {
                 i.LoadContent();
+            }
 
             base.LoadContent();
 
@@ -107,23 +121,32 @@ namespace PokemonFireRedClone
         {
             Background.UnloadContent();
             base.UnloadContent();
+
             foreach (Image i in Text)
+            {
                 i.UnloadContent();
+            }
+
             if (ButtonMenu.IsOpen)
+            {
                 ButtonMenu.UnloadContent();
+            }
+
             foreach (Image i in emptyButtons)
+            {
                 i.UnloadContent();
+            }
         }
 
         public override void Update(GameTime gameTime)
         {
-
             foreach (var button in buttons)
+            {
                 button.Update(gameTime);
+            }
 
             if (!ButtonMenu.IsOpen)
             {
-
                 if (isSwitching)
                 {
                     AnimateSwitchingButtons(gameTime);
@@ -140,7 +163,9 @@ namespace PokemonFireRedClone
                         ButtonMenu.Switch = false;
                     }
                     else
+                    {
                         BaseMenu = true;
+                    }
                 }
 
                 if (InputManager.Instance.KeyPressed(Keys.A))
@@ -153,16 +178,23 @@ namespace PokemonFireRedClone
                 }
                 else if (InputManager.Instance.KeyPressed(Keys.D))
                 {
-
                     if (prevItemNumber > 0 && ItemNumber == 0)
+                    {
                         ItemNumber = prevItemNumber;
+                    }
                     else if (ItemNumber == 0 && buttons.Count > 1)
+                    {
                         ItemNumber = 1;
+                    }
                 }
                 else if (InputManager.Instance.KeyPressed(Keys.S))
+                {
                     ItemNumber++;
+                }
                 else if (InputManager.Instance.KeyPressed(Keys.W))
+                {
                     ItemNumber--;
+                }
                 else if (InputManager.Instance.KeyPressed(Keys.E))
                 {
 
@@ -179,17 +211,23 @@ namespace PokemonFireRedClone
                         switchState = false;
                     }
                     else if (ItemNumber < Items.Count - 1)
-                            OpenButtonBenu();
-                    
-
+                    {
+                        OpenButtonBenu();
+                    }
                 }
                 else if (InputManager.Instance.KeyPressed(Keys.Q) && switchState)
+                {
                     switchState = false;
+                }
 
                 if (ItemNumber < 0)
+                {
                     ItemNumber = Items.Count - 1;
+                }
                 else if (ItemNumber > Items.Count - 1)
+                {
                     ItemNumber = 0;
+                }
 
                 for (int i = 0; i < Items.Count; i++)
                 {
@@ -198,23 +236,35 @@ namespace PokemonFireRedClone
                         if (switchState || isSwitching)
                         {
                             if (ItemNumber == i)
+                            {
                                 buttons[i].State = isSwitching ? PokemonMenuInfoButton.ButtonState.SWITCH_ORIGINAL : PokemonMenuInfoButton.ButtonState.SWITCH_SELECTED;
+                            }
                             else
+                            {
                                 buttons[i].State = i == originalSwitchIndex ? PokemonMenuInfoButton.ButtonState.SWITCH_ORIGINAL : PokemonMenuInfoButton.ButtonState.UNSELECTED;
-                        } else
+                            }
+                        }
+                        else
+                        {
                             buttons[i].State = ItemNumber == i ? PokemonMenuInfoButton.ButtonState.SELECTED : PokemonMenuInfoButton.ButtonState.UNSELECTED;
+                        }
                         Items[i].Image = buttons[i].BackgroundInUse;
                     }
                     else
+                    {
                         Items[i].Image = ItemNumber == i ? CancelSelected : CancelUnselected;
+                    }
 
                     if (!Items[i].Image.IsLoaded)
+                    {
                         Items[i].Image.LoadContent();
+                    }
                 }
-
             }
             else
+            {
                 ButtonMenu.Update();
+            }
             
             AlignMenuItems(gameTime);
         }
@@ -225,19 +275,30 @@ namespace PokemonFireRedClone
             {
                 Background.Draw(spriteBatch);
                 base.Draw(spriteBatch);
+
                 foreach (var button in buttons)
+                {
                     button.Draw(spriteBatch);
+                }
+
                 foreach (Image i in emptyButtons)
+                {
                     i.Draw(spriteBatch);
+                }
+
                 if (ButtonMenu.IsOpen)
                 {
                     Text[1].Draw(spriteBatch);
                     ButtonMenu.Draw(spriteBatch);
                 }
                 else if (ButtonMenu.Switch || switchState || isSwitching)
+                {
                     Text[2].Draw(spriteBatch);
+                }
                 else
+                {
                     Text[0].Draw(spriteBatch);
+                }
             }
         }
 
@@ -305,9 +366,12 @@ namespace PokemonFireRedClone
                 buttons[ItemNumber].OffsetX(newButtonSpeed, gameTime);
 
                 if (buttons[index].BackgroundInUse.Position.X >= goalX)
+                {
                     ResetButtons(gameTime);
+                }
 
-            } else if (buttons[index].BackgroundInUse.Position.X > originalX && switchedButtons)
+            }
+            else if (buttons[index].BackgroundInUse.Position.X > originalX && switchedButtons)
             {
                 buttons[originalSwitchIndex].OffsetX(-originalButtonSpeed, gameTime);
                 buttons[ItemNumber].OffsetX(-newButtonSpeed, gameTime);

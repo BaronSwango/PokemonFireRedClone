@@ -5,7 +5,6 @@ namespace PokemonFireRedClone
 {
     public class PokemonAssets
     {
-
         private readonly bool player;
         private bool hpLoaded;
 
@@ -29,8 +28,12 @@ namespace PokemonFireRedClone
             InitializeImages(font, fontColor, shadowColor);
 
             Name.LoadContent();
+
             if (Gender != null)
+            {
                 Gender.LoadContent();
+            }
+
             SetUpHealthBar();
             HPBar.LoadContent();
             Level.LoadContent();
@@ -40,6 +43,7 @@ namespace PokemonFireRedClone
                 CurrentHP.LoadContent();
                 MaxHP.LoadContent();
             }
+
             hpLoaded = true;
         }
 
@@ -61,8 +65,12 @@ namespace PokemonFireRedClone
         public void Draw(SpriteBatch spriteBatch)
         {
             Name.Draw(spriteBatch);
+
             if (Gender != null)
+            {
                 Gender.Draw(spriteBatch);
+            }
+
             HPBar.Draw(spriteBatch);
             Level.Draw(spriteBatch);
 
@@ -71,7 +79,6 @@ namespace PokemonFireRedClone
                 CurrentHP.Draw(spriteBatch);
                 MaxHP.Draw(spriteBatch);
             }
-
         }
 
         private void InitializeImages(string font, Color fontColor, Color shadowColor)
@@ -81,18 +88,27 @@ namespace PokemonFireRedClone
             if (Pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !Pokemon.Name.Contains("Nidoran"))
             {
                 Color genderFontColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(119, 208, 250, 255) : new Color(242, 170, 161, 255);
-
                 string genderText;
+
                 if (font.Contains("Dialogue"))
+                {
                     genderText = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "£" : "¬";
+                }
                 else
+                {
                     genderText = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? "♂" : "♀";
+                }
 
                 Color genderShadowColor;
+
                 if (ScreenManager.Instance.CurrentScreen is BattleScreen)
+                {
                     genderShadowColor = shadowColor;
+                }
                 else
+                {
                     genderShadowColor = Pokemon.Gender == PokemonFireRedClone.Gender.MALE ? new Color(48, 111, 154, 255) : new Color(155, 86, 76, 255);
+                }
 
                 Gender = new PokemonText(genderText, font, genderFontColor, genderShadowColor);
             }
@@ -109,7 +125,6 @@ namespace PokemonFireRedClone
                 MaxHP = new PokemonText(Pokemon.Stats.HP.ToString(), font, fontColor, shadowColor);
                 CurrentHP = new PokemonText(Pokemon.CurrentHP.ToString(), font, fontColor, shadowColor);
             }
-
         }
 
         public void SetUpHealthBar()
@@ -119,7 +134,6 @@ namespace PokemonFireRedClone
             HPBar.Scale.X = healthRatio;
 
             CalculateHealthBarColor(healthRatio);
-
         }
 
         public void ScaleEXPBar(Image image)
@@ -147,8 +161,9 @@ namespace PokemonFireRedClone
             }
 
             if (hpLoaded)
+            {
                 HPBar.ReloadTexture();
-
+            }
         }
 
         public void SetAlpha(float alpha)
@@ -156,7 +171,9 @@ namespace PokemonFireRedClone
             Name.SetAlpha(alpha);
 
             if (Pokemon.Gender != PokemonFireRedClone.Gender.GENDERLESS && !Pokemon.Name.Contains("Nidoran"))
+            {
                 Gender.SetAlpha(alpha);
+            }
 
             Level.SetAlpha(alpha);
 

@@ -76,6 +76,9 @@
     <None Remove="Load\Menus\PokedexMenu.xml" />
     <None Remove="Load\Menus\PokemonListMenu.xml" />
     <None Remove="Load\Menus\PokemonDetailsMenu.xml" />
+    <None Remove="Util\Menu\BagMenu\" />
+    <None Remove="Content\Menus\BagMenu\" />
+    <None Remove="Load\Menus\BagMenu.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -171,6 +174,9 @@
     <Content Include="Load\Menus\PokemonDetailsMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Menus\BagMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
@@ -201,5 +207,7 @@
     <Folder Include="Screens\" />
     <Folder Include="Util\" />
     <Folder Include="Util\Menu\PokedexMenu\" />
+    <Folder Include="Util\Menu\BagMenu\" />
+    <Folder Include="Content\Menus\BagMenu\" />
   </ItemGroup>
 </Project>

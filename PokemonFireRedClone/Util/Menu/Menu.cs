@@ -9,7 +9,6 @@ namespace PokemonFireRedClone
 {
     public class Menu
     {
-
         private string id;
 
         public event EventHandler OnMenuChange;
@@ -63,14 +62,18 @@ namespace PokemonFireRedClone
                 {
                     item.Image.LoadContent();
                     foreach (string s in split)
+                    {
                         item.Image.ActivateEffect(s);
+                    }
                 }
 
                 if (item.PokemonText != null)
                 {
                     item.PokemonText.LoadContent();
                     foreach (string s in split)
+                    {
                         item.PokemonText.ActivateEffect(s);
+                    }
                 }
             }
             AlignMenuItems();

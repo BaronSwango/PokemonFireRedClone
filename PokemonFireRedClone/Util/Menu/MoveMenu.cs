@@ -8,7 +8,6 @@ namespace PokemonFireRedClone
 {
     public class MoveMenu : Menu
     {
-
         public Image Arrow;
         public Image Background;
         public static int SavedItemNumber;
@@ -29,8 +28,6 @@ namespace PokemonFireRedClone
                 item.Description[2].SetPosition(new Vector2(900, item.Description[0].Position.Y + item.Description[0].SourceRect.Height + 36));
                 item.Description[3].SetPosition(new Vector2(item.Description[2].Position.X + item.Description[2].SourceRect.Width, item.Description[2].Position.Y - 20));
             }
-
-
         }
 
         public override void LoadContent()
@@ -51,8 +48,11 @@ namespace PokemonFireRedClone
             foreach (MenuItem item in Items)
             {
                 foreach (PokemonText text in item.Description)
+                {
                     text.LoadContent();
+                }
             }
+
             ItemNumber = SavedItemNumber;
             base.LoadContent();
             AlignMenuItems();
@@ -66,8 +66,11 @@ namespace PokemonFireRedClone
             foreach (MenuItem item in Items)
             {
                 foreach (PokemonText text in item.Description)
+                {
                     text.UnloadContent();
+                }
             }
+
             SavedItemNumber = ItemNumber;
             base.UnloadContent();
         }
@@ -79,23 +82,30 @@ namespace PokemonFireRedClone
             if (InputManager.Instance.KeyPressed(Keys.A) && ItemNumber - 1 >= 0 && !Items[ItemNumber - 1].PokemonText.Image.Text.Contains('-'))
             {
                 if (ItemNumber == 1 || ItemNumber == 3)
+                {
                     ItemNumber--;
+                }
             }
             else if (InputManager.Instance.KeyPressed(Keys.D) && ItemNumber + 1 <= Items.Count - 1 && !Items[ItemNumber + 1].PokemonText.Image.Text.Contains('-'))
             {
                 if (ItemNumber == 0 || ItemNumber == 2)
+                {
                     ItemNumber++;
+                }
             }
-
             else if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber - 2 >= 0 && !Items[ItemNumber - 2].PokemonText.Image.Text.Contains('-'))
             {
                 if (ItemNumber == 2 || ItemNumber == 3)
+                {
                     ItemNumber -= 2;
+                }
             }
             else if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber + 2 <= Items.Count - 1 && !Items[ItemNumber + 2].PokemonText.Image.Text.Contains('-'))
             {
                 if (ItemNumber == 0 || ItemNumber == 1)
+                {
                     ItemNumber += 2;
+                }
             }
 
             for (int i = 0; i < Items.Count; i++)
@@ -106,15 +116,20 @@ namespace PokemonFireRedClone
                     Arrow.Position = new Vector2(Items[i].PokemonText.Position.X - Arrow.SourceRect.Width - 4,
                         Items[i].PokemonText.Position.Y - 4);
                     foreach (PokemonText text in Items[i].Description)
+                    {
                         text.Image.IsActive = true;
+                    }
                 }
                 else
                 {
                     Items[i].PokemonText.Image.IsActive = false;
                     foreach (PokemonText text in Items[i].Description)
+                    {
                         text.Image.IsActive = false;
+                    }
                 }
             }
+
             base.Update(gameTime);
         }
 
@@ -122,17 +137,20 @@ namespace PokemonFireRedClone
         {
             Background.Draw(spriteBatch);
             Arrow.Draw(spriteBatch);
+
             foreach (MenuItem item in Items)
             {
                 foreach (PokemonText text in item.Description)
                 {
-                if (text.Image.IsActive)
-                    text.Draw(spriteBatch);
+                    if (text.Image.IsActive)
+                    {
+                        text.Draw(spriteBatch);
+                    }
                 }
 
             }
+
             base.Draw(spriteBatch);
         }
     }
 }
-
