@@ -70,12 +70,15 @@ namespace PokemonFireRedClone
 
                     screen.Map = mapLoader.Load("Load/Gameplay/Map/" + door.MapName + ".xml");
                     screen.Map.LoadContent();
+                    screen.AreaManager.LoadContent(screen.Map.Areas, screen.Player);
 
                     screen.Player.Sprite.Position = door.Coords;
                     Player.PlayerJsonObject.MapName = door.MapName;
 
                     if (prevInside)
+                    {
                         screen.AreaManager.IsTransitioning = true;
+                    }
 
                     screen.Player.Spawn(ref screen.Map);
                     screen.Player.Destination = screen.Player.PreviousTile = screen.Player.Sprite.Position;

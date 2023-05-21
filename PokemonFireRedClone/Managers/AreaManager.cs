@@ -31,7 +31,10 @@ namespace PokemonFireRedClone
 
         public void LoadContent(List<Area> areas, Player player)
         {
-            background.LoadContent();
+            if (!background.IsLoaded)
+            {
+                background.LoadContent();
+            }
 
             foreach (Area area in areas)
             {

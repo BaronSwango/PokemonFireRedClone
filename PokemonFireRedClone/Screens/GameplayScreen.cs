@@ -74,7 +74,7 @@ namespace PokemonFireRedClone
             // print player's current tile to console
             if (InputManager.Instance.KeyPressed(Keys.M))
             {
-                Tile currentTile = TileManager.GetCurrentTile(Map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height, 1);
+                Tile currentTile = TileManager.GetCurrentTile(Map, Player.Sprite, Player.Sprite.SourceRect.Width / 2, Player.Sprite.SourceRect.Height, 0);
 
                 if (currentTile != null)
                 {

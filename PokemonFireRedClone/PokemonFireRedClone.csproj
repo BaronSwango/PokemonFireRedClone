@@ -79,6 +79,8 @@
     <None Remove="Util\Menu\BagMenu\" />
     <None Remove="Content\Menus\BagMenu\" />
     <None Remove="Load\Menus\BagMenu.xml" />
+    <None Remove="Load\Gameplay\Map\ViridianCityToViridianForestGate.xml" />
+    <None Remove="Load\Gameplay\Map\ViridianForest.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -175,6 +177,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Menus\BagMenu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Gameplay\Map\ViridianCityToViridianForestGate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Gameplay\Map\ViridianForest.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

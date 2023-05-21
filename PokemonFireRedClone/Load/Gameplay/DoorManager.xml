@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <DoorManager>
     <Doors>
-        <ID>[1:4:5:PalletTownArea]</ID>
+        <ID>[1:4:9:PalletTownArea]</ID>
         <MapName>PlayerHomeFirstFloor</MapName>
         <SpawnCoords>256,492</SpawnCoords>
     </Doors>
@@ -12,7 +12,7 @@
     </Doors>
 
     <Doors>
-        <ID>[1:4:6:PalletTownArea]</ID>
+        <ID>[1:4:10:PalletTownArea]</ID>
         <MapName>RivalHome</MapName>
         <SpawnCoords>320,492</SpawnCoords>
     </Doors>
@@ -34,7 +34,7 @@
     </Doors>
 
     <Doors>
-        <ID>[9:4:7:PalletTownArea]</ID>
+        <ID>[9:4:11:PalletTownArea]</ID>
         <MapName>OakLab</MapName>
         <SpawnCoords>512,812</SpawnCoords>
     </Doors>
@@ -45,7 +45,7 @@
     </Doors>
 
     <Doors>
-        <ID>[2:9:4:PalletTownArea]</ID>
+        <ID>[2:9:8:PalletTownArea]</ID>
         <MapName>ViridianCenter</MapName>
         <SpawnCoords>512,492</SpawnCoords>
     </Doors>
@@ -56,7 +56,7 @@
     </Doors>
 
     <Doors>
-        <ID>[7:9:3:PalletTownArea]</ID>
+        <ID>[7:9:7:PalletTownArea]</ID>
         <MapName>ViridianMart</MapName>
         <SpawnCoords>320,428</SpawnCoords>
     </Doors>
@@ -67,7 +67,7 @@
     </Doors>
 
     <Doors>
-        <ID>[1:13:2:PalletTownArea]</ID>
+        <ID>[1:13:6:PalletTownArea]</ID>
         <MapName>ViridianSchool</MapName>
         <SpawnCoords>320,428</SpawnCoords>
     </Doors>
@@ -78,7 +78,7 @@
     </Doors>
 
     <Doors>
-        <ID>[10:9:1:PalletTownArea]</ID>
+        <ID>[10:9:5:PalletTownArea]</ID>
         <MapName>ViridianHouse</MapName>
         <SpawnCoords>384,428</SpawnCoords>
     </Doors>
@@ -89,7 +89,7 @@
     </Doors>
 
     <Doors>
-        <ID>[8:14:0:PalletTownArea]</ID>
+        <ID>[8:14:4:PalletTownArea]</ID>
         <MapName>ViridianGym</MapName>
         <SpawnCoords>384,492</SpawnCoords>
     </Doors>
@@ -98,5 +98,24 @@
         <MapName>PalletTown</MapName>
         <SpawnCoords>2496,3244</SpawnCoords>
     </Doors>
-
+    <Doors>
+        <ID>[15:4:2:PalletTownArea]</ID>
+        <MapName>ViridianCityToViridianForestGate</MapName>
+        <SpawnCoords>448,768</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[15:4:3:PalletTownArea]</ID>
+        <MapName>ViridianCityToViridianForestGate</MapName>
+        <SpawnCoords>448,768</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[3:26:1:ViridianCityToViridianForestGate]</ID>
+        <MapName>PalletTown</MapName>
+        <SpawnCoords>1280,832</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[1:17:0:ViridianCityToViridianForestGate]</ID>
+        <MapName>ViridianForest</MapName>
+        <SpawnCoords>2304,4096</SpawnCoords>
+    </Doors>
 </DoorManager>
