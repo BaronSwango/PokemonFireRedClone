@@ -16,6 +16,7 @@
       </TileMap>
       <SolidTiles>[11:38][12:38][10:34][9:34][7:30][0:0][14:35][15:35]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -84,6 +85,7 @@
       </TileMap>
       <SolidTiles>[3:26][9:7][4:38][5:38][4:32]</SolidTiles>
       <OverlayTiles>[9:6][4:37][5:37]</OverlayTiles>
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -176,4 +178,7 @@
 		<MoveType>Still</MoveType>
         <ID>NPC20</ID>
    </NPC>
+   <Area>
+      <Name>VIRIDIAN   CITY</Name>
+  </Area>
 </Map>

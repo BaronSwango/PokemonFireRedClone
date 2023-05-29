@@ -16,6 +16,7 @@
       </TileMap>
       <SolidTiles>[0:0][11:14][17:19][16:19][15:19][13:14][12:14][13:20][14:20][13:19][14:19][13:18][14:18]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -84,6 +85,7 @@
       </TileMap>
       <SolidTiles>[15:17][17:17][3:26][16:17][12:20][12:19][14:15][12:18][9:7][13:18]</SolidTiles>
       <OverlayTiles>[15:16][17:13][17:16][16:16][16:13][13:17][14:17][9:6]</OverlayTiles>
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -196,4 +198,7 @@
 		<Direction>Right</Direction>
 		<MoveType>Still</MoveType>
    </NPC>
+   <Area>
+      <Name>VIRIDIAN   CITY</Name>
+  </Area>
 </Map>

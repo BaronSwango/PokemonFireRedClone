@@ -77,6 +77,8 @@
     </TileMap>
     <SolidTiles>[11:2][11:1][9:2][10:2][1:1][9:3][10:3][11:3][9:4][10:4][11:4][3:2][2:1][3:1][3:2:0][4:2][4:1][3:3][4:3][3:4][9:1]</SolidTiles>
     <OverlayTiles />
+    <DoorTiles></DoorTiles>
+    <SignTiles>[1:1][2:1]</SignTiles>
     <Image>
       <Alpha>1</Alpha>
       <Text />
@@ -336,6 +338,7 @@
     </TileMap>
     <SolidTiles>[8:3][0:5][1:5][2:5][3:5][4:5][5:5][5:4][5:3][5:2][2:1]</SolidTiles>
     <OverlayTiles>[9:2][8:2][7:2]</OverlayTiles>
+    <DoorTiles>[3:5][8:3]</DoorTiles>
     <Image>
       <Alpha>1</Alpha>
       <Text />
@@ -468,7 +471,7 @@
 		<MoveType>Still</MoveType>
 		<ID>NPC26</ID>
     </NPC>
-    <NPC>
+    <Trainer>
 		<Sprite>
 			<Path>Gameplay/NPC15</Path>
 			<Effects>SpriteSheetEffect</Effects>
@@ -484,8 +487,35 @@
 		<Direction>Left</Direction>
 		<MoveType>Still</MoveType>
 		<ID>BugCatcherRick</ID>
-    </NPC>
-    <NPC>
+        <Name>BUG   CATCHER   RICK</Name>
+		<Reward>72</Reward>
+        <BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>No !</Text>
+            </Image>
+        </BattleText>
+		<BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>CATERPIE   can`t   hack   it !</Text>
+            </Image>
+        </BattleText>
+        <Pokemon>
+			<PokemonName>Weedle</PokemonName>
+			<Level>6</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <Pokemon>
+			<PokemonName>Caterpie</PokemonName>
+			<Level>6</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <BattleSprite>
+			<Path>BattleScreen/BattleSprites/BugCatcherBattle</Path>
+        </BattleSprite>
+    </Trainer>
+    <Trainer>
 		<Sprite>
 			<Path>Gameplay/NPC15</Path>
 			<Effects>SpriteSheetEffect</Effects>
@@ -501,8 +531,40 @@
 		<Direction>Left</Direction>
 		<MoveType>Still</MoveType>
 		<ID>BugCatcherDoug</ID>
-    </NPC>
-    <NPC>
+        <Name>BUG   CATCHER   DOUG</Name>
+        <Reward>84</Reward>
+        <BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>Huh?</Text>
+            </Image>
+        </BattleText>
+		<BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>I   ran   out   of   POKéMON !</Text>
+            </Image>
+        </BattleText>
+        <Pokemon>
+			<PokemonName>Weedle</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <Pokemon>
+			<PokemonName>Weedle</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <Pokemon>
+			<PokemonName>Kakuna</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <BattleSprite>
+			<Path>BattleScreen/BattleSprites/BugCatcherBattle</Path>
+        </BattleSprite>
+    </Trainer>
+    <Trainer>
 		<Sprite>
 			<Path>Gameplay/NPC15</Path>
 			<Effects>SpriteSheetEffect</Effects>
@@ -515,11 +577,38 @@
 			<X>4</X>
 			<Y>4</Y>
         </SpriteFrames>
-		<Direction>Left</Direction>
+		<Direction>Down</Direction>
 		<MoveType>Still</MoveType>
 		<ID>BugCatcherAnthony</ID>
-    </NPC>
-    <NPC>
+        <Name>BUG   CATCHER   ANTHONY</Name>
+        <Reward>96</Reward>
+        <BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>Oh ,   boo.</Text>
+            </Image>
+        </BattleText>
+		<BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>Nothing   went   right.</Text>
+            </Image>
+        </BattleText>
+        <Pokemon>
+			<PokemonName>Caterpie</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <Pokemon>
+			<PokemonName>Caterpie</PokemonName>
+			<Level>8</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <BattleSprite>
+			<Path>BattleScreen/BattleSprites/BugCatcherBattle</Path>
+        </BattleSprite>
+    </Trainer>
+    <Trainer>
 		<Sprite>
 			<Path>Gameplay/NPC15</Path>
 			<Effects>SpriteSheetEffect</Effects>
@@ -535,8 +624,40 @@
 		<Direction>Up</Direction>
 		<MoveType>Still</MoveType>
 		<ID>BugCatcherCharlie</ID>
-    </NPC>
-    <NPC>
+        <Name>BUG   CATCHER   CHARLIE</Name>
+        <Reward>84</Reward>
+        <BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>Oh !</Text>
+            </Image>
+        </BattleText>
+		<BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>I   lost !</Text>
+            </Image>
+        </BattleText>
+        <Pokemon>
+			<PokemonName>Metapod</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <Pokemon>
+			<PokemonName>Caterpie</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <Pokemon>
+			<PokemonName>Metapod</PokemonName>
+			<Level>7</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <BattleSprite>
+			<Path>BattleScreen/BattleSprites/BugCatcherBattle</Path>
+        </BattleSprite>
+    </Trainer>
+    <Trainer>
 		<Sprite>
 			<Path>Gameplay/NPC15</Path>
 			<Effects>SpriteSheetEffect</Effects>
@@ -552,5 +673,27 @@
 		<Direction>Left</Direction>
 		<MoveType>Still</MoveType>
 		<ID>BugCatcherSammy</ID>
-    </NPC>
+        <Name>BUG   CATCHER   SAMMY</Name>
+        <Reward>108</Reward>
+        <BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>I   give !</Text>
+            </Image>
+        </BattleText>
+		<BattleText>
+			<Page>1</Page>
+			<Image>
+				<Text>You`re   good   at   this !</Text>
+            </Image>
+        </BattleText>
+        <Pokemon>
+			<PokemonName>Weedle</PokemonName>
+			<Level>9</Level>
+			<Gender>Male</Gender>
+        </Pokemon>
+        <BattleSprite>
+			<Path>BattleScreen/BattleSprites/BugCatcherBattle</Path>
+        </BattleSprite>
+    </Trainer>
 </Map>

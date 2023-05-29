@@ -16,6 +16,7 @@
       </TileMap>
       <SolidTiles>[6:3][7:7][8:7][0:0]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -84,6 +85,7 @@
       </TileMap>
       <SolidTiles>[9:7][3:26]</SolidTiles>
       <OverlayTiles>[9:6]</OverlayTiles>
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -151,6 +153,7 @@
       </TileMap>
       <SolidTiles>[7:9][8:9][8:8][7:8]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -264,4 +267,7 @@
         <Zone>768,364</Zone>
         <ID>Pidgey</ID>
    </NPC>
+   <Area>
+      <Name>VIRIDIAN   CITY</Name>
+  </Area>
 </Map>

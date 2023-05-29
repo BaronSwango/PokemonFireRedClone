@@ -64,7 +64,6 @@
     <None Remove="Screens\" />
     <None Remove="Load\Gameplay\DoorManager.xml" />
     <None Remove="Load\Gameplay\Map\PlayerHomeFirstFloor.xml" />
-    <None Remove="Load\Gameplay\Map\RivalHome.xml" />
     <None Remove="Load\Gameplay\Map\PlayerHomeSecondFloor.xml" />
     <None Remove="Load\Gameplay\Map\OakLab.xml" />
     <None Remove="Load\Gameplay\Map\ViridianCenter.xml" />
@@ -81,6 +80,9 @@
     <None Remove="Load\Menus\BagMenu.xml" />
     <None Remove="Load\Gameplay\Map\ViridianCityToViridianForestGate.xml" />
     <None Remove="Load\Gameplay\Map\ViridianForest.xml" />
+    <None Remove="Load\Gameplay\Map\ViridianCityToViridianForestGate %28copy%29.xml" />
+    <None Remove="Load\Gameplay\Map\PewterCityArea.xml" />
+    <None Remove="Load\Gameplay\Map\RivalHome.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -143,9 +145,6 @@
     <Content Include="Load\Gameplay\Map\PlayerHomeFirstFloor.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Load\Gameplay\Map\RivalHome.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Load\Gameplay\Map\PlayerHomeSecondFloor.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -183,6 +182,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Load\Gameplay\Map\ViridianForest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Gameplay\Map\ViridianForestToPewterCityGate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Gameplay\Map\PewterCityArea.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Load\Gameplay\Map\RivalHome.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

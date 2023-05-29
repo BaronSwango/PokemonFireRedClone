@@ -17,6 +17,7 @@
       </TileMap>
       <SolidTiles>[6:2][6:3][7:7][8:7][8:6][7:6][0:0]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -86,6 +87,7 @@
       </TileMap>
       <SolidTiles>[9:7][8:26][7:26][2:26][3:26][4:26]</SolidTiles>
       <OverlayTiles>[9:6]</OverlayTiles>
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -152,6 +154,7 @@
       </TileMap>
       <SolidTiles>[8:8][7:8][7:9][8:9]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -226,4 +229,7 @@
 		<Direction>Left</Direction>
 		<MoveType>Still</MoveType>
    </NPC>
+   <Area>
+      <Name>PALLET   TOWN</Name>
+  </Area>
 </Map>

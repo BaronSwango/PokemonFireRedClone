@@ -45,7 +45,16 @@ namespace PokemonFireRedClone
             }
             
             Camera = new Camera();
-            AreaManager.LoadContent(Map.Areas, Player);
+
+            if (Map.Inside)
+            {
+                Player.PlayerJsonObject.CurrentArea = Map.Areas[0];
+                Player.PlayerJsonObject.AreaName = Map.Areas[0].Name;
+            }
+            else
+            {
+                AreaManager.LoadContent(Map.Areas, Player);
+            }
         }
 
         public override void UnloadContent()

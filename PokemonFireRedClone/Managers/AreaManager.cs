@@ -12,11 +12,10 @@ namespace PokemonFireRedClone
         private PokemonText areaText;
         private int imageOffset;
         private readonly Counter counter;
-        //private int counter;
         private bool dropdown;
         private Area newArea;
-        //private const int COUNTER_LIMIT = 1000;
 
+        private bool isLoaded;
         public bool IsTransitioning;
 
         public AreaManager()
@@ -48,11 +47,16 @@ namespace PokemonFireRedClone
 
             areaText = new PokemonText(Player.PlayerJsonObject.AreaName, "Fonts/PokemonFireRedDialogue", new(113, 113, 113), new(218, 218, 212));
             areaText.LoadContent();
+
+            isLoaded = true;
         }
 
         public void UnloadContent()
         {
-            background.UnloadContent();
+            if (isLoaded)
+            {
+                background.UnloadContent();
+            }
         }
 
         public void Update(GameTime gameTime, List<Area> areas, Player player)
@@ -68,7 +72,6 @@ namespace PokemonFireRedClone
                             dropdown = false;
                         }
 
-                        //counter = COUNTER_LIMIT;
                         counter.Finish();
                         newArea = area;
                     }
@@ -86,13 +89,14 @@ namespace PokemonFireRedClone
             }
 
             if (IsTransitioning)
+            {
                 Transition(gameTime, player);
-
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (IsTransitioning)
+            if (IsTransitioning && isLoaded)
             {
                 background.Draw(spriteBatch);
                 areaText.Draw(spriteBatch);
@@ -101,19 +105,21 @@ namespace PokemonFireRedClone
 
         public void Reset()
         {
-            IsTransitioning = false;
-            imageOffset = 0;
-            dropdown = true;
-            //counter = 0;
-            counter.Reset();
-            areaText.UnloadContent();
-
-            if (newArea != null)
+            if (isLoaded)
             {
-                IsTransitioning = true;
-                areaText = new PokemonText(newArea.Name, "Fonts/PokemonFireRedDialogue", new(113, 113, 113), new(218, 218, 212));
-                areaText.LoadContent();
-                newArea = null;
+                IsTransitioning = false;
+                imageOffset = 0;
+                dropdown = true;
+                counter.Reset();
+                areaText.UnloadContent();
+
+                if (newArea != null)
+                {
+                    IsTransitioning = true;
+                    areaText = new PokemonText(newArea.Name, "Fonts/PokemonFireRedDialogue", new(113, 113, 113), new(218, 218, 212));
+                    areaText.LoadContent();
+                    newArea = null;
+                }
             }
         }
 
@@ -131,16 +137,15 @@ namespace PokemonFireRedClone
                 dropdown = false;
             }
             else if (dropdown)
+            {
                 imageOffset += speed;
+            }
 
-            //if (!dropdown && counter < COUNTER_LIMIT)
             if (!dropdown && !counter.Finished)
             {
-                //counter += speed;
                 counter.Update(gameTime);
             }
 
-            //if (!dropdown && counter >= COUNTER_LIMIT)
             if (!dropdown && counter.Finished)
             {
                 imageOffset -= speed;

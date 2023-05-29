@@ -26,11 +26,14 @@ namespace PokemonFireRedClone
 
         public void LoadContent()
         {
-            zoneBounds = new KeyValuePair<KeyValuePair<int, int>, KeyValuePair<int, int>>(
-                new KeyValuePair<int, int>(int.Parse(Zone[0].Split(',')[0]), int.Parse(Zone[0].Split(',')[1])),
-                new KeyValuePair<int, int>(int.Parse(Zone[1].Split(',')[0]), int.Parse(Zone[1].Split(',')[1]))
-            );
-            zoneRect = new(zoneBounds.Key.Key, zoneBounds.Key.Value, zoneBounds.Value.Key - zoneBounds.Key.Key, zoneBounds.Value.Value - zoneBounds.Key.Value);
+            if (Zone.Count > 0)
+            {
+                zoneBounds = new KeyValuePair<KeyValuePair<int, int>, KeyValuePair<int, int>>(
+                    new KeyValuePair<int, int>(int.Parse(Zone[0].Split(',')[0]), int.Parse(Zone[0].Split(',')[1])),
+                    new KeyValuePair<int, int>(int.Parse(Zone[1].Split(',')[0]), int.Parse(Zone[1].Split(',')[1]))
+                );
+                zoneRect = new(zoneBounds.Key.Key, zoneBounds.Key.Value, zoneBounds.Value.Key - zoneBounds.Key.Key, zoneBounds.Value.Value - zoneBounds.Key.Value);
+            }
         }
 
         public bool PlayerEntered(Player player)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>ViridianCityToViridianForestGate</Name>
+  <Name>ViridianForestToPewterCityGate</Name>
   <Inside>true</Inside>
   <Layer>
     <TileMap>
@@ -154,7 +154,7 @@
   </TileDimensions>
   <NPC>
     <Sprite>
-	    <Path>Gameplay/NPC2</Path>
+	    <Path>Gameplay/NPC7</Path>
 	   	<Effects>SpriteSheetEffect</Effects>
     </Sprite>
 	<SpawnLocation>
@@ -166,27 +166,42 @@
 		<Y>4</Y>
     </SpriteFrames>
 	<Direction>Down</Direction>
-	<MoveType>Zoned</MoveType>
-	<ID>NPC23</ID>
-    <Zone>192,424</Zone>
-	<Zone>320,576</Zone>
+	<MoveType>Rotate</MoveType>
+	<ID>NPC27</ID>
   </NPC>
   <NPC>
     <Sprite>
-	    <Path>Gameplay/NPC11</Path>
+	    <Path>Gameplay/NPC6</Path>
 	   	<Effects>SpriteSheetEffect</Effects>
     </Sprite>
 	<SpawnLocation>
-		<X>640</X>
-		<Y>428</Y>
+		<X>320</X>
+		<Y>300</Y>
     </SpawnLocation>
 	<SpriteFrames>
 		<X>4</X>
 		<Y>4</Y>
     </SpriteFrames>
-	<Direction>Left</Direction>
+	<Direction>Up</Direction>
+	<MoveType>Rotate</MoveType>
+	<ID>NPC28</ID>
+  </NPC>
+  <NPC>
+    <Sprite>
+	    <Path>Gameplay/NPC16</Path>
+	   	<Effects>SpriteSheetEffect</Effects>
+    </Sprite>
+	<SpawnLocation>
+		<X>640</X>
+		<Y>364</Y>
+    </SpawnLocation>
+	<SpriteFrames>
+		<X>4</X>
+		<Y>4</Y>
+    </SpriteFrames>
+	<Direction>Right</Direction>
 	<MoveType>Still</MoveType>
-	<ID>NPC24</ID>
+	<ID>NPC29</ID>
   </NPC>
   <Area>
       <Name>ROUTE   2</Name>

@@ -17,6 +17,7 @@
       </TileMap>
       <SolidTiles>[8:3][0:0]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -86,6 +87,7 @@
       </TileMap>
       <SolidTiles>[3:26]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -218,4 +220,7 @@
 			<Path>BattleScreen/BattleSprites/BrockBattle</Path>
         </BattleSprite>
     </Trainer>
+    <Area>
+      <Name>VIRIDIAN   CITY</Name>
+  </Area>
 </Map>

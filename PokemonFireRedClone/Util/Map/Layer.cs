@@ -32,7 +32,7 @@ namespace PokemonFireRedClone
         public TileMap Tile;
         [XmlIgnore]
         public List<Tile> Tiles;
-        public string SolidTiles, OverlayTiles, AnimatedTiles;
+        public string SolidTiles, OverlayTiles, AnimatedTiles, SignTiles, DoorTiles;
         public Image Image;
 
 

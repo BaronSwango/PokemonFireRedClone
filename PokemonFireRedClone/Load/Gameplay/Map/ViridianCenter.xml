@@ -17,6 +17,7 @@
       </TileMap>
       <SolidTiles>[0:0][14:30][13:30][16:32][16:31][17:32][17:31][11:11][12:11]</SolidTiles>
       <OverlayTiles />
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -86,6 +87,7 @@
       </TileMap>
       <SolidTiles>[3:26][5:9][6:9][6:8][5:8][10:11][16:26][17:26]</SolidTiles>
       <OverlayTiles>[17:13][16:13][13:29][12:30][17:25][16:25]</OverlayTiles>
+      <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
          <Alpha>1</Alpha>
          <Text />
@@ -214,4 +216,7 @@
 		<MoveType>Still</MoveType>
         <ID>Nurse</ID>
    </NPC>
+   <Area>
+      <Name>VIRIDIAN   CITY</Name>
+  </Area>
 </Map>
