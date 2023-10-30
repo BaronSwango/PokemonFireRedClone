@@ -315,7 +315,7 @@
     </TileMap>
     <SolidTiles>[8:8][7:8][7:9][8:9][20:1][1:18][0:18][3:18][2:18][4:18][0:17][1:17][3:17][2:17][4:17][0:16][1:16][4:16][4:9][3:9][2:9][1:9][0:9][4:8][3:8][2:8][1:8][0:8][1:7][0:7][2:7][3:7][4:7][4:6][3:6][2:6][1:6][0:6][6:9][5:9][5:14][6:14][7:14][8:14][9:14][10:14][11:14][12:14][8:7][7:7][6:7][5:7][5:13][6:13][7:13][8:13][9:13][10:13][11:13][12:13][12:12][6:12][5:12][12:11][6:11][5:11][4:25][5:25][6:25][2:24][1:24][0:24][4:24][5:24][6:24][10:24][7:24][1:23][0:23][4:23][5:23][6:23][7:23][10:23][11:23][12:23][13:23][15:23][14:23][0:22][1:22][10:22][11:22][12:22][15:22][14:22][13:22][0:21][1:21][10:21][15:21][11:21][0:20][10:20][1:20][11:20][15:20]</SolidTiles>
     <OverlayTiles>[0:15][1:15][4:15][0:5][4:5][3:5][2:5][1:5][8:6][7:6][6:6][5:6][5:10][12:10][6:10][20:0][21:0][23:0]</OverlayTiles>
-    <DoorTiles>[20:1]</DoorTiles>
+    <DoorTiles>[20:1][2:9][7:9]</DoorTiles>
     <Image>
       <Alpha>1</Alpha>
       <Text />
@@ -390,6 +390,59 @@
 	<Direction>Down</Direction>
 	<MoveType>Still</MoveType>
 	<ID>NPC30</ID>
+  </NPC>
+  <NPC>
+    <Sprite>
+	    <Path>Gameplay/NPC15</Path>
+	   	<Effects>SpriteSheetEffect</Effects>
+    </Sprite>
+	<SpawnLocation>
+		<X>2496</X>
+		<Y>1964</Y>
+    </SpawnLocation>
+	<SpriteFrames>
+		<X>4</X>
+		<Y>4</Y>
+    </SpriteFrames>
+	<Direction>Left</Direction>
+	<MoveType>Zoned</MoveType>
+	<ID>NPC31</ID>
+    <Zone>2368,1964</Zone>
+	<Zone>2624,1964</Zone>
+  </NPC>
+  <NPC>
+    <Sprite>
+	    <Path>Gameplay/NPC17</Path>
+	   	<Effects>SpriteSheetEffect</Effects>
+    </Sprite>
+	<SpawnLocation>
+		<X>2496</X>
+		<Y>1324</Y>
+    </SpawnLocation>
+	<SpriteFrames>
+		<X>4</X>
+		<Y>4</Y>
+    </SpriteFrames>
+	<Direction>Down</Direction>
+	<MoveType>Rotate</MoveType>
+	<ID>NPC32</ID>
+  </NPC>
+  <NPC>
+    <Sprite>
+	    <Path>Gameplay/NPC12</Path>
+	   	<Effects>SpriteSheetEffect</Effects>
+    </Sprite>
+	<SpawnLocation>
+		<X>768</X>
+		<Y>1196</Y>
+    </SpawnLocation>
+	<SpriteFrames>
+		<X>4</X>
+		<Y>4</Y>
+    </SpriteFrames>
+	<Direction>Down</Direction>
+	<MoveType>Rotate</MoveType>
+	<ID>NPC33</ID>
   </NPC>
   <Area>
 		<Name>ROUTE   2</Name>

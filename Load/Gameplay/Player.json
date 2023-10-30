@@ -1,0 +1,161 @@
+{
+  "Position": "1664, 8620",
+  "Direction": 3.0,
+  "MapName": "PalletTown",
+  "Name": "Baron",
+  "TrainerID": "02390",
+  "Gender": 0,
+  "RivalName": "Gary",
+  "Time": 1.4202104546667633,
+  "Badges": 0,
+  "Money": 7992,
+  "PokemonInBag": [
+    {
+      "Name": "PINSIR",
+      "PokemonName": "Pinsir",
+      "Nature": 0,
+      "Gender": 0,
+      "MovePP": {
+        "Water Gun": 9,
+        "Growl": 9
+      },
+      "Level": 100,
+      "CurrentEXP": 1000000,
+      "CurrentHP": 268,
+      "Stats": {
+        "HP": 268,
+        "HPIV": 28,
+        "HPEV": 0,
+        "Attack": 297,
+        "AttackIV": 15,
+        "AttackEV": 0,
+        "Defense": 233,
+        "DefenseIV": 28,
+        "DefenseEV": 0,
+        "SpecialAttack": 106,
+        "SpecialAttackIV": 3,
+        "SpecialAttackEV": 0,
+        "SpecialDefense": 145,
+        "SpecialDefenseIV": 0,
+        "SpecialDefenseEV": 0,
+        "Speed": 177,
+        "SpeedIV": 2,
+        "SpeedEV": 0
+      }
+    },
+    {
+      "Name": "PINSIR",
+      "PokemonName": "Pinsir",
+      "Nature": 0,
+      "Gender": 0,
+      "MovePP": {
+        "Water Gun": 10,
+        "Growl": 9
+      },
+      "Level": 1,
+      "CurrentEXP": 0,
+      "CurrentHP": 12,
+      "Stats": {
+        "HP": 12,
+        "HPIV": 28,
+        "HPEV": 0,
+        "Attack": 7,
+        "AttackIV": 15,
+        "AttackEV": 0,
+        "Defense": 7,
+        "DefenseIV": 28,
+        "DefenseEV": 0,
+        "SpecialAttack": 5,
+        "SpecialAttackIV": 3,
+        "SpecialAttackEV": 0,
+        "SpecialDefense": 6,
+        "SpecialDefenseIV": 0,
+        "SpecialDefenseEV": 0,
+        "Speed": 6,
+        "SpeedIV": 2,
+        "SpeedEV": 0
+      }
+    },
+    {
+      "Name": "MEW",
+      "PokemonName": "Mew",
+      "Nature": 13,
+      "Gender": 2,
+      "MovePP": {
+        "Water Gun": 10,
+        "Vine Whip": 8
+      },
+      "Level": 15,
+      "CurrentEXP": 2477,
+      "CurrentHP": 59,
+      "Stats": {
+        "HP": 59,
+        "HPIV": 28,
+        "HPEV": 0,
+        "Attack": 42,
+        "AttackIV": 27,
+        "AttackEV": 0,
+        "Defense": 34,
+        "DefenseIV": 22,
+        "DefenseEV": 0,
+        "SpecialAttack": 39,
+        "SpecialAttackIV": 29,
+        "SpecialAttackEV": 0,
+        "SpecialDefense": 37,
+        "SpecialDefenseIV": 15,
+        "SpecialDefenseEV": 0,
+        "Speed": 36,
+        "SpeedIV": 12,
+        "SpeedEV": 0
+      }
+    },
+    {
+      "Name": "SQUIRTLE",
+      "PokemonName": "Squirtle",
+      "Nature": 0,
+      "Gender": 0,
+      "MovePP": {
+        "Water Gun": 2,
+        "Growl": 9
+      },
+      "Level": 17,
+      "CurrentEXP": 3214,
+      "CurrentHP": 43,
+      "Stats": {
+        "HP": 46,
+        "HPIV": 28,
+        "HPEV": 0,
+        "Attack": 25,
+        "AttackIV": 15,
+        "AttackEV": 0,
+        "Defense": 31,
+        "DefenseIV": 28,
+        "DefenseEV": 0,
+        "SpecialAttack": 19,
+        "SpecialAttackIV": 3,
+        "SpecialAttackEV": 0,
+        "SpecialDefense": 26,
+        "SpecialDefenseIV": 0,
+        "SpecialDefenseEV": 0,
+        "Speed": 19,
+        "SpeedIV": 2,
+        "SpeedEV": 0
+      }
+    }
+  ],
+  "TrainersDefeated": [
+    "TrainerBrock",
+    "BugCatcherSammy",
+    "BugCatcherCharlie"
+  ],
+  "AreaName": "PALLET   TOWN",
+  "Pokedex": {
+    "SQUIRTLE": true,
+    "PINSIR": true,
+    "GEODUDE": false,
+    "MEW": true,
+    "WEEDLE": false,
+    "METAPOD": false,
+    "CATERPIE": false
+  }
+}
