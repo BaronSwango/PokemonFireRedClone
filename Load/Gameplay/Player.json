@@ -1,14 +1,14 @@
 {
-  "Position": "1664, 8620",
-  "Direction": 3.0,
-  "MapName": "PalletTown",
+  "Position": "3392, 1900",
+  "Direction": 1.0,
+  "MapName": "ViridianForest",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 1.4202104546667633,
+  "Time": 1.4874727892778745,
   "Badges": 0,
-  "Money": 7992,
+  "Money": 8076,
   "PokemonInBag": [
     {
       "Name": "PINSIR",
@@ -82,29 +82,29 @@
       "Nature": 13,
       "Gender": 2,
       "MovePP": {
-        "Water Gun": 10,
+        "Water Gun": 9,
         "Vine Whip": 8
       },
-      "Level": 15,
-      "CurrentEXP": 2477,
-      "CurrentHP": 59,
+      "Level": 16,
+      "CurrentEXP": 2583,
+      "CurrentHP": 61,
       "Stats": {
-        "HP": 59,
+        "HP": 62,
         "HPIV": 28,
         "HPEV": 0,
-        "Attack": 42,
+        "Attack": 45,
         "AttackIV": 27,
         "AttackEV": 0,
-        "Defense": 34,
+        "Defense": 36,
         "DefenseIV": 22,
         "DefenseEV": 0,
-        "SpecialAttack": 39,
+        "SpecialAttack": 41,
         "SpecialAttackIV": 29,
         "SpecialAttackEV": 0,
-        "SpecialDefense": 37,
+        "SpecialDefense": 39,
         "SpecialDefenseIV": 15,
         "SpecialDefenseEV": 0,
-        "Speed": 36,
+        "Speed": 38,
         "SpeedIV": 12,
         "SpeedEV": 0
       }
@@ -115,12 +115,12 @@
       "Nature": 0,
       "Gender": 0,
       "MovePP": {
-        "Water Gun": 2,
+        "Water Gun": 0,
         "Growl": 9
       },
       "Level": 17,
-      "CurrentEXP": 3214,
-      "CurrentHP": 43,
+      "CurrentEXP": 3370,
+      "CurrentHP": 46,
       "Stats": {
         "HP": 46,
         "HPIV": 28,
@@ -146,9 +146,10 @@
   "TrainersDefeated": [
     "TrainerBrock",
     "BugCatcherSammy",
-    "BugCatcherCharlie"
+    "BugCatcherCharlie",
+    "BugCatcherDoug"
   ],
-  "AreaName": "PALLET   TOWN",
+  "AreaName": "VIRIDIAN   FOREST",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,
@@ -156,6 +157,14 @@
     "MEW": true,
     "WEEDLE": false,
     "METAPOD": false,
-    "CATERPIE": false
-  }
+    "CATERPIE": false,
+    "KAKUNA": false
+  },
+  "Items": [
+    "Potion"
+  ],
+  "Machines": null,
+  "KeyItems": null,
+  "PokeBalls": null,
+  "ItemCounts": null
 }

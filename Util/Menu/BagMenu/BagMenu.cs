@@ -6,28 +6,48 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
-	public class BagMenu : Menu
-	{
+    public class BagMenu : Menu
+    {
         public Image Arrow;
         public Image Cancel;
 
         protected override void AlignMenuItems()
         {
+            float dimensionY = 0;
+
             foreach (MenuItem item in Items)
             {
-                item.PokemonText.SetPosition(new(548, 76));
+                item.PokemonText.SetPosition(new(548, 76 + dimensionY));
                 item.Image.Position = new(172 - item.Image.SourceRect.Width / 2, 624 - item.Image.SourceRect.Height / 2);
                 item.Description[0].SetPosition(new(252, 536));
+                dimensionY += item.PokemonText.Image.SourceRect.Height + 8;
             }
         }
 
         public override void LoadContent()
         {
-            Items.Add(new MenuItem("Screen", new PokemonText("CANCEL", "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 212))));
-            Items[0].LinkID = "GameplayScreen";
-            Items[0].Image = Cancel;
-            Items[0].Description = new List<PokemonText>();
-            Items[0].Description.Add(new PokemonText("CLOSE   BAG", "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113)));
+            foreach (string itemName in Player.PlayerJsonObject.Items)
+            {
+                Item item = ItemManager.Instance.GetItem(itemName);
+                Items.Add(new MenuItem("Item", new PokemonText(item.Name.ToUpper(), "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 218)))
+                {
+                    Image = item.Icon,
+                    Description = new List<PokemonText>
+                    {
+                        new(item.Description, "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
+                    }
+                });
+            }
+
+            Items.Add(new MenuItem("Screen", new PokemonText("CANCEL", "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 212)))
+            {
+                LinkID = "GameplayScreen",
+                Image = Cancel,
+                Description = new List<PokemonText>
+                {
+                    new("CLOSE   BAG", "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
+                }
+            });
 
             foreach (MenuItem item in Items)
             {
@@ -90,14 +110,13 @@ namespace PokemonFireRedClone
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Draw(spriteBatch);
+
+            Items[ItemNumber].Image.Draw(spriteBatch);
+            Items[ItemNumber].Description[0].Draw(spriteBatch);
 
             foreach (MenuItem item in Items)
             {
-                foreach (PokemonText text in item.Description)
-                {
-                    text.Draw(spriteBatch);
-                }
+                item.PokemonText.Draw(spriteBatch);
             }
 
             Arrow.Draw(spriteBatch);

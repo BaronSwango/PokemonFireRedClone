@@ -22,7 +22,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        private StatList ApplyNature(Nature nature, StatList statList)
+        private static StatList ApplyNature(Nature nature, StatList statList)
         {
             switch (nature)
             {
@@ -122,7 +122,7 @@ namespace PokemonFireRedClone
             return statList;
         }
 
-        private int CalculateStats(int b, int iv, int ev, int level)
+        private static int CalculateStats(int b, int iv, int ev, int level)
         {
             return ((2 * b + iv + (ev / 4)) * level / 100) + 5;
         }

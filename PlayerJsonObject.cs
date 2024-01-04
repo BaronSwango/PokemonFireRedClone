@@ -5,16 +5,16 @@ using Newtonsoft.Json;
 namespace PokemonFireRedClone
 {
 
-/*TODO: List of things to save in json object
- * 
- * Area
- * Pokemon
- * Phase of game
- * Pokedex
- * Items
- * Trainers battled
- *
- */
+    /*TODO: List of things to save in json object
+     * 
+     * Area
+     * Pokemon
+     * Phase of game
+     * Pokedex
+     * Items
+     * Trainers battled
+     *
+     */
 
     public class PlayerJsonObject
     {
@@ -32,6 +32,11 @@ namespace PokemonFireRedClone
         public List<string> TrainersDefeated;
         public string AreaName;
         public Dictionary<string, bool> Pokedex;
+        public List<string> Items;
+        public List<string> Machines;
+        public List<string> KeyItems;
+        public List<string> PokeBalls;
+        public Dictionary<string, int> ItemCounts;
         [JsonIgnore]
         public Area CurrentArea;
         //public Dictionary<CustomPokemon,KeyValuePair<int,KeyValuePair<int,int>>> PokemonInPC;

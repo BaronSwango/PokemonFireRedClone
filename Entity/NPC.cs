@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 
@@ -45,7 +44,7 @@ namespace PokemonFireRedClone
             NPCSprite.LoadContent(SpriteFrames, Direction);
             NPCSprite.SetPosition(SpawnLocation);
 
-            switch(MoveType)
+            switch (MoveType)
             {
                 case MovementType.ROTATE:
                     MovementManager = new RotatingMovementManager(this);

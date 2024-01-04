@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ItemManager>
+    <Items>
+        <Name>Potion</Name>
+        <Icon>
+            <Path>Items/Potion</Path>
+        </Icon>
+        <Description>A   spray-type   wound   medicine.
+It   restores   the   HP   of   one   POKeMON
+by   20   points.</Description>
+    </Items>
+</ItemManager>

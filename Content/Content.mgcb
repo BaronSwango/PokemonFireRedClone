@@ -550,6 +550,18 @@
 /processorParam:TextureFormat=Color
 /build:Gameplay/TileSheets/Interior.png
 
+#begin Items/Potion.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Items/Potion.png
+
 #begin Menus/BattleMenu/BattleMenuBackground.png
 /importer:TextureImporter
 /processor:TextureProcessor
