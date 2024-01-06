@@ -58,7 +58,7 @@ namespace PokemonFireRedClone
             string[] split = Effects.Split(':');
             foreach (MenuItem item in Items)
             {
-                if (item.Image != null)
+                if (item.Image != null && !item.Image.IsLoaded)
                 {
                     item.Image.LoadContent();
                     foreach (string s in split)

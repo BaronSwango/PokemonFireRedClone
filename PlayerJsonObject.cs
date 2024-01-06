@@ -32,10 +32,6 @@ namespace PokemonFireRedClone
         public List<string> TrainersDefeated;
         public string AreaName;
         public Dictionary<string, bool> Pokedex;
-        public List<string> Items;
-        public List<string> Machines;
-        public List<string> KeyItems;
-        public List<string> PokeBalls;
         public Dictionary<string, int> ItemCounts;
         [JsonIgnore]
         public Area CurrentArea;

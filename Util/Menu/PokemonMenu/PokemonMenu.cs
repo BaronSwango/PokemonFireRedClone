@@ -202,9 +202,7 @@ namespace PokemonFireRedClone
                     {
                         if (ItemNumber != originalSwitchIndex && ItemNumber != Items.Count - 1)
                         {
-                            CustomPokemon temp = Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex];
-                            Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex] = Player.PlayerJsonObject.PokemonInBag[ItemNumber];
-                            Player.PlayerJsonObject.PokemonInBag[ItemNumber] = temp;
+                            (Player.PlayerJsonObject.PokemonInBag[ItemNumber], Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex]) = (Player.PlayerJsonObject.PokemonInBag[originalSwitchIndex], Player.PlayerJsonObject.PokemonInBag[ItemNumber]);
                             isSwitching = true;
                         }
 
@@ -265,7 +263,7 @@ namespace PokemonFireRedClone
             {
                 ButtonMenu.Update();
             }
-            
+
             AlignMenuItems(gameTime);
         }
 

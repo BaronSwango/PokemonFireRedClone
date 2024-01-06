@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ItemManager>
     <Items>
-        <Name>Potion</Name>
+        <Name>POTION</Name>
         <Icon>
             <Path>Items/Potion</Path>
         </Icon>
+        <ItemType>HEALTH</ItemType>
         <Description>A   spray-type   wound   medicine.
-It   restores   the   HP   of   one   POKeMON
+It   restores   the   HP   of   one   POKéMON
 by   20   points.</Description>
+    </Items>
+    <Items>
+        <Name>POKé   BALL</Name>
+        <Icon>
+            <Path>Items/PokeBall</Path>
+        </Icon>
+        <ItemType>POKE_BALL</ItemType>
+        <Description>A   BALL   thrown   to   catch   a   wild
+POKéMON.   It   is   designed   in   a
+capsule   style.</Description>
     </Items>
 </ItemManager>

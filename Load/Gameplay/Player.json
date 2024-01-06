@@ -160,11 +160,8 @@
     "CATERPIE": false,
     "KAKUNA": false
   },
-  "Items": [
-    "Potion"
-  ],
-  "Machines": null,
-  "KeyItems": null,
-  "PokeBalls": null,
-  "ItemCounts": null
+  "ItemCounts": {
+    "POTION": 1,
+    "POKé   BALL": 1
+  }
 }

@@ -8,13 +8,17 @@ namespace PokemonFireRedClone
 {
     public class BagMenu : Menu
     {
+        private bool isBagMenuLoaded;
         public Image Arrow;
         public Image Cancel;
+
+        public PokemonText TestImage;
 
         protected override void AlignMenuItems()
         {
             float dimensionY = 0;
 
+            TestImage.SetPosition(new(952, 96));
             foreach (MenuItem item in Items)
             {
                 item.PokemonText.SetPosition(new(548, 76 + dimensionY));
@@ -26,45 +30,19 @@ namespace PokemonFireRedClone
 
         public override void LoadContent()
         {
-            foreach (string itemName in Player.PlayerJsonObject.Items)
-            {
-                Item item = ItemManager.Instance.GetItem(itemName);
-                Items.Add(new MenuItem("Item", new PokemonText(item.Name.ToUpper(), "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 218)))
-                {
-                    Image = item.Icon,
-                    Description = new List<PokemonText>
-                    {
-                        new(item.Description, "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
-                    }
-                });
-            }
-
-            Items.Add(new MenuItem("Screen", new PokemonText("CANCEL", "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 212)))
-            {
-                LinkID = "GameplayScreen",
-                Image = Cancel,
-                Description = new List<PokemonText>
-                {
-                    new("CLOSE   BAG", "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
-                }
-            });
-
-            foreach (MenuItem item in Items)
-            {
-                foreach (PokemonText desc in item.Description)
-                {
-                    desc.LoadContent();
-                }
-            }
-
-            base.LoadContent();
+            TestImage = new PokemonText("x    1", "Fonts/PokemonFireRedSmall", new Color(113, 113, 113), new Color(218, 218, 218));
+            TestImage.LoadContent();
+            LoadMenuItems();
             Arrow.LoadContent();
+            isBagMenuLoaded = true;
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
             Arrow.UnloadContent();
+            Cancel.UnloadContent();
+            TestImage.UnloadContent();
 
             foreach (MenuItem item in Items)
             {
@@ -113,6 +91,7 @@ namespace PokemonFireRedClone
 
             Items[ItemNumber].Image.Draw(spriteBatch);
             Items[ItemNumber].Description[0].Draw(spriteBatch);
+            TestImage.Draw(spriteBatch);
 
             foreach (MenuItem item in Items)
             {
@@ -121,6 +100,114 @@ namespace PokemonFireRedClone
 
             Arrow.Draw(spriteBatch);
         }
+
+        public void LoadMenuItems()
+        {
+            if (isBagMenuLoaded)
+            {
+                if (Cancel.IsLoaded)
+                {
+                    Cancel.UnloadContent();
+                }
+
+                base.UnloadContent();
+
+                foreach (MenuItem item in Items)
+                {
+                    foreach (PokemonText desc in item.Description)
+                    {
+                        desc.UnloadContent();
+                    }
+                }
+
+                Items.Clear();
+            }
+
+            Dictionary<string, int> items = new();
+
+            switch (BagMenuManager.CurrentPage)
+            {
+                case BagMenuManager.BagPage.ITEMS:
+                    if (Player.PlayerJsonObject.ItemCounts != null)
+                    {
+                        foreach (KeyValuePair<string, int> counts in Player.PlayerJsonObject.ItemCounts)
+                        {
+                            Item item = ItemManager.Instance.GetItem(counts.Key);
+                            if (item.ItemType != ItemType.KEY_ITEM && item.ItemType != ItemType.TM && item.ItemType != ItemType.HM && item.ItemType != ItemType.POKE_BALL)
+                            {
+                                Items.Add(new MenuItem("Item", new PokemonText(item.Name, "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 218)))
+                                {
+                                    Image = item.Icon,
+                                    Description = new List<PokemonText>
+                                    {
+                                        new(item.Description, "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
+                                    }
+                                });
+                            }
+                        }
+                    }
+                    break;
+                case BagMenuManager.BagPage.KEY_ITEMS:
+                    if (Player.PlayerJsonObject.ItemCounts != null)
+                    {
+                        foreach (KeyValuePair<string, int> counts in Player.PlayerJsonObject.ItemCounts)
+                        {
+                            Item item = ItemManager.Instance.GetItem(counts.Key);
+                            if (item.ItemType == ItemType.KEY_ITEM)
+                            {
+                                Items.Add(new MenuItem("Item", new PokemonText(item.Name, "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 218)))
+                                {
+                                    Image = item.Icon,
+                                    Description = new List<PokemonText>
+                                    {
+                                        new(item.Description, "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
+                                    }
+                                });
+                            }
+                        }
+                    }
+                    break;
+                case BagMenuManager.BagPage.POKE_BALLS:
+                    if (Player.PlayerJsonObject.ItemCounts != null)
+                    {
+                        foreach (KeyValuePair<string, int> counts in Player.PlayerJsonObject.ItemCounts)
+                        {
+                            Item item = ItemManager.Instance.GetItem(counts.Key);
+                            if (item.ItemType == ItemType.POKE_BALL)
+                            {
+                                Items.Add(new MenuItem("Item", new PokemonText(item.Name, "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 218)))
+                                {
+                                    Image = item.Icon,
+                                    Description = new List<PokemonText>
+                                    {
+                                        new(item.Description, "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
+                                    }
+                                });
+                            }
+                        }
+                    }
+                    break;
+            }
+
+            Items.Add(new MenuItem("Screen", new PokemonText("CANCEL", "Fonts/PokemonFireRedDialogue", new Color(113, 113, 113), new Color(218, 218, 212)))
+            {
+                LinkID = "GameplayScreen",
+                Image = Cancel,
+                Description = new List<PokemonText>
+                {
+                    new("CLOSE   BAG", "Fonts/PokemonFireRedDialogue", new Color(255, 255, 255), new Color(113, 113, 113))
+                }
+            });
+
+            foreach (MenuItem item in Items)
+            {
+                foreach (PokemonText desc in item.Description)
+                {
+                    desc.LoadContent();
+                }
+            }
+
+            base.LoadContent();
+        }
     }
 }
-

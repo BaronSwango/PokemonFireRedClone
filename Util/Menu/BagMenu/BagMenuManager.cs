@@ -7,10 +7,10 @@ namespace PokemonFireRedClone
 {
 	public class BagMenuManager
 	{
-		enum BagPage { ITEMS=1, KEY_ITEMS, POKE_BALLS }
+		public enum BagPage { ITEMS = 1, KEY_ITEMS, POKE_BALLS }
 
-		private static BagPage currentPage;
-		private MenuManager menu;
+		public static BagPage CurrentPage;
+		private readonly MenuManager menu;
 		private bool isTransitioning;
 
 		private readonly Image background;
@@ -31,9 +31,9 @@ namespace PokemonFireRedClone
 
 		public BagMenuManager()
 		{
-			if (currentPage == 0)
+			if (CurrentPage == 0)
 			{
-				currentPage = BagPage.ITEMS;
+				CurrentPage = BagPage.ITEMS;
 			}
 
 			background = new Image
@@ -44,33 +44,33 @@ namespace PokemonFireRedClone
 			bag = new Image
 			{
 				Path = "Menus/BagMenu/Bag",
-                Effects = "SpriteSheetEffect"
-            };
+				Effects = "SpriteSheetEffect"
+			};
 
 			bagShadow = new Image
 			{
 				Path = "Menus/BagMenu/BagShadow"
 			};
 
-            arrowRight = new Image
-            {
-                Path = "Menus/BagMenu/ArrowRight"
-            };
+			arrowRight = new Image
+			{
+				Path = "Menus/BagMenu/ArrowRight"
+			};
 
-            arrowLeft = new Image
+			arrowLeft = new Image
 			{
 				Path = "Menus/BagMenu/ArrowLeft"
 			};
 
-            page = currentPage switch
-            {
-                BagPage.ITEMS => new PokemonText("ITEMS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
-                BagPage.KEY_ITEMS => new PokemonText("KEY   ITEMS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
-                BagPage.POKE_BALLS => new PokemonText("POKé   BALLS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
-                _ => new PokemonText("ITEMS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
-            };
+			page = CurrentPage switch
+			{
+				BagPage.ITEMS => new PokemonText("ITEMS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
+				BagPage.KEY_ITEMS => new PokemonText("KEY   ITEMS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
+				BagPage.POKE_BALLS => new PokemonText("POKé   BALLS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
+				_ => new PokemonText("ITEMS", "Fonts/PokemonFireRedDialogue", Color.White, new Color(113, 113, 113)),
+			};
 
-            menu = new MenuManager("BagMenu");
+			menu = new MenuManager("BagMenu");
 		}
 
 		public void LoadContent()
@@ -78,9 +78,9 @@ namespace PokemonFireRedClone
 			background.LoadContent();
 
 			bag.LoadContent();
-            bag.SpriteSheetEffect.AmountOfFrames = new(4, 1);
-			bag.SpriteSheetEffect.CurrentFrame.X = (int)currentPage;
-            bag.Position = new(116, 200);
+			bag.SpriteSheetEffect.AmountOfFrames = new(4, 1);
+			bag.SpriteSheetEffect.CurrentFrame.X = (int)CurrentPage;
+			bag.Position = new(116, 200);
 			bagAnimation = new BagAnimation(bag);
 			displayAnimation = new BagMenuDisplayAnimation();
 
@@ -90,7 +90,7 @@ namespace PokemonFireRedClone
 			page.LoadContent();
 			page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
 
-			switch (currentPage)
+			switch (CurrentPage)
 			{
 				case BagPage.ITEMS:
 					arrowRight.LoadContent();
@@ -113,15 +113,15 @@ namespace PokemonFireRedClone
 			if (arrowRight.IsLoaded)
 			{
 				arrowRight.Position = new(bag.Position.X + bag.SourceRect.Width / 4 + 12, bag.Position.Y + 116);
-                arrowRightOriginalX = arrowRight.Position.X;
-            }
+				arrowRightOriginalX = arrowRight.Position.X;
+			}
 
 
 
-            menu.LoadContent("Load/Menus/BagMenu.xml");
-        }
+			menu.LoadContent("Load/Menus/BagMenu.xml");
+		}
 
-        public void UnloadContent()
+		public void UnloadContent()
 		{
 			background.UnloadContent();
 			bag.UnloadContent();
@@ -154,41 +154,44 @@ namespace PokemonFireRedClone
 
 			if (InputManager.Instance.KeyPressed(Keys.D) || InputManager.Instance.KeyPressed(Keys.A))
 			{
-				switch (currentPage)
+				switch (CurrentPage)
 				{
 					case BagPage.ITEMS:
 						if (InputManager.Instance.KeyPressed(Keys.D))
 						{
-							currentPage = BagPage.KEY_ITEMS;
-                            displayAnimation.Reset();
-                            bagAnimation.Reset();
-                            isTransitioning = true;
-                        }
+							CurrentPage = BagPage.KEY_ITEMS;
+							displayAnimation.Reset();
+							bagAnimation.Reset();
+							isTransitioning = true;
+							((BagMenu)menu.Menu).LoadMenuItems();
+						}
 
-                        break;
+						break;
 
 					case BagPage.KEY_ITEMS:
-						currentPage = InputManager.Instance.KeyPressed(Keys.A) ? BagPage.ITEMS : BagPage.POKE_BALLS;
-                        displayAnimation.Reset();
-                        bagAnimation.Reset();
-                        isTransitioning = true;
-                        break;
+						CurrentPage = InputManager.Instance.KeyPressed(Keys.A) ? BagPage.ITEMS : BagPage.POKE_BALLS;
+						displayAnimation.Reset();
+						bagAnimation.Reset();
+						isTransitioning = true;
+						((BagMenu)menu.Menu).LoadMenuItems();
+						break;
 
 					case BagPage.POKE_BALLS:
-                        if (InputManager.Instance.KeyPressed(Keys.A))
-                        {
-                            currentPage = BagPage.KEY_ITEMS;
-                            displayAnimation.Reset();
-                            bagAnimation.Reset();
-                            isTransitioning = true;
-                        }
+						if (InputManager.Instance.KeyPressed(Keys.A))
+						{
+							CurrentPage = BagPage.KEY_ITEMS;
+							displayAnimation.Reset();
+							bagAnimation.Reset();
+							isTransitioning = true;
+							((BagMenu)menu.Menu).LoadMenuItems();
+						}
 
-                        break;
+						break;
 				}
 			}
 
 			AnimateArrows(gameTime);
-        } 
+		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
@@ -201,12 +204,12 @@ namespace PokemonFireRedClone
 				page.Draw(spriteBatch);
 				menu.Draw(spriteBatch);
 
-				if (currentPage == BagPage.ITEMS || currentPage == BagPage.KEY_ITEMS)
+				if (CurrentPage == BagPage.ITEMS || CurrentPage == BagPage.KEY_ITEMS)
 				{
 					arrowRight.Draw(spriteBatch);
 				}
 
-				if (currentPage == BagPage.KEY_ITEMS || currentPage == BagPage.POKE_BALLS)
+				if (CurrentPage == BagPage.KEY_ITEMS || CurrentPage == BagPage.POKE_BALLS)
 				{
 					arrowLeft.Draw(spriteBatch);
 				}
@@ -221,69 +224,69 @@ namespace PokemonFireRedClone
 		{
 			if (isTransitioning)
 			{
-                if (bagAnimation.Animate(gameTime))
+				if (bagAnimation.Animate(gameTime))
 				{
-                    switch (currentPage)
-                    {
-                        case BagPage.ITEMS:
-                            bag.SpriteSheetEffect.CurrentFrame.X = 1;
-                            page.UpdateText("ITEMS");
-                            page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
+					switch (CurrentPage)
+					{
+						case BagPage.ITEMS:
+							bag.SpriteSheetEffect.CurrentFrame.X = 1;
+							page.UpdateText("ITEMS");
+							page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
 
 							if (!arrowRight.IsLoaded)
 							{
 								arrowRight.LoadContent();
-                                arrowRight.Position = new(bag.Position.X + bag.SourceRect.Width + 12, bag.Position.Y + 116);
-                                arrowRightOriginalX = arrowRight.Position.X;
-                            }
+								arrowRight.Position = new(bag.Position.X + bag.SourceRect.Width + 12, bag.Position.Y + 116);
+								arrowRightOriginalX = arrowRight.Position.X;
+							}
 
-                            break;
+							break;
 
-                        case BagPage.KEY_ITEMS:
-                            bag.SpriteSheetEffect.CurrentFrame.X = 2;
-                            page.UpdateText("KEY   ITEMS");
-                            page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
+						case BagPage.KEY_ITEMS:
+							bag.SpriteSheetEffect.CurrentFrame.X = 2;
+							page.UpdateText("KEY   ITEMS");
+							page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
 
-                            if (!arrowRight.IsLoaded)
-                            {
-                                arrowRight.LoadContent();
-                                arrowRight.Position = new(bag.Position.X + bag.SourceRect.Width + 12, bag.Position.Y + 116);
-                                arrowRightOriginalX = arrowRight.Position.X;
-                            }
+							if (!arrowRight.IsLoaded)
+							{
+								arrowRight.LoadContent();
+								arrowRight.Position = new(bag.Position.X + bag.SourceRect.Width + 12, bag.Position.Y + 116);
+								arrowRightOriginalX = arrowRight.Position.X;
+							}
 
-                            if (!arrowLeft.IsLoaded)
-                            {
-                                arrowLeft.LoadContent();
-                                arrowLeft.Position = new(bag.Position.X - 48, bag.Position.Y + 116);
-                                arrowLeftOriginalX = arrowLeft.Position.X;
-                            }
+							if (!arrowLeft.IsLoaded)
+							{
+								arrowLeft.LoadContent();
+								arrowLeft.Position = new(bag.Position.X - 48, bag.Position.Y + 116);
+								arrowLeftOriginalX = arrowLeft.Position.X;
+							}
 
-                            break;
+							break;
 
-                        case BagPage.POKE_BALLS:
-                            bag.SpriteSheetEffect.CurrentFrame.X = 3;
-                            page.UpdateText("POKé   BALLS");
-                            page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
+						case BagPage.POKE_BALLS:
+							bag.SpriteSheetEffect.CurrentFrame.X = 3;
+							page.UpdateText("POKé   BALLS");
+							page.SetPosition(new(336 - page.SourceRect.Width / 2, 72));
 
-                            if (!arrowLeft.IsLoaded)
-                            {
-                                arrowLeft.LoadContent();
-                                arrowLeft.Position = new(bag.Position.X - 48, bag.Position.Y + 116);
-                                arrowLeftOriginalX = arrowLeft.Position.X;
-                            }
+							if (!arrowLeft.IsLoaded)
+							{
+								arrowLeft.LoadContent();
+								arrowLeft.Position = new(bag.Position.X - 48, bag.Position.Y + 116);
+								arrowLeftOriginalX = arrowLeft.Position.X;
+							}
 
-                            break;
-                    }
+							break;
+					}
 				}
 
 				if (!displayAnimation.Animate(gameTime)) return;
 
-                isTransitioning = false;
+				isTransitioning = false;
 			}
 		}
 
-        private void AnimateArrows(GameTime gameTime)
-        {
+		private void AnimateArrows(GameTime gameTime)
+		{
 			if (!isTransitioning)
 			{
 				float speed = (float)(48 * gameTime.ElapsedGameTime.TotalSeconds);
@@ -316,7 +319,7 @@ namespace PokemonFireRedClone
 					arrowRight.Position.X = arrowRightOriginalX + (int)arrowOffset;
 				}
 			}
-        }
-    }
+		}
+	}
 }
 
