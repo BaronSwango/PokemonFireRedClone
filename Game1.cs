@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -22,7 +23,9 @@ namespace PokemonFireRedClone
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            IsFixedTimeStep = false;
+            IsFixedTimeStep = true;
+            TargetElapsedTime = TimeSpan.FromMilliseconds(1000.0f / 240);
+            graphics.SynchronizeWithVerticalRetrace = false;
         }
 
         protected override void Initialize()
@@ -32,7 +35,7 @@ namespace PokemonFireRedClone
             graphics.ApplyChanges();
             renderTarget = new RenderTarget2D(GraphicsDevice, defaultWidth, defaultHeight);
             sourceRect = new Rectangle(0, 0, defaultWidth, defaultHeight);
-            
+
             scaled = false;
             base.Initialize();
         }
@@ -99,7 +102,7 @@ namespace PokemonFireRedClone
 
             GraphicsDevice.SetRenderTarget(null);
 
-            
+
             //render target to back buffer
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
             spriteBatch.Draw(renderTarget, sourceRect, Color.White);
