@@ -5,13 +5,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
-	public class PokemonListMenu : Menu
-	{
+    public class PokemonListMenu : Menu
+    {
         private readonly Dictionary<int, PokemonText> pokemonNames;
         private readonly Dictionary<int, List<Image>> pokemonOwned;
         private readonly List<int> currentShownIndices;
         public Image Arrow;
-		public Image PokemonListBackground;
+        public Image PokemonListBackground;
         public Image PokedexBackground;
 
         public Image ArrowUp;
@@ -43,7 +43,7 @@ namespace PokemonFireRedClone
             get { return ((PokedexScreen)ScreenManager.Instance.CurrentScreen).MenuManager.IsTransitioning; }
             set { }
         }
-        
+
         public PokemonListMenu()
         {
             pokemonNames = new();
@@ -201,7 +201,7 @@ namespace PokemonFireRedClone
             }
             else
             {
-                if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < 9)
+                if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < 9 && ItemNumber < currentShownIndices.Count - 1)
                 {
                     ItemNumber++;
                 }
@@ -209,7 +209,7 @@ namespace PokemonFireRedClone
                 {
                     ItemNumber--;
                 }
-                
+
             }
 
             if (!IsTransitioning)
@@ -275,7 +275,7 @@ namespace PokemonFireRedClone
             }
 
             if (!IsTransitioning && ArrowDown.IsLoaded && (currentShownIndices[ItemNumber] < Items.Count - 3 && !currentShownIndices.Contains(Items.Count)))
-            { 
+            {
                 ArrowDown.Draw(spriteBatch);
             }
         }
@@ -288,7 +288,7 @@ namespace PokemonFireRedClone
             {
                 Pokemon mon = PokemonManager.Instance.GetPokemon(s);
 
-                pokemonNames.Add(mon.Index, new PokemonText(mon.Name.ToUpper(), "Fonts/PokemonFireRedDialogue", new Color(0,0,0), new Color(224, 216, 192)));
+                pokemonNames.Add(mon.Index, new PokemonText(mon.Name.ToUpper(), "Fonts/PokemonFireRedDialogue", new Color(0, 0, 0), new Color(224, 216, 192)));
 
                 if (Player.PlayerJsonObject.Pokedex[s])
                 {

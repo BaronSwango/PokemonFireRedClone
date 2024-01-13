@@ -1,12 +1,12 @@
 {
-  "Position": "1856, 2284",
-  "Direction": 2.0,
-  "MapName": "PewterCityArea",
+  "Position": "3392, 1900",
+  "Direction": 1.0,
+  "MapName": "ViridianForest",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 1.4971405222778746,
+  "Time": 1.4874727892778745,
   "Badges": 0,
   "Money": 8076,
   "PokemonInBag": [
@@ -87,7 +87,7 @@
       },
       "Level": 16,
       "CurrentEXP": 2583,
-      "CurrentHP": 62,
+      "CurrentHP": 61,
       "Stats": {
         "HP": 62,
         "HPIV": 28,
@@ -149,7 +149,7 @@
     "BugCatcherCharlie",
     "BugCatcherDoug"
   ],
-  "AreaName": "PEWTER   CITY",
+  "AreaName": "VIRIDIAN   FOREST",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,
