@@ -12,26 +12,27 @@ namespace PokemonFireRedClone
         public Image Arrow;
         public Image Cancel;
 
-        public PokemonText TestImage;
+        public List<PokemonText> ItemAmounts;
 
         protected override void AlignMenuItems()
         {
             float dimensionY = 0;
 
-            TestImage.SetPosition(new(952, 96));
-            foreach (MenuItem item in Items)
+            for (int i = 0; i < Items.Count; i++)
             {
-                item.PokemonText.SetPosition(new(548, 76 + dimensionY));
-                item.Image.Position = new(172 - item.Image.SourceRect.Width / 2, 624 - item.Image.SourceRect.Height / 2);
-                item.Description[0].SetPosition(new(252, 536));
-                dimensionY += item.PokemonText.Image.SourceRect.Height + 8;
+                if (i < Items.Count - 1)
+                {
+                    ItemAmounts[i].SetPosition(new(948, 96 + dimensionY));
+                }
+                Items[i].PokemonText.SetPosition(new(548, 76 + dimensionY));
+                Items[i].Image.Position = new(172 - Items[i].Image.SourceRect.Width / 2, 624 - Items[i].Image.SourceRect.Height / 2);
+                Items[i].Description[0].SetPosition(new(252, 536));
+                dimensionY += Items[i].PokemonText.Image.SourceRect.Height + 8;
             }
         }
 
         public override void LoadContent()
         {
-            TestImage = new PokemonText("x    1", "Fonts/PokemonFireRedSmall", new Color(113, 113, 113), new Color(218, 218, 218));
-            TestImage.LoadContent();
             LoadMenuItems();
             Arrow.LoadContent();
             isBagMenuLoaded = true;
@@ -42,11 +43,15 @@ namespace PokemonFireRedClone
             base.UnloadContent();
             Arrow.UnloadContent();
             Cancel.UnloadContent();
-            TestImage.UnloadContent();
 
-            foreach (MenuItem item in Items)
+            for (int i = 0; i < Items.Count; i++)
             {
-                foreach (PokemonText desc in item.Description)
+                if (i < Items.Count - 1)
+                {
+                    ItemAmounts[i].UnloadContent();
+                }
+
+                foreach (PokemonText desc in Items[i].Description)
                 {
                     desc.UnloadContent();
                 }
@@ -91,11 +96,15 @@ namespace PokemonFireRedClone
 
             Items[ItemNumber].Image.Draw(spriteBatch);
             Items[ItemNumber].Description[0].Draw(spriteBatch);
-            TestImage.Draw(spriteBatch);
 
-            foreach (MenuItem item in Items)
+            for (int i = 0; i < Items.Count; i++)
             {
-                item.PokemonText.Draw(spriteBatch);
+                if (i < Items.Count - 1)
+                {
+                    ItemAmounts[i].Draw(spriteBatch);
+                }
+
+                Items[i].PokemonText.Draw(spriteBatch);
             }
 
             Arrow.Draw(spriteBatch);
@@ -112,15 +121,21 @@ namespace PokemonFireRedClone
 
                 base.UnloadContent();
 
-                foreach (MenuItem item in Items)
+                for (int i = 0; i < Items.Count; i++)
                 {
-                    foreach (PokemonText desc in item.Description)
+                    if (i < Items.Count - 1)
+                    {
+                        ItemAmounts[i].UnloadContent();
+                    }
+
+                    foreach (PokemonText desc in Items[i].Description)
                     {
                         desc.UnloadContent();
                     }
                 }
 
                 Items.Clear();
+                ItemAmounts.Clear();
             }
 
             Dictionary<string, int> items = new();
@@ -144,6 +159,7 @@ namespace PokemonFireRedClone
                                     }
                                 });
                             }
+                            ItemAmounts.Add(new PokemonText("×    " + counts.Value.ToString(), "Fonts/PokemonFireRedSmall", new Color(113, 113, 113), new Color(218, 218, 218)));
                         }
                     }
                     break;
@@ -164,6 +180,7 @@ namespace PokemonFireRedClone
                                     }
                                 });
                             }
+                            ItemAmounts.Add(new PokemonText("×    " + counts.Value.ToString(), "Fonts/PokemonFireRedSmall", new Color(113, 113, 113), new Color(218, 218, 218)));
                         }
                     }
                     break;
@@ -184,6 +201,7 @@ namespace PokemonFireRedClone
                                     }
                                 });
                             }
+                            ItemAmounts.Add(new PokemonText("×    " + counts.Value.ToString(), "Fonts/PokemonFireRedSmall", new Color(113, 113, 113), new Color(218, 218, 218)));
                         }
                     }
                     break;
@@ -199,9 +217,14 @@ namespace PokemonFireRedClone
                 }
             });
 
-            foreach (MenuItem item in Items)
+            for (int i = 0; i < Items.Count; i++)
             {
-                foreach (PokemonText desc in item.Description)
+                if (i < Items.Count - 1)
+                {
+                    ItemAmounts[i].LoadContent();
+                }
+
+                foreach (PokemonText desc in Items[i].Description)
                 {
                     desc.LoadContent();
                 }

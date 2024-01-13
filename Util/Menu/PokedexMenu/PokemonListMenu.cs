@@ -21,10 +21,10 @@ namespace PokemonFireRedClone
         private float arrowOffset;
         private bool increase;
 
-        private bool autoScroll;
+        //private bool autoScroll;
         private const int scrollWaitTime = 300;
         private const int autoScrollSpeed = 10;
-        private Counter scrollTimer;
+        //private Counter scrollTimer;
 
         private static int SavedIndex
         {
