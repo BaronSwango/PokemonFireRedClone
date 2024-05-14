@@ -60,16 +60,14 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime)
         {
-            if (InputManager.Instance.KeyPressed(Keys.S))
+            if (InputManager.Instance.KeyPressed(Keys.S) && ItemNumber < Items.Count - 1)
+            {
                 ItemNumber++;
-            else if (InputManager.Instance.KeyPressed(Keys.W))
+            }
+            else if (InputManager.Instance.KeyPressed(Keys.W) && ItemNumber > 0) 
+            {
                 ItemNumber--;
-
-
-            if (ItemNumber < 0)
-                ItemNumber = Items.Count - 1;
-            else if (ItemNumber > Items.Count - 1)
-                ItemNumber = 0;
+            }
 
             for (int i = 0; i < Items.Count; i++)
             {

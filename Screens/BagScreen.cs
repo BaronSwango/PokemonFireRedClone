@@ -19,6 +19,12 @@ namespace PokemonFireRedClone
 			MenuManager.LoadContent();
         }
 
+        public override void UnloadContent()
+        {
+            base.UnloadContent();
+            MenuManager.UnloadContent();
+        }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);

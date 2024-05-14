@@ -10,6 +10,7 @@ namespace PokemonFireRedClone
 		public enum BagPage { ITEMS = 1, KEY_ITEMS, POKE_BALLS }
 
 		public static BagPage CurrentPage;
+		private static int itemNumberItems, itemNumberKeyItems, itemNumberPokeBalls;
 		private readonly MenuManager menu;
 		private bool isTransitioning;
 
@@ -27,6 +28,8 @@ namespace PokemonFireRedClone
 
 		private BagAnimation bagAnimation;
 		private BagMenuDisplayAnimation displayAnimation;
+
+		private BagRotateAnimation rotateAnimation;
 
 
 		public BagMenuManager()
@@ -83,6 +86,7 @@ namespace PokemonFireRedClone
 			bag.Position = new(116, 200);
 			bagAnimation = new BagAnimation(bag);
 			displayAnimation = new BagMenuDisplayAnimation();
+			rotateAnimation = new BagRotateAnimation(bag);
 
 			bagShadow.LoadContent();
 			bagShadow.Position = new(100, 380);
@@ -116,13 +120,34 @@ namespace PokemonFireRedClone
 				arrowRightOriginalX = arrowRight.Position.X;
 			}
 
-
-
 			menu.LoadContent("Load/Menus/BagMenu.xml");
+			
+			switch(CurrentPage) {
+				case BagPage.ITEMS:
+					menu.Menu.ItemNumber = itemNumberItems;
+					break;
+				case BagPage.KEY_ITEMS:
+					menu.Menu.ItemNumber = itemNumberKeyItems;
+					break;
+				case BagPage.POKE_BALLS:
+					menu.Menu.ItemNumber = itemNumberPokeBalls;
+					break;
+			}
 		}
 
 		public void UnloadContent()
 		{
+			switch(CurrentPage) {
+				case BagPage.ITEMS:
+					itemNumberItems = menu.Menu.ItemNumber;
+					break;
+				case BagPage.KEY_ITEMS:
+					itemNumberKeyItems = menu.Menu.ItemNumber;
+					break;
+				case BagPage.POKE_BALLS:
+					itemNumberPokeBalls = menu.Menu.ItemNumber;
+					break;
+			}
 			background.UnloadContent();
 			bag.UnloadContent();
 			bagShadow.UnloadContent();
@@ -143,9 +168,19 @@ namespace PokemonFireRedClone
 
 		public void Update(GameTime gameTime)
 		{
-			menu.Update(gameTime);
+			if (((InputManager.Instance.KeyPressed(Keys.S) && menu.Menu.ItemNumber < menu.Menu.Items.Count - 1) 
+				|| InputManager.Instance.KeyPressed(Keys.W) && menu.Menu.ItemNumber > 0) && !isTransitioning) {
+				rotateAnimation.Reset();
+				rotateAnimation.AnimationStage = BagRotateAnimation.Stage.HALF_FORWARD;
+			} 
+
+			if (!isTransitioning) {
+				menu.Update(gameTime);
+			}
+
 			Transition(gameTime);
 			bag.Update(gameTime);
+			rotateAnimation.Animate(gameTime);
 
 			if (InputManager.Instance.KeyPressed(Keys.Q))
 			{
@@ -163,7 +198,9 @@ namespace PokemonFireRedClone
 							displayAnimation.Reset();
 							bagAnimation.Reset();
 							isTransitioning = true;
+							itemNumberItems = menu.Menu.ItemNumber;
 							((BagMenu)menu.Menu).LoadMenuItems();
+							menu.Menu.ItemNumber = itemNumberKeyItems;
 						}
 
 						break;
@@ -173,7 +210,9 @@ namespace PokemonFireRedClone
 						displayAnimation.Reset();
 						bagAnimation.Reset();
 						isTransitioning = true;
+						itemNumberKeyItems = menu.Menu.ItemNumber;
 						((BagMenu)menu.Menu).LoadMenuItems();
+						menu.Menu.ItemNumber = CurrentPage == BagPage.ITEMS ? itemNumberItems : itemNumberPokeBalls;
 						break;
 
 					case BagPage.POKE_BALLS:
@@ -183,7 +222,9 @@ namespace PokemonFireRedClone
 							displayAnimation.Reset();
 							bagAnimation.Reset();
 							isTransitioning = true;
+							itemNumberPokeBalls = menu.Menu.ItemNumber;
 							((BagMenu)menu.Menu).LoadMenuItems();
+							menu.Menu.ItemNumber = itemNumberKeyItems;
 						}
 
 						break;
@@ -322,4 +363,3 @@ namespace PokemonFireRedClone
 		}
 	}
 }
-
