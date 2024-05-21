@@ -1,10 +1,20 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
     public class OpponentSendPokemon : BattleAnimation
     {
+        // change constants to delta time speed
+        /*
+            TrainerBallBarAlpha = 0.03
+            TrainerBarBalls = 0.03
+            WhiteEffect = 0.07+ 0.06-
+            EnemyPokemonScale = 0.07
+
+        
+        */
 
         private int trainerBallIndex;
         private float counter;
@@ -21,10 +31,15 @@ namespace PokemonFireRedClone
             float opponentSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
             float barSpeed = BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON
                 ? (float)(0.9 * gameTime.ElapsedGameTime.TotalMilliseconds) : (float)(0.4 * gameTime.ElapsedGameTime.TotalMilliseconds);
-            float ballSpeed = (float)(7 * gameTime.ElapsedGameTime.TotalMilliseconds);
+            float ballSpeed = (float)(6.95 * gameTime.ElapsedGameTime.TotalMilliseconds);
             Vector2 opponentPokemonDestination = new(BattleAssets.EnemyPlatform.Position.X + BattleAssets.EnemyPlatform.SourceRect.Width / 2 - BattleAssets.EnemyPokemon.SourceRect.Width / 2,
                 BattleAssets.EnemyPlatform.Position.Y + BattleAssets.EnemyPlatform.SourceRect.Height * 0.75f - BattleAssets.EnemyPokemon.SourceRect.Height);
             float enemyHPSpeed = (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
+            float trainerBallBarAlphaSpeed = (float) (2.4 * gameTime.ElapsedGameTime.TotalSeconds);
+            float whiteEffectAlphaIncreaseSpeed = (float) (8.4 * gameTime.ElapsedGameTime.TotalSeconds);
+            float whiteEffectAlphaDecreaseSpeed = (float) (6 * gameTime.ElapsedGameTime.TotalSeconds);
+            float scaleSpeed = (float) (8.4 * gameTime.ElapsedGameTime.TotalSeconds);
+            int tintSpeed = (int) (2.5 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
             const float EnemyHPDestinationX = 52;
 
@@ -36,7 +51,9 @@ namespace PokemonFireRedClone
                 return false;
             }
             else if (counter < 1000 && BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON)
+            {
                 counter = 1000;
+            }
 
             if (counter < 2000)
             {
@@ -47,17 +64,22 @@ namespace PokemonFireRedClone
 
                 if (BattleAssets.TrainerBallBar.Alpha > 0)
                 {
-                    BattleAssets.TrainerBallBar.Alpha -= 0.03f;
+                    // BattleAssets.TrainerBallBar.Alpha -= 0.01f;
+                    BattleAssets.TrainerBallBar.Alpha -= trainerBallBarAlphaSpeed;
 
                     foreach (Image image in BattleAssets.TrainerBarBalls)
-                        image.Alpha -= 0.03f;
+                    {
+                        image.Alpha -= trainerBallBarAlphaSpeed;
+                    }
 
                     if (BattleAssets.State == BattleAssets.BattleState.OPPONENT_INTRO_SEND_POKEMON)
                     {
                         BattleAssets.TrainerBallBar.Position.X += barSpeed;
 
                         if (BattleAssets.TrainerBarBalls[trainerBallIndex].Position.X < ScreenManager.Instance.Dimensions.X)
+                        {
                             BattleAssets.TrainerBarBalls[trainerBallIndex].Position.X += ballSpeed;
+                        }
 
                         if (trainerBallIndex > 0)
                         {
@@ -78,16 +100,14 @@ namespace PokemonFireRedClone
                     {
                         BattleAssets.EnemyHPBarBackground.Position.X += enemyHPSpeed;
                         BattleAssets.EnemyPokemonAssets.Name.OffsetX(enemyHPSpeed);
-                        if (BattleAssets.EnemyPokemonAssets.Gender != null)
-                            BattleAssets.EnemyPokemonAssets.Gender.OffsetX(enemyHPSpeed);
+                        BattleAssets.EnemyPokemonAssets.Gender?.OffsetX(enemyHPSpeed);
                         BattleAssets.EnemyPokemonAssets.Level.OffsetX(enemyHPSpeed);
                         BattleAssets.EnemyPokemonAssets.HPBar.Position.X += enemyHPSpeed;
                     } else
                     {
                         BattleAssets.EnemyHPBarBackground.Position.X = EnemyHPDestinationX;
                         BattleAssets.EnemyPokemonAssets.Name.SetPosition(new Vector2(BattleAssets.EnemyHPBarBackground.Position.X + 24, BattleAssets.EnemyHPBarBackground.Position.Y + 19));
-                        if (BattleAssets.EnemyPokemonAssets.Gender != null)
-                            BattleAssets.EnemyPokemonAssets.Gender.SetPosition(new Vector2(BattleAssets.EnemyPokemonAssets.Name.Position.X + BattleAssets.EnemyPokemonAssets.Name.SourceRect.Width, BattleAssets.EnemyPokemonAssets.Name.Position.Y));
+                        BattleAssets.EnemyPokemonAssets.Gender?.SetPosition(new Vector2(BattleAssets.EnemyPokemonAssets.Name.Position.X + BattleAssets.EnemyPokemonAssets.Name.SourceRect.Width, BattleAssets.EnemyPokemonAssets.Name.Position.Y));
                         BattleAssets.EnemyPokemonAssets.Level.SetPosition(new Vector2(BattleAssets.EnemyHPBarBackground.Position.X + BattleAssets.EnemyHPBarBackground.SourceRect.Width - 56 - BattleAssets.EnemyPokemonAssets.Level.SourceRect.Width, BattleAssets.EnemyPokemonAssets.Name.Position.Y));
                         BattleAssets.EnemyPokemonAssets.HPBar.Position = new Vector2(BattleAssets.EnemyHPBarBackground.Position.X + 156 - ((1 - BattleAssets.EnemyPokemonAssets.HPBar.Scale.X) / 2 * BattleAssets.EnemyPokemonAssets.HPBar.SourceRect.Width), BattleAssets.EnemyHPBarBackground.Position.Y + 68);
 
@@ -128,21 +148,26 @@ namespace PokemonFireRedClone
                     return false;
                 }
 
-                if ((BattleAssets.EnemyPokemon.Scale.X + 0.07f < 1) || !WhiteEffectTransitioned)
+                if ((BattleAssets.EnemyPokemon.Scale.X + scaleSpeed < 1) || !WhiteEffectTransitioned)
                 {
-                    WhiteEffect.Alpha += 0.07f;
+                    // WhiteEffect.Alpha += 0.03f;
+                    WhiteEffect.Alpha += whiteEffectAlphaIncreaseSpeed;
 
                     if (WhiteEffect.Alpha >= 1)
                         WhiteEffectTransitioned = true;
 
-                    if (BattleAssets.EnemyPokemon.Scale.X + 0.07f < 1)
+                    if (BattleAssets.EnemyPokemon.Scale.X + scaleSpeed < 1)
                     {
-                        if (BattleAssets.EnemyPokemon.Alpha == 0)
+                        if (BattleAssets.EnemyPokemon.Alpha == 0) 
+                        {
                             BattleAssets.EnemyPokemon.Alpha = 1;
-                        BattleAssets.EnemyPokemon.Scale = new Vector2(BattleAssets.EnemyPokemon.Scale.X + 0.07f, BattleAssets.EnemyPokemon.Scale.Y + 0.07f);
+                        }
+
+                        BattleAssets.EnemyPokemon.Scale = new Vector2(BattleAssets.EnemyPokemon.Scale.X + scaleSpeed, BattleAssets.EnemyPokemon.Scale.Y + scaleSpeed);
                         BattleAssets.EnemyPokemon.Position = new(BattleAssets.EnemyPlatform.Position.X + BattleAssets.EnemyPlatform.SourceRect.Width / 2 - BattleAssets.EnemyPokemon.SourceRect.Width / 2,
                             BattleAssets.EnemyPlatform.Position.Y + BattleAssets.EnemyPlatform.SourceRect.Height * 0.75f - (BattleAssets.EnemyPokemon.SourceRect.Height / 2) - (BattleAssets.EnemyPokemon.SourceRect.Height * BattleAssets.EnemyPokemon.Scale.Y / 2));
-                    } else
+                    }
+                    else
                     {
                         BattleAssets.EnemyPokemon.Scale = Vector2.One;
                         BattleAssets.EnemyPokemon.Position = opponentPokemonDestination;
@@ -159,8 +184,12 @@ namespace PokemonFireRedClone
                     {
 
                         if (WhiteEffect.Alpha > 0)
-                            WhiteEffect.Alpha -= 0.06f;
-                        BattleAssets.EnemyPokemon.Tint = new Color(BattleAssets.EnemyPokemon.Tint.R + 20, BattleAssets.EnemyPokemon.Tint.G + 20, BattleAssets.EnemyPokemon.Tint.B + 20, 255);
+                        {
+                            // WhiteEffect.Alpha -= 0.03f;
+                            WhiteEffect.Alpha -= whiteEffectAlphaDecreaseSpeed;
+                        }
+
+                        BattleAssets.EnemyPokemon.Tint = new Color(BattleAssets.EnemyPokemon.Tint.R + tintSpeed, BattleAssets.EnemyPokemon.Tint.G + tintSpeed, BattleAssets.EnemyPokemon.Tint.B + tintSpeed, 255);
                     }
                 }
 

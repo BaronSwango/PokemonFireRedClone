@@ -5,13 +5,17 @@ namespace PokemonFireRedClone
 {
     public class LevelUpAnimation : BattleAnimation
     {
+        // change constant speeds to delta time
         private bool levelUpTransitioned;
 
         public override bool Animate(GameTime gameTime)
         {
+            float alphaSpeed = (float) (8 * gameTime.ElapsedGameTime.TotalSeconds);
+
             if (!levelUpTransitioned)
             {
-                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha += 0.1f;
+                // ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha += 0.1f;
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha += alphaSpeed;
 
                 if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha >= 1)
                     levelUpTransitioned = true;
@@ -20,7 +24,8 @@ namespace PokemonFireRedClone
             }
             else if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha > 0)
             {
-                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha -= 0.1f;
+                // ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha -= 0.1f;
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerHPBarLevelUp.Alpha -= alphaSpeed;
                 return false;
             }
 

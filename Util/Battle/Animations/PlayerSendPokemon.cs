@@ -5,14 +5,16 @@ namespace PokemonFireRedClone
 {
     public class PlayerSendPokemon : BattleAnimation
     {
+        // change constants to delta time
         int playerBallIndex;
 
         public override bool Animate(GameTime gameTime)
         {
             float playerSpriteDestinationX = -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SourceRect.Width - 8;
             float playerSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
-            float barSpeed = (float)(0.4 * gameTime.ElapsedGameTime.TotalMilliseconds);
-            float ballSpeed = (float)(7 * gameTime.ElapsedGameTime.TotalMilliseconds);
+            float barSpeed = (float)(0.6 * gameTime.ElapsedGameTime.TotalMilliseconds);
+            float ballSpeed = (float)(6.95 * gameTime.ElapsedGameTime.TotalMilliseconds);
+            float trainerBallBarAlphaSpeed = (float) (2.05 * gameTime.ElapsedGameTime.TotalSeconds); 
 
             if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.Position.X > 0)
                 ScreenManager.Instance.BattleScreen.BattleAssets.PlayerSprite.SpriteSheetEffect.CurrentFrame.X = 1;
@@ -32,7 +34,9 @@ namespace PokemonFireRedClone
                 {
                     BattleAssets.PlayerBallBar.Alpha = 0;
                     foreach (Image image in BattleAssets.PlayerBarBalls)
+                    {
                         image.Alpha = 0;
+                    }
                 }
 
                 return true;
@@ -45,15 +49,20 @@ namespace PokemonFireRedClone
             if (!BattleLogic.Battle.IsWild && ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBallBar.Alpha > 0)
             {
                 ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBallBar.Position.X -= barSpeed;
-                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBallBar.Alpha -= 0.03f;
+                // ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBallBar.Alpha -= 0.03f;
+                ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBallBar.Alpha -= trainerBallBarAlphaSpeed;
 
-                if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex].Position.X > 0)
+                if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex].Position.X > -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex].SourceRect.Width)
+                {
                     ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex].Position.X -= ballSpeed;
+                }
 
                 if (playerBallIndex > 0)
                 {
-                    if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex - 1].Position.X > 0)
+                    if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex - 1].Position.X > -ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex - 1].SourceRect.Width)
+                    {
                         ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex - 1].Position.X -= ballSpeed;
+                    }
                 }
 
                 if (ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls[playerBallIndex].Position.X < 250)
@@ -63,7 +72,10 @@ namespace PokemonFireRedClone
                 }
 
                 foreach (Image image in ScreenManager.Instance.BattleScreen.BattleAssets.PlayerBarBalls)
-                    image.Alpha -= 0.03f;
+                {
+                    // image.Alpha -= 0.03f;
+                    image.Alpha -= trainerBallBarAlphaSpeed;
+                }
             }
 
             return false;

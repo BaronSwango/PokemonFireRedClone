@@ -6,6 +6,7 @@ namespace PokemonFireRedClone
     public class DamageAnimation : BattleAnimation
     {
 
+        // change constant speeds to delta time
         private int blinkCounter;
 
         public DamageAnimation() {
@@ -24,8 +25,7 @@ namespace PokemonFireRedClone
                 {
                     if (blinkCounter < 4)
                     {
-                        if (Counter == null)
-                            Counter = new Counter(60);
+                        Counter ??= new Counter(60);
 
                         //if (Counter > 60)
                         if (Counter.Finished)
@@ -68,12 +68,12 @@ namespace PokemonFireRedClone
                     int goalHP = 0;
                     if (player)
                         goalHP = BattleLogic.Battle.PlayerPokemon.Pokemon.CurrentHP;
-                    float speed = 0.01f;
+                    float speed = (float) (1.25 * gameTime.ElapsedGameTime.TotalSeconds); // 0.01
 
                     if ((player && BattleLogic.Battle.PlayerPokemon.Pokemon.Stats.HP < 50) || BattleLogic.Battle.EnemyPokemon.Pokemon.Stats.HP < 50)
-                        speed = 0.04f;
+                        speed = (float) (2.5 * gameTime.ElapsedGameTime.TotalSeconds); // 0.04
                     else if ((player && BattleLogic.Battle.PlayerPokemon.Pokemon.Stats.HP >= 100) || BattleLogic.Battle.EnemyPokemon.Pokemon.Stats.HP >= 100)
-                        speed = 0.005f;
+                        speed = (float) (0.625 * gameTime.ElapsedGameTime.TotalSeconds);
 
 
                     if (player)

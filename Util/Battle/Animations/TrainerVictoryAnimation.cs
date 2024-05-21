@@ -25,9 +25,6 @@ namespace PokemonFireRedClone
             return true;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            throw new NotImplementedException();
-        }
+        public override void Draw(SpriteBatch spriteBatch) { }
     }
 }

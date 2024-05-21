@@ -21,8 +21,7 @@ namespace PokemonFireRedClone
             const float BarDestination = -292;
             //CounterSpeed = (float) gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            if (Counter == null)
-                Counter = new Counter(1000);
+            Counter ??= new Counter(1000);
 
             if (BattleAssets.State == BattleAssets.BattleState.OPPONENT_SEND_POKEMON
                 //&& Counter < 1000)
@@ -120,8 +119,6 @@ namespace PokemonFireRedClone
             return true;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-        }
+        public override void Draw(SpriteBatch spriteBatch) { }
     }
 }

@@ -47,8 +47,6 @@ namespace PokemonFireRedClone
             return true;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-        }
+        public override void Draw(SpriteBatch spriteBatch) { }
     }
 }

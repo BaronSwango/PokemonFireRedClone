@@ -5,7 +5,6 @@ namespace PokemonFireRedClone
 {
     public class StatusAnimation : BattleAnimation
     {
-
         private bool increase;
         private int reveal;
         private Counter spinCounter;
@@ -18,8 +17,7 @@ namespace PokemonFireRedClone
 
                 if (ScreenManager.Instance.BattleScreen.TextBox.Page == 18 || ScreenManager.Instance.BattleScreen.TextBox.Page == 20)
                 {
-                    if (Counter == null)
-                        Counter = new Counter(1000);
+                    Counter ??= new Counter(1000);
 
                     //if (Counter < 1000.0f)
                     if (!Counter.Finished)
@@ -49,8 +47,7 @@ namespace PokemonFireRedClone
 
                 if (!ScreenManager.Instance.BattleScreen.BattleLogic.MoveLanded)
                 {
-                    if (Counter == null)
-                        Counter = new Counter(1000);
+                    Counter ??= new Counter(1000);
 
                     //if (Counter < 1000.0f)
                     if (!Counter.Finished)
@@ -69,8 +66,7 @@ namespace PokemonFireRedClone
 
                 if (ScreenManager.Instance.BattleScreen.BattleLogic.StageMaxed)
                 {
-                    if (Counter == null)
-                        Counter = new Counter(1000);
+                    Counter ??= new Counter(1000);
 
                     //if (Counter < 1000.0f)
                     if (!Counter.Finished)
@@ -120,8 +116,7 @@ namespace PokemonFireRedClone
 
                 if (ScreenManager.Instance.BattleScreen.BattleAssets.StatChangeAnimationImage1.Alpha > 0)
                 {
-                    if (spinCounter == null)
-                        spinCounter = new Counter(1000);
+                    spinCounter ??= new Counter(1000);
                     //if (spinCounter < 1000)
                     if (!spinCounter.Finished)
                     {

@@ -15,6 +15,12 @@ namespace PokemonFireRedClone
             private set { }
         }
 
+        public bool Running
+        {
+            get { return counter > 0; }
+            private set { }
+        }
+
         public Counter(int milliseconds)
         {
             counter = 0;

@@ -318,6 +318,7 @@ namespace PokemonFireRedClone
 
 							break;
 					}
+					menu.Update(gameTime);
 				}
 
 				if (!displayAnimation.Animate(gameTime)) return;
