@@ -88,12 +88,22 @@ namespace PokemonFireRedClone
                             return;
                         }
 
-                        if (npc != null && npc is Trainer trainer)
+                        if (npc != null)
                         {
-                            foreach (CustomPokemon pokemon in trainer.Pokemon)
-                                pokemon.Create();
-                            ScreenManager.Instance.ChangeScreens("BattleScreen", trainer);
-                            return;
+                            if (npc is Trainer trainer)
+                            {
+                                foreach (CustomPokemon pokemon in trainer.Pokemon)
+                                {
+                                    pokemon.Create();
+                                }
+
+                                ScreenManager.Instance.ChangeScreens("BattleScreen", trainer);
+                                return;
+                            } 
+                            else if (npc.TextBoxReactionType == NPC.TextBoxReaction.SNAP_BACK)
+                            {
+                                npc.NPCSprite.SetDirection((int) npc.Direction);
+                            }
                         }
 
                         UnloadContent(ref player);
@@ -101,7 +111,8 @@ namespace PokemonFireRedClone
                     }
 
                 }
-            } else
+            } 
+            else
             {
                 if (player.CanUpdate)
                 {
@@ -116,7 +127,12 @@ namespace PokemonFireRedClone
                             if (TileManager.UpTile(map, currentTile).Entity != null && TileManager.UpTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-                                map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
+
+                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
+                                {
+                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
+                                }
+
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
                             }
@@ -130,7 +146,12 @@ namespace PokemonFireRedClone
                             if (TileManager.DownTile(map, currentTile).Entity != null && TileManager.DownTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-                                map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
+                                
+                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
+                                {
+                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
+                                }
+
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
                             }
@@ -143,7 +164,12 @@ namespace PokemonFireRedClone
                             if (TileManager.LeftTile(map, currentTile).Entity != null && TileManager.LeftTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-                                map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
+
+                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
+                                {
+                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
+                                }
+
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
                             }
@@ -156,7 +182,12 @@ namespace PokemonFireRedClone
                             if (TileManager.RightTile(map, currentTile).Entity != null && TileManager.RightTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
                             {
                                 LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-                                map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);
+
+                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
+                                {
+                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);
+                                }
+
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
                             }

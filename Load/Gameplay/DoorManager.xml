@@ -159,22 +159,22 @@
         <SpawnCoords>1472,3712</SpawnCoords>
     </Doors>
     <Doors>
-        <ID>[20:1:4:PewterCityArea]</ID>
+        <ID>[20:1:6:PewterCityArea]</ID>
         <MapName>ViridianForestToPewterCityGate</MapName>
         <SpawnCoords>448,256</SpawnCoords>
     </Doors>
     <Doors>
-        <ID>[20:1:5:PewterCityArea]</ID>
+        <ID>[20:1:7:PewterCityArea]</ID>
         <MapName>ViridianForestToPewterCityGate</MapName>
         <SpawnCoords>448,256</SpawnCoords>
     </Doors>
     <Doors>
-        <ID>[2:9:1:PewterCityArea]</ID>
+        <ID>[2:9:2:PewterCityArea]</ID>
         <MapName>PewterCenter</MapName>
         <SpawnCoords>512,492</SpawnCoords>
     </Doors>
     <Doors>
-        <ID>[7:9:0:PewterCityArea]</ID>
+        <ID>[7:9:1:PewterCityArea]</ID>
         <MapName>PewterMart</MapName>
         <SpawnCoords>320,512</SpawnCoords>
     </Doors>
@@ -187,5 +187,25 @@
         <ID>[3:26:0:PewterCenter]</ID>
         <MapName>PewterCityArea</MapName>
         <SpawnCoords>1472,1984</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[1:18:3:PewterCityArea]</ID>
+        <MapName>PewterHouse1</MapName>
+        <SpawnCoords>384,704</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[12:16:0:PewterHouse1]</ID>
+        <MapName>PewterCityArea</MapName>
+        <SpawnCoords>960,2304</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[1:18:0:PewterCityArea]</ID>
+        <MapName>PewterHouse2</MapName>
+        <SpawnCoords>384,704</SpawnCoords>
+    </Doors>
+    <Doors>
+        <ID>[12:16:0:PewterHouse2]</ID>
+        <MapName>PewterCityArea</MapName>
+        <SpawnCoords>2496,1088</SpawnCoords>
     </Doors>
 </DoorManager>

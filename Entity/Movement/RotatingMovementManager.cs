@@ -28,7 +28,14 @@ namespace PokemonFireRedClone
             //if (counter >= counterLimit)
             if (counter.Finished)
             {
-                npc.NPCSprite.SetDirection(randomGenerator.Next(4));
+                var direction = npc.MoveType switch
+                {
+                    NPC.MovementType.HORIZONTAL_ROTATE => randomGenerator.Next(2),
+                    NPC.MovementType.VERTICAL_ROTATE => randomGenerator.Next(2) + 2,
+                    _ => randomGenerator.Next(4),
+                };
+
+                npc.NPCSprite.SetDirection(direction);
 
                 //counterLimit = randomGenerator.Next(3960) + 250;
                 //counter = 0;

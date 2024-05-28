@@ -1,12 +1,12 @@
 {
-  "Position": "384, 236",
-  "Direction": 3.0,
-  "MapName": "ViridianGym",
+  "Position": "2496, 1068",
+  "Direction": 2.0,
+  "MapName": "PewterCityArea",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 1.53258896555565,
+  "Time": 1.8613533811668275,
   "Badges": 0,
   "Money": 8256,
   "PokemonInBag": [
@@ -150,7 +150,7 @@
     "BugCatcherDoug",
     "BugCatcherAnthony"
   ],
-  "AreaName": "VIRIDIAN   CITY",
+  "AreaName": "PEWTER   CITY",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,

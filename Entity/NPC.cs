@@ -13,10 +13,23 @@ namespace PokemonFireRedClone
             STILL,
             [XmlEnum("Rotate")]
             ROTATE,
+            [XmlEnum("HorizontalRotate")]
+            HORIZONTAL_ROTATE,
+            [XmlEnum("VerticalRotate")]
+            VERTICAL_ROTATE,
             [XmlEnum("Zoned")]
             ZONED,
             [XmlEnum("SetPath")]
             SET_PATH
+        }
+
+        public enum TextBoxReaction
+        {
+            NORMAL,
+            [XmlEnum("SnapBack")]
+            SNAP_BACK,
+            [XmlEnum("None")]
+            NONE
         }
 
         // SETPATHMOVEMANAGER ONLY
@@ -33,6 +46,7 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public NPCMovementManager MovementManager;
         public MovementType MoveType;
+        public TextBoxReaction TextBoxReactionType;
         [XmlIgnore]
         public bool UpdateMovement;
 
@@ -47,6 +61,8 @@ namespace PokemonFireRedClone
             switch (MoveType)
             {
                 case MovementType.ROTATE:
+                case MovementType.HORIZONTAL_ROTATE:
+                case MovementType.VERTICAL_ROTATE:
                     MovementManager = new RotatingMovementManager(this);
                     break;
                 case MovementType.SET_PATH:

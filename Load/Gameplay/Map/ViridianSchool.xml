@@ -159,7 +159,8 @@
         </SpriteFrames>
 		<Direction>Down</Direction>
 		<MoveType>Still</MoveType>
-        <ID>NPC19</ID>
+      <TextBoxReactionType>SnapBack</TextBoxReactionType>
+      <ID>NPC19</ID>
    </NPC>
    <NPC>
        <Sprite>
@@ -175,8 +176,9 @@
 			<Y>4</Y>
         </SpriteFrames>
 		<Direction>Up</Direction>
+      <TextBoxReactionType>SnapBack</TextBoxReactionType>
 		<MoveType>Still</MoveType>
-        <ID>NPC20</ID>
+      <ID>NPC20</ID>
    </NPC>
    <Area>
       <Name>VIRIDIAN   CITY</Name>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Map>
     <Name>ViridianMart</Name>
     <Inside>true</Inside>
@@ -83,7 +83,7 @@
          <Row>[x:x][17:13][x:x][x:x][2:25][3:25][4:25][x:x][x:x][x:x][x:x][16:13]</Row>
          <Row>[x:x][x:x][x:x][x:x][2:26][3:26][4:26]</Row>
       </TileMap>
-      <SolidTiles>[15:17][17:17][3:26][16:17][12:20][12:19][14:15][12:18][9:7][13:18]</SolidTiles>
+      <SolidTiles>[15:17][17:17][3:26][16:17][12:20][12:19][14:15][12:18][9:7][13:18][14:18]</SolidTiles>
       <OverlayTiles>[15:16][17:13][17:16][16:16][16:13][13:17][14:17][9:6]</OverlayTiles>
       <DoorTiles>[3:26][7:26][6:25][1:17]</DoorTiles>
       <Image>
