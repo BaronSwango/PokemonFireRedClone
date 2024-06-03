@@ -35,6 +35,7 @@ namespace PokemonFireRedClone
 
         public Image Arrow;
         public float ArrowOffset;
+        public bool HasArrow;
 
         public int DialogueOffsetX;
         public int DialogueOffsetY;
@@ -47,6 +48,7 @@ namespace PokemonFireRedClone
             CurrentDialogue = new List<TextBoxText>();
             Page = 1;
             Menu = false;
+            HasArrow = true;
         }
 
         private void Transition(GameTime gameTime)
@@ -57,8 +59,11 @@ namespace PokemonFireRedClone
                 {
                     if (Page <= TotalPages)
                     {
-                        if (!Menu)
+                        if (!Menu && HasArrow)
+                        {
                             Arrow.IsActive = false;
+                        }
+
                         Page++;
                         CurrentDialogue.Clear();
                         foreach (TextBoxText image in Dialogue)
@@ -88,14 +93,14 @@ namespace PokemonFireRedClone
                             TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                         }
                     }
-                    if (TotalPages > 1 && !Menu)
+                    if (TotalPages > 1 && !Menu && HasArrow)
+                    {
                         SetArrowPosition();
+                    }
 
                     UpdateDialogue = false;
 
                 }
-
-
 
                 float speed = (float)(1.35 * gameTime.ElapsedGameTime.TotalMilliseconds);
 
@@ -121,9 +126,11 @@ namespace PokemonFireRedClone
 
         public void LoadContent(ref Player player)
         {
-
             if (player.Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
+            {
                 player.Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
+            }
+
             player.Sprite.SpriteSheetEffect.CurrentFrame.X = 0;
             player.Sprite.IsActive = false;
             player.CanUpdate = false;
@@ -133,7 +140,7 @@ namespace PokemonFireRedClone
 
             Border = new Image();
 
-            if (TotalPages > 1 && !Menu)
+            if (TotalPages > 1 && !Menu && HasArrow)
             {
                 Arrow = new Image
                 {
@@ -157,9 +164,11 @@ namespace PokemonFireRedClone
                 DialogueOffsetX = 44;
                 DialogueOffsetY = 20;
             }
+
             Border.LoadContent();
             Border.Position = new Vector2(player.Sprite.Position.X - (ScreenManager.Instance.Dimensions.X -
                 Border.SourceRect.Width) - 64, player.Sprite.Position.Y + positionOffset);
+
             foreach (TextBoxText image in Dialogue)
             {
                 if (Type == "TilePlayer")
@@ -203,9 +212,10 @@ namespace PokemonFireRedClone
                     TransitionRect2.Position = new Vector2(CurrentDialogue[1].Position.X, CurrentDialogue[1].Position.Y);
                 }
 
-                if (TotalPages > 1 && !Menu)
+                if (TotalPages > 1 && !Menu && HasArrow)
+                {
                     SetArrowPosition();
-                
+                }
             }
 
             //END TRANSITION
@@ -216,14 +226,17 @@ namespace PokemonFireRedClone
             IsDisplayed = false;
             Border.UnloadContent();
             foreach (PokemonText image in Dialogue)
+            {
                 image.UnloadContent();
+            }
 
-            if (TotalPages > 1 && !Menu)
+            if (TotalPages > 1 && !Menu && HasArrow)
+            {
                 Arrow.UnloadContent();
+            }
 
             TransitionRect.UnloadContent();
-            if (TransitionRect2 != null)
-                TransitionRect2.UnloadContent();
+            TransitionRect2?.UnloadContent();
         }
 
         public void UnloadContent(ref Player player)
@@ -237,13 +250,18 @@ namespace PokemonFireRedClone
             if (IsDisplayed)
             {
                 Border.Update(gameTime);
-                foreach (PokemonText image in Dialogue)
-                    image.Update(gameTime);
 
+                foreach (PokemonText image in Dialogue)
+                {
+                    image.Update(gameTime);
+                }
 
                 Transition(gameTime);
-                if (!Menu && TotalPages > 1 && Arrow.IsActive)
+
+                if (!Menu && TotalPages > 1 && HasArrow && Arrow.IsActive)
+                {
                     AnimateRedArrow(gameTime);
+                }
             }
         }
 
@@ -252,6 +270,7 @@ namespace PokemonFireRedClone
             if (IsDisplayed)
             {
                 Border.Draw(spriteBatch);
+
                 foreach (TextBoxText image in CurrentDialogue)
                 {
                     image.Draw(spriteBatch);
@@ -260,16 +279,21 @@ namespace PokemonFireRedClone
                 if (IsTransitioning)
                 {
                     TransitionRect.Draw(spriteBatch);
+
                     if (CurrentDialogue.Count == 2)
+                    {
                         TransitionRect2.Draw(spriteBatch);
+                    }
                 }
-                else if (!Menu && TotalPages > 1 && Page < TotalPages)
+                else if (!Menu && TotalPages > 1 && Page < TotalPages && HasArrow)
                 {
                     Arrow.Draw(spriteBatch);
-                    if (!Arrow.IsActive)
-                        Arrow.IsActive = true;
-                }
 
+                    if (!Arrow.IsActive)
+                    {
+                        Arrow.IsActive = true;
+                    }
+                }
             }
         }
 

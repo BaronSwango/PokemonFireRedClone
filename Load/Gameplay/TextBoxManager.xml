@@ -3049,6 +3049,632 @@
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
+		<TotalPages>4</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC43</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Our   POKéMON`s   an   outsider,   so   it`s</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>finicky   and   hard   to   handle.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>An   outsider   is   a   POKéMON   that   you</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>get   in   a   trade.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>It   grows   fast,   but   it   may   ignore   an</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>unskilled   TRAINER   in   battle.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>4</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>If   only   we   had   some   BADGES...</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC44</ID>
+        <HasArrow>false</HasArrow>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>NIDORAN,   sit !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>NIDORAN£:   Bowbow !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC45</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>I   should   be   grateful   for   my   long</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>life.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Never   did   I   think   I   would   get   to</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>see   the   bones   of   a   dragon !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC46</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>This   month,   we`re   running   a   space</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>exhibit.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC47</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+                <G>52</G>
+				<B>40</B>
+				<A>255</A>
+                <Text>I   want   a   PIKACHU !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+                <G>52</G>
+				<B>40</B>
+				<A>255</A>
+                <Text>It`s   so   cute ! </Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>214</R>
+                <G>52</G>
+				<B>40</B>
+				<A>255</A>
+                <Text>I   asked   my   daddy   to   catch   me   one !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC48</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Yeah,   a   PIKACHU   soon,   I   promise !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>2</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC49</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>MOON   STONE,   huh?</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>What`s   so   special   about   it?</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Looks   like   an   ordinary   rock   to   me.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>3</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC50</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>July   20,   1969 ! </Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Humankind   first   set   foot   on   the</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>moon   that   day.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>I   bought   a   color   TV   just   so   I</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>could   watch   that   news.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC51</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>You   can`t   sneak   in   the   back   way ! </Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Nice   try,   kid,   but   no.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC52</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>This   AMBER   holds   a   rare   POKéMON...</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC53</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>We   have   two   fossils   of   rare,</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>prehistoric   POKéMON   on   exhibit.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>3</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC54</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>The   secrets   of   space...</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>The   mysteries   of   earth...</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>There   are   so   many   things   about</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>2</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>which   we   know   so   little.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>But   that   should   spur   us   to   study</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>3</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>harder,   not   toss   in   the   towel.</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NPC55</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Just   as   I   thought !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>You`re   POKéMON   champ   material !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
 		<TotalPages>1</TotalPages>
 		<Type>NPC</Type>
 		<ID>Pidgey</ID>
@@ -3080,6 +3706,25 @@
                 <B>113</B>
                 <A>255</A>
                 <Text>JIGGLYPUFF:   Puu   pupuu !</Text>
+			</Image>
+			<R>218</R>
+			<G>218</G>
+			<B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+		<TotalPages>1</TotalPages>
+		<Type>NPC</Type>
+		<ID>NidoranMale</ID>
+        <Dialogue>
+			<Page>1</Page>
+			<Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+				<R>113</R>
+                <G>113</G>
+                <B>113</B>
+                <A>255</A>
+                <Text>NIDORAN£:   Bowbow !</Text>
 			</Image>
 			<R>218</R>
 			<G>218</G>
@@ -3266,9 +3911,9 @@
         </Dialogue>
     </TextBoxes>
     <TextBoxes>
-        <TotalPages>3</TotalPages>
+        <TotalPages>2</TotalPages>
         <Type>NPC</Type>
-        <ID>TrainerBrock</ID>
+        <ID>CamperLiam</ID>
         <Dialogue>
             <Page>1</Page>
             <Image>
@@ -3277,7 +3922,7 @@
                 <G>96</G>
                 <B>204</B>
                 <A>255</A>
-                <Text>Yo ,   let`s   fight.</Text>
+                <Text>Stop   right   there ,   kid ! </Text>
             </Image>
             <R>218</R>
             <G>218</G>
@@ -3291,7 +3936,82 @@
                 <G>96</G>
                 <B>204</B>
                 <A>255</A>
-                <Text>You   scared?</Text>
+                <Text>You`re   ten   thousand   light-years</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>from   facing   BROCK !</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+    </TextBoxes>
+    <TextBoxes>
+        <TotalPages>7</TotalPages>
+        <Type>NPC</Type>
+        <ID>TrainerBrock</ID>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>So,   you`re   here.   I`m   BROCK.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>1</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>I`m   PEWTER`s   GYM   LEADER.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>My   rock-hard   willpower   is   evident</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>2</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>even   in   my   POKéMON.</Text>
             </Image>
             <R>218</R>
             <G>218</G>
@@ -3305,7 +4025,133 @@
                 <G>96</G>
                 <B>204</B>
                 <A>255</A>
-                <Text>Hand   over   your   lunch   money ,   kid.</Text>
+                <Text>My   POKéMON   are   all   rock   hard,   and</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>3</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>have   true-grit   determination.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>4</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>That`s   right   -   my   POKéMON   are   all</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>4</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>the   ROCK   type ! </Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>5</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Fuhaha !   You`re   going   to   challenge</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>5</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>me   knowing   that   you`ll   lose?</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>6</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>That`s   the   TRAINER`s   honor   that</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>6</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>compels   you   to   challenge   me.</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>7</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Fine   then !</Text>
+            </Image>
+            <R>218</R>
+            <G>218</G>
+            <B>212</B>
+        </Dialogue>
+        <Dialogue>
+            <Page>7</Page>
+            <Image>
+                <FontName>Fonts/PokemonFireRedDialogue</FontName>
+                <R>72</R>
+                <G>96</G>
+                <B>204</B>
+                <A>255</A>
+                <Text>Show   me   your   best !</Text>
             </Image>
             <R>218</R>
             <G>218</G>

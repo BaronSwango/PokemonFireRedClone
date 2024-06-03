@@ -1,14 +1,14 @@
 {
-  "Position": "2496, 1068",
-  "Direction": 2.0,
-  "MapName": "PewterCityArea",
+  "Position": "384, 236",
+  "Direction": 1.0,
+  "MapName": "OakLab",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 1.8613533811668275,
+  "Time": 2.0226436245557684,
   "Badges": 0,
-  "Money": 8256,
+  "Money": 10096,
   "PokemonInBag": [
     {
       "Name": "MEW",
@@ -16,29 +16,29 @@
       "Nature": 13,
       "Gender": 2,
       "MovePP": {
-        "Water Gun": 9,
-        "Vine Whip": 8
+        "Water Gun": 6,
+        "Vine Whip": 3
       },
-      "Level": 16,
-      "CurrentEXP": 2583,
-      "CurrentHP": 62,
+      "Level": 18,
+      "CurrentEXP": 3934,
+      "CurrentHP": 69,
       "Stats": {
-        "HP": 62,
+        "HP": 69,
         "HPIV": 28,
         "HPEV": 0,
-        "Attack": 45,
+        "Attack": 49,
         "AttackIV": 27,
         "AttackEV": 0,
-        "Defense": 36,
+        "Defense": 39,
         "DefenseIV": 22,
         "DefenseEV": 0,
-        "SpecialAttack": 41,
+        "SpecialAttack": 46,
         "SpecialAttackIV": 29,
         "SpecialAttackEV": 0,
-        "SpecialDefense": 39,
+        "SpecialDefense": 43,
         "SpecialDefenseIV": 15,
         "SpecialDefenseEV": 0,
-        "Speed": 38,
+        "Speed": 43,
         "SpeedIV": 12,
         "SpeedEV": 0
       }
@@ -148,9 +148,10 @@
     "BugCatcherSammy",
     "BugCatcherCharlie",
     "BugCatcherDoug",
-    "BugCatcherAnthony"
+    "BugCatcherAnthony",
+    "CamperLiam"
   ],
-  "AreaName": "PEWTER   CITY",
+  "AreaName": "PALLET   TOWN",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,
@@ -159,7 +160,9 @@
     "WEEDLE": false,
     "METAPOD": false,
     "CATERPIE": false,
-    "KAKUNA": false
+    "KAKUNA": false,
+    "ONIX": false,
+    "SANDSHREW": false
   },
   "ItemCounts": {
     "POTION": 1,

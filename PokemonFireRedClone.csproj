@@ -165,9 +165,6 @@
     <Content Include="Load\Gameplay\Map\ViridianHouse.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Load\Gameplay\Map\ViridianGym.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Load\Menus\PokedexMenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -236,7 +236,7 @@
   </TileDimensions>
   <NPC>
     <Sprite>
-      <Path>Gameplay/NPC7</Path>
+      <Path>Gameplay/NPC14</Path>
 		   <Effects>SpriteSheetEffect</Effects>
     </Sprite>
     <SpawnLocation>
@@ -268,6 +268,24 @@
 		<MoveType>Still</MoveType>
     <TextBoxReactionType>None</TextBoxReactionType>
     <ID>NPC44</ID>
+  </NPC>
+  <NPC>
+    <Sprite>
+      <Path>Gameplay/NidoranMale</Path>
+		   <Effects>SpriteSheetEffect</Effects>
+    </Sprite>
+    <SpawnLocation>
+			<X>512</X>
+			<Y>364</Y>
+    </SpawnLocation>
+		<SpriteFrames>
+			<X>4</X>
+			<Y>4</Y>
+    </SpriteFrames>
+		<Direction>Left</Direction>
+		<MoveType>Still</MoveType>
+    <TextBoxReactionType>SnapBack</TextBoxReactionType>
+    <ID>NidoranMale</ID>
   </NPC>
   <Area>
       <Name>PEWTER   CITY</Name>
