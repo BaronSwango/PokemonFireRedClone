@@ -9,10 +9,15 @@ namespace PokemonFireRedClone
 
         public void Follow(Player target)
         {
+            // var position = Matrix.CreateTranslation(
+            //     (int) (-target.Sprite.Position.X - (target.Sprite.SourceRect.Width / 2)),
+            //     (int) (-target.Sprite.Position.Y - (target.Sprite.SourceRect.Height / 2)),
+            //     0); 
             var position = Matrix.CreateTranslation(
-                (int) (-target.Sprite.Position.X - (target.Sprite.SourceRect.Width / 2)),
-                (int) (-target.Sprite.Position.Y - (target.Sprite.SourceRect.Height / 2)),
+                (int) (-target.TrackPos.X - (target.Sprite.SourceRect.Width / 2)),
+                (int) (-target.TrackPos.Y - (target.Sprite.SourceRect.Height / 2)),
                 0); 
+
             var offset = Matrix.CreateTranslation(
                     (int) ScreenManager.Instance.Dimensions.X / 2,
                     (int) ScreenManager.Instance.Dimensions.Y / 2,

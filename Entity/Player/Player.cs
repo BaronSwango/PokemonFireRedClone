@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
@@ -29,6 +30,7 @@ namespace PokemonFireRedClone
         public static PlayerJsonObject PlayerJsonObject;
         public static double ElapsedTime;
         public bool Running;
+        public Vector2 TrackPos;
         public Vector2 PreviousPos;
         public bool CanUpdate;
         [XmlIgnore]
@@ -55,13 +57,16 @@ namespace PokemonFireRedClone
             {
                 Load();
                 isLoaded = true;
-            } else
+            } 
+            else
             {
                 SpawnLocation = PlayerJsonObject.Position;
                 Direction = (EntityDirection)PlayerJsonObject.Direction;
             }
+
             base.LoadContent();
             Sprite.SpriteSheetEffect.SwitchManual = true;
+            Sprite.SpriteSheetEffect.SwitchFrame = 250;
         }
 
         public override void UnloadContent()
@@ -73,6 +78,13 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, ref Map map)
         {
+            PlayerAnimationManager.Instance.Update(gameTime);
+
+            if (PlayerAnimationManager.Instance.IsAnimating)
+            {
+                return;
+            } 
+
             Direction = Sprite.SpriteSheetEffect.CurrentFrame.Y > 3 ? (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y - 4 : (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y;
             PreviousPos = Sprite.Position;
             // COLLISION DETECTION START
@@ -84,8 +96,15 @@ namespace PokemonFireRedClone
                 || (Direction == EntityDirection.Right && !InputManager.Instance.KeyDown(Keys.W, Keys.S, Keys.A)))
             {
                 Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height);
+
                 if (currentTile != null)
                 {
+                    if (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).ID == "[6:3]" || TileManager.DownTile(map, currentTile).ID == "[7:3]" || TileManager.DownTile(map, currentTile).ID == "[8:3]") && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(Keys.S))
+                    {
+                        PlayerAnimationManager.Instance.Start(new PlayerJumpAnimation(this));
+                        return;
+                    }
+
                     if ((TileManager.UpTile(map, currentTile) != null && (TileManager.UpTile(map, currentTile).State == "Solid" || TileManager.UpTile(map, currentTile).Entity != null) && Direction == EntityDirection.Up)
                         || (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).State == "Solid" || TileManager.DownTile(map, currentTile).Entity != null) && Direction == EntityDirection.Down)
                         || (TileManager.LeftTile(map, currentTile) != null && (TileManager.LeftTile(map, currentTile).State == "Solid" || TileManager.LeftTile(map, currentTile).Entity != null) && Direction == EntityDirection.Left)
@@ -95,9 +114,11 @@ namespace PokemonFireRedClone
                         if (!Colliding && !CurrentScreen.TextBoxManager.IsDisplayed)
                         {
                             if (changeDirection)
+                            {
                                 changeDirection = false;
-                            Colliding = true;
+                            }
 
+                            Colliding = true;
                         }
 
                         if (((TileManager.IsTextBoxTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up)
@@ -106,10 +127,13 @@ namespace PokemonFireRedClone
                         {
                             
                             if (Direction == EntityDirection.Up && !CurrentScreen.TextBoxManager.IsDisplayed)
+                            {
                                 CurrentScreen.TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref CurrentScreen.Player);
+                            }
                             else if (Direction == EntityDirection.Down && !CurrentScreen.TextBoxManager.IsDisplayed)
+                            {
                                 CurrentScreen.TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref CurrentScreen.Player);
-
+                            }
                         }
 
                         if (((TileManager.IsDoorTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up && InputManager.Instance.KeyDown(Keys.W))
@@ -134,26 +158,29 @@ namespace PokemonFireRedClone
                                     break;
                             }
 
-
                             CurrentScreen.DoorManager.IsTransitioning = true;
 
                             if (Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
+                            {
                                 Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
+                            }
+
                             Sprite.SpriteSheetEffect.CurrentFrame.X = 0;
                             Sprite.IsActive = false;
                             CanUpdate = false;
 
                             if (CurrentScreen.AreaManager.IsTransitioning)
+                            {
                                 CurrentScreen.AreaManager.Reset();
+                            }
                         }
-
-                    } else
+                    }
+                    else
                     {
                         Colliding = false;
                         Sprite.SpriteSheetEffect.SwitchManual = true;
                         Sprite.IsActive = false;
                     }
-
                 }
             }
 
@@ -174,7 +201,9 @@ namespace PokemonFireRedClone
 
 
             if (!Colliding && CurrentScreen.TextBoxManager.Closed)
+            {
                 CurrentScreen.TextBoxManager.Closed = false;
+            }
             
            //TODO: handle collision with improved player movement
 
@@ -183,7 +212,10 @@ namespace PokemonFireRedClone
             if (Colliding)
             {
                 if (Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
+                {
                     Sprite.SpriteSheetEffect.CurrentFrame.Y -= 4;
+                }
+
                 Sprite.SpriteSheetEffect.SwitchManual = false;
             }
 
@@ -475,7 +507,14 @@ namespace PokemonFireRedClone
 
             }
 
+            TrackPos = Sprite.Position;
             Sprite.Update(gameTime);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            PlayerAnimationManager.Instance.Draw(spriteBatch);
+            base.Draw(spriteBatch);
         }
 
         private void Load()

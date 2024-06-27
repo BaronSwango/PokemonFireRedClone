@@ -1,12 +1,12 @@
 {
-  "Position": "384, 236",
-  "Direction": 1.0,
-  "MapName": "OakLab",
+  "Position": "1728, 7276",
+  "Direction": 2.0,
+  "MapName": "PalletTown",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 2.0226436245557684,
+  "Time": 2.0876946670557537,
   "Badges": 0,
   "Money": 10096,
   "PokemonInBag": [
@@ -151,7 +151,7 @@
     "BugCatcherAnthony",
     "CamperLiam"
   ],
-  "AreaName": "PALLET   TOWN",
+  "AreaName": "ROUTE   1",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,

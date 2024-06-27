@@ -117,8 +117,13 @@ namespace PokemonFireRedClone
 
         public void Update(ref Player player, GameTime gameTime, Vector2 tileDimensions)
         {
-            foreach(Tile tile in underlayTiles)
-                tile.Update(ref player);
+            if (!PlayerAnimationManager.Instance.IsAnimating)
+            {
+                foreach(Tile tile in underlayTiles)
+                {
+                    tile.Update(ref player);
+                }
+            }
 
             foreach (Tile tile in overlayTiles)
                 tile.Update(ref player);

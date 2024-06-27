@@ -126,7 +126,7 @@ namespace PokemonFireRedClone
         private void Transition(GameTime gameTime, Player player)
         {
             int speed = (int)(gameTime.ElapsedGameTime.TotalMilliseconds * 0.55);
-            Vector2 screenPos = new(player.Sprite.Position.X - (ScreenManager.Instance.Dimensions.X / 2) + 64, player.Sprite.Position.Y - (ScreenManager.Instance.Dimensions.Y / 2) - 48 + imageOffset);
+            Vector2 screenPos = new(player.TrackPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 64, player.TrackPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) - 48 + imageOffset);
 
             background.Position = screenPos;
             areaText.SetPosition(new(background.Position.X + (background.SourceRect.Width / 2) - (areaText.SourceRect.Width / 2), background.Position.Y + 4));

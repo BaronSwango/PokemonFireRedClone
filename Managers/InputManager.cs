@@ -11,8 +11,7 @@ namespace PokemonFireRedClone
         {
             get
             {
-                if (instance == null)
-                    instance = new InputManager();
+                instance ??= new InputManager();
 
                 return instance;
             }

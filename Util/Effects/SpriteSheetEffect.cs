@@ -88,7 +88,6 @@ namespace PokemonFireRedClone
             }
 
             SetupSourceRects();
-           
         }
 
         public void SetupSourceRects()

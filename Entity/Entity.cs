@@ -68,7 +68,7 @@ namespace PokemonFireRedClone
             Sprite.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             Sprite.Draw(spriteBatch);
         }

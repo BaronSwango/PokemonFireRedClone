@@ -95,7 +95,9 @@ namespace PokemonFireRedClone
         public void Update(GameTime gameTime, ref Player player)
         {
             foreach (Layer l in Layers)
+            {
                 l.Update(ref player, gameTime, TileDimensions);
+            }
 
             foreach (NPC npc in NPCs)
             {
@@ -108,8 +110,9 @@ namespace PokemonFireRedClone
                 {
                     currentTile.Entity = npc;
                     if (!NPCTiles.Contains(currentTile))
+                    {
                         NPCTiles.Add(currentTile);
-
+                    }
                 }
             }
 
