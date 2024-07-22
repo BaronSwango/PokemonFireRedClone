@@ -9,7 +9,7 @@ namespace PokemonFireRedClone
         private Player player;
         private float originY;
         private Image jumpShadow;
-        private float spriteSpeed;
+        private int spriteSpeed;
 
         public PlayerJumpAnimation(Player player) 
         {
@@ -24,7 +24,7 @@ namespace PokemonFireRedClone
         {
             jumpShadow.Path = "Gameplay/AnimationEffects/JumpShadow";
             jumpShadow.LoadContent();
-            jumpShadow.Position = new(player.TrackPos.X - jumpShadow.SourceRect.X / 2, player.TrackPos.Y + 20);
+            jumpShadow.Position = new(player.TrackPos.X - jumpShadow.SourceRect.X / 2, player.TrackPos.Y + 24);
         }
 
         public void UnloadContent()
@@ -34,7 +34,7 @@ namespace PokemonFireRedClone
 
         public bool Animate(GameTime gameTime)
         {
-            float speed = (float) (player.MoveSpeed * gameTime.ElapsedGameTime.TotalMilliseconds); 
+            int speed = (int) (player.MoveSpeed * 1.1 * (float) gameTime.ElapsedGameTime.TotalMilliseconds); 
 
             if (player.TrackPos.Y < originY + 32 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 1 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 3)
             {
@@ -51,26 +51,32 @@ namespace PokemonFireRedClone
             else if (player.TrackPos.Y >= originY + 32 && player.TrackPos.Y < originY + 64 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 0 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 2)
             {
                 player.Sprite.SpriteSheetEffect.CurrentFrame.X = player.Sprite.SpriteSheetEffect.CurrentFrame.X == 1 ? 2 : 0;
-                spriteSpeed = (float) (player.MoveSpeed * gameTime.ElapsedGameTime.TotalMilliseconds);
+                spriteSpeed = (int) (player.MoveSpeed * 1.1 * (float) gameTime.ElapsedGameTime.TotalMilliseconds);
                 player.Sprite.Update(gameTime);
             }
             else if (player.TrackPos.Y >= originY + 64 && player.TrackPos.Y < originY + 96 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 1 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 3)
             {
                 player.Sprite.SpriteSheetEffect.CurrentFrame.X = player.Sprite.SpriteSheetEffect.CurrentFrame.X == 0 ? 1 : 3;
-                spriteSpeed = (float) (player.MoveSpeed * 1.55 * gameTime.ElapsedGameTime.TotalMilliseconds); 
+                spriteSpeed = (int) (player.MoveSpeed * 2 * (float) gameTime.ElapsedGameTime.TotalMilliseconds); 
                 player.Sprite.Update(gameTime);
             }
             else if (player.TrackPos.Y >= originY + 96 && player.TrackPos.Y < originY + 128 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 0 && player.Sprite.SpriteSheetEffect.CurrentFrame.X != 2)
             {
                 player.Sprite.SpriteSheetEffect.CurrentFrame.X = player.Sprite.SpriteSheetEffect.CurrentFrame.X == 1 ? 2 : 0;
-                spriteSpeed = (float) (player.MoveSpeed * 1.9 * gameTime.ElapsedGameTime.TotalMilliseconds); 
+                spriteSpeed = (int) (player.MoveSpeed * 2 * (float) gameTime.ElapsedGameTime.TotalMilliseconds); 
                 player.Sprite.Update(gameTime);
+            }
+
+            if (spriteSpeed != speed && player.Sprite.Position.Y + spriteSpeed > player.TrackPos.Y)
+            {
+                player.Sprite.Position.Y = player.TrackPos.Y;
+                spriteSpeed = speed;
             }
 
             if (player.TrackPos.Y + speed < originY + 128)
             {
-                player.Sprite.Position.Y += spriteSpeed;
                 player.TrackPos.Y += speed;
+                player.Sprite.Position.Y += spriteSpeed;    
                 jumpShadow.Position.Y += speed;
                 return false;
             }
@@ -78,7 +84,6 @@ namespace PokemonFireRedClone
             player.TrackPos.Y = originY + 128;
             player.Sprite.Position.Y = originY + 128;
             player.Destination.Y = originY + 128;
-            player.Sprite.SpriteSheetEffect.SwitchManual = false;
             return true;
         }
 

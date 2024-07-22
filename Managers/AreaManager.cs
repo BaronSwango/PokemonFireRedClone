@@ -37,7 +37,7 @@ namespace PokemonFireRedClone
 
             foreach (Area area in areas)
             {
-                if (area.Contains(player.Sprite.Position))
+                if (area.Contains(player.TrackPos))
                 {
                     Player.PlayerJsonObject.CurrentArea = area;
                     Player.PlayerJsonObject.AreaName = area.Name;

@@ -72,7 +72,6 @@ namespace PokemonFireRedClone
                     screen.Map = mapLoader.Load("Load/Gameplay/Map/" + door.MapName + ".xml");
                     screen.Map.LoadContent();
 
-                    screen.Player.Sprite.Position = door.Coords;
                     Player.PlayerJsonObject.MapName = door.MapName;
 
                     if (prevInside)
@@ -80,8 +79,9 @@ namespace PokemonFireRedClone
                         screen.AreaManager.IsTransitioning = true;
                     }
 
+                    screen.Player.Sprite.Position = door.Coords;
                     screen.Player.Spawn(ref screen.Map);
-                    screen.Player.Destination = screen.Player.PreviousTile = screen.Player.Sprite.Position;
+                    screen.Player.Destination = screen.Player.PreviousTile = screen.Player.TrackPos = screen.Player.Sprite.Position;
 
                     if (screen.Map.Inside)
                     {
@@ -98,7 +98,7 @@ namespace PokemonFireRedClone
                         npc.Spawn(ref screen.Map);
                     }
 
-                    Vector2 playerPos = screen.Player.Sprite.Position;
+                    Vector2 playerPos = screen.Player.TrackPos;
                     ScreenManager.Instance.Image.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 32,
                     playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 40);
 
@@ -111,7 +111,7 @@ namespace PokemonFireRedClone
                 }
                 else
                 {
-                    Vector2 playerPos = screen.Player.Sprite.Position;
+                    Vector2 playerPos = screen.Player.TrackPos;
                     ScreenManager.Instance.Image.Position = new Vector2(playerPos.X - (ScreenManager.Instance.Dimensions.X / 2) + 32,
                     playerPos.Y - (ScreenManager.Instance.Dimensions.Y / 2) + 40);
                 }

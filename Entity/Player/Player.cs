@@ -67,6 +67,7 @@ namespace PokemonFireRedClone
             base.LoadContent();
             Sprite.SpriteSheetEffect.SwitchManual = true;
             Sprite.SpriteSheetEffect.SwitchFrame = 250;
+            TrackPos = Sprite.Position;
         }
 
         public override void UnloadContent()
@@ -363,7 +364,7 @@ namespace PokemonFireRedClone
                         Sprite.SpriteSheetEffect.CurrentFrame.Y = Running ? 7 : 3;
                         if (Sprite.Position.Y - speed < (int)Destination.Y)
                         {
-                            Sprite.Position.Y = (int)Destination.Y;
+                            Sprite.Position.Y = TrackPos.Y = (int)Destination.Y;
 
                             if (HasWildEncounter(map))
                             {
@@ -387,6 +388,7 @@ namespace PokemonFireRedClone
                         else
                         {
                             Sprite.Position.Y -= speed;
+                            TrackPos.Y -= speed;
 
                             if (Math.Abs(Sprite.Position.Y - Destination.Y) < 32 && (Sprite.SpriteSheetEffect.CurrentFrame.X == 1 || Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
@@ -399,7 +401,7 @@ namespace PokemonFireRedClone
 
                         if (Sprite.Position.Y + speed > (int)Destination.Y)
                         {
-                            Sprite.Position.Y = (int)Destination.Y;
+                            Sprite.Position.Y = TrackPos.Y = (int)Destination.Y;
 
                             if (HasWildEncounter(map))
                             {
@@ -422,6 +424,7 @@ namespace PokemonFireRedClone
                         else
                         {
                             Sprite.Position.Y += speed;
+                            TrackPos.Y += speed;
 
                             if (Math.Abs(Sprite.Position.Y - Destination.Y) < 32 && (Sprite.SpriteSheetEffect.CurrentFrame.X == 1 || Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
@@ -434,7 +437,7 @@ namespace PokemonFireRedClone
 
                         if (Sprite.Position.X - speed < Destination.X)
                         {
-                            Sprite.Position.X = (int)Destination.X;
+                            Sprite.Position.X = TrackPos.X = (int)Destination.X;
 
                             if (HasWildEncounter(map))
                             {
@@ -458,6 +461,7 @@ namespace PokemonFireRedClone
                         else
                         {
                             Sprite.Position.X -= speed;
+                            TrackPos.X -= speed;
 
                             if (Math.Abs(Sprite.Position.X - Destination.X) < 32 && (Sprite.SpriteSheetEffect.CurrentFrame.X == 1 || Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
@@ -470,7 +474,7 @@ namespace PokemonFireRedClone
 
                         if (Sprite.Position.X + speed > Destination.X)
                         {
-                            Sprite.Position.X = (int)Destination.X;
+                            Sprite.Position.X = TrackPos.X = (int)Destination.X;
 
                             if (HasWildEncounter(map))
                             {
@@ -494,6 +498,7 @@ namespace PokemonFireRedClone
                         else
                         {
                             Sprite.Position.X += speed;
+                            TrackPos.X += speed;
 
                             if (Math.Abs(Sprite.Position.X - Destination.X) < 32 && (Sprite.SpriteSheetEffect.CurrentFrame.X == 1 || Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
                                 Sprite.SpriteSheetEffect.CurrentFrame.X = Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
@@ -507,7 +512,6 @@ namespace PokemonFireRedClone
 
             }
 
-            TrackPos = Sprite.Position;
             Sprite.Update(gameTime);
         }
 
@@ -548,7 +552,7 @@ namespace PokemonFireRedClone
 
         public void ResetPosition()
         {
-            Sprite.Position = PlayerJsonObject.Position;
+            Sprite.Position = TrackPos = PlayerJsonObject.Position;
             Sprite.SpriteSheetEffect.CurrentFrame.Y = PlayerJsonObject.Direction;
         }
 

@@ -38,7 +38,7 @@ namespace PokemonFireRedClone
 
         public bool PlayerEntered(Player player)
         {
-            return !zoneRect.Contains(player.PreviousPos.X, player.PreviousPos.Y - 12) && zoneRect.Contains(player.Sprite.Position.X, player.Sprite.Position.Y - 12);
+            return !zoneRect.Contains(player.PreviousPos.X, player.PreviousPos.Y - 12) && zoneRect.Contains(player.TrackPos.X, player.TrackPos.Y - 12);
         }
 
         public bool Contains(Vector2 pos)

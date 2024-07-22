@@ -101,9 +101,7 @@ namespace PokemonFireRedClone
                 Vector2 centerTile = new(currentTile.Position.X,
                 currentTile.Position.Y - 84);
                 NPCSprite.SetPosition(centerTile);
-
             }
         }
-
     }
 }
