@@ -4,7 +4,6 @@ namespace PokemonFireRedClone
 {
     public class Move
     {
-
         public string Name;
         public string Description;
         public string TypeName;

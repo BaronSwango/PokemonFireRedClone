@@ -81,13 +81,13 @@ namespace PokemonFireRedClone
         {
             PlayerAnimationManager.Instance.Update(gameTime);
 
-            if (PlayerAnimationManager.Instance.IsAnimating)
+            if (PlayerAnimationManager.Instance.IsAnimating && !PlayerAnimationManager.Instance.CanMove)
             {
                 return;
             } 
 
             Direction = Sprite.SpriteSheetEffect.CurrentFrame.Y > 3 ? (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y - 4 : (EntityDirection)Sprite.SpriteSheetEffect.CurrentFrame.Y;
-            PreviousPos = Sprite.Position;
+            TrackPos = PreviousPos = Sprite.Position;
             // COLLISION DETECTION START
 
             if (State == MoveState.Idle
@@ -245,7 +245,7 @@ namespace PokemonFireRedClone
                 switch (State)
                 {
                     case MoveState.Idle:
-                        Destination = Sprite.Position;
+                        TrackPos = Destination = Sprite.Position;
                         PreviousTile = Destination;
                         IsMoving = false;
                         Running = InputManager.Instance.KeyDown(Keys.LeftShift) && !Colliding && !map.Inside;
@@ -519,6 +519,7 @@ namespace PokemonFireRedClone
         {
             PlayerAnimationManager.Instance.Draw(spriteBatch);
             base.Draw(spriteBatch);
+            PlayerAnimationManager.Instance.PostDraw(spriteBatch);
         }
 
         private void Load()

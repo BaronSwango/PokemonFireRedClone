@@ -5,7 +5,6 @@ namespace PokemonFireRedClone
 {
     public class IntroAnimation : BattleAnimation
     {
-
         public override bool Animate(GameTime gameTime)
         {
             float enemySpeed = (float)(0.596 * gameTime.ElapsedGameTime.TotalMilliseconds);

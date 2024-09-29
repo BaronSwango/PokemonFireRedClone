@@ -6,9 +6,9 @@ namespace PokemonFireRedClone
     public class PlayerJumpAnimation : IPlayerAnimation
     {
 
-        private Player player;
-        private float originY;
-        private Image jumpShadow;
+        private readonly Player player;
+        private readonly float originY;
+        private readonly Image jumpShadow;
         private int spriteSpeed;
 
         public PlayerJumpAnimation(Player player) 
@@ -84,7 +84,9 @@ namespace PokemonFireRedClone
             player.TrackPos.Y = originY + 128;
             player.Sprite.Position.Y = originY + 128;
             player.Destination.Y = originY + 128;
-            return true;
+            PlayerAnimationManager.Instance.Start(new PlayerSmokeAnimation(player));
+            UnloadContent();
+            return false;
         }
 
         public void Draw(SpriteBatch spriteBatch)

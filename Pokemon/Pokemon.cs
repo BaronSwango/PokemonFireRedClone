@@ -3,9 +3,9 @@ using System.Xml.Serialization;
 
 namespace PokemonFireRedClone
 {
+    // TODO: Move evolution and learnset to XML file
     public class Pokemon
     {
-
         private List<Type> types;
         private Dictionary<Move, int> moveLearnset;
         private KeyValuePair<int, Pokemon> evolution;

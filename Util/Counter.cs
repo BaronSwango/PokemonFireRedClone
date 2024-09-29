@@ -48,7 +48,5 @@ namespace PokemonFireRedClone
             counter = 0;
         }
 
-
-
     }
 }

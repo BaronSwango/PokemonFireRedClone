@@ -7,6 +7,7 @@ namespace PokemonFireRedClone
     {
         private IPlayerAnimation playerAnimation;
         public bool IsAnimating;
+        public bool CanMove;
         private static PlayerAnimationManager instance;
 
         public static PlayerAnimationManager Instance
@@ -23,6 +24,7 @@ namespace PokemonFireRedClone
         {
             playerAnimation = animation;
             IsAnimating = true;
+            CanMove = playerAnimation.CanMove();
             playerAnimation.LoadContent();
         }
 
@@ -43,5 +45,11 @@ namespace PokemonFireRedClone
             }
         }
 
+        public void PostDraw(SpriteBatch spriteBatch) 
+        {
+            if (IsAnimating) {
+                playerAnimation.PostDraw(spriteBatch);
+            }
+        }
     }
 }

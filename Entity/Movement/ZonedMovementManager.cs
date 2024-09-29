@@ -8,8 +8,6 @@ namespace PokemonFireRedClone
     {
 
         private readonly Random randomGenerator;
-        //private float counter;
-        //private int counterLimit;
         private readonly Counter counter;
         private bool updateCounter;
         private KeyValuePair<KeyValuePair<int, int>, KeyValuePair<int, int>> zoneBounds;

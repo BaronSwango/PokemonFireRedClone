@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Threading;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
@@ -6,8 +7,7 @@ namespace PokemonFireRedClone
     public abstract class BattleAnimation
     {
 
-        //protected float Counter;
-        //protected float CounterSpeed;
+        // TODO: add delay between used move text and damage animation
         protected Counter Counter;
         protected Image WhiteEffect;
         protected bool WhiteEffectTransitioned;
