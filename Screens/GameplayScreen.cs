@@ -186,7 +186,9 @@ namespace PokemonFireRedClone
                 npc.NPCSprite.Bottom.Draw(spriteBatch);
             }
 
+            PlayerAnimationManager.Instance.Draw(spriteBatch);
             Player.Draw(spriteBatch);
+            PlayerAnimationManager.Instance.PostDraw(spriteBatch);
 
             foreach (NPC npc in Map.NPCs)
             {

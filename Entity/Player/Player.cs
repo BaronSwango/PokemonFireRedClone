@@ -515,13 +515,6 @@ namespace PokemonFireRedClone
             Sprite.Update(gameTime);
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            PlayerAnimationManager.Instance.Draw(spriteBatch);
-            base.Draw(spriteBatch);
-            PlayerAnimationManager.Instance.PostDraw(spriteBatch);
-        }
-
         private void Load()
         {
 
