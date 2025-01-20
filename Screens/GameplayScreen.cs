@@ -36,6 +36,7 @@ namespace PokemonFireRedClone
             Player.LoadContent();
             Map = mapLoader.Load($"Load/Gameplay/Map/{Player.PlayerJsonObject.MapName}.xml");
             Map.LoadContent();
+            NPCStateManager.Instance.LoadNPCStates(Map.NPCs);
             TextBoxManager.LoadXML();
             Player.Spawn(ref Map);
 
@@ -61,6 +62,7 @@ namespace PokemonFireRedClone
         {
             base.UnloadContent();
             Player.UnloadContent();
+            NPCStateManager.Instance.SaveNPCStates(Map, Map.NPCs);
             Map.UnloadContent();
 
             menuWasLoaded = MenuManager.IsLoaded;
@@ -140,6 +142,7 @@ namespace PokemonFireRedClone
             }
 
             DoorManager.Update(gameTime, this, mapLoader);
+            PlayerAnimationManager.Instance.Update(gameTime);
             Player.Update(gameTime, ref Map);
             Map.Update(gameTime, ref Player);
             Camera.Follow(Player);

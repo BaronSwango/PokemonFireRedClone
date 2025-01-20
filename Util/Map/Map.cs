@@ -45,16 +45,12 @@ namespace PokemonFireRedClone
                     if (tile.State == "Solid")
                     {
                         SolidTiles.Add(tile);
-                        //if (((tile.ID == "[4:0]" || tile.ID == "[4:1]" || tile.ID == "[3:2]" || tile.ID == "[0:13]") && l.Image.Path.Contains("Ground") && !l.Image.Path.Contains("Viridian"))
-                            //|| ((tile.ID == "[1:1]" || tile.ID == "[2:1]") && l.Image.Path.Contains("ViridianForestGround")))
                         if (l.SignTiles != null && l.SignTiles.Contains(tile.ID))
                         {
                             tile.ID = tile.ID.Replace(']', ':') + signID + ":" + Name + "]";
                             signID++;
                             Console.WriteLine(tile.ID);
                         }
-                        //else if (((tile.ID == "[1:4]" || tile.ID == "[9:4]" || tile.ID == "[2:9]" || tile.ID == "[7:9]" || tile.ID == "[10:9]" || tile.ID == "[8:14]" || tile.ID == "[1:13]" || tile.ID == "[15:4]") && l.Image.Path.Contains("Buildings"))
-                            //|| (tile.ID == "[3:26]" || tile.ID == "[7:26]" || tile.ID == "[6:25]" || tile.ID == "[1:17]") && l.Image.Path.Contains("Interior"))
                         if (l.DoorTiles != null && l.DoorTiles.Contains(tile.ID))
                         {
                             tile.ID = tile.ID.Replace(']', ':') + doorID + ":" + Name + "]";
@@ -86,10 +82,14 @@ namespace PokemonFireRedClone
         public void UnloadContent()
         {
             foreach (Layer l in Layers)
+            {
                 l.UnloadContent();
+            }
 
             foreach (NPC npc in NPCs)
+            {
                 npc.UnloadContent();
+            }
         }
 
         public void Update(GameTime gameTime, ref Player player)

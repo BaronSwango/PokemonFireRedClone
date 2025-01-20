@@ -22,6 +22,7 @@ namespace PokemonFireRedClone
             return null;
         }
 
+        // TODO: refactor these
         public static Tile GetCurrentTile(Map map, Image image, int offsetX, int offSetY, int layerIndex)
         {
 

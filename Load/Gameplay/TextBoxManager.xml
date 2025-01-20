@@ -1351,7 +1351,7 @@
     <TextBoxes>
 		<TotalPages>1</TotalPages>
 		<Type>NPC</Type>
-		<ID>NPC12</ID>
+		<ID>NPC12_1</ID>
         <Dialogue>
 			<Page>1</Page>
 			<Image>

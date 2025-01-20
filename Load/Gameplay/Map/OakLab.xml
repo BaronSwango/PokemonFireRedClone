@@ -205,7 +205,7 @@
         </SpriteFrames>
 		<Direction>Down</Direction>
 		<MoveType>Rotate</MoveType>
-        <ID>NPC12</ID>
+        <ID>NPC12_1</ID>
    </NPC>
    <NPC>
        <Sprite>
@@ -224,7 +224,7 @@
 		<MoveType>Zoned</MoveType>
         <Zone>256,596</Zone>
         <Zone>256,832</Zone>
-        <ID>NPC13</ID>
+        <ID>NPC14</ID>
    </NPC>
    <Area>
       <Name>PALLET   TOWN</Name>

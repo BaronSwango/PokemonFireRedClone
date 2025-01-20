@@ -28,7 +28,7 @@ namespace PokemonFireRedClone
             counter.Reset();
 
             string str = ID.Replace("[", string.Empty).Replace("]", string.Empty);
-            int value1 = int.Parse(str.Substring(0, str.IndexOf(':')));
+            int value1 = int.Parse(str[..str.IndexOf(':')]);
             int value2 = int.Parse(str[(str.IndexOf(':') + 1)..]);
 
             value1++;

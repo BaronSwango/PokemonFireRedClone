@@ -79,8 +79,6 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, ref Map map)
         {
-            PlayerAnimationManager.Instance.Update(gameTime);
-
             if (PlayerAnimationManager.Instance.IsAnimating && !PlayerAnimationManager.Instance.CanMove)
             {
                 return;
@@ -106,6 +104,7 @@ namespace PokemonFireRedClone
                         return;
                     }
 
+                    // TODO: Refactor this to make more efficient
                     if ((TileManager.UpTile(map, currentTile) != null && (TileManager.UpTile(map, currentTile).State == "Solid" || TileManager.UpTile(map, currentTile).Entity != null) && Direction == EntityDirection.Up)
                         || (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).State == "Solid" || TileManager.DownTile(map, currentTile).Entity != null) && Direction == EntityDirection.Down)
                         || (TileManager.LeftTile(map, currentTile) != null && (TileManager.LeftTile(map, currentTile).State == "Solid" || TileManager.LeftTile(map, currentTile).Entity != null) && Direction == EntityDirection.Left)
@@ -276,8 +275,6 @@ namespace PokemonFireRedClone
                                 break;
                             }
 
-                            //Destination.Y -= 64;
-                            
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
@@ -296,8 +293,6 @@ namespace PokemonFireRedClone
                                 break;
                             }
 
-                            //Destination.Y += 64;
-                            
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
@@ -316,8 +311,6 @@ namespace PokemonFireRedClone
                                 break;
                             }
 
-                            //Destination.X -= 64;
-                            
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
@@ -336,8 +329,6 @@ namespace PokemonFireRedClone
                                 break;
                             }
 
-                            //Destination.X += 64;
-                            
                             if (Colliding)
                                 Sprite.IsActive = true;
                             else
