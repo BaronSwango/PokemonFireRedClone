@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
-    public class PlayerSmokeAnimation : IPlayerAnimation
+    public class PlayerSmokeAnimation : IEntityAnimation
     {
         private readonly Player player;
         private readonly float originY;

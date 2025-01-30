@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone
 {
-    public interface IPlayerAnimation
+    public interface IEntityAnimation
     {
         void LoadContent();
         void UnloadContent();

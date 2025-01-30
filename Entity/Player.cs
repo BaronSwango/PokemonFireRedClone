@@ -4,7 +4,6 @@ using System.IO;
 using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
@@ -17,7 +16,7 @@ namespace PokemonFireRedClone
     //TODO: Clean up player animation so animation doesn't glitch (has to do with frame counter and move speed per tile)
     
 
-    public class Player : Entity
+    public class Player : Entity, IAnimatable
     {
 
         private int waitToMove;
@@ -40,6 +39,8 @@ namespace PokemonFireRedClone
         {
             get { return (GameplayScreen)ScreenManager.Instance.CurrentScreen; }
         }
+
+        public bool IsMovementRestricted => !EntityAnimationManager.Instance.CanEntityMove(this);
 
         public Player()
         {
@@ -79,7 +80,8 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, ref Map map)
         {
-            if (PlayerAnimationManager.Instance.IsAnimating && !PlayerAnimationManager.Instance.CanMove)
+            // if (PlayerAnimationManager.Instance.IsAnimating && !PlayerAnimationManager.Instance.CanMove)
+            if (EntityAnimationManager.Instance.IsEntityAnimating(this) && IsMovementRestricted)
             {
                 return;
             } 
@@ -100,7 +102,8 @@ namespace PokemonFireRedClone
                 {
                     if (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).ID == "[6:3]" || TileManager.DownTile(map, currentTile).ID == "[7:3]" || TileManager.DownTile(map, currentTile).ID == "[8:3]") && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(Keys.S))
                     {
-                        PlayerAnimationManager.Instance.Start(new PlayerJumpAnimation(this));
+                        // PlayerAnimationManager.Instance.Start(new PlayerJumpAnimation(this));
+                        EntityAnimationManager.Instance.StartAnimation(this, new PlayerJumpAnimation(this));
                         return;
                     }
 
@@ -562,5 +565,14 @@ namespace PokemonFireRedClone
             return false;
         }
 
+        public void OnAnimationStart(IEntityAnimation animation)
+        {
+            return;
+        }
+
+        public void OnAnimationComplete(IEntityAnimation animation)
+        {
+            return;
+        }
     }
 }

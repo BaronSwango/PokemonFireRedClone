@@ -142,7 +142,8 @@ namespace PokemonFireRedClone
             }
 
             DoorManager.Update(gameTime, this, mapLoader);
-            PlayerAnimationManager.Instance.Update(gameTime);
+            // PlayerAnimationManager.Instance.Update(gameTime);
+            EntityAnimationManager.Instance.Update(gameTime);
             Player.Update(gameTime, ref Map);
             Map.Update(gameTime, ref Player);
             Camera.Follow(Player);
@@ -189,9 +190,11 @@ namespace PokemonFireRedClone
                 npc.NPCSprite.Bottom.Draw(spriteBatch);
             }
 
-            PlayerAnimationManager.Instance.Draw(spriteBatch);
+            // PlayerAnimationManager.Instance.Draw(spriteBatch);
+            EntityAnimationManager.Instance.Draw(spriteBatch);
             Player.Draw(spriteBatch);
-            PlayerAnimationManager.Instance.PostDraw(spriteBatch);
+            // PlayerAnimationManager.Instance.PostDraw(spriteBatch);
+            EntityAnimationManager.Instance.PostDraw(spriteBatch);
 
             foreach (NPC npc in Map.NPCs)
             {

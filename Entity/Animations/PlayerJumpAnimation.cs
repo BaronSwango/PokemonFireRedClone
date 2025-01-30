@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace PokemonFireRedClone 
 {
-    public class PlayerJumpAnimation : IPlayerAnimation
+    public class PlayerJumpAnimation : IEntityAnimation
     {
 
         private readonly Player player;
@@ -84,9 +84,10 @@ namespace PokemonFireRedClone
             player.TrackPos.Y = originY + 128;
             player.Sprite.Position.Y = originY + 128;
             player.Destination.Y = originY + 128;
-            PlayerAnimationManager.Instance.Start(new PlayerSmokeAnimation(player));
+            // PlayerAnimationManager.Instance.Start(new PlayerSmokeAnimation(player));
+            EntityAnimationManager.Instance.StartAnimation(player, new PlayerSmokeAnimation(player));
             UnloadContent();
-            return false;
+            return true;
         }
 
         public void Draw(SpriteBatch spriteBatch)
