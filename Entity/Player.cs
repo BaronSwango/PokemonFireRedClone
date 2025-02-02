@@ -80,7 +80,6 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, ref Map map)
         {
-            // if (PlayerAnimationManager.Instance.IsAnimating && !PlayerAnimationManager.Instance.CanMove)
             if (EntityAnimationManager.Instance.IsEntityAnimating(this) && IsMovementRestricted)
             {
                 return;
@@ -102,7 +101,6 @@ namespace PokemonFireRedClone
                 {
                     if (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).ID == "[6:3]" || TileManager.DownTile(map, currentTile).ID == "[7:3]" || TileManager.DownTile(map, currentTile).ID == "[8:3]") && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(Keys.S))
                     {
-                        // PlayerAnimationManager.Instance.Start(new PlayerJumpAnimation(this));
                         EntityAnimationManager.Instance.StartAnimation(this, new PlayerJumpAnimation(this));
                         return;
                     }

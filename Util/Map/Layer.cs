@@ -117,7 +117,6 @@ namespace PokemonFireRedClone
 
         public void Update(ref Player player, GameTime gameTime, Vector2 tileDimensions)
         {
-            // if (!PlayerAnimationManager.Instance.IsAnimating)
             if (!EntityAnimationManager.Instance.IsEntityAnimating(player))
             {
                 foreach(Tile tile in underlayTiles)

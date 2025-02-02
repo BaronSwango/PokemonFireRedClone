@@ -84,7 +84,6 @@ namespace PokemonFireRedClone
             player.TrackPos.Y = originY + 128;
             player.Sprite.Position.Y = originY + 128;
             player.Destination.Y = originY + 128;
-            // PlayerAnimationManager.Instance.Start(new PlayerSmokeAnimation(player));
             EntityAnimationManager.Instance.StartAnimation(player, new PlayerSmokeAnimation(player));
             UnloadContent();
             return true;
