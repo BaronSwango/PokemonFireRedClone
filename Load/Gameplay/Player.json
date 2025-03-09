@@ -1,12 +1,12 @@
 {
-  "Position": "1600, 4332",
-  "Direction": 3.0,
+  "Position": "1984, 5868",
+  "Direction": 2.0,
   "MapName": "PalletTown",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 2.2525797603334663,
+  "Time": 2.4503497441119206,
   "Badges": 0,
   "Money": 10096,
   "PokemonInBag": [
@@ -16,11 +16,11 @@
       "Nature": 13,
       "Gender": 2,
       "MovePP": {
-        "Water Gun": 6,
-        "Vine Whip": 3
+        "Water Gun": 25,
+        "Vine Whip": 25
       },
       "Level": 18,
-      "CurrentEXP": 3934,
+      "CurrentEXP": 4193,
       "CurrentHP": 69,
       "Stats": {
         "HP": 69,
@@ -151,7 +151,7 @@
     "BugCatcherAnthony",
     "CamperLiam"
   ],
-  "AreaName": "VIRIDIAN   CITY",
+  "AreaName": "ROUTE   1",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,
@@ -162,7 +162,9 @@
     "CATERPIE": false,
     "KAKUNA": false,
     "ONIX": false,
-    "SANDSHREW": false
+    "SANDSHREW": false,
+    "RATTATA": false,
+    "PIDGEY": false
   },
   "ItemCounts": {
     "POTION": 1,
