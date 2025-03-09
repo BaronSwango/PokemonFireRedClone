@@ -102,5 +102,23 @@ namespace PokemonFireRedClone
                 NPCSprite.SetPosition(centerTile);
             }
         }
+
+        public void FacePlayer(Player player)
+        {
+            switch (player.Direction) {
+                case EntityDirection.Left:
+                    NPCSprite.SetDirection((int) EntityDirection.Right);
+                    break;
+            case EntityDirection.Right:
+                    NPCSprite.SetDirection((int) EntityDirection.Left);
+                    break;
+                case EntityDirection.Down:
+                    NPCSprite.SetDirection((int) EntityDirection.Up);
+                    break;
+                case EntityDirection.Up:
+                    NPCSprite.SetDirection((int) EntityDirection.Down);
+                    break;
+            }
+        }
     }
 }

@@ -178,9 +178,9 @@
         </SpriteFrames>
 		<Direction>Down</Direction>
 		<MoveType>Zoned</MoveType>
-        <Zone>384,108</Zone>
-        <Zone>512,192</Zone>
-        <ID>NPC18</ID>
+      <Zone>384,108</Zone>
+      <Zone>512,192</Zone>
+      <ID>NPC18</ID>
    </NPC>
    <NPC>
        <Sprite>
@@ -197,6 +197,7 @@
         </SpriteFrames>
 		<Direction>Right</Direction>
 		<MoveType>Still</MoveType>
+      <ID>VIRIDIAN_CASHIER</ID>
    </NPC>
    <Area>
       <Name>VIRIDIAN   CITY</Name>

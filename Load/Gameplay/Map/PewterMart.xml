@@ -159,6 +159,7 @@
         </SpriteFrames>
 		<Direction>Right</Direction>
 		<MoveType>Still</MoveType>
+      <ID>PEWTER_CASHIER</ID>
    </NPC>
    <NPC>
        <Sprite>
@@ -175,7 +176,7 @@
         </SpriteFrames>
 		<Direction>Down</Direction>
 		<MoveType>Rotate</MoveType>
-        <ID>NPC34</ID>
+      <ID>NPC34</ID>
    </NPC>
    <NPC>
        <Sprite>

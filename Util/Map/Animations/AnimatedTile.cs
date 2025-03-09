@@ -28,13 +28,13 @@ namespace PokemonFireRedClone
             counter.Reset();
 
             string str = ID.Replace("[", string.Empty).Replace("]", string.Empty);
-            int value1 = int.Parse(str[..str.IndexOf(':')]);
+            int value1 = int.Parse(str[..str.IndexOf(':')]) + 1;
             int value2 = int.Parse(str[(str.IndexOf(':') + 1)..]);
 
-            value1++;
-
             if (value1 == totalFrames)
+            {
                 value1 = 0;
+            } 
 
             ID = "[" + value1 + ":" + value2 + "]";
             LoadContent(Position, new Rectangle(

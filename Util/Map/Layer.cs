@@ -87,21 +87,26 @@ namespace PokemonFireRedClone
                             
 
                             string str = s.Replace("[", string.Empty);
-                            int value1 = int.Parse(str.Substring(0, str.IndexOf(':')));
+                            int value1 = int.Parse(str[..str.IndexOf(':')]);
                             int value2 = int.Parse(str[(str.IndexOf(':') + 1)..]);
 
                             if (SolidTiles.Contains(tile.ID))
+                            {
                                 state = "Solid";
-                           
+                            }
 
                             tile.LoadContent(position, new Rectangle(
                                 value1 * (int)tileDimensions.X, value2 * (int)tileDimensions.Y,
                                 (int)tileDimensions.X, (int)tileDimensions.Y), state);
 
                             if (OverlayTiles.Contains(s + "]"))
+                            {
                                 overlayTiles.Add(tile);
+                            }
                             else
+                            {
                                 underlayTiles.Add(tile);
+                            }
                             
                             Tiles.Add(tile);
                         }

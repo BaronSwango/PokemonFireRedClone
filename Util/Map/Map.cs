@@ -23,6 +23,8 @@ namespace PokemonFireRedClone
         public List<Tile> SolidTiles;
         [XmlIgnore]
         public List<Tile> NPCTiles;
+        [XmlIgnore]
+        public List<Tile> GrassTiles;
         [XmlElement("NPC")]
         public List<NPC> NPCs;
         [XmlElement("Trainer")]
@@ -36,6 +38,7 @@ namespace PokemonFireRedClone
             Tiles = new List<Tile>();
             SolidTiles = new List<Tile>();
             NPCTiles = new List<Tile>();
+            GrassTiles = new List<Tile>();
 
             foreach (Layer l in Layers)
             {
@@ -57,6 +60,11 @@ namespace PokemonFireRedClone
                             doorID++;
                             Console.WriteLine(tile.ID);
                         }
+                    }
+
+                    if (tile.ID == "[1:1]") {
+                        Console.WriteLine("Grass added-------!_!_");
+                        GrassTiles.Add(tile);
                     }
                     Tiles.Add(tile);
                 }
@@ -94,6 +102,8 @@ namespace PokemonFireRedClone
 
         public void Update(GameTime gameTime, ref Player player)
         {
+            TileAnimationManager.Instance.Update(gameTime);
+
             foreach (Layer l in Layers)
             {
                 l.Update(ref player, gameTime, TileDimensions);

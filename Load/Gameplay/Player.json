@@ -1,12 +1,12 @@
 {
-  "Position": "1728, 7724",
+  "Position": "1600, 4332",
   "Direction": 3.0,
   "MapName": "PalletTown",
   "Name": "Baron",
   "TrainerID": "02390",
   "Gender": 0,
   "RivalName": "Gary",
-  "Time": 2.248895791500133,
+  "Time": 2.2525797603334663,
   "Badges": 0,
   "Money": 10096,
   "PokemonInBag": [
@@ -151,7 +151,7 @@
     "BugCatcherAnthony",
     "CamperLiam"
   ],
-  "AreaName": "PALLET   TOWN",
+  "AreaName": "VIRIDIAN   CITY",
   "Pokedex": {
     "SQUIRTLE": true,
     "PINSIR": true,

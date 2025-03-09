@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using System.Collections.Generic;
+using System.Reflection.Metadata;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace PokemonFireRedClone
 {
@@ -6,6 +9,16 @@ namespace PokemonFireRedClone
     {
         private KeyboardState currentKeyState, prevKeyState;
         private static InputManager instance;
+        public static class DirectionKeyMapping
+        {
+            public static readonly Dictionary<Entity.EntityDirection, Keys> Map = new()
+            {
+                { Entity.EntityDirection.Left, Keys.A },
+                { Entity.EntityDirection.Right, Keys.D },
+                { Entity.EntityDirection.Up, Keys.W },
+                { Entity.EntityDirection.Down, Keys.S }
+            };
+        }
 
         public static InputManager Instance
         {
@@ -56,6 +69,5 @@ namespace PokemonFireRedClone
             }
             return false;
         }
-
     }
 }

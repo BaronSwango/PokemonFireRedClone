@@ -62,7 +62,7 @@ namespace PokemonFireRedClone
         {
             base.UnloadContent();
             Player.UnloadContent();
-            NPCStateManager.Instance.SaveNPCStates(Map, Map.NPCs);
+            NPCStateManager.Instance.SaveNPCStates(Map.NPCs);
             Map.UnloadContent();
 
             menuWasLoaded = MenuManager.IsLoaded;

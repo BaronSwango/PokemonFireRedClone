@@ -28,11 +28,8 @@ namespace PokemonFireRedClone
 
             if (currentTile != null)
             {
-                return
-                    (npc.Direction == Entity.EntityDirection.Left && TileManager.LeftTile(map, currentTile) != null && TileManager.LeftTile(map, currentTile).State == "Solid") ||
-                    (npc.Direction == Entity.EntityDirection.Right && TileManager.RightTile(map, currentTile) != null && TileManager.RightTile(map, currentTile).State == "Solid") ||
-                    (npc.Direction == Entity.EntityDirection.Up && TileManager.UpTile(map, currentTile) != null && TileManager.UpTile(map, currentTile).State == "Solid") ||
-                    (npc.Direction == Entity.EntityDirection.Down && TileManager.DownTile(map, currentTile) != null && TileManager.DownTile(map, currentTile).State == "Solid");
+                Tile directionTile = TileManager.GetTile(map, currentTile, npc.Direction);
+                return directionTile != null && directionTile.State == "Solid";
             }
             else return false;
         }
@@ -40,7 +37,6 @@ namespace PokemonFireRedClone
         public ZonedMovementManager(NPC npc) : base(npc)
         {
             randomGenerator = new Random();
-            //counterLimit = randomGenerator.Next(3960) + 250;
             counter = new Counter(randomGenerator.Next(3960) + 250);
         }
 
@@ -54,15 +50,11 @@ namespace PokemonFireRedClone
 
         public override void Update(GameTime gameTime, Map map)
         {
-            //float counterSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
             if (updateCounter)
             {
                 if (!npc.IsMoving && (WillCollide(map) || OutOfBounds || Player.Sprite.Position == currentDestination || Player.Destination == currentDestination || Player.PreviousTile == currentDestination))
                 {
-                    //counterLimit = randomGenerator.Next(3960) + 250;
                     counter.Reset(randomGenerator.Next(3960) + 250);
-                    //counter = 0;
                     updateCounter = false;
                     return;
                 }
@@ -78,8 +70,6 @@ namespace PokemonFireRedClone
 
                 if (Move(gameTime))
                 {
-                    //counterLimit = randomGenerator.Next(3960) + 250;
-                    //counter = 0;
                     counter.Reset(randomGenerator.Next(3960) + 250);
                     updateCounter = false;
                     npc.IsMoving = false;
@@ -87,9 +77,7 @@ namespace PokemonFireRedClone
             }
             else
             {
-                //counter += counterSpeed;
                 counter.Update(gameTime);
-                //if (counter >= counterLimit)
                 if (counter.Finished)
                 {
                     Entity.EntityDirection newDirection;
@@ -113,8 +101,6 @@ namespace PokemonFireRedClone
                     updateCounter = true;
                 }
             }
-
         }
-
     }
 }

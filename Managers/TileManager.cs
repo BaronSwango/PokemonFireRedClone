@@ -1,10 +1,10 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
 {
     public static class TileManager
     {
-
         public static Tile GetCurrentTile(Map map, Image image, int offsetX, int offSetY)
         {
 
@@ -40,96 +40,41 @@ namespace PokemonFireRedClone
             return null;
         }
 
-        public static Tile LeftTile(Map map, Tile currentTile)
+        // TODO: refactor based on direction rather than checking each individual one
+        public static Tile GetTile(Map map, Tile currentTile, Entity.EntityDirection direction) 
         {
+            if (currentTile == null) return null;
+
+            int[][] directions = new int[4][]
+            {
+                new int[] { -64, -64 },
+                new int[] { 64, -64 },
+                new int[] { 0, 0 },
+                new int[] { 0, -128 }
+            };
+
             foreach (Tile tile in map.SolidTiles)
             {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64))
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1]))
                     && tile.ID.Contains(map.Name))
                     return tile;
             }
 
             foreach (Tile tile in map.SolidTiles)
             {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64)))
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))
                     return tile;
             }
 
             foreach (Tile tile in map.NPCTiles)
             {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X - 64, currentTile.Position.Y - 64)))
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))
                     return tile;
             }
 
-            return null;
-        }
-
-        public static Tile RightTile(Map map, Tile currentTile)
-        {
-            foreach (Tile tile in map.SolidTiles)
+            foreach (Tile tile in map.GrassTiles)
             {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X + 64, currentTile.Position.Y - 64))
-                    && tile.ID.Contains(map.Name))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.SolidTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X+64, currentTile.Position.Y-64)))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.NPCTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X + 64, currentTile.Position.Y - 64)))
-                    return tile;
-            }
-
-            return null;
-        }
-
-        public static Tile UpTile(Map map, Tile currentTile)
-        {
-            foreach (Tile tile in map.SolidTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128))
-                    && tile.ID.Contains(map.Name))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.SolidTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128)))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.NPCTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y - 128)))
-                    return tile;
-            }
-
-            return null;
-        }
-
-        public static Tile DownTile(Map map, Tile currentTile)
-        {
-            foreach (Tile tile in map.SolidTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y))
-                    && tile.ID.Contains(map.Name))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.SolidTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.NPCTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X, currentTile.Position.Y)))
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))
                     return tile;
             }
 
@@ -220,7 +165,5 @@ namespace PokemonFireRedClone
             return null;
 
         }
-
     }
 }
-       

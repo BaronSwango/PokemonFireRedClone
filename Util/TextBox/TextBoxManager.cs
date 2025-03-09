@@ -39,7 +39,7 @@ namespace PokemonFireRedClone
             TextBoxes = textBoxLoader.Load("Load/Gameplay/TextBoxManager.xml").TextBoxes;
         }
 
-        public void LoadContent(string ID, ref Player player)
+        public void LoadContent(string ID, Player player)
         {
             LoadXML();
 
@@ -117,88 +117,32 @@ namespace PokemonFireRedClone
                 if (player.CanUpdate)
                 {
                     Tile currentTile = TileManager.GetCurrentTile(map, player.Sprite, player.Sprite.SourceRect.Width / 2, player.Sprite.SourceRect.Height);
+                    Tile directionTile = TileManager.GetTile(map, currentTile, player.Direction);
 
-                    if (InputManager.Instance.KeyPressed(Keys.E) && player.State == Entity.MoveState.Idle)
+                    if (directionTile != null) 
                     {
-                        if (TileManager.UpTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Up)
+                        if (InputManager.Instance.KeyPressed(Keys.E) && player.State == Entity.MoveState.Idle)
                         {
-                            LoadContent(TileManager.UpTile(map, currentTile).ID, ref player);
+                            LoadContent(directionTile.ID, player);
 
-                            if (TileManager.UpTile(map, currentTile).Entity != null && TileManager.UpTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
+                            if (directionTile.Entity != null && directionTile.Entity is NPC npc && !npc.IsMoving)
                             {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
+                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, player);
 
                                 if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
                                 {
-                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Down);
-                                }
-
-                                this.npc = npc;
-                                npc.UpdateMovement = false;
-                            }
-                            
-                        }
-
-                        if (TileManager.DownTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Down)
-                        {
-                            LoadContent(TileManager.DownTile(map, currentTile).ID, ref player);
-
-                            if (TileManager.DownTile(map, currentTile).Entity != null && TileManager.DownTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
-                            {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-                                
-                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
-                                {
-                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Up);
+                                    map.NPCs[map.NPCs.IndexOf(npc)].FacePlayer(player);
                                 }
 
                                 this.npc = npc;
                                 npc.UpdateMovement = false;
                             }
                         }
-
-                        if (TileManager.LeftTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Left)
+                        else if ((player.Direction == Entity.EntityDirection.Up || player.Direction == Entity.EntityDirection.Down) && InputManager.Instance.KeyPressed(InputManager.DirectionKeyMapping.Map[player.Direction]))
                         {
-                            LoadContent(TileManager.LeftTile(map, currentTile).ID, ref player);
-
-                            if (TileManager.LeftTile(map, currentTile).Entity != null && TileManager.LeftTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
-                            {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-
-                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
-                                {
-                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Right);
-                                }
-
-                                this.npc = npc;
-                                npc.UpdateMovement = false;
-                            }
-                        }
-
-                        if (TileManager.RightTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Right)
-                        {
-                            LoadContent(TileManager.RightTile(map, currentTile).ID, ref player);
-
-                            if (TileManager.RightTile(map, currentTile).Entity != null && TileManager.RightTile(map, currentTile).Entity is NPC npc && !npc.IsMoving)
-                            {
-                                LoadContent(map.NPCs[map.NPCs.IndexOf(npc)].ID, ref player);
-
-                                if (npc.TextBoxReactionType != NPC.TextBoxReaction.NONE) 
-                                {
-                                    map.NPCs[map.NPCs.IndexOf(npc)].NPCSprite.SetDirection((int)Entity.EntityDirection.Left);
-                                }
-
-                                this.npc = npc;
-                                npc.UpdateMovement = false;
-                            }
+                            LoadContent(directionTile.ID, player);
                         }
                     }
-                    else if (currentTile != null && InputManager.Instance.KeyPressed(Keys.W) && TileManager.UpTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Up)
-                        LoadContent(TileManager.UpTile(map, currentTile).ID, ref player);
-
-                    else if (currentTile != null && InputManager.Instance.KeyPressed(Keys.S) && TileManager.DownTile(map, currentTile) != null && player.Direction == Entity.EntityDirection.Down)
-                        LoadContent(TileManager.DownTile(map, currentTile).ID, ref player);
-
                 }
             }
         }

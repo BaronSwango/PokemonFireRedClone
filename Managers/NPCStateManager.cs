@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
@@ -22,7 +24,7 @@ namespace PokemonFireRedClone
             mapNPCStates = new Dictionary<string, NPCState>();
         }
 
-        public void SaveNPCStates(Map map, List<NPC> npcs)
+        public void SaveNPCStates(List<NPC> npcs)
         {
             foreach (NPC npc in npcs)
             {

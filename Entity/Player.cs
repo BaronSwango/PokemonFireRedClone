@@ -99,19 +99,15 @@ namespace PokemonFireRedClone
 
                 if (currentTile != null)
                 {
-                    if (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).ID == "[6:3]" || TileManager.DownTile(map, currentTile).ID == "[7:3]" || TileManager.DownTile(map, currentTile).ID == "[8:3]") && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(Keys.S))
+                    Tile directionTile = TileManager.GetTile(map, currentTile, Direction);
+                    if (directionTile != null && (directionTile.ID == "[6:3]" || directionTile.ID == "[7:3]" || directionTile.ID == "[8:3]") && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(InputManager.DirectionKeyMapping.Map[Direction]))
                     {
                         EntityAnimationManager.Instance.StartAnimation(this, new PlayerJumpAnimation(this));
                         return;
                     }
 
-                    // TODO: Refactor this to make more efficient
-                    if ((TileManager.UpTile(map, currentTile) != null && (TileManager.UpTile(map, currentTile).State == "Solid" || TileManager.UpTile(map, currentTile).Entity != null) && Direction == EntityDirection.Up)
-                        || (TileManager.DownTile(map, currentTile) != null && (TileManager.DownTile(map, currentTile).State == "Solid" || TileManager.DownTile(map, currentTile).Entity != null) && Direction == EntityDirection.Down)
-                        || (TileManager.LeftTile(map, currentTile) != null && (TileManager.LeftTile(map, currentTile).State == "Solid" || TileManager.LeftTile(map, currentTile).Entity != null) && Direction == EntityDirection.Left)
-                        || (TileManager.RightTile(map, currentTile) != null && (TileManager.RightTile(map, currentTile).State == "Solid" || TileManager.RightTile(map, currentTile).Entity != null) && Direction == EntityDirection.Right))
+                    if (directionTile != null && (directionTile.State == "Solid" || (directionTile.Entity != null && directionTile.Entity != this)))
                     {
-                        
                         if (!Colliding && !CurrentScreen.TextBoxManager.IsDisplayed)
                         {
                             if (changeDirection)
@@ -122,43 +118,19 @@ namespace PokemonFireRedClone
                             Colliding = true;
                         }
 
-                        if (((TileManager.IsTextBoxTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up)
-                            || (TileManager.IsTextBoxTile(CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down))
-                            && !CurrentScreen.TextBoxManager.Closed)
+                        if (TileManager.IsTextBoxTile(CurrentScreen, directionTile) 
+                            && (Direction == EntityDirection.Up || Direction == EntityDirection.Down) 
+                            && !CurrentScreen.TextBoxManager.Closed
+                            && !CurrentScreen.TextBoxManager.IsDisplayed)
                         {
-                            
-                            if (Direction == EntityDirection.Up && !CurrentScreen.TextBoxManager.IsDisplayed)
-                            {
-                                CurrentScreen.TextBoxManager.LoadContent(TileManager.UpTile(map, currentTile).ID, ref CurrentScreen.Player);
-                            }
-                            else if (Direction == EntityDirection.Down && !CurrentScreen.TextBoxManager.IsDisplayed)
-                            {
-                                CurrentScreen.TextBoxManager.LoadContent(TileManager.DownTile(map, currentTile).ID, ref CurrentScreen.Player);
-                            }
+                            CurrentScreen.TextBoxManager.LoadContent(directionTile.ID, this); 
                         }
 
-                        if (((TileManager.IsDoorTile(CurrentScreen, TileManager.UpTile(map, currentTile)) && Direction == EntityDirection.Up && InputManager.Instance.KeyDown(Keys.W))
-                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.DownTile(map, currentTile)) && Direction == EntityDirection.Down && InputManager.Instance.KeyDown(Keys.S))
-                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.LeftTile(map, currentTile)) && Direction == EntityDirection.Left && InputManager.Instance.KeyDown(Keys.A))
-                            || (TileManager.IsDoorTile(CurrentScreen, TileManager.RightTile(map, currentTile)) && Direction == EntityDirection.Right && InputManager.Instance.KeyDown(Keys.D)))
+                        if (TileManager.IsDoorTile(CurrentScreen, directionTile) 
+                            && InputManager.Instance.KeyDown(InputManager.DirectionKeyMapping.Map[Direction])
                             && !CurrentScreen.DoorManager.IsTransitioning)
                         {
-                            switch (Direction)
-                            {
-                                case EntityDirection.Up:
-                                    CurrentScreen.DoorManager.LoadContent(TileManager.UpTile(map, currentTile).ID);
-                                    break;
-                                case EntityDirection.Down:
-                                    CurrentScreen.DoorManager.LoadContent(TileManager.DownTile(map, currentTile).ID);
-                                    break;
-                                case EntityDirection.Right:
-                                    CurrentScreen.DoorManager.LoadContent(TileManager.RightTile(map, currentTile).ID);
-                                    break;
-                                case EntityDirection.Left:
-                                    CurrentScreen.DoorManager.LoadContent(TileManager.LeftTile(map, currentTile).ID);
-                                    break;
-                            }
-
+                            CurrentScreen.DoorManager.LoadContent(directionTile.ID);
                             CurrentScreen.DoorManager.IsTransitioning = true;
 
                             if (Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
@@ -184,7 +156,6 @@ namespace PokemonFireRedClone
                     }
                 }
             }
-
             
             foreach (NPC npc in map.NPCs)
             {
@@ -196,17 +167,15 @@ namespace PokemonFireRedClone
                     return;
                 }
             }
-            
 
             // COLLISION DETECTION END
-
 
             if (!Colliding && CurrentScreen.TextBoxManager.Closed)
             {
                 CurrentScreen.TextBoxManager.Closed = false;
             }
             
-           //TODO: handle collision with improved player movement
+            //TODO: handle collision with improved player movement
 
             // CHANGES ANIMATION SPEED
             
@@ -501,7 +470,6 @@ namespace PokemonFireRedClone
                         break;
                 }
                 // TILE BASED MOVEMENT END
-
             }
 
             Sprite.Update(gameTime);
@@ -513,7 +481,6 @@ namespace PokemonFireRedClone
             playerLoader = new JsonManager<PlayerJsonObject>();
 
             if (!File.Exists("Load/Gameplay/Player.json")) return;
-
 
             PlayerJsonObject = playerLoader.Load("Load/Gameplay/Player.json");
 
@@ -546,7 +513,7 @@ namespace PokemonFireRedClone
         {
             Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height - 32);
 
-            if (currentTile.ID == "[16:16]" && map.Layers[0].Tiles.Contains(currentTile))
+            if ((currentTile.ID == "[1:1]" || currentTile.ID == "[2:1]") && map.Layers[0].Tiles.Contains(currentTile))
             {
                 Random random = new();
 
