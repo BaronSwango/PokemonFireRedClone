@@ -9,10 +9,8 @@ namespace PokemonFireRedClone
 {
     public class Map
     {
-
         private int signID;
         private int doorID;
-
         public string Name;
         public bool Inside;
         [XmlElement("Layer")]
@@ -21,8 +19,6 @@ namespace PokemonFireRedClone
         public List<Tile> Tiles;
         [XmlIgnore]
         public List<Tile> SolidTiles;
-        [XmlIgnore]
-        public List<Tile> NPCTiles;
         [XmlIgnore]
         public List<Tile> GrassTiles;
         [XmlElement("NPC")]
@@ -37,7 +33,6 @@ namespace PokemonFireRedClone
         {
             Tiles = new List<Tile>();
             SolidTiles = new List<Tile>();
-            NPCTiles = new List<Tile>();
             GrassTiles = new List<Tile>();
 
             foreach (Layer l in Layers)
@@ -63,12 +58,10 @@ namespace PokemonFireRedClone
                     }
 
                     if (tile.ID == "[1:1]") {
-                        Console.WriteLine("Grass added-------!_!_");
                         GrassTiles.Add(tile);
                     }
                     Tiles.Add(tile);
                 }
-
             }
 
             foreach (Area area in Areas)
@@ -106,45 +99,23 @@ namespace PokemonFireRedClone
 
             foreach (Layer l in Layers)
             {
-                l.Update(ref player, gameTime, TileDimensions);
+                l.Update(ref player, NPCs, gameTime, TileDimensions);
             }
 
             foreach (NPC npc in NPCs)
             {
                 npc.Update(gameTime, this);
-
-                Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / 2,
-                    npc.NPCSprite.Bottom.SourceRect.Height / (int)npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
-
-                if (currentTile != null)
-                {
-                    currentTile.Entity = npc;
-                    if (!NPCTiles.Contains(currentTile))
-                    {
-                        NPCTiles.Add(currentTile);
-                    }
-                }
             }
-
-            foreach (Tile tile in NPCTiles)
-            {
-                if (tile.Entity != null && tile.Entity is NPC npc)
-                {
-                    Tile currentTile = TileManager.GetCurrentTile(this, npc.NPCSprite.Bottom, npc.NPCSprite.Bottom.SourceRect.Width / 2,
-                        npc.NPCSprite.Bottom.SourceRect.Height / (int)npc.NPCSprite.Bottom.SpriteSheetEffect.AmountOfFrames.Y);
-
-                    if (currentTile != null && currentTile != tile)
-                        tile.Entity = null;
-
-                }
-            }
-
         }
 
         public void Draw(SpriteBatch spriteBatch, string drawType)
         {
             foreach (Layer l in Layers)
+            {
                 l.Draw(spriteBatch, drawType);
+            }
+
+            TileAnimationManager.Instance.Draw(spriteBatch);
         }
 
     }

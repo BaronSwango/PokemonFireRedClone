@@ -66,12 +66,6 @@ namespace PokemonFireRedClone
                     return tile;
             }
 
-            foreach (Tile tile in map.NPCTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))
-                    return tile;
-            }
-
             foreach (Tile tile in map.GrassTiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))
@@ -115,12 +109,6 @@ namespace PokemonFireRedClone
                     return tile;
             }
 
-            foreach (Tile tile in map.NPCTiles)
-            {
-                if (tile.Position.Equals(location))
-                    return tile;
-            }
-
             foreach (Tile tile in map.Layers[0].Tiles)
             {
                 if (tile.Position.Equals(location))
@@ -145,12 +133,6 @@ namespace PokemonFireRedClone
         {
 
             foreach (Tile tile in map.SolidTiles)
-            {
-                if (tile.Position.Equals(new Vector2(currentTile.Position.X + offsetX, currentTile.Position.Y + offsetY)))
-                    return tile;
-            }
-
-            foreach (Tile tile in map.NPCTiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X + offsetX, currentTile.Position.Y + offsetY)))
                     return tile;

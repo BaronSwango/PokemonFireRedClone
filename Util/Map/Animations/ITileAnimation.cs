@@ -9,5 +9,6 @@ namespace PokemonFireRedClone
         void UnloadContent();
         bool Animate(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
+        void PostDraw(SpriteBatch spriteBatch);
     }
 }

@@ -7,6 +7,7 @@ namespace PokemonFireRedClone
     {
         private readonly Entity entity;
         private readonly Tile grassTile;
+        private readonly Image grassOverlay;
         private readonly Counter counter;
         private const int ANIMATION_DURATION = 170; // Animation lasts for half a second
 
@@ -15,6 +16,11 @@ namespace PokemonFireRedClone
             this.entity = entity;
             this.grassTile = grassTile;
             counter = new Counter(ANIMATION_DURATION);
+            grassOverlay = new Image{
+                Path = "Gameplay/AnimationEffects/GrassOverlay",
+                Effects = "SpriteSheetEffect",
+                Position = new(grassTile.Position.X, grassTile.Position.Y)
+            };
         }
 
         public void LoadContent()
@@ -34,14 +40,19 @@ namespace PokemonFireRedClone
                     grassTile.SourceRect.Width, 
                     grassTile.SourceRect.Height
                 ), 
-                grassTile.State);
-            
-            // isAnimating = true;
+                grassTile.State
+            );
+
+            grassOverlay.LoadContent();
+            grassOverlay.SpriteSheetEffect.AmountOfFrames = new(4, 1);
+            grassOverlay.SpriteSheetEffect.CurrentFrame.X = 0;
+            grassOverlay.SpriteSheetEffect.SwitchManual = true;
+            grassOverlay.SpriteSheetEffect.SetupSourceRects();
         }
 
         public void UnloadContent()
         {
-            // No resources to unload
+            grassOverlay.UnloadContent();
         }
 
         public bool Animate(GameTime gameTime)
@@ -77,6 +88,12 @@ namespace PokemonFireRedClone
         public void Draw(SpriteBatch spriteBatch)
         {
             // No additional drawing needed as the tile itself will be drawn by the map rendering system
+            // grassOverlay.Draw(spriteBatch);
+        }
+
+        public void PostDraw(SpriteBatch spriteBatch)
+        {
+
         }
     }
 }

@@ -93,8 +93,10 @@ namespace PokemonFireRedClone
         public void SetupSourceRects()
         {
             if (SpriteType == "NPCTop")
+            {
                 Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
                     (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight / 2);
+            }
             else if (SpriteType == "NPCBottom")
             {
                 Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
@@ -102,9 +104,10 @@ namespace PokemonFireRedClone
                 Image.SourceRect.Y += Image.SourceRect.Height;
             }
             else
+            {
                 Image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth,
-                        (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
+                    (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
+            }
         }
-
     }
 }

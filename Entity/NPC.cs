@@ -86,9 +86,13 @@ namespace PokemonFireRedClone
         {
             NPCSprite.Update(gameTime);
             if (UpdateMovement)
+            {
                 MovementManager.Update(gameTime, map);
+            }
             else
+            {
                 IsMoving = false;
+            }
         }
 
         public override void Spawn(ref Map map)

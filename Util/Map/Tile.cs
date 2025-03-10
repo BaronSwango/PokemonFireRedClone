@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 
@@ -22,18 +23,34 @@ namespace PokemonFireRedClone
         }
 
         //TODO: Play sound when colliding
-        public void Update(ref Player player)
+        public void Update(ref Player player, List<NPC> npcs)
+        {
+            HandleEntity(player);
+
+            foreach (NPC npc in npcs)
+            {
+                HandleEntity(npc);
+            }
+        }
+
+        private void HandleEntity(Entity entity)
         {
             Rectangle tileRect = new((int)Position.X, (int)Position.Y,
                 SourceRect.Width, SourceRect.Height - 20);
-            Rectangle playerRect = new((int)player.Sprite.Position.X, (int)player.Sprite.Position.Y,
-                player.Sprite.SourceRect.Width, player.Sprite.SourceRect.Height);
+            Rectangle entityRect = new((int)entity.Sprite.Position.X, (int)entity.Sprite.Position.Y,
+                entity.Sprite.SourceRect.Width, entity.Sprite.SourceRect.Height);
 
-            if (playerRect.Intersects(tileRect)) 
+            if (entity is NPC npc) 
             {
-                if (State == "Solid" || (Entity != null && Entity != player))
+                entityRect = new((int)npc.NPCSprite.Top.Position.X, (int)npc.NPCSprite.Top.Position.Y,
+                    npc.NPCSprite.Bottom.SourceRect.Width, 84);
+            }
+
+            if (entityRect.Intersects(tileRect)) 
+            {
+                if (entity is not NPC && (State == "Solid" || (Entity != null && Entity != entity)))
                 {
-                    player.Collide(tileRect);
+                    entity.Collide(tileRect);
 
                     /*
                     * TODO: Animation of player collision (goes through walking cycle slowly, can't move until it's done)
@@ -45,16 +62,16 @@ namespace PokemonFireRedClone
                     */
                     
                 }
-                else if (Entity != player)
+                else if (Entity != entity)
                 {
                     if (ID == "[1:1]")
                     {
-                        TileAnimationManager.Instance.AddAnimation(new GrassTileAnimation(player, this));
+                        TileAnimationManager.Instance.AddAnimation(new GrassTileAnimation(entity, this));
                     }
-                    Entity = player;
+                    Entity = entity;
                 }
             } 
-            else if (Entity == player)
+            else if (Entity == entity)
             {
                 Entity = null;
             }
