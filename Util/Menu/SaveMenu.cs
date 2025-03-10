@@ -97,7 +97,7 @@ namespace PokemonFireRedClone
 
             Player player = ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player;
             SaveDialogue.Dialogue[3].Image.Text = Player.PlayerJsonObject.Name + "   saved   the   game.";
-            SaveDialogue.LoadContent(ref player);
+            SaveDialogue.LoadContent(player);
 
             SaveRegion.Text = Player.PlayerJsonObject.AreaName;
             SaveRegion.LoadContent();
@@ -128,7 +128,7 @@ namespace PokemonFireRedClone
                 image.UnloadContent();
             }
             MenuBackground.UnloadContent();
-            SaveDialogue.UnloadContent(ref ((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
+            SaveDialogue.UnloadContent(((GameplayScreen)ScreenManager.Instance.CurrentScreen).Player);
             base.UnloadContent();
         }
 

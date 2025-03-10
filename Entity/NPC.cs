@@ -95,7 +95,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        public override void Spawn(ref Map map)
+        public override void Spawn(Map map)
         {
             Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width,
                 NPCSprite.Bottom.SourceRect.Height);

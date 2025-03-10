@@ -66,6 +66,12 @@ namespace PokemonFireRedClone
                     return tile;
             }
 
+            foreach (Tile tile in map.NPCTiles)
+            {
+                if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))
+                    return tile;
+            }
+
             foreach (Tile tile in map.GrassTiles)
             {
                 if (tile.Position.Equals(new Vector2(currentTile.Position.X + directions[(int) direction][0], currentTile.Position.Y + directions[(int) direction][1])))

@@ -120,19 +120,28 @@ namespace PokemonFireRedClone
             Image.UnloadContent();
         }
 
-        public void Update(ref Player player, List<NPC> npcs, GameTime gameTime, Vector2 tileDimensions)
+        public void Update(Player player, List<NPC> npcs, List<Tile> NPCTiles, GameTime gameTime, Vector2 tileDimensions)
         {
             if (!EntityAnimationManager.Instance.IsEntityAnimating(player))
             {
                 foreach(Tile tile in underlayTiles)
                 {
-                    tile.Update(ref player, npcs);
+                    tile.Update(player, npcs);
+
+                    if (tile.Entity is NPC && !NPCTiles.Contains(tile))
+                    {
+                        NPCTiles.Add(tile);
+                    }
+                    else if (tile.Entity == null)
+                    {
+                        NPCTiles.Remove(tile);
+                    }
                 }
             }
 
             foreach (Tile tile in overlayTiles)
             {
-                tile.Update(ref player, npcs);
+                tile.Update(player, npcs);
             }
 
             foreach (AnimatedTile tile in animatedTiles)

@@ -23,7 +23,7 @@ namespace PokemonFireRedClone
         }
 
         //TODO: Play sound when colliding
-        public void Update(ref Player player, List<NPC> npcs)
+        public void Update(Player player, List<NPC> npcs)
         {
             HandleEntity(player);
 

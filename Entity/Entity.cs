@@ -73,7 +73,7 @@ namespace PokemonFireRedClone
             Sprite.Draw(spriteBatch);
         }
 
-        public virtual void Spawn(ref Map map)
+        public virtual void Spawn(Map map)
         {
             Tile currentTile =
                 TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 8, Sprite.SourceRect.Height / (int)Sprite.SpriteSheetEffect.AmountOfFrames.Y);

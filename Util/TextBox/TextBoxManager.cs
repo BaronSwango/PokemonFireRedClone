@@ -48,16 +48,16 @@ namespace PokemonFireRedClone
                 if (textBox.ID == ID)
                 {
                     this.textBox = textBox;
-                    this.textBox.LoadContent(ref player);
+                    this.textBox.LoadContent(player);
                     return;
                 }
             }
 
         }
 
-        public void UnloadContent(ref Player player)
+        public void UnloadContent(Player player)
         {
-            textBox.UnloadContent(ref player);
+            textBox.UnloadContent(player);
             textBox = null;
 
             if (npc != null)
@@ -67,7 +67,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        public void Update(GameTime gameTime, ref Map map, ref Player player)
+        public void Update(GameTime gameTime, Map map, Player player)
         {
 
             if (textBox != null)
@@ -106,7 +106,7 @@ namespace PokemonFireRedClone
                             }
                         }
 
-                        UnloadContent(ref player);
+                        UnloadContent(player);
                         Closed = true;
                     }
 

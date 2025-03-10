@@ -38,11 +38,11 @@ namespace PokemonFireRedClone
             Map.LoadContent();
             NPCStateManager.Instance.LoadNPCStates(Map.NPCs);
             TextBoxManager.LoadXML();
-            Player.Spawn(ref Map);
+            Player.Spawn(Map);
 
             foreach (NPC npc in Map.NPCs)
             {
-                npc.Spawn(ref Map);
+                npc.Spawn(Map);
             }
             
             Camera = new Camera();
@@ -117,7 +117,7 @@ namespace PokemonFireRedClone
                     {
                         if (TextBoxManager.IsDisplayed)
                         {
-                            TextBoxManager.UnloadContent(ref Player);
+                            TextBoxManager.UnloadContent(Player);
                         }
 
                         Player.Sprite.IsActive = false;
@@ -143,8 +143,8 @@ namespace PokemonFireRedClone
 
             DoorManager.Update(gameTime, this, mapLoader);
             EntityAnimationManager.Instance.Update(gameTime);
-            Player.Update(gameTime, ref Map);
-            Map.Update(gameTime, ref Player);
+            Player.Update(gameTime, Map);
+            Map.Update(gameTime, Player);
             Camera.Follow(Player);
 
             if (TextBoxManager.IsDisplayed && AreaManager.IsTransitioning)
@@ -167,7 +167,7 @@ namespace PokemonFireRedClone
             {
                 if (TextBoxManager.IsDisplayed)
                 {
-                    TextBoxManager.UnloadContent(ref Player);
+                    TextBoxManager.UnloadContent(Player);
                     TextBoxManager.Closed = true;
                 }
 
@@ -176,7 +176,7 @@ namespace PokemonFireRedClone
 
             if (!MenuManager.WasLoaded && !MenuManager.IsLoaded)
             {
-                TextBoxManager.Update(gameTime, ref Map, ref Player);
+                TextBoxManager.Update(gameTime, Map, Player);
             }
         }
 

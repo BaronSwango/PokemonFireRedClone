@@ -124,7 +124,7 @@ namespace PokemonFireRedClone
             }
         }
 
-        public void LoadContent(ref Player player)
+        public void LoadContent(Player player)
         {
             if (player.Sprite.SpriteSheetEffect.CurrentFrame.Y > 3)
             {
@@ -239,7 +239,7 @@ namespace PokemonFireRedClone
             TransitionRect2?.UnloadContent();
         }
 
-        public void UnloadContent(ref Player player)
+        public void UnloadContent(Player player)
         {
             UnloadContent();
             player.CanUpdate = true;

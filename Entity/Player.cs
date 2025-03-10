@@ -78,7 +78,7 @@ namespace PokemonFireRedClone
             Sprite.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, ref Map map)
+        public void Update(GameTime gameTime, Map map)
         {
             if (EntityAnimationManager.Instance.IsEntityAnimating(this) && IsMovementRestricted)
             {

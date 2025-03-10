@@ -20,6 +20,8 @@ namespace PokemonFireRedClone
         [XmlIgnore]
         public List<Tile> SolidTiles;
         [XmlIgnore]
+        public List<Tile> NPCTiles;
+        [XmlIgnore]
         public List<Tile> GrassTiles;
         [XmlElement("NPC")]
         public List<NPC> NPCs;
@@ -33,6 +35,7 @@ namespace PokemonFireRedClone
         {
             Tiles = new List<Tile>();
             SolidTiles = new List<Tile>();
+            NPCTiles = new List<Tile>();
             GrassTiles = new List<Tile>();
 
             foreach (Layer l in Layers)
@@ -93,13 +96,13 @@ namespace PokemonFireRedClone
             }
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(GameTime gameTime, Player player)
         {
             TileAnimationManager.Instance.Update(gameTime);
 
             foreach (Layer l in Layers)
             {
-                l.Update(ref player, NPCs, gameTime, TileDimensions);
+                l.Update(player, NPCs, NPCTiles, gameTime, TileDimensions);
             }
 
             foreach (NPC npc in NPCs)

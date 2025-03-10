@@ -80,7 +80,7 @@ namespace PokemonFireRedClone
                     }
 
                     screen.Player.Sprite.Position = door.Coords;
-                    screen.Player.Spawn(ref screen.Map);
+                    screen.Player.Spawn(screen.Map);
                     screen.Player.Destination = screen.Player.PreviousTile = screen.Player.TrackPos = screen.Player.Sprite.Position;
 
                     if (screen.Map.Inside)
@@ -95,7 +95,7 @@ namespace PokemonFireRedClone
 
                     foreach (NPC npc in screen.Map.NPCs)
                     {
-                        npc.Spawn(ref screen.Map);
+                        npc.Spawn(screen.Map);
                     }
 
                     Vector2 playerPos = screen.Player.TrackPos;
