@@ -32,27 +32,35 @@ namespace PokemonFireRedClone
 
         public void LoadContent()
         {
-            // Change the tile frame to the "rustling" grass frame
-            string str = grassTile.ID.Replace("[", string.Empty).Replace("]", string.Empty);
-            int value1 = int.Parse(str[..str.IndexOf(':')]) + 1; // Use the next tile in the spritesheet
-            int value2 = int.Parse(str[(str.IndexOf(':') + 1)..]);
-            grassTile.ID = "[" + value1 + ":" + value2 + "]";
-            
-            // Update the tile's source rectangle to show the rustling frame
-            grassTile.LoadContent(
-                grassTile.Position, 
-                new Rectangle(
-                    value1 * grassTile.SourceRect.Width, 
-                    value2 * grassTile.SourceRect.Height,
-                    grassTile.SourceRect.Width, 
-                    grassTile.SourceRect.Height
-                ), 
-                grassTile.State
-            );
+            if (entity.IsMoving)
+            {
+                // Change the tile frame to the "rustling" grass frame
+                string str = grassTile.ID.Replace("[", string.Empty).Replace("]", string.Empty);
+                int value1 = int.Parse(str[..str.IndexOf(':')]) + 1; // Use the next tile in the spritesheet
+                int value2 = int.Parse(str[(str.IndexOf(':') + 1)..]);
+                grassTile.ID = "[" + value1 + ":" + value2 + "]";
+                
+                // Update the tile's source rectangle to show the rustling frame
+                grassTile.LoadContent(
+                    grassTile.Position, 
+                    new Rectangle(
+                        value1 * grassTile.SourceRect.Width, 
+                        value2 * grassTile.SourceRect.Height,
+                        grassTile.SourceRect.Width, 
+                        grassTile.SourceRect.Height
+                    ), 
+                    grassTile.State
+                );
+            }
+            else
+            {
+                grassBounce = true;
+                counter.Finish();
+            }
 
             grassOverlay.LoadContent();
             grassOverlay.SpriteSheetEffect.AmountOfFrames = new(4, 1);
-            grassOverlay.SpriteSheetEffect.CurrentFrame.X = 0;
+            grassOverlay.SpriteSheetEffect.CurrentFrame.X = entity.IsMoving ? 0 : 3;
             grassOverlay.SpriteSheetEffect.SwitchFrame = 160;
             grassOverlay.SpriteSheetEffect.SetupSourceRects();
         }
