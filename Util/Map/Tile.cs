@@ -37,14 +37,7 @@ namespace PokemonFireRedClone
         {
             Rectangle tileRect = new((int)Position.X, (int)Position.Y,
                 SourceRect.Width, SourceRect.Height - 20);
-            Rectangle entityRect = new((int)entity.Sprite.Position.X, (int)entity.Sprite.Position.Y,
-                entity.Sprite.SourceRect.Width, entity.Sprite.SourceRect.Height);
-
-            if (entity is NPC npc) 
-            {
-                entityRect = new((int)npc.NPCSprite.Top.Position.X, (int)npc.NPCSprite.Top.Position.Y,
-                    npc.NPCSprite.Bottom.SourceRect.Width, 84);
-            }
+            Rectangle entityRect = new((int)entity.Sprite.Position.X, (int)entity.Sprite.Position.Y, entity.Sprite.SourceRect.Width, 84); 
 
             if (entityRect.Intersects(tileRect)) 
             {
@@ -66,7 +59,8 @@ namespace PokemonFireRedClone
                 {
                     if (ID == "[1:1]")
                     {
-                        TileAnimationManager.Instance.AddAnimation(new GrassTileAnimation(entity, this));
+                        TileAnimationManager.Instance.AddAnimation(entity, new GrassTileAnimation(entity, this));
+                        // EntityAnimationManager.Instance.StartAnimation((IAnimatable) entity, new GrassTileAnimation(entity, this));
                     }
                     Entity = entity;
                 }

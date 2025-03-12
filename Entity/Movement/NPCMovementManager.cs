@@ -28,11 +28,11 @@ namespace PokemonFireRedClone
         {
             return npc.Direction switch
             {
-                Entity.EntityDirection.Left => new(npc.NPCSprite.Top.Position.X - 64, npc.NPCSprite.Top.Position.Y),
-                Entity.EntityDirection.Right => new(npc.NPCSprite.Top.Position.X + 64, npc.NPCSprite.Top.Position.Y),
-                Entity.EntityDirection.Down => new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + 64),
-                Entity.EntityDirection.Up => new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64),
-                _ => new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - 64),
+                Entity.EntityDirection.Left => new(npc.Sprite.Position.X - 64, npc.Sprite.Position.Y),
+                Entity.EntityDirection.Right => new(npc.Sprite.Position.X + 64, npc.Sprite.Position.Y),
+                Entity.EntityDirection.Down => new(npc.Sprite.Position.X, npc.Sprite.Position.Y + 64),
+                Entity.EntityDirection.Up => new(npc.Sprite.Position.X, npc.Sprite.Position.Y - 64),
+                _ => new(npc.Sprite.Position.X, npc.Sprite.Position.Y - 64),
             };
         }
 
@@ -44,76 +44,84 @@ namespace PokemonFireRedClone
             {
                 case Entity.EntityDirection.Left:
 
-                    if (npc.NPCSprite.Top.Position.X - speed < (int)npc.Destination.X)
+                    if (npc.Sprite.Position.X - speed < (int)npc.Destination.X)
                     {
-                        npc.NPCSprite.SetPosition(npc.Destination);
+                        npc.Sprite.Position = npc.Destination;
                         npc.PreviousTile = npc.Destination;
                         return true;
                     }
                     else
                     {
-                        npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X - speed, npc.NPCSprite.Top.Position.Y));
+                        npc.Sprite.Position = new Vector2(npc.Sprite.Position.X - speed, npc.Sprite.Position.Y);
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.X - npc.Destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
-                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
-                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+                        if (Math.Abs(npc.Sprite.Position.X - npc.Destination.X) < 32 && (npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
+                        {
+                            npc.Sprite.SpriteSheetEffect.CurrentFrame.X = npc.Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
+                        }
 
                         return false;
                     }
 
                 case Entity.EntityDirection.Right:
 
-                    if (npc.NPCSprite.Top.Position.X + speed > (int)npc.Destination.X)
+                    if (npc.Sprite.Position.X + speed > (int)npc.Destination.X)
                     {
-                        npc.NPCSprite.SetPosition(npc.Destination);
+                        npc.Sprite.Position = npc.Destination;
                         npc.PreviousTile = npc.Destination;
                         return true;
                     }
                     else
                     {
-                        npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X + speed, npc.NPCSprite.Top.Position.Y));
+                        npc.Sprite.Position = new Vector2(npc.Sprite.Position.X + speed, npc.Sprite.Position.Y);
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.X - npc.Destination.X) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
-                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
-                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+                        if (Math.Abs(npc.Sprite.Position.X - npc.Destination.X) < 32 && (npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
+                        {
+                            npc.Sprite.SpriteSheetEffect.CurrentFrame.X = npc.Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
+                        }
 
                         return false;
                     }
 
                 case Entity.EntityDirection.Up:
 
-                    if (npc.NPCSprite.Top.Position.Y - speed < (int)npc.Destination.Y)
+                    if (npc.Sprite.Position.Y - speed < (int)npc.Destination.Y)
                     {
-                        npc.NPCSprite.SetPosition(npc.Destination);
+                        npc.Sprite.Position = npc.Destination;
                         npc.PreviousTile = npc.Destination;
                         return true;
                     }
                     else
                     {
-                        npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y - speed));
+                        npc.Sprite.Position = new Vector2(npc.Sprite.Position.X, npc.Sprite.Position.Y - speed);
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - npc.Destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
-                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
-                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+                        if (Math.Abs(npc.Sprite.Position.Y - npc.Destination.Y) < 32 && (npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
+                        {
+                            npc.Sprite.SpriteSheetEffect.CurrentFrame.X = npc.Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
+                        }
 
                         return false;
                     }
 
                 case Entity.EntityDirection.Down:
 
-                    if (npc.NPCSprite.Top.Position.Y + speed > (int)npc.Destination.Y)
+                    if (npc.Sprite.Position.Y + speed > (int)npc.Destination.Y)
                     {
-                        npc.NPCSprite.SetPosition(npc.Destination);
+                        npc.Sprite.Position = npc.Destination;
                         npc.PreviousTile = npc.Destination;
                         return true;
                     }
                     else
                     {
-                        npc.NPCSprite.SetPosition(new Vector2(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + speed));
+                        npc.Sprite.Position = new Vector2(npc.Sprite.Position.X, npc.Sprite.Position.Y + speed);
 
-                        if (Math.Abs(npc.NPCSprite.Top.Position.Y - npc.Destination.Y) < 32 && (npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 1
-                            || npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X == 3))
-                            npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2);
+                        if (Math.Abs(npc.Sprite.Position.Y - npc.Destination.Y) < 32 && (npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 1
+                            || npc.Sprite.SpriteSheetEffect.CurrentFrame.X == 3))
+                        {
+                            npc.Sprite.SpriteSheetEffect.CurrentFrame.X = npc.Sprite.SpriteSheetEffect.CurrentFrame.X > 2 ? 0 : 2;
+                        }
 
                         return false;
                     }

@@ -102,7 +102,7 @@ namespace PokemonFireRedClone
                             } 
                             else if (npc.TextBoxReactionType == NPC.TextBoxReaction.SNAP_BACK)
                             {
-                                npc.NPCSprite.SetDirection((int) npc.Direction);
+                                npc.Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) npc.Direction;
                             }
                         }
 

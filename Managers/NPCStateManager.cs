@@ -30,8 +30,8 @@ namespace PokemonFireRedClone
             {
                 mapNPCStates[npc.ID] = new NPCState
                 {
-                    Position = npc.IsMoving ? npc.Destination : npc.NPCSprite.Top.Position,
-                    Direction = (int) npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.Y,
+                    Position = npc.IsMoving ? npc.Destination : npc.Sprite.Position,
+                    Direction = (int) npc.Sprite.SpriteSheetEffect.CurrentFrame.Y,
                     CurrentState = npc.State
                 };
             }
@@ -43,8 +43,8 @@ namespace PokemonFireRedClone
             {
                 if (mapNPCStates.TryGetValue(npc.ID, out NPCState state))
                 {
-                    npc.NPCSprite.SetPosition(state.Position);
-                    npc.NPCSprite.SetDirection(state.Direction);
+                    npc.Sprite.Position = state.Position;
+                    npc.Sprite.SpriteSheetEffect.CurrentFrame.Y = state.Direction;
                     npc.State = state.CurrentState;
                 }
             }

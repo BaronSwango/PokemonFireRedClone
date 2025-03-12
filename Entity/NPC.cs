@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace PokemonFireRedClone
 {
-    public class NPC : Entity
+    public class NPC : Entity, IAnimatable
     {
 
         public enum MovementType
@@ -42,21 +42,25 @@ namespace PokemonFireRedClone
 
         public string ID;
         [XmlIgnore]
-        public Sprite NPCSprite;
-        [XmlIgnore]
         public NPCMovementManager MovementManager;
         public MovementType MoveType;
         public TextBoxReaction TextBoxReactionType;
         [XmlIgnore]
         public bool UpdateMovement;
 
+        public bool IsMovementRestricted => false;
+
         public override void LoadContent()
         {
             UpdateMovement = MoveType != MovementType.STILL;
 
-            NPCSprite = new Sprite(Sprite);
-            NPCSprite.LoadContent(SpriteFrames, Direction);
-            NPCSprite.SetPosition(SpawnLocation);
+            Sprite.LoadContent();
+            Sprite.SpriteSheetEffect.Entity = true;
+            Sprite.SpriteSheetEffect.SwitchManual = true;
+            Sprite.SpriteSheetEffect.AmountOfFrames = SpriteFrames;
+            Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) Direction;
+            Sprite.SpriteSheetEffect.SetupSourceRects();
+            Sprite.Position = SpawnLocation;
 
             switch (MoveType)
             {
@@ -79,12 +83,13 @@ namespace PokemonFireRedClone
 
         public override void UnloadContent()
         {
-            NPCSprite.UnloadContent();
+            Sprite.UnloadContent();
         }
 
         public void Update(GameTime gameTime, Map map)
         {
-            NPCSprite.Update(gameTime);
+            Sprite.Update(gameTime);
+
             if (UpdateMovement)
             {
                 MovementManager.Update(gameTime, map);
@@ -97,13 +102,12 @@ namespace PokemonFireRedClone
 
         public override void Spawn(Map map)
         {
-            Tile currentTile = TileManager.GetCurrentTile(map, NPCSprite.Bottom, NPCSprite.Bottom.SourceRect.Width,
-                NPCSprite.Bottom.SourceRect.Height);
+            Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width, Sprite.SourceRect.Height);
             if (currentTile != null)
             {
                 Destination = new(currentTile.Position.X, currentTile.Position.Y - 84);
                 Vector2 centerTile = new(currentTile.Position.X, currentTile.Position.Y - 84);
-                NPCSprite.SetPosition(centerTile);
+                Sprite.Position = centerTile;
             }
         }
 
@@ -111,16 +115,16 @@ namespace PokemonFireRedClone
         {
             switch (player.Direction) {
                 case EntityDirection.Left:
-                    NPCSprite.SetDirection((int) EntityDirection.Right);
+                    Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) EntityDirection.Right;
                     break;
-            case EntityDirection.Right:
-                    NPCSprite.SetDirection((int) EntityDirection.Left);
+                case EntityDirection.Right:
+                    Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) EntityDirection.Left;
                     break;
                 case EntityDirection.Down:
-                    NPCSprite.SetDirection((int) EntityDirection.Up);
+                    Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) EntityDirection.Up;
                     break;
                 case EntityDirection.Up:
-                    NPCSprite.SetDirection((int) EntityDirection.Down);
+                    Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) EntityDirection.Down;
                     break;
             }
         }

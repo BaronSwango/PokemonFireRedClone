@@ -513,7 +513,7 @@ namespace PokemonFireRedClone
         {
             Tile currentTile = TileManager.GetCurrentTile(map, Sprite, Sprite.SourceRect.Width / 2, Sprite.SourceRect.Height - 32);
 
-            if ((currentTile.ID == "[16:16]" || currentTile.ID == "[26:16]") && map.Layers[0].Tiles.Contains(currentTile))
+            if ((currentTile.ID == "[1:1]" || currentTile.ID == "[2:1]") && map.Layers[0].Tiles.Contains(currentTile))
             {
                 Random random = new();
 
@@ -528,16 +528,6 @@ namespace PokemonFireRedClone
             }
 
             return false;
-        }
-
-        public void OnAnimationStart(IEntityAnimation animation)
-        {
-            return;
-        }
-
-        public void OnAnimationComplete(IEntityAnimation animation)
-        {
-            return;
         }
     }
 }

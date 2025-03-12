@@ -12,8 +12,8 @@ namespace PokemonFireRedClone
         {
             get
             {
-                return npc.NPCSprite.Top.Position.X == pathCoords[currentDestinationIndex].Key
-                    && npc.NPCSprite.Top.Position.Y == pathCoords[currentDestinationIndex].Value;
+                return npc.Sprite.Position.X == pathCoords[currentDestinationIndex].Key
+                    && npc.Sprite.Position.Y == pathCoords[currentDestinationIndex].Value;
             }
         }
 
@@ -30,7 +30,7 @@ namespace PokemonFireRedClone
                     int.Parse(coordPair.Split(',')[1])));
 
             npc.Direction = CalculateDirection();
-            npc.NPCSprite.SetDirection((int)npc.Direction);
+            npc.Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) npc.Direction;
             npc.Destination = CalculateDestination();
             npc.IsMoving = true;
         }
@@ -42,9 +42,9 @@ namespace PokemonFireRedClone
 
             if (!npc.IsMoving)
             {
-                npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
+                npc.Sprite.SpriteSheetEffect.CurrentFrame.X = npc.Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
                 npc.Direction = CalculateDirection();
-                npc.NPCSprite.SetDirection((int)npc.Direction);
+                npc.Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) npc.Direction;
             }
 
             npc.IsMoving = true;
@@ -59,7 +59,7 @@ namespace PokemonFireRedClone
                 }
 
                 npc.Direction = CalculateDirection();
-                npc.NPCSprite.SetDirection((int)npc.Direction);
+                npc.Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) npc.Direction;
                 npc.Destination = CalculateDestination();
                 npc.IsMoving = false;
             }
@@ -68,8 +68,8 @@ namespace PokemonFireRedClone
 
         private Entity.EntityDirection CalculateDirection()
         {
-            int xOffset = pathCoords[currentDestinationIndex].Key - (int)npc.NPCSprite.Top.Position.X;
-            int yOffset = pathCoords[currentDestinationIndex].Value - (int)npc.NPCSprite.Top.Position.Y;
+            int xOffset = pathCoords[currentDestinationIndex].Key - (int)npc.Sprite.Position.X;
+            int yOffset = pathCoords[currentDestinationIndex].Value - (int)npc.Sprite.Position.Y;
 
             if (xOffset > 0)
                 return Entity.EntityDirection.Right;

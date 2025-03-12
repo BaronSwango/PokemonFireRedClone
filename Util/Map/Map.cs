@@ -117,8 +117,6 @@ namespace PokemonFireRedClone
             {
                 l.Draw(spriteBatch, drawType);
             }
-
-            TileAnimationManager.Instance.Draw(spriteBatch);
         }
 
     }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -16,56 +17,94 @@ namespace PokemonFireRedClone
             }
         }
 
-        private readonly List<ITileAnimation> tileAnimations;
-        private readonly List<ITileAnimation> animationsToRemove;
+        private readonly Dictionary<Entity, List<ITileAnimation>> tileAnimations;
 
         public TileAnimationManager()
         {
-            tileAnimations = new List<ITileAnimation>();
-            animationsToRemove = new List<ITileAnimation>();
+            tileAnimations = new();
         }
 
-        public void AddAnimation(ITileAnimation animation)
+        public void AddAnimation(Entity entity, ITileAnimation animation)
         {
             animation.LoadContent();
-            tileAnimations.Add(animation);
+
+            if (!tileAnimations.ContainsKey(entity))
+            {
+                tileAnimations[entity] = new();
+            }
+
+            tileAnimations[entity].Add(animation);
         }
 
         public void Update(GameTime gameTime)
         {
-            foreach (ITileAnimation animation in tileAnimations)
+            var animationsToRemove = new List<(Entity entity, ITileAnimation animation)>();
+            var entityAnimationPairs = tileAnimations.ToList();
+
+            foreach (var kvp in entityAnimationPairs)
             {
-                if (animation.Animate(gameTime))
+                var entity = kvp.Key;
+                var animations = kvp.Value.ToList();
+
+                foreach (var animation in animations)
                 {
-                    animationsToRemove.Add(animation);
+                    if (animation.Animate(gameTime))
+                    {
+                        animationsToRemove.Add((entity, animation));
+                    }
                 }
             }
 
-            foreach (ITileAnimation animation in animationsToRemove)
+            // Clean up completed animations
+            foreach (var (entity, animation) in animationsToRemove)
             {
-                tileAnimations.Remove(animation);
                 animation.UnloadContent();
-            }
+                tileAnimations[entity].Remove(animation);
 
-            animationsToRemove.Clear();
+                if (!tileAnimations[entity].Any())
+                {
+                    tileAnimations.Remove(entity);
+                }
+            }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Entity entity, SpriteBatch spriteBatch)
         {
-            foreach (ITileAnimation animation in tileAnimations)
+            if (tileAnimations.ContainsKey(entity))
             {
-                animation.Draw(spriteBatch);
+                foreach (var animation in tileAnimations[entity])
+                {
+                    animation.Draw(spriteBatch);
+                }
+            }
+        }
+
+        public void PostDraw(Entity entity, SpriteBatch spriteBatch)
+        {
+            if (tileAnimations.ContainsKey(entity))
+            {
+                foreach (var animation in tileAnimations[entity])
+                {
+                    animation.PostDraw(spriteBatch);
+                }
             }
         }
 
         public void Clear()
         {
-            foreach (ITileAnimation animation in tileAnimations)
+            var entityAnimationPairs = tileAnimations.ToList();
+
+            foreach (var kvp in entityAnimationPairs)
             {
-                animation.UnloadContent();
+                var entity = kvp.Key;
+                var animations = kvp.Value.ToList();
+
+                foreach (var animation in animations)
+                {
+                    animation.UnloadContent();
+                }
             }
             tileAnimations.Clear();
-            animationsToRemove.Clear();
         }
     }
 }

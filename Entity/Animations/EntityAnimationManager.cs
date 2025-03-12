@@ -33,7 +33,7 @@ namespace PokemonFireRedClone {
 
             animation.LoadContent();
             activeAnimations[entity].Add(animation);
-            entity.OnAnimationStart(animation);
+            // entity.OnAnimationStart(animation);
         }
 
         public void Update(GameTime gameTime)
@@ -60,7 +60,7 @@ namespace PokemonFireRedClone {
             {
                 animation.UnloadContent();
                 activeAnimations[entity].Remove(animation);
-                entity.OnAnimationComplete(animation);
+                // entity.OnAnimationComplete(animation);
 
                 if (!activeAnimations[entity].Any())
                 {
@@ -69,22 +69,22 @@ namespace PokemonFireRedClone {
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(IAnimatable entity, SpriteBatch spriteBatch)
         {
-            foreach (var animations in activeAnimations.Values)
+            if (activeAnimations.ContainsKey(entity))
             {
-                foreach (var animation in animations)
+                foreach (var animation in activeAnimations[entity])
                 {
                     animation.Draw(spriteBatch);
                 }
             }
         }
 
-        public void PostDraw(SpriteBatch spriteBatch)
+        public void PostDraw(IAnimatable entity, SpriteBatch spriteBatch)
         {
-            foreach (var animations in activeAnimations.Values)
+            if (activeAnimations.ContainsKey(entity))
             {
-                foreach (var animation in animations)
+                foreach (var animation in activeAnimations[entity])
                 {
                     animation.PostDraw(spriteBatch);
                 }

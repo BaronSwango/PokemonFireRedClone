@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -184,18 +185,18 @@ namespace PokemonFireRedClone
         {
             Map.Draw(spriteBatch, "Underlay");
 
-            foreach (NPC npc in Map.NPCs)
-            {
-                npc.NPCSprite.Bottom.Draw(spriteBatch);
-            }
+            List<Entity> drawOrder = new(){ Player };
+            drawOrder.AddRange(Map.NPCs);
 
-            EntityAnimationManager.Instance.Draw(spriteBatch);
-            Player.Draw(spriteBatch);
-            EntityAnimationManager.Instance.PostDraw(spriteBatch);
+            drawOrder.Sort((a, b) => a.Sprite.Position.Y.CompareTo(b.Sprite.Position.Y));
 
-            foreach (NPC npc in Map.NPCs)
+            foreach (Entity entity in drawOrder)
             {
-                npc.NPCSprite.Top.Draw(spriteBatch);
+                EntityAnimationManager.Instance.Draw((IAnimatable) entity, spriteBatch);
+                TileAnimationManager.Instance.Draw(entity, spriteBatch);
+                entity.Draw(spriteBatch);
+                EntityAnimationManager.Instance.PostDraw((IAnimatable) entity, spriteBatch);
+                TileAnimationManager.Instance.PostDraw(entity, spriteBatch);
             }
 
             Map.Draw(spriteBatch, "Overlay");

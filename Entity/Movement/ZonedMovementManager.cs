@@ -24,7 +24,7 @@ namespace PokemonFireRedClone
         }
         private bool WillCollide(Map map)
         {
-            Tile currentTile = TileManager.GetTile(map, new(npc.NPCSprite.Top.Position.X, npc.NPCSprite.Top.Position.Y + 84));
+            Tile currentTile = TileManager.GetTile(map, new(npc.Sprite.Position.X, npc.Sprite.Position.Y + 84));
 
             if (currentTile != null)
             {
@@ -61,7 +61,7 @@ namespace PokemonFireRedClone
 
                 if (!npc.IsMoving)
                 {
-                    npc.NPCSprite.SetFrame(npc.NPCSprite.Top.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1);
+                    npc.Sprite.SpriteSheetEffect.CurrentFrame.X = npc.Sprite.SpriteSheetEffect.CurrentFrame.X > 1 ? 3 : 1;
                     npc.IsMoving = true;
                 }
 
@@ -95,7 +95,7 @@ namespace PokemonFireRedClone
                     if (npc.Direction != newDirection)
                         npc.Direction = newDirection;
 
-                    npc.NPCSprite.SetDirection((int)newDirection);
+                    npc.Sprite.SpriteSheetEffect.CurrentFrame.Y = (int) npc.Direction;
                     currentDestination = CalculateDestination();
 
                     updateCounter = true;
